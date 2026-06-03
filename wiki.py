@@ -527,12 +527,13 @@ def cmd_route_ingest(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(
             # (2) LOAD + filter hallucinations + cap
             existing = {p.stem for p in concepts_dir.glob("*.md")}
             requested = routed.get("slugs", []) or []
-            valid_slugs = [s for s in requested if s in existing][:SLUG_CAP]
+            matched = [s for s in requested if s in existing]
             dropped = [s for s in requested if s not in existing]
             if dropped:
                 print(f"  dropped non-existent slugs: {dropped}", file=sys.stderr)
-            if len(requested) > SLUG_CAP:
-                print(f"  capped {len(requested)} slugs to {SLUG_CAP}", file=sys.stderr)
+            if len(matched) > SLUG_CAP:
+                print(f"  capped {len(matched)} slugs to {SLUG_CAP}", file=sys.stderr)
+            valid_slugs = matched[:SLUG_CAP]
             selected = {s: (concepts_dir / f"{s}.md").read_text() for s in valid_slugs}
 
             # (3) SYNTHESIZE
@@ -558,7 +559,7 @@ def cmd_route_ingest(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(
             write_wiki_files(valid_files, base_dir)
 
             out_slugs = {Path(f["path"]).stem for f in valid_files}
-            new_slugs = [s for s in out_slugs if s not in valid_slugs]
+            new_slugs = [s for s in out_slugs if s not in selected]
             if new_slugs:
                 append_gap_log(gap_path, source_path.name, new_slugs, kind="new_slug")
             gaps = resp.get("gaps") or []
