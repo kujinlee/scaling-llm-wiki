@@ -527,6 +527,10 @@ def cmd_route_ingest(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(
             # (2) LOAD + filter hallucinations + cap
             existing = {p.stem for p in concepts_dir.glob("*.md")}
             requested = routed.get("slugs", []) or []
+            if not isinstance(requested, list):
+                print(f"  router returned non-list 'slugs' ({type(requested).__name__}); "
+                      f"treating as empty", file=sys.stderr)
+                requested = []
             matched = [s for s in requested if s in existing]
             dropped = [s for s in requested if s not in existing]
             if dropped:
@@ -567,8 +571,17 @@ def cmd_route_ingest(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(
             if new_slugs:
                 append_gap_log(gap_path, source_path.name, new_slugs, kind="new_slug")
             gaps = resp.get("gaps") or []
-            if gaps:
-                append_gap_log(gap_path, source_path.name, gaps, kind="gap")
+            if not isinstance(gaps, list):
+                print(f"  synth returned non-list 'gaps' ({type(gaps).__name__}); ignoring",
+                      file=sys.stderr)
+                gaps = []
+            # Only record gaps that are real corpus slugs — drop hallucinated ones.
+            real_gaps = [s for s in gaps if s in existing]
+            bogus_gaps = [s for s in gaps if s not in existing]
+            if bogus_gaps:
+                print(f"  dropped gap slugs not in corpus: {bogus_gaps}", file=sys.stderr)
+            if real_gaps:
+                append_gap_log(gap_path, source_path.name, real_gaps, kind="gap")
 
             append_log_entry(wiki_dir / "log.md", resp.get("log_entry") or f"{datetime.now().strftime('%Y-%m-%d %H:%M')} | route-ingest | {source_path.name}")
             print(f"  {resp.get('summary', '(no summary)')}")

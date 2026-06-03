@@ -748,7 +748,11 @@ class TestCmdRouteIngest:
         assert "### Existing page: does-not-exist" not in synth_prompt
 
     def test_records_gaps_with_source(self, tmp_path):
-        wiki_dir, src, args = self._setup(tmp_path, {"rag": "grounds"})
+        # A real gap is a corpus slug the synth saw in the compact index but was not
+        # given the full page for. "context-engineering" exists on disk but is not
+        # routed/selected, so synth flags it as a gap.
+        wiki_dir, src, args = self._setup(
+            tmp_path, {"rag": "grounds", "context-engineering": "shapes context"})
         router = json.dumps({"slugs": ["rag"], "rationale": "x"})
         synth = json.dumps({"files": [], "log_entry": "2026-06-03 12:00 | route-ingest | n",
                             "summary": "s", "gaps": ["context-engineering"]})
@@ -804,6 +808,51 @@ class TestCmdRouteIngest:
         args.synth_model = None
         with pytest.raises(SystemExit):
             wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+
+    def test_non_list_gaps_does_not_crash_or_log(self, tmp_path):
+        # FIX D: synth returns a string for "gaps" instead of a list — no crash,
+        # no gap record written.
+        wiki_dir, src, args = self._setup(tmp_path, {"rag": "grounds"})
+        router = json.dumps({"slugs": ["rag"], "rationale": "x"})
+        synth = json.dumps({"files": [], "log_entry": "2026-06-03 12:00 | route-ingest | n",
+                            "summary": "s", "gaps": "context-engineering"})
+        with patch("wiki.call_claude", side_effect=[router, synth]), \
+                patch("wiki.reindex", return_value="r"):
+            wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        gap_file = wiki_dir / wiki.GAP_LOG_NAME
+        recs = ([json.loads(l) for l in gap_file.read_text().splitlines() if l.strip()]
+                if gap_file.exists() else [])
+        assert not any(r["kind"] == "gap" for r in recs)
+
+    def test_gap_slug_not_on_disk_is_dropped(self, tmp_path):
+        # FIX D: a gap slug not present in the corpus is dropped, not logged.
+        wiki_dir, src, args = self._setup(tmp_path, {"rag": "grounds"})
+        router = json.dumps({"slugs": ["rag"], "rationale": "x"})
+        synth = json.dumps({"files": [], "log_entry": "2026-06-03 12:00 | route-ingest | n",
+                            "summary": "s", "gaps": ["context-engineering", "rag"]})
+        with patch("wiki.call_claude", side_effect=[router, synth]), \
+                patch("wiki.reindex", return_value="r"):
+            wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        gap_file = wiki_dir / wiki.GAP_LOG_NAME
+        recs = ([json.loads(l) for l in gap_file.read_text().splitlines() if l.strip()]
+                if gap_file.exists() else [])
+        gap_recs = [r for r in recs if r["kind"] == "gap"]
+        # only the real corpus slug "rag" survives; "context-engineering" dropped
+        assert gap_recs == [] or all("context-engineering" not in r["slugs"] for r in gap_recs)
+        assert any(r["kind"] == "gap" and r["slugs"] == ["rag"] for r in gap_recs)
+
+    def test_non_list_slugs_treated_as_empty(self, tmp_path):
+        # FIX D: router returns a string for "slugs" — treated as empty, no crash.
+        wiki_dir, src, args = self._setup(tmp_path, {"rag": "grounds"})
+        router = json.dumps({"slugs": "rag", "rationale": "x"})
+        synth = json.dumps({"files": [], "log_entry": "2026-06-03 12:00 | route-ingest | n",
+                            "summary": "s", "gaps": []})
+        with patch("wiki.call_claude", side_effect=[router, synth]) as cc, \
+                patch("wiki.reindex", return_value="r"):
+            wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        synth_prompt = cc.call_args_list[1][0][0]
+        # no page selected since slugs was not a list
+        assert "### Existing page: rag" not in synth_prompt
 
     def test_synth_failure_records_router_slugs_as_gap(self, tmp_path):
         # FIX A: a synthesis failure must not lose the router's already-selected
