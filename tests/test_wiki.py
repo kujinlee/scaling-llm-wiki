@@ -804,3 +804,49 @@ class TestCmdRouteIngest:
         args.synth_model = None
         with pytest.raises(SystemExit):
             wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+
+
+class TestCmdResolveGaps:
+    def _setup(self, tmp_path):
+        wiki_dir = tmp_path / "wiki"
+        (wiki_dir / "concepts").mkdir(parents=True)
+        (wiki_dir / "CLAUDE.md").write_text("schema")
+        (wiki_dir / "index.md").write_text("# Index")
+        (wiki_dir / "log.md").write_text("# Log\n\n")
+        (wiki_dir / "concepts" / "context-engineering.md").write_text(
+            "---\nconcept: ce\ncategory: Harness & Context Engineering\nsummary: s\n---\n# ce\n"
+        )
+        (tmp_path / "talk.md").write_text("source body about context engineering")
+        args = MagicMock()
+        args.synth_model = None
+        return wiki_dir, args
+
+    def test_resynthesizes_logged_gap_and_clears_it(self, tmp_path):
+        wiki_dir, args = self._setup(tmp_path)
+        gap_path = wiki_dir / wiki.GAP_LOG_NAME
+        wiki.append_gap_log(gap_path, "talk.md", ["context-engineering"], kind="gap")
+        synth = json.dumps({
+            "files": [{"path": "wiki/concepts/context-engineering.md", "content": "# ce resolved"}],
+            "log_entry": "2026-06-03 12:00 | resolve-gaps | ce", "summary": "resolved", "gaps": [],
+        })
+        with patch("wiki.call_claude", side_effect=[synth]), patch("wiki.reindex", return_value="r"):
+            wiki.cmd_resolve_gaps(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        assert (wiki_dir / "concepts" / "context-engineering.md").read_text() == "# ce resolved"
+        # the gap record is removed after resolution
+        remaining = gap_path.read_text().strip()
+        assert "context-engineering" not in remaining
+
+    def test_keeps_new_slug_records(self, tmp_path):
+        wiki_dir, args = self._setup(tmp_path)
+        gap_path = wiki_dir / wiki.GAP_LOG_NAME
+        wiki.append_gap_log(gap_path, "talk.md", ["brand-new"], kind="new_slug")
+        with patch("wiki.call_claude", side_effect=[]), patch("wiki.reindex", return_value="r"):
+            wiki.cmd_resolve_gaps(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        # new_slug records are not 'gaps' to resynthesize; they stay for lint review
+        assert "brand-new" in gap_path.read_text()
+
+    def test_no_gap_log_is_noop(self, tmp_path, capsys):
+        wiki_dir, args = self._setup(tmp_path)
+        with patch("wiki.call_claude", side_effect=[]):
+            wiki.cmd_resolve_gaps(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        assert "no gaps" in capsys.readouterr().out.lower()

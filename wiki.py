@@ -571,6 +571,71 @@ def cmd_route_ingest(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(
             _try_reindex(wiki_dir, base_dir, label=f"{i}/{total}")
 
 
+def cmd_resolve_gaps(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(".")):
+    init_wiki(wiki_dir)
+    if not (wiki_dir / "CLAUDE.md").exists():
+        print("Error: wiki/CLAUDE.md not found. Create it first.", file=sys.stderr)
+        sys.exit(1)
+    gap_path = wiki_dir / GAP_LOG_NAME
+    if not gap_path.exists():
+        print("Gap log: no gaps recorded.")
+        return
+    records = [json.loads(l) for l in gap_path.read_text(encoding="utf-8").splitlines() if l.strip()]
+    gap_records = [r for r in records if r.get("kind") == "gap"]
+    keep = [r for r in records if r.get("kind") != "gap"]
+    if not gap_records:
+        print("Gap log: no resynthesizable gaps (only new_slug flags).")
+        return
+    synth_model = getattr(args, "synth_model", None) or SYNTH_MODEL
+    concepts_dir = wiki_dir / "concepts"
+
+    # group gap slugs by source
+    by_source: dict[str, set] = {}
+    for r in gap_records:
+        by_source.setdefault(r["source"], set()).update(r.get("slugs", []))
+
+    unresolved = []
+    with route_lock(wiki_dir):
+        for source_name, slugset in by_source.items():
+            source_path = base_dir / source_name
+            if not source_path.exists():
+                print(f"  source {source_name} missing; keeping gap unresolved", file=sys.stderr)
+                unresolved.append({"ts": datetime.now().strftime("%Y-%m-%d %H:%M"),
+                                   "source": source_name, "kind": "gap", "slugs": sorted(slugset)})
+                continue
+            ctx = read_wiki_context(wiki_dir)
+            compact = build_compact_index(ctx["concepts"])
+            selected = {s: (concepts_dir / f"{s}.md").read_text()
+                        for s in sorted(slugset) if (concepts_dir / f"{s}.md").exists()}
+            try:
+                resp = call_claude_json(
+                    build_synth_prompt(ctx["schema"], compact, selected, source_name, source_path.read_text()),
+                    model=synth_model,
+                )
+            except Exception as exc:  # noqa: BLE001
+                print(f"  resolve failed for {source_name} ({exc}); keeping unresolved", file=sys.stderr)
+                unresolved.append({"ts": datetime.now().strftime("%Y-%m-%d %H:%M"),
+                                   "source": source_name, "kind": "gap", "slugs": sorted(slugset)})
+                continue
+            valid_files = []
+            for f in resp.get("files", []):
+                try:
+                    safe_write_path(base_dir, f["path"], concepts_dir)
+                    valid_files.append(f)
+                except (ValueError, KeyError) as exc:
+                    print(f"  rejected unsafe path ({exc})", file=sys.stderr)
+            write_wiki_files(valid_files, base_dir)
+            append_log_entry(wiki_dir / "log.md", resp["log_entry"])
+            print(f"  resolved {source_name}: {resp['summary']}")
+            _try_reindex(wiki_dir, base_dir, label=source_name)
+
+    # rewrite the gap log keeping non-gap records + any unresolved gaps
+    remaining = keep + unresolved
+    gap_path.write_text(
+        "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in remaining), encoding="utf-8"
+    )
+
+
 def cmd_reindex(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(".")):
     init_wiki(wiki_dir)
     print(reindex(wiki_dir, base_dir))
