@@ -606,6 +606,15 @@ class TestGapLog:
         assert "a.md" in out and "x" in out
         assert "b.md" in out and "y" in out
 
+    def test_summarize_skips_malformed_line(self, tmp_path):
+        # FIX F: a corrupt JSONL line must be skipped, not crash the summary.
+        gap = tmp_path / ".gap-log.jsonl"
+        wiki.append_gap_log(gap, "a.md", ["x"], kind="gap")
+        with gap.open("a", encoding="utf-8") as fh:
+            fh.write("this is not json\n")
+        out = wiki.summarize_gap_log(gap)
+        assert "a.md" in out and "x" in out
+
 
 class TestRouteLock:
     def test_acquires_and_releases(self, tmp_path):

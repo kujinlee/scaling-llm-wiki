@@ -421,11 +421,25 @@ def append_gap_log(gap_path: Path, source: str, slugs: list[str], kind: str) -> 
         fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
 
 
+def read_gap_log(gap_path: Path) -> list[dict]:
+    """Parse gap-log JSONL, skipping malformed lines with a stderr warning so a
+    single corrupt line can't take down lint or resolve-gaps."""
+    records = []
+    for line in gap_path.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        try:
+            records.append(json.loads(line))
+        except json.JSONDecodeError:
+            print(f"  skipping malformed gap-log line: {line[:80]!r}", file=sys.stderr)
+    return records
+
+
 def summarize_gap_log(gap_path: Path) -> str:
     """Human-readable summary of unresolved gap-log records, for lint."""
     if not gap_path.exists():
         return "Gap log: no gaps recorded."
-    records = [json.loads(l) for l in gap_path.read_text(encoding="utf-8").splitlines() if l.strip()]
+    records = read_gap_log(gap_path)
     if not records:
         return "Gap log: no gaps recorded."
     lines = [f"Gap log: {len(records)} entr{'y' if len(records) == 1 else 'ies'} (gap = router miss to re-synthesize; new_slug = possible rename to review):"]
@@ -602,7 +616,7 @@ def cmd_resolve_gaps(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(
     if not gap_path.exists():
         print("Gap log: no gaps recorded.")
         return
-    records = [json.loads(l) for l in gap_path.read_text(encoding="utf-8").splitlines() if l.strip()]
+    records = read_gap_log(gap_path)
     gap_records = [r for r in records if r.get("kind") == "gap"]
     keep = [r for r in records if r.get("kind") != "gap"]
     if not gap_records:
