@@ -518,3 +518,36 @@ class TestParseFrontmatterList:
 
     def test_unbracketed_single_value(self):
         assert wiki.parse_frontmatter_list("solo") == ["solo"]
+
+
+class TestBuildCompactIndex:
+    def _page(self, concept, summary, aliases=None):
+        a = f"\naliases: [{', '.join(aliases)}]" if aliases else ""
+        return f"---\nconcept: {concept}\ncategory: Memory & Knowledge Systems\nsummary: {summary}{a}\n---\n# {concept}\n"
+
+    def test_one_line_per_page_slug_and_summary(self):
+        concepts = {"rag": self._page("RAG", "grounds answers in retrieved text")}
+        out = wiki.build_compact_index(concepts)
+        assert "rag: grounds answers in retrieved text" in out
+
+    def test_includes_aliases_when_present(self):
+        concepts = {"rag": self._page("RAG", "grounds answers", aliases=["retrieval-augmented-generation", "검색증강"])}
+        out = wiki.build_compact_index(concepts)
+        assert "retrieval-augmented-generation" in out
+        assert "검색증강" in out
+
+    def test_falls_back_to_concept_name_without_summary(self):
+        concepts = {"x": "---\nconcept: Ecks\ncategory: LLM Internals & Training\n---\n# Ecks\n"}
+        out = wiki.build_compact_index(concepts)
+        assert "x: Ecks" in out
+
+    def test_empty_corpus_marker(self):
+        assert wiki.build_compact_index({}) == "(none yet)"
+
+    def test_sorted_by_slug(self):
+        concepts = {
+            "zeta": self._page("Zeta", "z"),
+            "alpha": self._page("Alpha", "a"),
+        }
+        out = wiki.build_compact_index(concepts)
+        assert out.index("alpha:") < out.index("zeta:")

@@ -271,6 +271,22 @@ def build_index(concepts: dict) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
+def build_compact_index(concepts: dict) -> str:
+    """One line per concept page for the router: `slug: summary [aliases: a, b]`.
+
+    Far smaller than the full pages (~25 tokens/line), so the router can see the
+    whole corpus cheaply. Aliases are included to aid cross-lingual matching.
+    """
+    lines = []
+    for stem, content in sorted(concepts.items()):
+        fm = read_frontmatter(content)
+        summary = fm.get("summary", "").strip() or fm.get("concept", stem)
+        aliases = parse_frontmatter_list(fm.get("aliases", ""))
+        alias_str = f" [aliases: {', '.join(aliases)}]" if aliases else ""
+        lines.append(f"{stem}: {summary}{alias_str}")
+    return "\n".join(lines) or "(none yet)"
+
+
 def write_wiki_files(files: list[dict], base_dir: Path) -> None:
     for f in files:
         path = base_dir / f["path"]
