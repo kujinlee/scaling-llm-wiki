@@ -674,6 +674,16 @@ def main():
     p.add_argument("--model", default=None, help="Model for ingest calls (default: inherit CLI default)")
     p.set_defaults(func=cmd_ingest)
 
+    p = sub.add_parser("route-ingest", help="Ingest via cheap router + bounded synthesis (scales to large corpora)")
+    p.add_argument("source", nargs="?", metavar="FILE", help="Specific *.md file; defaults to all")
+    p.add_argument("--router-model", default=None, help=f"Model for the router call (default: {ROUTER_MODEL})")
+    p.add_argument("--synth-model", default=None, help=f"Model for synthesis (default: {SYNTH_MODEL})")
+    p.set_defaults(func=cmd_route_ingest)
+
+    p = sub.add_parser("resolve-gaps", help="Re-synthesize concepts logged as gaps in wiki/.gap-log.jsonl")
+    p.add_argument("--synth-model", default=None, help=f"Model for synthesis (default: {SYNTH_MODEL})")
+    p.set_defaults(func=cmd_resolve_gaps)
+
     p = sub.add_parser("reindex", help="Rebuild index.md deterministically from concept-page frontmatter")
     p.set_defaults(func=cmd_reindex)
 

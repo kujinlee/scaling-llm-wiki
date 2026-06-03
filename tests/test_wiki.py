@@ -865,3 +865,28 @@ class TestCmdLintGapReport:
         out = capsys.readouterr().out
         assert "All items OK." in out
         assert "context-engineering" in out   # gap-log summary appended
+
+
+class TestArgparseWiring:
+    def test_route_ingest_parses_and_dispatches(self):
+        parser_args = ["route-ingest", "talk.md", "--router-model", "haiku", "--synth-model", "sonnet"]
+        with patch.object(sys, "argv", ["wiki.py"] + parser_args), \
+                patch("wiki.cmd_route_ingest") as mock_cmd:
+            wiki.main()
+        assert mock_cmd.called
+        ns = mock_cmd.call_args[0][0]
+        assert ns.source == "talk.md"
+        assert ns.router_model == "haiku"
+        assert ns.synth_model == "sonnet"
+
+    def test_route_ingest_source_optional(self):
+        with patch.object(sys, "argv", ["wiki.py", "route-ingest"]), \
+                patch("wiki.cmd_route_ingest") as mock_cmd:
+            wiki.main()
+        assert mock_cmd.call_args[0][0].source is None
+
+    def test_resolve_gaps_dispatches(self):
+        with patch.object(sys, "argv", ["wiki.py", "resolve-gaps"]), \
+                patch("wiki.cmd_resolve_gaps") as mock_cmd:
+            wiki.main()
+        assert mock_cmd.called
