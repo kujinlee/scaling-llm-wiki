@@ -851,6 +851,21 @@ class TestCmdResolveGaps:
             wiki.cmd_resolve_gaps(args, wiki_dir=wiki_dir, base_dir=tmp_path)
         assert "no gaps" in capsys.readouterr().out.lower()
 
+    def test_resolve_drops_gap_keeps_new_slug(self, tmp_path):
+        wiki_dir, args = self._setup(tmp_path)
+        gap_path = wiki_dir / wiki.GAP_LOG_NAME
+        wiki.append_gap_log(gap_path, "talk.md", ["context-engineering"], kind="gap")
+        wiki.append_gap_log(gap_path, "talk.md", ["brand-new"], kind="new_slug")
+        synth = json.dumps({
+            "files": [{"path": "wiki/concepts/context-engineering.md", "content": "# ce resolved"}],
+            "log_entry": "2026-06-03 12:00 | resolve-gaps | ce", "summary": "resolved", "gaps": [],
+        })
+        with patch("wiki.call_claude", side_effect=[synth]), patch("wiki.reindex", return_value="r"):
+            wiki.cmd_resolve_gaps(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        remaining = gap_path.read_text()
+        assert "context-engineering" not in remaining   # resolved gap dropped
+        assert "brand-new" in remaining                 # new_slug retained
+
 
 class TestCmdLintGapReport:
     def test_lint_appends_gap_log_summary(self, tmp_path, capsys):

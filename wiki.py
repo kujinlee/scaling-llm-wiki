@@ -428,7 +428,7 @@ def summarize_gap_log(gap_path: Path) -> str:
     records = [json.loads(l) for l in gap_path.read_text(encoding="utf-8").splitlines() if l.strip()]
     if not records:
         return "Gap log: no gaps recorded."
-    lines = [f"Gap log: {len(records)} unresolved entr{'y' if len(records) == 1 else 'ies'}:"]
+    lines = [f"Gap log: {len(records)} entr{'y' if len(records) == 1 else 'ies'} (gap = router miss to re-synthesize; new_slug = possible rename to review):"]
     for r in records:
         lines.append(f"  [{r.get('kind')}] {r.get('source')} -> {', '.join(r.get('slugs', []))}")
     return "\n".join(lines)
