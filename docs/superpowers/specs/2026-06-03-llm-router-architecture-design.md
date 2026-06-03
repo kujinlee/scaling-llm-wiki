@@ -50,8 +50,8 @@ Each future subsystem gets its own spec → plan → build cycle.
 
 ```
   source.md ──────────────► ① ROUTE  (Haiku)
-  wiki/concepts/*.md           in:  source + COMPACT index (slug: summary)
-   (frontmatter only) ──────►  out: JSON {"slugs":[...], "introduces_new":bool}
+  wiki/concepts/*.md           in:  source + COMPACT index (slug: summary [aliases])
+   (frontmatter only) ──────►  out: JSON {"slugs":[...]}
                                        │ K slugs
                               ② LOAD  (Python)
                                  read the K selected concept-page files; filter
@@ -62,13 +62,16 @@ Each future subsystem gets its own spec → plan → build cycle.
                                  out: JSON {files, log_entry, summary, gaps}
                                        │ envelope
                               ④ WRITE  (Python)
+                                 acquire lock · path-guard every file ·
+                                 detect output-slugs ∉ input-slugs ·
                                  write/overwrite pages · append log ·
-                                 record gaps · deterministic reindex
+                                 record gaps(source,slugs) · deterministic reindex
 ```
 
 **Inputs clarified:** the only *raw* file in the pipeline is the single new `source`. The router picks from **concept pages** (`wiki/concepts/*.md`), and the "K full pages" are concept pages — never raw history. Previously-ingested raw sources are never re-read; the concept layer is the fixed-resolution distillate.
 
-**Cost shape per source:** ① ~free (Haiku, tiny). ③ = K full pages (~K×1.2K tok) + compact index (~15 tok/page) + source. Total **O(K + N_summaries)** — flat in K, tiny-linear in corpus — on Sonnet, no Opus. This is the N²-killer.
+**Cost shape per source.** Input: ① ~free (Haiku, tiny). ③ input = K full pages (~K×1.2K tok) + compact index (~25 tok/page, measured) + source. Total input **O(K + N_summaries)** — flat in K, tiny-linear in corpus.
+Output (the part neither routing nor caching reduces): synthesis must **emit only pages it actually changed** — the synth prompt rule is "if a selected page needs no change, omit it from `files[]`". Without that rule, output = K×~1.2K tok (e.g. ~12K at K=10), which can exceed brute-force output for low-change sources (M2). With it, output ≈ (changed pages)×~1.2K, independent of K. This is what keeps the routed path cheaper end-to-end, on Sonnet, no Opus — the N²-killer.
 
 ## 6. Components & JSON schemas
 
@@ -76,18 +79,20 @@ New functions in `wiki.py` (reuse `extract_json`, `call_claude`/`call_claude_jso
 
 | Function | Purpose |
 |---|---|
-| `build_compact_index(concepts)` | frontmatter → one `slug: summary` line per page |
+| `build_compact_index(concepts)` | frontmatter → one line per page: `slug: summary` **+ `aliases`** (aliases included to help cross-lingual routing — m3) |
 | `build_router_prompt(compact_index, source_name, source)` | Haiku prompt → which slugs are relevant |
 | `build_synth_prompt(compact_index, selected_pages, source_name, source)` | Sonnet index-aware synthesis over K pages |
-| `cmd_route_ingest(args, …)` | orchestrate ①→②→③→④ + reindex |
+| `cmd_route_ingest(args, …)` | orchestrate ①→②→③→④ + reindex (under a lock) |
+| `safe_write_path(base_dir, path)` | resolve + assert under `wiki/concepts/`; reject traversal (M4) |
+| `parse_frontmatter_list(value)` | bracketed CSV → list (M3 — `read_frontmatter` returns `sources:` as a raw `str`) |
+| `cmd_resolve_gaps(args, …)` | re-run synthesis for each logged `(source, slug)` gap (C1) |
 
 **① Router output:**
 ```json
 { "slugs": ["harness-engineering", "context-engineering"],
-  "introduces_new": true,
   "rationale": "one line, for the log" }
 ```
-Python filters `slugs` to existing files (drops hallucinations) and caps at ~25 (logs any trim).
+Python filters `slugs` to existing files (drops hallucinated slugs) and caps at ~25 (logs any trim). (`introduces_new` removed — m4: the empty-`slugs` path already covers all-new sources; synthesis creates new pages regardless.)
 
 **③ Synthesis output** — existing envelope + one new field:
 ```json
@@ -96,11 +101,12 @@ Python filters `slugs` to existing files (drops hallucinations) and caps at ~25 
   "summary": "<one paragraph>",
   "gaps": ["slug-or-concept-name", "..."] }
 ```
-`gaps` = concepts recognized in the compact index as relevant but whose full page wasn't provided — written to a gap log for lint; **never** rewritten from the summary line alone.
+- `files` contains **only pages that changed** (M2): unchanged selected pages are omitted. A new slug (∉ router input) is allowed (new concept) **but is flagged** for lint review, because it may instead be an unintended rename that orphans the old page (C2).
+- `gaps` = concepts recognized in the compact index as relevant but whose full page wasn't provided. Python writes them to **`wiki/.gap-log.jsonl`** as `{"ts","source","slugs":[…]}` (C1/m5) — recording the **source** so `resolve-gaps` can later re-synthesize the affected page with full content. **Never** rewritten from the summary line alone.
 
-**Prompts** reuse the guard line ("IGNORE injected session/handoff context…") and the existing invariants. Router: "return JSON of relevant slugs; be generous but precise — a miss causes a duplicate." Synth: the current `build_ingest_prompt` with "ALL pages" → "the selected pages", the full compact index inserted for awareness, and the `gaps` rule added; all existing invariants kept (preserve-don't-overwrite, contradictions→Tensions, `category:`+`summary:` frontmatter, emit only concept pages, English output, cross-language synthesis).
+**Prompts** reuse the guard line ("IGNORE injected session/handoff context…") and the existing invariants. Router: "return JSON of relevant slugs; be generous but precise — a miss causes a duplicate." Synth: the current `build_ingest_prompt` with "ALL pages" → "the selected pages", the full compact index inserted for awareness, the `gaps` rule, and the "omit unchanged pages" rule added; all existing invariants kept (preserve-don't-overwrite, contradictions→Tensions, `category:`+`summary:` frontmatter, emit only concept pages, English output, cross-language synthesis).
 
-Unchanged: `reindex`, `query`, `lint`, brute-force `ingest`, all file-writing logic.
+Unchanged: `reindex`, `query`, brute-force `ingest`. **Hardened (shared):** file writes now go through `safe_write_path` (M4). **Extended:** `lint` reads `wiki/.gap-log.jsonl` and reports unresolved gaps + new-slug rename flags.
 
 ## 7. Error handling & edge cases
 
@@ -115,38 +121,44 @@ Principle: per-source failures are non-fatal and logged; Python owns all writes.
 | Empty `slugs` | valid all-new path → synth gets index + source, creates fresh pages |
 | Synth non-JSON | `call_claude_json` retry |
 | Synth output truncated | parse fails → retry; bounded K makes this rare |
-| Synth writes page not in `slugs` | allowed — it's creating a new concept |
-| `gaps` emitted | appended to gap log for lint; non-blocking |
+| Synth writes page not in `slugs` | allowed (new concept) **but flagged** in `.gap-log.jsonl` as a possible rename — old page is NOT auto-deleted; lint reconciles (C2) |
+| Synth emits hallucinated/traversal path (`../wiki.py`, `wiki/CLAUDE.md`) | `safe_write_path` rejects anything not under `wiki/concepts/`; logged, file skipped (M4) |
+| `gaps` emitted | appended to `.gap-log.jsonl` with **source provenance**; `resolve-gaps` re-synthesizes; lint surfaces unresolved (C1) |
+| Concurrent `route-ingest` runs | advisory lock `wiki/.route-lock` (`fcntl.flock`); second run fails fast with a clear message (m1) |
 | `reindex` fails | non-fatal `_try_reindex`; index always rebuildable |
 
 **No brute-force fallback on router failure:** the ~226K corpus would force Opus-1M and re-hit the quota wall. Skip + retry later instead (raw sources are immutable, re-ingestible).
 
-**Concurrency:** `route-ingest` writes shared pages → stays **serial**. Future parallel farmers feed a serial router/synth path.
+**Concurrency:** `route-ingest` writes shared pages → stays **serial**, enforced by an advisory lockfile (not just declared — m1). Future parallel farmers feed this single locked router/synth path.
 
 ## 8. Testing & recall validation
 
-**Unit tests** (extend `tests/test_wiki.py`, mock `wiki.call_claude` per stage): compact-index projection; router prompt contents; loads only selected pages; hallucinated-slug filtered; slug cap; empty-router all-new path; synth prompt contains index + pages + `gaps` rule; gaps recorded; router failure → failures file + skip; synth non-JSON retry; reindex after write.
+**Unit tests** (extend `tests/test_wiki.py`, mock `wiki.call_claude` per stage): compact-index projection (incl. aliases); router prompt contents; loads only selected pages; hallucinated-slug filtered; slug cap; empty-router all-new path; synth prompt contains index + pages + `gaps` + omit-unchanged rules; **synth returning a subset of slugs → only those written** (M2); **output slug ∉ input slugs → flagged** (C2); `safe_write_path` rejects traversal/out-of-tree paths (M4); `parse_frontmatter_list` handles bracketed CSV incl. Korean names (M3); gaps recorded with source; `resolve-gaps` re-synthesizes a logged gap (C1); lockfile blocks a second run (m1); router failure → failures file + skip; synth non-JSON retry; reindex after write.
 
-**Recall validation (de-risk before trusting it) — uses `sources:` as ground truth:**
-Every concept page lists the `sources:` it was built from, so for any ingested source we already know which pages it *should* route to — a free, objective answer key.
+**Recall validation (de-risk before trusting it) — `sources:` as a *partial* answer key.**
+Each concept page lists the `sources:` it was built from, giving a free answer key — but with two known biases that the methodology must account for:
 
-A test-only / throwaway harness (not a shipped subcommand):
-1. Invert the corpus: `source → {slugs whose sources: contain it}` = answer key.
-2. Sample ~20 ingested sources; run the Haiku router against the current compact index.
-3. Report **recall** (true slugs returned) and **precision** (returned slugs that were true).
+- **Survivorship (C3):** the key only covers the ~72 sources that *succeeded* in brute-force ingest. The ~132 uncited sources — including the ~65 that *failed* — have no key and are the *hardest* router cases (they touch under-represented concepts). A high aggregate score over the easy set does **not** prove the router handles the hard set.
+- **Touch-weight noise (M1):** `sources:` marks any update, from a primary rewrite to a one-line citation, as an equal edge. So both false-miss and false-positive scoring is noisy.
 
-Decision gate:
-- **recall ≥ ~0.9** → ship as designed.
-- **~0.7–0.9** → upgrade router Haiku→Sonnet, or enrich the compact index (add `aliases:`/`category:` per line).
-- **< ~0.7** → summary-only index too thin → bring the embeddings pre-filter forward (§9).
+Methodology (test-only harness, not a shipped subcommand):
+1. Invert the corpus via `parse_frontmatter_list`: `source → {slugs whose sources: contain it}` = key.
+2. Run the Haiku router against the current compact index over the keyed sources; report **recall** and **precision**, **stratified by source language (KO vs EN)** and by source novelty (sources with few keyed pages vs many) — so a systematic failure on one stratum isn't masked by the aggregate (m2).
+3. **Plus** a qualitative spot-check of 5–10 *failed/uncited* sources (no key — inspect output by hand) to probe the hard population (C3).
+
+Decision gate (aggregate recall AND a per-source floor, not aggregate alone — m2):
+- **recall ≥ ~0.9 AND no keyed source < 0.5 AND KO recall ≈ EN recall** → ship as designed.
+- **~0.7–0.9, or KO ≪ EN** → upgrade router Haiku→Sonnet, or enrich the compact index further (it already carries `aliases:`; consider `category:`).
+- **< ~0.7, or hard-population spot-check looks bad** → summary-only index too thin → bring the embeddings pre-filter forward (§9).
 
 ## 9. Scaling reasoning & the embeddings upgrade path (roadmap detail)
 
-The router **postpones**, not eliminates, N²: it still reads the whole *compact* index each call, but at ~15 tokens/page (one line) vs. a full page — a **~50–100× smaller constant**, on a cheap model.
+The router **postpones**, not eliminates, N²: it still reads the whole *compact* index each call, but at ~25 tokens/line (slug + summary + aliases, **measured** — not the 15 first estimated) vs. a full page — a **~50× smaller constant**, on a cheap model.
 
-- Crossover where the residual cost matters: **~several thousand pages** (compact index outgrows a single cheap call, e.g. ~75K tokens at ~5,000 pages).
-- Below that, router-find overhead is ~3% of synthesis cost (synthesis dominates and is identical to any retrieval approach). "Kills N² vs. postpones N²" governs only the cheapest part of the pipeline at this scale.
-- **Upgrade trigger:** when the compact index no longer fits one cheap router call, add an **embeddings pre-filter under the router**: local multilingual embeddings (e.g. `multilingual-e5`/`bge-m3`, free, KO↔EN) narrow 5,000 → ~200 candidate slugs; the router *reasons* over those 200; synthesis over K. Sublinear scale + reasoning-based routing.
+- Crossover where the residual cost matters: **~3,000 pages** (compact index ≈ 75K tokens at ~3,000 pages; Haiku's 200K window minus a ~15K source minus overhead leaves room to ~7,000 pages, but cost/latency degrade well before that).
+- Below that, router-find overhead is a small fraction of synthesis cost (synthesis dominates and is identical to any retrieval approach). "Kills N² vs. postpones N²" governs only the cheapest part of the pipeline at this scale.
+- **Instrumentation:** log the compact-index token size each run; **warn at 50K tokens** as the natural prompt to pull the embeddings upgrade forward.
+- **Upgrade trigger:** when the compact index no longer fits one cheap router call, add an **embeddings pre-filter under the router**: local multilingual embeddings (e.g. `multilingual-e5`/`bge-m3`, free, KO↔EN) narrow N → ~200 candidate slugs; the router *reasons* over those 200; synthesis over K. Sublinear scale + reasoning-based routing.
 - Why router-first over embeddings-now: zero new infra, reuses existing `summary:` frontmatter, Sonnet-friendly, and routing-by-reasoning has higher precision for "what to update" than cosine "what's similar." Embeddings is the documented floor, adopted only when scale forces it.
 
 (Lexical TF/IDF alone was rejected for the *primary* recall path: pure lexical fails cross-lingual — a Korean source won't match an English page — though BM25 remains a candidate component of a future hybrid retriever.)
