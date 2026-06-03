@@ -805,6 +805,23 @@ class TestCmdRouteIngest:
         with pytest.raises(SystemExit):
             wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
 
+    def test_synth_failure_records_router_slugs_as_gap(self, tmp_path):
+        # FIX A: a synthesis failure must not lose the router's already-selected
+        # slugs — they are recorded as a kind="gap" record so resolve-gaps can retry.
+        wiki_dir, src, args = self._setup(tmp_path, {"rag": "grounds"})
+        router = json.dumps({"slugs": ["rag"], "rationale": "x"})
+        with patch("wiki.call_claude",
+                   side_effect=[router, subprocess.CalledProcessError(1, "claude")]), \
+                patch("wiki.time.sleep"), patch("wiki.reindex", return_value="r"):
+            wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        # source recorded in the failures file
+        assert "talk.md" in (wiki_dir / wiki.ROUTE_FAILURES_NAME).read_text()
+        # AND a gap record retains the router's selected slugs
+        recs = [json.loads(l) for l in
+                (wiki_dir / wiki.GAP_LOG_NAME).read_text().splitlines() if l.strip()]
+        assert any(r["kind"] == "gap" and r["source"] == "talk.md"
+                   and r["slugs"] == ["rag"] for r in recs)
+
 
 class TestCmdResolveGaps:
     def _setup(self, tmp_path):

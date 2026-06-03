@@ -546,6 +546,10 @@ def cmd_route_ingest(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(
                 print(f"  synthesis failed ({exc}); skipping", file=sys.stderr)
                 with failures_path.open("a", encoding="utf-8") as fh:
                     fh.write(source_path.name + "\n")
+                # Don't lose the router's already-selected slugs: record them as a
+                # gap so resolve-gaps can retry synthesis later.
+                if valid_slugs:
+                    append_gap_log(gap_path, source_path.name, valid_slugs, kind="gap")
                 continue
 
             # (4) VALIDATE paths, WRITE, record gaps + new-slug flags
