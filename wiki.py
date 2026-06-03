@@ -599,6 +599,7 @@ def cmd_resolve_gaps(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(
         by_source.setdefault(r["source"], set()).update(r.get("slugs", []))
 
     unresolved = []
+    new_slug_records = []
     with route_lock(wiki_dir):
         for source_name, slugset in by_source.items():
             source_path = base_dir / source_name
@@ -632,15 +633,27 @@ def cmd_resolve_gaps(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(
                 except (ValueError, KeyError) as exc:
                     print(f"  rejected unsafe path ({exc})", file=sys.stderr)
             write_wiki_files(valid_files, base_dir)
+            # New-slug detection (mirrors cmd_route_ingest): an output page whose
+            # slug was not among the selected (router/gap) slugs may be a new concept
+            # or an unintended rename. Accumulate in memory so the rewrite below (which
+            # rebuilds the log from keep + unresolved + new_slug_records) preserves it.
+            out_slugs = {Path(f["path"]).stem for f in valid_files}
+            new_slugs = [s for s in out_slugs if s not in selected]
+            if new_slugs:
+                new_slug_records.append({
+                    "ts": datetime.now().strftime("%Y-%m-%d %H:%M"),
+                    "source": source_name, "kind": "new_slug", "slugs": new_slugs,
+                })
             append_log_entry(wiki_dir / "log.md", resp.get("log_entry") or f"{datetime.now().strftime('%Y-%m-%d %H:%M')} | resolve-gaps | {source_name}")
             print(f"  resolved {source_name}: {resp.get('summary', '(no summary)')}")
             _try_reindex(wiki_dir, base_dir, label=source_name)
 
-    # rewrite the gap log keeping non-gap records + any unresolved gaps
-    remaining = keep + unresolved
-    gap_path.write_text(
-        "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in remaining), encoding="utf-8"
-    )
+        # rewrite the gap log inside the lock: keep non-gap records, any unresolved
+        # gaps, and any newly-detected new_slug flags.
+        remaining = keep + unresolved + new_slug_records
+        gap_path.write_text(
+            "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in remaining), encoding="utf-8"
+        )
 
 
 def cmd_reindex(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(".")):

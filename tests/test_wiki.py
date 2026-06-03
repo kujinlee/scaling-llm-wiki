@@ -884,6 +884,30 @@ class TestCmdResolveGaps:
         assert "brand-new" in remaining                 # new_slug retained
 
 
+    def test_resolve_emits_new_slug_record(self, tmp_path):
+        # FIX C: when resolve synthesis emits a page slug that was not among the
+        # selected (router-input) slugs, a kind="new_slug" record must be written
+        # AND survive the gap-log rewrite, while the resolved kind="gap" is dropped.
+        wiki_dir, args = self._setup(tmp_path)
+        gap_path = wiki_dir / wiki.GAP_LOG_NAME
+        wiki.append_gap_log(gap_path, "talk.md", ["context-engineering"], kind="gap")
+        synth = json.dumps({
+            "files": [
+                {"path": "wiki/concepts/context-engineering.md", "content": "# ce resolved"},
+                {"path": "wiki/concepts/brand-new.md", "content": "# New"},
+            ],
+            "log_entry": "2026-06-03 12:00 | resolve-gaps | ce",
+            "summary": "resolved", "gaps": [],
+        })
+        with patch("wiki.call_claude", side_effect=[synth]), patch("wiki.reindex", return_value="r"):
+            wiki.cmd_resolve_gaps(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        recs = [json.loads(l) for l in gap_path.read_text().splitlines() if l.strip()]
+        # resolved gap dropped
+        assert not any(r["kind"] == "gap" for r in recs)
+        # new_slug for the unexpected output page retained
+        assert any(r["kind"] == "new_slug" and r["slugs"] == ["brand-new"] for r in recs)
+
+
 class TestCmdLintGapReport:
     def test_lint_appends_gap_log_summary(self, tmp_path, capsys):
         wiki_dir = tmp_path / "wiki"
