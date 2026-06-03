@@ -510,6 +510,11 @@ def cmd_route_ingest(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(
     with route_lock(wiki_dir):
         for i, source_path in enumerate(sources, 1):
             print(f"\nroute-ingest {source_path} ...", flush=True)
+            if not source_path.exists():
+                print(f"  source {source_path.name} missing; skipping", file=sys.stderr)
+                with failures_path.open("a", encoding="utf-8") as fh:
+                    fh.write(source_path.name + "\n")
+                continue
             source_text = source_path.read_text()
             ctx = read_wiki_context(wiki_dir)
             compact = build_compact_index(ctx["concepts"])

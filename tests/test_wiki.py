@@ -809,6 +809,15 @@ class TestCmdRouteIngest:
         with pytest.raises(SystemExit):
             wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
 
+    def test_missing_source_path_skips_without_traceback(self, tmp_path):
+        # FIX E: a nonexistent source path must not raise — warn, record in the
+        # failures file, and continue.
+        wiki_dir, src, args = self._setup(tmp_path, {"rag": "grounds"})
+        args.source = str(tmp_path / "does-not-exist.md")
+        with patch("wiki.call_claude", side_effect=[]), patch("wiki.reindex", return_value="r"):
+            wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        assert "does-not-exist.md" in (wiki_dir / wiki.ROUTE_FAILURES_NAME).read_text()
+
     def test_non_list_gaps_does_not_crash_or_log(self, tmp_path):
         # FIX D: synth returns a string for "gaps" instead of a list — no crash,
         # no gap record written.
