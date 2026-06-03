@@ -9,6 +9,8 @@ Based on Karpathy's LLM Wiki pattern:
 https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
 """
 import argparse
+import contextlib
+import fcntl
 import json
 import re
 import subprocess
@@ -52,6 +54,25 @@ def init_wiki(wiki_dir: Path) -> None:
         log.write_text("# Wiki Operation Log\n\n")
     if not index.exists():
         index.write_text("# Agentic AI & Claude Code Wiki Index\n\n*Run `python wiki.py ingest` to populate.*\n")
+
+
+@contextlib.contextmanager
+def route_lock(wiki_dir: Path):
+    """Advisory lock so only one route-ingest/resolve-gaps run touches the shared
+    concept pages at a time. Fails fast (exit 1) if another run holds it."""
+    init_wiki(wiki_dir)
+    lock_path = wiki_dir / ROUTE_LOCK_NAME
+    fh = lock_path.open("w")
+    try:
+        try:
+            fcntl.flock(fh, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except OSError:
+            print(f"Another run holds {lock_path}. Aborting (serial-only).", file=sys.stderr)
+            sys.exit(1)
+        yield
+    finally:
+        fcntl.flock(fh, fcntl.LOCK_UN)
+        fh.close()
 
 
 def read_wiki_context(wiki_dir: Path) -> dict:

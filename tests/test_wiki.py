@@ -2,6 +2,7 @@ import sys
 from pathlib import Path
 import json
 import subprocess
+import fcntl
 from unittest.mock import MagicMock, patch
 
 import pytest
@@ -604,3 +605,28 @@ class TestGapLog:
         out = wiki.summarize_gap_log(gap)
         assert "a.md" in out and "x" in out
         assert "b.md" in out and "y" in out
+
+
+class TestRouteLock:
+    def test_acquires_and_releases(self, tmp_path):
+        wiki_dir = tmp_path / "wiki"
+        wiki_dir.mkdir()
+        with wiki.route_lock(wiki_dir):
+            assert (wiki_dir / ".route-lock").exists()
+        # after release, lock can be re-acquired
+        with wiki.route_lock(wiki_dir):
+            pass
+
+    def test_second_acquire_exits_when_held(self, tmp_path):
+        wiki_dir = tmp_path / "wiki"
+        wiki_dir.mkdir()
+        # hold the lock on a separate fd so route_lock's non-blocking acquire fails
+        held = (wiki_dir / ".route-lock").open("w")
+        fcntl.flock(held, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        try:
+            with pytest.raises(SystemExit):
+                with wiki.route_lock(wiki_dir):
+                    pass
+        finally:
+            fcntl.flock(held, fcntl.LOCK_UN)
+            held.close()
