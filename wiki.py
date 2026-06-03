@@ -35,6 +35,14 @@ CATEGORY_ORDER = [
     "Industry, Strategy & Careers",
 ]
 
+# Router-Synthesizer ingest configuration.
+ROUTER_MODEL = "haiku"      # cheap slug-selection over the compact index
+SYNTH_MODEL = "sonnet"      # bounded synthesis over K selected pages
+SLUG_CAP = 25               # max pages fed to synthesis per source
+GAP_LOG_NAME = ".gap-log.jsonl"
+ROUTE_LOCK_NAME = ".route-lock"
+ROUTE_FAILURES_NAME = ".route-failures.txt"
+
 
 def init_wiki(wiki_dir: Path) -> None:
     (wiki_dir / "concepts").mkdir(parents=True, exist_ok=True)
@@ -218,6 +226,22 @@ def read_frontmatter(text: str) -> dict:
         if m:
             meta[m.group(1)] = m.group(2).strip()
     return meta
+
+
+def parse_frontmatter_list(value: str) -> list[str]:
+    """Parse a raw frontmatter value like '[a, b]' or 'a' into a list of strings.
+
+    `read_frontmatter` returns list-valued fields (sources, aliases, related) as
+    the raw bracketed string; this normalises them. Splits on commas — adequate
+    for slugs/aliases (which never contain commas).
+    """
+    if not value:
+        return []
+    v = value.strip()
+    if v.startswith("[") and v.endswith("]"):
+        v = v[1:-1]
+    items = [part.strip().strip("'\"") for part in v.split(",")]
+    return [item for item in items if item]
 
 
 def build_index(concepts: dict) -> str:

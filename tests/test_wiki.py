@@ -500,3 +500,21 @@ class TestCmdLint:
         prompt = mock_claude.call_args[0][0]
         assert "rag page content" in prompt
         assert "schema text" in prompt
+
+
+class TestParseFrontmatterList:
+    def test_parses_bracketed_csv(self):
+        assert wiki.parse_frontmatter_list("[rag, chain-of-thought, mcp]") == ["rag", "chain-of-thought", "mcp"]
+
+    def test_strips_quotes(self):
+        assert wiki.parse_frontmatter_list("['a', \"b\"]") == ["a", "b"]
+
+    def test_handles_korean_items(self):
+        assert wiki.parse_frontmatter_list("[하네스, harness-engineering]") == ["하네스", "harness-engineering"]
+
+    def test_empty_string_returns_empty_list(self):
+        assert wiki.parse_frontmatter_list("") == []
+        assert wiki.parse_frontmatter_list("[]") == []
+
+    def test_unbracketed_single_value(self):
+        assert wiki.parse_frontmatter_list("solo") == ["solo"]
