@@ -686,3 +686,121 @@ class TestBuildSynthPrompt:
         prompt = wiki.build_synth_prompt("s", "idx", {}, "t.md", "src")
         assert "IGNORE any session handoff" in prompt
         assert "English" in prompt
+
+
+class TestCmdRouteIngest:
+    def _setup(self, tmp_path, existing_pages=None):
+        wiki_dir = tmp_path / "wiki"
+        (wiki_dir / "concepts").mkdir(parents=True)
+        (wiki_dir / "CLAUDE.md").write_text("schema")
+        (wiki_dir / "index.md").write_text("# Index")
+        (wiki_dir / "log.md").write_text("# Log\n\n")
+        for slug, summary in (existing_pages or {}).items():
+            (wiki_dir / "concepts" / f"{slug}.md").write_text(
+                f"---\nconcept: {slug}\ncategory: Memory & Knowledge Systems\nsummary: {summary}\n---\n# {slug}\n"
+            )
+        src = tmp_path / "talk.md"
+        src.write_text("a talk about RAG")
+        args = MagicMock()
+        args.source = str(src)
+        args.router_model = None
+        args.synth_model = None
+        return wiki_dir, src, args
+
+    def test_routes_then_synthesizes_and_writes(self, tmp_path):
+        wiki_dir, src, args = self._setup(tmp_path, {"rag": "grounds answers"})
+        router = json.dumps({"slugs": ["rag"], "rationale": "about RAG"})
+        synth = json.dumps({
+            "files": [{"path": "wiki/concepts/rag.md", "content": "# RAG updated"}],
+            "log_entry": "2026-06-03 12:00 | route-ingest | rag updated",
+            "summary": "updated rag",
+            "gaps": [],
+        })
+        with patch("wiki.call_claude", side_effect=[router, synth]), \
+                patch("wiki.reindex", return_value="reindexed"):
+            wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        assert (wiki_dir / "concepts" / "rag.md").read_text() == "# RAG updated"
+        assert "route-ingest | rag updated" in (wiki_dir / "log.md").read_text()
+
+    def test_synth_only_receives_selected_pages(self, tmp_path):
+        wiki_dir, src, args = self._setup(tmp_path, {"rag": "grounds", "mcp": "tool protocol"})
+        router = json.dumps({"slugs": ["rag"], "rationale": "x"})
+        synth = json.dumps({"files": [], "log_entry": "2026-06-03 12:00 | route-ingest | noop",
+                            "summary": "s", "gaps": []})
+        with patch("wiki.call_claude", side_effect=[router, synth]) as cc, \
+                patch("wiki.reindex", return_value="r"):
+            wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        synth_prompt = cc.call_args_list[1][0][0]      # 2nd call = synth
+        assert "## Selected concept pages" in synth_prompt
+        assert "rag" in synth_prompt
+        # mcp page content not loaded into synthesis (only its compact-index line)
+        assert "### Existing page: mcp" not in synth_prompt
+
+    def test_filters_hallucinated_slug(self, tmp_path):
+        wiki_dir, src, args = self._setup(tmp_path, {"rag": "grounds"})
+        router = json.dumps({"slugs": ["rag", "does-not-exist"], "rationale": "x"})
+        synth = json.dumps({"files": [], "log_entry": "2026-06-03 12:00 | route-ingest | n",
+                            "summary": "s", "gaps": []})
+        with patch("wiki.call_claude", side_effect=[router, synth]) as cc, \
+                patch("wiki.reindex", return_value="r"):
+            wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        synth_prompt = cc.call_args_list[1][0][0]
+        assert "### Existing page: does-not-exist" not in synth_prompt
+
+    def test_records_gaps_with_source(self, tmp_path):
+        wiki_dir, src, args = self._setup(tmp_path, {"rag": "grounds"})
+        router = json.dumps({"slugs": ["rag"], "rationale": "x"})
+        synth = json.dumps({"files": [], "log_entry": "2026-06-03 12:00 | route-ingest | n",
+                            "summary": "s", "gaps": ["context-engineering"]})
+        with patch("wiki.call_claude", side_effect=[router, synth]), \
+                patch("wiki.reindex", return_value="r"):
+            wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        rec = json.loads((wiki_dir / wiki.GAP_LOG_NAME).read_text().strip())
+        assert rec["kind"] == "gap"
+        assert rec["source"] == "talk.md"
+        assert rec["slugs"] == ["context-engineering"]
+
+    def test_flags_output_slug_not_in_router_input(self, tmp_path):
+        wiki_dir, src, args = self._setup(tmp_path, {"rag": "grounds"})
+        router = json.dumps({"slugs": ["rag"], "rationale": "x"})
+        synth = json.dumps({
+            "files": [{"path": "wiki/concepts/brand-new.md", "content": "# New"}],
+            "log_entry": "2026-06-03 12:00 | route-ingest | new", "summary": "s", "gaps": [],
+        })
+        with patch("wiki.call_claude", side_effect=[router, synth]), \
+                patch("wiki.reindex", return_value="r"):
+            wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        recs = [json.loads(l) for l in (wiki_dir / wiki.GAP_LOG_NAME).read_text().splitlines() if l.strip()]
+        assert any(r["kind"] == "new_slug" and r["slugs"] == ["brand-new"] for r in recs)
+        assert (wiki_dir / "concepts" / "brand-new.md").exists()   # still written
+
+    def test_rejects_traversal_path(self, tmp_path):
+        wiki_dir, src, args = self._setup(tmp_path, {"rag": "grounds"})
+        router = json.dumps({"slugs": ["rag"], "rationale": "x"})
+        synth = json.dumps({
+            "files": [{"path": "wiki/concepts/../../evil.md", "content": "pwned"}],
+            "log_entry": "2026-06-03 12:00 | route-ingest | n", "summary": "s", "gaps": [],
+        })
+        with patch("wiki.call_claude", side_effect=[router, synth]), \
+                patch("wiki.reindex", return_value="r"):
+            wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        assert not (tmp_path / "evil.md").exists()
+
+    def test_router_failure_skips_source_and_logs(self, tmp_path):
+        wiki_dir, src, args = self._setup(tmp_path, {"rag": "grounds"})
+        with patch("wiki.call_claude", side_effect=subprocess.CalledProcessError(1, "claude")), \
+                patch("wiki.time.sleep"), patch("wiki.reindex", return_value="r"):
+            wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        assert "talk.md" in (wiki_dir / wiki.ROUTE_FAILURES_NAME).read_text()
+
+    def test_exits_if_claude_md_missing(self, tmp_path):
+        wiki_dir = tmp_path / "wiki"
+        wiki_dir.mkdir()
+        src = tmp_path / "talk.md"
+        src.write_text("body")
+        args = MagicMock()
+        args.source = str(src)
+        args.router_model = None
+        args.synth_model = None
+        with pytest.raises(SystemExit):
+            wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)

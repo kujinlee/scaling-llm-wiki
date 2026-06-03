@@ -492,6 +492,84 @@ def _try_reindex(wiki_dir: Path, base_dir: Path, label: str) -> None:
               f"Run `python wiki.py reindex` later to rebuild the index.", file=sys.stderr)
 
 
+def cmd_route_ingest(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(".")):
+    init_wiki(wiki_dir)
+    if not (wiki_dir / "CLAUDE.md").exists():
+        print("Error: wiki/CLAUDE.md not found. Create it first.", file=sys.stderr)
+        sys.exit(1)
+    sources = [Path(args.source)] if args.source else sorted(base_dir.glob("*.md"))
+    if not sources:
+        print("No *.md source files found.", file=sys.stderr)
+        sys.exit(1)
+    router_model = getattr(args, "router_model", None) or ROUTER_MODEL
+    synth_model = getattr(args, "synth_model", None) or SYNTH_MODEL
+    concepts_dir = wiki_dir / "concepts"
+    gap_path = wiki_dir / GAP_LOG_NAME
+    failures_path = wiki_dir / ROUTE_FAILURES_NAME
+    total = len(sources)
+    with route_lock(wiki_dir):
+        for i, source_path in enumerate(sources, 1):
+            print(f"\nroute-ingest {source_path} ...", flush=True)
+            source_text = source_path.read_text()
+            ctx = read_wiki_context(wiki_dir)
+            compact = build_compact_index(ctx["concepts"])
+
+            # (1) ROUTE
+            try:
+                routed = call_claude_json(build_router_prompt(compact, source_path.name, source_text),
+                                          model=router_model)
+            except Exception as exc:  # noqa: BLE001
+                print(f"  router failed ({exc}); skipping", file=sys.stderr)
+                with failures_path.open("a", encoding="utf-8") as fh:
+                    fh.write(source_path.name + "\n")
+                continue
+
+            # (2) LOAD + filter hallucinations + cap
+            existing = {p.stem for p in concepts_dir.glob("*.md")}
+            requested = routed.get("slugs", []) or []
+            valid_slugs = [s for s in requested if s in existing][:SLUG_CAP]
+            dropped = [s for s in requested if s not in existing]
+            if dropped:
+                print(f"  dropped non-existent slugs: {dropped}", file=sys.stderr)
+            if len(requested) > SLUG_CAP:
+                print(f"  capped {len(requested)} slugs to {SLUG_CAP}", file=sys.stderr)
+            selected = {s: (concepts_dir / f"{s}.md").read_text() for s in valid_slugs}
+
+            # (3) SYNTHESIZE
+            try:
+                resp = call_claude_json(
+                    build_synth_prompt(ctx["schema"], compact, selected, source_path.name, source_text),
+                    model=synth_model,
+                )
+            except Exception as exc:  # noqa: BLE001
+                print(f"  synthesis failed ({exc}); skipping", file=sys.stderr)
+                with failures_path.open("a", encoding="utf-8") as fh:
+                    fh.write(source_path.name + "\n")
+                continue
+
+            # (4) VALIDATE paths, WRITE, record gaps + new-slug flags
+            valid_files = []
+            for f in resp.get("files", []):
+                try:
+                    safe_write_path(base_dir, f["path"], concepts_dir)
+                    valid_files.append(f)
+                except (ValueError, KeyError) as exc:
+                    print(f"  rejected unsafe path ({exc})", file=sys.stderr)
+            write_wiki_files(valid_files, base_dir)
+
+            out_slugs = {Path(f["path"]).stem for f in valid_files}
+            new_slugs = [s for s in out_slugs if s not in valid_slugs]
+            if new_slugs:
+                append_gap_log(gap_path, source_path.name, new_slugs, kind="new_slug")
+            gaps = resp.get("gaps") or []
+            if gaps:
+                append_gap_log(gap_path, source_path.name, gaps, kind="gap")
+
+            append_log_entry(wiki_dir / "log.md", resp["log_entry"])
+            print(f"  {resp['summary']}")
+            _try_reindex(wiki_dir, base_dir, label=f"{i}/{total}")
+
+
 def cmd_reindex(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(".")):
     init_wiki(wiki_dir)
     print(reindex(wiki_dir, base_dir))
