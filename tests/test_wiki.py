@@ -850,3 +850,18 @@ class TestCmdResolveGaps:
         with patch("wiki.call_claude", side_effect=[]):
             wiki.cmd_resolve_gaps(args, wiki_dir=wiki_dir, base_dir=tmp_path)
         assert "no gaps" in capsys.readouterr().out.lower()
+
+
+class TestCmdLintGapReport:
+    def test_lint_appends_gap_log_summary(self, tmp_path, capsys):
+        wiki_dir = tmp_path / "wiki"
+        (wiki_dir / "concepts").mkdir(parents=True)
+        (wiki_dir / "CLAUDE.md").write_text("schema")
+        (wiki_dir / "index.md").write_text("# Index")
+        wiki.append_gap_log(wiki_dir / wiki.GAP_LOG_NAME, "talk.md", ["context-engineering"], kind="gap")
+        args = MagicMock()
+        with patch("wiki.call_claude", return_value="All items OK."):
+            wiki.cmd_lint(args, wiki_dir=wiki_dir)
+        out = capsys.readouterr().out
+        assert "All items OK." in out
+        assert "context-engineering" in out   # gap-log summary appended

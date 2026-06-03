@@ -658,6 +658,7 @@ def cmd_lint(args, wiki_dir: Path = Path("wiki")):
     prompt = build_lint_prompt(ctx["schema"], ctx["index"], ctx["concepts"])
     report = call_claude(prompt)
     print(report)
+    print("\n" + summarize_gap_log(wiki_dir / GAP_LOG_NAME))
 
 
 def main():
