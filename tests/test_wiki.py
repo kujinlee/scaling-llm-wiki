@@ -551,3 +551,20 @@ class TestBuildCompactIndex:
         }
         out = wiki.build_compact_index(concepts)
         assert out.index("alpha:") < out.index("zeta:")
+
+
+class TestSafeWritePath:
+    def test_accepts_path_under_concepts(self, tmp_path):
+        restrict = tmp_path / "wiki" / "concepts"
+        result = wiki.safe_write_path(tmp_path, "wiki/concepts/rag.md", restrict)
+        assert result == (tmp_path / "wiki/concepts/rag.md").resolve()
+
+    def test_rejects_traversal(self, tmp_path):
+        restrict = tmp_path / "wiki" / "concepts"
+        with pytest.raises(ValueError):
+            wiki.safe_write_path(tmp_path, "wiki/concepts/../../wiki.py", restrict)
+
+    def test_rejects_sibling_wiki_file(self, tmp_path):
+        restrict = tmp_path / "wiki" / "concepts"
+        with pytest.raises(ValueError):
+            wiki.safe_write_path(tmp_path, "wiki/CLAUDE.md", restrict)

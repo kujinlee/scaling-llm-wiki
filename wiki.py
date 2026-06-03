@@ -294,6 +294,20 @@ def write_wiki_files(files: list[dict], base_dir: Path) -> None:
         path.write_text(f["content"])
 
 
+def safe_write_path(base_dir: Path, rel_path: str, restrict_to: Path) -> Path:
+    """Resolve base_dir/rel_path and assert it stays under restrict_to.
+
+    Guards against an LLM emitting a traversal/out-of-tree path (e.g.
+    '../wiki.py' or 'wiki/CLAUDE.md'). Returns the resolved path or raises
+    ValueError.
+    """
+    resolved = (base_dir / rel_path).resolve()
+    allowed = restrict_to.resolve()
+    if not resolved.is_relative_to(allowed):
+        raise ValueError(f"path {rel_path!r} escapes {restrict_to}")
+    return resolved
+
+
 def append_log_entry(log_path: Path, entry: str) -> None:
     existing = log_path.read_text() if log_path.exists() else "# Wiki Operation Log\n\n"
     log_path.write_text(existing + entry + "\n")
