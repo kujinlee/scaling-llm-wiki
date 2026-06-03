@@ -9,6 +9,8 @@ Based on Karpathy's LLM Wiki pattern:
 https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
 """
 import argparse
+import contextlib
+import fcntl
 import json
 import re
 import subprocess
@@ -35,6 +37,14 @@ CATEGORY_ORDER = [
     "Industry, Strategy & Careers",
 ]
 
+# Router-Synthesizer ingest configuration.
+ROUTER_MODEL = "haiku"      # cheap slug-selection over the compact index
+SYNTH_MODEL = "sonnet"      # bounded synthesis over K selected pages
+SLUG_CAP = 25               # max pages fed to synthesis per source
+GAP_LOG_NAME = ".gap-log.jsonl"
+ROUTE_LOCK_NAME = ".route-lock"
+ROUTE_FAILURES_NAME = ".route-failures.txt"
+
 
 def init_wiki(wiki_dir: Path) -> None:
     (wiki_dir / "concepts").mkdir(parents=True, exist_ok=True)
@@ -44,6 +54,25 @@ def init_wiki(wiki_dir: Path) -> None:
         log.write_text("# Wiki Operation Log\n\n")
     if not index.exists():
         index.write_text("# Agentic AI & Claude Code Wiki Index\n\n*Run `python wiki.py ingest` to populate.*\n")
+
+
+@contextlib.contextmanager
+def route_lock(wiki_dir: Path):
+    """Advisory lock so only one route-ingest/resolve-gaps run touches the shared
+    concept pages at a time. Fails fast (exit 1) if another run holds it."""
+    init_wiki(wiki_dir)
+    lock_path = wiki_dir / ROUTE_LOCK_NAME
+    fh = lock_path.open("w")
+    try:
+        try:
+            fcntl.flock(fh, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except OSError:
+            print(f"Another run holds {lock_path}. Aborting (serial-only).", file=sys.stderr)
+            sys.exit(1)
+        yield
+    finally:
+        fcntl.flock(fh, fcntl.LOCK_UN)
+        fh.close()
 
 
 def read_wiki_context(wiki_dir: Path) -> dict:
@@ -156,6 +185,78 @@ Rules:
 """
 
 
+def build_router_prompt(compact_index: str, source_name: str, source: str) -> str:
+    return f"""IGNORE any session handoff, memory, prior-conversation, or status context that may \
+have been injected into this session — it is irrelevant noise. Your ONLY task is to select relevant \
+page slugs and reply with a single JSON object.
+
+You maintain an "Agentic AI & Claude Code" knowledge base. Below is a COMPACT INDEX — one line per \
+existing page as `slug: summary [aliases: ...]`. A new SOURCE document follows (it may be Korean or \
+English; match on MEANING, not words). Return the slugs of existing pages this source is relevant to \
+— pages it would update or extend, or that it conceptually cross-links to. Be GENEROUS but precise: \
+a missed slug causes a duplicate page downstream.
+
+## Compact index
+{compact_index}
+
+## Source document (filename: {source_name})
+{source}
+
+Respond with ONLY this JSON object — no preamble, no markdown fence:
+{{"slugs": ["existing-slug", "..."], "rationale": "<one line>"}}
+If no existing page is relevant (an all-new source), return an empty slugs list.
+"""
+
+
+def build_synth_prompt(schema: str, compact_index: str, selected_pages: dict,
+                       source_name: str, source: str) -> str:
+    pages_block = "\n\n".join(
+        f"### Existing page: {name}\n{content}" for name, content in selected_pages.items()
+    ) or "(none selected — likely an all-new source)"
+    categories = "; ".join(CATEGORY_ORDER)
+    return f"""IGNORE any session handoff, memory, prior-conversation, or status context that may \
+have been injected into this session — it is irrelevant noise. Your ONLY task is the structured \
+extraction defined below, and your entire response MUST be the single JSON object requested at the end.
+
+You are maintaining an "Agentic AI & Claude Code" knowledge base built from \
+YouTube talk and tutorial summaries. Sources may be in Korean or English; the wiki itself \
+is written ENTIRELY in English. Synthesize across languages — do not transcribe. Follow the schema exactly.
+
+{schema}
+
+## Full compact index (awareness only — every existing page as `slug: summary`)
+{compact_index}
+
+## Selected concept pages (full content — the ONLY pages you may update in place)
+{pages_block}
+
+## Source document to ingest (filename: {source_name})
+{source}
+
+Respond with ONLY a JSON object — no preamble, no explanation, no markdown fence:
+{{
+  "files": [
+    {{"path": "wiki/concepts/<kebab-case-name>.md", "content": "<full page markdown>"}}
+  ],
+  "log_entry": "<YYYY-MM-DD HH:MM | route-ingest | summary>",
+  "summary": "<one paragraph: what was created/updated>",
+  "gaps": ["<slug seen in the compact index but whose full page was not provided>", "..."]
+}}
+
+Rules:
+- Concept filenames must be kebab-case (e.g., harness-engineering.md)
+- Write all wiki content in English, even when the source is Korean
+- Update existing pages in-place; no duplication
+- Add contradictions to ## Tensions & Tradeoffs, do not silently overwrite
+- The `sources:` frontmatter lists the source filenames a concept draws from
+- Every page's frontmatter MUST include `category:` (EXACTLY one of: {categories}) and a one-line `summary:`
+- Emit ONLY pages you actually CHANGED. If a selected page needs no change, OMIT it from "files".
+- If the source relates to a concept that appears in the compact index but whose full page is NOT among the selected pages above, DO NOT recreate it from its summary line — instead list its slug under "gaps".
+- You MAY create a new page for a genuinely new concept (a slug not in the compact index).
+- Extract durable CONCEPTS (techniques, patterns, architectures, principles) — not video-specific trivia
+"""
+
+
 def build_query_prompt(schema: str, index: str, concepts: dict, question: str) -> str:
     concepts_block = "\n\n".join(
         f"### {name}\n{content}" for name, content in concepts.items()
@@ -220,6 +321,22 @@ def read_frontmatter(text: str) -> dict:
     return meta
 
 
+def parse_frontmatter_list(value: str) -> list[str]:
+    """Parse a raw frontmatter value like '[a, b]' or 'a' into a list of strings.
+
+    `read_frontmatter` returns list-valued fields (sources, aliases, related) as
+    the raw bracketed string; this normalises them. Splits on commas — adequate
+    for slugs/aliases (which never contain commas).
+    """
+    if not value:
+        return []
+    v = value.strip()
+    if v.startswith("[") and v.endswith("]"):
+        v = v[1:-1]
+    items = [part.strip().strip("'\"") for part in v.split(",")]
+    return [item for item in items if item]
+
+
 def build_index(concepts: dict) -> str:
     """Deterministically render wiki/index.md from concept-page frontmatter.
 
@@ -247,6 +364,22 @@ def build_index(concepts: dict) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
+def build_compact_index(concepts: dict) -> str:
+    """One line per concept page for the router: `slug: summary [aliases: a, b]`.
+
+    Far smaller than the full pages (~25 tokens/line), so the router can see the
+    whole corpus cheaply. Aliases are included to aid cross-lingual matching.
+    """
+    lines = []
+    for stem, content in sorted(concepts.items()):
+        fm = read_frontmatter(content)
+        summary = fm.get("summary", "").strip() or fm.get("concept", stem)
+        aliases = parse_frontmatter_list(fm.get("aliases", ""))
+        alias_str = f" [aliases: {', '.join(aliases)}]" if aliases else ""
+        lines.append(f"{stem}: {summary}{alias_str}")
+    return "\n".join(lines) or "(none yet)"
+
+
 def write_wiki_files(files: list[dict], base_dir: Path) -> None:
     for f in files:
         path = base_dir / f["path"]
@@ -254,9 +387,65 @@ def write_wiki_files(files: list[dict], base_dir: Path) -> None:
         path.write_text(f["content"])
 
 
+def safe_write_path(base_dir: Path, rel_path: str, restrict_to: Path) -> Path:
+    """Resolve base_dir/rel_path and assert it stays under restrict_to.
+
+    Guards against an LLM emitting a traversal/out-of-tree path (e.g.
+    '../wiki.py' or 'wiki/CLAUDE.md'). Returns the resolved path or raises
+    ValueError.
+    """
+    resolved = (base_dir / rel_path).resolve()
+    allowed = restrict_to.resolve()
+    if not resolved.is_relative_to(allowed):
+        raise ValueError(f"path {rel_path!r} escapes {restrict_to}")
+    return resolved
+
+
 def append_log_entry(log_path: Path, entry: str) -> None:
     existing = log_path.read_text() if log_path.exists() else "# Wiki Operation Log\n\n"
     log_path.write_text(existing + entry + "\n")
+
+
+def append_gap_log(gap_path: Path, source: str, slugs: list[str], kind: str) -> None:
+    """Append a recall-backstop record. kind='gap' (a concept the synth saw in the
+    index but wasn't given the page for) or 'new_slug' (an output page not among the
+    router's slugs — possibly a new concept, possibly an unintended rename)."""
+    rec = {
+        "ts": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "source": source,
+        "kind": kind,
+        "slugs": slugs,
+    }
+    gap_path.parent.mkdir(parents=True, exist_ok=True)
+    with gap_path.open("a", encoding="utf-8") as fh:
+        fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
+
+
+def read_gap_log(gap_path: Path) -> list[dict]:
+    """Parse gap-log JSONL, skipping malformed lines with a stderr warning so a
+    single corrupt line can't take down lint or resolve-gaps."""
+    records = []
+    for line in gap_path.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        try:
+            records.append(json.loads(line))
+        except json.JSONDecodeError:
+            print(f"  skipping malformed gap-log line: {line[:80]!r}", file=sys.stderr)
+    return records
+
+
+def summarize_gap_log(gap_path: Path) -> str:
+    """Human-readable summary of unresolved gap-log records, for lint."""
+    if not gap_path.exists():
+        return "Gap log: no gaps recorded."
+    records = read_gap_log(gap_path)
+    if not records:
+        return "Gap log: no gaps recorded."
+    lines = [f"Gap log: {len(records)} entr{'y' if len(records) == 1 else 'ies'} (gap = router miss to re-synthesize; new_slug = possible rename to review):"]
+    for r in records:
+        lines.append(f"  [{r.get('kind')}] {r.get('source')} -> {', '.join(r.get('slugs', []))}")
+    return "\n".join(lines)
 
 
 def reindex(wiki_dir: Path = Path("wiki"), base_dir: Path = Path(".")) -> str:
@@ -317,6 +506,188 @@ def _try_reindex(wiki_dir: Path, base_dir: Path, label: str) -> None:
               f"Run `python wiki.py reindex` later to rebuild the index.", file=sys.stderr)
 
 
+def cmd_route_ingest(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(".")):
+    init_wiki(wiki_dir)
+    if not (wiki_dir / "CLAUDE.md").exists():
+        print("Error: wiki/CLAUDE.md not found. Create it first.", file=sys.stderr)
+        sys.exit(1)
+    sources = [Path(args.source)] if args.source else sorted(base_dir.glob("*.md"))
+    if not sources:
+        print("No *.md source files found.", file=sys.stderr)
+        sys.exit(1)
+    router_model = getattr(args, "router_model", None) or ROUTER_MODEL
+    synth_model = getattr(args, "synth_model", None) or SYNTH_MODEL
+    concepts_dir = wiki_dir / "concepts"
+    gap_path = wiki_dir / GAP_LOG_NAME
+    failures_path = wiki_dir / ROUTE_FAILURES_NAME
+    total = len(sources)
+    with route_lock(wiki_dir):
+        for i, source_path in enumerate(sources, 1):
+            print(f"\nroute-ingest {source_path} ...", flush=True)
+            if not source_path.exists():
+                print(f"  source {source_path.name} missing; skipping", file=sys.stderr)
+                with failures_path.open("a", encoding="utf-8") as fh:
+                    fh.write(source_path.name + "\n")
+                continue
+            source_text = source_path.read_text()
+            ctx = read_wiki_context(wiki_dir)
+            compact = build_compact_index(ctx["concepts"])
+
+            # (1) ROUTE
+            try:
+                routed = call_claude_json(build_router_prompt(compact, source_path.name, source_text),
+                                          model=router_model)
+            except Exception as exc:  # noqa: BLE001
+                print(f"  router failed ({exc}); skipping", file=sys.stderr)
+                with failures_path.open("a", encoding="utf-8") as fh:
+                    fh.write(source_path.name + "\n")
+                continue
+
+            # (2) LOAD + filter hallucinations + cap
+            existing = {p.stem for p in concepts_dir.glob("*.md")}
+            requested = routed.get("slugs", []) or []
+            if not isinstance(requested, list):
+                print(f"  router returned non-list 'slugs' ({type(requested).__name__}); "
+                      f"treating as empty", file=sys.stderr)
+                requested = []
+            matched = [s for s in requested if s in existing]
+            dropped = [s for s in requested if s not in existing]
+            if dropped:
+                print(f"  dropped non-existent slugs: {dropped}", file=sys.stderr)
+            if len(matched) > SLUG_CAP:
+                print(f"  capped {len(matched)} slugs to {SLUG_CAP}", file=sys.stderr)
+            valid_slugs = matched[:SLUG_CAP]
+            selected = {s: (concepts_dir / f"{s}.md").read_text() for s in valid_slugs}
+
+            # (3) SYNTHESIZE
+            try:
+                resp = call_claude_json(
+                    build_synth_prompt(ctx["schema"], compact, selected, source_path.name, source_text),
+                    model=synth_model,
+                )
+            except Exception as exc:  # noqa: BLE001
+                print(f"  synthesis failed ({exc}); skipping", file=sys.stderr)
+                with failures_path.open("a", encoding="utf-8") as fh:
+                    fh.write(source_path.name + "\n")
+                # Don't lose the router's already-selected slugs: record them as a
+                # gap so resolve-gaps can retry synthesis later.
+                if valid_slugs:
+                    append_gap_log(gap_path, source_path.name, valid_slugs, kind="gap")
+                continue
+
+            # (4) VALIDATE paths, WRITE, record gaps + new-slug flags
+            valid_files = []
+            for f in resp.get("files", []):
+                try:
+                    safe_write_path(base_dir, f["path"], concepts_dir)
+                    valid_files.append(f)
+                except (ValueError, KeyError) as exc:
+                    print(f"  rejected unsafe path ({exc})", file=sys.stderr)
+            write_wiki_files(valid_files, base_dir)
+
+            out_slugs = {Path(f["path"]).stem for f in valid_files}
+            new_slugs = [s for s in out_slugs if s not in selected]
+            if new_slugs:
+                append_gap_log(gap_path, source_path.name, new_slugs, kind="new_slug")
+            gaps = resp.get("gaps") or []
+            if not isinstance(gaps, list):
+                print(f"  synth returned non-list 'gaps' ({type(gaps).__name__}); ignoring",
+                      file=sys.stderr)
+                gaps = []
+            # Only record gaps that are real corpus slugs — drop hallucinated ones.
+            real_gaps = [s for s in gaps if s in existing]
+            bogus_gaps = [s for s in gaps if s not in existing]
+            if bogus_gaps:
+                print(f"  dropped gap slugs not in corpus: {bogus_gaps}", file=sys.stderr)
+            if real_gaps:
+                append_gap_log(gap_path, source_path.name, real_gaps, kind="gap")
+
+            append_log_entry(wiki_dir / "log.md", resp.get("log_entry") or f"{datetime.now().strftime('%Y-%m-%d %H:%M')} | route-ingest | {source_path.name}")
+            print(f"  {resp.get('summary', '(no summary)')}")
+            _try_reindex(wiki_dir, base_dir, label=f"{i}/{total}")
+
+
+def cmd_resolve_gaps(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(".")):
+    init_wiki(wiki_dir)
+    if not (wiki_dir / "CLAUDE.md").exists():
+        print("Error: wiki/CLAUDE.md not found. Create it first.", file=sys.stderr)
+        sys.exit(1)
+    gap_path = wiki_dir / GAP_LOG_NAME
+    if not gap_path.exists():
+        print("Gap log: no gaps recorded.")
+        return
+    records = read_gap_log(gap_path)
+    gap_records = [r for r in records if r.get("kind") == "gap"]
+    keep = [r for r in records if r.get("kind") != "gap"]
+    if not gap_records:
+        print("Gap log: no resynthesizable gaps (only new_slug flags).")
+        return
+    synth_model = getattr(args, "synth_model", None) or SYNTH_MODEL
+    concepts_dir = wiki_dir / "concepts"
+
+    # group gap slugs by source
+    by_source: dict[str, set] = {}
+    for r in gap_records:
+        by_source.setdefault(r["source"], set()).update(r.get("slugs", []))
+
+    unresolved = []
+    new_slug_records = []
+    with route_lock(wiki_dir):
+        for source_name, slugset in by_source.items():
+            source_path = base_dir / source_name
+            if not source_path.exists():
+                print(f"  source {source_name} missing; keeping gap unresolved", file=sys.stderr)
+                unresolved.append({"ts": datetime.now().strftime("%Y-%m-%d %H:%M"),
+                                   "source": source_name, "kind": "gap", "slugs": sorted(slugset)})
+                continue
+            ctx = read_wiki_context(wiki_dir)
+            compact = build_compact_index(ctx["concepts"])
+            missing = [s for s in sorted(slugset) if not (concepts_dir / f"{s}.md").exists()]
+            if missing:
+                print(f"  warning: gap slugs no longer on disk: {missing}", file=sys.stderr)
+            selected = {s: (concepts_dir / f"{s}.md").read_text()
+                        for s in sorted(slugset) if (concepts_dir / f"{s}.md").exists()}
+            try:
+                resp = call_claude_json(
+                    build_synth_prompt(ctx["schema"], compact, selected, source_name, source_path.read_text()),
+                    model=synth_model,
+                )
+            except Exception as exc:  # noqa: BLE001
+                print(f"  resolve failed for {source_name} ({exc}); keeping unresolved", file=sys.stderr)
+                unresolved.append({"ts": datetime.now().strftime("%Y-%m-%d %H:%M"),
+                                   "source": source_name, "kind": "gap", "slugs": sorted(slugset)})
+                continue
+            valid_files = []
+            for f in resp.get("files", []):
+                try:
+                    safe_write_path(base_dir, f["path"], concepts_dir)
+                    valid_files.append(f)
+                except (ValueError, KeyError) as exc:
+                    print(f"  rejected unsafe path ({exc})", file=sys.stderr)
+            write_wiki_files(valid_files, base_dir)
+            # New-slug detection (mirrors cmd_route_ingest): an output page whose
+            # slug was not among the selected (router/gap) slugs may be a new concept
+            # or an unintended rename. Accumulate in memory so the rewrite below (which
+            # rebuilds the log from keep + unresolved + new_slug_records) preserves it.
+            out_slugs = {Path(f["path"]).stem for f in valid_files}
+            new_slugs = [s for s in out_slugs if s not in selected]
+            if new_slugs:
+                new_slug_records.append({
+                    "ts": datetime.now().strftime("%Y-%m-%d %H:%M"),
+                    "source": source_name, "kind": "new_slug", "slugs": new_slugs,
+                })
+            append_log_entry(wiki_dir / "log.md", resp.get("log_entry") or f"{datetime.now().strftime('%Y-%m-%d %H:%M')} | resolve-gaps | {source_name}")
+            print(f"  resolved {source_name}: {resp.get('summary', '(no summary)')}")
+            _try_reindex(wiki_dir, base_dir, label=source_name)
+
+        # rewrite the gap log inside the lock: keep non-gap records, any unresolved
+        # gaps, and any newly-detected new_slug flags.
+        remaining = keep + unresolved + new_slug_records
+        gap_path.write_text(
+            "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in remaining), encoding="utf-8"
+        )
+
+
 def cmd_reindex(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(".")):
     init_wiki(wiki_dir)
     print(reindex(wiki_dir, base_dir))
@@ -336,6 +707,7 @@ def cmd_lint(args, wiki_dir: Path = Path("wiki")):
     prompt = build_lint_prompt(ctx["schema"], ctx["index"], ctx["concepts"])
     report = call_claude(prompt)
     print(report)
+    print("\n" + summarize_gap_log(wiki_dir / GAP_LOG_NAME))
 
 
 def main():
@@ -350,6 +722,16 @@ def main():
     p.add_argument("source", nargs="?", metavar="FILE", help="Specific *.md file; defaults to all")
     p.add_argument("--model", default=None, help="Model for ingest calls (default: inherit CLI default)")
     p.set_defaults(func=cmd_ingest)
+
+    p = sub.add_parser("route-ingest", help="Ingest via cheap router + bounded synthesis (scales to large corpora)")
+    p.add_argument("source", nargs="?", metavar="FILE", help="Specific *.md file; defaults to all")
+    p.add_argument("--router-model", default=None, help=f"Model for the router call (default: {ROUTER_MODEL})")
+    p.add_argument("--synth-model", default=None, help=f"Model for synthesis (default: {SYNTH_MODEL})")
+    p.set_defaults(func=cmd_route_ingest)
+
+    p = sub.add_parser("resolve-gaps", help="Re-synthesize concepts logged as gaps in wiki/.gap-log.jsonl")
+    p.add_argument("--synth-model", default=None, help=f"Model for synthesis (default: {SYNTH_MODEL})")
+    p.set_defaults(func=cmd_resolve_gaps)
 
     p = sub.add_parser("reindex", help="Rebuild index.md deterministically from concept-page frontmatter")
     p.set_defaults(func=cmd_reindex)

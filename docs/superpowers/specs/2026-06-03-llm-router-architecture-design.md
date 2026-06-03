@@ -168,3 +168,11 @@ The router **postpones**, not eliminates, N²: it still reads the whole *compact
 - Intake/farmers, embeddings layer, lint evolution (separate specs — §3).
 - Re-ingesting the existing 180 pages (they are the seed corpus + initial router index).
 - Web UI, git automation, non-markdown sources.
+
+## 11. Deferred hardening (Codex review 2026-06-03)
+
+A post-implementation adversarial review surfaced three lower-priority items intentionally deferred (the higher-severity findings — synthesis-failure gap recording, gap-log lock race, resolve-gaps new-slug detection, gaps-shape/corpus validation, missing-source guard, malformed-JSONL tolerance, SLUG_CAP test — were fixed before merge):
+
+- **Compact-index token warning (§9 instrumentation gap):** log the compact-index token size each run and warn at ~50K tokens as the trigger to pull the embeddings upgrade forward. Not urgent at ~125 pages (fires near ~2,000); implement when the corpus approaches that scale.
+- **Overwrite warning for non-selected pages:** when synthesis emits a slug that already exists on disk but was not in the selected K, the existing page is overwritten before the `new_slug` flag is raised. Recoverable via git, but a pre-write warning (with the existing page's first lines) would make unintended renames visible without a git diff.
+- **`extract_json` regex cleanup:** the fenced-JSON regex (`\{.*?\}` + DOTALL) can match the first inner brace of a nested envelope; it currently works only because the `find/rfind` fallback recovers. Replace with a balanced-brace scan or drop the regex branch.
