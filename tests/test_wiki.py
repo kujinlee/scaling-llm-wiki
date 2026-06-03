@@ -818,6 +818,24 @@ class TestCmdRouteIngest:
         with pytest.raises(SystemExit):
             wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
 
+    def test_slug_cap_limits_selected_pages(self, tmp_path, capsys):
+        # FIX G: when the router returns more than SLUG_CAP existing slugs, only
+        # SLUG_CAP pages are loaded into the synthesis prompt, and a "capped"
+        # message is emitted to stderr.
+        n = wiki.SLUG_CAP + 5
+        pages = {f"concept-{i:02d}": f"summary {i}" for i in range(n)}
+        wiki_dir, src, args = self._setup(tmp_path, pages)
+        router = json.dumps({"slugs": sorted(pages), "rationale": "x"})
+        synth = json.dumps({"files": [], "log_entry": "2026-06-03 12:00 | route-ingest | n",
+                            "summary": "s", "gaps": []})
+        with patch("wiki.call_claude", side_effect=[router, synth]) as cc, \
+                patch("wiki.reindex", return_value="r"):
+            wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        synth_prompt = cc.call_args_list[1][0][0]
+        # build_synth_prompt emits one "### Existing page: " heading per selected page
+        assert synth_prompt.count("### Existing page: ") == wiki.SLUG_CAP
+        assert "capped" in capsys.readouterr().err
+
     def test_missing_source_path_skips_without_traceback(self, tmp_path):
         # FIX E: a nonexistent source path must not raise — warn, record in the
         # failures file, and continue.
