@@ -2,7 +2,7 @@
 """LLM Wiki — Agentic AI & Claude Code knowledge base.
 
 A concept-first, LLM-maintained wiki over the YouTube playlist summary
-markdown files in this directory. Three operations — ingest, query, lint —
+markdown files in the raw/ directory. Three operations — ingest, query, lint —
 each powered by `claude --print` subprocess calls.
 
 Based on Karpathy's LLM Wiki pattern:
@@ -44,6 +44,7 @@ SLUG_CAP = 25               # max pages fed to synthesis per source
 GAP_LOG_NAME = ".gap-log.jsonl"
 ROUTE_LOCK_NAME = ".route-lock"
 ROUTE_FAILURES_NAME = ".route-failures.txt"
+RAW_DIR_NAME = "raw"        # raw source *.md files live under base_dir/raw/
 
 
 def init_wiki(wiki_dir: Path) -> None:
@@ -473,9 +474,9 @@ def cmd_ingest(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(".")):
     if not (wiki_dir / "CLAUDE.md").exists():
         print("Error: wiki/CLAUDE.md not found. Create it first.", file=sys.stderr)
         sys.exit(1)
-    sources = [Path(args.source)] if args.source else sorted(base_dir.glob("*.md"))
+    sources = [Path(args.source)] if args.source else sorted((base_dir / RAW_DIR_NAME).glob("*.md"))
     if not sources:
-        print("No *.md source files found.", file=sys.stderr)
+        print(f"No *.md source files found in {base_dir / RAW_DIR_NAME}/.", file=sys.stderr)
         sys.exit(1)
     ingest_model = getattr(args, "model", None)
     total = len(sources)
@@ -511,9 +512,9 @@ def cmd_route_ingest(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(
     if not (wiki_dir / "CLAUDE.md").exists():
         print("Error: wiki/CLAUDE.md not found. Create it first.", file=sys.stderr)
         sys.exit(1)
-    sources = [Path(args.source)] if args.source else sorted(base_dir.glob("*.md"))
+    sources = [Path(args.source)] if args.source else sorted((base_dir / RAW_DIR_NAME).glob("*.md"))
     if not sources:
-        print("No *.md source files found.", file=sys.stderr)
+        print(f"No *.md source files found in {base_dir / RAW_DIR_NAME}/.", file=sys.stderr)
         sys.exit(1)
     router_model = getattr(args, "router_model", None) or ROUTER_MODEL
     synth_model = getattr(args, "synth_model", None) or SYNTH_MODEL
@@ -634,7 +635,7 @@ def cmd_resolve_gaps(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(
     new_slug_records = []
     with route_lock(wiki_dir):
         for source_name, slugset in by_source.items():
-            source_path = base_dir / source_name
+            source_path = base_dir / RAW_DIR_NAME / source_name
             if not source_path.exists():
                 print(f"  source {source_name} missing; keeping gap unresolved", file=sys.stderr)
                 unresolved.append({"ts": datetime.now().strftime("%Y-%m-%d %H:%M"),

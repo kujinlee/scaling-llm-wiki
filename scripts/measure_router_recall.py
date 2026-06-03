@@ -44,7 +44,7 @@ def main():
 
     rows = []
     for src_stem in keyed:
-        source_file = BASE_DIR / f"{src_stem}.md"
+        source_file = BASE_DIR / wiki.RAW_DIR_NAME / f"{src_stem}.md"
         if not source_file.exists():
             continue
         routed = wiki.call_claude_json(

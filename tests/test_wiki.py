@@ -356,8 +356,9 @@ class TestCmdIngest:
         (wiki_dir / "CLAUDE.md").write_text("schema")
         (wiki_dir / "index.md").write_text("# Index")
         (wiki_dir / "log.md").write_text("# Log\n\n")
+        (tmp_path / "raw").mkdir()
         for i in range(11):
-            (tmp_path / f"src{i:02d}.md").write_text(f"source {i}")
+            (tmp_path / "raw" / f"src{i:02d}.md").write_text(f"source {i}")
 
         response = {
             "files": [{"path": "wiki/concepts/c.md", "content": "# C"}],
@@ -381,8 +382,9 @@ class TestCmdIngest:
         (wiki_dir / "CLAUDE.md").write_text("schema")
         (wiki_dir / "index.md").write_text("# Index")
         (wiki_dir / "log.md").write_text("# Log\n\n")
+        (tmp_path / "raw").mkdir()
         for i in range(3):
-            (tmp_path / f"src{i}.md").write_text("body")
+            (tmp_path / "raw" / f"src{i}.md").write_text("body")
 
         response = {
             "files": [{"path": "wiki/concepts/c.md", "content": "# C"}],
@@ -403,6 +405,36 @@ class TestCmdIngest:
         # all 3 sources still ingested despite the failing reindex
         assert (tmp_path / "wiki/concepts/c.md").exists()
         assert (wiki_dir / "log.md").read_text().count("| ingest | c") == 3
+
+    def test_discovers_sources_only_in_raw_dir(self, tmp_path):
+        # Sources live under raw/, not the project root. A stray root-level *.md
+        # (e.g. README.md) must NOT be treated as a source.
+        wiki_dir = tmp_path / "wiki"
+        (wiki_dir / "concepts").mkdir(parents=True)
+        (wiki_dir / "CLAUDE.md").write_text("schema")
+        (wiki_dir / "index.md").write_text("# Index")
+        (wiki_dir / "log.md").write_text("# Log\n\n")
+        (tmp_path / "README.md").write_text("# not a source")  # root-level, must be ignored
+        (tmp_path / "raw").mkdir()
+        (tmp_path / "raw" / "real-source.md").write_text("a real source")
+
+        response = {
+            "files": [{"path": "wiki/concepts/c.md", "content": "# C"}],
+            "log_entry": "2026-06-03 12:00 | ingest | real-source",
+            "summary": "ok",
+        }
+        args = MagicMock()
+        args.source = None
+        args.model = None
+
+        with patch("wiki.call_claude", return_value=json.dumps(response)) as cc, \
+                patch("wiki.reindex", return_value="reindexed"):
+            wiki.cmd_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+
+        # exactly one source ingested (raw/real-source.md), README.md ignored
+        assert cc.call_count == 1
+        assert "real-source" in cc.call_args_list[0][0][0]
+        assert "not a source" not in cc.call_args_list[0][0][0]
 
 
 class TestReindex:
@@ -918,7 +950,8 @@ class TestCmdResolveGaps:
         (wiki_dir / "concepts" / "context-engineering.md").write_text(
             "---\nconcept: ce\ncategory: Harness & Context Engineering\nsummary: s\n---\n# ce\n"
         )
-        (tmp_path / "talk.md").write_text("source body about context engineering")
+        (tmp_path / "raw").mkdir()
+        (tmp_path / "raw" / "talk.md").write_text("source body about context engineering")
         args = MagicMock()
         args.synth_model = None
         return wiki_dir, args

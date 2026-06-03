@@ -53,9 +53,9 @@ Requires the [Claude Code](https://claude.com/claude-code) CLI on your `PATH` an
 
 ```bash
 # Scalable ingest (recommended for large corpora)
-python wiki.py route-ingest                 # all *.md sources
-python wiki.py route-ingest some-talk.md    # a single source
-python wiki.py resolve-gaps                  # repair any router misses logged as gaps
+python wiki.py route-ingest                    # all raw/*.md sources
+python wiki.py route-ingest raw/some-talk.md   # a single source
+python wiki.py resolve-gaps                     # repair any router misses logged as gaps
 
 # Original brute-force ingest (kept as a fallback / for small corpora)
 python wiki.py ingest
@@ -72,14 +72,14 @@ Useful flags: `route-ingest --router-model/--synth-model`, `ingest --model`.
 
 ```
 wiki.py                      # single-module CLI (ingest, route-ingest, resolve-gaps, reindex, query, lint)
+raw/                         # ~200 raw source summaries (the corpus) + playlist-index.json
 wiki/
   CLAUDE.md                  # wiki conventions + category order
   concepts/*.md              # ~180 LLM-maintained concept pages (the knowledge base)
   index.md                   # deterministically generated from page frontmatter
   log.md                     # ingest history
   .gap-log.jsonl             # router-miss / rename journal (backstop)
-*.md                         # ~200 raw source summaries (the corpus)
-tests/test_wiki.py           # 110 tests
+tests/test_wiki.py           # 111 tests
 scripts/measure_router_recall.py   # router-recall validation harness (spec §8 gate)
 docs/superpowers/
   specs/  …-llm-router-architecture-design.md   # the approved design + roadmap
