@@ -568,3 +568,39 @@ class TestSafeWritePath:
         restrict = tmp_path / "wiki" / "concepts"
         with pytest.raises(ValueError):
             wiki.safe_write_path(tmp_path, "wiki/CLAUDE.md", restrict)
+
+
+class TestGapLog:
+    def test_append_writes_jsonl_record(self, tmp_path):
+        gap = tmp_path / ".gap-log.jsonl"
+        wiki.append_gap_log(gap, "some-talk.md", ["context-engineering"], kind="gap")
+        line = gap.read_text().strip()
+        rec = json.loads(line)
+        assert rec["source"] == "some-talk.md"
+        assert rec["slugs"] == ["context-engineering"]
+        assert rec["kind"] == "gap"
+        assert "ts" in rec
+
+    def test_append_is_additive(self, tmp_path):
+        gap = tmp_path / ".gap-log.jsonl"
+        wiki.append_gap_log(gap, "a.md", ["x"], kind="gap")
+        wiki.append_gap_log(gap, "b.md", ["y"], kind="new_slug")
+        lines = [l for l in gap.read_text().splitlines() if l.strip()]
+        assert len(lines) == 2
+
+    def test_preserves_unicode_slugs(self, tmp_path):
+        gap = tmp_path / ".gap-log.jsonl"
+        wiki.append_gap_log(gap, "한글.md", ["하네스"], kind="gap")
+        rec = json.loads(gap.read_text().strip())
+        assert rec["slugs"] == ["하네스"]
+
+    def test_summarize_empty_when_missing(self, tmp_path):
+        assert "no gaps" in wiki.summarize_gap_log(tmp_path / ".gap-log.jsonl").lower()
+
+    def test_summarize_lists_entries(self, tmp_path):
+        gap = tmp_path / ".gap-log.jsonl"
+        wiki.append_gap_log(gap, "a.md", ["x"], kind="gap")
+        wiki.append_gap_log(gap, "b.md", ["y"], kind="new_slug")
+        out = wiki.summarize_gap_log(gap)
+        assert "a.md" in out and "x" in out
+        assert "b.md" in out and "y" in out

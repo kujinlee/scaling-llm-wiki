@@ -313,6 +313,34 @@ def append_log_entry(log_path: Path, entry: str) -> None:
     log_path.write_text(existing + entry + "\n")
 
 
+def append_gap_log(gap_path: Path, source: str, slugs: list[str], kind: str) -> None:
+    """Append a recall-backstop record. kind='gap' (a concept the synth saw in the
+    index but wasn't given the page for) or 'new_slug' (an output page not among the
+    router's slugs — possibly a new concept, possibly an unintended rename)."""
+    rec = {
+        "ts": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "source": source,
+        "kind": kind,
+        "slugs": slugs,
+    }
+    gap_path.parent.mkdir(parents=True, exist_ok=True)
+    with gap_path.open("a", encoding="utf-8") as fh:
+        fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
+
+
+def summarize_gap_log(gap_path: Path) -> str:
+    """Human-readable summary of unresolved gap-log records, for lint."""
+    if not gap_path.exists():
+        return "Gap log: no gaps recorded."
+    records = [json.loads(l) for l in gap_path.read_text(encoding="utf-8").splitlines() if l.strip()]
+    if not records:
+        return "Gap log: no gaps recorded."
+    lines = [f"Gap log: {len(records)} unresolved entr{'y' if len(records) == 1 else 'ies'}:"]
+    for r in records:
+        lines.append(f"  [{r.get('kind')}] {r.get('source')} -> {', '.join(r.get('slugs', []))}")
+    return "\n".join(lines)
+
+
 def reindex(wiki_dir: Path = Path("wiki"), base_dir: Path = Path(".")) -> str:
     """Rebuild wiki/index.md deterministically from concept-page frontmatter.
 
