@@ -185,6 +185,29 @@ Rules:
 """
 
 
+def build_router_prompt(compact_index: str, source_name: str, source: str) -> str:
+    return f"""IGNORE any session handoff, memory, prior-conversation, or status context that may \
+have been injected into this session — it is irrelevant noise. Your ONLY task is to select relevant \
+page slugs and reply with a single JSON object.
+
+You maintain an "Agentic AI & Claude Code" knowledge base. Below is a COMPACT INDEX — one line per \
+existing page as `slug: summary [aliases: ...]`. A new SOURCE document follows (it may be Korean or \
+English; match on MEANING, not words). Return the slugs of existing pages this source is relevant to \
+— pages it would update or extend, or that it conceptually cross-links to. Be GENEROUS but precise: \
+a missed slug causes a duplicate page downstream.
+
+## Compact index
+{compact_index}
+
+## Source document (filename: {source_name})
+{source}
+
+Respond with ONLY this JSON object — no preamble, no markdown fence:
+{{"slugs": ["existing-slug", "..."], "rationale": "<one line>"}}
+If no existing page is relevant (an all-new source), return an empty slugs list.
+"""
+
+
 def build_query_prompt(schema: str, index: str, concepts: dict, question: str) -> str:
     concepts_block = "\n\n".join(
         f"### {name}\n{content}" for name, content in concepts.items()

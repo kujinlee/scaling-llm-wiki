@@ -630,3 +630,26 @@ class TestRouteLock:
         finally:
             fcntl.flock(held, fcntl.LOCK_UN)
             held.close()
+
+
+class TestBuildRouterPrompt:
+    def test_includes_compact_index(self):
+        prompt = wiki.build_router_prompt("rag: grounds answers", "talk.md", "body")
+        assert "rag: grounds answers" in prompt
+
+    def test_includes_source_and_filename(self):
+        prompt = wiki.build_router_prompt("idx", "my-talk.md", "the source body")
+        assert "my-talk.md" in prompt
+        assert "the source body" in prompt
+
+    def test_asks_for_slugs_json(self):
+        prompt = wiki.build_router_prompt("idx", "s.md", "src")
+        assert '"slugs"' in prompt
+
+    def test_has_guard_line(self):
+        prompt = wiki.build_router_prompt("idx", "s.md", "src")
+        assert "IGNORE any session handoff" in prompt
+
+    def test_warns_a_miss_causes_duplicate(self):
+        prompt = wiki.build_router_prompt("idx", "s.md", "src")
+        assert "duplicate" in prompt.lower()
