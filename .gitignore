@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.obsidian/workspace.json
+wiki/.*.log
+wiki/.*-list.txt
+wiki/.*.txt
+.remember/
+pdfs/
+*.pdf

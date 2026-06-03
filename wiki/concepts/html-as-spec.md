@@ -1,0 +1,32 @@
+---
+concept: HTML as Specification Format
+category: Harness & Context Engineering
+summary: Using information-dense HTML rather than Markdown for an agent's planning and specification artifacts, enabling richer visual design directions, screenshot-based feedback, and more ergonomic understanding — token-heavier up front but fewer iterations overall.
+aliases: [HTML specs, HTML over Markdown, HTML specifications, unreasonable effectiveness of HTML files, HTML planning artifacts, visual specs, HTML design directions]
+related: [context-engineering, claude-md, agent-alignment-artifacts, multimodal-visual-input, visual-brainstorming, interactive-artifacts, curated-design-systems, agent-native-verification, token-maxing, instruction-budget]
+sources: [how-we-claude-code]
+---
+
+# HTML as Specification Format
+
+HTML as specification format is the practice of writing an agent's *planning and spec artifacts* in HTML rather than Markdown, because HTML is a more information-dense, ergonomic, and visually expressive medium for the kinds of complex, lengthy specifications agentic work increasingly demands. Markdown has been the "lingua franca" of AI-native software development — lightweight, agent-readable, easy to diff — but its flatness becomes a limitation when a spec must carry layout, visual design directions, side-by-side options, or rich structure. Rendering the spec as HTML lets the agent express and the human review *visual* intent directly: an agent can generate several distinct design directions for an interface as rendered HTML, and the human can respond with nuanced, even screenshot-based, feedback. It is a `[[context-engineering]]` choice about the *form* of the planning artifact — trading Markdown's terseness for a denser, more legible surface where understanding and feedback flow faster.
+
+## Key Mechanics
+
+- **Information density over Markdown flatness**: HTML carries structure, layout, and visual hierarchy that Markdown cannot, so a long or complex spec is more ergonomic to author and to understand as HTML — the format scales with spec complexity where Markdown degrades into a wall of text.
+- **Rendered design directions, not described ones**: the agent generates *multiple* distinct HTML design directions for an artifact (the corpus's example is a bill-splitting app), letting the human compare real rendered options rather than imagining them from prose — the spec-format cousin of `[[visual-brainstorming]]`'s clickable mockups and of generating variations to select among.
+- **Screenshot-grade visual feedback**: because the spec renders, the human can feed back at the visual level — including screenshots — which a vision-capable model reads as a precise reference (the corpus cites Opus 4.7's enhanced vision), turning review into `[[multimodal-visual-input]]` rather than text-only commentary.
+- **A planning artifact, not the deliverable**: HTML specs sit in the design/alignment phase — they make the agent's intended structure and look legible for correction *before* implementation, the visual-format counterpart to the `[[agent-alignment-artifacts]]` discipline of surfacing the agent's plan for human "brain surgery" early.
+- **Recommended operating posture**: the corpus pairs the technique with agent settings tuned for it — high reasoning effort for the spec itself, and a fast generation mode for rapidly iterating spec variants — so the denser format is produced cheaply enough to explore several directions.
+
+## How It Appears in the Corpus
+
+The Anthropic "How we Claude Code" workshop (Ara, Applied AI team), building on a colleague's notion of "the unreasonable effectiveness of HTML files," advocates HTML over Markdown for specifications. It argues that while Markdown has been the lingua franca of AI-native development, its limits show on complex or lengthy specs, whereas HTML offers a more information-dense, ergonomic format for planning and understanding with richer interaction and visual feedback. The talk shows Claude generating diverse HTML design directions for a bill-splitting app so the developer can give nuanced feedback including screenshots — especially effective with Opus 4.7's vision — and recommends high-effort auto mode plus a fast mode for rapid spec iteration. It concedes HTML specs look token-inefficient at first but contends they yield fewer iterations and greater long-term efficiency.
+
+## Tensions & Tradeoffs
+
+- **Token cost up front vs. fewer iterations**: HTML specs consume more tokens than terse Markdown, which reads as wasteful in isolation — but the corpus's bet is that the richer artifact converges in fewer rounds, a concrete instance of the `[[token-maxing]]` calculus (spend tokens where they reduce total work) rather than blanket frugality, and in tension with the `[[claude-md]]` / `[[context-rot]]` discipline of keeping standing context lean. The reconciliation is that a *spec* is a transient planning artifact, not always-loaded context, so density buys legibility without permanently bloating the window.
+- **Distinct from `[[interactive-artifacts]]` and `[[visual-brainstorming]]`**: an interactive artifact is the *delivered output* (a finished app the user manipulates) and a visual-brainstorming surface is a *clickable feedback companion*; an HTML spec is the *planning document itself*, rendered for legibility and review. They overlap in using a rendered surface but differ in role — specify-and-align versus deliver-and-decide.
+- **Density helps only if it stays readable**: an over-elaborate HTML spec can become harder to scan than plain Markdown, so the format's payoff depends on the agent producing *clean*, well-structured HTML — the same "quality of the artifact bounds the value" caveat that bounds any planning document.
+- **Visual feedback presupposes a vision model**: the screenshot-and-design-direction loop leans on strong model vision, so the technique's leverage is coupled to the model's multimodal capability — weaker vision narrows it back toward text feedback.
+- **Vantage caveat**: the claims come from a single first-party Anthropic workshop demonstrating one workflow, so the "fewer iterations, greater efficiency" payoff is asserted from practice rather than independently measured — the durable idea is *matching the spec format's richness to the spec's complexity*, not HTML specifically.

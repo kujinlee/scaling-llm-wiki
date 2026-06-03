@@ -1,0 +1,34 @@
+---
+concept: Agentic Loop
+category: Agent Architecture & Patterns
+summary: The core continuous reasoning cycle of a coding agent — the model decides the next action, a tool executes it, the result feeds back, and the model re-evaluates — with the model, not hardcoded logic, driving the workflow.
+aliases: [agentic loop, agent loop, reasoning loop, decide-execute-feedback loop, the agent's loop, model-driven control loop, think-act-observe loop, prompt-think-tool-observe loop]
+related: [robust-tool-design, subagent-context-isolation, lifecycle-hooks, generator-verifier-loop, self-verification-loop, harness-engineering, model-context-protocol, tool-integration-hierarchy, claude-md, distributed-systems-literacy, custom-harness-decision]
+sources: [claude-s-internal-architecture-revealed-how-ai-agents-actual, i-built-an-agent-harness-in-go-agent-harnesses-explained]
+---
+
+# Agentic Loop
+
+The agentic loop is the core control cycle that turns a language model into an agent: the model decides the next action, a tool executes that action against the environment, the result is fed back into the model, and the model re-evaluates to choose the next step — repeating until the task is done. Its defining property is that *the model guides the workflow* rather than hardcoded logic: control flow emerges from the model's iterative decisions, not from a fixed program the engineer wrote in advance. This is the substrate beneath nearly every other agent pattern in the corpus — the raw cycle that `[[generator-verifier-loop]]`, `[[self-verification-loop]]`, and `[[hill-climbing]]` specialize, and that a `[[harness-engineering]]` harness wraps with rules and structure.
+
+## Key Mechanics
+
+- **Decide → execute → feed back → re-evaluate**: each turn the model emits a tool call, the tool runs and produces a result, the result is appended to the context, and the model reasons over the updated state to pick the next action — an iterative cycle rather than a one-shot generation.
+- **Four-part anatomy**: the loop is constituted by four components — a *system prompt* (the agent's identity, rules, and instructions), a *message history* that serves as working memory (every tool call, result, and response is appended to maintain context), a *tool surface* (the actions the model can take — read files, run commands, search the web), and a *stop condition* (when to quit: the model decides it is done, or a hard limit like max iterations or a cost budget is hit). Naming these parts makes the otherwise-implicit loop a concrete, buildable object.
+- **Model-driven control flow**: the loop is dynamic, not scripted — the sequence of actions is chosen by the model at runtime, so the same loop handles arbitrarily different tasks without per-task branching logic. This is what distinguishes an *agent* from a fixed pipeline.
+- **Separation of concerns — "the model thinks, the tools do"**: the model never touches the environment directly; all side effects (file I/O, shell commands, web searches) flow through tools. This boundary is what makes the agent inspectable and safe — every environmental action is a discrete, interceptable tool call rather than opaque model behavior, the precondition for the middleware interception of `[[lifecycle-hooks]]`.
+- **A registry of many tools**: the loop draws on a sizeable tool set (the source cites 20+ tools for file operations, shell execution, web search, and more), and even delegation is expressed as a tool — spawning a `[[subagent-context-isolation|sub-agent]]` is itself just another tool call in the registry, preserving architectural consistency.
+- **Initialized with context**: before the loop begins, the agent loads project-specific context (`[[claude-md]]`) and reusable `[[procedural-knowledge-skills|skills]]`, so the model's first decision is already grounded in conventions and pre-packaged behaviors rather than starting cold.
+
+## How It Appears in the Corpus
+
+The ByteMonk "Claude's Internal Architecture Revealed" analysis (built from a reconstruction of Claude Code's exposed source) centers the architecture on "a continuous reasoning loop": the model decides the next action, a tool executes it, and the result is fed back for the model to re-evaluate. It stresses that this iterative, model-guided decision-making — not hardcoded logic — is the key, and that a crucial design principle is the separation of concerns in which the model "thinks" while tools "do," so the model never directly interacts with the environment. Sub-agent spawning is presented as merely another tool call (`agent tool`) within the same registry, keeping the delegation mechanism consistent with the rest of the loop.
+
+The Ed Zynda ("What The Func?") tutorial "I built an Agent Harness in Go" presents the same cycle as a plain `while` loop — prompt, think, optionally call a tool, observe the result, think again, until the model produces a final answer — and decomposes it into its four parts (system prompt, message history, tool surface, stop condition). It frames this loop as the small, shared *engine* common to all coding agents, with the surrounding control plane (`[[custom-harness-decision]]`) being where products actually differ.
+
+## Tensions & Tradeoffs
+
+- **Model-driven flexibility vs. determinism**: letting the model choose each action handles open-ended tasks no fixed script could, but it forfeits the guarantees of `[[deterministic-workflow-orchestration]]`, where critical steps are enforced rather than left to the model's discretion — which is exactly why harnesses, hooks, and permission tiers are layered around the loop rather than trusting it bare.
+- **The loop is only as good as its tools**: because every action is a tool call, the loop inherits the three failure modes of `[[robust-tool-design]]` (no call, wrong call, bad parameters) — a capable model still stalls or errs if the tools are poorly described or brittle.
+- **Unbounded by construction**: a loop with no verifiable finish condition runs indefinitely, the same termination problem that `[[generator-verifier-loop]]` and `[[hill-climbing]]` solve with verifiable goals and safety caps — the bare loop has no built-in stopping rule, which is why an explicit stop condition (max iterations, cost budget) is one of its four named parts.
+- **Context accumulates as it runs**: every tool result fed back into the loop consumes the finite context window, so a long loop drifts toward `[[context-decay]]` and depends on `[[context-compaction]]` and `[[subagent-context-isolation]]` to stay within budget — the loop's own feedback mechanism is also its main source of context pressure.

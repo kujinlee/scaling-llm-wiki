@@ -1,0 +1,33 @@
+---
+concept: Generator-Verifier Loop
+category: Agent Architecture & Patterns
+summary: A two-agent autonomous loop in which a worker agent executes steps while a separate supervisor agent checks goal completion after each step and feeds back until a verifiable finish condition is met, bounded by a safety cap.
+aliases: [generator-verifier loop, worker-boss loop, creator-verifier loop, actor-critic loop, supervisor agent, goal-checking agent, dual-agent goal loop, slash goal command]
+related: [self-verification-loop, hill-climbing, exploratory-spec-discovery, long-running-agent-missions, holdout-validation, verifiability-law, reward-hacking, permission-tiering, graduated-autonomy, multi-agent-code-review]
+sources: [claude-code-just-dropped-goal-master-it-in-8-minutes]
+---
+
+# Generator-Verifier Loop
+
+A generator-verifier loop is an autonomous execution pattern in which two agents collaborate: a *worker* agent that does the actual work (writing code, organizing files, building artifacts) and a separate *supervisor* ("boss") agent that, after every step the worker takes, asks one question — "is the goal met yet?" — and either confirms completion or returns specific feedback on why the job is incomplete so the worker continues. The loop persists until the supervisor confirms a predefined, *verifiable* finish line, at which point execution stops. Its defining move is the structural separation of *generation* from *verification* into two distinct agents in a tight iteration loop — distinct from `[[self-verification-loop]]`, where a single agent checks its own output. This is what lets an agent run hands-off on a long multi-step job (categorizing a year of bank statements, generating a week of content) instead of pausing for a human "keep going" after each sub-task.
+
+## Key Mechanics
+
+- **Two roles, one loop**: a *worker* (the main reasoning model, e.g. Opus or Sonnet) executes each step, and a *boss*/supervisor agent reviews that step against the goal. No → the boss articulates what is still missing and the worker iterates; yes → the loop halts. A visible indicator and timer mark an active goal.
+- **Verification is externalized, not self-administered**: separating the checker from the executor is the core distinction from `[[self-verification-loop]]` — the supervisor judges completion on its own terms rather than the worker grading itself, a tight two-agent analogue of the creator-verifier split in `[[long-running-agent-missions]]` and the bias defense of `[[holdout-validation]]`.
+- **A verifiable finish line is mandatory**: vague conditions ("make no mistakes," "do a good job," "clean up my files") leave the supervisor with nothing to objectively confirm, so the loop never terminates and burns tokens. The condition must name checkable artifacts — e.g. "every file in the receipts folder is renamed with date and vendor, sorted into monthly folders, and a spending CSV exists with one row per receipt" — the same constructible-verifier precondition as `[[verifiability-law]]` and `[[hill-climbing]]`.
+- **Safety cap as the seatbelt**: because a flawed finish condition can produce a runaway loop, the goal should always carry a turn or time limit ("stop after 30 turns," "stop after 45 minutes") that halts execution regardless of whether the supervisor is satisfied — a hard bound on autonomous token consumption.
+- **Hands-off requires auto-approve, which widens the permission surface**: fully uninterrupted operation means enabling an auto-approve mode so the worker acts without per-command sign-off, mitigated by built-in safety nets that scope actions to the project — the trade `[[permission-tiering]]` governs.
+- **Cost discipline**: the pattern is gated behind paid plans, rewards starting small, and pairs with usage monitoring, because a poorly-defined finish line converts autonomy directly into spend.
+
+## How It Appears in the Corpus
+
+The Tristen O'Brien tutorial on Claude Code's `/goal` command presents the worker/boss architecture explicitly: a goal is set with a verifiable finish-line condition, the worker executes while the boss repeatedly asks "is the goal met?" and supplies feedback until it is, and the loop stops on confirmation. It stresses that goal conditions must be specific and verifiable to avoid endless loops, that a safety cap (turn/time limit) is essential insurance against runaway tasks, and that "auto-approve" enables truly hands-off operation within project-scoped safety nets. It situates `/goal` as a productized autonomous loop for multi-step jobs (bank-statement categorization, social-content generation, invoice creation) with cost managed via small starting tasks and usage monitoring. (The same `/goal` command name appears for OpenAI Codex in `[[exploratory-spec-discovery]]` and `[[hill-climbing]]`, so the verifiable-goal, autonomous-loop pattern now spans both major coding agents.)
+
+## Tensions & Tradeoffs
+
+- **The supervisor bounds the trust**: the loop is only as good as the boss's judgment and the finish condition it checks against — a clean but wrong or gameable goal yields confident but incorrect completion, the `[[reward-hacking]]` ceiling and the "quality of the check bounds the trust" caveat of `[[self-verification-loop]]` and `[[verifiability-law]]`, here applied to the goal definition.
+- **External verifier, but same model**: splitting worker from boss attacks the *self-grading* bias of single-agent self-verification, but a supervisor on the same model can still share the worker's blind spots — the model-diversity gap that `[[cross-model-critique]]` and `[[holdout-validation]]` address, the latter by also withholding context from the verifier.
+- **Unverifiable goals are unbounded by construction**: without a checkable finish line the loop runs indefinitely, so the safety cap is not a nicety but the only hard stop — the same anti-proxy-signal, treat-uncertainty-as-not-achieved discipline that `[[exploratory-spec-discovery]]` enforces, met here with a blunt turn/time limit rather than a smarter verifier.
+- **Autonomy gated by trust and cost**: hands-off auto-approve is exactly where `[[graduated-autonomy]]` applies — start with small, low-stakes goals and widen scope as the loop proves reliable — because the convenience of uninterrupted execution is also unbounded blast radius and unbounded spend.
+- **Distinct from `[[long-running-agent-missions]]`**: missions impose a fixed three-role architecture (orchestrator/workers/validators) with contracts agreed before coding over a multi-day horizon; the generator-verifier loop is the tight two-agent, single-goal case — less ceremony, no orchestrator, terminating on one verifiable condition rather than coordinating a phased plan.
