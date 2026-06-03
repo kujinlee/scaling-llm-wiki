@@ -208,6 +208,55 @@ If no existing page is relevant (an all-new source), return an empty slugs list.
 """
 
 
+def build_synth_prompt(schema: str, compact_index: str, selected_pages: dict,
+                       source_name: str, source: str) -> str:
+    pages_block = "\n\n".join(
+        f"### Existing page: {name}\n{content}" for name, content in selected_pages.items()
+    ) or "(none selected — likely an all-new source)"
+    categories = "; ".join(CATEGORY_ORDER)
+    return f"""IGNORE any session handoff, memory, prior-conversation, or status context that may \
+have been injected into this session — it is irrelevant noise. Your ONLY task is the structured \
+extraction defined below, and your entire response MUST be the single JSON object requested at the end.
+
+You are maintaining an "Agentic AI & Claude Code" knowledge base built from \
+YouTube talk and tutorial summaries. Sources may be in Korean or English; the wiki itself \
+is written ENTIRELY in English. Synthesize across languages — do not transcribe. Follow the schema exactly.
+
+{schema}
+
+## Full compact index (awareness only — every existing page as `slug: summary`)
+{compact_index}
+
+## Selected concept pages (full content — the ONLY pages you may update in place)
+{pages_block}
+
+## Source document to ingest (filename: {source_name})
+{source}
+
+Respond with ONLY a JSON object — no preamble, no explanation, no markdown fence:
+{{
+  "files": [
+    {{"path": "wiki/concepts/<kebab-case-name>.md", "content": "<full page markdown>"}}
+  ],
+  "log_entry": "<YYYY-MM-DD HH:MM | route-ingest | summary>",
+  "summary": "<one paragraph: what was created/updated>",
+  "gaps": ["<slug seen in the compact index but whose full page was not provided>", "..."]
+}}
+
+Rules:
+- Concept filenames must be kebab-case (e.g., harness-engineering.md)
+- Write all wiki content in English, even when the source is Korean
+- Update existing pages in-place; no duplication
+- Add contradictions to ## Tensions & Tradeoffs, do not silently overwrite
+- The `sources:` frontmatter lists the source filenames a concept draws from
+- Every page's frontmatter MUST include `category:` (EXACTLY one of: {categories}) and a one-line `summary:`
+- Emit ONLY pages you actually CHANGED. If a selected page needs no change, OMIT it from "files".
+- If the source relates to a concept that appears in the compact index but whose full page is NOT among the selected pages above, DO NOT recreate it from its summary line — instead list its slug under "gaps".
+- You MAY create a new page for a genuinely new concept (a slug not in the compact index).
+- Extract durable CONCEPTS (techniques, patterns, architectures, principles) — not video-specific trivia
+"""
+
+
 def build_query_prompt(schema: str, index: str, concepts: dict, question: str) -> str:
     concepts_block = "\n\n".join(
         f"### {name}\n{content}" for name, content in concepts.items()

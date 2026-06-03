@@ -653,3 +653,36 @@ class TestBuildRouterPrompt:
     def test_warns_a_miss_causes_duplicate(self):
         prompt = wiki.build_router_prompt("idx", "s.md", "src")
         assert "duplicate" in prompt.lower()
+
+
+class TestBuildSynthPrompt:
+    def test_includes_schema_and_index_and_source(self):
+        prompt = wiki.build_synth_prompt("MY_SCHEMA", "rag: grounds", {"rag": "full rag page"}, "t.md", "src body")
+        assert "MY_SCHEMA" in prompt
+        assert "rag: grounds" in prompt           # compact index for awareness
+        assert "full rag page" in prompt          # selected page full content
+        assert "src body" in prompt
+        assert "t.md" in prompt
+
+    def test_marks_none_selected(self):
+        prompt = wiki.build_synth_prompt("s", "idx", {}, "t.md", "src")
+        assert "none selected" in prompt.lower()
+
+    def test_envelope_has_gaps_field(self):
+        prompt = wiki.build_synth_prompt("s", "idx", {}, "t.md", "src")
+        assert '"gaps"' in prompt
+        assert '"files"' in prompt
+
+    def test_rule_omit_unchanged_pages(self):
+        prompt = wiki.build_synth_prompt("s", "idx", {}, "t.md", "src")
+        assert "OMIT" in prompt
+        assert "gaps" in prompt
+
+    def test_requires_category_vocabulary(self):
+        prompt = wiki.build_synth_prompt("s", "idx", {}, "t.md", "src")
+        assert "Memory & Knowledge Systems" in prompt
+
+    def test_has_guard_line_and_english_rule(self):
+        prompt = wiki.build_synth_prompt("s", "idx", {}, "t.md", "src")
+        assert "IGNORE any session handoff" in prompt
+        assert "English" in prompt
