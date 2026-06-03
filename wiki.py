@@ -566,8 +566,8 @@ def cmd_route_ingest(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(
             if gaps:
                 append_gap_log(gap_path, source_path.name, gaps, kind="gap")
 
-            append_log_entry(wiki_dir / "log.md", resp["log_entry"])
-            print(f"  {resp['summary']}")
+            append_log_entry(wiki_dir / "log.md", resp.get("log_entry") or f"{datetime.now().strftime('%Y-%m-%d %H:%M')} | route-ingest | {source_path.name}")
+            print(f"  {resp.get('summary', '(no summary)')}")
             _try_reindex(wiki_dir, base_dir, label=f"{i}/{total}")
 
 
@@ -605,6 +605,9 @@ def cmd_resolve_gaps(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(
                 continue
             ctx = read_wiki_context(wiki_dir)
             compact = build_compact_index(ctx["concepts"])
+            missing = [s for s in sorted(slugset) if not (concepts_dir / f"{s}.md").exists()]
+            if missing:
+                print(f"  warning: gap slugs no longer on disk: {missing}", file=sys.stderr)
             selected = {s: (concepts_dir / f"{s}.md").read_text()
                         for s in sorted(slugset) if (concepts_dir / f"{s}.md").exists()}
             try:
@@ -625,8 +628,8 @@ def cmd_resolve_gaps(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(
                 except (ValueError, KeyError) as exc:
                     print(f"  rejected unsafe path ({exc})", file=sys.stderr)
             write_wiki_files(valid_files, base_dir)
-            append_log_entry(wiki_dir / "log.md", resp["log_entry"])
-            print(f"  resolved {source_name}: {resp['summary']}")
+            append_log_entry(wiki_dir / "log.md", resp.get("log_entry") or f"{datetime.now().strftime('%Y-%m-%d %H:%M')} | resolve-gaps | {source_name}")
+            print(f"  resolved {source_name}: {resp.get('summary', '(no summary)')}")
             _try_reindex(wiki_dir, base_dir, label=source_name)
 
     # rewrite the gap log keeping non-gap records + any unresolved gaps
