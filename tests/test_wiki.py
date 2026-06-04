@@ -957,6 +957,20 @@ class TestCmdRouteIngest:
         assert any(r["kind"] == "gap" and r["source"] == "talk.md"
                    and r["slugs"] == ["rag"] for r in recs)
 
+    def test_route_ingest_new_sentinel_format(self, tmp_path):
+        wiki_dir, src, args = self._setup(tmp_path, {"rag": "grounds answers"})
+        router = json.dumps({"slugs": ["rag"], "rationale": "about RAG"})
+        synth = (
+            '{"log_entry": "2026-06-03 12:00 | route-ingest | rag", "summary": "updated rag", "gaps": []}\n'
+            "===WIKI-FILE: wiki/concepts/rag.md===\n"
+            '# RAG\n\nUses "boss" quotes and {braces} fine.\n'
+        )
+        with patch("wiki.call_claude", side_effect=[router, synth]), \
+                patch("wiki.reindex", return_value="reindexed"):
+            wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        assert (wiki_dir / "concepts" / "rag.md").read_text() == \
+            '# RAG\n\nUses "boss" quotes and {braces} fine.'
+
 
 class TestCmdResolveGaps:
     def _setup(self, tmp_path):
@@ -1042,6 +1056,20 @@ class TestCmdResolveGaps:
         assert not any(r["kind"] == "gap" for r in recs)
         # new_slug for the unexpected output page retained
         assert any(r["kind"] == "new_slug" and r["slugs"] == ["brand-new"] for r in recs)
+
+    def test_resolve_new_sentinel_format(self, tmp_path):
+        wiki_dir, args = self._setup(tmp_path)
+        gap_path = wiki_dir / wiki.GAP_LOG_NAME
+        wiki.append_gap_log(gap_path, "talk.md", ["context-engineering"], kind="gap")
+        synth = (
+            '{"log_entry": "2026-06-03 12:00 | resolve-gaps | ce", "summary": "resolved", "gaps": []}\n'
+            "===WIKI-FILE: wiki/concepts/context-engineering.md===\n"
+            "# ce resolved\n"
+        )
+        with patch("wiki.call_claude", side_effect=[synth]), patch("wiki.reindex", return_value="r"):
+            wiki.cmd_resolve_gaps(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        assert (wiki_dir / "concepts" / "context-engineering.md").read_text() == "# ce resolved"
+        assert "context-engineering" not in gap_path.read_text()
 
 
 class TestCmdLintGapReport:

@@ -641,7 +641,7 @@ def cmd_route_ingest(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(
 
             # (3) SYNTHESIZE
             try:
-                resp = call_claude_json(
+                resp = call_claude_synthesis(
                     build_synth_prompt(ctx["schema"], compact, selected, source_path.name, source_text),
                     model=synth_model,
                 )
@@ -728,7 +728,7 @@ def cmd_resolve_gaps(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(
             selected = {s: (concepts_dir / f"{s}.md").read_text()
                         for s in sorted(slugset) if (concepts_dir / f"{s}.md").exists()}
             try:
-                resp = call_claude_json(
+                resp = call_claude_synthesis(
                     build_synth_prompt(ctx["schema"], compact, selected, source_name, source_path.read_text()),
                     model=synth_model,
                 )
