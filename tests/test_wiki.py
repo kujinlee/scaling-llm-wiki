@@ -1244,6 +1244,18 @@ class TestParseSynthesisResponse:
         assert len(out["files"]) == 1
         assert out["files"][0]["content"] == body
 
+    def test_malformed_sentinel_path_raises_not_silent_loss(self):
+        # A WIKI-FILE marker whose path does NOT match the concept-path shape
+        # (uppercase/underscore here) must NOT be silently parsed as "changed
+        # nothing" — it raises so call_claude_synthesis retries (no silent page loss).
+        text = (
+            '{"log_entry": "l", "summary": "s", "gaps": ["foo"]}\n'
+            "===WIKI-FILE: wiki/concepts/Foo_Bar.md===\n"
+            "# Foo\nplain body\n"
+        )
+        with pytest.raises(ValueError):
+            wiki.parse_synthesis_response(text)
+
     def test_concept_shaped_sentinel_in_content_does_split(self):
         # Pins the documented residual risk (spec §9): a *concept-path-shaped*
         # sentinel at line start inside a body WILL split it. If a future change

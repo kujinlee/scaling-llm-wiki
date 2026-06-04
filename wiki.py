@@ -52,6 +52,11 @@ WIKI_FILE_SENTINEL = "===WIKI-FILE: {path}==="   # prompt rendering (one space e
 WIKI_FILE_SENTINEL_RE = re.compile(
     r"(?m)^[ \t]*===WIKI-FILE:[ \t]*(wiki/concepts/[a-z0-9-]+\.md)[ \t]*===[ \t]*$"
 )
+# Loose detector: a line that STARTS like a sentinel but may not be a valid concept
+# path. Used to distinguish "model attempted the sentinel format but botched the path"
+# (retry) from a genuine old-style JSON reply (fall back). Cannot false-fire on valid
+# JSON, where string newlines are escaped so "===WIKI-FILE:" never starts a physical line.
+WIKI_FILE_SENTINEL_LOOSE_RE = re.compile(r"(?m)^[ \t]*===WIKI-FILE:")
 
 
 def init_wiki(wiki_dir: Path) -> None:
@@ -188,6 +193,11 @@ def parse_synthesis_response(text: str) -> dict:
     text = text.replace("\r\n", "\n").replace("\r", "\n")
     parts = WIKI_FILE_SENTINEL_RE.split(text)
     if len(parts) == 1:                       # no concept-path sentinel matched
+        if WIKI_FILE_SENTINEL_LOOSE_RE.search(text):
+            # Model attempted the sentinel format but no path matched the concept-path
+            # shape (e.g. a malformed slug). Don't silently treat as "changed nothing" —
+            # raise so call_claude_synthesis retries.
+            raise ValueError("WIKI-FILE markers present but no valid concept-path sentinel")
         meta = extract_json(text)             # raises ValueError on garbage -> retry
         if "files" in meta:
             return {"files": meta["files"], **_meta_fields(meta)}   # old-style envelope
