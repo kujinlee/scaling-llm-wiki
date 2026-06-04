@@ -187,7 +187,7 @@ class TestBuildIngestPrompt:
 
     def test_instructs_json_response(self):
         prompt = wiki.build_ingest_prompt("schema", "index", {}, "s.md", "src")
-        assert '"files"' in prompt
+        assert "===WIKI-FILE:" in prompt
         assert '"log_entry"' in prompt
         assert '"summary"' in prompt
 
@@ -202,8 +202,8 @@ class TestBuildIngestPrompt:
     def test_instructs_no_index_emission(self):
         prompt = wiki.build_ingest_prompt("schema", "index", {}, "s.md", "src")
         assert "Do NOT emit wiki/index.md" in prompt
-        # the JSON output template lists only the concepts/ path, not index.md
-        template = prompt.split('"files"', 1)[1].split("Rules:", 1)[0]
+        # the output format template lists only the concepts/ path, not index.md
+        template = prompt.split("===WIKI-FILE:", 1)[1].split("Rules:", 1)[0]
         assert "wiki/concepts/" in template
         assert "wiki/index.md" not in template
 
@@ -730,7 +730,7 @@ class TestBuildSynthPrompt:
     def test_envelope_has_gaps_field(self):
         prompt = wiki.build_synth_prompt("s", "idx", {}, "t.md", "src")
         assert '"gaps"' in prompt
-        assert '"files"' in prompt
+        assert "===WIKI-FILE:" in prompt
 
     def test_rule_omit_unchanged_pages(self):
         prompt = wiki.build_synth_prompt("s", "idx", {}, "t.md", "src")
@@ -1188,6 +1188,24 @@ class TestParseSynthesisResponse:
     def test_total_garbage_raises(self):
         with pytest.raises(ValueError):
             wiki.parse_synthesis_response("not json and no sentinel at all")
+
+
+class TestOutputFormatInstructions:
+    def test_synth_prompt_uses_sentinel_format(self):
+        p = wiki.build_synth_prompt("schema", "idx", {"rag": "# RAG"}, "src.md", "body")
+        assert "===WIKI-FILE:" in p
+        assert "NO escaping" in p
+        assert "column 0" in p
+        assert "wiki/concepts/<kebab-case-name>.md" in p
+        assert '"gaps"' in p
+        assert '"content": "<full page markdown>"' not in p
+
+    def test_ingest_prompt_uses_sentinel_format_without_gaps(self):
+        p = wiki.build_ingest_prompt("schema", "idx", {}, "src.md", "body")
+        assert "===WIKI-FILE:" in p
+        assert "NO escaping" in p
+        assert '"gaps"' not in p
+        assert '"content": "<full page markdown>"' not in p
 
 
 class TestCallClaudeSynthesis:
