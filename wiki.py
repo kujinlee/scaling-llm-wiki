@@ -45,6 +45,13 @@ GAP_LOG_NAME = ".gap-log.jsonl"
 ROUTE_LOCK_NAME = ".route-lock"
 ROUTE_FAILURES_NAME = ".route-failures.txt"
 RAW_DIR_NAME = "raw"        # raw source *.md files live under base_dir/raw/
+WIKI_FILE_SENTINEL = "===WIKI-FILE: {path}==="   # prompt rendering (one space each side)
+# Parser split. Applied AFTER \r\n/\r -> \n normalization. Tolerates leading
+# indentation and flexible spacing; the captured group matches ONLY a concept-page
+# path, so prose lines like "===WIKI-FILE: foo===" do NOT split (collision guard).
+WIKI_FILE_SENTINEL_RE = re.compile(
+    r"(?m)^[ \t]*===WIKI-FILE:[ \t]*(wiki/concepts/[a-z0-9-]+\.md)[ \t]*===[ \t]*$"
+)
 
 
 def init_wiki(wiki_dir: Path) -> None:

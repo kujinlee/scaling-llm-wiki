@@ -150,6 +150,24 @@ class TestExtractJson:
             wiki.extract_json("plain text with no JSON at all")
 
 
+class TestSentinelConstants:
+    def test_sentinel_renders_path(self):
+        assert wiki.WIKI_FILE_SENTINEL.format(path="wiki/concepts/rag.md") == \
+            "===WIKI-FILE: wiki/concepts/rag.md==="
+
+    def test_sentinel_regex_matches_concept_path_only(self):
+        text = "===WIKI-FILE: wiki/concepts/rag.md==="
+        m = wiki.WIKI_FILE_SENTINEL_RE.search(text)
+        assert m and m.group(1) == "wiki/concepts/rag.md"
+        # a non-concept-shaped path must NOT match
+        assert wiki.WIKI_FILE_SENTINEL_RE.search("===WIKI-FILE: not a path===") is None
+
+    def test_sentinel_regex_tolerates_indent_and_spacing(self):
+        text = "   ===WIKI-FILE:   wiki/concepts/x-y.md   ===   "
+        m = wiki.WIKI_FILE_SENTINEL_RE.search(text)
+        assert m and m.group(1) == "wiki/concepts/x-y.md"
+
+
 class TestBuildIngestPrompt:
     def test_includes_source_content(self):
         prompt = wiki.build_ingest_prompt("schema", "index", {}, "src.md", "source text here")
