@@ -148,6 +148,50 @@ def extract_json(text: str) -> dict:
     raise ValueError(f"No valid JSON found in response:\n{text[:300]}")
 
 
+def _meta_fields(meta: dict) -> dict:
+    """Normalize the metadata header into the caller-facing fields."""
+    return {
+        "log_entry": meta.get("log_entry"),
+        "summary": meta.get("summary"),
+        "gaps": meta.get("gaps") or [],
+    }
+
+
+def parse_synthesis_response(text: str) -> dict:
+    """Parse the synthesis/ingest response: a single-line JSON metadata header
+    followed by raw `===WIKI-FILE: <path>===` content blocks. Falls back to a plain
+    JSON envelope (extract_json) when no concept-path sentinel is present, so
+    old-style replies still work. Returns the dict shape callers expect:
+    {"files": [{"path","content"}...], "log_entry", "summary", "gaps"}.
+
+    Raises ValueError on unparseable input (caller retries): total garbage, or
+    content blocks present with an empty/malformed metadata header (which would
+    otherwise silently drop `gaps`, the recall backstop)."""
+    text = text.replace("\r\n", "\n").replace("\r", "\n")
+    parts = WIKI_FILE_SENTINEL_RE.split(text)
+    if len(parts) == 1:                       # no concept-path sentinel matched
+        meta = extract_json(text)             # raises ValueError on garbage -> retry
+        if "files" in meta:
+            return {"files": meta["files"], **_meta_fields(meta)}   # old-style envelope
+        return {"files": [], **_meta_fields(meta)}                  # "changed nothing"
+    header = parts[0].strip()
+    if not header:
+        raise ValueError("synthesis response has content blocks but no metadata header")
+    meta = extract_json(header)               # malformed header -> ValueError -> retry
+    files = []
+    for i in range(1, len(parts), 2):
+        path = parts[i].strip()
+        content = parts[i + 1]
+        if content.startswith("\n"):
+            content = content[1:]
+        if content.endswith("\n"):
+            content = content[:-1]
+        if content == "":
+            print(f"  warning: empty content block for {path}", file=sys.stderr)
+        files.append({"path": path, "content": content})
+    return {"files": files, **_meta_fields(meta)}
+
+
 def build_ingest_prompt(schema: str, index: str, concepts: dict, source_name: str, source: str) -> str:
     concepts_block = "\n\n".join(
         f"### Existing page: {name}\n{content}" for name, content in concepts.items()

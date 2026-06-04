@@ -1082,3 +1082,109 @@ class TestArgparseWiring:
                 patch("wiki.cmd_resolve_gaps") as mock_cmd:
             wiki.main()
         assert mock_cmd.called
+
+
+class TestParseSynthesisResponse:
+    def test_header_plus_two_blocks(self):
+        text = (
+            '{"log_entry": "2026-06-03 12:00 | route-ingest | x", "summary": "did stuff", "gaps": ["g1"]}\n'
+            "===WIKI-FILE: wiki/concepts/rag.md===\n"
+            "---\nconcept: RAG\n---\n# RAG body\n"
+            "===WIKI-FILE: wiki/concepts/mcp.md===\n"
+            "# MCP body\n"
+        )
+        out = wiki.parse_synthesis_response(text)
+        assert out["log_entry"] == "2026-06-03 12:00 | route-ingest | x"
+        assert out["summary"] == "did stuff"
+        assert out["gaps"] == ["g1"]
+        assert out["files"] == [
+            {"path": "wiki/concepts/rag.md", "content": "---\nconcept: RAG\n---\n# RAG body"},
+            {"path": "wiki/concepts/mcp.md", "content": "# MCP body"},
+        ]
+
+    def test_content_with_quotes_fences_braces_verbatim(self):
+        body = '# Title\n\nA *supervisor* ("boss") agent.\n\n```python\nx = {"k": 1}\n```\n'
+        text = (
+            '{"log_entry": "l", "summary": "s", "gaps": []}\n'
+            "===WIKI-FILE: wiki/concepts/loop.md===\n"
+            + body
+        )
+        out = wiki.parse_synthesis_response(text)
+        assert out["files"][0]["content"] == body.rstrip("\n")
+
+    def test_header_only_changed_nothing(self):
+        text = '{"log_entry": "l", "summary": "no change", "gaps": []}'
+        out = wiki.parse_synthesis_response(text)
+        assert out["files"] == []
+        assert out["summary"] == "no change"
+
+    def test_fallback_old_style_json_envelope(self):
+        text = json.dumps({
+            "files": [{"path": "wiki/concepts/rag.md", "content": "# RAG"}],
+            "log_entry": "2026-06-03 12:00 | ingest | rag",
+            "summary": "made rag",
+        })
+        out = wiki.parse_synthesis_response(text)
+        assert out["files"] == [{"path": "wiki/concepts/rag.md", "content": "# RAG"}]
+        assert out["log_entry"] == "2026-06-03 12:00 | ingest | rag"
+        assert out["summary"] == "made rag"
+        assert out["gaps"] == []
+
+    def test_crlf_parses_like_lf(self):
+        text = (
+            '{"log_entry": "l", "summary": "s", "gaps": []}\r\n'
+            "===WIKI-FILE: wiki/concepts/rag.md===\r\n"
+            "# RAG body\r\n"
+        )
+        out = wiki.parse_synthesis_response(text)
+        assert out["files"] == [{"path": "wiki/concepts/rag.md", "content": "# RAG body"}]
+
+    def test_blocks_present_but_no_header_raises(self):
+        text = (
+            "===WIKI-FILE: wiki/concepts/rag.md===\n"
+            "# RAG body\n"
+        )
+        with pytest.raises(ValueError):
+            wiki.parse_synthesis_response(text)
+
+    def test_malformed_header_with_blocks_raises(self):
+        text = (
+            "{this is not json}\n"
+            "===WIKI-FILE: wiki/concepts/rag.md===\n"
+            "# RAG body\n"
+        )
+        with pytest.raises(ValueError):
+            wiki.parse_synthesis_response(text)
+
+    def test_non_concept_sentinel_in_content_does_not_split(self):
+        body = "Discussing the format: ===WIKI-FILE: example===\nmore text"
+        text = (
+            '{"log_entry": "l", "summary": "s", "gaps": []}\n'
+            "===WIKI-FILE: wiki/concepts/formats.md===\n"
+            + body + "\n"
+        )
+        out = wiki.parse_synthesis_response(text)
+        assert len(out["files"]) == 1
+        assert out["files"][0]["content"] == body
+
+    def test_valid_header_absent_gaps_defaults_empty(self):
+        text = (
+            '{"log_entry": "l", "summary": "s"}\n'
+            "===WIKI-FILE: wiki/concepts/rag.md===\n"
+            "# RAG\n"
+        )
+        out = wiki.parse_synthesis_response(text)
+        assert out["gaps"] == []
+
+    def test_internal_blank_lines_preserved(self):
+        text = (
+            '{"log_entry": "l", "summary": "s", "gaps": []}\n'
+            "===WIKI-FILE: wiki/concepts/rag.md===\n"
+            "\n# RAG\n\nmid\n\n"
+        )
+        out = wiki.parse_synthesis_response(text)
+        assert out["files"][0]["content"] == "\n# RAG\n\nmid\n"
+
+    def test_total_garbage_raises(self):
+        with pytest.raises(ValueError):
+            wiki.parse_synthesis_response("not json and no sentinel at all")
