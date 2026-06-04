@@ -148,6 +148,7 @@
 - [[long-session-evals]] — A testing methodology that loads many conversation turns and evaluates the next one, proactively surfacing the context-management failures that only appear deep into a long agent session.
 - [[multi-agent-code-review]] — Dividing code review across specialized AI agents (style vs. deep context, spec vs. implementation) that interact through the PR comment cycle without a human driving each step.
 - [[multimodal-visual-input]] — Supplying images — screenshots, design mockups, diagrams — as input the agent analyzes or builds from, turning a visual reference into a specification more precise than prose.
+- [[outcome-first-prompting]] — Directing a file- and tool-capable agent by defining the end result, constraints, and quality bar — rather than choreographing the steps — because the agent delivers finished artifacts, not a chat reply you refine in place.
 - [[plan-first-workflow]] — Agent produces an explicit plan, the human reviews and amends it, and only then does execution proceed — catching misread requirements at the cheapest possible correction point.
 - [[realtime-ai-pair-collaboration]] — Treating a fast model as a real-time peer programmer — sitting with it, steering decisions and constraints live — rather than fire-and-forget delegating whole tasks to unattended agents that reach a wrong or bloated state before anyone looks.
 - [[reasoning-effort-control]] — Dialing the model's per-prompt thinking budget up for hard tasks and down for simple ones — concentrating deep reasoning where it pays and economizing tokens everywhere else.
@@ -166,6 +167,7 @@
 - [[meta-skills]] — Reusable prompts whose job is to design other agents, packaging the agent-architecture workflow so new agent creation is a templated, repeatable, and shareable activity.
 - [[plugin-packaging]] — Bundling skills, hooks, sub-agents, MCP servers, and metadata into a single installable unit so a whole customized agent setup can be shared and installed with one command.
 - [[ralph-loop]] — Running an agent unattended in a continuous outer loop that re-feeds the same prompt each iteration, letting it self-correct and make incremental progress against files on disk until a task — or a whole backlog — is built out.
+- [[skill-by-demonstration]] — Authoring a reusable agent skill by performing the workflow once and then having the agent reverse-engineer that worked run into repeatable steps, rather than writing the skill cold from a blank page.
 - [[procedural-knowledge-skills]] — Packaging a recurring task's procedural knowledge into a self-contained skill (skill.md plus scripts and references) that an agent loads only when the task requires it, instead of pasting playbooks into every prompt.
 - [[thin-harness-fat-skills]] — Keeping the agent's core interaction loop thin and generic while embedding task-specific behavior in thick natural-language skill files (markdown), backed by rigorous automated test coverage.
 
@@ -193,7 +195,3 @@
 - [[thinking-vs-understanding]] — Karpathy's distinction: analytical reasoning can be outsourced to an LLM, but genuine comprehension — knowing what to build and why — cannot be delegated.
 - [[venture-scale-vs-durable-profitability]] — The early, often-unrecognized founder choice between pursuing massive venture-funded growth (and the investor-return obligations and ownership loss it entails) or building a steadily profitable company that retains majority ownership indefinitely.
 - [[vibe-coding-vs-agentic-engineering]] — Vibe coding raises the floor (non-developers can build); agentic engineering raises the ceiling (experts produce at 100x–1000x throughput while maintaining professional quality standards).
-
-## Uncategorized
-- [[outcome-first-prompting]] — outcome-first-prompting
-- [[skill-by-demonstration]] — skill-by-demonstration
