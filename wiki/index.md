@@ -33,6 +33,7 @@
 - [[verifiability-law]] — LLM competence tracks how cleanly a task can be scored: reliable automatable verifiers enable autonomous trust; absent them, capability turns jagged and human oversight is required.
 
 ## Harness & Context Engineering
+- [[agent-sandboxing]] — Constraining an autonomous agent's execution environment and permissions — via isolated machines, containers, and least-privilege scoping — so that when it acts without supervision, the damage it can do and the data it can leak are bounded.
 - [[agentic-operating-system]] — A no-code personal "operating system" layered beneath an AI tool — static identity context, dynamic memory, modular skills, and chained skill-systems organized as files and folders — that turns a generic model into a consistent specialist.
 - [[ai-garbage-collection]] — Periodically and automatically pruning bad code patterns an agent accumulates, keeping the codebase environment optimal so future runs do not build on cruft.
 - [[assistant-personalization-layers]] — Separating the distinct axes of customizing an AI assistant — domain context (projects), repeatable working method (skills), and user profile (memory) — so each is configured deliberately rather than collapsed into one prompt.
