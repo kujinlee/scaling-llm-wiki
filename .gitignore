@@ -2,7 +2,12 @@ __pycache__/
 *.pyc
 .venv/
 .pytest_cache/
+# Obsidian: keep the root vault's shared config, drop volatile/nested editor state
 .obsidian/workspace.json
+**/.obsidian/workspace.json
+/wiki/concepts/.obsidian/
+/wiki/.obsidian/
+/raw/.obsidian/
 wiki/.*.log
 wiki/.*-list.txt
 wiki/.*.txt
