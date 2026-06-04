@@ -3,7 +3,7 @@ concept: Agent-Native Infrastructure
 category: Agent Architecture & Patterns
 summary: Redesigning documentation, APIs, and tooling so an agent — not a step-following human — is the primary consumer, collapsing multi-step procedures into single-instruction autonomous flows.
 aliases: [agent-native infrastructure, agent-native design, agent-first docs and APIs, agent representatives, redefining infra for agents]
-related: [computer-use-automation, agent-as-infrastructure, tool-integration-hierarchy, deterministic-workflow-orchestration, claude-md, thinking-vs-understanding]
+related: ["[[computer-use-automation]]", "[[agent-as-infrastructure]]", "[[tool-integration-hierarchy]]", "[[deterministic-workflow-orchestration]]", "[[claude-md]]", "[[thinking-vs-understanding]]"]
 sources: [꼭-알아야할-안드레-카파시-30분-인터뷰-완전정리-ai시대의-필수-인사이트]
 ---
 

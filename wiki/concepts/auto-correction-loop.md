@@ -3,7 +3,7 @@ concept: Auto-Correction Loop
 category: Harness & Context Engineering
 summary: Deterministic gates (linters, type checks, pre-commit hooks) block rule violations and feed errors back to the agent, iterating until the check passes — "success silent, failure loud."
 aliases: [auto-correction loop, automatic correction loop, mechanical enforcement, linter-driven correction, lint-fix loop, success silent failure loud]
-related: [lifecycle-hooks, self-verification-loop, harness-engineering, agent-tdd, deterministic-workflow-orchestration]
+related: ["[[lifecycle-hooks]]", "[[self-verification-loop]]", "[[harness-engineering]]", "[[agent-tdd]]", "[[deterministic-workflow-orchestration]]"]
 sources: [하네스-공식문서-100번-읽은-것처럼-만들어드림]
 ---
 

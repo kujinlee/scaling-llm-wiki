@@ -3,7 +3,7 @@ concept: Memory Consolidation (Dreaming)
 category: Memory & Knowledge Systems
 summary: An asynchronous background process that takes a memory store plus past session transcripts and uses a multi-agent harness to distill, fact-check, organize, deduplicate, and enrich it — non-destructively emitting an improved output store.
 aliases: [dreaming, memory consolidation, dreaming feature, async memory consolidation, memory store optimization, memory enrichment, non-destructive memory consolidation, agent dreaming]
-related: [persistent-agent-memory, filesystem-memory-store, memory-storage-injection-recall, ingest-vs-query-time-synthesis, ai-garbage-collection, compound-engineering, llm-knowledge-wiki, agent-as-infrastructure, token-maxing]
+related: ["[[persistent-agent-memory]]", "[[filesystem-memory-store]]", "[[memory-storage-injection-recall]]", "[[ingest-vs-query-time-synthesis]]", "[[ai-garbage-collection]]", "[[compound-engineering]]", "[[llm-knowledge-wiki]]", "[[agent-as-infrastructure]]", "[[token-maxing]]"]
 sources: [agents-that-remember]
 ---
 

@@ -3,7 +3,7 @@ concept: Context Compaction
 category: Harness & Context Engineering
 summary: Actively monitoring context-window consumption and compacting conversation history — summarizing to preserve key decisions while freeing space — so a long session does not hit the window's hard limit.
 aliases: [compaction, context compaction, compact, conversation summarization, context window management, history compression]
-related: [context-decay, context-rot, persistent-agent-memory, lifecycle-hooks, progressive-disclosure-retrieval, claude-md, tool-output-virtualization, context-reset]
+related: ["[[context-decay]]", "[[context-rot]]", "[[persistent-agent-memory]]", "[[lifecycle-hooks]]", "[[progressive-disclosure-retrieval]]", "[[claude-md]]", "[[tool-output-virtualization]]", "[[context-reset]]"]
 sources: [12-claude-code-features-every-engineer-should-know-subagents, every-claude-code-memory-system-compared-so-you-don-t-have-t, claude-code-is-expensive-this-mcp-server-fixes-it-context-mo, live-코덱스로-바이브-코딩하기-feat-하네스-엔지니어링]
 ---
 

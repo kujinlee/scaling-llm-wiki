@@ -3,7 +3,7 @@ concept: AI-Generated Prompting
 category: Workflows & Methodology
 summary: Using one AI to synthesize research into a precise, high-quality prompt that is then fed to a second AI to execute — an AI coaching another AI rather than a human hand-writing the instruction.
 aliases: [AI-generated prompts, AI coaching AI, model-generated prompting, cross-model prompt authoring, prompt relay, research-to-prompt pipeline, one AI prompts another]
-related: [collaborative-prompt-elicitation, cross-model-critique, automated-prompt-optimization, agentic-coding-tool-selection, explicit-gears, prompt-engineering, per-node-model-routing, self-verification-loop]
+related: ["[[collaborative-prompt-elicitation]]", "[[cross-model-critique]]", "[[automated-prompt-optimization]]", "[[agentic-coding-tool-selection]]", "[[explicit-gears]]", "[[prompt-engineering]]", "[[per-node-model-routing]]", "[[self-verification-loop]]"]
 sources: [claude-opus-4-7-notebooklm-is-insane]
 ---
 

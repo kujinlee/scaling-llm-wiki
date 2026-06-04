@@ -3,7 +3,7 @@ concept: Generative vs. Discriminative Models
 category: LLM Internals & Training
 summary: The foundational distinction between models that learn the joint distribution p(x,y) to create new data instances and models that learn the conditional p(y|x) to classify or label existing ones.
 aliases: [generative vs discriminative, discriminative models, generative models, joint vs conditional distribution, classify vs create, p(x,y) vs p(y|x)]
-related: [next-token-prediction, generative-world-models, foundation-models, llm-hallucination, supervised-fine-tuning]
+related: ["[[next-token-prediction]]", "[[generative-world-models]]", "[[foundation-models]]", "[[llm-hallucination]]", "[[supervised-fine-tuning]]"]
 sources: [introduction-to-generative-ai]
 ---
 

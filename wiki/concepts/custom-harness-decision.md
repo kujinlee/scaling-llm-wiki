@@ -3,7 +3,7 @@ concept: Custom Harness Build-vs-Buy
 category: Harness & Context Engineering
 summary: The decision of when to adopt an off-the-shelf agent harness versus build a custom one — off-the-shelf for speed and common needs, custom only when private APIs, enforced tool order, compliance, product embedding, or strong policy/safety/observability control demand it.
 aliases: [custom harness, build vs buy harness, custom agent harness, when to build a harness, off-the-shelf vs custom harness, harness as control plane, model is the engine harness is the vehicle, harness control plane]
-related: [harness-engineering, agentic-loop, self-modifying-agent-harness, model-abstraction-layer, robust-tool-design, tool-integration-hierarchy, context-compaction, lifecycle-hooks, agentic-coding-tool-selection, thin-harness-fat-skills]
+related: ["[[harness-engineering]]", "[[agentic-loop]]", "[[self-modifying-agent-harness]]", "[[model-abstraction-layer]]", "[[robust-tool-design]]", "[[tool-integration-hierarchy]]", "[[context-compaction]]", "[[lifecycle-hooks]]", "[[agentic-coding-tool-selection]]", "[[thin-harness-fat-skills]]"]
 sources: [i-built-an-agent-harness-in-go-agent-harnesses-explained]
 ---
 

@@ -3,7 +3,7 @@ concept: High-Bandwidth Agent Interfaces
 category: Agent Architecture & Patterns
 summary: The argument that linear chat is too low-bandwidth for complex agent collaboration — as agents make "doing" cheap, planning and reviewing become the bottleneck, demanding richer artifacts (collaborative documents, tabular reviews) plus trust and control levers rather than a single conversational stream.
 aliases: [agents need more than chat, high-bandwidth artifacts, beyond chat, low-bandwidth chat problem, trust and control for agents, verifier's rule, tabular review]
-related: [collaborative-prompt-elicitation, interactive-artifacts, plan-first-workflow, verifiability-law, shifting-bottlenecks, multi-agent-code-review, holdout-validation, satisfaction-testing, thinking-vs-understanding]
+related: ["[[collaborative-prompt-elicitation]]", "[[interactive-artifacts]]", "[[plan-first-workflow]]", "[[verifiability-law]]", "[[shifting-bottlenecks]]", "[[multi-agent-code-review]]", "[[holdout-validation]]", "[[satisfaction-testing]]", "[[thinking-vs-understanding]]"]
 sources: [aie-europe-keynotes-coding-agents-ft-pi-google-deepmind-anth]
 ---
 

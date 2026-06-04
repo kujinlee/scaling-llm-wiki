@@ -3,7 +3,7 @@ concept: Exploratory Spec Discovery
 category: Workflows & Methodology
 summary: Pointing an agent at a verifiable goal on a throwaway branch, letting it explore until the goal is reached, then distilling the lessons into a clean spec for proper re-implementation.
 aliases: [exploratory spec discovery, scrappy branch then respec, discover a spec, goal-driven exploration, exploratory goal autonomy, spec discovery through exploration]
-related: [spec-driven-development, hill-climbing, self-verification-loop, ai-garbage-collection, reward-hacking, auto-research, deterministic-workflow-orchestration]
+related: ["[[spec-driven-development]]", "[[hill-climbing]]", "[[self-verification-loop]]", "[[ai-garbage-collection]]", "[[reward-hacking]]", "[[auto-research]]", "[[deterministic-workflow-orchestration]]"]
 sources: [한글자막-현재-codex-에서-제일-핫한-기능-goal]
 ---
 

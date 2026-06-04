@@ -3,7 +3,7 @@ concept: Tokenization
 category: LLM Internals & Training
 summary: Converting filtered text into a one-dimensional sequence of discrete sub-word tokens via Byte Pair Encoding — the numerical substrate a neural network actually consumes.
 aliases: [tokenization, byte pair encoding, BPE, tokens, vocabulary, sub-word units, token IDs]
-related: [next-token-prediction, tokens-to-think, supervised-fine-tuning, mixture-of-experts, on-device-inference]
+related: ["[[next-token-prediction]]", "[[tokens-to-think]]", "[[supervised-fine-tuning]]", "[[mixture-of-experts]]", "[[on-device-inference]]"]
 sources: [deep-dive-into-llms-like-chatgpt]
 ---
 

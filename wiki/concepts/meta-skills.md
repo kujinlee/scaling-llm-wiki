@@ -3,7 +3,7 @@ concept: Meta Skills
 category: Skills, Plugins & Automation
 summary: Reusable prompts whose job is to design other agents, packaging the agent-architecture workflow so new agent creation is a templated, repeatable, and shareable activity.
 aliases: [meta skill, agent-design skills, skill-authoring prompts]
-related: [github-as-blueprint, harness-engineering, auto-research, compound-engineering]
+related: ["[[github-as-blueprint]]", "[[harness-engineering]]", "[[auto-research]]", "[[compound-engineering]]"]
 sources: [나의-ai-에이전트-전환기-w-클로드-코드-오픈클로]
 ---
 

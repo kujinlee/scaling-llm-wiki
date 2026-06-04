@@ -3,7 +3,7 @@ concept: Knowledge Base Linting
 category: Memory & Knowledge Systems
 summary: A periodic automated maintenance pass over an agent-maintained knowledge wiki that detects and removes contradictions, prunes staleness, flags gaps, and suggests new connections to keep the accumulated knowledge current and internally consistent.
 aliases: [knowledge base linting, wiki lint, lint operation, knowledge linting, contradiction removal, knowledge integrity maintenance, wiki maintenance pass, gap detection, orphan page detection]
-related: [llm-knowledge-wiki, ingest-vs-query-time-synthesis, memory-consolidation-dreaming, ai-garbage-collection, second-brain, custom-eval-systems, compound-engineering]
+related: ["[[llm-knowledge-wiki]]", "[[ingest-vs-query-time-synthesis]]", "[[memory-consolidation-dreaming]]", "[[ai-garbage-collection]]", "[[second-brain]]", "[[custom-eval-systems]]", "[[compound-engineering]]"]
 sources: [ai-를-위한-두-번째-뇌-세컨드-브레인-파헤치기-feat-메타-스태프-엔지니어, claude-karpathy-s-second-brain-is-insane, karpathy-s-llm-wiki-full-beginner-setup-guide]
 ---
 

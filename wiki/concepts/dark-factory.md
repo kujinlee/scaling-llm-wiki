@@ -3,7 +3,7 @@ concept: Dark Factory
 category: Skills, Plugins & Automation
 summary: A fully autonomous AI coding system that triages, implements, tests, and ships code with no human review before merge, relying entirely on governance documents and an independent validation gate.
 aliases: [dark factory, lights-out software development, autonomous code factory, fully autonomous coding, level 5 coding autonomy, self-shipping codebase]
-related: [agentic-capability-ladder, deterministic-workflow-orchestration, governance-layer, holdout-validation, satisfaction-testing, agent-as-infrastructure, self-verification-loop, graduated-autonomy, harness-engineering, harness-debugging]
+related: ["[[agentic-capability-ladder]]", "[[deterministic-workflow-orchestration]]", "[[governance-layer]]", "[[holdout-validation]]", "[[satisfaction-testing]]", "[[agent-as-infrastructure]]", "[[self-verification-loop]]", "[[graduated-autonomy]]", "[[harness-engineering]]", "[[harness-debugging]]"]
 sources: [i-m-building-an-ai-dark-factory-that-ships-its-own-code-publ, the-ai-dark-factory-is-alive-a-codebase-that-writes-its-own-]
 ---
 

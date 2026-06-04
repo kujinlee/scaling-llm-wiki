@@ -3,7 +3,7 @@ concept: Interactive Artifacts
 category: Coding Tools & IDEs
 summary: A live side-panel surface where the assistant renders generated documents, charts, diagrams, and working web apps that the user manipulates in real time and shares by URL — output as an interactive object, not static chat text.
 aliases: [artifacts, interactive artifacts, live artifacts, generated app surface, side-panel rendering, manipulable output, shareable mini-apps]
-related: [software-3-0, visual-brainstorming, agentic-capability-ladder, computer-use-automation, vibe-coding-vs-agentic-engineering]
+related: ["[[software-3-0]]", "[[visual-brainstorming]]", "[[agentic-capability-ladder]]", "[[computer-use-automation]]", "[[vibe-coding-vs-agentic-engineering]]"]
 sources: [26년-5월-업데이트-클로드-핵심-기능-300-활용법ㅣ코워크-skills-커넥터-어플]
 ---
 

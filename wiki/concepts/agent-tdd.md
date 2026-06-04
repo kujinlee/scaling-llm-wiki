@@ -3,7 +3,7 @@ concept: Test-Driven Development for Agents
 category: Workflows & Methodology
 summary: Enforcing the red-green-refactor cycle for AI-written code: no production code before a failing test exists and has been confirmed to fail, giving the agent a machine-checkable definition of done.
 aliases: [agent TDD, TDD enforcement, the iron law, red-green-refactor for agents]
-related: [self-verification-loop, spec-driven-development, agentic-issue-resolution, hill-climbing]
+related: ["[[self-verification-loop]]", "[[spec-driven-development]]", "[[agentic-issue-resolution]]", "[[hill-climbing]]"]
 sources: [the-claude-code-plugin-every-developer-must-learn-superpower]
 ---
 

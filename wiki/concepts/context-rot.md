@@ -3,7 +3,7 @@ concept: Context Rot
 category: Harness & Context Engineering
 summary: Behavior degradation caused by overloading the always-loaded context with too much standing material, diluting the relevant signal and making recall unreliable.
 aliases: [context rot, context bloat, context overload, oversized claude.md]
-related: [claude-md, context-engineering, persistent-agent-memory, llm-knowledge-wiki, context-decay]
+related: ["[[claude-md]]", "[[context-engineering]]", "[[persistent-agent-memory]]", "[[llm-knowledge-wiki]]", "[[context-decay]]"]
 sources: [every-claude-code-memory-system-compared-so-you-don-t-have-t, 하네스-공식문서-100번-읽은-것처럼-만들어드림]
 ---
 

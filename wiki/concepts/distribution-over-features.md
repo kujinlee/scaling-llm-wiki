@@ -3,7 +3,7 @@ concept: Distribution Over Features
 category: Industry, Strategy & Careers
 summary: For AI products, ship a single high-value feature and pour the majority of effort into marketing — simplicity aids word-of-mouth, and a repeatable viral format compounds reach more than feature breadth.
 aliases: [distribution over features, build simple market hard, marketing-first product strategy, repeatable viral format, one-feature MVP, distribution is the moat]
-related: [founder-wedge-strategy, vibe-coding-vs-agentic-engineering, ai-marketing-automation, faceless-ai-content, ai-enablement-consulting]
+related: ["[[founder-wedge-strategy]]", "[[vibe-coding-vs-agentic-engineering]]", "[[ai-marketing-automation]]", "[[faceless-ai-content]]", "[[ai-enablement-consulting]]"]
 sources: [5-ways-to-make-money-in-2026-with-ai]
 ---
 

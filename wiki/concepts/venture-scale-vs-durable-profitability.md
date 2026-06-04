@@ -3,7 +3,7 @@ concept: Venture Scale vs. Durable Profitability
 category: Industry, Strategy & Careers
 summary: The early, often-unrecognized founder choice between pursuing massive venture-funded growth (and the investor-return obligations and ownership loss it entails) or building a steadily profitable company that retains majority ownership indefinitely.
 aliases: [venture scale vs profitability, venture path vs bootstrapping path, lifestyle business vs venture company, the founder's fundamental choice, durable profitable company, venture clock, runway, the ticking clock]
-related: [founder-dilution-and-control, bootstrapping-as-ai-enabled-alternative, founder-wedge-strategy, ai-native-company, distribution-over-creation, distribution-over-features]
+related: ["[[founder-dilution-and-control]]", "[[bootstrapping-as-ai-enabled-alternative]]", "[[founder-wedge-strategy]]", "[[ai-native-company]]", "[[distribution-over-creation]]", "[[distribution-over-features]]"]
 sources: [if-you-don-t-understand-funding-you-don-t-understand-startup]
 ---
 

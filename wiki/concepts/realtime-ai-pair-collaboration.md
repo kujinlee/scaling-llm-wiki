@@ -3,7 +3,7 @@ concept: Real-Time AI Pair Collaboration
 category: Workflows & Methodology
 summary: Treating a fast model as a real-time peer programmer — sitting with it, steering decisions and constraints live — rather than fire-and-forget delegating whole tasks to unattended agents that reach a wrong or bloated state before anyone looks.
 aliases: [real-time collaboration, AI as peer programmer, interactive coding with AI, active steering, hands-on AI coding, AI peer not delegate, steering the model live]
-related: [fast-models-slow-developers, plan-first-workflow, surgical-change-discipline, permission-tiering, high-bandwidth-agent-interfaces, parallel-isolated-agents, friction-as-judgment, ai-operator-burnout, code-comprehension-over-generation]
+related: ["[[fast-models-slow-developers]]", "[[plan-first-workflow]]", "[[surgical-change-discipline]]", "[[permission-tiering]]", "[[high-bandwidth-agent-interfaces]]", "[[parallel-isolated-agents]]", "[[friction-as-judgment]]", "[[ai-operator-burnout]]", "[[code-comprehension-over-generation]]"]
 sources: [fast-models-need-slow-developers-sarah-chieng-cerebras]
 ---
 

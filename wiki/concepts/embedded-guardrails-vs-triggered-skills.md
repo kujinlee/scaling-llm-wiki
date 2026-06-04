@@ -3,7 +3,7 @@ concept: Embedded Guardrails vs. Triggered Skills
 category: Harness & Context Engineering
 summary: The distinction between constant behavioral constraints baked into always-loaded context (CLAUDE.md "personality") and task-specific procedural skills invoked on demand — and the hybrid that runs both, embedded guardrails as the foundation and triggered skills per task.
 aliases: [embedded guardrails vs triggered skills, embedded vs triggered, guardrails vs skills, personality vs skills, always-on constraints vs on-demand skills, constant guardrails, embedded personality, hybrid guardrail-skill workflow]
-related: [claude-md, procedural-knowledge-skills, lazy-context-loading, surgical-change-discipline, thin-harness-fat-skills, explicit-gears, context-rot, spec-driven-development, agent-tdd, harness-engineering, assistant-personalization-layers]
+related: ["[[claude-md]]", "[[procedural-knowledge-skills]]", "[[lazy-context-loading]]", "[[surgical-change-discipline]]", "[[thin-harness-fat-skills]]", "[[explicit-gears]]", "[[context-rot]]", "[[spec-driven-development]]", "[[agent-tdd]]", "[[harness-engineering]]", "[[assistant-personalization-layers]]"]
 sources: [karpathy-s-skill-just-fixed-claude-code-s-biggest-problem]
 ---
 

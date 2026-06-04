@@ -3,7 +3,7 @@ concept: In-Context Learning
 category: Workflows & Methodology
 summary: Steering a foundation model's behavior at inference time by including zero, one, or a few input/output examples in the prompt — teaching the task through demonstration rather than weight updates.
 aliases: [in-context learning, ICL, few-shot prompting, one-shot prompting, zero-shot prompting, few-shot learning, learning from examples, prompt examples, shot-based prompting]
-related: [prompt-engineering, chain-of-thought-prompting, foundation-models, model-adaptation-methods, collaborative-prompt-elicitation, escape-hatch-prompting, automated-prompt-optimization]
+related: ["[[prompt-engineering]]", "[[chain-of-thought-prompting]]", "[[foundation-models]]", "[[model-adaptation-methods]]", "[[collaborative-prompt-elicitation]]", "[[escape-hatch-prompting]]", "[[automated-prompt-optimization]]"]
 sources: [introduction-to-vertex-ai-studio]
 ---
 

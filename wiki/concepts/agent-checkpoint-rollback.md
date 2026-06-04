@@ -3,7 +3,7 @@ concept: Agent Checkpoint Rollback
 category: Coding Tools & IDEs
 summary: Automatic snapshotting of project files before each agent edit, with a rewind command to restore any earlier state — enabling fearless experimentation without losing working code.
 aliases: [checkpoints, rewind, agent checkpoints, snapshot and rewind, edit-time snapshots, fearless experimentation, undo for agents]
-related: [graduated-autonomy, parallel-isolated-agents, permission-tiering, self-verification-loop, exploratory-spec-discovery]
+related: ["[[graduated-autonomy]]", "[[parallel-isolated-agents]]", "[[permission-tiering]]", "[[self-verification-loop]]", "[[exploratory-spec-discovery]]"]
 sources: [12-claude-code-features-every-engineer-should-know-subagents]
 ---
 

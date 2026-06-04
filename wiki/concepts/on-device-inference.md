@@ -3,7 +3,7 @@ concept: On-Device Inference
 category: LLM Internals & Training
 summary: Running LLM inference locally on edge devices rather than in the cloud — trading raw model capability for privacy, low latency, offline operation, and elimination of per-token cloud cost.
 aliases: [on-device inference, edge AI, edge LLM, on-device ML, local inference, edge inference, on-device LLMs, edge model deployment, edge agents]
-related: [inference-batching-economics, kv-cache-economics, subscription-vs-metered-pricing, agent-as-infrastructure, model-abstraction-layer, compute-memory-tradeoff]
+related: ["[[inference-batching-economics]]", "[[kv-cache-economics]]", "[[subscription-vs-metered-pricing]]", "[[agent-as-infrastructure]]", "[[model-abstraction-layer]]", "[[compute-memory-tradeoff]]"]
 sources: [accelerating-ai-on-edge-chintan-parikh-and-weiyi-wang-google]
 ---
 

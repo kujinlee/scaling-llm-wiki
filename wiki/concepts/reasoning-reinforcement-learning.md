@@ -3,7 +3,7 @@ concept: Reasoning via Reinforcement Learning
 category: LLM Internals & Training
 summary: Using reinforcement learning in verifiable domains so a model discovers its own solution strategies by trial and error — producing emergent chains of thought rather than imitating expert answers.
 aliases: [reasoning RL, RL for reasoning, reinforcement learning reasoning, emergent chain of thought, thinking models, DeepSeek R1, RL practice problems]
-related: [rlhf, verifiability-law, chain-of-thought-prompting, tokens-to-think, reward-hacking, value-functions, supervised-fine-tuning]
+related: ["[[rlhf]]", "[[verifiability-law]]", "[[chain-of-thought-prompting]]", "[[tokens-to-think]]", "[[reward-hacking]]", "[[value-functions]]", "[[supervised-fine-tuning]]"]
 sources: [deep-dive-into-llms-like-chatgpt]
 ---
 

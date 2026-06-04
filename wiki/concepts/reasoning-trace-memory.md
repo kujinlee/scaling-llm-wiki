@@ -3,7 +3,7 @@ concept: Reasoning Trace Memory
 category: Memory & Knowledge Systems
 summary: Persisting the "why" behind an agent's decisions — thought process, decision provenance, and outcomes — as a stored, queryable layer that enables explainable, auditable decisions plus repeatability, compliance, debugging, and learning from past experience.
 aliases: [reasoning traces, reasoning trace memory, decision provenance, decision traces, explainable agent decisions, auditable AI decisions, traceable reasoning]
-related: [context-graph, graph-augmented-retrieval, persistent-agent-memory, memory-storage-injection-recall, custom-eval-systems, harness-debugging, causal-decision-modeling]
+related: ["[[context-graph]]", "[[graph-augmented-retrieval]]", "[[persistent-agent-memory]]", "[[memory-storage-injection-recall]]", "[[custom-eval-systems]]", "[[harness-debugging]]", "[[causal-decision-modeling]]"]
 sources: [connecting-the-dots-with-context-graphs-stephen-chin-neo4j]
 ---
 

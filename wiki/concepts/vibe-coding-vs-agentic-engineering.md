@@ -3,7 +3,7 @@ concept: Vibe Coding vs. Agentic Engineering
 category: Industry, Strategy & Careers
 summary: Vibe coding raises the floor (non-developers can build); agentic engineering raises the ceiling (experts produce at 100x–1000x throughput while maintaining professional quality standards).
 aliases: [vibe coding, agentic engineering, raising the floor vs the ceiling, floor and ceiling of coding, 1000x engineer]
-related: [software-3-0, harness-engineering, thinking-vs-understanding, engineering-taste, token-maxing, jagged-intelligence, ai-native-company]
+related: ["[[software-3-0]]", "[[harness-engineering]]", "[[thinking-vs-understanding]]", "[[engineering-taste]]", "[[token-maxing]]", "[[jagged-intelligence]]", "[[ai-native-company]]"]
 sources: [꼭-알아야할-안드레-카파시-30분-인터뷰-완전정리-ai시대의-필수-인사이트, stanford-cs153-frontier-systems-the-ai-native-company-how-on]
 ---
 

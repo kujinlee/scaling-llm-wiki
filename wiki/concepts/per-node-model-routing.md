@@ -3,7 +3,7 @@ concept: Per-Node Model Routing
 category: Agent Architecture & Patterns
 summary: Assigning a specific model to each workflow step by task difficulty: cheap fast models for classification nodes, stronger models reserved for those requiring genuine reasoning.
 aliases: [per-node model selection, model routing, tiered model assignment, mixed-model workflows, model specification per node, capability-based routing]
-related: [deterministic-workflow-orchestration, harness-engineering, agent-router, cross-model-critique, token-maxing, dark-factory, plan-first-workflow]
+related: ["[[deterministic-workflow-orchestration]]", "[[harness-engineering]]", "[[agent-router]]", "[[cross-model-critique]]", "[[token-maxing]]", "[[dark-factory]]", "[[plan-first-workflow]]"]
 sources: [the-next-evolution-of-ai-coding-is-harnesses-here-s-how-to-b, tokenmaxxing-how-top-builders-use-ai-to-do-the-work-of-400-e, every-level-of-claude-explained-in-21-minutes, i-m-building-an-ai-dark-factory-that-ships-its-own-code-publ, claude-code-창시자-boris의-ai-에이전트-셋업-전부-다-까보자]
 ---
 

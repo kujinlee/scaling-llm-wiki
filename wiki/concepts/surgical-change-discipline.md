@@ -3,7 +3,7 @@ concept: Surgical Change Discipline
 category: Workflows & Methodology
 summary: A set of coding principles that counter LLM over-reach — think before coding, build the simplest thing, make minimal surgical changes, and don't improve what wasn't asked — backed by explicit success criteria.
 aliases: [surgical changes, minimal change principle, Karpathy skills, Karpathy principles, four principles, think before you code, think before coding, simplicity first, build the simplest thing, goal-driven executions, don't improve what wasn't asked, scope discipline for agents]
-related: [plan-first-workflow, spec-driven-development, aspirational-prompting, engineering-taste, verifiability-law, self-verification-loop, jagged-intelligence, thinking-vs-understanding, claude-md, hill-climbing, embedded-guardrails-vs-triggered-skills, procedural-knowledge-skills]
+related: ["[[plan-first-workflow]]", "[[spec-driven-development]]", "[[aspirational-prompting]]", "[[engineering-taste]]", "[[verifiability-law]]", "[[self-verification-loop]]", "[[jagged-intelligence]]", "[[thinking-vs-understanding]]", "[[claude-md]]", "[[hill-climbing]]", "[[embedded-guardrails-vs-triggered-skills]]", "[[procedural-knowledge-skills]]"]
 sources: [6-claude-code-github-repos-that-change-everything, karpathy-s-skill-just-fixed-claude-code-s-biggest-problem]
 ---
 

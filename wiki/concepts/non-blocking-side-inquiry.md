@@ -3,7 +3,7 @@ concept: Non-Blocking Side Inquiry
 category: Agent Architecture & Patterns
 summary: Posing a secondary question to an agent while it stays busy on a long-running primary task — getting an answer without interrupting the main operation or losing its context.
 aliases: [non-blocking side inquiry, by the way, parallel inquiry, side-channel query, parallel task management, in-session side question, /btw, side session, side sub-session]
-related: [subagent-context-isolation, parallel-isolated-agents, context-compaction, exploratory-spec-discovery, context-reset, session-context-forking]
+related: ["[[subagent-context-isolation]]", "[[parallel-isolated-agents]]", "[[context-compaction]]", "[[exploratory-spec-discovery]]", "[[context-reset]]", "[[session-context-forking]]"]
 sources: [7-secret-prompts-that-make-claude-code-10x-better, live-코덱스로-바이브-코딩하기-feat-하네스-엔지니어링]
 ---
 

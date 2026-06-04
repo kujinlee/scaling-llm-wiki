@@ -3,7 +3,7 @@ concept: GitHub as Blueprint
 category: Workflows & Methodology
 summary: Pointing an agent at an existing repository and instructing it to replicate that project's behavior, making repos the highest-fidelity agent onboarding artifact.
 aliases: [GitHub repo as template, repo-driven agent setup, repo benchmarking]
-related: [meta-skills, computer-use-automation, harness-engineering]
+related: ["[[meta-skills]]", "[[computer-use-automation]]", "[[harness-engineering]]"]
 sources: [나의-ai-에이전트-전환기-w-클로드-코드-오픈클로]
 ---
 

@@ -3,7 +3,7 @@ concept: Context Graph
 category: Memory & Knowledge Systems
 summary: A knowledge-graph-backed memory architecture that unifies an agent's short-term, long-term, and reasoning memory into one traversable structure, giving decisions grounded context and explainable provenance.
 aliases: [context graph, context graphs, agent context graph, unified memory graph, graph agent memory, Neo4j agent memory]
-related: [graph-augmented-retrieval, reasoning-trace-memory, persistent-agent-memory, memory-storage-injection-recall, codebase-knowledge-graph, causal-decision-modeling, ontology-operating-system, llm-knowledge-wiki, cross-tool-memory]
+related: ["[[graph-augmented-retrieval]]", "[[reasoning-trace-memory]]", "[[persistent-agent-memory]]", "[[memory-storage-injection-recall]]", "[[codebase-knowledge-graph]]", "[[causal-decision-modeling]]", "[[ontology-operating-system]]", "[[llm-knowledge-wiki]]", "[[cross-tool-memory]]"]
 sources: [connecting-the-dots-with-context-graphs-stephen-chin-neo4j]
 ---
 

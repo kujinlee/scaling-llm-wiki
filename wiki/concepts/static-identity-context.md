@@ -3,7 +3,7 @@ concept: Static Identity Context
 category: Harness & Context Engineering
 summary: Persistent identity, brand, and voice files (e.g. user.md, personality.md) supplied as always-loaded static context — distinct from operational project knowledge — so the AI consistently knows who you are and how you communicate.
 aliases: [static identity context, identity files, brand context files, user.md, personality.md, persona files, voice and brand context, identity layer]
-related: [claude-md, assistant-personalization-layers, second-brain, persistent-agent-memory, context-engineering, context-rot, agentic-operating-system, collaborative-prompt-elicitation]
+related: ["[[claude-md]]", "[[assistant-personalization-layers]]", "[[second-brain]]", "[[persistent-agent-memory]]", "[[context-engineering]]", "[[context-rot]]", "[[agentic-operating-system]]", "[[collaborative-prompt-elicitation]]"]
 sources: [creating-your-own-agentic-os-is-easy-insanely-powerful]
 ---
 

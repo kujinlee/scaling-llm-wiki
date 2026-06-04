@@ -3,7 +3,7 @@ concept: Permission Tiering
 category: Harness & Context Engineering
 summary: Graded allow/ask/deny authority model for agents: auto-allow known-safe commands, require explicit approval for sensitive ones, and outright forbid dangerous ones.
 aliases: [permission tiering, granular permissions, allow-ask-deny permissions, scoped agent permissions, no-auto-accept, permission management]
-related: [lifecycle-hooks, auto-correction-loop, graduated-autonomy, plan-first-workflow, claude-md, harness-engineering, agent-checkpoint-rollback]
+related: ["[[lifecycle-hooks]]", "[[auto-correction-loop]]", "[[graduated-autonomy]]", "[[plan-first-workflow]]", "[[claude-md]]", "[[harness-engineering]]", "[[agent-checkpoint-rollback]]"]
 sources: [claude-code-창시자-boris의-ai-에이전트-셋업-전부-다-까보자, 12-claude-code-features-every-engineer-should-know-subagents]
 ---
 

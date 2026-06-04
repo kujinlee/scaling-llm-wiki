@@ -3,7 +3,7 @@ concept: Agentic Loop
 category: Agent Architecture & Patterns
 summary: The core continuous reasoning cycle of a coding agent — the model decides the next action, a tool executes it, the result feeds back, and the model re-evaluates — with the model, not hardcoded logic, driving the workflow.
 aliases: [agentic loop, agent loop, reasoning loop, decide-execute-feedback loop, the agent's loop, model-driven control loop, think-act-observe loop, prompt-think-tool-observe loop]
-related: [robust-tool-design, subagent-context-isolation, lifecycle-hooks, generator-verifier-loop, self-verification-loop, harness-engineering, model-context-protocol, tool-integration-hierarchy, claude-md, distributed-systems-literacy, custom-harness-decision]
+related: ["[[robust-tool-design]]", "[[subagent-context-isolation]]", "[[lifecycle-hooks]]", "[[generator-verifier-loop]]", "[[self-verification-loop]]", "[[harness-engineering]]", "[[model-context-protocol]]", "[[tool-integration-hierarchy]]", "[[claude-md]]", "[[distributed-systems-literacy]]", "[[custom-harness-decision]]"]
 sources: [claude-s-internal-architecture-revealed-how-ai-agents-actual, i-built-an-agent-harness-in-go-agent-harnesses-explained]
 ---
 

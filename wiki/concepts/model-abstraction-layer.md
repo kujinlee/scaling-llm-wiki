@@ -3,7 +3,7 @@ concept: Model Abstraction Layer
 category: Agent Architecture & Patterns
 summary: An architectural seam that decouples an agent from any single LLM provider, converting a hostile pricing or policy change from an existential threat into a configuration swap.
 aliases: [model abstraction layer, provider abstraction, vendor lock-in avoidance, model portability, LLM provider switching, multi-provider architecture]
-related: [per-node-model-routing, cross-model-critique, token-maxing, cross-tool-memory, harness-engineering]
+related: ["[[per-node-model-routing]]", "[[cross-model-critique]]", "[[token-maxing]]", "[[cross-tool-memory]]", "[[harness-engineering]]"]
 sources: [클로드-유료-사용-개발자들이-단체로-뒤통수-맞은-건에-대하여-클로드-요금-정책-변경-총정리]
 ---
 

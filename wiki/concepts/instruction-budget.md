@@ -3,7 +3,7 @@ concept: Instruction Budget
 category: Harness & Context Engineering
 summary: Frontier LLMs reliably follow only ~150–200 instructions per call, so reliability comes from decomposing monolithic prompts into focused sub-prompts that each stay well under the budget.
 aliases: [instruction budget, instruction-following budget, prompt instruction limit, 150-200 instructions, too many instructions, prompt decomposition, control flow for control flow, dumb zone]
-related: [context-engineering, context-rot, claude-md, deterministic-workflow-orchestration, robust-tool-design, spec-driven-development, harness-engineering, theory-of-mind-for-llms, per-node-model-routing]
+related: ["[[context-engineering]]", "[[context-rot]]", "[[claude-md]]", "[[deterministic-workflow-orchestration]]", "[[robust-tool-design]]", "[[spec-driven-development]]", "[[harness-engineering]]", "[[theory-of-mind-for-llms]]", "[[per-node-model-routing]]"]
 sources: [everything-we-got-wrong-about-research-plan-implement-dexter]
 ---
 

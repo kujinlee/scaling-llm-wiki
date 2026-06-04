@@ -3,7 +3,7 @@ concept: Graduated Autonomy
 category: Agent Architecture & Patterns
 summary: Expanding agent authority deliberately: start with low-stakes recoverable routines and widen scope only as the system earns trust through demonstrated reliability.
 aliases: [graduated autonomy, incremental trust, trust-building for agents, low-stakes-first delegation, progressive delegation]
-related: [shifting-bottlenecks, self-verification-loop, engineering-taste, agent-as-infrastructure, lifecycle-hooks, agentic-capability-ladder]
+related: ["[[shifting-bottlenecks]]", "[[self-verification-loop]]", "[[engineering-taste]]", "[[agent-as-infrastructure]]", "[[lifecycle-hooks]]", "[[agentic-capability-ladder]]"]
 sources: [every-level-of-claude-explained-in-21-minutes]
 ---
 

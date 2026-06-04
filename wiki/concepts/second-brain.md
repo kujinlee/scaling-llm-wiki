@@ -3,7 +3,7 @@ concept: Second Brain
 category: Memory & Knowledge Systems
 summary: A personal, agent-managed knowledge repository that externalizes a person's accumulated knowledge, style, and context so an AI agent can operate with durable memory on their behalf — making unique personal context, not model choice, the competitive moat.
 aliases: [second brain, AI second brain, personal knowledge base, externalized knowledge repository, knowledge vessel, context as moat, 세컨드 브레인]
-related: [llm-knowledge-wiki, knowledge-base-linting, ingest-vs-query-time-synthesis, persistent-agent-memory, cross-tool-memory, context-engineering, ontology-operating-system, thinking-vs-understanding, engineering-taste, procedural-knowledge-skills, plugin-packaging, agent-as-infrastructure]
+related: ["[[llm-knowledge-wiki]]", "[[knowledge-base-linting]]", "[[ingest-vs-query-time-synthesis]]", "[[persistent-agent-memory]]", "[[cross-tool-memory]]", "[[context-engineering]]", "[[ontology-operating-system]]", "[[thinking-vs-understanding]]", "[[engineering-taste]]", "[[procedural-knowledge-skills]]", "[[plugin-packaging]]", "[[agent-as-infrastructure]]"]
 sources: [ai-를-위한-두-번째-뇌-세컨드-브레인-파헤치기-feat-메타-스태프-엔지니어, claude-karpathy-s-second-brain-is-insane]
 ---
 

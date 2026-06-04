@@ -3,7 +3,7 @@ concept: Problem-Solving as Product
 category: Industry, Strategy & Careers
 summary: The redefinition of an application from a downloadable tool into a natural-language workflow that delivers "problem-solving itself" — accessed through an evolving "AI surface" and won by vertical, proprietary-data solutions rather than general-purpose tools.
 aliases: [problem-solving as product, app as workflow, AI surface, problem-solving itself, unbundling ChatGPT, task-completion service, solution not tool, application redefinition]
-related: [expert-domain-defensibility, agent-native-infrastructure, distribution-over-features, second-brain, software-3-0, interactive-artifacts, founder-wedge-strategy, ai-native-vs-ai-assisted]
+related: ["[[expert-domain-defensibility]]", "[[agent-native-infrastructure]]", "[[distribution-over-features]]", "[[second-brain]]", "[[software-3-0]]", "[[interactive-artifacts]]", "[[founder-wedge-strategy]]", "[[ai-native-vs-ai-assisted]]"]
 sources: [ep-97-ai-psychosis-시대의-사람들]
 ---
 

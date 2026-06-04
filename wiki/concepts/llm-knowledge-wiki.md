@@ -3,7 +3,7 @@ concept: LLM Knowledge Wiki
 category: Memory & Knowledge Systems
 summary: A structured retrieval-backed knowledge base — RAG or agent-maintained cross-linked markdown — giving an agent semantic access to accumulated knowledge rather than literal string search.
 aliases: [knowledge LM wiki, knowledge LLM wiki, agent knowledge base, RAG knowledge base, second-brain wiki]
-related: [context-engineering, claude-md, compound-engineering, token-maxing, persistent-agent-memory, codebase-knowledge-graph, ai-native-company, ingest-vs-query-time-synthesis, agent-native-infrastructure, second-brain, knowledge-base-linting]
+related: ["[[context-engineering]]", "[[claude-md]]", "[[compound-engineering]]", "[[token-maxing]]", "[[persistent-agent-memory]]", "[[codebase-knowledge-graph]]", "[[ai-native-company]]", "[[ingest-vs-query-time-synthesis]]", "[[agent-native-infrastructure]]", "[[second-brain]]", "[[knowledge-base-linting]]"]
 sources: [tokenmaxxing-how-top-builders-use-ai-to-do-the-work-of-400-e, every-claude-code-memory-system-compared-so-you-don-t-have-t, stanford-cs153-frontier-systems-the-ai-native-company-how-on, karpathy-s-wiki-vs-open-brain-one-fails-when-you-need-it-mos, 6-claude-code-github-repos-that-change-everything, ai-를-위한-두-번째-뇌-세컨드-브레인-파헤치기-feat-메타-스태프-엔지니어, claude-karpathy-s-second-brain-is-insane, karpathy-s-llm-wiki-full-beginner-setup-guide]
 ---
 

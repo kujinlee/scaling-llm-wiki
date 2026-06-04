@@ -3,7 +3,7 @@ concept: Structured Task Ledger
 category: Memory & Knowledge Systems
 summary: A persistent set of external files (plan, progress, verify, agents) that holds a task's decomposition and completion state on disk, so fast sessions stay within context limits and any new session or agent resumes exactly where the last left off without re-processing old context.
 aliases: [four-file system, structured task ledger, plan progress verify files, external task memory, progress tracking files, plan.md progress.md, task-state ledger, external context files]
-related: [persistent-agent-memory, claude-md, context-compaction, context-decay, subagent-context-isolation, long-running-agent-missions, ralph-loop, fast-models-slow-developers, agent-alignment-artifacts]
+related: ["[[persistent-agent-memory]]", "[[claude-md]]", "[[context-compaction]]", "[[context-decay]]", "[[subagent-context-isolation]]", "[[long-running-agent-missions]]", "[[ralph-loop]]", "[[fast-models-slow-developers]]", "[[agent-alignment-artifacts]]"]
 sources: [fast-models-need-slow-developers-sarah-chieng-cerebras]
 ---
 

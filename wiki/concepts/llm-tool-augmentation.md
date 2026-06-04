@@ -3,7 +3,7 @@ concept: LLM Tool Augmentation
 category: LLM Internals & Training
 summary: Teaching a model to emit special tokens that pause generation, call an external tool (search, code interpreter), and inject the result into its context window as working memory — overcoming both knowledge and computation limits.
 aliases: [tool use, LLM tool use, tool augmentation, special tokens for tools, working memory, context window as working memory, search and code tools]
-related: [tokens-to-think, llm-hallucination, agentic-loop, robust-tool-design, context-engineering, next-token-prediction]
+related: ["[[tokens-to-think]]", "[[llm-hallucination]]", "[[agentic-loop]]", "[[robust-tool-design]]", "[[context-engineering]]", "[[next-token-prediction]]"]
 sources: [deep-dive-into-llms-like-chatgpt]
 ---
 

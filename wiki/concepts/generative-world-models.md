@@ -3,7 +3,7 @@ concept: Generative World Models
 category: LLM Internals & Training
 summary: Generative models that produce interactive, explorable virtual environments on demand — rendering real-time 3D worlds with consistent physics and persistent memory, seeded from prompts or video and steerable while running.
 aliases: [generative world models, world models, Genie, interactive world generation, generative simulation, neural game engines, playable world models, real-time generative environments]
-related: [next-token-prediction, reasoning-reinforcement-learning, omnimodal-embeddings, multimodal-visual-input, interactive-artifacts, on-device-inference, persistent-agent-memory]
+related: ["[[next-token-prediction]]", "[[reasoning-reinforcement-learning]]", "[[omnimodal-embeddings]]", "[[multimodal-visual-input]]", "[[interactive-artifacts]]", "[[on-device-inference]]", "[[persistent-agent-memory]]"]
 sources: [how-google-deepmind-is-researching-the-next-frontier-of-ai-f]
 ---
 

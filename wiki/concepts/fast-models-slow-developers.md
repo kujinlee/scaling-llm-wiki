@@ -3,7 +3,7 @@ concept: Fast Models, Slow Developers
 category: Workflows & Methodology
 summary: As AI code generation gets dramatically faster, the speed dividend must be reinvested into validation, variation, refactoring, and real-time steering — because fast models amplify sloppy habits into technical debt at the same multiplied rate.
 aliases: [fast models need slow developers, speed dividend, inference speed reinvestment, technical debt at speed, reinvesting AI speed, slow developers, speed amplifies bad habits]
-related: [free-validation-at-speed, generative-variation-selection, realtime-ai-pair-collaboration, structured-task-ledger, per-node-model-routing, vibe-coding-vs-agentic-engineering, friction-as-judgment, ai-garbage-collection, context-compaction, surgical-change-discipline, token-maxing]
+related: ["[[free-validation-at-speed]]", "[[generative-variation-selection]]", "[[realtime-ai-pair-collaboration]]", "[[structured-task-ledger]]", "[[per-node-model-routing]]", "[[vibe-coding-vs-agentic-engineering]]", "[[friction-as-judgment]]", "[[ai-garbage-collection]]", "[[context-compaction]]", "[[surgical-change-discipline]]", "[[token-maxing]]"]
 sources: [fast-models-need-slow-developers-sarah-chieng-cerebras]
 ---
 

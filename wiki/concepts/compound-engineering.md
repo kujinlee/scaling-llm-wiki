@@ -3,7 +3,7 @@ concept: Compound Engineering
 category: Workflows & Methodology
 summary: Continuously feeding solved problems and hard-won knowledge back into the agent's environment so automation capability accumulates over time rather than being re-solved from scratch.
 aliases: [compounding engineering, iterative environment improvement, self-healing layer, root-cause system improvement]
-related: [claude-md, self-verification-loop, agentic-issue-resolution, harness-debugging, ai-garbage-collection, parallel-environment-isolation, deterministic-workflow-orchestration]
+related: ["[[claude-md]]", "[[self-verification-loop]]", "[[agentic-issue-resolution]]", "[[harness-debugging]]", "[[ai-garbage-collection]]", "[[parallel-environment-isolation]]", "[[deterministic-workflow-orchestration]]"]
 sources: [live-coding-session-with-boris-cherny-and-jarred-sumner, claude-code와-git-worktree-병렬-구성-배포-방식이-달라집니다]
 ---
 

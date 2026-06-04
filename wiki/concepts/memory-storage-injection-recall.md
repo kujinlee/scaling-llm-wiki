@@ -3,7 +3,7 @@ concept: Memory Storage, Injection & Recall
 category: Memory & Knowledge Systems
 summary: The three axes every agent-memory system must design explicitly: how information is saved, how it is brought back into the active context window, and how past facts are retrieved on demand.
 aliases: [three pillars of LLM memory, storage injection recall, memory system pillars, memory architecture pillars, three questions of agent memory]
-related: [persistent-agent-memory, progressive-disclosure-retrieval, claude-md, llm-knowledge-wiki, lifecycle-hooks, context-rot, ingest-vs-query-time-synthesis, cross-tool-memory]
+related: ["[[persistent-agent-memory]]", "[[progressive-disclosure-retrieval]]", "[[claude-md]]", "[[llm-knowledge-wiki]]", "[[lifecycle-hooks]]", "[[context-rot]]", "[[ingest-vs-query-time-synthesis]]", "[[cross-tool-memory]]"]
 sources: [master-claude-memory-in-23-minutes]
 ---
 

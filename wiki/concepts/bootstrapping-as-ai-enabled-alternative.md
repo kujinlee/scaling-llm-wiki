@@ -3,7 +3,7 @@ concept: Bootstrapping as AI-Enabled Alternative
 category: Industry, Strategy & Careers
 summary: AI's collapse of software development cost makes self-funded bootstrapping a credible alternative to venture capital — letting solo founders and small teams reach meaningful revenue without raising, while AI startups that do raise command premium valuations.
 aliases: [bootstrapping, AI bootstrapping, bootstrapping viability, self-funded startups, AI startup premium, raise-or-bootstrap, no-funding path, AI valuation premium]
-related: [venture-scale-vs-durable-profitability, founder-dilution-and-control, vibe-coding-vs-agentic-engineering, distribution-over-creation, distribution-over-features, ai-native-company, expert-domain-defensibility, founder-wedge-strategy, ai-enablement-consulting]
+related: ["[[venture-scale-vs-durable-profitability]]", "[[founder-dilution-and-control]]", "[[vibe-coding-vs-agentic-engineering]]", "[[distribution-over-creation]]", "[[distribution-over-features]]", "[[ai-native-company]]", "[[expert-domain-defensibility]]", "[[founder-wedge-strategy]]", "[[ai-enablement-consulting]]"]
 sources: [if-you-don-t-understand-funding-you-don-t-understand-startup]
 ---
 

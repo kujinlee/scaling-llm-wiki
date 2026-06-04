@@ -3,7 +3,7 @@ concept: Chain-of-Thought Prompting
 category: Workflows & Methodology
 summary: Prompting the model to spell out its reasoning step by step before answering, which consistently improves results — genuine reasoning scaffolding, not a mere computational placeholder.
 aliases: [chain of thought, CoT, chain-of-thought prompting, think step by step, reasoning elicitation, show your work]
-related: [prompt-engineering, reasoning-effort-control, verifiability-law, self-verification-loop, theory-of-mind-for-llms]
+related: ["[[prompt-engineering]]", "[[reasoning-effort-control]]", "[[verifiability-law]]", "[[self-verification-loop]]", "[[theory-of-mind-for-llms]]"]
 sources: [ai-prompt-engineering-a-deep-dive]
 ---
 

@@ -3,7 +3,7 @@ concept: Model Context Protocol
 category: Agent Architecture & Patterns
 summary: An open protocol that connects an agent to external tools and services through a standard server interface, so capabilities can be added without bespoke per-integration code.
 aliases: [MCP, model context protocol, MCP server, open tool protocol, external tool integration protocol, skills over MCP, agent-to-agent communication]
-related: [tool-integration-hierarchy, agent-native-infrastructure, plugin-packaging, computer-use-automation, cross-tool-memory, deterministic-workflow-orchestration]
+related: ["[[tool-integration-hierarchy]]", "[[agent-native-infrastructure]]", "[[plugin-packaging]]", "[[computer-use-automation]]", "[[cross-tool-memory]]", "[[deterministic-workflow-orchestration]]"]
 sources: [12-claude-code-features-every-engineer-should-know-subagents, every-level-of-claude-explained-in-21-minutes, every-claude-code-memory-system-compared-so-you-don-t-have-t, 26년-5월-업데이트-클로드-핵심-기능-300-활용법ㅣ코워크-skills-커넥터-어플, aie-europe-keynotes-coding-agents-ft-pi-google-deepmind-anth]
 ---
 

@@ -3,7 +3,7 @@ concept: Harness Engineering
 category: Harness & Context Engineering
 summary: Pre-defining the environment, rules, and reference material that constrain an agent so it acts reliably on complex tasks without per-step human guidance — "fix the harness, not the prompt."
 aliases: [harness engineering, agent harness design, AI harness]
-related: [claude-md, context-engineering, deterministic-workflow-orchestration, per-node-model-routing, auto-research, meta-skills, self-verification-loop, agent-router, thin-harness-fat-skills, dark-factory, governance-layer, context-decay, auto-correction-loop, ai-garbage-collection, harness-debugging]
+related: ["[[claude-md]]", "[[context-engineering]]", "[[deterministic-workflow-orchestration]]", "[[per-node-model-routing]]", "[[auto-research]]", "[[meta-skills]]", "[[self-verification-loop]]", "[[agent-router]]", "[[thin-harness-fat-skills]]", "[[dark-factory]]", "[[governance-layer]]", "[[context-decay]]", "[[auto-correction-loop]]", "[[ai-garbage-collection]]", "[[harness-debugging]]"]
 sources: [나의-ai-에이전트-전환기-w-클로드-코드-오픈클로, the-next-evolution-of-ai-coding-is-harnesses-here-s-how-to-b, tokenmaxxing-how-top-builders-use-ai-to-do-the-work-of-400-e, i-m-building-an-ai-dark-factory-that-ships-its-own-code-publ, 하네스-공식문서-100번-읽은-것처럼-만들어드림, the-ai-dark-factory-is-alive-a-codebase-that-writes-its-own-, live-코덱스로-바이브-코딩하기-feat-하네스-엔지니어링]
 ---
 

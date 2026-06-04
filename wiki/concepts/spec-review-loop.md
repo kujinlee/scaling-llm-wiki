@@ -3,7 +3,7 @@ concept: Spec Review Loop
 category: Workflows & Methodology
 summary: Automated iterative review of a design spec before coding begins: a reviewer sub-agent flags ambiguities and gaps, the author fixes them, and the loop repeats up to a bounded cap.
 aliases: [automated spec review, iterative design review, spec review gate, design-review loop]
-related: [spec-driven-development, multi-agent-code-review, self-verification-loop, cross-model-critique]
+related: ["[[spec-driven-development]]", "[[multi-agent-code-review]]", "[[self-verification-loop]]", "[[cross-model-critique]]"]
 sources: [the-claude-code-plugin-every-developer-must-learn-superpower]
 ---
 

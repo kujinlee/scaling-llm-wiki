@@ -3,7 +3,7 @@ concept: Omnimodal Embeddings
 category: Memory & Knowledge Systems
 summary: Encoding text, video, audio, and documents into a single shared semantic vector space so retrieval, recognition, and comparison work across modalities through one embedding rather than per-modality silos.
 aliases: [omnimodal embeddings, multimodal embeddings, unified semantic vector, cross-modal retrieval, Gemini Embeddings, Matryoshka representation learning, MRL, single embedding space]
-related: [llm-knowledge-wiki, agentic-search, graph-augmented-retrieval, persistent-agent-memory, context-graph, cross-tool-memory, multimodal-visual-input, generative-world-models]
+related: ["[[llm-knowledge-wiki]]", "[[agentic-search]]", "[[graph-augmented-retrieval]]", "[[persistent-agent-memory]]", "[[context-graph]]", "[[cross-tool-memory]]", "[[multimodal-visual-input]]", "[[generative-world-models]]"]
 sources: [how-google-deepmind-is-researching-the-next-frontier-of-ai-f]
 ---
 

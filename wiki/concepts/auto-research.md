@@ -3,7 +3,7 @@ concept: Auto Research
 category: Workflows & Methodology
 summary: Providing an agent with explicit evaluation criteria and letting it verify and improve its own output iteratively until those criteria are met, unattended.
 aliases: [auto research, automated research loop, Karpathy auto-research]
-related: [self-verification-loop, hill-climbing, cross-model-critique, engineering-taste]
+related: ["[[self-verification-loop]]", "[[hill-climbing]]", "[[cross-model-critique]]", "[[engineering-taste]]"]
 sources: [나의-ai-에이전트-전환기-w-클로드-코드-오픈클로]
 ---
 

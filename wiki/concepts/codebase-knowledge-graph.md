@@ -3,7 +3,7 @@ concept: Codebase Knowledge Graph
 category: Memory & Knowledge Systems
 summary: A structured, queryable representation of a codebase's files, dependencies, and relationships, generated automatically so agents and humans can navigate it without file-by-file scanning.
 aliases: [code knowledge base, codebase knowledge base, interactive code graph, code dependency graph, code-to-knowledge-base]
-related: [llm-knowledge-wiki, context-engineering, claude-md, compound-engineering, token-maxing]
+related: ["[[llm-knowledge-wiki]]", "[[context-engineering]]", "[[claude-md]]", "[[compound-engineering]]", "[[token-maxing]]"]
 sources: [understand-anything-vs-graphify-i-tested-both-on-my-saas]
 ---
 

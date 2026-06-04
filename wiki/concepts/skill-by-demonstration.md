@@ -3,7 +3,7 @@ concept: Skill by Demonstration
 category: Skills, Plugins & Automation
 summary: Authoring a reusable agent skill by performing the workflow once and then having the agent reverse-engineer that worked run into repeatable steps, rather than writing the skill cold from a blank page.
 aliases: [Perform-Then-Reverse-Engineer, Demonstrated Skill Authoring]
-related: [procedural-knowledge-skills, meta-skills, persistent-agent-memory]
+related: ["[[procedural-knowledge-skills]]", "[[meta-skills]]", "[[persistent-agent-memory]]"]
 sources: [learn-80-of-claude-cowork-in-under-20-minutes]
 ---
 

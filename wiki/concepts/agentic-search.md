@@ -3,7 +3,7 @@ concept: Agentic Search
 category: Memory & Knowledge Systems
 summary: Letting the agent decide when, how, and how often to invoke search tools to pull context on demand, replacing RAG's fixed single-shot retrieval pipeline with iterative, agent-driven retrieval.
 aliases: [agentic search, agentic RAG, agent-driven retrieval, iterative retrieval, multi-hop retrieval, search as context engineering]
-related: [context-engineering, llm-knowledge-wiki, robust-tool-design, low-floor-high-ceiling-tooling, tool-integration-hierarchy, persistent-agent-memory, model-context-protocol, computer-use-automation]
+related: ["[[context-engineering]]", "[[llm-knowledge-wiki]]", "[[robust-tool-design]]", "[[low-floor-high-ceiling-tooling]]", "[[tool-integration-hierarchy]]", "[[persistent-agent-memory]]", "[[model-context-protocol]]", "[[computer-use-automation]]"]
 sources: [agentic-search-for-context-engineering-leonie-monigatti-elas]
 ---
 

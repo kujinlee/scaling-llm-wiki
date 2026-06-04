@@ -3,7 +3,7 @@ concept: Agentic Coding Tool Selection
 category: Coding Tools & IDEs
 summary: Choosing and pairing AI coding agents (Claude Code, Codex) by their distinct workflow strengths rather than seeking one universal winner, with code portability as the lock-in hedge.
 aliases: [coding agent selection, Claude Code vs Codex, plan-with-one-execute-with-another, complementary coding agents, tool-fit selection, agentic tool pairing, speed vs quality vs cost, proactive vs direct agents]
-related: [model-abstraction-layer, per-node-model-routing, cross-model-critique, explicit-gears, computer-use-automation, satisfaction-testing, agent-as-infrastructure, token-maxing, context-compaction, self-verification-loop, session-context-forking, non-blocking-side-inquiry, generator-verifier-loop]
+related: ["[[model-abstraction-layer]]", "[[per-node-model-routing]]", "[[cross-model-critique]]", "[[explicit-gears]]", "[[computer-use-automation]]", "[[satisfaction-testing]]", "[[agent-as-infrastructure]]", "[[token-maxing]]", "[[context-compaction]]", "[[self-verification-loop]]", "[[session-context-forking]]", "[[non-blocking-side-inquiry]]", "[[generator-verifier-loop]]"]
 sources: [100-hours-testing-claude-code-vs-chatgpt-codex-honest-result, i-built-the-same-app-with-claude-code-and-codex, live-코덱스로-바이브-코딩하기-feat-하네스-엔지니어링]
 ---
 

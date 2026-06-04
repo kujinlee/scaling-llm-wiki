@@ -3,7 +3,7 @@ concept: Distributed Systems Literacy
 category: Agent Architecture & Patterns
 summary: The framing that an AI coding agent is built from established distributed-systems and computer-science primitives — loop as task queue, tools as service interface, hooks as middleware, compaction as log rotation, sub-agents as worker nodes, CLAUDE.md as configuration — so mastering those patterns is the new literacy for building agents.
 aliases: [distributed systems literacy, agent as distributed system, new distributed system literacy, agents are established CS principles, agent architecture mapping, clean-room agent reconstruction]
-related: [agentic-loop, subagent-context-isolation, lifecycle-hooks, context-compaction, claude-md, harness-engineering, github-as-blueprint, deterministic-workflow-orchestration, agent-router]
+related: ["[[agentic-loop]]", "[[subagent-context-isolation]]", "[[lifecycle-hooks]]", "[[context-compaction]]", "[[claude-md]]", "[[harness-engineering]]", "[[github-as-blueprint]]", "[[deterministic-workflow-orchestration]]", "[[agent-router]]"]
 sources: [claude-s-internal-architecture-revealed-how-ai-agents-actual]
 ---
 

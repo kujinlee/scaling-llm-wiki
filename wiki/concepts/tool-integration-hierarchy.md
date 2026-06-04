@@ -3,7 +3,7 @@ concept: Tool Integration Hierarchy
 category: Harness & Context Engineering
 summary: Preference ordering for giving agents new capabilities: CLI tools first (60–70% fewer tokens), then APIs, then skills, then MCP only when nothing lighter fits — a context-budget discipline.
 aliases: [tool integration hierarchy, CLI-first integration, MCP-last principle, token-efficient tool integration, integration preference order]
-related: [token-maxing, per-node-model-routing, harness-engineering, context-rot, model-context-protocol, low-floor-high-ceiling-tooling, robust-tool-design]
+related: ["[[token-maxing]]", "[[per-node-model-routing]]", "[[harness-engineering]]", "[[context-rot]]", "[[model-context-protocol]]", "[[low-floor-high-ceiling-tooling]]", "[[robust-tool-design]]"]
 sources: [every-level-of-claude-explained-in-21-minutes, 12-claude-code-features-every-engineer-should-know-subagents, agentic-search-for-context-engineering-leonie-monigatti-elas]
 ---
 

@@ -3,7 +3,7 @@ concept: AI Operator Burnout
 category: Industry, Strategy & Careers
 summary: The exhaustion and derealization ("AI psychosis") that sets in when a human runs fleets of agents at high intensity — constant delegation, context-switching, and dopamine surges over work they no longer directly perform.
 aliases: [AI psychosis, agent operator burnout, conductor fatigue, over-immersion, AI burnout, derealization from AI work, delegation exhaustion]
-related: [parallel-isolated-agents, agent-router, token-maxing, thinking-vs-understanding, engineering-taste, agent-swarm-orchestration, graduated-autonomy, high-bandwidth-agent-interfaces]
+related: ["[[parallel-isolated-agents]]", "[[agent-router]]", "[[token-maxing]]", "[[thinking-vs-understanding]]", "[[engineering-taste]]", "[[agent-swarm-orchestration]]", "[[graduated-autonomy]]", "[[high-bandwidth-agent-interfaces]]"]
 sources: [ep-97-ai-psychosis-시대의-사람들]
 ---
 

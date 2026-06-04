@@ -3,7 +3,7 @@ concept: Lifecycle Hooks
 category: Agent Architecture & Patterns
 summary: Custom logic that fires at defined agent execution events (pre-tool-use, post-edit, session-stop), enforcing deterministic guardrails the model cannot skip or forget.
 aliases: [lifecycle hooks, agent hooks, event hooks, safety-rail hooks, pre-tool-use hook, stop hook, hooks as middleware, tool-call interceptor]
-related: [persistent-agent-memory, agent-as-infrastructure, graduated-autonomy, self-verification-loop, deterministic-workflow-orchestration, plugin-packaging, context-compaction, agentic-loop, distributed-systems-literacy]
+related: ["[[persistent-agent-memory]]", "[[agent-as-infrastructure]]", "[[graduated-autonomy]]", "[[self-verification-loop]]", "[[deterministic-workflow-orchestration]]", "[[plugin-packaging]]", "[[context-compaction]]", "[[agentic-loop]]", "[[distributed-systems-literacy]]"]
 sources: [every-level-of-claude-explained-in-21-minutes, every-claude-code-memory-system-compared-so-you-don-t-have-t, 12-claude-code-features-every-engineer-should-know-subagents, claude-s-internal-architecture-revealed-how-ai-agents-actual]
 ---
 

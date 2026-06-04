@@ -3,7 +3,7 @@ concept: Thinking vs. Understanding
 category: Industry, Strategy & Careers
 summary: Karpathy's distinction: analytical reasoning can be outsourced to an LLM, but genuine comprehension — knowing what to build and why — cannot be delegated.
 aliases: [thinking vs understanding, outsource thinking not understanding, understanding as the final bottleneck, you can outsource thinking but not understanding]
-related: [engineering-taste, shifting-bottlenecks, jagged-intelligence, agent-native-infrastructure, vibe-coding-vs-agentic-engineering, verifiability-law]
+related: ["[[engineering-taste]]", "[[shifting-bottlenecks]]", "[[jagged-intelligence]]", "[[agent-native-infrastructure]]", "[[vibe-coding-vs-agentic-engineering]]", "[[verifiability-law]]"]
 sources: [꼭-알아야할-안드레-카파시-30분-인터뷰-완전정리-ai시대의-필수-인사이트]
 ---
 

@@ -3,7 +3,7 @@ concept: Free Validation at Speed
 category: Workflows & Methodology
 summary: When generation runs at thousands of tokens per second, comprehensive validation — tests, lint, pre-commit hooks, diff review, browser QA — and automated refactoring cost effectively no time, so quality checks should run at every step rather than be rationed.
 aliases: [validation is free, free validation, validation at every step, speed makes validation free, continuous validation, automated refactoring at speed]
-related: [fast-models-slow-developers, auto-correction-loop, self-verification-loop, satisfaction-testing, agent-tdd, ai-garbage-collection, surgical-change-discipline, custom-eval-systems]
+related: ["[[fast-models-slow-developers]]", "[[auto-correction-loop]]", "[[self-verification-loop]]", "[[satisfaction-testing]]", "[[agent-tdd]]", "[[ai-garbage-collection]]", "[[surgical-change-discipline]]", "[[custom-eval-systems]]"]
 sources: [fast-models-need-slow-developers-sarah-chieng-cerebras]
 ---
 

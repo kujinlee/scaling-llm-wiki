@@ -3,7 +3,7 @@ concept: Progressive Disclosure Retrieval
 category: Memory & Knowledge Systems
 summary: Structuring memory recall as an ordered escalation of increasingly expensive tiers — in-context check, hybrid search, expand, raw transcript — stopping as soon as a cheaper tier suffices.
 aliases: [progressive disclosure retrieval, tiered memory retrieval, multi-tier recall, escalating retrieval, three-tier retrieval, cheapest-first recall]
-related: [persistent-agent-memory, memory-storage-injection-recall, llm-knowledge-wiki, lazy-context-loading, auto-correction-loop, context-rot, tool-integration-hierarchy]
+related: ["[[persistent-agent-memory]]", "[[memory-storage-injection-recall]]", "[[llm-knowledge-wiki]]", "[[lazy-context-loading]]", "[[auto-correction-loop]]", "[[context-rot]]", "[[tool-integration-hierarchy]]"]
 sources: [master-claude-memory-in-23-minutes]
 ---
 

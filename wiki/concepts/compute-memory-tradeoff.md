@@ -3,7 +3,7 @@ concept: Compute-Memory Tradeoff
 category: LLM Internals & Training
 summary: The recurring lever in LLM systems: nearly any memory pressure can be relieved by spending more compute, and vice versa — the art is placing each trade where the cheaper resource is slack.
 aliases: [compute vs memory tradeoff, recompute vs store, rematerialization, RevNets, reversible networks, memory for compute, activation checkpointing, Feistel network]
-related: [kv-cache-economics, serving-parallelism, mixture-of-experts, inference-batching-economics]
+related: ["[[kv-cache-economics]]", "[[serving-parallelism]]", "[[mixture-of-experts]]", "[[inference-batching-economics]]"]
 sources: [how-gpt-claude-and-gemini-are-actually-trained-and-served-re]
 ---
 

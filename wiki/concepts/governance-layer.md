@@ -3,7 +3,7 @@ concept: Governance Layer
 category: Harness & Context Engineering
 summary: Standing documents (mission, rules, global context) that constrain an autonomous coding system by encoding purpose and policy once rather than requiring per-action approval.
 aliases: [governance layer, factory governance, mission and rules files, agent governance files, mission.md, factory_rules.md]
-related: [claude-md, harness-engineering, dark-factory, deterministic-workflow-orchestration, context-engineering, lifecycle-hooks]
+related: ["[[claude-md]]", "[[harness-engineering]]", "[[dark-factory]]", "[[deterministic-workflow-orchestration]]", "[[context-engineering]]", "[[lifecycle-hooks]]"]
 sources: [i-m-building-an-ai-dark-factory-that-ships-its-own-code-publ]
 ---
 

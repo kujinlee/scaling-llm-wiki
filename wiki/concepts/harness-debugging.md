@@ -3,7 +3,7 @@ concept: Harness Debugging
 category: Harness & Context Engineering
 summary: Treating agentic workflows as production software that breaks: discovering defects in flight, hardening validation gates to fail closed, and live-correcting broken nodes on air.
 aliases: [harness debugging, agentic workflow debugging, workflow hardening, harness reliability iteration, fail-open validation, debugging the factory, live-correcting workflows]
-related: [harness-engineering, deterministic-workflow-orchestration, dark-factory, self-verification-loop, satisfaction-testing, holdout-validation, governance-layer, exploratory-spec-discovery, compound-engineering, ai-garbage-collection]
+related: ["[[harness-engineering]]", "[[deterministic-workflow-orchestration]]", "[[dark-factory]]", "[[self-verification-loop]]", "[[satisfaction-testing]]", "[[holdout-validation]]", "[[governance-layer]]", "[[exploratory-spec-discovery]]", "[[compound-engineering]]", "[[ai-garbage-collection]]"]
 sources: [the-ai-dark-factory-is-alive-a-codebase-that-writes-its-own-]
 ---
 

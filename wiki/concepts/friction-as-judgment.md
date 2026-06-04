@@ -3,7 +3,7 @@ concept: Friction as Judgment
 category: Harness & Context Engineering
 summary: The principle that the slowness of hand-writing code carried human review and judgment, so when agents remove that friction the quality signal must be rebuilt through agent-legible codebases and mechanical enforcement.
 aliases: [friction is your judgment, agent-legible codebases, ship-without-friction trap, overproduction trap, feel the pain, agent-legible code]
-related: [engineering-taste, auto-correction-loop, shifting-bottlenecks, surgical-change-discipline, vibe-coding-vs-agentic-engineering, claude-md, harness-engineering, self-verification-loop]
+related: ["[[engineering-taste]]", "[[auto-correction-loop]]", "[[shifting-bottlenecks]]", "[[surgical-change-discipline]]", "[[vibe-coding-vs-agentic-engineering]]", "[[claude-md]]", "[[harness-engineering]]", "[[self-verification-loop]]"]
 sources: [aie-europe-keynotes-coding-agents-ft-pi-google-deepmind-anth]
 ---
 

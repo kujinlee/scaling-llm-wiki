@@ -3,7 +3,7 @@ concept: Research Aesthetics
 category: LLM Internals & Training
 summary: Guiding foundational AI research by beauty, simplicity, and top-down conviction in an elegant idea, providing resilience against early contradictory experimental results.
 aliases: [research aesthetics, aesthetic-driven research, top-down research conviction, beauty in AI ideas]
-related: [age-of-research, engineering-taste, value-functions]
+related: ["[[age-of-research]]", "[[engineering-taste]]", "[[value-functions]]"]
 sources: [ilya-sutskever-we-re-moving-from-the-age-of-scaling-to-the-a]
 ---
 

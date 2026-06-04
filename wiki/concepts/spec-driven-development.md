@@ -3,7 +3,7 @@ concept: Spec-Driven Development
 category: Workflows & Methodology
 summary: Forcing an agent through ordered phases — explore, brainstorm, spec, plan, implement, verify — with hard gates between them to prevent premature coding and reduce downstream rework.
 aliases: [spec-driven development, brainstorm-plan-execute workflow, explore-plan-code, plan-before-code]
-related: [agent-tdd, spec-review-loop, visual-brainstorming, self-verification-loop, harness-engineering, explicit-gears, parallel-isolated-agents]
+related: ["[[agent-tdd]]", "[[spec-review-loop]]", "[[visual-brainstorming]]", "[[self-verification-loop]]", "[[harness-engineering]]", "[[explicit-gears]]", "[[parallel-isolated-agents]]"]
 sources: [the-claude-code-plugin-every-developer-must-learn-superpower]
 ---
 

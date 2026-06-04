@@ -3,7 +3,7 @@ concept: Sampling Parameters
 category: LLM Internals & Training
 summary: Inference-time controls — temperature, top-k, top-p — that govern the randomness and diversity of token selection, trading deterministic precision against creative variety.
 aliases: [sampling parameters, decoding parameters, temperature, top-k, top-p, nucleus sampling, output randomness control, generation parameters, decoding controls]
-related: [next-token-prediction, reasoning-effort-control, tokens-to-think, llm-hallucination, generative-variation-selection, escape-hatch-prompting]
+related: ["[[next-token-prediction]]", "[[reasoning-effort-control]]", "[[tokens-to-think]]", "[[llm-hallucination]]", "[[generative-variation-selection]]", "[[escape-hatch-prompting]]"]
 sources: [introduction-to-vertex-ai-studio]
 ---
 

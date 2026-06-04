@@ -3,7 +3,7 @@ concept: Session Context Forking
 category: Harness & Context Engineering
 summary: Cloning an agent session's full conversation context into an independent branch so a valuable context state (e.g. the completed planning phase) is preserved and can be returned to, letting the operator explore forward with a fallback.
 aliases: [session forking, context forking, session fork, fork, context branching, conversation branching, context insurance, branch-and-revert context, fork the session]
-related: [context-compaction, context-reset, agent-checkpoint-rollback, non-blocking-side-inquiry, subagent-context-isolation, parallel-isolated-agents, exploratory-spec-discovery, structured-task-ledger]
+related: ["[[context-compaction]]", "[[context-reset]]", "[[agent-checkpoint-rollback]]", "[[non-blocking-side-inquiry]]", "[[subagent-context-isolation]]", "[[parallel-isolated-agents]]", "[[exploratory-spec-discovery]]", "[[structured-task-ledger]]"]
 sources: [live-코덱스로-바이브-코딩하기-feat-하네스-엔지니어링]
 ---
 

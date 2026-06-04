@@ -3,7 +3,7 @@ concept: Usage Pattern Analysis
 category: Workflows & Methodology
 summary: Having the assistant audit the operator's own recent usage to surface effective patterns, anti-patterns, and tailored recommendations — a self-reflection loop for improving how the tool itself is used.
 aliases: [usage pattern analysis, usage audit, usage insights, self-audit, productivity analysis, usage reflection, workflow self-review]
-related: [compound-engineering, custom-eval-systems, ai-enablement-consulting, harness-engineering, assistant-personalization-layers, thinking-vs-understanding]
+related: ["[[compound-engineering]]", "[[custom-eval-systems]]", "[[ai-enablement-consulting]]", "[[harness-engineering]]", "[[assistant-personalization-layers]]", "[[thinking-vs-understanding]]"]
 sources: [7-secret-prompts-that-make-claude-code-10x-better]
 ---
 

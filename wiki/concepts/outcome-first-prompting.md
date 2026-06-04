@@ -3,7 +3,7 @@ concept: Outcome-First Prompting
 category: Workflows & Methodology
 summary: Directing a file- and tool-capable agent by defining the end result, constraints, and quality bar — rather than choreographing the steps — because the agent delivers finished artifacts, not a chat reply you refine in place.
 aliases: [Outcome-First Prompting Style, Result-First Prompting]
-related: [plan-first-workflow, aspirational-prompting, collaborative-prompt-elicitation, permission-tiering, exploratory-spec-discovery]
+related: ["[[plan-first-workflow]]", "[[aspirational-prompting]]", "[[collaborative-prompt-elicitation]]", "[[permission-tiering]]", "[[exploratory-spec-discovery]]"]
 sources: [learn-80-of-claude-cowork-in-under-20-minutes, 한글자막-현재-codex-에서-제일-핫한-기능-goal]
 ---
 

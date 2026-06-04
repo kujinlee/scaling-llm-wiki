@@ -3,7 +3,7 @@ concept: Curated Design-System Skills
 category: Workflows & Methodology
 summary: Equipping an agent with curated brand-grade reference design systems plus multi-dimensional self-critique so generated interfaces inherit professional aesthetics instead of a generic AI look.
 aliases: [design system skills, curated design references, brand-grade design generation, multi-dimensional design critique, design self-critique, avoiding generic AI aesthetics]
-related: [github-as-blueprint, auto-research, visual-brainstorming, custom-eval-systems, interactive-artifacts, vibe-coding-vs-agentic-engineering, engineering-taste, verifiability-law, token-maxing]
+related: ["[[github-as-blueprint]]", "[[auto-research]]", "[[visual-brainstorming]]", "[[custom-eval-systems]]", "[[interactive-artifacts]]", "[[vibe-coding-vs-agentic-engineering]]", "[[engineering-taste]]", "[[verifiability-law]]", "[[token-maxing]]"]
 sources: [6-claude-code-github-repos-that-change-everything]
 ---
 

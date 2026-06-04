@@ -3,7 +3,7 @@ concept: Parallel Execution Environment Isolation
 category: Agent Architecture & Patterns
 summary: Isolating the full runtime stack per parallel agent — code via worktree, ports, dependencies, and database via branching — so each can run and end-to-end test the live application without colliding with the others.
 aliases: [parallel environment isolation, runtime isolation for agents, worktree environment isolation, database branching for agents, per-agent runtime environment, full-stack agent isolation, port and database isolation]
-related: [parallel-isolated-agents, satisfaction-testing, holdout-validation, compound-engineering, harness-debugging, deterministic-workflow-orchestration, agentic-issue-resolution, self-verification-loop, agent-checkpoint-rollback]
+related: ["[[parallel-isolated-agents]]", "[[satisfaction-testing]]", "[[holdout-validation]]", "[[compound-engineering]]", "[[harness-debugging]]", "[[deterministic-workflow-orchestration]]", "[[agentic-issue-resolution]]", "[[self-verification-loop]]", "[[agent-checkpoint-rollback]]"]
 sources: [claude-code와-git-worktree-병렬-구성-배포-방식이-달라집니다]
 ---
 

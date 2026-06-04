@@ -3,7 +3,7 @@ concept: Code Comprehension Over Generation
 category: Workflows & Methodology
 summary: The finding that an engineer's highest-value use of AI in a large, fast-moving codebase is comprehension — rapidly understanding existing code, incidents, and history — not writing new code, packaged as structured multi-mode comprehension skills.
 aliases: [code comprehension over generation, comprehend first code later, AI for comprehension not generation, always-on senior engineer, catch me up skill, comprehension-first AI use, AI as code explainer]
-related: [thinking-vs-understanding, vibe-coding-vs-agentic-engineering, friction-as-judgment, codebase-knowledge-graph, procedural-knowledge-skills, engineering-taste, usage-pattern-analysis, agentic-issue-resolution, multi-agent-code-review, claude-md]
+related: ["[[thinking-vs-understanding]]", "[[vibe-coding-vs-agentic-engineering]]", "[[friction-as-judgment]]", "[[codebase-knowledge-graph]]", "[[procedural-knowledge-skills]]", "[[engineering-taste]]", "[[usage-pattern-analysis]]", "[[agentic-issue-resolution]]", "[[multi-agent-code-review]]", "[[claude-md]]"]
 sources: [comprehend-first-code-later-the-ai-skill-i-rely-on-daily-pri]
 ---
 

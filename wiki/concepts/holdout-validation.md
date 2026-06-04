@@ -3,7 +3,7 @@ concept: Holdout Validation
 category: Workflows & Methodology
 summary: Validating an implementation with a separate agent withheld from all development context — given only the user journey and diffs — to prevent sycophantic ratification of the implementer's work.
 aliases: [holdout pattern, holdout validation, independent validation agent, blind validation agent, anti-sycophancy validation, bias-free validation]
-related: [self-verification-loop, multi-agent-code-review, cross-model-critique, satisfaction-testing, dark-factory, reward-hacking, spec-review-loop]
+related: ["[[self-verification-loop]]", "[[multi-agent-code-review]]", "[[cross-model-critique]]", "[[satisfaction-testing]]", "[[dark-factory]]", "[[reward-hacking]]", "[[spec-review-loop]]"]
 sources: [i-m-building-an-ai-dark-factory-that-ships-its-own-code-publ]
 ---
 

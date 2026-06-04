@@ -3,7 +3,7 @@ concept: Internalized Orchestration
 category: Agent Architecture & Patterns
 summary: Training an agent's orchestration scaffold — parallel solution sampling plus cross-verifying deliberation — directly into model parameters as an activatable inner skill, so deep reasoning no longer depends on a brittle external harness.
 aliases: [internalized orchestration, heavy skill, heavy thinking, internalized agentic orchestration, agentic harness bottleneck, parallel reasoning and sequential deliberation, parameterized inner skill, orchestration as a skill]
-related: [super-app-convergence, harness-engineering, self-modifying-agent-harness, generator-verifier-loop, self-verification-loop, cross-model-critique, reasoning-reinforcement-learning, verifiability-law, tokens-to-think, subagent-context-isolation, agent-swarm-orchestration, thin-harness-fat-skills]
+related: ["[[super-app-convergence]]", "[[harness-engineering]]", "[[self-modifying-agent-harness]]", "[[generator-verifier-loop]]", "[[self-verification-loop]]", "[[cross-model-critique]]", "[[reasoning-reinforcement-learning]]", "[[verifiability-law]]", "[[tokens-to-think]]", "[[subagent-context-isolation]]", "[[agent-swarm-orchestration]]", "[[thin-harness-fat-skills]]"]
 sources: [heavyskill-internalizing-heavy-thinking-as-an-agentic-skill]
 ---
 

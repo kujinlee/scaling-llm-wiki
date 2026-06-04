@@ -3,7 +3,7 @@ concept: Agent Alignment Artifacts
 category: Workflows & Methodology
 summary: Lightweight intermediate documents — a design discussion, a structure outline, and vertically-sliced plans with checkpoints — that surface an agent's understanding and intended architecture for human correction before any code is written.
 aliases: [agent alignment artifacts, design discussion, structure outline, vertical plans, vertical vs horizontal plans, brain surgery on the agent, RPI to Crispy, crispy workflow, C header file for code]
-related: [plan-first-workflow, spec-driven-development, exploratory-spec-discovery, collaborative-prompt-elicitation, code-comprehension-over-generation, friction-as-judgment, instruction-budget, multi-agent-code-review, surgical-change-discipline, vibe-coding-vs-agentic-engineering, engineering-taste]
+related: ["[[plan-first-workflow]]", "[[spec-driven-development]]", "[[exploratory-spec-discovery]]", "[[collaborative-prompt-elicitation]]", "[[code-comprehension-over-generation]]", "[[friction-as-judgment]]", "[[instruction-budget]]", "[[multi-agent-code-review]]", "[[surgical-change-discipline]]", "[[vibe-coding-vs-agentic-engineering]]", "[[engineering-taste]]"]
 sources: [everything-we-got-wrong-about-research-plan-implement-dexter]
 ---
 

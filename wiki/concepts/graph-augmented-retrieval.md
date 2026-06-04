@@ -3,7 +3,7 @@ concept: Graph-Augmented Retrieval
 category: Memory & Knowledge Systems
 summary: Grounding RAG in a knowledge graph so retrieval pulls specific, complete, relationship-connected context (e.g. a full patient history) rather than the generic, disconnected chunks a vector-only store returns.
 aliases: [graph-augmented retrieval, GraphRAG, graph RAG, graph-grounded RAG, graph-powered RAG, knowledge-graph retrieval]
-related: [context-graph, agentic-search, llm-knowledge-wiki, persistent-agent-memory, codebase-knowledge-graph, reasoning-trace-memory]
+related: ["[[context-graph]]", "[[agentic-search]]", "[[llm-knowledge-wiki]]", "[[persistent-agent-memory]]", "[[codebase-knowledge-graph]]", "[[reasoning-trace-memory]]"]
 sources: [connecting-the-dots-with-context-graphs-stephen-chin-neo4j]
 ---
 

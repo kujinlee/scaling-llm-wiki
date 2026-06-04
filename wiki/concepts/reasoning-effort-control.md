@@ -3,7 +3,7 @@ concept: Reasoning Effort Control
 category: Workflows & Methodology
 summary: Dialing the model's per-prompt thinking budget up for hard tasks and down for simple ones — concentrating deep reasoning where it pays and economizing tokens everywhere else.
 aliases: [reasoning effort control, ultra think, thinking budget, per-prompt reasoning, effort dialing, extended thinking control, output verbosity control]
-related: [token-maxing, per-node-model-routing, plan-first-workflow, context-reset, explicit-gears, verifiability-law]
+related: ["[[token-maxing]]", "[[per-node-model-routing]]", "[[plan-first-workflow]]", "[[context-reset]]", "[[explicit-gears]]", "[[verifiability-law]]"]
 sources: [7-secret-prompts-that-make-claude-code-10x-better]
 ---
 

@@ -3,7 +3,7 @@ concept: Filesystem Memory Store
 category: Memory & Knowledge Systems
 summary: A persistent, file-system-like storage attached as a resource to ephemeral agent sessions and mounted so the agent reads, writes, and searches it with shell tools (bash, grep) across sessions.
 aliases: [memory store, filesystem memory store, mounted memory store, memory store resource, per-user memory store, per-workspace memory store, file-system agent memory]
-related: [persistent-agent-memory, memory-consolidation-dreaming, memory-storage-injection-recall, agentic-search, low-floor-high-ceiling-tooling, llm-knowledge-wiki, cross-tool-memory, agent-as-infrastructure]
+related: ["[[persistent-agent-memory]]", "[[memory-consolidation-dreaming]]", "[[memory-storage-injection-recall]]", "[[agentic-search]]", "[[low-floor-high-ceiling-tooling]]", "[[llm-knowledge-wiki]]", "[[cross-tool-memory]]", "[[agent-as-infrastructure]]"]
 sources: [agents-that-remember]
 ---
 

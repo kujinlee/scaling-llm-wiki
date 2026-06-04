@@ -3,7 +3,7 @@ concept: Cross-Model Critique
 category: Workflows & Methodology
 summary: Improving output by having the primary agent self-critique, then routing the same task to a different vendor's model to harvest divergent perspectives and blind-spot coverage.
 aliases: [cross-model self-critique, multi-model review, model-vs-model critique]
-related: [auto-research, multi-agent-code-review, self-verification-loop]
+related: ["[[auto-research]]", "[[multi-agent-code-review]]", "[[self-verification-loop]]"]
 sources: [나의-ai-에이전트-전환기-w-클로드-코드-오픈클로]
 ---
 

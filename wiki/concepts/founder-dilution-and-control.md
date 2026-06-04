@@ -3,7 +3,7 @@ concept: Founder Dilution and Control
 category: Industry, Strategy & Careers
 summary: The principle that deal terms and dilution — not headline valuation — determine a founder's economics and control, since each funding round issues new shares that shrink founder ownership and the term sheet's clauses can shift decision power to investors.
 aliases: [dilution, founder dilution, deal terms, term sheet, liquidation preference, protective provisions, pro-rata rights, drag-along rights, valuation is not control, beyond valuation]
-related: [venture-scale-vs-durable-profitability, bootstrapping-as-ai-enabled-alternative, founder-wedge-strategy, expert-domain-defensibility]
+related: ["[[venture-scale-vs-durable-profitability]]", "[[bootstrapping-as-ai-enabled-alternative]]", "[[founder-wedge-strategy]]", "[[expert-domain-defensibility]]"]
 sources: [if-you-don-t-understand-funding-you-don-t-understand-startup]
 ---
 

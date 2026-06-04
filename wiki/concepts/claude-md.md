@@ -3,7 +3,7 @@ concept: CLAUDE.md
 category: Harness & Context Engineering
 summary: The project-specific documentation file an agent reads every session: build/test instructions, forbidden actions, and conventions — the foundational always-loaded tier of agent context.
 aliases: [Claude MD, project memory file, agent context document, agent.md]
-related: [compound-engineering, agentic-issue-resolution, multi-agent-code-review, self-verification-loop, context-rot, persistent-agent-memory, context-decay, harness-engineering, permission-tiering, plan-first-workflow]
+related: ["[[compound-engineering]]", "[[agentic-issue-resolution]]", "[[multi-agent-code-review]]", "[[self-verification-loop]]", "[[context-rot]]", "[[persistent-agent-memory]]", "[[context-decay]]", "[[harness-engineering]]", "[[permission-tiering]]", "[[plan-first-workflow]]"]
 sources: [live-coding-session-with-boris-cherny-and-jarred-sumner, every-claude-code-memory-system-compared-so-you-don-t-have-t, every-level-of-claude-explained-in-21-minutes, 하네스-공식문서-100번-읽은-것처럼-만들어드림, claude-code-창시자-boris의-ai-에이전트-셋업-전부-다-까보자, 12-claude-code-features-every-engineer-should-know-subagents]
 ---
 

@@ -3,7 +3,7 @@ concept: Multi-Agent Code Review
 category: Workflows & Methodology
 summary: Dividing code review across specialized AI agents (style vs. deep context, spec vs. implementation) that interact through the PR comment cycle without a human driving each step.
 aliases: [multi-agent review, automated code review pipeline]
-related: [agentic-issue-resolution, self-verification-loop, engineering-taste, claude-md, spec-review-loop, cross-model-critique]
+related: ["[[agentic-issue-resolution]]", "[[self-verification-loop]]", "[[engineering-taste]]", "[[claude-md]]", "[[spec-review-loop]]", "[[cross-model-critique]]"]
 sources: [live-coding-session-with-boris-cherny-and-jarred-sumner, the-claude-code-plugin-every-developer-must-learn-superpower]
 ---
 

@@ -3,7 +3,7 @@ concept: Ontology as Operating System
 category: Industry, Strategy & Careers
 summary: Structuring a business's data into a semantic layer of entities, relationships, and decision rules that acts as a corporate OS, with ERP/CRM/SCM running as applications on top.
 aliases: [ontology operating system, ontology OS, corporate operating system, palantir foundry, palantir gotham, decision OS, dynamic ontology]
-related: [causal-decision-modeling, codebase-knowledge-graph, llm-knowledge-wiki, engineering-taste, governance-layer, model-abstraction-layer]
+related: ["[[causal-decision-modeling]]", "[[codebase-knowledge-graph]]", "[[llm-knowledge-wiki]]", "[[engineering-taste]]", "[[governance-layer]]", "[[model-abstraction-layer]]"]
 sources: [온톨로지와-팔란티어-파운드리에-대한-정말-쉬운-설명-이현종-온톨로지-저자-빅스터-대표-토크아이티-웨비나]
 ---
 

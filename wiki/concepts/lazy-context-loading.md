@@ -3,7 +3,7 @@ concept: Lazy Context Loading
 category: Harness & Context Engineering
 summary: Loading instructions into an agent's context only when triggered by the task at hand (via resolvers), keeping the active window lean and high-signal instead of always preloading.
 aliases: [resolvers, lazy context loading, on-demand context, just-in-time context, context resolvers, resolver triggers, check resolvable]
-related: [context-engineering, context-rot, persistent-agent-memory, tool-integration-hierarchy, thin-harness-fat-skills, claude-md]
+related: ["[[context-engineering]]", "[[context-rot]]", "[[persistent-agent-memory]]", "[[tool-integration-hierarchy]]", "[[thin-harness-fat-skills]]", "[[claude-md]]"]
 sources: [stanford-cs153-frontier-systems-the-ai-native-company-how-on]
 ---
 

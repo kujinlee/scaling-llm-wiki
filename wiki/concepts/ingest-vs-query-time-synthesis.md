@@ -3,7 +3,7 @@ concept: Ingest-Time vs. Query-Time Synthesis
 category: Memory & Knowledge Systems
 summary: The architectural choice of when to synthesize knowledge: at ingestion (building a browsable wiki once) or at query time (faithfully storing raw facts and synthesizing fresh on demand).
 aliases: [ingest-time synthesis, query-time synthesis, synthesis timing, compile-once vs derive-on-demand, ingest vs query synthesis, oracle vs maintainer, hybrid memory architecture]
-related: [llm-knowledge-wiki, cross-tool-memory, persistent-agent-memory, compound-engineering, codebase-knowledge-graph, context-rot, agent-as-infrastructure]
+related: ["[[llm-knowledge-wiki]]", "[[cross-tool-memory]]", "[[persistent-agent-memory]]", "[[compound-engineering]]", "[[codebase-knowledge-graph]]", "[[context-rot]]", "[[agent-as-infrastructure]]"]
 sources: [karpathy-s-wiki-vs-open-brain-one-fails-when-you-need-it-mos, karpathy-s-llm-wiki-full-beginner-setup-guide]
 ---
 

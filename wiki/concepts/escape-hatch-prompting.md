@@ -3,7 +3,7 @@ concept: Escape-Hatch Prompting
 category: Workflows & Methodology
 summary: Deliberately giving the model an explicit permitted response for cases it can't handle confidently (e.g. "if unsure, output 'unsure'"), so it has a graceful out instead of confabulating an answer.
 aliases: [escape-hatch prompting, providing outs, giving the model an out, if unsure say unsure, uncertainty out, graceful uncertainty, robustness out]
-related: [prompt-engineering, theory-of-mind-for-llms, robust-tool-design, hill-climbing, exploratory-spec-discovery, jagged-intelligence]
+related: ["[[prompt-engineering]]", "[[theory-of-mind-for-llms]]", "[[robust-tool-design]]", "[[hill-climbing]]", "[[exploratory-spec-discovery]]", "[[jagged-intelligence]]"]
 sources: [ai-prompt-engineering-a-deep-dive]
 ---
 
