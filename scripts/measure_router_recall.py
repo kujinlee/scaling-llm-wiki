@@ -19,7 +19,7 @@ import wiki
 
 WIKI_DIR = Path("wiki")
 BASE_DIR = Path(".")
-SAMPLE = 20  # keyed sources to score
+SAMPLE = None  # how many keyed sources to score; None = all of them
 
 
 def is_korean(name: str) -> bool:
