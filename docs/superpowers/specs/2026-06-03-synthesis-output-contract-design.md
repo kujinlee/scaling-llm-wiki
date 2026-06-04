@@ -28,6 +28,9 @@ Eliminate the JSON-escaping failure class for synthesized page bodies, on both i
 | Router | **Unchanged** | Its JSON (`{"slugs":[...]}`) is tiny with no embedded bodies — no escaping risk |
 | Backward compatibility | **Parser falls back to `extract_json`** when no sentinel is present | A reply that still comes back as pure JSON degrades gracefully; the change is strictly additive (worst case ≥ today) |
 | Return shape | **Identical dict** to today: `{"files":[{"path","content"}...],"log_entry","summary","gaps"}` | `write_wiki_files`, `safe_write_path`, and callers are unchanged |
+| Sentinel recognition | **Only a concept-path-shaped sentinel splits** — the captured path must match `wiki/concepts/<kebab>.md` | Prose discussing delimiter formats (this corpus is *about* LLM I/O) won't accidentally split; an injected/spoofed path is bounded to the concepts tree |
+| Line endings | **Normalize `\r\n`/`\r` → `\n` at parser entry** | A CRLF response otherwise matches the line-anchored regex zero times and loses 100% of pages deterministically |
+| Malformed/absent header with content blocks present | **Raise → retry** (never silently default `meta={}`) | The header carries `gaps`, the recall backstop; silently dropping it = a permanently missed page. A loud retry is correct |
 
 ## 4. Wire format
 
@@ -57,40 +60,59 @@ Body with "quotes", real newlines, `backticks`, and {braces} — all raw, no esc
 **Sentinel constant** (shared by prompt and parser):
 
 ```python
-WIKI_FILE_SENTINEL = "===WIKI-FILE: {path}==="          # prompt rendering
-WIKI_FILE_SENTINEL_RE = r"(?m)^===WIKI-FILE: (.+?)===[ \t]*$"   # parser split
+WIKI_FILE_SENTINEL = "===WIKI-FILE: {path}==="          # prompt rendering (one space each side)
+
+# Parser split. Notes:
+#  - applied AFTER \r\n/\r → \n normalization (see §5 step 0)
+#  - tolerates leading indentation and flexible spacing the model might add
+#  - the captured group ONLY matches a concept-page path, so prose lines like
+#    "===WIKI-FILE: foo===" do NOT split (concept-path-shape guard)
+WIKI_FILE_SENTINEL_RE = r"(?m)^[ \t]*===WIKI-FILE:[ \t]*(wiki/concepts/[a-z0-9-]+\.md)[ \t]*===[ \t]*$"
 ```
+
+A line is treated as a delimiter **only** if its captured path matches `wiki/concepts/<kebab>.md` — the only shape synthesis is permitted to emit (§7 rules). Any other `===WIKI-FILE: ...===`-looking line (e.g. quoted in prose) is left as ordinary content.
 
 ## 5. Parser — `parse_synthesis_response(text) -> dict`
 
 Replaces `extract_json` for the two ingest paths.
 
+Helper that keeps metadata shaping in one place:
+
 ```
-1. parts = re.split(WIKI_FILE_SENTINEL_RE, text)
-       → [header, path1, body1, path2, body2, ...]
-2. if len(parts) == 1 (no sentinel):
-       try:  meta = extract_json(text)
-             if meta has a "files" key → return adapted old-style envelope (FALLBACK, backward compat)
-             else → return {**meta, "files": []}        # legitimate "changed nothing"
-       except ValueError → re-raise (total garbage; triggers retry upstream)
-3. header = parts[0]
-   try:  meta = extract_json(header)
-   except ValueError:  meta = {}                          # blocks still valid; metadata defaults
-4. files = []
-   for (path, body) in pairs(parts[1:]):
-       path = path.strip()
-       content = strip exactly ONE leading and ONE trailing "\n" from body
-       if content == "":  warn (empty page) but still include
-       files.append({"path": path, "content": content})
-5. return {
-       "files": files,
-       "log_entry": meta.get("log_entry"),
-       "summary":   meta.get("summary"),
-       "gaps":      meta.get("gaps") or [],
-   }
+def _meta_fields(meta):
+    return {"log_entry": meta.get("log_entry"),
+            "summary":   meta.get("summary"),
+            "gaps":      meta.get("gaps") or []}
 ```
 
-Newline trimming removes the single `\n` after the sentinel line and the single `\n` before the next sentinel — **not** `strip("\n")`, which would eat intentional leading/trailing blank lines in the body.
+```
+0. text = text.replace("\r\n", "\n").replace("\r", "\n")     # CRLF/CR normalization (C1)
+1. parts = re.split(WIKI_FILE_SENTINEL_RE, text)
+       → [header, path1, body1, path2, body2, ...]  (only concept-path-shaped sentinels split)
+2. if len(parts) == 1 (no delimiter matched):
+       meta = extract_json(text)        # raises ValueError on total garbage → upstream retry
+       if "files" in meta:
+           return {"files": meta["files"], **_meta_fields(meta)}   # FALLBACK: old-style envelope
+       return {"files": [], **_meta_fields(meta)}                  # legitimate "changed nothing"
+3. header = parts[0].strip()
+   if header == "":
+       raise ValueError("content blocks present but no metadata header")   # H1 → retry, never silent
+   meta = extract_json(header)          # malformed header → ValueError propagates → retry (H1)
+4. files = []
+   for (path, body) in pairs(parts[1:]):
+       content = body
+       if content.startswith("\n"): content = content[1:]    # remove ONE leading \n if present
+       if content.endswith("\n"):   content = content[:-1]   # remove ONE trailing \n if present
+       if content == "":  print stderr warning (empty page — lint-detectable) but still include
+       files.append({"path": path.strip(), "content": content})
+5. return {"files": files, **_meta_fields(meta)}
+```
+
+**Exact fallback adapter (step 2 — C2):** when `meta` has a `files` key, return precisely `{"files": meta["files"], "log_entry": meta.get("log_entry"), "summary": meta.get("summary"), "gaps": meta.get("gaps") or []}` — passing `files`/`log_entry`/`summary` through **verbatim** and defaulting only an absent `gaps` to `[]`. This exactness is what makes §10's "existing tests stay green" claim true (the old tests' JSON-string mocks round-trip to the identical dict).
+
+**Newline trimming (M4):** two **independent** conditionals — remove one leading `\n` *if present*, one trailing `\n` *if present*. NOT `strip("\n")` (eats intentional blank lines) and NOT `body[1:-1]` (corrupts bodies not bounded by newlines).
+
+**Malformed/absent header (H1):** if delimiters matched but the header is empty or unparseable, the parser **raises `ValueError`** so `call_claude_synthesis` retries — it never silently sets `meta={}` and drops `gaps`. A header that legitimately omits `gaps` (valid JSON, no gaps) is fine → `gaps: []`.
 
 ## 6. Retry wrapper — `call_claude_synthesis(prompt, model=None, retries=CLAUDE_RETRIES) -> dict`
 
@@ -121,7 +143,8 @@ block per page you changed. Do NOT put page content inside the JSON.
 
 Format rules:
 - The FIRST line is the JSON metadata object and nothing else. It lists NO file contents and NO paths.
-- Each changed page follows as: a line `===WIKI-FILE: <path>===` on its own, then the page's raw markdown.
+- Each changed page follows as: a line `===WIKI-FILE: <path>===` starting at column 0 (NO indentation), on its own line, then the page's raw markdown.
+- The <path> is ALWAYS `wiki/concepts/<kebab-case-name>.md` — the parser ignores any sentinel whose path is not this shape.
 - Write page content verbatim — do NOT escape characters and do NOT wrap it in code fences.
 - NEVER write a line of the form `===WIKI-FILE: ...===` inside page content.
 - If you changed no pages, emit only the JSON metadata line.
@@ -138,18 +161,25 @@ Format rules:
 |---|---|
 | `cmd_route_ingest` | `call_claude_json(build_synth_prompt(...))` → `call_claude_synthesis(...)`. Already uses `resp.get(...)` — no other change. |
 | `cmd_resolve_gaps` | Same swap. |
-| `cmd_ingest` | Same swap. **Plus**: change `response["log_entry"]`/`["summary"]` hard-keys to `.get("log_entry") or <generated default>` and `.get("summary", "(no summary)")`, matching `cmd_route_ingest` (also removes a latent KeyError present today). |
+| `cmd_ingest` | Same swap, **plus three fixes** (see below). |
 | `write_wiki_files`, `safe_write_path`, `build_router_prompt`, `call_claude_json` | Unchanged. |
+
+**`cmd_ingest` fixes (M2, M3):**
+1. Replace the hard keys `response["log_entry"]`/`["summary"]`/the `print(response["summary"])` with `.get(...)` + defaults, matching `cmd_route_ingest` (removes a latent KeyError; `files` is always present from the parser so `["files"]` is safe but should read via the validated-files loop below).
+2. **Add the per-file `safe_write_path` guard** that `cmd_route_ingest`/`cmd_resolve_gaps` already use but `cmd_ingest` currently lacks entirely — validate each `f["path"]` under `wiki/concepts` before `write_wiki_files`, rejecting out-of-tree paths. The new raw-content format makes the pre-existing missing-guard reachable, so it is fixed in scope.
+3. A zero-file response (now possible) gets a meaningful default log/summary, e.g. `"<ts> | ingest | <source>: no changes"`, not a bare `(no summary)`.
 
 ## 9. Error handling
 
 | Failure | Handling |
 |---|---|
 | Neither sentinel nor JSON parseable (total garbage) | `parse_synthesis_response` raises `ValueError` → `call_claude_synthesis` retries → after retries the caller's existing `except` logs failure + records router slugs as a gap (route-ingest) / writes to the failures file |
-| Header JSON malformed, content blocks present | `meta = {}`; files written; `log_entry`/`summary` fall back to caller default |
-| Sentinel `path` escapes the wiki tree | Rejected per-file by the existing `safe_write_path` check in callers (unchanged) |
+| **Header JSON malformed or absent, content blocks present** | **Raises `ValueError` → retry** (H1). Never silently `meta={}`, because that would drop `gaps` (the recall backstop) and lose a page permanently |
+| CRLF / CR line endings | Normalized to `\n` at parser entry (§5 step 0) before the regex runs — otherwise the line-anchored regex matches zero times and loses all pages (C1) |
+| Sentinel `path` escapes the wiki tree | Rejected per-file by `safe_write_path` in **all three** callers (now including `cmd_ingest`, §8) |
+| `===WIKI-FILE: <path>===` line inside content | Only splits if `<path>` is concept-path-shaped (§4 guard), so a prose mention of the format does not split. A body legitimately containing a real `wiki/concepts/x.md`-shaped sentinel line remains a residual risk (rare); the prompt forbids emitting one |
+| **Injection / spoofed path** (a source doc instructs the model to emit a sentinel targeting an arbitrary page) | **Pre-existing exposure** — the path was model-controlled under the old JSON format too, so not a regression. Bounded by `safe_write_path` (stays under `wiki/concepts`) and the path-shape guard. `cmd_route_ingest`/`resolve-gaps` already log any write to a non-selected slug as a `new_slug` record for human review. Documented, not silently trusted |
 | Empty content between two sentinels | Page written empty + stderr warning (lint-detectable; not a crash) |
-| `===WIKI-FILE:` as a full line inside content | Accepted residual risk — documented; prompt forbids it; near-impossible in wiki prose |
 
 ## 10. Testing (TDD)
 
@@ -157,20 +187,22 @@ Format rules:
 1. Header + 2 blocks → 2 files with exact raw content; `log_entry`/`summary`/`gaps` from header.
 2. **Regression case:** content containing `"quotes"`, code fences, and `{json-like}` text → preserved verbatim (would have broken the old JSON contract).
 3. Header-only, no blocks → `files: []`.
-4. No sentinel + valid old-style JSON envelope → fallback returns its `files`.
-5. Malformed header JSON + blocks present → files parsed, `meta` defaults.
-6. Non-full-line `===WIKI-FILE:` substring in content → not split.
-7. `gaps` absent in header → `gaps: []`.
-8. Newline trimming exact, including content with internal blank lines (not over-trimmed).
-9. Path whitespace stripped.
-10. Total garbage (no sentinel, no JSON) → raises `ValueError`.
+4. No sentinel + valid old-style JSON envelope → fallback returns the **exact** adapter dict (assert `files`/`log_entry`/`summary` verbatim, `gaps` defaulted) — C2.
+5. **CRLF input** (`\r\n` line endings) → parses identically to `\n` (C1 regression).
+6. **Content blocks present but header empty/malformed** → raises `ValueError` (H1), NOT a silent `meta={}`.
+7. **Collision guard:** content containing a line `===WIKI-FILE: not a path===` (non-concept-shape) → NOT split (stays in body); and a line `===WIKI-FILE: wiki/concepts/x.md===` *inside prose* would split — assert the shape guard only splits concept-path-shaped lines.
+8. `gaps` absent in a valid header → `gaps: []` (distinguished from H1's malformed-header raise).
+9. Newline trimming: independent single leading/trailing `\n` removal; body with internal blank lines not over-trimmed; final block without trailing `\n` intact.
+10. Indented / extra-spaced sentinel (`  ===WIKI-FILE:  wiki/concepts/x.md  ===`) still recognized (L2/L3 tolerance).
+11. Total garbage (no sentinel, no JSON) → raises `ValueError`.
 
 **Integration tests:**
-11. `call_claude_synthesis` retries on `ValueError` then succeeds (`side_effect=[garbage, valid]`).
-12. `cmd_route_ingest` / `cmd_resolve_gaps` / `cmd_ingest` end-to-end with **new-format** mocked responses → pages written, gaps recorded, reindex called.
-13. Prompt builders: assert `WIKI_FILE_SENTINEL` literal and "no escaping / no fences" instruction appear; `gaps` present for synth, absent for brute-force ingest.
+12. `call_claude_synthesis` retries on `ValueError` then succeeds (`side_effect=[garbage, valid]`).
+13. `cmd_route_ingest` / `cmd_resolve_gaps` / `cmd_ingest` end-to-end with **new-format** mocked responses → pages written, gaps recorded, reindex called.
+14. `cmd_ingest` rejects an out-of-tree sentinel path via the newly-added `safe_write_path` guard (M2).
+15. Prompt builders: assert `WIKI_FILE_SENTINEL` literal, the "column 0 / no escaping / no fences" rules, and the concept-path-shape statement appear; `gaps` present for synth, absent for brute-force ingest.
 
-**Existing tests:** current route-ingest/resolve-gaps/ingest tests mock `call_claude` returning JSON strings — these now exercise the **fallback path** and must stay green (proves the change is non-breaking). New-format tests (12) are added alongside.
+**Existing tests:** current route-ingest/resolve-gaps/ingest tests mock `call_claude` returning JSON strings. These now exercise the parser's **fallback path** and stay green **contingent on the exact C2 adapter** (test 4) — in particular the resolve-gaps/ingest mocks that omit `gaps` rely on the adapter defaulting it to `[]` while passing `log_entry`/`summary` through verbatim. New-format tests (13) are added alongside to cover the primary path.
 
 ## 11. Out of scope
 
