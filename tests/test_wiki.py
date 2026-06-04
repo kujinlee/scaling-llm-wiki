@@ -150,6 +150,24 @@ class TestExtractJson:
             wiki.extract_json("plain text with no JSON at all")
 
 
+class TestSentinelConstants:
+    def test_sentinel_renders_path(self):
+        assert wiki.WIKI_FILE_SENTINEL.format(path="wiki/concepts/rag.md") == \
+            "===WIKI-FILE: wiki/concepts/rag.md==="
+
+    def test_sentinel_regex_matches_concept_path_only(self):
+        text = "===WIKI-FILE: wiki/concepts/rag.md==="
+        m = wiki.WIKI_FILE_SENTINEL_RE.search(text)
+        assert m and m.group(1) == "wiki/concepts/rag.md"
+        # a non-concept-shaped path must NOT match
+        assert wiki.WIKI_FILE_SENTINEL_RE.search("===WIKI-FILE: not a path===") is None
+
+    def test_sentinel_regex_tolerates_indent_and_spacing(self):
+        text = "   ===WIKI-FILE:   wiki/concepts/x-y.md   ===   "
+        m = wiki.WIKI_FILE_SENTINEL_RE.search(text)
+        assert m and m.group(1) == "wiki/concepts/x-y.md"
+
+
 class TestBuildIngestPrompt:
     def test_includes_source_content(self):
         prompt = wiki.build_ingest_prompt("schema", "index", {}, "src.md", "source text here")
@@ -169,7 +187,7 @@ class TestBuildIngestPrompt:
 
     def test_instructs_json_response(self):
         prompt = wiki.build_ingest_prompt("schema", "index", {}, "s.md", "src")
-        assert '"files"' in prompt
+        assert "===WIKI-FILE:" in prompt
         assert '"log_entry"' in prompt
         assert '"summary"' in prompt
 
@@ -184,8 +202,8 @@ class TestBuildIngestPrompt:
     def test_instructs_no_index_emission(self):
         prompt = wiki.build_ingest_prompt("schema", "index", {}, "s.md", "src")
         assert "Do NOT emit wiki/index.md" in prompt
-        # the JSON output template lists only the concepts/ path, not index.md
-        template = prompt.split('"files"', 1)[1].split("Rules:", 1)[0]
+        # the output format template lists only the concepts/ path, not index.md
+        template = prompt.split("===WIKI-FILE:", 1)[1].split("Rules:", 1)[0]
         assert "wiki/concepts/" in template
         assert "wiki/index.md" not in template
 
@@ -435,6 +453,55 @@ class TestCmdIngest:
         assert cc.call_count == 1
         assert "real-source" in cc.call_args_list[0][0][0]
         assert "not a source" not in cc.call_args_list[0][0][0]
+
+    def test_ingest_new_sentinel_format(self, tmp_path):
+        wiki_dir = tmp_path / "wiki"
+        (wiki_dir / "concepts").mkdir(parents=True)
+        (wiki_dir / "CLAUDE.md").write_text("schema")
+        (wiki_dir / "index.md").write_text("# Index")
+        (wiki_dir / "log.md").write_text("# Log\n\n")
+        source = tmp_path / "talk.md"
+        source.write_text("# a talk")
+        resp = (
+            '{"log_entry": "2026-06-03 12:00 | ingest | talk", "summary": "made harness page"}\n'
+            "===WIKI-FILE: wiki/concepts/harness-engineering.md===\n"
+            '# Harness\n\nWith "quotes" and {braces}.\n'
+        )
+        args = MagicMock()
+        args.source = str(source)
+        args.model = None
+        with patch("wiki.call_claude", return_value=resp), \
+                patch("wiki.reindex", return_value="reindexed"):
+            wiki.cmd_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        assert (wiki_dir / "concepts" / "harness-engineering.md").read_text() == \
+            '# Harness\n\nWith "quotes" and {braces}.'
+        assert "2026-06-03 12:00 | ingest | talk" in (wiki_dir / "log.md").read_text()
+
+    def test_ingest_rejects_out_of_tree_path(self, tmp_path):
+        wiki_dir = tmp_path / "wiki"
+        (wiki_dir / "concepts").mkdir(parents=True)
+        (wiki_dir / "CLAUDE.md").write_text("schema")
+        (wiki_dir / "index.md").write_text("# Index")
+        (wiki_dir / "log.md").write_text("# Log\n\n")
+        source = tmp_path / "talk.md"
+        source.write_text("# a talk")
+        # Delivered via the old-style JSON envelope (fallback path): a sentinel
+        # could never CARRY "../../evil.md" because WIKI_FILE_SENTINEL_RE only
+        # splits concept-path-shaped paths, so the JSON envelope is the only way
+        # to reach cmd_ingest's safe_write_path guard with a traversal path.
+        resp = json.dumps({
+            "files": [{"path": "../../evil.md", "content": "pwned"}],
+            "log_entry": "2026-06-03 12:00 | ingest | talk",
+            "summary": "tried to escape",
+        })
+        args = MagicMock()
+        args.source = str(source)
+        args.model = None
+        with patch("wiki.call_claude", return_value=resp), \
+                patch("wiki.reindex", return_value="reindexed"):
+            wiki.cmd_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        assert not (tmp_path.parent / "evil.md").exists()
+        assert not (tmp_path / "evil.md").exists()
 
 
 class TestReindex:
@@ -712,7 +779,7 @@ class TestBuildSynthPrompt:
     def test_envelope_has_gaps_field(self):
         prompt = wiki.build_synth_prompt("s", "idx", {}, "t.md", "src")
         assert '"gaps"' in prompt
-        assert '"files"' in prompt
+        assert "===WIKI-FILE:" in prompt
 
     def test_rule_omit_unchanged_pages(self):
         prompt = wiki.build_synth_prompt("s", "idx", {}, "t.md", "src")
@@ -939,6 +1006,20 @@ class TestCmdRouteIngest:
         assert any(r["kind"] == "gap" and r["source"] == "talk.md"
                    and r["slugs"] == ["rag"] for r in recs)
 
+    def test_route_ingest_new_sentinel_format(self, tmp_path):
+        wiki_dir, src, args = self._setup(tmp_path, {"rag": "grounds answers"})
+        router = json.dumps({"slugs": ["rag"], "rationale": "about RAG"})
+        synth = (
+            '{"log_entry": "2026-06-03 12:00 | route-ingest | rag", "summary": "updated rag", "gaps": []}\n'
+            "===WIKI-FILE: wiki/concepts/rag.md===\n"
+            '# RAG\n\nUses "boss" quotes and {braces} fine.\n'
+        )
+        with patch("wiki.call_claude", side_effect=[router, synth]), \
+                patch("wiki.reindex", return_value="reindexed"):
+            wiki.cmd_route_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        assert (wiki_dir / "concepts" / "rag.md").read_text() == \
+            '# RAG\n\nUses "boss" quotes and {braces} fine.'
+
 
 class TestCmdResolveGaps:
     def _setup(self, tmp_path):
@@ -1025,6 +1106,20 @@ class TestCmdResolveGaps:
         # new_slug for the unexpected output page retained
         assert any(r["kind"] == "new_slug" and r["slugs"] == ["brand-new"] for r in recs)
 
+    def test_resolve_new_sentinel_format(self, tmp_path):
+        wiki_dir, args = self._setup(tmp_path)
+        gap_path = wiki_dir / wiki.GAP_LOG_NAME
+        wiki.append_gap_log(gap_path, "talk.md", ["context-engineering"], kind="gap")
+        synth = (
+            '{"log_entry": "2026-06-03 12:00 | resolve-gaps | ce", "summary": "resolved", "gaps": []}\n'
+            "===WIKI-FILE: wiki/concepts/context-engineering.md===\n"
+            "# ce resolved\n"
+        )
+        with patch("wiki.call_claude", side_effect=[synth]), patch("wiki.reindex", return_value="r"):
+            wiki.cmd_resolve_gaps(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        assert (wiki_dir / "concepts" / "context-engineering.md").read_text() == "# ce resolved"
+        assert "context-engineering" not in gap_path.read_text()
+
 
 class TestCmdLintGapReport:
     def test_lint_appends_gap_log_summary(self, tmp_path, capsys):
@@ -1064,3 +1159,181 @@ class TestArgparseWiring:
                 patch("wiki.cmd_resolve_gaps") as mock_cmd:
             wiki.main()
         assert mock_cmd.called
+
+
+class TestParseSynthesisResponse:
+    def test_header_plus_two_blocks(self):
+        text = (
+            '{"log_entry": "2026-06-03 12:00 | route-ingest | x", "summary": "did stuff", "gaps": ["g1"]}\n'
+            "===WIKI-FILE: wiki/concepts/rag.md===\n"
+            "---\nconcept: RAG\n---\n# RAG body\n"
+            "===WIKI-FILE: wiki/concepts/mcp.md===\n"
+            "# MCP body\n"
+        )
+        out = wiki.parse_synthesis_response(text)
+        assert out["log_entry"] == "2026-06-03 12:00 | route-ingest | x"
+        assert out["summary"] == "did stuff"
+        assert out["gaps"] == ["g1"]
+        assert out["files"] == [
+            {"path": "wiki/concepts/rag.md", "content": "---\nconcept: RAG\n---\n# RAG body"},
+            {"path": "wiki/concepts/mcp.md", "content": "# MCP body"},
+        ]
+
+    def test_content_with_quotes_fences_braces_verbatim(self):
+        body = '# Title\n\nA *supervisor* ("boss") agent.\n\n```python\nx = {"k": 1}\n```\n'
+        text = (
+            '{"log_entry": "l", "summary": "s", "gaps": []}\n'
+            "===WIKI-FILE: wiki/concepts/loop.md===\n"
+            + body
+        )
+        out = wiki.parse_synthesis_response(text)
+        assert out["files"][0]["content"] == body.rstrip("\n")
+
+    def test_header_only_changed_nothing(self):
+        text = '{"log_entry": "l", "summary": "no change", "gaps": []}'
+        out = wiki.parse_synthesis_response(text)
+        assert out["files"] == []
+        assert out["summary"] == "no change"
+
+    def test_fallback_old_style_json_envelope(self):
+        text = json.dumps({
+            "files": [{"path": "wiki/concepts/rag.md", "content": "# RAG"}],
+            "log_entry": "2026-06-03 12:00 | ingest | rag",
+            "summary": "made rag",
+        })
+        out = wiki.parse_synthesis_response(text)
+        assert out["files"] == [{"path": "wiki/concepts/rag.md", "content": "# RAG"}]
+        assert out["log_entry"] == "2026-06-03 12:00 | ingest | rag"
+        assert out["summary"] == "made rag"
+        assert out["gaps"] == []
+
+    def test_crlf_parses_like_lf(self):
+        text = (
+            '{"log_entry": "l", "summary": "s", "gaps": []}\r\n'
+            "===WIKI-FILE: wiki/concepts/rag.md===\r\n"
+            "# RAG body\r\n"
+        )
+        out = wiki.parse_synthesis_response(text)
+        assert out["files"] == [{"path": "wiki/concepts/rag.md", "content": "# RAG body"}]
+
+    def test_blocks_present_but_no_header_raises(self):
+        text = (
+            "===WIKI-FILE: wiki/concepts/rag.md===\n"
+            "# RAG body\n"
+        )
+        with pytest.raises(ValueError):
+            wiki.parse_synthesis_response(text)
+
+    def test_malformed_header_with_blocks_raises(self):
+        text = (
+            "{this is not json}\n"
+            "===WIKI-FILE: wiki/concepts/rag.md===\n"
+            "# RAG body\n"
+        )
+        with pytest.raises(ValueError):
+            wiki.parse_synthesis_response(text)
+
+    def test_non_concept_sentinel_in_content_does_not_split(self):
+        body = "Discussing the format: ===WIKI-FILE: example===\nmore text"
+        text = (
+            '{"log_entry": "l", "summary": "s", "gaps": []}\n'
+            "===WIKI-FILE: wiki/concepts/formats.md===\n"
+            + body + "\n"
+        )
+        out = wiki.parse_synthesis_response(text)
+        assert len(out["files"]) == 1
+        assert out["files"][0]["content"] == body
+
+    def test_malformed_sentinel_path_raises_not_silent_loss(self):
+        # A WIKI-FILE marker whose path does NOT match the concept-path shape
+        # (uppercase/underscore here) must NOT be silently parsed as "changed
+        # nothing" — it raises so call_claude_synthesis retries (no silent page loss).
+        text = (
+            '{"log_entry": "l", "summary": "s", "gaps": ["foo"]}\n'
+            "===WIKI-FILE: wiki/concepts/Foo_Bar.md===\n"
+            "# Foo\nplain body\n"
+        )
+        with pytest.raises(ValueError):
+            wiki.parse_synthesis_response(text)
+
+    def test_concept_shaped_sentinel_in_content_does_split(self):
+        # Pins the documented residual risk (spec §9): a *concept-path-shaped*
+        # sentinel at line start inside a body WILL split it. If a future change
+        # to the guard alters this, this test catches it.
+        text = (
+            '{"log_entry": "l", "summary": "s", "gaps": []}\n'
+            "===WIKI-FILE: wiki/concepts/a.md===\n"
+            "body of a\n"
+            "===WIKI-FILE: wiki/concepts/b.md===\n"
+            "body of b\n"
+        )
+        out = wiki.parse_synthesis_response(text)
+        assert [f["path"] for f in out["files"]] == \
+            ["wiki/concepts/a.md", "wiki/concepts/b.md"]
+
+    def test_valid_header_absent_gaps_defaults_empty(self):
+        text = (
+            '{"log_entry": "l", "summary": "s"}\n'
+            "===WIKI-FILE: wiki/concepts/rag.md===\n"
+            "# RAG\n"
+        )
+        out = wiki.parse_synthesis_response(text)
+        assert out["gaps"] == []
+
+    def test_internal_blank_lines_preserved(self):
+        text = (
+            '{"log_entry": "l", "summary": "s", "gaps": []}\n'
+            "===WIKI-FILE: wiki/concepts/rag.md===\n"
+            "\n# RAG\n\nmid\n\n"
+        )
+        out = wiki.parse_synthesis_response(text)
+        assert out["files"][0]["content"] == "\n# RAG\n\nmid\n"
+
+    def test_total_garbage_raises(self):
+        with pytest.raises(ValueError):
+            wiki.parse_synthesis_response("not json and no sentinel at all")
+
+
+class TestOutputFormatInstructions:
+    def test_synth_prompt_uses_sentinel_format(self):
+        p = wiki.build_synth_prompt("schema", "idx", {"rag": "# RAG"}, "src.md", "body")
+        assert "===WIKI-FILE:" in p
+        assert "NO escaping" in p
+        assert "column 0" in p
+        assert "wiki/concepts/<kebab-case-name>.md" in p
+        assert '"gaps"' in p
+        assert '"content": "<full page markdown>"' not in p
+
+    def test_ingest_prompt_uses_sentinel_format_without_gaps(self):
+        p = wiki.build_ingest_prompt("schema", "idx", {}, "src.md", "body")
+        assert "===WIKI-FILE:" in p
+        assert "NO escaping" in p
+        assert '"gaps"' not in p
+        assert '"content": "<full page markdown>"' not in p
+
+
+class TestCallClaudeSynthesis:
+    def test_returns_parsed_dict(self):
+        resp = (
+            '{"log_entry": "l", "summary": "s", "gaps": []}\n'
+            "===WIKI-FILE: wiki/concepts/rag.md===\n# RAG\n"
+        )
+        with patch("wiki.call_claude", return_value=resp):
+            out = wiki.call_claude_synthesis("prompt", model="sonnet")
+        assert out["files"] == [{"path": "wiki/concepts/rag.md", "content": "# RAG"}]
+
+    def test_retries_then_succeeds(self):
+        good = (
+            '{"log_entry": "l", "summary": "s", "gaps": []}\n'
+            "===WIKI-FILE: wiki/concepts/rag.md===\n# RAG\n"
+        )
+        with patch("wiki.call_claude", side_effect=["total garbage no json", good]), \
+                patch("wiki.time.sleep"):
+            out = wiki.call_claude_synthesis("prompt", model="sonnet")
+        assert out["files"][0]["path"] == "wiki/concepts/rag.md"
+
+    def test_raises_after_exhausting_retries(self):
+        with patch("wiki.call_claude", return_value="never valid"), \
+                patch("wiki.time.sleep"):
+            with pytest.raises(ValueError):
+                wiki.call_claude_synthesis("prompt", model="sonnet", retries=2)
