@@ -6,6 +6,8 @@ __pycache__/
 wiki/.*.log
 wiki/.*-list.txt
 wiki/.*.txt
+wiki/.gap-log.jsonl
+wiki/.route-lock
 .remember/
 pdfs/
 *.pdf
