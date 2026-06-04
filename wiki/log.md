@@ -125,3 +125,5 @@
 2026-06-03 04:33 | reindex | 179 concepts across 9 categories
 2026-06-03 14:30 | ingest | live-codex-harness: created 1 page (session-context-forking), updated 1 (non-blocking-side-inquiry — added Codex `side` as corroborating source)
 2026-06-03 04:35 | reindex | 180 concepts across 9 categories
+2026-06-03 18:00 | route-ingest | live-코덱스로-바이브-코딩하기-feat-하네스-엔지니어링: updated 5 pages (harness-engineering, agentic-coding-tool-selection, context-compaction, deterministic-workflow-orchestration, computer-use-automation)
+2026-06-03 18:35 | reindex | 180 concepts across 9 categories

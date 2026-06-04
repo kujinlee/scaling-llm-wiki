@@ -4,7 +4,7 @@ category: Agent Architecture & Patterns
 summary: Encoding a development process as a declarative workflow that interleaves deterministic commands (validation, approval gates) with LLM prompt nodes, making AI coding repeatable and reliable.
 aliases: [declarative agent workflows, workflow-as-code, YAML workflow definitions, deterministic-plus-LLM workflows, AI coding workflow builder]
 related: [harness-engineering, per-node-model-routing, context-engineering, parallel-isolated-agents, spec-driven-development, agent-router, dark-factory, governance-layer, harness-debugging]
-sources: [the-next-evolution-of-ai-coding-is-harnesses-here-s-how-to-b, i-m-building-an-ai-dark-factory-that-ships-its-own-code-publ, the-ai-dark-factory-is-alive-a-codebase-that-writes-its-own-]
+sources: [the-next-evolution-of-ai-coding-is-harnesses-here-s-how-to-b, i-m-building-an-ai-dark-factory-that-ships-its-own-code-publ, the-ai-dark-factory-is-alive-a-codebase-that-writes-its-own-, live-코덱스로-바이브-코딩하기-feat-하네스-엔지니어링]
 ---
 
 # Deterministic Workflow Orchestration
@@ -26,6 +26,8 @@ The Cole Medin tutorial presents Archon, billed as the first open-source "harnes
 The Cole Medin "AI Dark Factory" experiment puts the same Arkon/Archon harness builder at the center of a fully autonomous coding loop: a *scheduled* triage workflow fetches and labels incoming GitHub issues, each accepted issue spawns a *parallel* implement workflow (research → classify → plan → implement → open PR), and a separate validation workflow gates the merge. It is a concrete deterministic triage-implement-validate orchestration whose nodes mix scheduled deterministic steps with LLM reasoning and route a cheaper model to the triage node (`[[per-node-model-routing]]`), showing the pattern scaled from on-demand task workflows to a continuous, self-feeding factory loop (`[[dark-factory]]`) bounded by a standing `[[governance-layer]]`.
 
 The "AI Dark Factory is ALIVE" live stream runs those Archon workflows in production on a VPS — triage → implement → validate (with browser automation) → merge → deploy — and demonstrates a point the tutorials only assert: the workflows themselves are fallible artifacts that must be debugged. A validation node failed to start the application (missing `DATABASE_URL`) and carried too permissive a verdict, and the presenter live-edited and re-ran the YAML workflow to harden it — the orchestration-side instance of `[[harness-debugging]]`.
+
+The 실밸개발자 Korean Codex CLI tutorial demonstrates Codex CLI's built-in Harness as a lightweight, file-system-native phase-based workflow engine: planning documents (PRD, architecture document, ADR) are decomposed into a `phase` folder of ordered step nodes, with step progress tracked in a central `index.json` file. Each phase runs within its own context slice, preserving the main context window across the development session and enabling parallel execution of independent phases. This is an open-source, lower-ceremony realization of the same triage-decompose-implement orchestration pattern that Archon encodes in YAML — distributed as part of the Codex CLI repository itself and therefore immediately available for inspection and learning.
 
 ## Tensions & Tradeoffs
 

@@ -165,7 +165,7 @@
 - [[dark-factory]] — A fully autonomous AI coding system that triages, implements, tests, and ships code with no human review before merge, relying entirely on governance documents and an independent validation gate.
 - [[meta-skills]] — Reusable prompts whose job is to design other agents, packaging the agent-architecture workflow so new agent creation is a templated, repeatable, and shareable activity.
 - [[plugin-packaging]] — Bundling skills, hooks, sub-agents, MCP servers, and metadata into a single installable unit so a whole customized agent setup can be shared and installed with one command.
-- [[ralph-loop]] — Running an agent unattended in a continuous outer loop that re-feeds the same prompt each iteration, letting it make incremental progress against files on disk until a task is built out.
+- [[ralph-loop]] — Running an agent unattended in a continuous outer loop that re-feeds the same prompt each iteration, letting it self-correct and make incremental progress against files on disk until a task — or a whole backlog — is built out.
 - [[procedural-knowledge-skills]] — Packaging a recurring task's procedural knowledge into a self-contained skill (skill.md plus scripts and references) that an agent loads only when the task requires it, instead of pasting playbooks into every prompt.
 - [[thin-harness-fat-skills]] — Keeping the agent's core interaction loop thin and generic while embedding task-specific behavior in thick natural-language skill files (markdown), backed by rigorous automated test coverage.
 
