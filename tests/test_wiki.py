@@ -485,6 +485,10 @@ class TestCmdIngest:
         (wiki_dir / "log.md").write_text("# Log\n\n")
         source = tmp_path / "talk.md"
         source.write_text("# a talk")
+        # Delivered via the old-style JSON envelope (fallback path): a sentinel
+        # could never CARRY "../../evil.md" because WIKI_FILE_SENTINEL_RE only
+        # splits concept-path-shaped paths, so the JSON envelope is the only way
+        # to reach cmd_ingest's safe_write_path guard with a traversal path.
         resp = json.dumps({
             "files": [{"path": "../../evil.md", "content": "pwned"}],
             "log_entry": "2026-06-03 12:00 | ingest | talk",
@@ -1239,6 +1243,21 @@ class TestParseSynthesisResponse:
         out = wiki.parse_synthesis_response(text)
         assert len(out["files"]) == 1
         assert out["files"][0]["content"] == body
+
+    def test_concept_shaped_sentinel_in_content_does_split(self):
+        # Pins the documented residual risk (spec §9): a *concept-path-shaped*
+        # sentinel at line start inside a body WILL split it. If a future change
+        # to the guard alters this, this test catches it.
+        text = (
+            '{"log_entry": "l", "summary": "s", "gaps": []}\n'
+            "===WIKI-FILE: wiki/concepts/a.md===\n"
+            "body of a\n"
+            "===WIKI-FILE: wiki/concepts/b.md===\n"
+            "body of b\n"
+        )
+        out = wiki.parse_synthesis_response(text)
+        assert [f["path"] for f in out["files"]] == \
+            ["wiki/concepts/a.md", "wiki/concepts/b.md"]
 
     def test_valid_header_absent_gaps_defaults_empty(self):
         text = (
