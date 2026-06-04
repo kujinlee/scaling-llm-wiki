@@ -1188,3 +1188,30 @@ class TestParseSynthesisResponse:
     def test_total_garbage_raises(self):
         with pytest.raises(ValueError):
             wiki.parse_synthesis_response("not json and no sentinel at all")
+
+
+class TestCallClaudeSynthesis:
+    def test_returns_parsed_dict(self):
+        resp = (
+            '{"log_entry": "l", "summary": "s", "gaps": []}\n'
+            "===WIKI-FILE: wiki/concepts/rag.md===\n# RAG\n"
+        )
+        with patch("wiki.call_claude", return_value=resp):
+            out = wiki.call_claude_synthesis("prompt", model="sonnet")
+        assert out["files"] == [{"path": "wiki/concepts/rag.md", "content": "# RAG"}]
+
+    def test_retries_then_succeeds(self):
+        good = (
+            '{"log_entry": "l", "summary": "s", "gaps": []}\n'
+            "===WIKI-FILE: wiki/concepts/rag.md===\n# RAG\n"
+        )
+        with patch("wiki.call_claude", side_effect=["total garbage no json", good]), \
+                patch("wiki.time.sleep"):
+            out = wiki.call_claude_synthesis("prompt", model="sonnet")
+        assert out["files"][0]["path"] == "wiki/concepts/rag.md"
+
+    def test_raises_after_exhausting_retries(self):
+        with patch("wiki.call_claude", return_value="never valid"), \
+                patch("wiki.time.sleep"):
+            with pytest.raises(ValueError):
+                wiki.call_claude_synthesis("prompt", model="sonnet", retries=2)

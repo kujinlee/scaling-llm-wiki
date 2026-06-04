@@ -134,6 +134,24 @@ def call_claude_json(prompt: str, model: str | None = None, retries: int = CLAUD
     raise last_exc
 
 
+def call_claude_synthesis(prompt: str, model: str | None = None,
+                          retries: int = CLAUDE_RETRIES) -> dict:
+    """Like call_claude_json but parses the sentinel-delimited synthesis/ingest
+    format (raw page bodies carried outside JSON), retrying on an unparseable
+    response. Use for ingest/synthesis; the router keeps call_claude_json."""
+    last_exc = None
+    for attempt in range(retries):
+        try:
+            return parse_synthesis_response(call_claude(prompt, model=model))
+        except ValueError as exc:
+            last_exc = exc
+            if attempt < retries - 1:
+                print(f"  response not parseable; retry {attempt + 1}/{retries - 1}...",
+                      file=sys.stderr, flush=True)
+                time.sleep(5)
+    raise last_exc
+
+
 def extract_json(text: str) -> dict:
     try:
         return json.loads(text)
