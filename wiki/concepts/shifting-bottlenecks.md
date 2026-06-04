@@ -3,7 +3,7 @@ concept: Shifting Bottlenecks
 category: Industry, Strategy & Careers
 summary: As AI automates each constraint (code generation, basic checks), the binding constraint migrates to the next weakest link — currently deep verification and the trust required for autonomous merges.
 aliases: [moving bottleneck, bottleneck migration in agentic development]
-related: [engineering-taste, self-verification-loop, agentic-issue-resolution]
+related: ["[[engineering-taste]]", "[[self-verification-loop]]", "[[agentic-issue-resolution]]"]
 sources: [live-coding-session-with-boris-cherny-and-jarred-sumner, live-coding-session-with-boris-cherny-and-jarred-sumner-deep-dive]
 ---
 

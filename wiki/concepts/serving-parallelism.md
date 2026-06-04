@@ -3,7 +3,7 @@ concept: Serving Parallelism & Interconnect Topology
 category: LLM Internals & Training
 summary: Strategies for splitting large models across GPUs, where interconnect topology — fast intra-rack vs. slow inter-rack networks — is the binding constraint on expert-layer size.
 aliases: [serving parallelism, model parallelism, expert parallelism, pipeline parallelism, rack boundaries, interconnect topology, scale-up vs scale-out, NVLink, NVL72, all-to-all communication, Blackwell]
-related: [mixture-of-experts, inference-batching-economics, kv-cache-economics, kv-cache-paging, prefill-decode-inference, compute-memory-tradeoff]
+related: ["[[mixture-of-experts]]", "[[inference-batching-economics]]", "[[kv-cache-economics]]", "[[kv-cache-paging]]", "[[prefill-decode-inference]]", "[[compute-memory-tradeoff]]"]
 sources: [how-gpt-claude-and-gemini-are-actually-trained-and-served-re, ep-96-llm-추론-인프라와-토큰-경제학]
 ---
 

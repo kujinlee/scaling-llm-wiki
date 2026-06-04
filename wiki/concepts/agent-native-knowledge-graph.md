@@ -3,7 +3,7 @@ concept: Agent-Native Knowledge Graph
 category: Memory & Knowledge Systems
 summary: Structuring a personal knowledge base for AI consumption rather than human browsing — atomic notes, a rich taxonomy of typed nodes, and semantic edge types — so an agent retrieves only the relevant slice at a fraction of the token cost.
 aliases: [agent-native knowledge graph, AI-optimized knowledge graph, infinite brain, typed-node knowledge graph, semantic-edge knowledge graph, AI-first PKM, knowledge graph for agents]
-related: [second-brain, llm-knowledge-wiki, context-graph, codebase-knowledge-graph, agent-native-infrastructure, graph-augmented-retrieval, knowledge-base-linting, context-engineering, token-maxing]
+related: ["[[second-brain]]", "[[llm-knowledge-wiki]]", "[[context-graph]]", "[[codebase-knowledge-graph]]", "[[agent-native-infrastructure]]", "[[graph-augmented-retrieval]]", "[[knowledge-base-linting]]", "[[context-engineering]]", "[[token-maxing]]"]
 sources: [don-t-use-karpathy-s-second-brain-i-built-something-better]
 ---
 

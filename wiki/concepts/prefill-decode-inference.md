@@ -3,7 +3,7 @@ concept: Prefill and Decode
 category: LLM Internals & Training
 summary: The two-stage structure of Transformer inference — a parallel prefill pass that processes the whole prompt and builds the KV cache, then a sequential decode pass that generates tokens one at a time reusing it — with opposite compute/memory bottlenecks.
 aliases: [prefill, decode, prefill and decode, prefill vs decode, two-stage inference, prefill-decode, prompt processing vs token generation, inference stages]
-related: [kv-cache-economics, kv-cache-paging, inference-batching-economics, compute-memory-tradeoff, serving-parallelism, tokens-to-think, next-token-prediction]
+related: ["[[kv-cache-economics]]", "[[kv-cache-paging]]", "[[inference-batching-economics]]", "[[compute-memory-tradeoff]]", "[[serving-parallelism]]", "[[tokens-to-think]]", "[[next-token-prediction]]"]
 sources: [ep-96-llm-추론-인프라와-토큰-경제학]
 ---
 

@@ -3,7 +3,7 @@ concept: Engineering Taste
 category: Industry, Strategy & Careers
 summary: The human capacity for strategic technical judgment — sensing which direction is right — that concentrates and grows more valuable as agents absorb routine implementation work.
 aliases: [engineering judgment, strategic technical judgment]
-related: [shifting-bottlenecks, multi-agent-code-review, agentic-issue-resolution, jagged-intelligence, thinking-vs-understanding, custom-eval-systems, ai-native-company]
+related: ["[[shifting-bottlenecks]]", "[[multi-agent-code-review]]", "[[agentic-issue-resolution]]", "[[jagged-intelligence]]", "[[thinking-vs-understanding]]", "[[custom-eval-systems]]", "[[ai-native-company]]"]
 sources: [live-coding-session-with-boris-cherny-and-jarred-sumner, 꼭-알아야할-안드레-카파시-30분-인터뷰-완전정리-ai시대의-필수-인사이트, stanford-cs153-frontier-systems-the-ai-native-company-how-on]
 ---
 

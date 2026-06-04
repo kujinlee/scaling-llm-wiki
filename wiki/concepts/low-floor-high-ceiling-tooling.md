@@ -3,7 +3,7 @@ concept: Low-Floor / High-Ceiling Tooling
 category: Agent Architecture & Patterns
 summary: Curating an agent's tool stack by pairing specialized tools (low floor — easy, efficient, low-error on common tasks) with general-purpose tools (high ceiling — handle unexpected or complex queries at the cost of more iterations).
 aliases: [low floor high ceiling, specialized vs general-purpose tools, tool stack curation, shell tool as universal capability, low-floor high-ceiling tools, no silver-bullet tool]
-related: [tool-integration-hierarchy, robust-tool-design, agentic-search, model-context-protocol, computer-use-automation, per-node-model-routing]
+related: ["[[tool-integration-hierarchy]]", "[[robust-tool-design]]", "[[agentic-search]]", "[[model-context-protocol]]", "[[computer-use-automation]]", "[[per-node-model-routing]]"]
 sources: [agentic-search-for-context-engineering-leonie-monigatti-elas]
 ---
 

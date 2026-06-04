@@ -3,7 +3,7 @@ concept: Context Engineering
 category: Harness & Context Engineering
 summary: Deliberately curating the exact information placed in a single agent's context window — what to include and what to exclude — so one LLM call performs as well as possible.
 aliases: [context engineering, context curation, context window management]
-related: [harness-engineering, claude-md, deterministic-workflow-orchestration, spec-driven-development, per-node-model-routing, agentic-search]
+related: ["[[harness-engineering]]", "[[claude-md]]", "[[deterministic-workflow-orchestration]]", "[[spec-driven-development]]", "[[per-node-model-routing]]", "[[agentic-search]]"]
 sources: [the-next-evolution-of-ai-coding-is-harnesses-here-s-how-to-b, agentic-search-for-context-engineering-leonie-monigatti-elas]
 ---
 

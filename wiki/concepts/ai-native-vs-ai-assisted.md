@@ -3,7 +3,7 @@ concept: AI-Native vs. AI-Assisted
 category: Industry, Strategy & Careers
 summary: The diagnostic distinction between organizations whose workflows are entirely AI-driven with minimal human intervention (AI-native) and those where AI merely enhances existing human tasks (AI-assisted) — with most self-described "native" companies actually assisted, gated by data infrastructure and leadership understanding.
 aliases: [AI-native vs AI-assisted, AI-assisted, AI-native, native vs assisted, AI-washing, AI-native readiness, claimed native actually assisted]
-related: [ai-native-company, dark-factory, custom-eval-systems, super-app-convergence, ontology-operating-system, friction-as-judgment, graduated-autonomy]
+related: ["[[ai-native-company]]", "[[dark-factory]]", "[[custom-eval-systems]]", "[[super-app-convergence]]", "[[ontology-operating-system]]", "[[friction-as-judgment]]", "[[graduated-autonomy]]"]
 sources: [ep-97-ai-psychosis-시대의-사람들]
 ---
 

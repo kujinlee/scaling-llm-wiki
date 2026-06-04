@@ -3,7 +3,7 @@ concept: LLM Hallucination
 category: LLM Internals & Training
 summary: LLMs confidently fabricate information when uncertain because they imitate the style of correct answers without the underlying knowledge — mitigated by training refusal and by external tool use.
 aliases: [hallucination, hallucinations, LLM hallucination, confabulation, fabrication, swiss cheese capabilities, vague recollection]
-related: [llm-tool-augmentation, sycophantic-agreement, jagged-intelligence, tokens-to-think, escape-hatch-prompting, next-token-prediction]
+related: ["[[llm-tool-augmentation]]", "[[sycophantic-agreement]]", "[[jagged-intelligence]]", "[[tokens-to-think]]", "[[escape-hatch-prompting]]", "[[next-token-prediction]]"]
 sources: [deep-dive-into-llms-like-chatgpt]
 ---
 

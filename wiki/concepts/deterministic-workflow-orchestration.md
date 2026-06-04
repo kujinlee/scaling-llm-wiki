@@ -3,7 +3,7 @@ concept: Deterministic Workflow Orchestration
 category: Agent Architecture & Patterns
 summary: Encoding a development process as a declarative workflow that interleaves deterministic commands (validation, approval gates) with LLM prompt nodes, making AI coding repeatable and reliable.
 aliases: [declarative agent workflows, workflow-as-code, YAML workflow definitions, deterministic-plus-LLM workflows, AI coding workflow builder]
-related: [harness-engineering, per-node-model-routing, context-engineering, parallel-isolated-agents, spec-driven-development, agent-router, dark-factory, governance-layer, harness-debugging]
+related: ["[[harness-engineering]]", "[[per-node-model-routing]]", "[[context-engineering]]", "[[parallel-isolated-agents]]", "[[spec-driven-development]]", "[[agent-router]]", "[[dark-factory]]", "[[governance-layer]]", "[[harness-debugging]]"]
 sources: [the-next-evolution-of-ai-coding-is-harnesses-here-s-how-to-b, i-m-building-an-ai-dark-factory-that-ships-its-own-code-publ, the-ai-dark-factory-is-alive-a-codebase-that-writes-its-own-, live-코덱스로-바이브-코딩하기-feat-하네스-엔지니어링]
 ---
 

@@ -3,7 +3,7 @@ concept: Supervised Fine-Tuning
 category: LLM Internals & Training
 summary: Post-training a base model on human-curated conversation examples so it imitates a helpful assistant — turning a token-autocomplete into a chatbot that statistically simulates a data labeler.
 aliases: [supervised fine-tuning, SFT, post-training, instruction tuning, conversation fine-tuning, simulation of a data labeler]
-related: [next-token-prediction, rlhf, reasoning-reinforcement-learning, sycophantic-agreement, llm-hallucination, jagged-intelligence]
+related: ["[[next-token-prediction]]", "[[rlhf]]", "[[reasoning-reinforcement-learning]]", "[[sycophantic-agreement]]", "[[llm-hallucination]]", "[[jagged-intelligence]]"]
 sources: [deep-dive-into-llms-like-chatgpt]
 ---
 

@@ -3,7 +3,7 @@ concept: Robust Tool Design
 category: Agent Architecture & Patterns
 summary: Building agent tools to survive the three tool-call failure modes — no call, wrong call, bad parameters — via descriptive descriptions, system-prompt reinforcement, on-demand syntax documentation, and self-correcting error handling.
 aliases: [robust tool design, tool description engineering, agent tool design, tool calling failure modes, self-correcting tools, tool documentation as skill]
-related: [agentic-search, low-floor-high-ceiling-tooling, tool-integration-hierarchy, model-context-protocol, auto-correction-loop, self-verification-loop, lazy-context-loading, thin-harness-fat-skills, deterministic-workflow-orchestration]
+related: ["[[agentic-search]]", "[[low-floor-high-ceiling-tooling]]", "[[tool-integration-hierarchy]]", "[[model-context-protocol]]", "[[auto-correction-loop]]", "[[self-verification-loop]]", "[[lazy-context-loading]]", "[[thin-harness-fat-skills]]", "[[deterministic-workflow-orchestration]]"]
 sources: [agentic-search-for-context-engineering-leonie-monigatti-elas]
 ---
 

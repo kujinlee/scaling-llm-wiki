@@ -3,7 +3,7 @@ concept: Model Adaptation Methods
 category: LLM Internals & Training
 summary: The spectrum of techniques for specializing a foundation model to a task — from prompt design (no weight change) through parameter-efficient tuning (modifying a subset of parameters) to distillation (a teacher model trains a smaller student) — ordered by cost, data, and depth.
 aliases: [model adaptation, model tuning methods, model customization, parameter-efficient tuning, PET, adapter tuning, reinforcement tuning, model distillation, teacher-student distillation, tuning spectrum]
-related: [foundation-models, supervised-fine-tuning, in-context-learning, automated-prompt-optimization, rlhf, on-device-inference, expert-domain-defensibility, per-node-model-routing, next-token-prediction]
+related: ["[[foundation-models]]", "[[supervised-fine-tuning]]", "[[in-context-learning]]", "[[automated-prompt-optimization]]", "[[rlhf]]", "[[on-device-inference]]", "[[expert-domain-defensibility]]", "[[per-node-model-routing]]", "[[next-token-prediction]]"]
 sources: [introduction-to-vertex-ai-studio]
 ---
 

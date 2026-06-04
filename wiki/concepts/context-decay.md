@@ -3,7 +3,7 @@ concept: Context Decay
 category: Harness & Context Engineering
 summary: Degradation that sets in as a long task crowds earlier instructions out of the finite context window, causing the agent to forget constraints or terminate work prematurely.
 aliases: [context decay, context window forgetting, long-session forgetting, premature task termination]
-related: [context-rot, claude-md, context-engineering, harness-engineering, persistent-agent-memory]
+related: ["[[context-rot]]", "[[claude-md]]", "[[context-engineering]]", "[[harness-engineering]]", "[[persistent-agent-memory]]"]
 sources: [하네스-공식문서-100번-읽은-것처럼-만들어드림]
 ---
 

@@ -3,7 +3,7 @@ concept: Aspirational Prompting
 category: Workflows & Methodology
 summary: Instructing an agent to envision the most ambitious version of a solution — a "CEO plan" aimed at 10x value for 2x effort — rather than a minimal literal interpretation.
 aliases: [CEO plan, 10-star prompting, 10x meta-prompting, meta-prompting, 11-star experience prompt]
-related: [explicit-gears, engineering-taste, auto-research, spec-driven-development]
+related: ["[[explicit-gears]]", "[[engineering-taste]]", "[[auto-research]]", "[[spec-driven-development]]"]
 sources: [tokenmaxxing-how-top-builders-use-ai-to-do-the-work-of-400-e]
 ---
 

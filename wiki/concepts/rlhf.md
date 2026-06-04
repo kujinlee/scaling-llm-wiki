@@ -3,7 +3,7 @@ concept: Reinforcement Learning from Human Feedback
 category: LLM Internals & Training
 summary: Training a reward model to imitate human preference rankings, then optimizing the LLM against it — extending reinforcement learning into unverifiable domains, but capped because the reward model can be gamed.
 aliases: [RLHF, reinforcement learning from human feedback, reward model, human preference optimization, human simulator, preference ranking]
-related: [reasoning-reinforcement-learning, reward-hacking, verifiability-law, supervised-fine-tuning, sycophantic-agreement, value-functions]
+related: ["[[reasoning-reinforcement-learning]]", "[[reward-hacking]]", "[[verifiability-law]]", "[[supervised-fine-tuning]]", "[[sycophantic-agreement]]", "[[value-functions]]"]
 sources: [deep-dive-into-llms-like-chatgpt]
 ---
 

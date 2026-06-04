@@ -3,7 +3,7 @@ concept: Multi-Client Architecture
 category: Harness & Context Engineering
 summary: Organizing an agent setup so one root config carries shared methodology while per-client folders supply client-specific overrides, brand context, and memory — keeping projects cleanly separated while reusing common process, with outputs filed in predictable locations.
 aliases: [multi-client architecture, multi-project agent setup, config inheritance for agents, per-client overrides, root and client CLAUDE.md, output management, client folder structure]
-related: [claude-md, agentic-operating-system, static-identity-context, persistent-agent-memory, context-engineering, compound-engineering, harness-engineering, context-reset, subagent-context-isolation]
+related: ["[[claude-md]]", "[[agentic-operating-system]]", "[[static-identity-context]]", "[[persistent-agent-memory]]", "[[context-engineering]]", "[[compound-engineering]]", "[[harness-engineering]]", "[[context-reset]]", "[[subagent-context-isolation]]"]
 sources: [creating-your-own-agentic-os-is-easy-insanely-powerful]
 ---
 

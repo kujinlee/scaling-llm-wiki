@@ -3,7 +3,7 @@ concept: Super App Convergence
 category: Harness & Context Engineering
 summary: The trend of foundation models absorbing the best features of external harnesses and meta-harnesses, so the model itself becomes a general-purpose "super app" — collapsing the gap that third-party orchestration tooling once filled.
 aliases: [super apps, harness absorption, harness war, meta-harness absorption, feature absorption into models, capability convergence, oh-my-claude, oh-my-codex]
-related: [harness-engineering, thin-harness-fat-skills, self-modifying-agent-harness, agentic-coding-tool-selection, model-abstraction-layer, inference-batching-economics, distributed-systems-literacy, distribution-over-features]
+related: ["[[harness-engineering]]", "[[thin-harness-fat-skills]]", "[[self-modifying-agent-harness]]", "[[agentic-coding-tool-selection]]", "[[model-abstraction-layer]]", "[[inference-batching-economics]]", "[[distributed-systems-literacy]]", "[[distribution-over-features]]"]
 sources: [ep-97-ai-psychosis-시대의-사람들]
 ---
 

@@ -3,7 +3,7 @@ concept: Computer-Use Automation
 category: Agent Architecture & Patterns
 summary: Operating existing applications through their GUI — clicking, typing, reading the screen — to automate workflows that expose no API.
 aliases: [GUI automation, app control without API, human-like app operation, screen automation]
-related: [agent-router, harness-engineering, github-as-blueprint, satisfaction-testing, agentic-coding-tool-selection]
+related: ["[[agent-router]]", "[[harness-engineering]]", "[[github-as-blueprint]]", "[[satisfaction-testing]]", "[[agentic-coding-tool-selection]]"]
 sources: [나의-ai-에이전트-전환기-w-클로드-코드-오픈클로, live-코덱스로-바이브-코딩하기-feat-하네스-엔지니어링]
 ---
 

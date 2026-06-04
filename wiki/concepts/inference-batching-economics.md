@@ -3,7 +3,7 @@ concept: Inference Batching Economics
 category: LLM Internals & Training
 summary: Batch size is the dominant cost lever for LLM serving: amortizing weight fetches across concurrent requests cuts cost-per-token by orders of magnitude, with optimal batch size tied to model sparsity.
 aliases: [batching, batch size economics, inference batching, roofline inference, amortizing weight fetches, optimal batch size, fast mode pricing]
-related: [mixture-of-experts, kv-cache-economics, kv-cache-paging, prefill-decode-inference, serving-parallelism, compute-memory-tradeoff, subscription-vs-metered-pricing, per-node-model-routing, token-maxing]
+related: ["[[mixture-of-experts]]", "[[kv-cache-economics]]", "[[kv-cache-paging]]", "[[prefill-decode-inference]]", "[[serving-parallelism]]", "[[compute-memory-tradeoff]]", "[[subscription-vs-metered-pricing]]", "[[per-node-model-routing]]", "[[token-maxing]]"]
 sources: [how-gpt-claude-and-gemini-are-actually-trained-and-served-re, ep-96-llm-추론-인프라와-토큰-경제학]
 ---
 

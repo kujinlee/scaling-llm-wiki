@@ -3,7 +3,7 @@ concept: Custom Evaluation Systems
 category: Workflows & Methodology
 summary: Domain-specific test suites that judge AI output against operator-defined criteria — instruction adherence, correctness, business goals — as a standing, machine-checkable quality gate.
 aliases: [custom evals, evals, eval-driven development, cross-modal eval, product evals, evaluation systems]
-related: [engineering-taste, cross-model-critique, self-verification-loop, reward-hacking, holdout-validation, auto-research, ai-native-company, thin-harness-fat-skills]
+related: ["[[engineering-taste]]", "[[cross-model-critique]]", "[[self-verification-loop]]", "[[reward-hacking]]", "[[holdout-validation]]", "[[auto-research]]", "[[ai-native-company]]", "[[thin-harness-fat-skills]]"]
 sources: [stanford-cs153-frontier-systems-the-ai-native-company-how-on]
 ---
 

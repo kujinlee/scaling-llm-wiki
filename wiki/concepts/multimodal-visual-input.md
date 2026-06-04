@@ -3,7 +3,7 @@ concept: Multimodal Visual Input
 category: Workflows & Methodology
 summary: Supplying images — screenshots, design mockups, diagrams — as input the agent analyzes or builds from, turning a visual reference into a specification more precise than prose.
 aliases: [multimodal input, visual input, screenshot-to-code, design-to-code, image as specification, visual reference grounding, screenshot grounding, upload a design]
-related: [github-as-blueprint, visual-brainstorming, computer-use-automation, curated-design-systems, interactive-artifacts, theory-of-mind-for-llms, jagged-intelligence]
+related: ["[[github-as-blueprint]]", "[[visual-brainstorming]]", "[[computer-use-automation]]", "[[curated-design-systems]]", "[[interactive-artifacts]]", "[[theory-of-mind-for-llms]]", "[[jagged-intelligence]]"]
 sources: [every-claude-code-concept-explained-for-normal-people]
 ---
 

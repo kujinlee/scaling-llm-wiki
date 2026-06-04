@@ -3,7 +3,7 @@ concept: KV Cache Paging
 category: LLM Internals & Training
 summary: Managing the dynamically-sized per-request KV cache like operating-system virtual memory — allocating it in fixed-size pages (PagedAttention) so diverse concurrent sequences pack into GPU memory with minimal fragmentation, maximizing batch size and utilization.
 aliases: [PagedAttention, KV cache paging, vLLM PagedAttention, paged attention, kv cache memory management, kv cache fragmentation, serving orchestration layer]
-related: [kv-cache-economics, prefill-decode-inference, inference-batching-economics, compute-memory-tradeoff, serving-parallelism, mixture-of-experts]
+related: ["[[kv-cache-economics]]", "[[prefill-decode-inference]]", "[[inference-batching-economics]]", "[[compute-memory-tradeoff]]", "[[serving-parallelism]]", "[[mixture-of-experts]]"]
 sources: [ep-96-llm-추론-인프라와-토큰-경제학]
 ---
 

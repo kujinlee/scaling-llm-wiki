@@ -3,7 +3,7 @@ concept: Generative Variation Selection
 category: Workflows & Methodology
 summary: Using inference speed to generate many variations of an artifact (e.g. 15–75 versions of a UI component) in the time one used to take, then cherry-picking the best — injecting human taste and variety by selection rather than by up-front specification.
 aliases: [cherry-picking, generative variation selection, generate-and-select, many variations cherry-pick, variation sampling, taste by selection, parallel variation generation]
-related: [fast-models-slow-developers, curated-design-systems, engineering-taste, visual-brainstorming, aspirational-prompting, cross-model-critique, token-maxing, free-validation-at-speed]
+related: ["[[fast-models-slow-developers]]", "[[curated-design-systems]]", "[[engineering-taste]]", "[[visual-brainstorming]]", "[[aspirational-prompting]]", "[[cross-model-critique]]", "[[token-maxing]]", "[[free-validation-at-speed]]"]
 sources: [fast-models-need-slow-developers-sarah-chieng-cerebras]
 ---
 

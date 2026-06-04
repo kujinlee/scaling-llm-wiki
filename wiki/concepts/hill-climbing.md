@@ -3,7 +3,7 @@ concept: Hill Climbing
 category: Workflows & Methodology
 summary: Giving an agent a concrete metric and a verification mechanism, then letting it iterate autonomously toward the target with anti-proxy-signal discipline to prevent false completion.
 aliases: [metric-driven iteration, agent optimization loop]
-related: [self-verification-loop, agentic-issue-resolution, shifting-bottlenecks, exploratory-spec-discovery, reward-hacking, generator-verifier-loop, verifiability-law]
+related: ["[[self-verification-loop]]", "[[agentic-issue-resolution]]", "[[shifting-bottlenecks]]", "[[exploratory-spec-discovery]]", "[[reward-hacking]]", "[[generator-verifier-loop]]", "[[verifiability-law]]"]
 sources: [live-coding-session-with-boris-cherny-and-jarred-sumner, 한글자막-현재-codex-에서-제일-핫한-기능-goal, claude-code-just-dropped-goal-master-it-in-8-minutes]
 ---
 

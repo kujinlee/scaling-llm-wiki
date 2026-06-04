@@ -3,7 +3,7 @@ concept: Assistant Personalization Layers
 category: Harness & Context Engineering
 summary: Separating the distinct axes of customizing an AI assistant — domain context (projects), repeatable working method (skills), and user profile (memory) — so each is configured deliberately rather than collapsed into one prompt.
 aliases: [personalization layers, projects vs skills vs memory, context vs method vs profile, customization axes, assistant specialization layers, work-OS layers]
-related: [claude-md, context-engineering, persistent-agent-memory, thin-harness-fat-skills, lazy-context-loading, agentic-capability-ladder, cross-tool-memory, model-context-protocol]
+related: ["[[claude-md]]", "[[context-engineering]]", "[[persistent-agent-memory]]", "[[thin-harness-fat-skills]]", "[[lazy-context-loading]]", "[[agentic-capability-ladder]]", "[[cross-tool-memory]]", "[[model-context-protocol]]"]
 sources: [26년-5월-업데이트-클로드-핵심-기능-300-활용법ㅣ코워크-skills-커넥터-어플]
 ---
 

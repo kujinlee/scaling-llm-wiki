@@ -3,7 +3,7 @@ concept: Agentic Operating System
 category: Harness & Context Engineering
 summary: A no-code personal "operating system" layered beneath an AI tool — static identity context, dynamic memory, modular skills, and chained skill-systems organized as files and folders — that turns a generic model into a consistent specialist.
 aliases: [agentic OS, agentic operating system, personal AI OS, no-code agent OS, context management OS, AI work OS]
-related: [assistant-personalization-layers, claude-md, persistent-agent-memory, thin-harness-fat-skills, procedural-knowledge-skills, harness-engineering, static-identity-context, multi-client-architecture, lazy-context-loading, context-rot, agent-as-infrastructure, deterministic-workflow-orchestration, second-brain, compound-engineering]
+related: ["[[assistant-personalization-layers]]", "[[claude-md]]", "[[persistent-agent-memory]]", "[[thin-harness-fat-skills]]", "[[procedural-knowledge-skills]]", "[[harness-engineering]]", "[[static-identity-context]]", "[[multi-client-architecture]]", "[[lazy-context-loading]]", "[[context-rot]]", "[[agent-as-infrastructure]]", "[[deterministic-workflow-orchestration]]", "[[second-brain]]", "[[compound-engineering]]"]
 sources: [creating-your-own-agentic-os-is-easy-insanely-powerful]
 ---
 

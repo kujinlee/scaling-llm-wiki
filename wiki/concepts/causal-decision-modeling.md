@@ -3,7 +3,7 @@ concept: Causal Decision Modeling
 category: Industry, Strategy & Careers
 summary: Structuring data to reason about causation — not correlation — using time modeling, three-layer dynamic ontologies, and composite threshold-activated actions to produce actionable interventions.
 aliases: [causal decision modeling, causation over correlation, dynamic ontology layers, semantic kinetic dynamic layers, time modeling, threshold-activated action]
-related: [ontology-operating-system, codebase-knowledge-graph, llm-knowledge-wiki, auto-correction-loop, reward-hacking]
+related: ["[[ontology-operating-system]]", "[[codebase-knowledge-graph]]", "[[llm-knowledge-wiki]]", "[[auto-correction-loop]]", "[[reward-hacking]]"]
 sources: [온톨로지와-팔란티어-파운드리에-대한-정말-쉬운-설명-이현종-온톨로지-저자-빅스터-대표-토크아이티-웨비나]
 ---
 

@@ -3,7 +3,7 @@ concept: Plan-First Workflow
 category: Workflows & Methodology
 summary: Agent produces an explicit plan, the human reviews and amends it, and only then does execution proceed — catching misread requirements at the cheapest possible correction point.
 aliases: [plan-first workflow, plan mode, plan before execute, plan-review-execute, planning before coding]
-related: [spec-driven-development, self-verification-loop, permission-tiering, per-node-model-routing, parallel-isolated-agents, harness-engineering]
+related: ["[[spec-driven-development]]", "[[self-verification-loop]]", "[[permission-tiering]]", "[[per-node-model-routing]]", "[[parallel-isolated-agents]]", "[[harness-engineering]]"]
 sources: [claude-code-창시자-boris의-ai-에이전트-셋업-전부-다-까보자, 12-claude-code-features-every-engineer-should-know-subagents]
 ---
 

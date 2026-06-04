@@ -3,7 +3,7 @@ concept: Satisfaction Testing
 category: Workflows & Methodology
 summary: Validating a change by exercising entire end-to-end user journeys through browser automation on the running application, asking "would a user be satisfied?" rather than asserting on units.
 aliases: [satisfaction testing, user-journey validation, end-to-end satisfaction testing, journey-based testing, satisfaction-based validation]
-related: [holdout-validation, self-verification-loop, computer-use-automation, agent-tdd, dark-factory, harness-debugging]
+related: ["[[holdout-validation]]", "[[self-verification-loop]]", "[[computer-use-automation]]", "[[agent-tdd]]", "[[dark-factory]]", "[[harness-debugging]]"]
 sources: [i-m-building-an-ai-dark-factory-that-ships-its-own-code-publ, the-ai-dark-factory-is-alive-a-codebase-that-writes-its-own-]
 ---
 

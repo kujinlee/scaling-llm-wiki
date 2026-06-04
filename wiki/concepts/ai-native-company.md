@@ -3,7 +3,7 @@ concept: AI-Native Company
 category: Industry, Strategy & Careers
 summary: An organization rebuilt as a closed-loop system with AI agents embedded in every decision and reading every artifact, enabling self-healing and roughly 10x revenue per employee.
 aliases: [AI-native company, closed-loop company, AI-native organization, software factory, one-person frontier lab]
-related: [agent-as-infrastructure, agent-native-infrastructure, custom-eval-systems, founder-wedge-strategy, vibe-coding-vs-agentic-engineering, engineering-taste, shifting-bottlenecks, ontology-operating-system]
+related: ["[[agent-as-infrastructure]]", "[[agent-native-infrastructure]]", "[[custom-eval-systems]]", "[[founder-wedge-strategy]]", "[[vibe-coding-vs-agentic-engineering]]", "[[engineering-taste]]", "[[shifting-bottlenecks]]", "[[ontology-operating-system]]"]
 sources: [stanford-cs153-frontier-systems-the-ai-native-company-how-on]
 ---
 

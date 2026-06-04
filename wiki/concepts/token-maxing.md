@@ -3,7 +3,7 @@ concept: Token Maxing
 category: Workflows & Methodology
 summary: The philosophy that it is expensive *not* to burn tokens: deliberately spending on capable models and token-heavy processes yields more complete, more correct output at marginal extra cost.
 aliases: [tokenmaxxing, token maxxing, expensive not to burn tokens, token maximization]
-related: [per-node-model-routing, thin-harness-fat-skills, harness-engineering, llm-knowledge-wiki, shifting-bottlenecks]
+related: ["[[per-node-model-routing]]", "[[thin-harness-fat-skills]]", "[[harness-engineering]]", "[[llm-knowledge-wiki]]", "[[shifting-bottlenecks]]"]
 sources: [tokenmaxxing-how-top-builders-use-ai-to-do-the-work-of-400-e]
 ---
 

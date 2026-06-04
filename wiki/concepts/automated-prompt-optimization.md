@@ -3,7 +3,7 @@ concept: Automated Prompt Optimization
 category: Workflows & Methodology
 summary: Using an algorithmic search (genetic/evolutionary, GEPA-style) to iteratively rewrite an agent's prompt against an eval dataset, breeding higher-scoring candidates until accuracy on a golden set improves.
 aliases: [automated prompt optimization, prompt optimization, GEPA, Jeppa, genetic pareto optimization, evolutionary prompt search, prompt tuning, eval-driven prompt optimization, prompt breeding]
-related: [custom-eval-systems, auto-research, hill-climbing, self-verification-loop, reward-hacking, runtime-config-hot-swapping, per-node-model-routing, token-maxing, verifiability-law]
+related: ["[[custom-eval-systems]]", "[[auto-research]]", "[[hill-climbing]]", "[[self-verification-loop]]", "[[reward-hacking]]", "[[runtime-config-hot-swapping]]", "[[per-node-model-routing]]", "[[token-maxing]]", "[[verifiability-law]]"]
 sources: [agent-optimization-with-pydantic-ai-gepa-evals-feedback-loop]
 ---
 

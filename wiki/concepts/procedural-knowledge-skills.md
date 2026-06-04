@@ -3,7 +3,7 @@ concept: Skills as On-Demand Procedural Knowledge
 category: Skills, Plugins & Automation
 summary: Packaging a recurring task's procedural knowledge into a self-contained skill (skill.md plus scripts and references) that an agent loads only when the task requires it, instead of pasting playbooks into every prompt.
 aliases: [skills, claude code skills, procedural knowledge skills, on-demand skills, skill files, skill.md, skills as plugins, agent skills, reusable agent workflows]
-related: [thin-harness-fat-skills, plugin-packaging, lazy-context-loading, meta-skills, agent-tdd, lifecycle-hooks, permission-tiering, robust-tool-design, assistant-personalization-layers, compound-engineering, harness-engineering]
+related: ["[[thin-harness-fat-skills]]", "[[plugin-packaging]]", "[[lazy-context-loading]]", "[[meta-skills]]", "[[agent-tdd]]", "[[lifecycle-hooks]]", "[[permission-tiering]]", "[[robust-tool-design]]", "[[assistant-personalization-layers]]", "[[compound-engineering]]", "[[harness-engineering]]"]
 sources: [claude-code-skills-are-the-new-plugins-i-tested-matt-pocock-]
 ---
 

@@ -3,7 +3,7 @@ concept: Agent Team Collaboration
 category: Agent Architecture & Patterns
 summary: A coordination pattern where multiple agents communicate directly peer-to-peer and adapt through a shared task list — eliminating the main-agent bottleneck of fan-out delegation, at a steep token premium.
 aliases: [agent teams, agent team collaboration, direct agent-to-agent communication, peer agent collaboration, shared task list agents, collaborative agent networks, cross-collaborating agents]
-related: [subagent-context-isolation, agent-swarm-orchestration, parallel-isolated-agents, multi-agent-code-review, long-running-agent-missions, deterministic-workflow-orchestration, agent-router, token-maxing, graduated-autonomy]
+related: ["[[subagent-context-isolation]]", "[[agent-swarm-orchestration]]", "[[parallel-isolated-agents]]", "[[multi-agent-code-review]]", "[[long-running-agent-missions]]", "[[deterministic-workflow-orchestration]]", "[[agent-router]]", "[[token-maxing]]", "[[graduated-autonomy]]"]
 sources: [every-claude-code-workflow-explained-when-to-use-each]
 ---
 

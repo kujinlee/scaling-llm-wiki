@@ -3,7 +3,7 @@ concept: Self-Verification Loop
 category: Workflows & Methodology
 summary: An agent independently confirms its own changes are correct by running checks it can interpret and producing evidence — not a claim — before declaring success.
 aliases: [agent self-verification, autonomous correctness checking, verification before completion]
-related: [hill-climbing, agentic-issue-resolution, multi-agent-code-review, shifting-bottlenecks, agent-tdd, spec-review-loop, holdout-validation, satisfaction-testing, plan-first-workflow, generator-verifier-loop]
+related: ["[[hill-climbing]]", "[[agentic-issue-resolution]]", "[[multi-agent-code-review]]", "[[shifting-bottlenecks]]", "[[agent-tdd]]", "[[spec-review-loop]]", "[[holdout-validation]]", "[[satisfaction-testing]]", "[[plan-first-workflow]]", "[[generator-verifier-loop]]"]
 sources: [live-coding-session-with-boris-cherny-and-jarred-sumner, the-claude-code-plugin-every-developer-must-learn-superpower, claude-code-창시자-boris의-ai-에이전트-셋업-전부-다-까보자, claude-code-just-dropped-goal-master-it-in-8-minutes]
 ---
 

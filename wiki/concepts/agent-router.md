@@ -3,7 +3,7 @@ concept: Agent Router
 category: Agent Architecture & Patterns
 summary: A top-level orchestrator agent that receives all incoming instructions and dispatches them to the appropriate specialized downstream agent, acting as single point of contact for a fleet.
 aliases: [router agent, dispatcher agent, secretary agent, single entry point agent]
-related: [harness-engineering, computer-use-automation, multi-agent-code-review, meta-skills]
+related: ["[[harness-engineering]]", "[[computer-use-automation]]", "[[multi-agent-code-review]]", "[[meta-skills]]"]
 sources: [나의-ai-에이전트-전환기-w-클로드-코드-오픈클로]
 ---
 

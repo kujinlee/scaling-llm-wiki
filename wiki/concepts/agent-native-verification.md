@@ -3,7 +3,7 @@ concept: Agent-Native Verification
 category: Workflows & Methodology
 summary: Embedding verification directly into development artifacts — components publishing their internal state as DOM data contracts — so a long-running agent can confirm correctness through a human dashboard, an agent-first browser pass, or headless CI, recording evidence as it goes.
 aliases: [agent-native verification, verification as data contract, DOM state contracts, agent-first verification, self-verifying artifacts, embedded verification, state-publishing components, verification evidence]
-related: [self-verification-loop, satisfaction-testing, free-validation-at-speed, friction-as-judgment, agent-native-infrastructure, computer-use-automation, multimodal-visual-input, holdout-validation, model-context-protocol, reasoning-trace-memory]
+related: ["[[self-verification-loop]]", "[[satisfaction-testing]]", "[[free-validation-at-speed]]", "[[friction-as-judgment]]", "[[agent-native-infrastructure]]", "[[computer-use-automation]]", "[[multimodal-visual-input]]", "[[holdout-validation]]", "[[model-context-protocol]]", "[[reasoning-trace-memory]]"]
 sources: [how-we-claude-code]
 ---
 

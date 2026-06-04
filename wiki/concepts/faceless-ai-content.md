@@ -3,7 +3,7 @@ concept: Faceless AI Content
 category: Industry, Strategy & Careers
 summary: Producing monetizable video content with AI avatars and voice clones at scale — for e-commerce, niche channels, or as a content-production service — with manual validation before pipeline automation.
 aliases: [faceless AI content, AI avatar content, faceless video, AI avatar videos, AI clone content, avatar-driven content]
-related: [distribution-over-features, ai-enablement-consulting, graduated-autonomy, computer-use-automation, vibe-coding-vs-agentic-engineering, ai-marketing-automation]
+related: ["[[distribution-over-features]]", "[[ai-enablement-consulting]]", "[[graduated-autonomy]]", "[[computer-use-automation]]", "[[vibe-coding-vs-agentic-engineering]]", "[[ai-marketing-automation]]"]
 sources: [5-ways-to-make-money-in-2026-with-ai]
 ---
 

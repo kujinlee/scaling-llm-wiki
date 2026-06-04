@@ -3,7 +3,7 @@ concept: Explicit Gears
 category: Workflows & Methodology
 summary: Switching an agent deliberately between distinct cognitive modes (CEO review, architecture, paranoid code review, QA, ship) rather than leaving it in an undifferentiated generalist state.
 aliases: [explicit gears, AI gears, cognitive mode switching, specialized AI modes, explicit roles]
-related: [harness-engineering, meta-skills, multi-agent-code-review, agentic-issue-resolution, engineering-taste, parallel-isolated-agents, aspirational-prompting]
+related: ["[[harness-engineering]]", "[[meta-skills]]", "[[multi-agent-code-review]]", "[[agentic-issue-resolution]]", "[[engineering-taste]]", "[[parallel-isolated-agents]]", "[[aspirational-prompting]]"]
 sources: [yc-ceo-shipped-100-prs-week-for-50-days-his-8-claude-code-sk, tokenmaxxing-how-top-builders-use-ai-to-do-the-work-of-400-e]
 ---
 

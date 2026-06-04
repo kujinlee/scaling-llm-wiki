@@ -3,7 +3,7 @@ concept: Next-Token Prediction
 category: LLM Internals & Training
 summary: The pre-training task of training a Transformer to predict the next token over trillions of tokens, producing a knowledgeable but un-aligned "base model" that simulates internet documents.
 aliases: [next-token prediction, pre-training, base model, language model pretraining, internet document simulator, token autocomplete, Transformer training]
-related: [tokenization, supervised-fine-tuning, llm-hallucination, mixture-of-experts, age-of-research, tokens-to-think]
+related: ["[[tokenization]]", "[[supervised-fine-tuning]]", "[[llm-hallucination]]", "[[mixture-of-experts]]", "[[age-of-research]]", "[[tokens-to-think]]"]
 sources: [deep-dive-into-llms-like-chatgpt]
 ---
 

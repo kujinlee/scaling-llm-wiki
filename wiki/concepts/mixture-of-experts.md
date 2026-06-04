@@ -3,7 +3,7 @@ concept: Mixture of Experts
 category: LLM Internals & Training
 summary: Architecture that holds a large total parameter count while activating only a small fraction per token, decoupling model capacity from per-token compute at the cost of larger weight memory.
 aliases: [MoE, mixture-of-experts, sparse models, sparsity, expert parallelism, active vs total parameters, sparse activation]
-related: [inference-batching-economics, serving-parallelism, kv-cache-economics, compute-memory-tradeoff, per-node-model-routing, age-of-research]
+related: ["[[inference-batching-economics]]", "[[serving-parallelism]]", "[[kv-cache-economics]]", "[[compute-memory-tradeoff]]", "[[per-node-model-routing]]", "[[age-of-research]]"]
 sources: [how-gpt-claude-and-gemini-are-actually-trained-and-served-re]
 ---
 

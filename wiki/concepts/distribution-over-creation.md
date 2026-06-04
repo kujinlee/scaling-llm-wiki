@@ -3,7 +3,7 @@ concept: Distribution Over Creation
 category: Industry, Strategy & Careers
 summary: As AI collapses the cost of building software and content, the binding constraint on value migrates from creation to distribution — so the winning move is to build the minimum and spend the majority of effort on marketing and a repeatable viral format.
 aliases: [distribution over creation, distribution as moat, build-light-market-heavy, marketing as the bottleneck, repeatable viral format, ship simple market hard]
-related: [vibe-coding-vs-agentic-engineering, shifting-bottlenecks, software-3-0, ai-native-company, founder-wedge-strategy, graduated-autonomy]
+related: ["[[vibe-coding-vs-agentic-engineering]]", "[[shifting-bottlenecks]]", "[[software-3-0]]", "[[ai-native-company]]", "[[founder-wedge-strategy]]", "[[graduated-autonomy]]"]
 sources: [5-ways-to-make-money-in-2026-with-ai]
 ---
 

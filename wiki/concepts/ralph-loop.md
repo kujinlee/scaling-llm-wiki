@@ -3,7 +3,7 @@ concept: Ralph Loop
 category: Skills, Plugins & Automation
 summary: Running an agent unattended in a continuous outer loop that re-feeds the same prompt each iteration, letting it self-correct and make incremental progress against files on disk until a task — or a whole backlog — is built out.
 aliases: [Ralph loop, Ralph technique, prompt re-feeding loop, continuous agent loop, same-prompt iteration, infinite agent loop, dumb loops, while-true agent loop, pick-the-next-ticket]
-related: [agentic-loop, agent-as-infrastructure, hill-climbing, generator-verifier-loop, exploratory-spec-discovery, auto-correction-loop, self-verification-loop, dark-factory, compound-engineering, ai-garbage-collection, graduated-autonomy, agent-sandboxing, custom-eval-systems, deterministic-workflow-orchestration]
+related: ["[[agentic-loop]]", "[[agent-as-infrastructure]]", "[[hill-climbing]]", "[[generator-verifier-loop]]", "[[exploratory-spec-discovery]]", "[[auto-correction-loop]]", "[[self-verification-loop]]", "[[dark-factory]]", "[[compound-engineering]]", "[[ai-garbage-collection]]", "[[graduated-autonomy]]", "[[agent-sandboxing]]", "[[custom-eval-systems]]", "[[deterministic-workflow-orchestration]]"]
 sources: [every-claude-code-concept-explained-for-normal-people, ralph-loops-build-dumb-ai-loops-that-ship-chris-parsons-cher]
 ---
 

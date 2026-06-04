@@ -3,7 +3,7 @@ concept: HTML as Specification Format
 category: Harness & Context Engineering
 summary: Using information-dense HTML rather than Markdown for an agent's planning and specification artifacts, enabling richer visual design directions, screenshot-based feedback, and more ergonomic understanding — token-heavier up front but fewer iterations overall.
 aliases: [HTML specs, HTML over Markdown, HTML specifications, unreasonable effectiveness of HTML files, HTML planning artifacts, visual specs, HTML design directions]
-related: [context-engineering, claude-md, agent-alignment-artifacts, multimodal-visual-input, visual-brainstorming, interactive-artifacts, curated-design-systems, agent-native-verification, token-maxing, instruction-budget]
+related: ["[[context-engineering]]", "[[claude-md]]", "[[agent-alignment-artifacts]]", "[[multimodal-visual-input]]", "[[visual-brainstorming]]", "[[interactive-artifacts]]", "[[curated-design-systems]]", "[[agent-native-verification]]", "[[token-maxing]]", "[[instruction-budget]]"]
 sources: [how-we-claude-code]
 ---
 

@@ -3,7 +3,7 @@ concept: Cross-Tool Memory
 category: Memory & Knowledge Systems
 summary: A single user-owned memory store shared across all AI tools via an MCP server, so context and facts follow the operator across assistants without vendor lock-in.
 aliases: [universal AI memory, portable memory, cross-tool AI memory, user-owned memory, universal memory layer]
-related: [persistent-agent-memory, llm-knowledge-wiki, claude-md, ingest-vs-query-time-synthesis]
+related: ["[[persistent-agent-memory]]", "[[llm-knowledge-wiki]]", "[[claude-md]]", "[[ingest-vs-query-time-synthesis]]"]
 sources: [every-claude-code-memory-system-compared-so-you-don-t-have-t, karpathy-s-wiki-vs-open-brain-one-fails-when-you-need-it-mos]
 ---
 

@@ -3,7 +3,7 @@ concept: Tool-Output Virtualization
 category: Harness & Context Engineering
 summary: Intercepting large tool outputs and indexing them into an external store, returning only a tiny reference to the agent so it queries the data on demand instead of dumping raw output into the context window.
 aliases: [tool-output virtualization, context virtualization, tool-output offloading, output indexing, context mode, virtualization layer, indexed tool outputs, query-on-demand tool output]
-related: [context-compaction, context-rot, agentic-search, subagent-context-isolation, progressive-disclosure-retrieval, filesystem-memory-store, persistent-agent-memory, lifecycle-hooks, model-context-protocol, tool-integration-hierarchy]
+related: ["[[context-compaction]]", "[[context-rot]]", "[[agentic-search]]", "[[subagent-context-isolation]]", "[[progressive-disclosure-retrieval]]", "[[filesystem-memory-store]]", "[[persistent-agent-memory]]", "[[lifecycle-hooks]]", "[[model-context-protocol]]", "[[tool-integration-hierarchy]]"]
 sources: [claude-code-is-expensive-this-mcp-server-fixes-it-context-mo]
 ---
 

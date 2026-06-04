@@ -3,7 +3,7 @@ concept: Agent Swarm Orchestration
 category: Agent Architecture & Patterns
 summary: Scaling beyond a single conductor's isolated fleet — many specialized agents self-organize into swarms with shared memory across sessions and federated communication across machines.
 aliases: [agent swarms, self-organizing agent swarms, swarm orchestration, federated agents, shared-memory swarms, cross-machine agent federation]
-related: [parallel-isolated-agents, subagent-context-isolation, agent-router, persistent-agent-memory, cross-tool-memory, deterministic-workflow-orchestration, token-maxing, harness-engineering, graduated-autonomy]
+related: ["[[parallel-isolated-agents]]", "[[subagent-context-isolation]]", "[[agent-router]]", "[[persistent-agent-memory]]", "[[cross-tool-memory]]", "[[deterministic-workflow-orchestration]]", "[[token-maxing]]", "[[harness-engineering]]", "[[graduated-autonomy]]"]
 sources: [6-claude-code-github-repos-that-change-everything]
 ---
 

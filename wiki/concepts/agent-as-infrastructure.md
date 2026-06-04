@@ -3,7 +3,7 @@ concept: Agent as Infrastructure
 category: Agent Architecture & Patterns
 summary: Deployment pattern in which a coding agent runs as an always-on, cloud-hosted service triggered by schedules, API calls, or repository events, independent of the operator's local machine.
 aliases: [agent as infrastructure, always-on agents, cloud-hosted routines, autonomous agent infrastructure, Claude routines, event-triggered agents, scheduled agent tasks]
-related: [agentic-capability-ladder, graduated-autonomy, lifecycle-hooks, agent-router, subscription-vs-metered-pricing, agentic-issue-resolution]
+related: ["[[agentic-capability-ladder]]", "[[graduated-autonomy]]", "[[lifecycle-hooks]]", "[[agent-router]]", "[[subscription-vs-metered-pricing]]", "[[agentic-issue-resolution]]"]
 sources: [every-level-of-claude-explained-in-21-minutes, 26년-5월-업데이트-클로드-핵심-기능-300-활용법ㅣ코워크-skills-커넥터-어플, 7-secret-prompts-that-make-claude-code-10x-better]
 ---
 

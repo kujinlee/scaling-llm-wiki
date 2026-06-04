@@ -3,7 +3,7 @@ concept: Thin Harness, Fat Skills
 category: Skills, Plugins & Automation
 summary: Keeping the agent's core interaction loop thin and generic while embedding task-specific behavior in thick natural-language skill files (markdown), backed by rigorous automated test coverage.
 aliases: [thin harness fat skills, fat skills, thin harness, generic harness natural-language skills, skills as runbooks, Skillify, markdown as code]
-related: [harness-engineering, claude-md, context-engineering, deterministic-workflow-orchestration, explicit-gears, meta-skills, lazy-context-loading, custom-eval-systems, self-modifying-agent-harness]
+related: ["[[harness-engineering]]", "[[claude-md]]", "[[context-engineering]]", "[[deterministic-workflow-orchestration]]", "[[explicit-gears]]", "[[meta-skills]]", "[[lazy-context-loading]]", "[[custom-eval-systems]]", "[[self-modifying-agent-harness]]"]
 sources: [tokenmaxxing-how-top-builders-use-ai-to-do-the-work-of-400-e, stanford-cs153-frontier-systems-the-ai-native-company-how-on, aie-europe-keynotes-coding-agents-ft-pi-google-deepmind-anth]
 ---
 

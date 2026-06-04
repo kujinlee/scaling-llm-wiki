@@ -3,7 +3,7 @@ concept: Collaborative Prompt Elicitation
 category: Workflows & Methodology
 summary: The shift in which the model itself helps the user articulate intent — interviewing them, suggesting clarifications, handling edge cases — so prompting becomes a two-way collaboration rather than one-way instruction.
 aliases: [collaborative prompt elicitation, model-assisted prompting, prompt elicitation, model interviews the user, intent elicitation, prompting as collaboration, externalizing your brain, AI as consultant not temp, ask user question tool, agent-driven requirement gathering]
-related: [prompt-engineering, plan-first-workflow, aspirational-prompting, thinking-vs-understanding, spec-driven-development, theory-of-mind-for-llms, instruction-budget, html-as-spec, agent-native-verification]
+related: ["[[prompt-engineering]]", "[[plan-first-workflow]]", "[[aspirational-prompting]]", "[[thinking-vs-understanding]]", "[[spec-driven-development]]", "[[theory-of-mind-for-llms]]", "[[instruction-budget]]", "[[html-as-spec]]", "[[agent-native-verification]]"]
 sources: [ai-prompt-engineering-a-deep-dive, how-we-claude-code]
 ---
 

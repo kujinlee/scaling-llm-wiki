@@ -3,7 +3,7 @@ concept: Self-Modifying Agent Harness
 category: Harness & Context Engineering
 summary: A minimal, observable agent harness designed to adapt and rewrite its own behavior at runtime through documentation and code examples, rather than hard-coding capability into a heavy, opaque tool.
 aliases: [self-modifying agent, Pi harness, minimal agent harness, adaptable harness, self-modification through docs, observable harness, token madness]
-related: [harness-engineering, thin-harness-fat-skills, compound-engineering, meta-skills, runtime-config-hot-swapping, agent-native-infrastructure, token-maxing, graduated-autonomy]
+related: ["[[harness-engineering]]", "[[thin-harness-fat-skills]]", "[[compound-engineering]]", "[[meta-skills]]", "[[runtime-config-hot-swapping]]", "[[agent-native-infrastructure]]", "[[token-maxing]]", "[[graduated-autonomy]]"]
 sources: [aie-europe-keynotes-coding-agents-ft-pi-google-deepmind-anth]
 ---
 

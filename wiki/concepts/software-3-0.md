@@ -3,7 +3,7 @@ concept: Software 3.0
 category: Industry, Strategy & Careers
 summary: The paradigm shift where writing a prompt is the act of programming, with the pre-trained neural network replacing hand-written code as the medium of software expression.
 aliases: [software 3.0, prompt-as-source-code, prompts as programming, prompt as program, neural net as the program]
-related: [context-engineering, harness-engineering, claude-md, vibe-coding-vs-agentic-engineering, verifiability-law, jagged-intelligence, agent-native-infrastructure]
+related: ["[[context-engineering]]", "[[harness-engineering]]", "[[claude-md]]", "[[vibe-coding-vs-agentic-engineering]]", "[[verifiability-law]]", "[[jagged-intelligence]]", "[[agent-native-infrastructure]]"]
 sources: [꼭-알아야할-안드레-카파시-30분-인터뷰-완전정리-ai시대의-필수-인사이트]
 ---
 

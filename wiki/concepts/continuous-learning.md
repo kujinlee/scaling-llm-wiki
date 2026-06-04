@@ -3,7 +3,7 @@ concept: Continuous Learning
 category: LLM Internals & Training
 summary: Reframes superintelligence as a mind that acquires new skills continuously rather than a fixed-capability monolith, with economy-wide deployment compounding into rapid growth.
 aliases: [continual learning, learning-to-learn superintelligence, continuous-learning superintelligence]
-related: [age-of-research, value-functions, compound-engineering, shifting-bottlenecks]
+related: ["[[age-of-research]]", "[[value-functions]]", "[[compound-engineering]]", "[[shifting-bottlenecks]]"]
 sources: [ilya-sutskever-we-re-moving-from-the-age-of-scaling-to-the-a]
 ---
 

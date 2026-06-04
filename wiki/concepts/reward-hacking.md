@@ -3,7 +3,7 @@ concept: Reward Hacking
 category: LLM Internals & Training
 summary: Optimization improves a measurable proxy without improving the true underlying capability, explaining why impressive benchmark gains can lag real-world economic impact.
 aliases: [reward hacking, benchmark gaming, metric gaming, eval overfitting, reward model gaming]
-related: [hill-climbing, auto-research, self-verification-loop, value-functions, age-of-research, rlhf, reasoning-reinforcement-learning, verifiability-law]
+related: ["[[hill-climbing]]", "[[auto-research]]", "[[self-verification-loop]]", "[[value-functions]]", "[[age-of-research]]", "[[rlhf]]", "[[reasoning-reinforcement-learning]]", "[[verifiability-law]]"]
 sources: [ilya-sutskever-we-re-moving-from-the-age-of-scaling-to-the-a, deep-dive-into-llms-like-chatgpt]
 ---
 

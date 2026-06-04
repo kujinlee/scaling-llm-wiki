@@ -3,7 +3,7 @@ concept: Agentic Capability Ladder
 category: Agent Architecture & Patterns
 summary: Staged maturity model from stateless chat (Level 1) to always-on autonomous infrastructure (Level 5), advancing both context persistence and trusted autonomy together.
 aliases: [capability ladder, five levels of Claude, levels of agentic usage, Claude usage levels, autonomy ladder]
-related: [graduated-autonomy, harness-engineering, context-engineering, persistent-agent-memory, agent-as-infrastructure, claude-md, lifecycle-hooks]
+related: ["[[graduated-autonomy]]", "[[harness-engineering]]", "[[context-engineering]]", "[[persistent-agent-memory]]", "[[agent-as-infrastructure]]", "[[claude-md]]", "[[lifecycle-hooks]]"]
 sources: [every-level-of-claude-explained-in-21-minutes]
 ---
 

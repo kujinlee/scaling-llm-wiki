@@ -3,7 +3,7 @@ concept: Smart Truncation Memory
 category: Harness & Context Engineering
 summary: Truncating the middle of a large context entry while preserving its head and tail in the window and storing the full content in a retrievable memory store, so the agent keeps a usable handle and can pull back specifics on demand.
 aliases: [smart truncation, smart truncation memory, boundary-preserving truncation, first-100-last-100, head-tail truncation, truncate-and-store, retrievable truncation]
-related: [context-compaction, tool-output-virtualization, context-engineering, progressive-disclosure-retrieval, memory-storage-injection-recall, persistent-agent-memory, subagent-context-isolation, context-decay]
+related: ["[[context-compaction]]", "[[tool-output-virtualization]]", "[[context-engineering]]", "[[progressive-disclosure-retrieval]]", "[[memory-storage-injection-recall]]", "[[persistent-agent-memory]]", "[[subagent-context-isolation]]", "[[context-decay]]"]
 sources: [how-we-solved-context-management-in-agents-sally-ann-delucia]
 ---
 

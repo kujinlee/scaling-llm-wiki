@@ -3,7 +3,7 @@ concept: Sycophantic Agreement
 category: LLM Internals & Training
 summary: The tendency of LLMs to accept and answer flawed or nonsensical premises rather than pushing back — a measurable limitation that accuracy-chasing "line goes up" benchmarks miss, and a sign of shallow understanding rather than genuine reasoning.
 aliases: [sycophancy, pushback deficit, failure to push back, model agreeableness, model sycophancy, dissatisfaction rate, line goes up critique]
-related: [jagged-intelligence, reward-hacking, escape-hatch-prompting, collaborative-prompt-elicitation, custom-eval-systems, verifiability-law, holdout-validation, engineering-taste]
+related: ["[[jagged-intelligence]]", "[[reward-hacking]]", "[[escape-hatch-prompting]]", "[[collaborative-prompt-elicitation]]", "[[custom-eval-systems]]", "[[verifiability-law]]", "[[holdout-validation]]", "[[engineering-taste]]"]
 sources: [aie-europe-keynotes-coding-agents-ft-pi-google-deepmind-anth]
 ---
 

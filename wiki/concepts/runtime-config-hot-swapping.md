@@ -3,7 +3,7 @@ concept: Runtime Config Hot-Swapping
 category: Agent Architecture & Patterns
 summary: Managing an agent's prompt, model, and behavioral config as externally-stored variables that can be changed live in production — switching behavior without restarting the service or redeploying code.
 aliases: [runtime config hot-swapping, managed variables, dynamic agent configuration, live config updates, hot-swapping prompts, no-redeploy config, production config management, feature-flagged agent config]
-related: [automated-prompt-optimization, model-abstraction-layer, per-node-model-routing, agent-as-infrastructure, deterministic-workflow-orchestration, custom-eval-systems, graduated-autonomy]
+related: ["[[automated-prompt-optimization]]", "[[model-abstraction-layer]]", "[[per-node-model-routing]]", "[[agent-as-infrastructure]]", "[[deterministic-workflow-orchestration]]", "[[custom-eval-systems]]", "[[graduated-autonomy]]"]
 sources: [agent-optimization-with-pydantic-ai-gepa-evals-feedback-loop]
 ---
 

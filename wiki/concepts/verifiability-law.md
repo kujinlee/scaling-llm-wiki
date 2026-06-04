@@ -3,7 +3,7 @@ concept: Verifiability Law
 category: LLM Internals & Training
 summary: LLM competence tracks how cleanly a task can be scored: reliable automatable verifiers enable autonomous trust; absent them, capability turns jagged and human oversight is required.
 aliases: [verifiability law, verifier's law, scoreable-task principle, checkable equals automatable, verifiability of tasks]
-related: [jagged-intelligence, hill-climbing, self-verification-loop, reward-hacking, exploratory-spec-discovery, auto-research, agentic-issue-resolution, reasoning-reinforcement-learning, rlhf]
+related: ["[[jagged-intelligence]]", "[[hill-climbing]]", "[[self-verification-loop]]", "[[reward-hacking]]", "[[exploratory-spec-discovery]]", "[[auto-research]]", "[[agentic-issue-resolution]]", "[[reasoning-reinforcement-learning]]", "[[rlhf]]"]
 sources: [꼭-알아야할-안드레-카파시-30분-인터뷰-완전정리-ai시대의-필수-인사이트, deep-dive-into-llms-like-chatgpt]
 ---
 

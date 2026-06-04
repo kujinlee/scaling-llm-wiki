@@ -3,7 +3,7 @@ concept: Subagent Context Isolation
 category: Agent Architecture & Patterns
 summary: Delegating a focused sub-task to an independent agent session that does the work and returns only a concise summary, keeping the main conversation's context window lean.
 aliases: [subagents, sub-agents, subagent delegation, context firewall, task decomposition agents, summary-return delegation, agent tool, worker-node delegation, split and merge, fan-out delegation]
-related: [parallel-isolated-agents, context-rot, context-decay, context-compaction, deterministic-workflow-orchestration, multi-agent-code-review, progressive-disclosure-retrieval, agentic-loop, distributed-systems-literacy, agent-team-collaboration, per-node-model-routing, generator-verifier-loop]
+related: ["[[parallel-isolated-agents]]", "[[context-rot]]", "[[context-decay]]", "[[context-compaction]]", "[[deterministic-workflow-orchestration]]", "[[multi-agent-code-review]]", "[[progressive-disclosure-retrieval]]", "[[agentic-loop]]", "[[distributed-systems-literacy]]", "[[agent-team-collaboration]]", "[[per-node-model-routing]]", "[[generator-verifier-loop]]"]
 sources: [12-claude-code-features-every-engineer-should-know-subagents, claude-s-internal-architecture-revealed-how-ai-agents-actual, every-claude-code-workflow-explained-when-to-use-each]
 ---
 

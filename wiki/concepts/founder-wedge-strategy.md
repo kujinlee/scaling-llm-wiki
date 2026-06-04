@@ -3,7 +3,7 @@ concept: Founder Wedge Strategy
 category: Industry, Strategy & Careers
 summary: Wedging into one acutely painful workflow, embedding deeply as a forward-deployed engineer, and automating it end-to-end before expanding — capturing white space outside core CS.
 aliases: [wedge strategy, forward-deployed founder, go undercover, domain-expert founder, white space opportunity, wedge approach]
-related: [ai-native-company, agent-native-infrastructure, ontology-operating-system, computer-use-automation, agentic-issue-resolution, thinking-vs-understanding]
+related: ["[[ai-native-company]]", "[[agent-native-infrastructure]]", "[[ontology-operating-system]]", "[[computer-use-automation]]", "[[agentic-issue-resolution]]", "[[thinking-vs-understanding]]"]
 sources: [stanford-cs153-frontier-systems-the-ai-native-company-how-on]
 ---
 

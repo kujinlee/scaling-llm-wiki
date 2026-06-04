@@ -3,7 +3,7 @@ concept: Parallel Isolated Agents
 category: Agent Architecture & Patterns
 summary: Running many AI coding sessions concurrently, each in its own isolated workspace, with one human acting as conductor-orchestrator across the entire fleet.
 aliases: [parallel agent execution, isolated agent workspaces, Conductor pattern, multi-session orchestration, sub-agent driven development, operator pattern]
-related: [explicit-gears, self-verification-loop, agent-router, hill-climbing, spec-driven-development, token-maxing, parallel-environment-isolation, satisfaction-testing, subagent-context-isolation, agent-team-collaboration, context-rot]
+related: ["[[explicit-gears]]", "[[self-verification-loop]]", "[[agent-router]]", "[[hill-climbing]]", "[[spec-driven-development]]", "[[token-maxing]]", "[[parallel-environment-isolation]]", "[[satisfaction-testing]]", "[[subagent-context-isolation]]", "[[agent-team-collaboration]]", "[[context-rot]]"]
 sources: [yc-ceo-shipped-100-prs-week-for-50-days-his-8-claude-code-sk, the-claude-code-plugin-every-developer-must-learn-superpower, tokenmaxxing-how-top-builders-use-ai-to-do-the-work-of-400-e, claude-code와-git-worktree-병렬-구성-배포-방식이-달라집니다, every-claude-code-workflow-explained-when-to-use-each]
 ---
 

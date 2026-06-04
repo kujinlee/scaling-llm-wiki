@@ -3,7 +3,7 @@ concept: Prompt Engineering
 category: Harness & Context Engineering
 summary: Clear, iterative communication with an LLM that treats natural language as code — the first stage of the prompt → context → harness maturity ladder, focused on getting one model call to do what you mean.
 aliases: [prompt engineering, prompt design, prompting, prompt-as-code, prompt crafting, prompt iteration]
-related: [context-engineering, harness-engineering, software-3-0, theory-of-mind-for-llms, chain-of-thought-prompting, escape-hatch-prompting, collaborative-prompt-elicitation, claude-md, reasoning-effort-control]
+related: ["[[context-engineering]]", "[[harness-engineering]]", "[[software-3-0]]", "[[theory-of-mind-for-llms]]", "[[chain-of-thought-prompting]]", "[[escape-hatch-prompting]]", "[[collaborative-prompt-elicitation]]", "[[claude-md]]", "[[reasoning-effort-control]]"]
 sources: [ai-prompt-engineering-a-deep-dive]
 ---
 

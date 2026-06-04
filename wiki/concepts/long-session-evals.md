@@ -3,7 +3,7 @@ concept: Long Session Evals
 category: Workflows & Methodology
 summary: A testing methodology that loads many conversation turns and evaluates the next one, proactively surfacing the context-management failures that only appear deep into a long agent session.
 aliases: [long session evals, long-session evaluation, multi-turn context evals, late-failure evals, conversation-length evals, turn-N evals]
-related: [custom-eval-systems, context-decay, context-compaction, smart-truncation-memory, subagent-context-isolation, self-verification-loop, agent-tdd, holdout-validation]
+related: ["[[custom-eval-systems]]", "[[context-decay]]", "[[context-compaction]]", "[[smart-truncation-memory]]", "[[subagent-context-isolation]]", "[[self-verification-loop]]", "[[agent-tdd]]", "[[holdout-validation]]"]
 sources: [how-we-solved-context-management-in-agents-sally-ann-delucia]
 ---
 

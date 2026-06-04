@@ -3,7 +3,7 @@ concept: Context Reset
 category: Harness & Context Engineering
 summary: Deliberately wiping a session's conversation history when switching to an unrelated task — preventing accuracy degradation from stale context and reclaiming the token budget.
 aliases: [context reset, clear context, conversation reset, context wipe, fresh context, clear between tasks, /clear]
-related: [context-compaction, context-rot, context-decay, subagent-context-isolation, persistent-agent-memory, reasoning-effort-control]
+related: ["[[context-compaction]]", "[[context-rot]]", "[[context-decay]]", "[[subagent-context-isolation]]", "[[persistent-agent-memory]]", "[[reasoning-effort-control]]"]
 sources: [7-secret-prompts-that-make-claude-code-10x-better]
 ---
 

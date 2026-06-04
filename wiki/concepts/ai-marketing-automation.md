@@ -3,7 +3,7 @@ concept: AI Marketing Automation
 category: Industry, Strategy & Careers
 summary: Deploying AI to convert audience attention into revenue by automating the lead-to-customer funnel — CRM auto-response, lead qualification, meeting booking, social-DM follow-up, and outreach.
 aliases: [AI marketing automation, lead-to-revenue automation, AI sales funnel automation, inbound lead automation, attention-to-revenue conversion]
-related: [computer-use-automation, agent-as-infrastructure, founder-wedge-strategy, distribution-over-features, agentic-issue-resolution, agent-router]
+related: ["[[computer-use-automation]]", "[[agent-as-infrastructure]]", "[[founder-wedge-strategy]]", "[[distribution-over-features]]", "[[agentic-issue-resolution]]", "[[agent-router]]"]
 sources: [5-ways-to-make-money-in-2026-with-ai]
 ---
 

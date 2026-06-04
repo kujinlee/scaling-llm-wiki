@@ -3,7 +3,7 @@ concept: KV Cache Economics
 category: LLM Internals & Training
 summary: How the attention KV cache's growing memory footprint shapes serving cost, and how published API pricing tiers can be reverse-engineered to reveal a provider's underlying hardware.
 aliases: [KV cache, kv cache economics, prefill vs decode, context-length pricing, memory tiers, API pricing as architecture signal, cache hit vs miss pricing]
-related: [inference-batching-economics, kv-cache-paging, prefill-decode-inference, serving-parallelism, compute-memory-tradeoff, subscription-vs-metered-pricing, per-node-model-routing, token-maxing]
+related: ["[[inference-batching-economics]]", "[[kv-cache-paging]]", "[[prefill-decode-inference]]", "[[serving-parallelism]]", "[[compute-memory-tradeoff]]", "[[subscription-vs-metered-pricing]]", "[[per-node-model-routing]]", "[[token-maxing]]"]
 sources: [how-gpt-claude-and-gemini-are-actually-trained-and-served-re, ep-96-llm-추론-인프라와-토큰-경제학]
 ---
 

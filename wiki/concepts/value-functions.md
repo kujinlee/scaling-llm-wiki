@@ -3,7 +3,7 @@ concept: Value Functions
 category: LLM Internals & Training
 summary: Continuous internal estimates of state quality — analogized to human emotion — that enable data-efficient generalization, a capacity current reinforcement-learning systems lack.
 aliases: [value function, emotion as value function, human value function, innate value function]
-related: [reward-hacking, continuous-learning, age-of-research, hill-climbing]
+related: ["[[reward-hacking]]", "[[continuous-learning]]", "[[age-of-research]]", "[[hill-climbing]]"]
 sources: [ilya-sutskever-we-re-moving-from-the-age-of-scaling-to-the-a]
 ---
 

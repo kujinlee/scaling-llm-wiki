@@ -3,7 +3,7 @@ concept: AI Code Garbage Collection
 category: Harness & Context Engineering
 summary: Periodically and automatically pruning bad code patterns an agent accumulates, keeping the codebase environment optimal so future runs do not build on cruft.
 aliases: [garbage collection, AI garbage collection, code pattern cleanup, AI code hygiene, bad-pattern pruning]
-related: [harness-engineering, compound-engineering, persistent-agent-memory, context-rot, dark-factory, auto-correction-loop]
+related: ["[[harness-engineering]]", "[[compound-engineering]]", "[[persistent-agent-memory]]", "[[context-rot]]", "[[dark-factory]]", "[[auto-correction-loop]]"]
 sources: [하네스-공식문서-100번-읽은-것처럼-만들어드림]
 ---
 

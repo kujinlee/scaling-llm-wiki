@@ -3,7 +3,7 @@ concept: Foundation Models
 category: LLM Internals & Training
 summary: Large AI models pre-trained on vast, broad data and designed to be adapted or fine-tuned to a wide range of downstream tasks, so one expensive base model amortizes across many specialized applications.
 aliases: [foundation model, pretrained base model, model adaptation, fine-tuning for downstream tasks, downstream task adaptation, model garden]
-related: [next-token-prediction, supervised-fine-tuning, generative-vs-discriminative-models, expert-domain-defensibility, model-abstraction-layer, automated-prompt-optimization, model-adaptation-methods, in-context-learning]
+related: ["[[next-token-prediction]]", "[[supervised-fine-tuning]]", "[[generative-vs-discriminative-models]]", "[[expert-domain-defensibility]]", "[[model-abstraction-layer]]", "[[automated-prompt-optimization]]", "[[model-adaptation-methods]]", "[[in-context-learning]]"]
 sources: [introduction-to-generative-ai, introduction-to-vertex-ai-studio]
 ---
 

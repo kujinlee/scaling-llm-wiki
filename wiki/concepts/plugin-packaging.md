@@ -3,7 +3,7 @@ concept: Plugin Packaging
 category: Skills, Plugins & Automation
 summary: Bundling skills, hooks, sub-agents, MCP servers, and metadata into a single installable unit so a whole customized agent setup can be shared and installed with one command.
 aliases: [plugins, plugin packaging, agent plugins, bundled configurations, installable agent setups, plugin marketplace, one-command setup]
-related: [thin-harness-fat-skills, meta-skills, lifecycle-hooks, model-context-protocol, subagent-context-isolation, github-as-blueprint, agentic-coding-tool-selection, compound-engineering, agent-swarm-orchestration, curated-design-systems, surgical-change-discipline]
+related: ["[[thin-harness-fat-skills]]", "[[meta-skills]]", "[[lifecycle-hooks]]", "[[model-context-protocol]]", "[[subagent-context-isolation]]", "[[github-as-blueprint]]", "[[agentic-coding-tool-selection]]", "[[compound-engineering]]", "[[agent-swarm-orchestration]]", "[[curated-design-systems]]", "[[surgical-change-discipline]]"]
 sources: [12-claude-code-features-every-engineer-should-know-subagents, 6-claude-code-github-repos-that-change-everything]
 ---
 

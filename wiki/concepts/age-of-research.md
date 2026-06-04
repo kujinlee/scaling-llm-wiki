@@ -3,7 +3,7 @@ concept: Age of Research
 category: LLM Internals & Training
 summary: The thesis that AI progress is shifting from scaling laws toward fundamental research as pre-training data becomes scarce relative to available compute.
 aliases: [age of research, scaling-to-research shift, end of scaling, post-scaling era]
-related: [value-functions, reward-hacking, continuous-learning, research-aesthetics]
+related: ["[[value-functions]]", "[[reward-hacking]]", "[[continuous-learning]]", "[[research-aesthetics]]"]
 sources: [ilya-sutskever-we-re-moving-from-the-age-of-scaling-to-the-a]
 ---
 

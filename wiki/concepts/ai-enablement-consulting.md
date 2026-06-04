@@ -3,7 +3,7 @@ concept: AI Enablement Consulting
 category: Industry, Strategy & Careers
 summary: Selling AI-adoption expertise as a service — training organizations to use assistants productively (prompting, skills, projects, automation) to recover hours per week per employee.
 aliases: [AI enablement consulting, Claude training service, AI adoption training, AI productivity consulting, AI literacy as a service]
-related: [vibe-coding-vs-agentic-engineering, assistant-personalization-layers, ai-native-company, founder-wedge-strategy, thinking-vs-understanding, engineering-taste]
+related: ["[[vibe-coding-vs-agentic-engineering]]", "[[assistant-personalization-layers]]", "[[ai-native-company]]", "[[founder-wedge-strategy]]", "[[thinking-vs-understanding]]", "[[engineering-taste]]"]
 sources: [5-ways-to-make-money-in-2026-with-ai]
 ---
 

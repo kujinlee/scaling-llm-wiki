@@ -3,7 +3,7 @@ concept: Visual Brainstorming Companion
 category: Workflows & Methodology
 summary: Agent spins up a local browser surface, renders interactive mockups of design options, reads clicks and text feedback, and iterates — closing a visual feedback loop before any production code exists.
 aliases: [visual brainstorming, visual companion, interactive mockup feedback, browser-based brainstorming]
-related: [spec-driven-development, computer-use-automation, engineering-taste, spec-review-loop]
+related: ["[[spec-driven-development]]", "[[computer-use-automation]]", "[[engineering-taste]]", "[[spec-review-loop]]"]
 sources: [the-claude-code-plugin-every-developer-must-learn-superpower]
 ---
 

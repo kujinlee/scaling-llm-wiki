@@ -3,7 +3,7 @@ concept: Subscription vs. Metered Pricing
 category: Industry, Strategy & Careers
 summary: The structural tension between flat-rate subscriptions and per-token metering, sharpened by autonomous agents that consume inference at scales interactive use never approaches.
 aliases: [subscription vs metered pricing, buffet vs wholesale, flat-rate vs metered inference, programmatic use metering, agent usage economics, programmatic credits]
-related: [token-maxing, per-node-model-routing, parallel-isolated-agents, model-abstraction-layer, shifting-bottlenecks]
+related: ["[[token-maxing]]", "[[per-node-model-routing]]", "[[parallel-isolated-agents]]", "[[model-abstraction-layer]]", "[[shifting-bottlenecks]]"]
 sources: [클로드-유료-사용-개발자들이-단체로-뒤통수-맞은-건에-대하여-클로드-요금-정책-변경-총정리]
 ---
 

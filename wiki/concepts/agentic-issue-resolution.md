@@ -3,7 +3,7 @@ concept: Agentic Issue Resolution
 category: Workflows & Methodology
 summary: End-to-end workflow where an agent reproduces a filed bug, writes a fix with regression tests that fail on the old code and pass on the fix, then opens a PR automatically.
 aliases: [automated issue reproduction, auto-fix bot, agentic bug fixing]
-related: [self-verification-loop, multi-agent-code-review, claude-md, engineering-taste, deterministic-workflow-orchestration, dark-factory, harness-debugging]
+related: ["[[self-verification-loop]]", "[[multi-agent-code-review]]", "[[claude-md]]", "[[engineering-taste]]", "[[deterministic-workflow-orchestration]]", "[[dark-factory]]", "[[harness-debugging]]"]
 sources: [live-coding-session-with-boris-cherny-and-jarred-sumner, the-ai-dark-factory-is-alive-a-codebase-that-writes-its-own-, live-coding-session-with-boris-cherny-and-jarred-sumner-deep-dive]
 ---
 

@@ -3,7 +3,7 @@ concept: Generator-Verifier Loop
 category: Agent Architecture & Patterns
 summary: A two-agent autonomous loop in which a worker agent executes steps while a separate supervisor agent checks goal completion after each step and feeds back until a verifiable finish condition is met, bounded by a safety cap.
 aliases: [generator-verifier loop, worker-boss loop, creator-verifier loop, actor-critic loop, supervisor agent, goal-checking agent, dual-agent goal loop, slash goal command]
-related: [self-verification-loop, hill-climbing, exploratory-spec-discovery, long-running-agent-missions, holdout-validation, verifiability-law, reward-hacking, permission-tiering, graduated-autonomy, multi-agent-code-review]
+related: ["[[self-verification-loop]]", "[[hill-climbing]]", "[[exploratory-spec-discovery]]", "[[long-running-agent-missions]]", "[[holdout-validation]]", "[[verifiability-law]]", "[[reward-hacking]]", "[[permission-tiering]]", "[[graduated-autonomy]]", "[[multi-agent-code-review]]"]
 sources: [claude-code-just-dropped-goal-master-it-in-8-minutes]
 ---
 

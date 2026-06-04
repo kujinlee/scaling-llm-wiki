@@ -3,7 +3,7 @@ concept: Irreversible Action Authority
 category: Agent Architecture & Patterns
 summary: Granting an agent execution authority over a live external system via API so it acts autonomously in a domain where actions cannot be rolled back — making sandbox-first validation, not post-hoc recovery, the only available safety net.
 aliases: [irreversible action agents, irreversible action authority, consequential action authority, agentic financial automation, live execution authority, real-world action agents, API-mediated execution, paper-trading-before-live, agent trading automation]
-related: [agent-as-infrastructure, graduated-autonomy, permission-tiering, agent-checkpoint-rollback, computer-use-automation, model-context-protocol, parallel-environment-isolation, holdout-validation, governance-layer, reward-hacking]
+related: ["[[agent-as-infrastructure]]", "[[graduated-autonomy]]", "[[permission-tiering]]", "[[agent-checkpoint-rollback]]", "[[computer-use-automation]]", "[[model-context-protocol]]", "[[parallel-environment-isolation]]", "[[holdout-validation]]", "[[governance-layer]]", "[[reward-hacking]]"]
 sources: [claude-just-changed-the-stock-market-forever-tutorial]
 ---
 

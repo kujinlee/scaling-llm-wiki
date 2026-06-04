@@ -3,7 +3,7 @@ concept: Ubiquitous Language for Agents
 category: Harness & Context Engineering
 summary: Maintaining a documented shared vocabulary (a context.md glossary plus architectural decision records) so human and agent name domain concepts identically — reducing AI verbosity and aligning code structure with the agreed language.
 aliases: [ubiquitous language, context.md, shared vocabulary, domain language for agents, living glossary, ubiquitous language skill, grill with docs, architectural decision records, ADRs, domain-driven design for AI]
-related: [collaborative-prompt-elicitation, claude-md, context-engineering, agent-alignment-artifacts, codebase-knowledge-graph, second-brain, procedural-knowledge-skills, context-rot, compound-engineering, reasoning-trace-memory]
+related: ["[[collaborative-prompt-elicitation]]", "[[claude-md]]", "[[context-engineering]]", "[[agent-alignment-artifacts]]", "[[codebase-knowledge-graph]]", "[[second-brain]]", "[[procedural-knowledge-skills]]", "[[context-rot]]", "[[compound-engineering]]", "[[reasoning-trace-memory]]"]
 sources: [i-stopped-using-grill-me-for-coding-here-s-what-i-use-instea]
 ---
 

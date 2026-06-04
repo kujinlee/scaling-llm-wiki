@@ -3,7 +3,7 @@ concept: Long-Running Agent Missions
 category: Agent Architecture & Patterns
 summary: A structured orchestration pattern for multi-day agent tasks using a three-role architecture — orchestrator, workers, validators — with validation contracts agreed before coding, serial execution with internal parallelization, and structured handoffs to preserve correctness and context.
 aliases: [missions, agent missions, multi-day agent orchestration, orchestrator-worker-validator, validation contracts, creator-verifier, droid whispering]
-related: [deterministic-workflow-orchestration, parallel-isolated-agents, holdout-validation, agent-router, per-node-model-routing, subagent-context-isolation, harness-engineering, agent-swarm-orchestration, context-decay]
+related: ["[[deterministic-workflow-orchestration]]", "[[parallel-isolated-agents]]", "[[holdout-validation]]", "[[agent-router]]", "[[per-node-model-routing]]", "[[subagent-context-isolation]]", "[[harness-engineering]]", "[[agent-swarm-orchestration]]", "[[context-decay]]"]
 sources: [aie-europe-keynotes-coding-agents-ft-pi-google-deepmind-anth]
 ---
 

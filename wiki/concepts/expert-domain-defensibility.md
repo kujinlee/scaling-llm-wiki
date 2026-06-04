@@ -3,7 +3,7 @@ concept: Expert-Domain Defensibility
 category: Industry, Strategy & Careers
 summary: A16Z's market map separating the model domain (where AI labs win on raw model performance) from the defensible expert domain, where deep industry knowledge, proprietary data, custom workflows, and regulatory compliance build a moat labs cannot cross.
 aliases: [expert domain vs model domain, model domain, expert domain, yellow brick road, A16Z app-layer map, four defensive lines, defensible AI verticals, app layer is not dead]
-related: [founder-wedge-strategy, model-abstraction-layer, per-node-model-routing, ontology-operating-system, ai-native-company, custom-eval-systems, subscription-vs-metered-pricing, distribution-over-features, second-brain, engineering-taste, thinking-vs-understanding, token-maxing]
+related: ["[[founder-wedge-strategy]]", "[[model-abstraction-layer]]", "[[per-node-model-routing]]", "[[ontology-operating-system]]", "[[ai-native-company]]", "[[custom-eval-systems]]", "[[subscription-vs-metered-pricing]]", "[[distribution-over-features]]", "[[second-brain]]", "[[engineering-taste]]", "[[thinking-vs-understanding]]", "[[token-maxing]]"]
 sources: [ai가-못-이기는-일은-따로-있다-a16z-분석-4가지-방어선]
 ---
 

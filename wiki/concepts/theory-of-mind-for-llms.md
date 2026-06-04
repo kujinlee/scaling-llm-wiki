@@ -3,7 +3,7 @@ concept: Theory of Mind for LLMs
 category: Harness & Context Engineering
 summary: Building a working mental model of how an LLM actually interprets instructions — by closely reading its outputs and anticipating failure modes — instead of assuming it reads like a human.
 aliases: [theory of mind for LLMs, model psychology, reading model outputs, anticipating failure modes, model theory of mind, understanding the model]
-related: [prompt-engineering, jagged-intelligence, escape-hatch-prompting, robust-tool-design, context-engineering, collaborative-prompt-elicitation]
+related: ["[[prompt-engineering]]", "[[jagged-intelligence]]", "[[escape-hatch-prompting]]", "[[robust-tool-design]]", "[[context-engineering]]", "[[collaborative-prompt-elicitation]]"]
 sources: [ai-prompt-engineering-a-deep-dive]
 ---
 

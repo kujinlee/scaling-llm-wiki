@@ -3,7 +3,7 @@ concept: Tokens to Think
 category: LLM Internals & Training
 summary: Because an LLM performs a finite, fixed amount of computation per token, complex reasoning must be spread across many intermediate tokens rather than compressed into one — so step-by-step output is a computational necessity, not just a style.
 aliases: [tokens to think, computation per token, cognitive deficits, distributed reasoning, sequential reasoning, mental arithmetic limit, finite compute per token]
-related: [chain-of-thought-prompting, llm-tool-augmentation, tokenization, reasoning-reinforcement-learning, jagged-intelligence, next-token-prediction]
+related: ["[[chain-of-thought-prompting]]", "[[llm-tool-augmentation]]", "[[tokenization]]", "[[reasoning-reinforcement-learning]]", "[[jagged-intelligence]]", "[[next-token-prediction]]"]
 sources: [deep-dive-into-llms-like-chatgpt]
 ---
 

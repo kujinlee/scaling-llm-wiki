@@ -3,7 +3,7 @@ concept: Jagged Intelligence
 category: LLM Internals & Training
 summary: LLM competence is wildly uneven — genius-level on scoreable tasks, error-prone on ambiguous ones — because the model is a reward-shaped statistical simulation, not an evolved mind.
 aliases: [jagged intelligence, uneven AI capability, spiky capability, ghost not animal, AI as a ghost]
-related: [verifiability-law, reward-hacking, engineering-taste, value-functions, thinking-vs-understanding, graduated-autonomy, software-3-0]
+related: ["[[verifiability-law]]", "[[reward-hacking]]", "[[engineering-taste]]", "[[value-functions]]", "[[thinking-vs-understanding]]", "[[graduated-autonomy]]", "[[software-3-0]]"]
 sources: [꼭-알아야할-안드레-카파시-30분-인터뷰-완전정리-ai시대의-필수-인사이트]
 ---
 

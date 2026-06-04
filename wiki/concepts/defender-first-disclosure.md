@@ -3,7 +3,7 @@ concept: Defender-First Capability Release
 category: Industry, Strategy & Careers
 summary: Releasing a powerful dual-use offensive-security AI capability to defenders and major platforms before general availability, so they can harden systems first — a containment window whose value erodes as rival models rapidly commoditize the same capability.
 aliases: [defender-first release, defender-first disclosure, responsible offensive-AI disclosure, Project Glasswing model, defender head start, dual-use capability containment, security capability staging]
-related: [agentic-vulnerability-discovery, super-app-convergence, jagged-intelligence, irreversible-action-agents, expert-domain-defensibility, graduated-autonomy]
+related: ["[[agentic-vulnerability-discovery]]", "[[super-app-convergence]]", "[[jagged-intelligence]]", "[[irreversible-action-agents]]", "[[expert-domain-defensibility]]", "[[graduated-autonomy]]"]
 sources: [live-claude-code-51만-줄-유출-완전분석-opus-4-7-mythos-claude-design]
 ---
 

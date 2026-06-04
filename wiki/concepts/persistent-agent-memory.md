@@ -3,7 +3,7 @@ concept: Persistent Agent Memory
 category: Memory & Knowledge Systems
 summary: Tiered architecture for retaining facts across sessions: short-term logs promoted to long-term stores via a "dreaming" step, with hook-driven injection and semantic retrieval per prompt.
 aliases: [agent memory, persistent memory, tiered memory, long-term agent memory, agent memory architecture]
-related: [claude-md, context-rot, llm-knowledge-wiki, context-engineering, compound-engineering, cross-tool-memory, lifecycle-hooks, memory-storage-injection-recall, progressive-disclosure-retrieval, filesystem-memory-store, memory-consolidation-dreaming]
+related: ["[[claude-md]]", "[[context-rot]]", "[[llm-knowledge-wiki]]", "[[context-engineering]]", "[[compound-engineering]]", "[[cross-tool-memory]]", "[[lifecycle-hooks]]", "[[memory-storage-injection-recall]]", "[[progressive-disclosure-retrieval]]", "[[filesystem-memory-store]]", "[[memory-consolidation-dreaming]]"]
 sources: [every-claude-code-memory-system-compared-so-you-don-t-have-t, every-level-of-claude-explained-in-21-minutes, master-claude-memory-in-23-minutes, agents-that-remember]
 ---
 

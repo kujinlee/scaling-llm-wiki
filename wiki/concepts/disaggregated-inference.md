@@ -3,7 +3,7 @@ concept: Disaggregated Inference
 category: LLM Internals & Training
 summary: Splitting the compute-bound prefill phase and the memory-bound decode phase of LLM inference onto separate, specialized hardware pools so each runs on the resource it is actually bottlenecked by — a serving architecture that raises token throughput.
 aliases: [disaggregated inference, prefill-decode disaggregation, split prefill and decode, phase-disaggregated serving, memory wall, specialized inference hardware]
-related: [prefill-decode-inference, inference-batching-economics, serving-parallelism, kv-cache-economics, kv-cache-paging, compute-memory-tradeoff, mixture-of-experts]
+related: ["[[prefill-decode-inference]]", "[[inference-batching-economics]]", "[[serving-parallelism]]", "[[kv-cache-economics]]", "[[kv-cache-paging]]", "[[compute-memory-tradeoff]]", "[[mixture-of-experts]]"]
 sources: [fast-models-need-slow-developers-sarah-chieng-cerebras]
 ---
 
