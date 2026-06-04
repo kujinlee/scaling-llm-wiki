@@ -454,6 +454,51 @@ class TestCmdIngest:
         assert "real-source" in cc.call_args_list[0][0][0]
         assert "not a source" not in cc.call_args_list[0][0][0]
 
+    def test_ingest_new_sentinel_format(self, tmp_path):
+        wiki_dir = tmp_path / "wiki"
+        (wiki_dir / "concepts").mkdir(parents=True)
+        (wiki_dir / "CLAUDE.md").write_text("schema")
+        (wiki_dir / "index.md").write_text("# Index")
+        (wiki_dir / "log.md").write_text("# Log\n\n")
+        source = tmp_path / "talk.md"
+        source.write_text("# a talk")
+        resp = (
+            '{"log_entry": "2026-06-03 12:00 | ingest | talk", "summary": "made harness page"}\n'
+            "===WIKI-FILE: wiki/concepts/harness-engineering.md===\n"
+            '# Harness\n\nWith "quotes" and {braces}.\n'
+        )
+        args = MagicMock()
+        args.source = str(source)
+        args.model = None
+        with patch("wiki.call_claude", return_value=resp), \
+                patch("wiki.reindex", return_value="reindexed"):
+            wiki.cmd_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        assert (wiki_dir / "concepts" / "harness-engineering.md").read_text() == \
+            '# Harness\n\nWith "quotes" and {braces}.'
+        assert "2026-06-03 12:00 | ingest | talk" in (wiki_dir / "log.md").read_text()
+
+    def test_ingest_rejects_out_of_tree_path(self, tmp_path):
+        wiki_dir = tmp_path / "wiki"
+        (wiki_dir / "concepts").mkdir(parents=True)
+        (wiki_dir / "CLAUDE.md").write_text("schema")
+        (wiki_dir / "index.md").write_text("# Index")
+        (wiki_dir / "log.md").write_text("# Log\n\n")
+        source = tmp_path / "talk.md"
+        source.write_text("# a talk")
+        resp = json.dumps({
+            "files": [{"path": "../../evil.md", "content": "pwned"}],
+            "log_entry": "2026-06-03 12:00 | ingest | talk",
+            "summary": "tried to escape",
+        })
+        args = MagicMock()
+        args.source = str(source)
+        args.model = None
+        with patch("wiki.call_claude", return_value=resp), \
+                patch("wiki.reindex", return_value="reindexed"):
+            wiki.cmd_ingest(args, wiki_dir=wiki_dir, base_dir=tmp_path)
+        assert not (tmp_path.parent / "evil.md").exists()
+        assert not (tmp_path / "evil.md").exists()
+
 
 class TestReindex:
     def test_writes_index_from_frontmatter_no_llm(self, tmp_path):

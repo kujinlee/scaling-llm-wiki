@@ -558,6 +558,7 @@ def cmd_ingest(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(".")):
         print(f"No *.md source files found in {base_dir / RAW_DIR_NAME}/.", file=sys.stderr)
         sys.exit(1)
     ingest_model = getattr(args, "model", None)
+    concepts_dir = wiki_dir / "concepts"
     total = len(sources)
     for i, source_path in enumerate(sources, 1):
         print(f"\nIngesting {source_path}...", flush=True)
@@ -565,10 +566,21 @@ def cmd_ingest(args, wiki_dir: Path = Path("wiki"), base_dir: Path = Path(".")):
         prompt = build_ingest_prompt(
             ctx["schema"], ctx["index"], ctx["concepts"], source_path.name, source_path.read_text()
         )
-        response = call_claude_json(prompt, model=ingest_model)
-        write_wiki_files(response["files"], base_dir)
-        append_log_entry(wiki_dir / "log.md", response["log_entry"])
-        print(f"  {response['summary']}")
+        response = call_claude_synthesis(prompt, model=ingest_model)
+        valid_files = []
+        for f in response.get("files", []):
+            try:
+                safe_write_path(base_dir, f["path"], concepts_dir)
+                valid_files.append(f)
+            except (ValueError, KeyError) as exc:
+                print(f"  rejected unsafe path ({exc})", file=sys.stderr)
+        write_wiki_files(valid_files, base_dir)
+        append_log_entry(
+            wiki_dir / "log.md",
+            response.get("log_entry")
+            or f"{datetime.now().strftime('%Y-%m-%d %H:%M')} | ingest | {source_path.name}: no changes",
+        )
+        print(f"  {response.get('summary') or '(no changes)'}")
         # Reindex after every file — it's a deterministic ~0.1s projection, so the
         # index stays continuously correct even if a long run is interrupted.
         _try_reindex(wiki_dir, base_dir, label=f"{i}/{total}")
