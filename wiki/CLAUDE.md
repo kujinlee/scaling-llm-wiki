@@ -18,7 +18,7 @@ concept: <Full Concept Name>
 category: <EXACTLY one category name from the list below>
 summary: <one-line description used verbatim in the index>
 aliases: [<alternate name>, <abbreviation>]
-related: [<kebab-case-concept-name>, ...]
+related: ["[[<kebab-case-concept-name>]]", ...]
 sources: [<source-filename-stem>, ...]
 ---
 
@@ -44,6 +44,12 @@ sources: [<source-filename-stem>, ...]
 Use `[[concept-name]]` for inline cross-references within page content.
 Concept names must match the filename stem exactly (kebab-case, no extension).
 Example: "This is the operational core of `[[harness-engineering]]`."
+
+The `related:` frontmatter field MUST also use quoted wikilinks —
+`related: ["[[concept-a]]", "[[concept-b]]"]`, not bare stems. The quotes keep
+it valid YAML and the `[[...]]` form lets Obsidian render each entry as a graph
+edge. When updating an existing page, preserve this format; never rewrite
+`related:` entries back to bare stems.
 
 ## Index Structure
 
