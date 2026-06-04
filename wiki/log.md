@@ -127,3 +127,6 @@
 2026-06-03 04:35 | reindex | 180 concepts across 9 categories
 2026-06-03 18:00 | route-ingest | live-코덱스로-바이브-코딩하기-feat-하네스-엔지니어링: updated 5 pages (harness-engineering, agentic-coding-tool-selection, context-compaction, deterministic-workflow-orchestration, computer-use-automation)
 2026-06-03 18:35 | reindex | 180 concepts across 9 categories
+2026-06-03 23:46 | reindex | 180 concepts across 9 categories
+2026-06-03 23:53 | reindex | 179 concepts across 8 categories
+2026-06-03 23:55 | reindex | 180 concepts across 8 categories
