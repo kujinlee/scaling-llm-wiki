@@ -44,7 +44,8 @@
         "Runtime tests and agentic code reviews are insufficient to catch all subtle, unexpected LLM-introduced bugs.",
         "Rust's strict compiler enforces safety (type, memory, concurrency), acting as a superior guardrail for agentic code.",
         "Rust's informative compile errors enable AI agents to autonomously identify and fix their own generated code."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "Ynv_WYO_slw",
@@ -52,7 +53,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=Ynv_WYO_slw",
       "language": "en",
       "durationSeconds": 981,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -87,7 +88,8 @@
         "Understand Anything offers superior, hierarchical dashboards for code visualization.",
         "Understand Anything delivers more visualized, detailed AI query responses with context.",
         "Graphy AI supports local LLMs, offering better privacy and cost control options."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "8ib4Qnh2HFE",
@@ -95,7 +97,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=8ib4Qnh2HFE",
       "language": "en",
       "durationSeconds": 8927,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -131,7 +133,8 @@
         "Employ progressive outlining to iteratively refine writing projects and avoid \"AI slop.\"",
         "Utilize \"deep research\" for complex tasks requiring synthesis from many online sources.",
         "Instruct AI to \"think hard\" for complex reasoning, allowing it to gather info and refine answers."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "qyB52HIiou8",
@@ -139,7 +142,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=qyB52HIiou8",
       "language": "en",
       "durationSeconds": 8971,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -175,7 +178,8 @@
         "Jira integrations require Atlassian API tokens for authentication and webhooks for real-time communication.",
         "The PIV loop provides a robust, iterative framework for building and debugging complex AI-driven integrations.",
         "Expect frequent debugging challenges like API errors, misconfigurations, and AI model quirks in live builds."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "jH4pZdrn-oU",
@@ -183,7 +187,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=jH4pZdrn-oU",
       "language": "ko",
       "durationSeconds": 1045,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -219,7 +223,8 @@
         "AI-powered creativity focuses on iterative editing workflows, not just initial content generation.",
         "Google builds trust for AI content with SenseID watermarks and C2PA content verification standards.",
         "Gemini Spark introduces 24/7 personal AI agents capable of handling complex delegated tasks."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "ghVrnyRPMcg",
@@ -227,7 +232,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=ghVrnyRPMcg",
       "language": "en",
       "durationSeconds": 1227,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -262,7 +267,8 @@
         "Key harness components are tool registries, context managers, guardrails, and a crucial verification step.",
         "Implement a verify step to programmatically confirm task success, preventing agents from reporting false completions.",
         "Harnesses allow cheaper, less capable LLMs to achieve complex tasks reliably by adding deterministic control."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "Yt67kU3cZfQ",
@@ -270,7 +276,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=Yt67kU3cZfQ",
       "language": "ko",
       "durationSeconds": 364,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -306,7 +312,8 @@
         "Define clear goals, success criteria, and verification methods for AI agents, avoiding vague instructions.",
         "Design a robust AI \"harness\" workflow with defined rules, not just isolated prompts, for superior performance.",
         "Utilize parallel sub-agents for specialized tasks like debugging or testing to automate repetitive development work."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "ib74sLgjIBM",
@@ -314,7 +321,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=ib74sLgjIBM",
       "language": "en",
       "durationSeconds": 2176,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -349,7 +356,8 @@
         "Dump all unorganized information into a 'Raw' folder; the AI handles organization automatically.",
         "Let Claude AI process raw data into an organized wiki, and feed its outputs back for continuous improvement.",
         "Implement monthly AI health checks to identify inconsistencies, missing info, and suggest improvements to your wiki."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "geUv4CjPpxI",
@@ -357,7 +365,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=geUv4CjPpxI",
       "language": "en",
       "durationSeconds": 1722,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -392,7 +400,8 @@
         "\"Dreaming\" is an asynchronous process that optimizes memory stores by organizing, consolidating, and enriching agent knowledge.",
         "Memory stores provide a file system interface, enabling agents to read and write information using tools like `bash`.",
         "Composable layers of sessions, memory stores, and dreaming create a robust, scalable long-term agent memory system."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "rjoMZyxncUI",
@@ -400,7 +409,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=rjoMZyxncUI",
       "language": "en",
       "durationSeconds": 834,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -436,7 +445,8 @@
         "Standardize agent-driven commerce, including secure order placement and payment authorization with UCP and AP2.",
         "Allow agents to generate dynamic, context-appropriate user interfaces using simple primitives with A2UI.",
         "Stream real-time agent actions and progress to users for full transparency and insight using AGUI."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "IlqJqcl8ONE",
@@ -444,7 +454,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=IlqJqcl8ONE",
       "language": "en",
       "durationSeconds": 1903,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -479,7 +489,8 @@
         "Utilize Claude's `ask user question` tool to facilitate interactive requirement gathering.",
         "Use HTML files for AI agent specifications to enable richer planning and feedback.",
         "Embed agent-native verification directly into development artifacts for robust, long-running agents."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "c0gVowvMR-g",
@@ -487,7 +498,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=c0gVowvMR-g",
       "language": "en",
       "durationSeconds": 911,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -523,7 +534,8 @@
         "Implement conditional logic, loops, and parallel agent execution seamlessly within workflows.",
         "Gain real-time visibility with phase logs and benefit from automatic sub-agent retries.",
         "Use workflows for repeatable or complex fan-out tasks, not for simple one-off interactions."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "F1DYkY1BlfM",
@@ -531,7 +543,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=F1DYkY1BlfM",
       "language": "en",
       "durationSeconds": 1316,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -567,7 +579,8 @@
         "Leverage Kubernetes for secure, scalable deployment and lifecycle management of AI workloads.",
         "Standardized OpenClaw baselines in containers streamline onboarding and ensure consistent team standards.",
         "Custom installers enable rapid local deployment of OpenClaw instances using Podman efficiently."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "diF0Qbj56ys",
@@ -575,7 +588,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=diF0Qbj56ys",
       "language": "en",
       "durationSeconds": 848,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -611,7 +624,8 @@
         "Implement skills for progressive knowledge disclosure and use plugins for consistent team configurations.",
         "Integrate LSP for advanced code navigation and subagents for parallel processing and context management.",
         "Segment tests, map unconventional codebases, and use `.agent_ignore` files for efficient large-scale projects."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "TeGsFFNqRLA",
@@ -619,7 +633,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=TeGsFFNqRLA",
       "language": "en",
       "durationSeconds": 1082,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -655,7 +669,8 @@
         "Generate multiple code variations quickly to cherry-pick the best possible output.",
         "Engage in real-time collaboration with AI, treating it as a peer programmer.",
         "Break down large tasks and use a structured external memory system for context."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "zzo33HUOfxI",
@@ -663,7 +678,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=zzo33HUOfxI",
       "language": "en",
       "durationSeconds": 1073,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -699,7 +714,8 @@
         "Use the Small Business plugin's 31 skills to automate tasks like financial monitoring and invoice collection.",
         "Leverage skills such as Job Post Builder to generate complete hiring packets, including job descriptions and interview guides.",
         "Connect Claude with popular business apps or use Zapier MCP to integrate virtually any tool for enhanced automation."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "w3D-PbbgW3k",
@@ -707,7 +723,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=w3D-PbbgW3k",
       "language": "ko",
       "durationSeconds": 1982,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -743,7 +759,8 @@
         "Break down your work into packages, then map appropriate AI tools to each activity for efficiency.",
         "Master AI tools by analyzing outcomes and integrating expert processes, not just simple prompting.",
         "Focus on providing unique human experiences and emotional value that AI cannot replicate."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "aMfig5cKOtY",
@@ -751,7 +768,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=aMfig5cKOtY",
       "language": "en",
       "durationSeconds": 504,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -787,7 +804,8 @@
         "Define specific, verifiable goal conditions to avoid endless loops and token waste.",
         "Always add a \"safety cap\" (turn or time limit) to your goal to prevent runaway tasks.",
         "Monitor token usage with `/usage` and start with small tasks to manage costs effectively."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "IA5LWIGqnyM",
@@ -795,7 +813,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=IA5LWIGqnyM",
       "language": "en",
       "durationSeconds": 1598,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -831,7 +849,8 @@
         "Treat the codebase as the primary source of truth by embedding specifications and critical knowledge directly within it.",
         "Regularly audit and eliminate obsolete processes, giving explicit permission to kill old norms that no longer serve a purpose.",
         "Automate every possible task using AI (\"Claudify everything\") to free human bandwidth for complex problems."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "VaS2h-dY1-4",
@@ -839,7 +858,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=VaS2h-dY1-4",
       "language": "en",
       "durationSeconds": 1140,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -874,7 +893,8 @@
         "ACP-X automates PR review by using agents to refine \"AI slop,\" presenting polished PRs to human maintainers.",
         "Enterprise agents require on-demand provisioning, orchestrated via Kubernetes (e.g., Spritz), for scalable and task-specific deployment.",
         "Spritz (an open-source Kubernetes orchestrator) deploys and manages AI agents, abstracting complexity while leveraging ACP for interoperability."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "IGo225tfF2I",
@@ -882,7 +902,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=IGo225tfF2I",
       "language": "en",
       "durationSeconds": 1294,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -918,7 +938,8 @@
         "Dreaming is an out-of-band batch process that analyzes session transcripts to optimize agent memory.",
         "Dreaming significantly improves agent efficiency and completion rates by identifying and correcting patterns of error.",
         "Memory supports multi-agent environments with shared stores, fostering collaborative intelligence and knowledge transfer."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "eSP7PLTXNy8",
@@ -926,7 +947,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=eSP7PLTXNy8",
       "language": "en",
       "durationSeconds": 1324,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -962,7 +983,8 @@
         "Interact with and steer active routine sessions via web, CLI, or desktop for quality control.",
         "Automate documentation creation by setting routines to review code and propose updates via pull requests.",
         "Apply Routines to verify deployments, investigate incidents, or prioritize backlogs in your engineering workflow."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "jWWsLe4Gh5Y",
@@ -970,7 +992,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=jWWsLe4Gh5Y",
       "language": "en",
       "durationSeconds": 1643,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -1006,7 +1028,8 @@
         "Securely integrate private data and services using self-hosted sandboxes and MCP tunnels for enhanced privacy.",
         "Build sophisticated multi-agent applications by orchestrating specialized sub-agents with diverse tools.",
         "The Claude Console offers robust tools for real-time monitoring, debugging, and managing agent activities and memories."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "E2UgYp2vh5U",
@@ -1014,7 +1037,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=E2UgYp2vh5U",
       "language": "en",
       "durationSeconds": 1620,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 4,
         "depth": 4,
@@ -1051,7 +1074,8 @@
         "Codex is more token-efficient and cost-effective despite slower execution times.",
         "Claude is direct; Codex is autonomous, offering deeper reasoning and bug fixes.",
         "Use Claude for initial rapid development and Codex for quality-focused, long-term project phases."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "cUc8iK6LG0k",
@@ -1059,7 +1083,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=cUc8iK6LG0k",
       "language": "en",
       "durationSeconds": 4623,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -1095,7 +1119,8 @@
         "AI talent requires automating workflows; be aware of \"AI psychosis\" and burnout from over-immersion.",
         "Adapt by continuous learning, leveraging proprietary data, and creating unique solutions for specific market needs.",
         "Identify genuine customer problems to offer complete, unique solutions, not just general tools."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "B_RrXwDupIg",
@@ -1103,7 +1128,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=B_RrXwDupIg",
       "language": "en",
       "durationSeconds": 659,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -1138,7 +1163,8 @@
         "CAG allows LLMs to remember documents via a KV cache, speeding up repeated queries by 10-40x.",
         "Choose long context for one-off queries, but CAG for stable knowledge bases and frequent, repeated lookups.",
         "Prompt caching as a service from LLM providers makes CAG more practical and offers substantial cost discounts."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "dtAJ2dOd3ko",
@@ -1146,7 +1172,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=dtAJ2dOd3ko",
       "language": "en",
       "durationSeconds": 744,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -1181,7 +1207,8 @@
         "Delegate out-of-scope sub-tasks or complex components to separate agent sessions using handoff.",
         "Employ 'round-trip handoff' to create temporary sub-agents that distil complex problems for the parent session.",
         "Ensure handoff documents are concise, secure (redacting sensitive data), and include clear purpose for the next agent."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "HQEm4rBKdec",
@@ -1189,7 +1216,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=HQEm4rBKdec",
       "language": "en",
       "durationSeconds": 712,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -1225,7 +1252,8 @@
         "Explore code connections visually or query concepts using command-line tools.",
         "Efficiently update knowledge graphs by re-extracting only changed files.",
         "Integrates with various AI agent frameworks and RAG systems like Claude Code."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "YbcCKCy1bd0",
@@ -1233,7 +1261,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=YbcCKCy1bd0",
       "language": "ko",
       "durationSeconds": 804,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -1269,7 +1297,8 @@
         "Use simulation 'sandboxes' to test decision scenarios and refine hypotheses without impacting live operations.",
         "AI agents, powered by ontologies, can optimize complex schedules and automate actions based on simulated outcomes.",
         "Build a comprehensive 'digital twin' through interconnected ontologies for holistic, enterprise-wide decision-making."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "yjim3_bAkqA",
@@ -1277,7 +1306,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=yjim3_bAkqA",
       "language": "ko",
       "durationSeconds": 936,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -1313,7 +1342,8 @@
         "Harness engineering, which deploys and controls AI models, remains vital and evolves, not diminishes, with AI progress.",
         "Palantir's two-decade focus on ontology-based harness engineering offers a unique, hard-to-replicate competitive advantage.",
         "Ontology systems sharing understanding between humans and AI are crucial as long as humans interpret the world."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "UHVFcUzAGlM",
@@ -1321,7 +1351,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=UHVFcUzAGlM",
       "language": "en",
       "durationSeconds": 2481,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -1357,7 +1387,8 @@
         "Utilize semantic search plugins like `MemSearch` for meaning-based query results beyond keywords.",
         "`Mem Palace` provides verbatim conversation recall, ideal for precise past decision retrieval.",
         "Implement `Open Brain` for a user-owned, universal memory across all your AI tools."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "waVkNkguDNc",
@@ -1365,7 +1396,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=waVkNkguDNc",
       "language": "ko",
       "durationSeconds": 516,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -1400,7 +1431,8 @@
         "Package AI settings (Plugins) for easy sharing and reuse across departments.",
         "Regularly review AI setups and assign a Directly Responsible Individual (DRI) for management.",
         "Organize codebases and establish human review processes for AI-generated code."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "xwBE67ILCTg",
@@ -1408,7 +1440,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=xwBE67ILCTg",
       "language": "ko",
       "durationSeconds": 689,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -1443,7 +1475,8 @@
         "Codex functions as an agent-type IDE, performing full development loops like modifying and testing code.",
         "Codex offers superior integration with external agents and automation pipelines compared to Claude Code.",
         "Codex enables goal-oriented development, empowering AI agents to autonomously achieve complex objectives."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "SG51INjDoeM",
@@ -1451,7 +1484,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=SG51INjDoeM",
       "language": "ko",
       "durationSeconds": 949,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -1487,7 +1520,8 @@
         "The change severely impacts common developer tools like Claude-P and GitHub Actions, making them costly.",
         "Anthropic's strict definition of programmatic use creates accessibility issues and penalizes custom integrations.",
         "Developers should diversify LLM usage to avoid vendor lock-in and prepare for future policy changes."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "mhnZOuN1xLk",
@@ -1495,7 +1529,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=mhnZOuN1xLk",
       "language": "ko",
       "durationSeconds": 1482,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -1531,7 +1565,8 @@
         "Cultivate aesthetic sense, judgment, taste, and the ability to craft detailed specifications for AI agents.",
         "Embrace 'Agentic Engineering' to maintain software quality standards like testing and security in AI-driven development.",
         "Future-proof your skills by focusing on conceptual understanding, architectural thinking, and strategic design."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "OOCioZC4tk0",
@@ -1539,7 +1574,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=OOCioZC4tk0",
       "language": "en",
       "durationSeconds": 1018,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -1576,7 +1611,8 @@
         "Manage model memory by understanding consumption and adjusting context length for optimal performance.",
         "Extend local models with vision, web search, or automation tools using MCP via JSON configuration.",
         "Integrate local AI models into external applications by exposing them via a local URL."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "NAKFWH4aIIE",
@@ -1584,7 +1620,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=NAKFWH4aIIE",
       "language": "en",
       "durationSeconds": 914,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -1619,7 +1655,8 @@
         "The \"harness\" is the control plane managing an agent's behavior, tools, context, and stop conditions.",
         "Build a custom harness for private APIs, compliance, embedding, or strong control not offered by existing agents.",
         "Implement narrow tools, feed errors back, track budget, manage context, and log everything for robust harnesses."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "C_GG5g38vLU",
@@ -1627,7 +1664,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=C_GG5g38vLU",
       "language": "en",
       "durationSeconds": 1227,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -1664,7 +1701,8 @@
         "Key harness components include tool registries, context management primitives, deterministic guardrails, and a crucial verify step.",
         "Harnesses allow even basic LLMs to reliably complete complex tasks, outperforming prompt engineering alone.",
         "Future harnesses will be dynamically generated by agents, allowing self-adaptation for more autonomous and reliable AI."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "yeFNKgRst9o",
@@ -1672,7 +1710,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=yeFNKgRst9o",
       "language": "en",
       "durationSeconds": 933,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -1707,7 +1745,8 @@
         "Use the \"Autopilot Brief\" system to automate pre-call client research and personalize outreach.",
         "Implement an \"Auto Refresh Loop\" to keep AI agent knowledge bases current and accurate.",
         "Build a \"Competitive Radar\" system for automated weekly market intelligence briefings."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "eW_vxrjvERk",
@@ -1715,7 +1754,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=eW_vxrjvERk",
       "language": "en",
       "durationSeconds": 1059,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -1750,7 +1789,8 @@
         "Graph-powered RAG systems deliver specific, complete, and personalized AI responses by providing rich patient history context.",
         "Context graphs unify short-term, long-term, and reasoning memory for robust, traceable, and explainable AI agent decisions.",
         "Leverage context graphs to integrate diverse knowledge sources, centralize past decisions, and solve complex cross-domain problems."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "D37Ijn2o5U0",
@@ -1758,7 +1798,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=D37Ijn2o5U0",
       "language": "en",
       "durationSeconds": 765,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -1794,7 +1834,8 @@
         "Clearly define tool capabilities and limitations to prevent agents from hallucinating impossible plans.",
         "Implement a verifier agent or human-in-the-loop to validate agent plans before execution.",
         "Grant tools only necessary privileges (least agency) and use approval workflows to prevent unsafe actions."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "odivXAcskho",
@@ -1802,7 +1843,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=odivXAcskho",
       "language": "en",
       "durationSeconds": 163,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -1838,7 +1879,8 @@
         "Matt Pocock's public directory is a great example of simple, effective skill organization for AI coding.",
         "Skills like TDD loops or Git guardrails package specific development methodologies and safety behaviors.",
         "Always evaluate skills for readability and clear organization to avoid over-constraining or unsafe agent actions."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "6BB6exR8Zd8",
@@ -1846,7 +1888,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=6BB6exR8Zd8",
       "language": "en",
       "durationSeconds": 917,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -1881,7 +1923,8 @@
         "Use Architectural Decision Records (ADRs) to document significant, hard-to-reverse design choices.",
         "Leverage tools like 'Grill with Docs' to dynamically update documentation during AI-assisted development.",
         "Formalizing language upfront drastically reduces AI verbosity and clarifies codebase structure."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "d86VCtQ_dN8",
@@ -1889,7 +1932,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=d86VCtQ_dN8",
       "language": "en",
       "durationSeconds": 1205,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -1925,7 +1968,8 @@
         "Use Obsidian with index files to efficiently organize thousands of documents, providing context for humans and AI.",
         "Dashboards are useful interfaces, but their effectiveness hinges entirely on a strong, functional underlying skill architecture.",
         "Easily swap your core LLM engine to manage costs or usage limits, maintaining flexibility within your Agentic OS."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "BZPaZzjLIOY",
@@ -1933,7 +1977,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=BZPaZzjLIOY",
       "language": "ko",
       "durationSeconds": 575,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -1968,7 +2012,8 @@
         "Grillme provides peer-like code reviews, catching errors and inefficiencies before pull requests are made.",
         "Improvement Architecture offers concrete refactoring suggestions, guiding complex code improvements effectively.",
         "Vercel React Best Practices ensures your React/Next.js code adheres to the latest patterns and structures."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "ZRb7D6R64hM",
@@ -1976,7 +2021,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=ZRb7D6R64hM",
       "language": "en",
       "durationSeconds": 1303,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -2011,7 +2056,8 @@
         "Use Claude Desktop's Co-work tab to enable Claude to perform actions directly on your computer.",
         "Leverage `claude.md` files and Plan Mode for rigorous, parallel software development with sub-agents.",
         "Build trust in autonomous systems by starting with low-stakes routines before scaling up complexity."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "IVGjBxqygmI",
@@ -2019,7 +2065,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=IVGjBxqygmI",
       "language": "en",
       "durationSeconds": 741,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -2055,7 +2101,8 @@
         "An Agent OS equips agents with memory management (short-term, long-term, episodic) to learn and recall past interactions.",
         "Securely manage agent tool access via a Tool Manager within a sandboxed environment to prevent unintended system harm.",
         "Implement guardrails and governance, including input/output checks and human-in-the-loop approvals, for critical decisions."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "b6cbxSaa4U4",
@@ -2063,7 +2110,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=b6cbxSaa4U4",
       "language": "en",
       "durationSeconds": 1388,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -2098,7 +2145,8 @@
         "OpenSpec is the recommended SDD framework for new teams due to its speed, efficiency, and lightweight design.",
         "BMAD is better for individual builders, while Spec Kit's growth might be brand-driven; test alternatives like OpenSpec.",
         "SDD is maturing, with new players emerging, and discussions now focus on effective implementation strategies."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "L2JKgj7WzU4",
@@ -2106,7 +2154,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=L2JKgj7WzU4",
       "language": "en",
       "durationSeconds": 1279,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -2142,7 +2190,8 @@
         "For large-scale projects, Roof Flow enables agent swarms and shared memory across multiple Claude instances.",
         "Integrate Obsidian Skills to allow Claude Code direct access to your Obsidian \"second brain\" for knowledge.",
         "Apply Karpathy Skills to refine Claude Code's output by enforcing clear success criteria and surgical changes."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "6woc6ii-zoE",
@@ -2150,7 +2199,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=6woc6ii-zoE",
       "language": "en",
       "durationSeconds": 1512,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -2186,7 +2235,8 @@
         "Arkon workflows enable a continuous loop of AI-driven issue triage, implementation, and validation.",
         "The \"holdout pattern\" uses an independent validation agent to prevent AI bias and ensure reliable code.",
         "Focus validation on end-to-end user journeys using browser automation for true satisfaction testing."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "DlTCu_pNDHE",
@@ -2194,7 +2244,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=DlTCu_pNDHE",
       "language": "en",
       "durationSeconds": 1920,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -2230,7 +2280,8 @@
         "Meticulous documentation (\"Claude MD\") is crucial for AI agents to understand, build, and maintain a codebase.",
         "AI agents scale via self-verification and \"hill climbing,\" allowing independent iteration to meet performance goals.",
         "AI shifts bottlenecks; human \"engineering taste\" remains vital for strategic decisions, while AI handles merges."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "XJAvvK6jepo",
@@ -2238,7 +2289,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=XJAvvK6jepo",
       "language": "ko",
       "durationSeconds": 1484,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -2274,7 +2325,8 @@
         "Open-source AI models are increasingly competitive, matching or exceeding proprietary models in performance.",
         "AI tools are lowering entry barriers in industries like game development and advanced robotics.",
         "Developer roles are changing; AI proficiency is now critical for future career relevance and innovation."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "KWarqNq195M",
@@ -2282,7 +2334,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=KWarqNq195M",
       "language": "en",
       "durationSeconds": 1671,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -2318,7 +2370,8 @@
         "Control model output creativity and diversity using parameters like Temperature, Top K, and Top P.",
         "Tune foundation models through prompt design, parameter-efficient tuning, or advanced distillation methods.",
         "Gemini Multimodal processes text, images, and video to generate descriptive text for diverse business needs."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "cZaNf2rA30k",
@@ -2326,7 +2379,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=cZaNf2rA30k",
       "language": "en",
       "durationSeconds": 1322,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -2362,7 +2415,8 @@
         "Effective prompt engineering is essential for guiding Generative AI models to produce accurate and relevant outputs.",
         "Generative AI models can sometimes \"hallucinate\" factually incorrect or nonsensical outputs, a key challenge.",
         "Google Cloud's Vertex AI and Gemini provide practical tools for building, customizing, and deploying Generative AI solutions."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "DrekqeDlO1w",
@@ -2370,7 +2424,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=DrekqeDlO1w",
       "language": "ko",
       "durationSeconds": 1040,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -2406,7 +2460,8 @@
         "Improve the harness structure, not just prompts, when AI agents make errors.",
         "Periodically clean up problematic AI code patterns via garbage collection to optimize the environment.",
         "Start simple with \"Agent.md\" and pre-commit hooks, then iteratively refine the harness based on AI failures."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "d_AqALJMs-U",
@@ -2414,7 +2469,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=d_AqALJMs-U",
       "language": "ko",
       "durationSeconds": 5383,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -2449,7 +2504,8 @@
         "Palantir Foundry enhances decision-making by revealing hidden data structures and context, rather than just collecting raw data.",
         "Dynamic ontologies utilize Semantic, Kinetic, and Dynamic layers to define, relate, and simulate for causal understanding.",
         "Focus on deterministic ontology structures for critical decisions; use LLMs as efficiency tools due to their probabilistic nature."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "MPWKZzP-bQs",
@@ -2457,7 +2513,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=MPWKZzP-bQs",
       "language": "ko",
       "durationSeconds": 610,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -2493,7 +2549,8 @@
         "Press `Space` on a session for a quick summary and direct prompt input.",
         "Utilize `/goal` to set completion conditions, enabling agents to autonomously work until met.",
         "Manage agent sessions across multiple directories using the `@` command in Agent View."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "MpeuOAmctAg",
@@ -2501,7 +2558,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=MpeuOAmctAg",
       "language": "ko",
       "durationSeconds": 1547,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -2536,7 +2593,8 @@
         "Grasp the fundamental concepts behind Harness Engineering practices.",
         "Identify the crucial reasons for implementing Harness Engineering in projects.",
         "Explore how OpenAI Codex can be applied to engineering workflows."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "MYEYID9Euzs",
@@ -2544,7 +2602,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=MYEYID9Euzs",
       "language": "ko",
       "durationSeconds": 1012,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -2580,7 +2638,8 @@
         "Automate repetitive multi-step tasks by creating custom \"Skills\" and calling them with trigger words.",
         "Utilize multiple Claude Code instances (3-4) in split terminals for efficient parallel task execution.",
         "Set up explicit validation methods (QA/build steps) to enable the AI to self-correct and ensure result quality."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "CalvHxxHbY0",
@@ -2588,7 +2647,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=CalvHxxHbY0",
       "language": "ko",
       "durationSeconds": 519,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -2624,7 +2683,8 @@
         "The MetaHarness process involves iterative execution, performance evaluation, analysis of logs, and code generation by the AI.",
         "MetaHarness has shown significant performance improvements in areas like coding and text classification tasks.",
         "Human developers will shift from direct coding to designing AI's experimental frameworks and evaluation loops."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "IyOgsIFUUcY",
@@ -2632,7 +2692,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=IyOgsIFUUcY",
       "language": "ko",
       "durationSeconds": 1509,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -2667,7 +2727,8 @@
         "Focus Claude.md on project `gotchas` and hidden rules, not code-inferable details.",
         "Keep Claude.md concise (<100 lines), structured, and update it immediately after AI errors.",
         "Include build, test, and lint commands to optimize AI workflow and token use."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "WyVMGnO-oHk",
@@ -2675,7 +2736,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=WyVMGnO-oHk",
       "language": "en",
       "durationSeconds": 347,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 4,
         "depth": 3,
@@ -2713,7 +2774,8 @@
         "Mistral popularized MoEs by demonstrating high parameter counts with minimal activation for token generation.",
         "The Hugging Face Transformers ecosystem now integrates MoEs, enabling downstream applications to leverage their efficiency.",
         "Despite training complexities, MoEs are a dominant paradigm, with ongoing innovations improving their development."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "IL6JhcEoeKE",
@@ -2721,7 +2783,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=IL6JhcEoeKE",
       "language": "en",
       "durationSeconds": 679,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -2757,7 +2819,8 @@
         "Human developers must strategically guide AI agents in architectural improvements, not just automate.",
         "Leverage AI to identify 'deepening opportunities' and iteratively refine module architecture.",
         "Robust testing at module seams is crucial for safely integrating AI and enacting architectural changes."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "v4F1gFy-hqg",
@@ -2765,7 +2828,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=v4F1gFy-hqg",
       "language": "en",
       "durationSeconds": 1106,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -2801,7 +2864,8 @@
         "Employ Test-Driven Development (TDD) with AI to force small, verifiable changes by writing tests first.",
         "Structure code with deep modules to encapsulate complexity, improving testability and AI comprehension.",
         "Developers must maintain strategic system design, delegating tactical implementation to AI via clear interfaces."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "cm4sZdCzSnA",
@@ -2809,7 +2873,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=cm4sZdCzSnA",
       "language": "ko",
       "durationSeconds": 789,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -2844,7 +2908,8 @@
         "Develop strong problem-defining skills to get better results from AI tools.",
         "Master AI tools by understanding their capabilities and applying agentic engineering.",
         "Continuously demonstrate your value and actively 'sell' your skills within the team."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "t67mA2_D5FA",
@@ -2852,7 +2917,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=t67mA2_D5FA",
       "language": "ko",
       "durationSeconds": 12092,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -2887,7 +2952,8 @@
         "Select suitable frameworks (Next.js, FastAPI) and databases (PostgreSQL, Supabase) for your project.",
         "Employ RAG to enhance LLM accuracy by enabling models to reference specific external data.",
         "Integrate MCP, skills, libraries, and personas for optimal AI service development."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "d8BGxfW3Vj4",
@@ -2895,7 +2961,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=d8BGxfW3Vj4",
       "language": "en",
       "durationSeconds": 674,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -2930,7 +2996,8 @@
         "Prioritize simplicity; direct the AI to write only the minimum necessary and efficient code.",
         "Ensure the AI makes precise, \"surgical\" changes, modifying only what is explicitly requested.",
         "Provide AI agents with clear, declarative goals, rather than step-by-step imperative instructions."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "1SXXpcJA2DA",
@@ -2938,7 +3005,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=1SXXpcJA2DA",
       "language": "en",
       "durationSeconds": 437,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -2974,7 +3041,8 @@
         "Employ Notebook LM as a 'strategist' to synthesize research into precise, high-quality prompts.",
         "Feed Notebook LM's refined prompts back into Claude for efficient, high-quality tool or application building.",
         "Allow one AI to generate prompts for another, dramatically improving the final output's accuracy and utility."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "c-a4GBOxhXQ",
@@ -2982,7 +3050,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=c-a4GBOxhXQ",
       "language": "ko",
       "durationSeconds": 1723,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -3018,7 +3086,8 @@
         "Use \"meta skills\" for agent prompt design and continuous feedback for performance growth.",
         "Leverage GitHub repositories as blueprints for non-developers to configure AI agents.",
         "Shift focus from task execution to designing \"what's possible\" with AI for significant gains."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "rabGqnyd_Zw",
@@ -3026,7 +3095,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=rabGqnyd_Zw",
       "language": "en",
       "durationSeconds": 630,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -3062,7 +3131,8 @@
         "Automate recurring tasks using `/loop` (local) or `/schedule` (cloud) for diverse automation needs.",
         "Ask parallel questions using `/btw` to maintain workflow continuity without interrupting main tasks.",
         "Reset conversation context with `/clear` between distinct tasks for better AI accuracy and token savings."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "dlAn9H8goUA",
@@ -3070,7 +3140,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=dlAn9H8goUA",
       "language": "ko",
       "durationSeconds": 906,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -3106,7 +3176,8 @@
         "Deeply understand system models like data ownership, permissions, and failure states, as AI often lacks this context.",
         "While AI can outsource thinking, developers cannot outsource understanding of 'what' and 'why' they are building.",
         "Create agent-friendly tools and infrastructure (CLI, API, markdown) to maximize AI agent efficiency."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "2p2xMKpz7wM",
@@ -3114,7 +3185,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=2p2xMKpz7wM",
       "language": "en",
       "durationSeconds": 776,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -3150,7 +3221,8 @@
         "Qwen 3.6 offers insightful reasoning but can overthink, while Gemma 4 is confident but prone to \"gaslighting.\"",
         "A hybrid AI strategy using local models for 80% of tasks significantly reduces costs and enhances privacy.",
         "Local AI is now practical for many tasks like summarization and refactoring, bridging the gap with frontier models."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "adIV8wlAFFE",
@@ -3158,7 +3230,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=adIV8wlAFFE",
       "language": "en",
       "durationSeconds": 1496,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -3193,7 +3265,8 @@
         "AI agents gain autonomy through Auto Mode for permissions and Auto Memory for recalling project knowledge.",
         "Routines automate workflows by triggering tasks via schedules or webhooks, minimizing manual user intervention.",
         "AI-powered \"ultra reviews\" use multi-agent patterns to thoroughly check code and verify findings."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "z02Y-1OvWSM",
@@ -3201,7 +3274,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=z02Y-1OvWSM",
       "language": "en",
       "durationSeconds": 763,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -3236,7 +3309,8 @@
         "Employ specific node types (e.g., Pillars, Decisions, Facts) to give AI granular understanding of information categories.",
         "Utilize semantic edge types like \"supports\" or \"contradicts\" to convey deep relationships between knowledge elements to AI.",
         "AI-optimized knowledge graphs significantly reduce token consumption, making AI interaction more cost-effective."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "VaPT2e2hCNQ",
@@ -3244,7 +3318,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=VaPT2e2hCNQ",
       "language": "en",
       "durationSeconds": 618,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -3279,7 +3353,8 @@
         "Define verifiable, concrete goals; vague objectives will lead to indefinite AI execution.",
         "Provide rich context (logs, codebase, metrics) to `/goal` for enhanced problem-solving effectiveness.",
         "Treat `/goal` results as exploratory drafts, refining findings into clean, maintainable code specifications."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "AIYQp1n51ZI",
@@ -3287,7 +3362,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=AIYQp1n51ZI",
       "language": "en",
       "durationSeconds": 590,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 4,
         "depth": 4,
@@ -3322,7 +3397,8 @@
         "LLMs are \"pattern mirrors,\" not true \"reasoning engines,\" due to architectural limitations.",
         "Agentic workflows and vast context windows don't bypass LLMs' fundamental computational ceilings.",
         "Use AI for specific tasks like drafting or summarizing, incorporating human verification for complex work."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "aR20FWCCjAs",
@@ -3330,7 +3406,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=aR20FWCCjAs",
       "language": "en",
       "durationSeconds": 5764,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -3366,7 +3442,8 @@
         "Human learning uses innate 'value functions' for efficient, data-light generalization, a critical aspect lacking in AI.",
         "The AI field must shift from mere scaling to fundamental research for generalization and sample efficiency breakthroughs.",
         "Superintelligence means continuous learning, enabling AI to acquire any skill over time, impacting society profoundly."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "98e8lpOtaWc",
@@ -3374,7 +3451,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=98e8lpOtaWc",
       "language": "en",
       "durationSeconds": 702,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -3410,7 +3487,8 @@
         "Implementing with Superpowers adds significant time and token cost due to extensive sub-agent tasks and review mechanisms.",
         "Final applications built with Superpowers showed similar functionality and UI to those made with stock Claude Code.",
         "Advanced LLMs may increasingly integrate native planning and checking, diminishing the long-term need for external frameworks."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "57Ppj4NZykE",
@@ -3418,7 +3496,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=57Ppj4NZykE",
       "language": "ko",
       "durationSeconds": 598,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -3454,7 +3532,8 @@
         "Generate custom, real-time data dashboards simply by telling Claude your specific information needs.",
         "Plan effective dashboards by considering usage, data sources, AI interpretation, actions, and limitations.",
         "Design your own optimized data views without code, transforming personal productivity and information access."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "x8Yb4RidLgM",
@@ -3462,7 +3541,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=x8Yb4RidLgM",
       "language": "en",
       "durationSeconds": 1352,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -3498,7 +3577,8 @@
         "Self Flow is a novel self-supervised framework teaching models representations directly, unifying learning and content generation.",
         "Self Flow dramatically improves multimodal content quality, eliminating common artifacts and enabling joint generation across modalities.",
         "Future visual AI aims for real-time content creation and advanced \"world models\" for training robots and physical AI."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "UbxFpDuWt8Q",
@@ -3506,7 +3586,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=UbxFpDuWt8Q",
       "language": "ko",
       "durationSeconds": 526,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -3542,7 +3622,8 @@
         "Implement Andrej Karpathy's LM Wiki by having AI manage and update topic-specific wikis from your source materials.",
         "Set up your Obsidian vault with `Source`, `Wiki`, `Agent`, and `Output` folders for an effective LM Wiki.",
         "Delegate repetitive information processing to AI, allowing you to focus on strategic thinking and crucial decision-making."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "ynJyIKwjonM",
@@ -3550,7 +3631,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=ynJyIKwjonM",
       "language": "en",
       "durationSeconds": 3793,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -3586,7 +3667,8 @@
         "Craft highly descriptive tool descriptions, reinforce instructions in system prompts, and implement robust error handling.",
         "Provide detailed documentation as an 'Agent Skill' to help agents generate complex queries correctly, like ESQL.",
         "Combine specialized tools (low floor) with general-purpose tools (high ceiling) for a robust search stack."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "GJQ0rNvTfPw",
@@ -3594,7 +3676,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=GJQ0rNvTfPw",
       "language": "ko",
       "durationSeconds": 7856,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -3629,7 +3711,8 @@
         "Utilize Codex features (`fork`, `go`, `side`, `compact`) to maximize development productivity.",
         "Codex, especially GPT 5.5, produces excellent code given clear instructions.",
         "The Harness framework helps LLMs efficiently manage complex development tasks in phases."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "o-rE93-nLpY",
@@ -3637,7 +3720,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=o-rE93-nLpY",
       "language": "en",
       "durationSeconds": 4745,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -3673,7 +3756,8 @@
         "It uses a multi-agent architecture (e.g., Sisyphus, Librarian, Explorer) to manage and execute complex coding challenges.",
         "The philosophy promotes AI tools that \"just work,\" simplifying development for both coders and non-developers.",
         "AI-native development shifts focus from meticulous coding to clearly defining \"what to achieve\" with AI guidance."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "UNnsS03whx0",
@@ -3681,7 +3765,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=UNnsS03whx0",
       "language": "ko",
       "durationSeconds": 1614,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -3716,7 +3800,8 @@
         "AI excels in verifiable, 'scoreable' tasks, but exhibits 'jagged intelligence' in subjective areas.",
         "Humans must supervise AI agents, making high-level judgments and ensuring system security and integrity.",
         "Outsource 'thinking' (tasks) to AI, but retain 'understanding' (deep system insights) as a human responsibility."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "YQ_THFhjmdE",
@@ -3724,7 +3809,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=YQ_THFhjmdE",
       "language": "ko",
       "durationSeconds": 1093,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -3760,7 +3845,8 @@
         "Implement a \"plan first\" workflow and granular permissions for safe and controlled AI automation.",
         "Use powerful AI models and external tools to orchestrate complex tasks, reducing overall errors.",
         "Gradually expand AI automation, focusing on manageability, starting with basic tasks and verification."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "JFgD4c3Tab0",
@@ -3768,7 +3854,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=JFgD4c3Tab0",
       "language": "en",
       "durationSeconds": 812,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -3803,7 +3889,8 @@
         "Sub Q introduced a 12M context window LLM using sparse attention, drastically improving speed and cost efficiency.",
         "Anthropic and Perplexity are rolling out AI agents to automate complex financial analysis and workflows efficiently.",
         "OpenAI's GPT 5.5 Instant offers smarter, clearer, and more personalized responses with improved factual accuracy."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "_R83pFpUWyM",
@@ -3811,7 +3898,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=_R83pFpUWyM",
       "language": "en",
       "durationSeconds": 2522,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -3846,7 +3933,8 @@
         "Autonomous AI agents require rigorous sandboxing and risk assessment to mitigate prompt injection and other security threats.",
         "Prompt injection remains a primary security threat, and AI agent workflows can incur high costs, requiring careful evaluation.",
         "Harness engineering, using feed-forward and feedback mechanisms, builds trust and ensures sustainable AI-assisted development."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "A48uhxfxbsM",
@@ -3854,7 +3942,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=A48uhxfxbsM",
       "language": "en",
       "durationSeconds": 4840,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 4,
         "depth": 4,
@@ -3890,7 +3978,8 @@
         "Pydantic AI agents can be fine-tuned using evaluation datasets and optimization techniques like Jeppa for improved accuracy.",
         "Optimized prompts significantly enhance agent performance and reduce costs, especially for domain-specific data and cheaper models.",
         "The future aims for autonomous agent optimization, where Logfire continuously refines configurations based on live feedback."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "Zw1J5pJJMGw",
@@ -3898,7 +3987,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=Zw1J5pJJMGw",
       "language": "en",
       "durationSeconds": 853,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -3934,7 +4023,8 @@
         "Biological brains offer proof that energy-efficient complex computation is possible.",
         "A new paradigm uses dynamic systems where the physics of the system perform computation.",
         "Non-von Neumann architectures, like Unconventional AI's prototype, reduce energy via implicit state computation."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "0PgB3EQ74OM",
@@ -3942,7 +4032,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=0PgB3EQ74OM",
       "language": "en",
       "durationSeconds": 8464,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -3978,7 +4068,8 @@
         "Autonomous AI systems need iterative debugging and refinement of their agentic workflows to ensure robustness.",
         "AI agents can self-improve by creating workflows to triage, reproduce, and provide feedback on their own issues.",
         "Agentic engineering changes the engineer's role to managing and refining AI agents, rather than direct coding."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "qdh_x-uRs9g",
@@ -3986,7 +4077,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=qdh_x-uRs9g",
       "language": "en",
       "durationSeconds": 1110,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -4022,7 +4113,8 @@
         "Effective inference requires end-to-end infrastructure, including routing, auto-scaling, queuing, and monitoring.",
         "Support diverse small model architectures by adapting forward passes and optimizing attention mechanisms for efficiency.",
         "The Superlinked Inference Engine (SIE) offers a holistic open-source framework for small model deployment."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "NBvWklBvO3s",
@@ -4030,7 +4122,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=NBvWklBvO3s",
       "language": "en",
       "durationSeconds": 390,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -4066,7 +4158,8 @@
         "Optimizing deliberation involves finding an optimal cutoff to balance refinement and avoid cumulative noise.",
         "For optimal input, the 'max answer num' strategy effectively selects trajectories for the LLM's memory cache.",
         "RLVR optimizes heavy skill parameters, scaling both parallel generation and critical deliberation capabilities at test-time."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "xmkSf5IS-zw",
@@ -4074,7 +4167,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=xmkSf5IS-zw",
       "language": "en",
       "durationSeconds": 8021,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -4111,7 +4204,8 @@
         "GPU rack interconnects are critical bottlenecks; rack boundaries dictate expert layer size in MoE models.",
         "Pipeline parallelism saves memory by distributing model layers, but does not fundamentally speed up single inference.",
         "LLM API pricing tiers reveal underlying memory costs (KV cache) and prefill vs. decode bandwidth limits."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "zZsTVBXcbow",
@@ -4119,7 +4213,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=zZsTVBXcbow",
       "language": "en",
       "durationSeconds": 1237,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -4154,7 +4248,8 @@
         "DeepMind's GraphCast and GenCast models significantly outperform traditional physics-based weather forecasting, predicting events days earlier.",
         "Genie 3 creates real-time, high-fidelity, interactive 3D virtual worlds with realistic physics and dynamic prompting.",
         "DeepMind's research identifies and solves fundamental \"root node\" problems to unlock broad, impactful AI solutions for humanity."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "_A367W_qvc8",
@@ -4162,7 +4257,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=_A367W_qvc8",
       "language": "en",
       "durationSeconds": 1143,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -4198,7 +4293,8 @@
         "The architecture enhances attention with interleaved local/global layers and efficient Grouped Query Attention.",
         "Gemma 4 supports native multimodality for vision with variable aspect ratios and integrated audio for effective models.",
         "Models are accessible for self-hosting via Hugging Face or on Google Cloud through AI Studio and Vertex AI."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "qMV64p-4Deo",
@@ -4206,7 +4302,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=qMV64p-4Deo",
       "language": "en",
       "durationSeconds": 1247,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -4241,7 +4337,8 @@
         "Enhance AI agents using hybrid search, combining vector similarity and graph traversal for richer, more relevant context.",
         "Utilize Neo4j Agent Memory's abstractions (short-term, long-term, reasoning) to build structured, comprehensive agent memory.",
         "Integrate all agent memory types into a single connected graph for holistic understanding and shared AI context."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "GmAQKINjv1E",
@@ -4249,7 +4346,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=GmAQKINjv1E",
       "language": "en",
       "durationSeconds": 4721,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 4,
         "depth": 4,
@@ -4285,7 +4382,8 @@
         "Implement \"evaluations\" (evals) for non-deterministic testing of agent skills, assessing reasoning and tool usage.",
         "Skills can prevent security misconfigurations, like ensuring `SECURITY INVOKER` for Postgres views to uphold Row Level Security.",
         "Automate skill validation using evals with comparison scenarios and state resets to prevent regressions in production."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "nov9uoIQt6g",
@@ -4293,7 +4391,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=nov9uoIQt6g",
       "language": "en",
       "durationSeconds": 814,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -4329,7 +4427,8 @@
         "Gemma 4's Multi-Token Prediction triples LLM inference speed using a drafter model for lossless acceleration.",
         "OpenAI's GPT 5.5 Instant reduces hallucinations by 52.5% and enhances accuracy, reasoning, and personalization.",
         "Anthropic's \"Orbit\" provides proactive, personalized updates and summaries from various platforms without prompts."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "o-zkvb0iFDQ",
@@ -4337,7 +4436,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=o-zkvb0iFDQ",
       "language": "en",
       "durationSeconds": 1341,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -4374,7 +4473,8 @@
         "They enable bidirectional UI interaction within agent contexts, allowing dynamic UIs and secure message passing.",
         "MCP apps aim to transform the web by making AI assistants central hubs for integrated, service-specific UIs.",
         "The standard is actively evolving, promising features like reusable views and AI model control over UI elements."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "LRGW_pWX7ic",
@@ -4382,7 +4482,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=LRGW_pWX7ic",
       "language": "en",
       "durationSeconds": 551,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -4417,7 +4517,8 @@
         "Utilize specific AI skills for planning, robust architecture, paranoid code reviews, and automated releases.",
         "Structure your AI interactions with explicit roles for product vision, engineering rigor, and quality assurance.",
         "Tools like Gist demonstrate how targeted AI modes can dramatically increase developer productivity and code quality."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "OCcwgDvrFpc",
@@ -4425,7 +4526,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=OCcwgDvrFpc",
       "language": "en",
       "durationSeconds": 395,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -4461,7 +4562,8 @@
         "A workflow-centric architecture with skill, tool, runtime (browser), and workflow layers enhances AI development efficiency.",
         "Implement persistent browser sessions for AI tools to dramatically accelerate and improve code verification and QA processes.",
         "Focus on disciplined workflows, extreme role specialization, and robust QA for AI engineering, over multi-agent system complexity."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "ow1we5PzK-o",
@@ -4469,7 +4571,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=ow1we5PzK-o",
       "language": "en",
       "durationSeconds": 1111,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -4505,7 +4607,8 @@
         "Define \"validation contracts\" before coding to ensure unbiased, adversarial verification of work.",
         "Execute features serially to dramatically reduce error rates in long-running autonomous agent tasks.",
         "Select specific LLM models for each role (planning, implementation, validation) based on their strengths."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "Lm8BLHkxiAo",
@@ -4513,7 +4616,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=Lm8BLHkxiAo",
       "language": "en",
       "durationSeconds": 1438,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -4549,7 +4652,8 @@
         "Deploying AI on the edge enhances privacy, reduces latency, enables offline functionality, and cuts cloud inference costs.",
         "Lite RT achieves significant performance gains (3-10x) and energy efficiency through hardware-native NPU acceleration.",
         "Utilize Google's open-source Gallery App and Hugging Face models to explore and deploy Gemma 4 Edge capabilities."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "nyAHYmDaGBk",
@@ -4557,7 +4661,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=nyAHYmDaGBk",
       "language": "ko",
       "durationSeconds": 438,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -4593,7 +4697,8 @@
         "Instruct AI to use a structured 'Diagnose' process for debugging, avoiding guesswork to solve problems efficiently.",
         "Have AI regularly suggest codebase architecture improvements to prevent decay and maintain high quality.",
         "Design interfaces yourself and delegate implementation details to AI for better direction and quality control."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "ZlDnsf_DOzg",
@@ -4601,7 +4706,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=ZlDnsf_DOzg",
       "language": "en",
       "durationSeconds": 1644,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -4636,7 +4741,8 @@
         "Manage Claude's context window using `/clear` or `/compact` to prevent 'context rot' and control costs.",
         "Define project rules and preferences in `Claude.md` for consistent AI behavior across sessions.",
         "Work trees allow multiple Claude instances to work on different features simultaneously in isolated environments."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "wQ0duoTeAAU",
@@ -4644,7 +4750,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=wQ0duoTeAAU",
       "language": "en",
       "durationSeconds": 662,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -4680,7 +4786,8 @@
         "Implement an auto-improvement loop for skill outputs by using binary assertions to objectively measure structural adherence.",
         "Create an `eval.json` with 25+ true/false statements to guide the autonomous refinement of skill behavior.",
         "Automated loops excel at refining structural elements, format, and word counts, but not subjective creative quality."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "uhMCy25NBfw",
@@ -4688,7 +4795,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=uhMCy25NBfw",
       "language": "en",
       "durationSeconds": 993,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -4724,7 +4831,8 @@
         "Integrate crucial business context (brand voice, client details) into agent systems for better results.",
         "Manage iterative agent workflows via a Kanban-style interface focused on business goals.",
         "Centralize skills, documentation, and automate routine tasks for streamlined AI agent management."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "yEzzBxhkUw4",
@@ -4732,7 +4840,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=yEzzBxhkUw4",
       "language": "en",
       "durationSeconds": 1140,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -4769,7 +4877,8 @@
         "Utilize its Test-Driven Development (TDD) enforcement and automated code reviews to ensure robust implementations.",
         "Invest time in initial brainstorming and planning phases; it dramatically increases chances of 'one-shot' task completion.",
         "Dispatch sub-agents for parallel task execution, allowing efficient development and structured problem-solving."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "2TLXsxkz0zI",
@@ -4777,7 +4886,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=2TLXsxkz0zI",
       "language": "en",
       "durationSeconds": 6506,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -4813,7 +4922,8 @@
         "Implement basic AI loops with a `while true` script to automate task execution and refine prompts for better results.",
         "Scale AI by instructing it to prioritize tasks dynamically from a backlog, allowing autonomous project progression.",
         "Secure advanced AI loops with sandboxing (VPS, Docker), define \"good\" output via feedback, and manage knowledge effectively."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "5p6h23Md4Zw",
@@ -4821,7 +4931,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=5p6h23Md4Zw",
       "language": "en",
       "durationSeconds": 648,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -4857,7 +4967,8 @@
         "The inner harness provides core agent capabilities like sub-agent management and sandboxed code execution.",
         "The outer harness uses guides and sensors (deterministic/inferential) to programmatically control agents and create feedback loops.",
         "Orchestrators like Symphony scale agent systems by managing multi-agent collaboration and integrating human oversight efficiently."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "-QFHIoCo-Ko",
@@ -4865,7 +4976,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=-QFHIoCo-Ko",
       "language": "en",
       "durationSeconds": 5790,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -4901,7 +5012,8 @@
         "Structure AI development tasks as 'vertical slices' on a Kanban board for early feedback and parallelized implementation.",
         "Apply Test-Driven Development (TDD) for AI agents by writing failing tests before generating code for higher quality.",
         "Design 'deep modules' with simple interfaces, delegating complex internal implementation to AI, and maintain human QA."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "BlTpG51x94w",
@@ -4909,7 +5021,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=BlTpG51x94w",
       "language": "en",
       "durationSeconds": 745,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -4945,7 +5057,8 @@
         "GSD prevents context rot by managing LLM context window usage effectively.",
         "Integrate G-stack, GSD, and Superpower for maximum AI application accuracy.",
         "The 'build loop' with Clockwork headless enables autonomous, multi-phase project completion."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "0_dSWLOHKng",
@@ -4953,7 +5066,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=0_dSWLOHKng",
       "language": "en",
       "durationSeconds": 1278,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -4988,7 +5101,8 @@
         "Create specialized 'workstations' (subfolders) with dedicated `claude.md` and `memory.md` files for specific tasks.",
         "Implement a 'session audit' skill to continually teach the AI your preferences and improve its understanding over time.",
         "Optimize token costs by keeping root `claude.md` lean, avoiding rule repetition, and using cheaper AI models."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "ewgbQRow1T4",
@@ -4996,7 +5110,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=ewgbQRow1T4",
       "language": "ko",
       "durationSeconds": 734,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -5032,7 +5146,8 @@
         "Use Projects to create topic-specific experts and Skills to standardize repetitive tasks and workflows.",
         "Interact with Claude's real-time output like documents, charts, or even web apps directly in the chat panel.",
         "Connect Claude with external tools like Google Drive or Gmail for data exchange and workflow automation."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "uBWuKh1nZ2Y",
@@ -5040,7 +5155,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=uBWuKh1nZ2Y",
       "language": "en",
       "durationSeconds": 1193,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -5076,7 +5191,8 @@
         "Auto Research applies broadly to trading, marketing, prompt engineering, or any task with measurable outcomes.",
         "Avoid subjective 'better' definitions; flawed metrics lead to confident optimization for wrong outcomes.",
         "Practical implementation can quickly reduce website load times by automating code modifications."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "Xg0tNz9pICI",
@@ -5084,7 +5200,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=Xg0tNz9pICI",
       "language": "en",
       "durationSeconds": 8615,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -5119,7 +5235,8 @@
         "Use a 'Holdout Pattern' workflow for unbiased validation, checking code changes in isolation without prior implementation knowledge.",
         "Select cost-effective LLMs like MiniMax M2.7 for scaling AI coding agents, balancing performance with budget in public experiments.",
         "For production reliability, Level 3 AI coding with human oversight is currently more dependable than fully autonomous 'Dark Factories'."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "FOee3zb98wI",
@@ -5127,7 +5244,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=FOee3zb98wI",
       "language": "ko",
       "durationSeconds": 743,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -5163,7 +5280,8 @@
         "Implement TDD (Test-Driven Development) to ensure AI produces working code iteratively and safely.",
         "Guide AI to build 'Deep Modules' with simple interfaces, avoiding complex 'Shallow Module' structures.",
         "Employ a 'Gray Box' strategy: design interfaces yourself, then delegate internal implementation to AI."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "gM2mI8M7aaI",
@@ -5171,7 +5289,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=gM2mI8M7aaI",
       "language": "ko",
       "durationSeconds": 1479,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -5207,7 +5325,8 @@
         "Implement robust validation and adversarial review systems for agent output.",
         "Build a self-healing layer to improve AI system reliability over time.",
         "Isolate databases using branching for safe, independent parallel testing."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "w33YxZ7auZs",
@@ -5215,7 +5334,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=w33YxZ7auZs",
       "language": "ko",
       "durationSeconds": 797,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -5251,7 +5370,8 @@
         "Add `@design.md` to your AI tool's config file for automatic rule application and reduced prompts.",
         "First, establish your design system using AI, then document key elements in `design.md`.",
         "Prioritize filling core elements (colors, fonts) in `design.md`, adding others as needed."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "iXd0t60YmMw",
@@ -5259,7 +5379,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=iXd0t60YmMw",
       "language": "en",
       "durationSeconds": 905,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -5295,7 +5415,8 @@
         "Set up requires Obsidian for viewing, an AI coding agent, and creating `raw`, `wiki`, and `schema` folders.",
         "Knowledge compounds over time, allowing AI to answer complex queries from an organized, evolving knowledge base.",
         "AI can 'lint' the wiki for accuracy, but human review is essential, especially at early stages."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "19zRuwT-X2I",
@@ -5303,7 +5424,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=19zRuwT-X2I",
       "language": "ko",
       "durationSeconds": 6108,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -5338,7 +5459,8 @@
         "Actively learn and apply AI tools to daily tasks to gain a significant competitive edge.",
         "Developers need to master system design, architecture, and soft skills, beyond just coding with AI.",
         "Claude's code leak revealed its 'harness' structure, underscoring AI ethics and secure development needs."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "XKup1pj-34M",
@@ -5346,7 +5468,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=XKup1pj-34M",
       "language": "en",
       "durationSeconds": 1132,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -5382,7 +5504,8 @@
         "Utilize agents for 24/7 automation, accelerated research, surfacing dormant data, and eliminating tedious work.",
         "Software infrastructure must adapt to support agent-centric development, with agents driving API usage over UIs.",
         "Focus on innovation at the AI application layer, as models become commoditized, to create significant business value."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "7vihh_G_434",
@@ -5390,7 +5513,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=7vihh_G_434",
       "language": "ko",
       "durationSeconds": 839,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -5425,7 +5548,8 @@
         "Combat AI's short-term memory with external 'Plan,' 'Context,' and 'To-do' documents for ongoing reference.",
         "Employ automated quality checks like change logs and post-completion reviews to catch AI errors proactively.",
         "Distribute tasks to specialized AI 'agents' (e.g., code review, QA) for improved focus and quality."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "h403btjldDQ",
@@ -5433,7 +5557,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=h403btjldDQ",
       "language": "en",
       "durationSeconds": 1474,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -5469,7 +5593,8 @@
         "Implement QA agents and routines to ensure consistent, reliable work output and automate tasks.",
         "Provide detailed instructions and regular feedback to agents for high-quality, expected results.",
         "Manage costs by tracking spending and integrating cheaper AI models for less critical tasks."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "af3OJ0L1jEU",
@@ -5477,7 +5602,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=af3OJ0L1jEU",
       "language": "ko",
       "durationSeconds": 548,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -5513,7 +5638,8 @@
         "Leverage 'Git Worktrees' (Superpowers) to manage multiple tasks in isolated, clean development environments.",
         "Utilize 'Writing Plans' (Superpowers) to let Claude create detailed project roadmaps for structured execution.",
         "Apply 'Design Review' (G-Stack) to refine AI outputs, removing 'AI sloppiness' for professional results."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "QUHrntlfPo4",
@@ -5521,7 +5647,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=QUHrntlfPo4",
       "language": "en",
       "durationSeconds": 369,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -5557,7 +5683,8 @@
         "It improves AI session continuity via priority snapshots, extending effective agent working time significantly.",
         "Context Mode helps AI agents avoid repeating past errors by tracking decisions, boosting their effectiveness.",
         "Install Context Mode via marketplace plugin or npm for Claude Code, Gemini CLI, or VS Code Copilot."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "E4fzxVMOav4",
@@ -5565,7 +5692,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=E4fzxVMOav4",
       "language": "en",
       "durationSeconds": 450,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -5601,7 +5728,8 @@
         "Utilize Checkpoints and `/rewind` to safely experiment by reverting to prior code states.",
         "Automate repetitive tasks and share instructions using Skills stored in `skill.md` files.",
         "Employ Sub-Agents to break down complex problems into manageable, focused, independent jobs."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "Gf-yFsbxgyo",
@@ -5609,7 +5737,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=Gf-yFsbxgyo",
       "language": "en",
       "durationSeconds": 828,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -5644,7 +5772,8 @@
         "Iteratively refine diagrams by giving natural language feedback; Claude can 'see' and verify changes.",
         "Customize diagram output by providing detailed feedback on layout, style, and specific visual elements.",
         "Automate diagram creation and distribution for scheduled tasks, transforming Claude into a proactive agent."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "szaszUEmjfU",
@@ -5652,7 +5781,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=szaszUEmjfU",
       "language": "en",
       "durationSeconds": 524,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -5688,7 +5817,8 @@
         "Implement 'hooks' as middleware to inspect, modify, or block tool calls for enhanced safety and observability.",
         "Use memory compaction to summarize historical data, managing context window limitations in long-running tasks.",
         "Empower agents by delegating complex sub-tasks to specialized parallel 'sub-agents' for efficient scaling."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "38t5UBCa4OI",
@@ -5696,7 +5826,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=38t5UBCa4OI",
       "language": "en",
       "durationSeconds": 1069,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -5732,7 +5862,8 @@
         "Claude can parallelize tasks internally via 'split and merge,' fanning out work to sub-agents for efficient processing.",
         "Agent teams enable direct collaboration and shared task lists for complex projects, but incur higher token usage.",
         "Headless mode (`claude -P \"prompt\"`) allows autonomous, scheduled task execution without human interaction, ideal for automation."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "qMnClynCAmM",
@@ -5740,7 +5871,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=qMnClynCAmM",
       "language": "en",
       "durationSeconds": 1848,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -5776,7 +5907,8 @@
         "Optimize AI coding costs and performance by specifying different LLMs (e.g., Haiku vs. Sonnet) per workflow node.",
         "Set up Archon in minutes to automate tasks like fixing GitHub issues or creating PRs, monitoring via CLI or web",
         "Create highly customized, reusable AI coding processes using Archon's simple YAML workflow definitions."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "os2eqa69gko",
@@ -5784,7 +5916,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=os2eqa69gko",
       "language": "en",
       "durationSeconds": 843,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -5820,7 +5952,8 @@
         "The powerful `/init` command automatically updates AI agent instructions based on your project's code.",
         "Customize AI agent behavior with hooks for lifecycle events and extend functionality via plugins.",
         "Manage and differentiate between local, extension-provided, and built-in AI development assets."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "TxottTsaOnE",
@@ -5828,7 +5961,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=TxottTsaOnE",
       "language": "en",
       "durationSeconds": 432,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -5864,7 +5997,8 @@
         "\"Policy as Data\" decouples rules from code into dynamic bundles, which agents bind at runtime for actions.",
         "This approach allows instant policy updates without redeployment and ensures verifiable auditability for all decisions.",
         "Architects must shift to designing active, dynamic runtime governance infrastructure for autonomous systems."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "z9rdrNrkvDY",
@@ -5872,7 +6006,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=z9rdrNrkvDY",
       "language": "en",
       "durationSeconds": 1135,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -5908,7 +6042,8 @@
         "Automate multi-step tasks using \"Skills\" by teaching Co-work a process to repeat reliably.",
         "Use \"Connectors\" to integrate Co-work with external tools like Gmail or Google Drive for extended capabilities.",
         "Implement \"outcome-first\" prompting with Co-work, defining the end result, constraints, and quality."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "n95AjSgZBp0",
@@ -5916,7 +6051,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=n95AjSgZBp0",
       "language": "ko",
       "durationSeconds": 1016,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 4,
         "depth": 4,
@@ -5952,7 +6087,8 @@
         "Efficient AI memory management involves compressing and organizing information during user inactivity.",
         "Agentic AI uses \"team lead\" agents to coordinate \"workers\" and reuse past complex task solutions.",
         "AI can deliberately poison data with strange inputs to prevent corporate data theft."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "rmvDxxNubIg",
@@ -5960,7 +6096,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=rmvDxxNubIg",
       "language": "en",
       "durationSeconds": 1231,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -5996,7 +6132,8 @@
         "Employ sub-agents to handle context-heavy research, returning only concise, high-leverage messages to the parent.",
         "Adopt the Research-Plan-Implement (RPI) workflow to structure AI coding tasks, ensuring focus and reliability.",
         "Do not outsource thinking to AI; human validation of research and plans is paramount to prevent propagating errors."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "wEsjK3Smovw",
@@ -6004,7 +6141,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=wEsjK3Smovw",
       "language": "en",
       "durationSeconds": 860,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -6040,7 +6177,8 @@
         "Cultivate 'software taste' by investing extra effort beyond minimum features for improved robustness and capability.",
         "Integrate continuous experimentation into your workflows, constantly rewriting and iterating on software using AI.",
         "Junior developers should leverage their openness to new tools and fresh perspectives to master AI skills."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "mViFYTwWvcM",
@@ -6048,7 +6186,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=mViFYTwWvcM",
       "language": "en",
       "durationSeconds": 540,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -6084,7 +6222,8 @@
         "Adopt spec-driven development by defining desired system behaviors and constraints as a formal specification.",
         "Use specifications as a contract to guide AI agents through requirements, design, implementation, and testing phases.",
         "Detailed specifications reduce AI ambiguity, ensuring predictable and consistent code generation outcomes."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "Lri2LNYtERM",
@@ -6092,7 +6231,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=Lri2LNYtERM",
       "language": "en",
       "durationSeconds": 2835,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -6128,7 +6267,8 @@
         "Design closed-loop AI-native companies where agents access all data for self-healing and 10x per-employee revenue.",
         "Develop rigorous custom evaluation systems (`evals`) and apply human \"taste\" to ensure AI-generated product quality.",
         "Founders: \"Wedge\" into painful workflows, deeply automate with AI, and become domain experts for rapid growth."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "z7xyZQVK4Dg",
@@ -6136,7 +6276,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=z7xyZQVK4Dg",
       "language": "en",
       "durationSeconds": 1539,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -6172,7 +6312,8 @@
         "Deploy Tmux on a Virtual Private Server (VPS) to guarantee persistent, independent AI agent operation.",
         "Use `Ctrl+B %` and `Ctrl+B \"` within Tmux on a VPS to efficiently run multiple AI agents concurrently.",
         "This setup allows continuous, uninterrupted AI agent development around the clock, overcoming local machine limitations."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "FAWm7DuFSPc",
@@ -6180,7 +6321,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=FAWm7DuFSPc",
       "language": "en",
       "durationSeconds": 1055,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -6216,7 +6357,8 @@
         "Set up by installing Obsidian, accessing Claude, using Karpathy's pattern, and creating a business vault.",
         "Populate your Obsidian vault with raw business data, then instruct Claude to compile your personalized wiki.",
         "Leverage the system for contextual recommendations, continuous learning, and identifying business knowledge gaps."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "efRIrLXoOVA",
@@ -6224,7 +6366,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=efRIrLXoOVA",
       "language": "en",
       "durationSeconds": 1690,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -6261,7 +6403,8 @@
         "Utilize stop hooks to automatically update AI layer rules, keeping them fresh and relevant to the codebase.",
         "Integrate LSP via MCP servers for advanced, token-efficient code navigation, surpassing basic search methods.",
         "Use subagents for broad exploration or research, delivering concise summaries to the primary agent, saving tokens."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "dxq7WtWxi44",
@@ -6269,7 +6412,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=dxq7WtWxi44",
       "language": "en",
       "durationSeconds": 2469,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -6305,7 +6448,8 @@
         "Beware 'active misinformation' in static wikis; raw data integrity is crucial for trustworthiness and scalability.",
         "Combine Open Brain's structured data core with a dynamic AI-generated wiki layer for robust, error-resistant knowledge.",
         "Shift AI's role from a transient 'Oracle' to a persistent 'Maintainer' of evolving knowledge systems."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "hzQie4EucY0",
@@ -6313,7 +6457,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=hzQie4EucY0",
       "language": "en",
       "durationSeconds": 599,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -6348,7 +6492,8 @@
         "Generate minimum viable code, leading to leaner, more efficient, and maintainable outputs.",
         "Achieve precise, isolated edits without unintentionally affecting unrelated parts of the output.",
         "Define clear success criteria; Claude iteratively refines outputs until specified goals are achieved."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "EsgUfrwsV5A",
@@ -6356,7 +6501,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=EsgUfrwsV5A",
       "language": "en",
       "durationSeconds": 664,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -6392,7 +6537,8 @@
         "Guide LLMs to write concise, simple code, rejecting over-complication to ensure maintainability and clarity.",
         "Direct LLMs to make only surgical, pertinent code changes, avoiding unrelated alterations and side effects.",
         "Combine these embedded principles with other LLM frameworks' triggered skills for a highly efficient workflow."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "BedAaB1RKgE",
@@ -6400,7 +6546,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=BedAaB1RKgE",
       "language": "en",
       "durationSeconds": 851,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -6435,7 +6581,8 @@
         "ADK is a Python framework structuring AI agent internal logic, orchestration, and memory for predictable, testable systems.",
         "MCP solves the 'connectivity problem' (how agents communicate), while ADK solves the 'orchestration problem' (what agents do).",
         "Leverage MCP for external communication standards and ADK for building, structuring, and debugging an agent's internal logic."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "vi-2nasppAg",
@@ -6443,7 +6590,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=vi-2nasppAg",
       "language": "en",
       "durationSeconds": 3867,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 4,
         "depth": 4,
@@ -6478,7 +6625,8 @@
         "Design agent logic using stream processors with pure reducer functions and separate side-effect hooks.",
         "Enable dynamic agent updates and self-modification by appending code directly to event streams.",
         "Utilize a distributed architecture for agents, supporting polyglot components and stream control features."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "am_oeAoUhew",
@@ -6486,7 +6634,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=am_oeAoUhew",
       "language": "en",
       "durationSeconds": 2781,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -6521,7 +6669,8 @@
         "Provide agents clear context, documentation, and guardrails to ensure high-quality, compliant code output.",
         "Automate feedback from human code reviews into documentation and agents for continuous improvement.",
         "Autonomous agents will advance products with high-level human goals, building tools beyond just code generation."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "esY99nYXxR4",
@@ -6529,7 +6678,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=esY99nYXxR4",
       "language": "en",
       "durationSeconds": 977,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -6564,7 +6713,8 @@
         "Implement 'Smart Truncation Memory' (first/last 100 characters) for effective context recall.",
         "Delegate data-intensive tasks to specialized sub-agents to manage heavy context loads efficiently.",
         "Use 'Long Session Evals' to proactively test and identify context management issues in agents."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "Xl57Pki6ChE",
@@ -6572,7 +6722,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=Xl57Pki6ChE",
       "language": "en",
       "durationSeconds": 1616,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -6608,7 +6758,8 @@
         "Provide Claude training for businesses to boost productivity; combine content with targeted outreach for clients.",
         "Develop simple AI apps with one core feature, then dedicate 90% effort to marketing using viral formats.",
         "Offer AI marketing automations (Go High Level, ManyChat, LinkedIn) to convert business leads into revenue."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "RtywqDFBYnQ",
@@ -6616,7 +6767,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=RtywqDFBYnQ",
       "language": "en",
       "durationSeconds": 1469,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -6651,7 +6802,8 @@
         "Anthropic's \"Dreaming\" asynchronously curates memory across agents, identifying common patterns and mistakes to boost collective intelligence.",
         "The memory system offers enterprise-grade control via permissions, version history, and audit logs, scaling for multi-agent environments.",
         "Dreaming ensures large knowledge bases stay fresh and relevant by proactively organizing insights from numerous agent sessions."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "wRDk9_JoIic",
@@ -6659,7 +6811,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=wRDk9_JoIic",
       "language": "en",
       "durationSeconds": 741,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 4,
         "depth": 4,
@@ -6695,7 +6847,8 @@
         "Prioritize user experience by combining intuition with feedback to deliver truly intuitive features.",
         "Build user trust through transparency by providing proof of work, showing agent actions and sources.",
         "Meticulous attention to visible details and overall 'craft' differentiates AI products and fosters confidence."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "57lDpTwiW6g",
@@ -6703,7 +6856,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=57lDpTwiW6g",
       "language": "en",
       "durationSeconds": 2490,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -6739,7 +6892,8 @@
         "Leverage different AI models for specialized tasks, switching seamlessly for optimal results.",
         "Automate 80-90% of test coverage using AI agents to improve code quality and development speed.",
         "Employ \"meta-prompting\" (e.g., \"CEO plan\") to guide AI towards ambitious, 10x value solutions."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "Mg4WUTNM1hw",
@@ -6747,7 +6901,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=Mg4WUTNM1hw",
       "language": "en",
       "durationSeconds": 912,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -6783,7 +6937,8 @@
         "Assign specific roles (leader, reviewer, researcher) to different AI agents for structured project collaboration.",
         "Leverage embedded portals for AI agents to visually test and fix live applications directly within Maestri.",
         "Automate complex development workflows and integrate testing to build sophisticated applications more rapidly."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "juoNbJiZUi0",
@@ -6791,7 +6946,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=juoNbJiZUi0",
       "language": "en",
       "durationSeconds": 1158,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -6827,7 +6982,8 @@
         "Limit agent improvisation through \"breadcrumbing\": sequential instructions that guide agent thought processes gradually.",
         "Ensure agent safety and reliability with \"inference time interrogation\" and fine-grained control over tool access.",
         "Prioritize clear prose and structured instructions over extensive code when developing AI agents."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "eA9Zf2-qYYM",
@@ -6835,7 +6991,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=eA9Zf2-qYYM",
       "language": "en",
       "durationSeconds": 3536,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -6870,7 +7026,8 @@
         "Provide agents explicit context via markdown files and use `memory.md` to ensure learning and retention across sessions.",
         "Connect agents to existing tools using the Model Context Protocol (MCP) for powerful, multi-application workflows.",
         "Create \"skills\" (SOPs in markdown) for AI to automate repetitive tasks, enabling complex chained workflows."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "w0S-khYCaB4",
@@ -6878,7 +7035,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=w0S-khYCaB4",
       "language": "en",
       "durationSeconds": 1474,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -6913,7 +7070,8 @@
         "Implement dynamic memory systems, especially semantic search, to overcome AI's context forgetting.",
         "Develop modular AI skills (under 200 lines) for specialization, improving task-specific output quality.",
         "Chain multiple skills into \"skill systems\" to automate complex, multi-step workflows autonomously."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "5FiHjotg2zU",
@@ -6921,7 +7079,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=5FiHjotg2zU",
       "language": "en",
       "durationSeconds": 1341,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -6957,7 +7115,8 @@
         "Establish separate, specialized second brains (e.g., personal, business) for better focus and efficiency.",
         "Follow a workflow: ingest raw data, let AI organize it into a queryable wiki, then generate targeted outputs.",
         "Regularly \"lint\" your second brain to identify conflicts and improve connections, ensuring accuracy and value."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "cNlvrU-KcRg",
@@ -6965,7 +7124,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=cNlvrU-KcRg",
       "language": "ko",
       "durationSeconds": 3153,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -7002,7 +7161,8 @@
         "Establish an Obsidian vault with `raw`, `wiki`, `output` folders for structured knowledge.",
         "Utilize Claude Code's `/ingest` skill to process raw data into organized wiki entries.",
         "Integrate Graphipy to create knowledge graphs, enhancing AI's understanding and queries."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "YwZR6tc7qYg",
@@ -7010,7 +7170,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=YwZR6tc7qYg",
       "language": "en",
       "durationSeconds": 1606,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -7046,7 +7206,8 @@
         "Break down monolithic prompts into smaller, focused prompts (<40 instructions) for better LLM adherence.",
         "Use artifacts like Design Discussions and Structure Outlines for early human-agent alignment and architectural review.",
         "Prioritize \"vertical plans\" with checkpoints over horizontal plans for easier debugging and integration."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "2czYyrTzILg",
@@ -7054,7 +7215,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=2czYyrTzILg",
       "language": "en",
       "durationSeconds": 1589,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -7090,7 +7251,8 @@
         "Enforce strict data contracts between agents to maintain data quality and prevent failures.",
         "Implement circuit breakers to prevent cascading failures and compensation patterns for robust rollbacks.",
         "Keep agents \"dumb\" and task-specific; use a central orchestrator as the workflow's brain."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "Xxuxg8PcBvc",
@@ -7098,7 +7260,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=Xxuxg8PcBvc",
       "language": "en",
       "durationSeconds": 706,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -7134,7 +7296,8 @@
         "Module-specific ablation shows 'self-evolution' helps, while 'verifiers' often surprisingly hurt agent performance.",
         "Automated 'Meta Harness' optimization creates reusable performance improvements transferable across various models.",
         "Invest in harness design and optimization for larger, faster, and more reliable gains than model upgrades."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "_zdroS0Hc74",
@@ -7142,7 +7305,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=_zdroS0Hc74",
       "language": "en",
       "durationSeconds": 32991,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -7177,7 +7340,8 @@
         "Orchestrate specialized multi-agent systems using structured approaches like \"Missions\" for complex, long-running tasks.",
         "Prioritize human judgment and \"agent-legible codebases\" to maintain quality amidst AI's accelerated software development.",
         "Recognize AI's limitations in planning and reasoning; design high-bandwidth interfaces for effective human-agent collaboration."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "lH5wrfNwL3k",
@@ -7185,7 +7349,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=lH5wrfNwL3k",
       "language": "en",
       "durationSeconds": 2106,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -7220,7 +7384,8 @@
         "Automate trailing stop-loss orders with Claude to protect capital and lock in profits effectively.",
         "Use Claude to automatically copy trades from successful politicians via public data sources like Capitol Trades.",
         "Automate the complex Wheel Strategy for options with Claude, managing puts, calls, and expirations for consistent income."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "T9aRN5JkmL8",
@@ -7228,7 +7393,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=T9aRN5JkmL8",
       "language": "en",
       "durationSeconds": 4603,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -7263,7 +7428,8 @@
         "Develop a \"theory of mind\" for LLMs by closely analyzing outputs and anticipating potential failure modes.",
         "Use direct communication over role-playing; offer \"outs\" for uncertainty; leverage Chain of Thought for better reasoning.",
         "Trust modern LLMs with more context; provide academic papers to apply complex concepts directly."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "rFWxRZ5D-lM",
@@ -7271,7 +7437,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=rFWxRZ5D-lM",
       "language": "en",
       "durationSeconds": 1393,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -7307,7 +7473,8 @@
         "Load a rich, \"frozen snapshot\" of key contexts at session start for efficient memory injection.",
         "Enhance long-term recall with a multi-tier system using hybrid keyword/semantic vector searches.",
         "A hybrid system integrating Memarch's recall with Hermes' injection significantly boosts Claude's capabilities."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "nBH07G-zayk",
@@ -7315,7 +7482,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=nBH07G-zayk",
       "language": "en",
       "durationSeconds": 842,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -7351,7 +7518,8 @@
         "Plan at a high level, defining deliverables, not implementation details, as agents can self-execute.",
         "Always use a completely separate evaluator agent, as self-evaluation by generators is inherently flawed.",
         "For subjective outputs like UI, use graded evaluation with explicit rubrics for quality, originality, and craft."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "igO8iyca2_g",
@@ -7359,7 +7527,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=igO8iyca2_g",
       "language": "en",
       "durationSeconds": 1718,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -7395,7 +7563,8 @@
         "Leverage AI for basic code reviews, freeing humans to focus on deep expertise, security, and product sense.",
         "Prioritize engineers with product sense and deep systems expertise over raw coding throughput.",
         "Continuously audit and eliminate old, inefficient processes that no longer serve AI-augmented workflows."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "MhHEGMFCEB0",
@@ -7403,7 +7572,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=MhHEGMFCEB0",
       "language": "en",
       "durationSeconds": 3719,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -7439,7 +7608,8 @@
         "Leverage sub-agents to decompose large tasks, enabling parallel, customizable development and specialized analyses.",
         "Codex provides deep contextual code reviews, identifying subtle issues across the entire repository, not just diffs.",
         "Implement automations for scheduled tasks and explore experimental features like Guardian Approvals for efficiency."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "N30XGyPrr6I",
@@ -7447,7 +7617,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=N30XGyPrr6I",
       "language": "en",
       "durationSeconds": 1594,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -7483,7 +7653,8 @@
         "Extend functionality by integrating reusable 'skills' from specified directories and managing conversational context with `agents.md` files.",
         "Personalize Pi's UI with custom themes, implement advanced features via TypeScript 'extensions,' and install community 'packages'.",
         "Manage conversations efficiently by renaming, forking, compacting, and exporting sessions to HTML or JSONL files."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "_Zcw_sVF6hU",
@@ -7491,7 +7662,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=_Zcw_sVF6hU",
       "language": "en",
       "durationSeconds": 1118,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -7527,7 +7698,8 @@
         "Implement strict mechanical enforcement via linting rules for issues like bare catches, dynamic imports, and unique function names.",
         "Design review processes to differentiate between automated mechanical fixes and critical human judgment callouts for key changes.",
         "Embrace intentional friction, like SLOs, in critical development areas to prevent rapid technical debt accumulation and ensure quality."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "AQOvNx87Urs",
@@ -7535,7 +7707,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=AQOvNx87Urs",
       "language": "ko",
       "durationSeconds": 2499,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -7571,7 +7743,8 @@
         "A custom harness framework includes project docs, AI rules, validation hooks, and an execution engine.",
         "Detailed project planning (Docs, Claude.md) is vital for AI coding success, demanding iterative refinement.",
         "Personalize your harness by continuously refining its settings to match project and developer preferences."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "mR-WAvEPRwE",
@@ -7579,7 +7752,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=mR-WAvEPRwE",
       "language": "en",
       "durationSeconds": 4540,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -7615,7 +7788,8 @@
         "Define detailed rubrics to grade subjective quality effectively and consistently.",
         "Analyze agent traces extensively to understand model behavior and improve harnesses.",
         "Leverage primitives like sub-agents, harsh system prompts, and Playwright for robust systems."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "V_Z-ydQJ54c",
@@ -7623,7 +7797,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=V_Z-ydQJ54c",
       "language": "en",
       "durationSeconds": 6033,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -7660,7 +7834,8 @@
         "Mastering Prefill, Decode, and KV cache optimization, like PagedAttention, boosts Transformer inference efficiency.",
         "LLM serving performance balances compute and memory, with sparsity enabling higher optimal batch sizes.",
         "LLM pricing reflects compute/memory dynamics; long contexts demand more resources, making them costlier."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "Hu7HABjJzqM",
@@ -7668,7 +7843,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=Hu7HABjJzqM",
       "language": "en",
       "durationSeconds": 506,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 4,
         "depth": 4,
@@ -7704,7 +7879,8 @@
         "Anthropic's ambitious new tools often underperform or are inaccessible, ignoring critical user feedback.",
         "AI excels at tasks, but humans remain essential for defining purpose, innovating, and problem-solving.",
         "Integrate AI into workflows to enhance productivity and create opportunities, rather than fearing job displacement."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "6kM27uGP4n4",
@@ -7712,7 +7888,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=6kM27uGP4n4",
       "language": "en",
       "durationSeconds": 1859,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -7747,7 +7923,8 @@
         "Utilize multi-persona AI agents for comprehensive, independent reviews of product specifications.",
         "Prioritize safe, efficient technical approaches for MVPs, like Structured Query Mappers.",
         "Conduct thorough pre-coding deliberation with AI tools to refine specs and identify edge cases."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "7xTGNNLPyMI",
@@ -7755,7 +7932,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=7xTGNNLPyMI",
       "language": "en",
       "durationSeconds": 12684,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -7791,7 +7968,8 @@
         "Supervised Fine-tuning (SFT) uses human-curated conversations to transform base models into helpful AI assistants.",
         "LLMs hallucinate and have \"cognitive deficits\"; external tools and step-by-step reasoning mitigate these limitations.",
         "Reinforcement Learning, including RLHF, enables advanced reasoning by rewarding solutions or aligning with human preferences."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "OWYjhrEVcqs",
@@ -7835,7 +8013,8 @@
         "Shredded coconut provides a creamy texture and fiber, keeping carbs low.",
         "Sweeten with your preferred option, like stevia, and chill to set the dessert.",
         "Enhance flavor with creative toppings such as peanut butter or cinnamon."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "d3Glwdf_xA8",
@@ -7843,7 +8022,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=d3Glwdf_xA8",
       "language": "en",
       "durationSeconds": 1693,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -7880,7 +8059,8 @@
         "Overly rigid spec tools can introduce unnecessary overhead, especially for smaller or agile projects.",
         "Flexible, prompt-driven workflows can replace rigid tools for planning and task generation.",
         "Evolving AI model capabilities mean direct prompting and custom workflows are becoming more central."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "I3r7LZmEve0",
@@ -7888,7 +8068,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=I3r7LZmEve0",
       "language": "ko",
       "durationSeconds": 433,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -7923,7 +8103,8 @@
         "Actively network with professionals from diverse fields for new insights and inspiration.",
         "Transform your unique know-how into an external, shareable format like 'AI skills'.",
         "Start by documenting everyday advice and refine it into an AI-understandable manual."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "li0SaBt9RDM",
@@ -7931,7 +8112,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=li0SaBt9RDM",
       "language": "en",
       "durationSeconds": 1025,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -7967,7 +8148,8 @@
         "Create custom AI 'skills' with structured prompts for efficient, deep code exploration.",
         "Engineers must understand AI outputs to steer it correctly and prevent 'vibe coding'.",
         "AI functions as an 'always-on senior engineer' for questions, improving mental models."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "AGkzpxMdPn8",
@@ -7975,7 +8157,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=AGkzpxMdPn8",
       "language": "en",
       "durationSeconds": 1235,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -8011,7 +8193,8 @@
         "Embrace hypothesis-driven AI delivery with rapid build-evaluate-iterate loops to build statistical confidence.",
         "Build AI trust through progressive autonomy, moving from shadow mode to advisory, then controlled actions.",
         "Cultivate 'living memory' from real-time customer interactions as an inimitable, competitive AI advantage."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "ftUlJzuzdU4",
@@ -8019,7 +8202,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=ftUlJzuzdU4",
       "language": "en",
       "durationSeconds": 1990,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -8055,7 +8238,8 @@
         "Prioritize robust cyber hygiene and security governance to mitigate persistent supply chain vulnerabilities.",
         "Security professionals must act as \"business accelerators,\" articulating security's value in business terms.",
         "Investing in training for junior cybersecurity roles and user hygiene helps close the security gap."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "I9c8STV7Hnw",
@@ -8063,7 +8247,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=I9c8STV7Hnw",
       "language": "en",
       "durationSeconds": 3710,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -8099,7 +8283,8 @@
         "Human roles shift to oversight, exception handling, and design thinking, while middle management functions are significantly reduced.",
         "Implement a \"Rewrite\" methodology by building an AI-native digital twin at the organization's edge, not transforming existing structures.",
         "Enduring elements include core purpose and strong brands; traditional hierarchies, fixed plans, and middle management will not survive."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "mh5XZ-L5SFQ",
@@ -8107,7 +8292,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=mh5XZ-L5SFQ",
       "language": "en",
       "durationSeconds": 804,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -8143,7 +8328,8 @@
         "Prioritize \"boring,\" maintainable code and dedicated abstractions over hacky solutions or random conditional growth.",
         "Question unnecessary optionality, `unknown`, `any`, or cast-heavy code to ensure clean type boundaries.",
         "Ambitious AI feedback, even with some false positives, is valuable for surfacing deep-seated design issues."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "9nh8TQRcYD0",
@@ -8151,7 +8337,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=9nh8TQRcYD0",
       "language": "en",
       "durationSeconds": 1079,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -8186,7 +8372,8 @@
         "Don't just fixate on valuation; understand dilution and crucial deal terms like liquidation preferences and protective provisions.",
         "Venture funding starts a clock; prioritize runway and hit growth targets to secure future rounds and avoid crisis.",
         "AI startups command higher valuations, while bootstrapping is increasingly viable for many due to reduced development costs."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "RLjaUES9P8A",
@@ -8194,7 +8381,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=RLjaUES9P8A",
       "language": "en",
       "durationSeconds": 1594,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -8230,7 +8417,8 @@
         "Leverage Claude for creative planning and brainstorming, then Codex for efficient code execution.",
         "Claude Code offers deep workflow customization; Codex provides a unified, opinionated shipping experience.",
         "Economic considerations matter: Claude often consumes more tokens, impacting usage costs."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "FB-MLPhL9Ms",
@@ -8238,7 +8426,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=FB-MLPhL9Ms",
       "language": "en",
       "durationSeconds": 1114,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -8274,7 +8462,8 @@
         "Evaluate entire agent traces, not just outputs, especially for agents interacting with external systems.",
         "Evals are crucial for confidence, risk mitigation, and guiding continuous improvement of AI agents.",
         "Automate evaluations with cloud code and CLI for continuous integration and robust quality checks."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "P4_iywFuKQc",
@@ -8282,7 +8471,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=P4_iywFuKQc",
       "language": "en",
       "durationSeconds": 843,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 4,
         "depth": 4,
@@ -8318,7 +8507,8 @@
         "Google's full-stack AI approach, from infrastructure to applications, combined with high-velocity execution, drives its market strategy.",
         "Google Labs introduces innovative products like Notebook LM, Stitch, and Pomelli for diverse research and business needs.",
         "Actively experiment with various AI tools to stay at the frontier and integrate them into your personal and professional workflows."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "ulNsa0sD8N0",
@@ -8326,7 +8516,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=ulNsa0sD8N0",
       "language": "en",
       "durationSeconds": 1029,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -8362,7 +8552,8 @@
         "Adopt a \"system evolution\" mindset; improve the AI harness rather than solely blaming the LLM for performance issues.",
         "Orchestrate multiple agent sessions, like the \"Ralph loop,\" to break down and automate complex tasks efficiently.",
         "Leverage tools like Google Cloud's Agent CLI or Archon to build, deploy, and monitor custom agent harnesses."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "kYkZI3oj2W4",
@@ -8370,7 +8561,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=kYkZI3oj2W4",
       "language": "en",
       "durationSeconds": 655,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -8405,7 +8596,8 @@
         "Trust in critical human systems is built through robust verification, like second opinions or multi-expert consensus.",
         "Design multi-agent AI with generator, verifier, and adversary agents to achieve \"earned confidence\" through diverse checks.",
         "Multi-agent AI is imperative for high-stakes domains (e.g., healthcare, finance) where single AI errors have severe consequences."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "2oH6PWPrYFo",
@@ -8413,7 +8605,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=2oH6PWPrYFo",
       "language": "en",
       "durationSeconds": 4795,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -8451,7 +8643,8 @@
         "RLHF (Reinforcement Learning from Human Feedback) aligns models by maximizing a reward learned from human preference rankings.",
         "DPO (Direct Preference Optimization) simplifies RLHF by directly optimizing preferences without needing a separate reward model.",
         "RLHF faces challenges like overoptimization, model collapse, and uncalibrated confidence, necessitating careful implementation."
-      ]
+      ],
+      "removedFromPlaylist": true
     },
     {
       "id": "wr4nCMUy1dk",
@@ -8459,7 +8652,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=wr4nCMUy1dk",
       "language": "ko",
       "durationSeconds": 1080,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -8495,7 +8688,8 @@
         "Consider combining multiple revenue models as your service grows for enhanced stability and scalability."
       ],
       "videoPublishedAt": "2026-05-28T11:30:35Z",
-      "addedToPlaylistAt": "2026-05-29T18:14:29Z"
+      "addedToPlaylistAt": "2026-05-29T18:14:29Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "B9h9ovW5H9U",
@@ -8503,7 +8697,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=B9h9ovW5H9U",
       "language": "en",
       "durationSeconds": 1212,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 4,
         "depth": 4,
@@ -8538,7 +8732,8 @@
         "Explore Neo4j Agent Memory for robust short-term, long-term, and reasoning capabilities in AI agents."
       ],
       "videoPublishedAt": "2026-05-29T16:00:33Z",
-      "addedToPlaylistAt": "2026-05-29T18:02:38Z"
+      "addedToPlaylistAt": "2026-05-29T18:02:38Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "6cU_oAq18Js",
@@ -8546,7 +8741,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=6cU_oAq18Js",
       "language": "ko",
       "durationSeconds": 4053,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -8582,7 +8777,8 @@
         "Understand that human uniqueness in live interaction and personal context remains invaluable."
       ],
       "videoPublishedAt": "2026-05-29T07:30:37Z",
-      "addedToPlaylistAt": "2026-05-29T12:34:08Z"
+      "addedToPlaylistAt": "2026-05-29T12:34:08Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "wtNdUANBIl0",
@@ -8590,7 +8786,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=wtNdUANBIl0",
       "language": "ko",
       "durationSeconds": 5343,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -8626,7 +8822,8 @@
         "Start by delegating small, measurable, daily tasks to AI and iteratively refine the process."
       ],
       "videoPublishedAt": "2026-05-31T22:00:20Z",
-      "addedToPlaylistAt": "2026-05-31T22:22:26Z"
+      "addedToPlaylistAt": "2026-05-31T22:22:26Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "iMmxBTz-Yk0",
@@ -8634,7 +8831,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=iMmxBTz-Yk0",
       "language": "ko",
       "durationSeconds": 332,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -8670,7 +8867,8 @@
         "Leverage AI's improved rule-following to make prompt engineering an asset."
       ],
       "videoPublishedAt": "2026-05-31T00:00:08Z",
-      "addedToPlaylistAt": "2026-05-31T18:00:20Z"
+      "addedToPlaylistAt": "2026-05-31T18:00:20Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "ixA6FG099uM",
@@ -8678,7 +8876,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=ixA6FG099uM",
       "language": "ko",
       "durationSeconds": 453,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -8717,7 +8915,8 @@
         "Develop specialized skills in complex problem-solving that AI alone cannot fully address for career longevity."
       ],
       "videoPublishedAt": "2026-05-29T03:16:45Z",
-      "addedToPlaylistAt": "2026-05-31T14:58:11Z"
+      "addedToPlaylistAt": "2026-05-31T14:58:11Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "yz2Bokz7Gkk",
@@ -8725,7 +8924,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=yz2Bokz7Gkk",
       "language": "en",
       "durationSeconds": 370,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -8761,7 +8960,8 @@
         "Learn omega-3s improve HDL while reducing VLDL."
       ],
       "videoPublishedAt": "2026-06-03T16:14:34Z",
-      "addedToPlaylistAt": "2026-06-04T15:31:44Z"
+      "addedToPlaylistAt": "2026-06-04T15:31:44Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "4_QRCPz395g",
@@ -8769,7 +8969,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=4_QRCPz395g",
       "language": "en",
       "durationSeconds": 1252,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -8805,7 +9005,8 @@
         "Support your nervous system, sleep, and mood by ensuring adequate glycine, an inhibitory neurotransmitter."
       ],
       "videoPublishedAt": "2026-05-22T15:00:04Z",
-      "addedToPlaylistAt": "2026-06-04T15:21:05Z"
+      "addedToPlaylistAt": "2026-06-04T15:21:05Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "ZBjOXZ8Kzi0",
@@ -8813,7 +9014,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=ZBjOXZ8Kzi0",
       "language": "ko",
       "durationSeconds": 3437,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -8851,7 +9052,8 @@
         "Redefine your role as a UX designer by focusing on AI integration, high-quality asset creation, and business value."
       ],
       "videoPublishedAt": "2026-06-02T18:12:14Z",
-      "addedToPlaylistAt": "2026-06-04T14:23:10Z"
+      "addedToPlaylistAt": "2026-06-04T14:23:10Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "p6grDkJuI_M",
@@ -8859,7 +9061,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=p6grDkJuI_M",
       "language": "ko",
       "durationSeconds": 611,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -8895,7 +9097,8 @@
         "Move beyond passively consuming AI content to actively building and experimenting."
       ],
       "videoPublishedAt": "2026-06-04T11:57:56Z",
-      "addedToPlaylistAt": "2026-06-04T14:00:36Z"
+      "addedToPlaylistAt": "2026-06-04T14:00:36Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "fInMcawbKng",
@@ -8903,7 +9106,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=fInMcawbKng",
       "language": "ko",
       "durationSeconds": 1493,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -8939,7 +9142,8 @@
         "Recognize that agent harnesses are not static; continuously adapt them as LLM models evolve."
       ],
       "videoPublishedAt": "2026-06-04T09:19:51Z",
-      "addedToPlaylistAt": "2026-06-04T13:29:26Z"
+      "addedToPlaylistAt": "2026-06-04T13:29:26Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "ff3j4olCUig",
@@ -8947,7 +9151,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=ff3j4olCUig",
       "language": "en",
       "durationSeconds": 1558,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -8983,7 +9187,8 @@
         "Practice building diverse apps and seek feedback to enhance your AI software development skills."
       ],
       "videoPublishedAt": "2026-06-02T18:02:36Z",
-      "addedToPlaylistAt": "2026-06-03T21:12:16Z"
+      "addedToPlaylistAt": "2026-06-03T21:12:16Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "BSSV-N9yP8Y",
@@ -8991,7 +9196,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=BSSV-N9yP8Y",
       "language": "en",
       "durationSeconds": 524,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -9027,7 +9232,8 @@
         "Leverage AI for productivity while ensuring a solid grasp of architectural fundamentals."
       ],
       "videoPublishedAt": "2026-05-26T12:30:16Z",
-      "addedToPlaylistAt": "2026-06-03T00:11:15Z"
+      "addedToPlaylistAt": "2026-06-03T00:11:15Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "vUL5DWs-hIQ",
@@ -9035,7 +9241,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=vUL5DWs-hIQ",
       "language": "en",
       "durationSeconds": 640,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -9071,7 +9277,8 @@
         "Create agent-ready APIs with clear, self-documenting semantic interfaces."
       ],
       "videoPublishedAt": "2026-06-02T12:00:30Z",
-      "addedToPlaylistAt": "2026-06-03T00:09:27Z"
+      "addedToPlaylistAt": "2026-06-03T00:09:27Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "ckpli4Idb_E",
@@ -9079,7 +9286,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=ckpli4Idb_E",
       "language": "en",
       "durationSeconds": 3338,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -9117,7 +9324,8 @@
         "Consider glycine's role in maintaining healthy blood sugar and reducing platelet stickiness to prevent clots."
       ],
       "videoPublishedAt": "2026-04-22T17:00:51Z",
-      "addedToPlaylistAt": "2026-06-02T20:02:54Z"
+      "addedToPlaylistAt": "2026-06-02T20:02:54Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "KA5kPbdkK2E",
@@ -9125,7 +9333,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=KA5kPbdkK2E",
       "language": "en",
       "durationSeconds": 1145,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -9161,7 +9369,8 @@
         "Automate the detection-to-fix cycle to achieve rapid, continuous improvement in AI systems."
       ],
       "videoPublishedAt": "2026-06-02T16:00:33Z",
-      "addedToPlaylistAt": "2026-06-02T19:18:01Z"
+      "addedToPlaylistAt": "2026-06-02T19:18:01Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "WcmQPMrCYV8",
@@ -9169,7 +9378,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=WcmQPMrCYV8",
       "language": "ko",
       "durationSeconds": 837,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -9205,7 +9414,8 @@
         "리서치부터 개발까지 전 과정에서 에이전트가 위키를 통해 일관된 맥락을 공유하도록 통합하세요."
       ],
       "videoPublishedAt": "2026-05-29T09:30:14Z",
-      "addedToPlaylistAt": "2026-06-01T15:13:42Z"
+      "addedToPlaylistAt": "2026-06-01T15:13:42Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "ehT3U935Pww",
@@ -9213,7 +9423,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=ehT3U935Pww",
       "language": "en",
       "durationSeconds": 2275,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -9250,7 +9460,8 @@
         "Expect consolidation as an inevitable outcome in highly cyclical and competitive industries like DRAM."
       ],
       "videoPublishedAt": "2026-05-31T23:00:36Z",
-      "addedToPlaylistAt": "2026-06-01T14:26:34Z"
+      "addedToPlaylistAt": "2026-06-01T14:26:34Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "ShGT-fY7S98",
@@ -9258,7 +9469,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=ShGT-fY7S98",
       "language": "en",
       "durationSeconds": 998,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -9295,7 +9506,8 @@
         "Be aware of \"AI redundancy washing\" as a reason for layoffs."
       ],
       "videoPublishedAt": "2026-05-31T11:50:29Z",
-      "addedToPlaylistAt": "2026-06-01T14:26:16Z"
+      "addedToPlaylistAt": "2026-06-01T14:26:16Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "EpQwoNbmBkg",
@@ -9303,7 +9515,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=EpQwoNbmBkg",
       "language": "ko",
       "durationSeconds": 1217,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 3,
@@ -9339,7 +9551,8 @@
         "Eleven Labs Dubbing V2는 감정을 살린 자연스러운 더빙을 제공하여 콘텐츠 현지화에 유용합니다."
       ],
       "videoPublishedAt": "2026-06-01T13:00:21Z",
-      "addedToPlaylistAt": "2026-06-01T14:25:41Z"
+      "addedToPlaylistAt": "2026-06-01T14:25:41Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "kS-CGkiPetQ",
@@ -9347,7 +9560,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=kS-CGkiPetQ",
       "language": "en",
       "durationSeconds": 1794,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -9384,7 +9597,8 @@
         "Optimizing pathfinding involves a trade-off between pre-processing time (to build hierarchical structures) and real-time query speed."
       ],
       "videoPublishedAt": "2026-05-30T14:46:43Z",
-      "addedToPlaylistAt": "2026-06-01T14:24:47Z"
+      "addedToPlaylistAt": "2026-06-01T14:24:47Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "v_jDvpEGTIg",
@@ -9392,7 +9606,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=v_jDvpEGTIg",
       "language": "en",
       "durationSeconds": 2457,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -9428,7 +9642,8 @@
         "Explore hierarchical JEPA models as a solution for extended planning horizons in complex tasks."
       ],
       "videoPublishedAt": "2026-05-30T18:18:59Z",
-      "addedToPlaylistAt": "2026-06-01T14:24:01Z"
+      "addedToPlaylistAt": "2026-06-01T14:24:01Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "9ipSHOYNo6w",
@@ -9436,7 +9651,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=9ipSHOYNo6w",
       "language": "ko",
       "durationSeconds": 263,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -9472,7 +9687,8 @@
         "Consider how personal observations can lead to significant scientific discoveries."
       ],
       "videoPublishedAt": "2026-05-29T09:00:19Z",
-      "addedToPlaylistAt": "2026-05-31T13:18:49Z"
+      "addedToPlaylistAt": "2026-05-31T13:18:49Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "WklhyUhD4ko",
@@ -9480,7 +9696,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=WklhyUhD4ko",
       "language": "ko",
       "durationSeconds": 723,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -9516,7 +9732,8 @@
         "Adopt a multi-agent orchestration mindset for future AI-powered software development."
       ],
       "videoPublishedAt": "2026-05-30T23:00:35Z",
-      "addedToPlaylistAt": "2026-05-31T12:46:41Z"
+      "addedToPlaylistAt": "2026-05-31T12:46:41Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "cCGTAaKiQ4o",
@@ -9524,7 +9741,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=cCGTAaKiQ4o",
       "language": "ko",
       "durationSeconds": 1577,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -9560,7 +9777,8 @@
         "김치 담그기 등에도 저염 대체 소금 사용 시 발효와 식감에 문제가 없음이 확인되었습니다."
       ],
       "videoPublishedAt": "2026-05-28T10:00:04Z",
-      "addedToPlaylistAt": "2026-05-30T16:04:40Z"
+      "addedToPlaylistAt": "2026-05-30T16:04:40Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "yWyJKCZG990",
@@ -9568,7 +9786,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=yWyJKCZG990",
       "language": "ko",
       "durationSeconds": 2105,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -9604,7 +9822,8 @@
         "Consider Graph RAG as a complementary approach to vector database-based RAG for enhanced performance."
       ],
       "videoPublishedAt": "2026-06-06T02:00:10Z",
-      "addedToPlaylistAt": "2026-06-08T02:03:39Z"
+      "addedToPlaylistAt": "2026-06-08T02:03:39Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "BCg6dNYNmPI",
@@ -9612,7 +9831,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=BCg6dNYNmPI",
       "language": "ko",
       "durationSeconds": 2392,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -9648,7 +9867,8 @@
         "Start with just 10 minutes daily; consistency is key for significant health improvements."
       ],
       "videoPublishedAt": "2026-05-21T21:15:01Z",
-      "addedToPlaylistAt": "2026-06-08T18:58:38Z"
+      "addedToPlaylistAt": "2026-06-08T18:58:38Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "i6gVDcx54FY",
@@ -9656,7 +9876,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=i6gVDcx54FY",
       "language": "en",
       "durationSeconds": 1854,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -9693,7 +9913,8 @@
         "Treat AI-discovered bugs as public immediately to align with the new reality of rapid disclosure."
       ],
       "videoPublishedAt": "2026-06-08T09:00:12Z",
-      "addedToPlaylistAt": "2026-06-08T18:23:44Z"
+      "addedToPlaylistAt": "2026-06-08T18:23:44Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "YhL7v75Wu7c",
@@ -9701,7 +9922,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=YhL7v75Wu7c",
       "language": "ko",
       "durationSeconds": 1316,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -9737,7 +9958,8 @@
         "Recognize that 'AI Native' talent needs to understand how AI integrates with existing robust systems."
       ],
       "videoPublishedAt": "2026-06-08T09:00:30Z",
-      "addedToPlaylistAt": "2026-06-08T14:16:36Z"
+      "addedToPlaylistAt": "2026-06-08T14:16:36Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "b06GM7Ok1io",
@@ -9745,7 +9967,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=b06GM7Ok1io",
       "language": "en",
       "durationSeconds": 1090,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -9781,7 +10003,8 @@
         "Start Agentic AI adoption with critical, well-defined business functions to ensure successful scaling."
       ],
       "videoPublishedAt": "2026-06-07T02:52:10Z",
-      "addedToPlaylistAt": "2026-06-07T15:46:15Z"
+      "addedToPlaylistAt": "2026-06-07T15:46:15Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "okdwcU-UC-w",
@@ -9789,7 +10012,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=okdwcU-UC-w",
       "language": "en",
       "durationSeconds": 777,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 4,
         "depth": 4,
@@ -9825,7 +10048,8 @@
         "Identify specific use cases where a private, offline multimodal AI excels."
       ],
       "videoPublishedAt": "2026-06-05T07:00:05Z",
-      "addedToPlaylistAt": "2026-06-06T16:36:17Z"
+      "addedToPlaylistAt": "2026-06-06T16:36:17Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "1dYp9ymqy_g",
@@ -9833,7 +10057,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=1dYp9ymqy_g",
       "language": "en",
       "durationSeconds": 2533,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -9869,7 +10093,8 @@
         "Consider AI as a ghostwriter for paragraph-by-paragraph assistance, translating your ideas into prose."
       ],
       "videoPublishedAt": "2026-06-02T09:00:24Z",
-      "addedToPlaylistAt": "2026-06-06T14:45:42Z"
+      "addedToPlaylistAt": "2026-06-06T14:45:42Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "xO3wxkk-y6M",
@@ -9877,7 +10102,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=xO3wxkk-y6M",
       "language": "ko",
       "durationSeconds": 1182,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -9913,7 +10138,8 @@
         "NVIDIA's culture of transparency and in-house research drives rapid architectural innovation."
       ],
       "videoPublishedAt": "2026-06-06T04:05:40Z",
-      "addedToPlaylistAt": "2026-06-06T06:25:44Z"
+      "addedToPlaylistAt": "2026-06-06T06:25:44Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "YVScoEeSNvs",
@@ -9921,7 +10147,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=YVScoEeSNvs",
       "language": "ko",
       "durationSeconds": 1014,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -9959,7 +10185,8 @@
         "Consider the evolving role of memory companies in the AI hardware ecosystem."
       ],
       "videoPublishedAt": "2026-04-13T04:10:02Z",
-      "addedToPlaylistAt": "2026-06-06T01:41:48Z"
+      "addedToPlaylistAt": "2026-06-06T01:41:48Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "w1yB7ck36JA",
@@ -9967,7 +10194,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=w1yB7ck36JA",
       "language": "en",
       "durationSeconds": 2797,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -10003,7 +10230,8 @@
         "Establish human-in-the-loop processes to build trust in AI agent delegation."
       ],
       "videoPublishedAt": "2026-06-05T16:00:25Z",
-      "addedToPlaylistAt": "2026-06-05T23:18:15Z"
+      "addedToPlaylistAt": "2026-06-05T23:18:15Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "S7Yc3BnQrkU",
@@ -10011,7 +10239,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=S7Yc3BnQrkU",
       "language": "en",
       "durationSeconds": 1237,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -10047,7 +10275,8 @@
         "Focus on building AI solutions for niche, regulated industries (on-device AI) to create truly defensible value."
       ],
       "videoPublishedAt": "2026-06-03T21:30:26Z",
-      "addedToPlaylistAt": "2026-06-05T22:56:45Z"
+      "addedToPlaylistAt": "2026-06-05T22:56:45Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "zmrPY6S1FwY",
@@ -10055,7 +10284,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=zmrPY6S1FwY",
       "language": "en",
       "durationSeconds": 838,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -10091,7 +10320,8 @@
         "Structure your AIOS with entity types for agents, skills, and workflows for modularity."
       ],
       "videoPublishedAt": "2026-06-04T15:53:50Z",
-      "addedToPlaylistAt": "2026-06-05T22:31:00Z"
+      "addedToPlaylistAt": "2026-06-05T22:31:00Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "RfAbsdq_b-A",
@@ -10099,7 +10329,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=RfAbsdq_b-A",
       "language": "en",
       "durationSeconds": 1185,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -10137,7 +10367,8 @@
         "Achieve superior RAG performance and faster retrieval times with Memory Graph RAG, even with accessible LLMs."
       ],
       "videoPublishedAt": "2026-06-03T13:30:26Z",
-      "addedToPlaylistAt": "2026-06-05T11:21:43Z"
+      "addedToPlaylistAt": "2026-06-05T11:21:43Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "504PvfXou5Y",
@@ -10145,7 +10376,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=504PvfXou5Y",
       "language": "en",
       "durationSeconds": 769,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -10182,7 +10413,8 @@
         "Focus agent workflows with \"skills\" to efficiently apply relevant checks and context for different development tasks."
       ],
       "videoPublishedAt": "2026-06-03T13:00:08Z",
-      "addedToPlaylistAt": "2026-06-04T00:29:49Z"
+      "addedToPlaylistAt": "2026-06-04T00:29:49Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "Ef85o2nLxW4",
@@ -10190,7 +10422,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=Ef85o2nLxW4",
       "language": "en",
       "durationSeconds": 1135,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 4,
         "depth": 4,
@@ -10227,7 +10459,8 @@
         "Start with a detailed spec and design (Claw Code) for efficient development."
       ],
       "videoPublishedAt": "2026-05-29T02:43:50Z",
-      "addedToPlaylistAt": "2026-06-03T21:15:54Z"
+      "addedToPlaylistAt": "2026-06-03T21:15:54Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "vy7o1g2iHY8",
@@ -10235,7 +10468,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=vy7o1g2iHY8",
       "language": "en",
       "durationSeconds": 1063,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -10271,7 +10504,8 @@
         "Build AI agent systems that automatically learn and remember past mistakes for continuous improvement."
       ],
       "videoPublishedAt": "2026-05-30T18:00:06Z",
-      "addedToPlaylistAt": "2026-06-02T14:54:43Z"
+      "addedToPlaylistAt": "2026-06-02T14:54:43Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "Xh1z23uBZo0",
@@ -10279,7 +10513,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=Xh1z23uBZo0",
       "language": "en",
       "durationSeconds": 8436,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 5,
@@ -10315,7 +10549,8 @@
         "Pass context between workflow steps via structured markdown files for clarity and traceability."
       ],
       "videoPublishedAt": "2026-05-31T04:37:29Z",
-      "addedToPlaylistAt": "2026-05-31T00:22:13Z"
+      "addedToPlaylistAt": "2026-05-31T00:22:13Z",
+      "removedFromPlaylist": true
     },
     {
       "id": "3_gYbhABcAE",
@@ -10323,7 +10558,7 @@
       "youtubeUrl": "https://www.youtube.com/watch?v=3_gYbhABcAE",
       "language": "en",
       "durationSeconds": 640,
-      "archived": false,
+      "archived": true,
       "ratings": {
         "usefulness": 5,
         "depth": 4,
@@ -10359,7 +10594,361 @@
         "Design self-documenting APIs explicitly for agent comprehension and use."
       ],
       "videoPublishedAt": "2026-05-30T14:00:06Z",
-      "addedToPlaylistAt": "2026-05-30T16:04:06Z"
+      "addedToPlaylistAt": "2026-05-30T16:04:06Z",
+      "removedFromPlaylist": true
+    },
+    {
+      "id": "f8Hr_7FyKMQ",
+      "title": "Wk02 - Stanford CS146S - Turning LLMs Into Autonomous Doers",
+      "youtubeUrl": "https://www.youtube.com/watch?v=f8Hr_7FyKMQ",
+      "language": "en",
+      "durationSeconds": 970,
+      "archived": false,
+      "ratings": {
+        "usefulness": 5,
+        "depth": 4,
+        "originality": 4,
+        "recency": 5,
+        "completeness": 5
+      },
+      "overallScore": 4.6,
+      "summaryMd": "wk02-stanford-cs146s-turning-llms-into-autonomous-doers.md",
+      "summaryPdf": "pdfs/wk02-stanford-cs146s-turning-llms-into-autonomous-doers.pdf",
+      "deepDiveMd": null,
+      "deepDivePdf": null,
+      "processedAt": "2026-06-09T02:22:42.565Z",
+      "playlistIndex": 1,
+      "videoType": "Analysis",
+      "audience": "Intermediate",
+      "channel": "AI With Ryan",
+      "tags": [
+        "model context protocol",
+        "llm tools",
+        "ai agents",
+        "api integration",
+        "realtime data",
+        "oauth 2.0",
+        "interoperability"
+      ],
+      "tldr": "This video explains the Model Context Protocol (MCP), a new open standard enabling LLMs to securely and dynamically access real-world data and external tools.",
+      "takeaways": [
+        "Understand MCP as the \"USBC\" for connecting LLMs to external services.",
+        "Leverage MCP servers to abstract complex API integrations and credential management.",
+        "Utilize the MCP registry for discovering and verifying available tools and services.",
+        "Recognize OAuth 2.0 as crucial for secure, scalable multi-user agent authorization.",
+        "Consider designing \"AI native\" APIs to optimize data for LLM consumption via MCP."
+      ],
+      "videoPublishedAt": "2026-01-02T15:54:50Z",
+      "addedToPlaylistAt": "2026-01-02T15:54:14Z"
+    },
+    {
+      "id": "zbWWTUM0O2E",
+      "title": "Wk09 - Stanford CS146S - Agents Post-Deployment",
+      "youtubeUrl": "https://www.youtube.com/watch?v=zbWWTUM0O2E",
+      "language": "en",
+      "durationSeconds": 813,
+      "archived": false,
+      "ratings": {
+        "usefulness": 5,
+        "depth": 4,
+        "originality": 3,
+        "recency": 4,
+        "completeness": 4
+      },
+      "overallScore": 4,
+      "summaryMd": "wk09-stanford-cs146s-agents-post-deployment.md",
+      "summaryPdf": "pdfs/wk09-stanford-cs146s-agents-post-deployment.pdf",
+      "deepDiveMd": null,
+      "deepDivePdf": null,
+      "processedAt": "2026-06-09T02:23:00.921Z",
+      "playlistIndex": 2,
+      "videoType": "Analysis",
+      "audience": "Intermediate",
+      "channel": "AI With Ryan",
+      "tags": [
+        "site reliability engineering",
+        "AI native engineering",
+        "DevOps",
+        "system operations",
+        "observability",
+        "incident management",
+        "microservices"
+      ],
+      "tldr": "This video traces the evolution of system management from manual SysAdmin to SRE principles and the emerging AI-native engineering paradigm for handling complex cloud-native systems.",
+      "takeaways": [
+        "Traditional SysAdmin led to dev-ops conflict and unsustainable operational costs.",
+        "SRE treats operations as software problems, capping manual \"toil\" and shifting excess to developers.",
+        "Error budgets enable strategic risk-taking, making calculated outages part of innovation.",
+        "Modern distributed systems demand robust observability (traces and spans) to manage complexity.",
+        "AI-native agents aim to automate complex incident resolution, freeing engineers for creative work."
+      ],
+      "videoPublishedAt": "2025-12-27T16:09:33Z",
+      "addedToPlaylistAt": "2025-12-28T04:09:20Z"
+    },
+    {
+      "id": "QIcr9-r1JAo",
+      "title": "Wk08 - Stanford CS146S - Automated UI and App Building",
+      "youtubeUrl": "https://www.youtube.com/watch?v=QIcr9-r1JAo",
+      "language": "en",
+      "durationSeconds": 833,
+      "archived": false,
+      "ratings": {
+        "usefulness": 5,
+        "depth": 5,
+        "originality": 4,
+        "recency": 5,
+        "completeness": 5
+      },
+      "overallScore": 4.8,
+      "summaryMd": "wk08-stanford-cs146s-automated-ui-and-app-building.md",
+      "summaryPdf": "pdfs/wk08-stanford-cs146s-automated-ui-and-app-building.pdf",
+      "deepDiveMd": null,
+      "deepDivePdf": null,
+      "processedAt": "2026-06-09T02:23:18.982Z",
+      "playlistIndex": 3,
+      "videoType": "Analysis",
+      "audience": "Advanced",
+      "channel": "AI With Ryan",
+      "tags": [
+        "AI development",
+        "code generation",
+        "software engineering",
+        "Vercel V0",
+        "LLMs",
+        "agentic workflow",
+        "developer tools"
+      ],
+      "tldr": "This video explains how AI is disrupting software development, moving from manual coding to agent-driven code generation, shifting developer value to ideation.",
+      "takeaways": [
+        "Understand the historical complexity of software development (e.g., MERN stack, AWS serverless).",
+        "Recognize the limitations of first-wave low-code/no-code platforms for complex applications.",
+        "Learn the 5-step agentic workflow for AI-driven code generation, from intent to deployment.",
+        "Appreciate how stream manipulation and autofixers ensure reliability in AI-generated code.",
+        "Focus on idea validation and strategy, as execution becomes less of a bottleneck with AI."
+      ],
+      "videoPublishedAt": "2025-12-25T15:06:20Z",
+      "addedToPlaylistAt": "2025-12-28T04:09:20Z"
+    },
+    {
+      "id": "GxjMPl2x8ac",
+      "title": "Wk06 - Stanford CS146S - AI Testing and Security",
+      "youtubeUrl": "https://www.youtube.com/watch?v=GxjMPl2x8ac",
+      "language": "en",
+      "durationSeconds": 1029,
+      "archived": false,
+      "ratings": {
+        "usefulness": 5,
+        "depth": 4,
+        "originality": 4,
+        "recency": 5,
+        "completeness": 5
+      },
+      "overallScore": 4.6,
+      "summaryMd": "wk06-stanford-cs146s-ai-testing-and-security.md",
+      "summaryPdf": "pdfs/wk06-stanford-cs146s-ai-testing-and-security.pdf",
+      "deepDiveMd": null,
+      "deepDivePdf": null,
+      "processedAt": "2026-06-09T02:23:57.039Z",
+      "playlistIndex": 5,
+      "videoType": "Analysis",
+      "audience": "Intermediate",
+      "channel": "AI With Ryan",
+      "tags": [
+        "agentic ai",
+        "llm security",
+        "prompt injection",
+        "remote code execution",
+        "context rot",
+        "cybersecurity",
+        "ai agents"
+      ],
+      "tldr": "This video explains the severe security threats of autonomous AI agents and the underlying fragility of LLMs due to context rot, outlining crucial defense strategies.",
+      "takeaways": [
+        "Agentic AI introduces amplified RCE and data theft risks beyond traditional prompt injections.",
+        "LLMs exhibit \"context rot,\" making them unreliable in long contexts and prone to non-determinism.",
+        "Implement layered defenses: prompt hardening, runtime content filtering, tool input sanitization, and strict sandboxing.",
+        "Be wary of AI's \"YOLO mode\" exploits where agents can rewrite their own permissions, creating supply chain attack risks.",
+        "LLMs struggle with data flow analysis in SAST and paradoxically perform better with shuffled, unstructured input."
+      ],
+      "videoPublishedAt": "2025-12-21T14:31:17Z",
+      "addedToPlaylistAt": "2025-12-28T04:09:20Z"
+    },
+    {
+      "id": "l2akvYwmicQ",
+      "title": "Wk05 - Stanford CS146S - Modern AI Terminal",
+      "youtubeUrl": "https://www.youtube.com/watch?v=l2akvYwmicQ",
+      "language": "en",
+      "durationSeconds": 1002,
+      "archived": false,
+      "ratings": {
+        "usefulness": 5,
+        "depth": 4,
+        "originality": 4,
+        "recency": 5,
+        "completeness": 4
+      },
+      "overallScore": 4.4,
+      "summaryMd": "wk05-stanford-cs146s-modern-ai-terminal.md",
+      "summaryPdf": "pdfs/wk05-stanford-cs146s-modern-ai-terminal.pdf",
+      "deepDiveMd": null,
+      "deepDivePdf": null,
+      "processedAt": "2026-06-09T02:24:14.962Z",
+      "playlistIndex": 6,
+      "videoType": "Analysis",
+      "audience": "Advanced",
+      "channel": "AI With Ryan",
+      "tags": [
+        "ai developer tools",
+        "agentic workflows",
+        "software development",
+        "product principles",
+        "multicontext protocol",
+        "llms",
+        "developer experience",
+        "warp"
+      ],
+      "tldr": "This video explores the rapid acceleration of agentic AI developer tools, detailing the product principles, critical technologies, and workflow shifts shaping the future.",
+      "takeaways": [
+        "Understand agentic workflows enable AI to autonomously decompose and execute complex tasks.",
+        "Prioritize usability, control, and speed when designing new AI-powered dev tools.",
+        "Utilize Multicontext Protocol (MCP) to give LLMs \"eyes and hands\" in their environment.",
+        "Choose between \"strategic\" (correctness) and \"YOLO\" (speed) agent profiles based on business goals.",
+        "Manage agent context effectively using project-specific documentation like `warp.md`."
+      ],
+      "videoPublishedAt": "2025-12-20T04:22:59Z",
+      "addedToPlaylistAt": "2025-12-28T04:09:20Z"
+    },
+    {
+      "id": "NRBLfDOL_vg",
+      "title": "Wk04 - Stanford CS146S - Coding Agent Patterns",
+      "youtubeUrl": "https://www.youtube.com/watch?v=NRBLfDOL_vg",
+      "language": "en",
+      "durationSeconds": 920,
+      "archived": false,
+      "ratings": {
+        "usefulness": 5,
+        "depth": 4,
+        "originality": 4,
+        "recency": 5,
+        "completeness": 4
+      },
+      "overallScore": 4.4,
+      "summaryMd": "wk04-stanford-cs146s-coding-agent-patterns.md",
+      "summaryPdf": "pdfs/wk04-stanford-cs146s-coding-agent-patterns.pdf",
+      "deepDiveMd": null,
+      "deepDivePdf": null,
+      "processedAt": "2026-06-09T02:24:32.877Z",
+      "playlistIndex": 7,
+      "videoType": "Framework",
+      "audience": "Intermediate",
+      "channel": "AI With Ryan",
+      "tags": [
+        "ai coding",
+        "agentic development",
+        "context engineering",
+        "developer productivity",
+        "claude code",
+        "multi-agent systems",
+        "software development future"
+      ],
+      "tldr": "This video explains how developers are evolving into \"agent managers\" by mastering context engineering to orchestrate autonomous AI agents for exponential productivity gains.",
+      "takeaways": [
+        "Transition from writing code to managing AI agent output for development.",
+        "Master context engineering by defining agent knowledge bases and constraints.",
+        "Implement a hierarchical workflow with human review gates at each stage.",
+        "Utilize `kil.md` files and explicit permissions for agent control and safety.",
+        "Adopt specialized multi-agent systems and test-driven approaches for optimal results."
+      ],
+      "videoPublishedAt": "2025-12-17T17:46:08Z",
+      "addedToPlaylistAt": "2025-12-28T04:09:20Z"
+    },
+    {
+      "id": "E3U-AquW5hs",
+      "title": "Wk03 - Stanford CS146S - AI IDE",
+      "youtubeUrl": "https://www.youtube.com/watch?v=E3U-AquW5hs",
+      "language": "en",
+      "durationSeconds": 870,
+      "archived": false,
+      "ratings": {
+        "usefulness": 5,
+        "depth": 4,
+        "originality": 4,
+        "recency": 5,
+        "completeness": 4
+      },
+      "overallScore": 4.4,
+      "summaryMd": "wk03-stanford-cs146s-ai-ide.md",
+      "summaryPdf": "pdfs/wk03-stanford-cs146s-ai-ide.pdf",
+      "deepDiveMd": null,
+      "deepDivePdf": null,
+      "processedAt": "2026-06-09T02:24:46.392Z",
+      "playlistIndex": 8,
+      "videoType": "Analysis",
+      "audience": "Advanced",
+      "channel": "AI With Ryan",
+      "tags": [
+        "ai coding agents",
+        "software engineering",
+        "developer productivity",
+        "prompt engineering",
+        "asynchronous workflows",
+        "ai delegation",
+        "context management"
+      ],
+      "tldr": "This video explains how to leverage autonomous AI coding agents to achieve massive productivity gains by mastering delegation and understanding their technical limits.",
+      "takeaways": [
+        "Delegate large tasks to asynchronous AI agents to achieve true parallelism and multi-thread your work.",
+        "Treat AI agents like junior partners, providing specific, defensive prompts with full context for success.",
+        "Utilize strictly typed languages and strong feedback loops for AI error correction and faster iteration.",
+        "Break down multi-hour AI tasks with explicit human approval checkpoints to prevent cascading errors.",
+        "Engineer AI environments with ergonomic tools and codified team knowledge to avoid context failure modes."
+      ],
+      "videoPublishedAt": "2025-12-14T17:35:11Z",
+      "addedToPlaylistAt": "2025-12-28T04:09:20Z"
+    },
+    {
+      "id": "fdquDw1IfmM",
+      "title": "Wk01 - Stanford CS146S - Introduction to Coding LLMs and AI Development",
+      "youtubeUrl": "https://www.youtube.com/watch?v=fdquDw1IfmM",
+      "language": "en",
+      "durationSeconds": 845,
+      "archived": false,
+      "ratings": {
+        "usefulness": 5,
+        "depth": 4,
+        "originality": 3,
+        "recency": 5,
+        "completeness": 4
+      },
+      "overallScore": 4.2,
+      "summaryMd": "wk01-stanford-cs146s-introduction-to-coding-llms-and-ai-deve.md",
+      "summaryPdf": "pdfs/wk01-stanford-cs146s-introduction-to-coding-llms-and-ai-deve.pdf",
+      "deepDiveMd": null,
+      "deepDivePdf": null,
+      "processedAt": "2026-06-09T02:25:02.472Z",
+      "playlistIndex": 9,
+      "videoType": "Analysis",
+      "audience": "Intermediate",
+      "channel": "AI With Ryan",
+      "tags": [
+        "large language models",
+        "llm training",
+        "prompt engineering",
+        "artificial intelligence",
+        "machine learning",
+        "deep learning",
+        "retrieval augmented generation"
+      ],
+      "tldr": "This video dissects the multi-stage pipeline of large language model training and reveals advanced prompting techniques for effective professional use.",
+      "takeaways": [
+        "LLMs predict the next token, functioning as a probabilistic zip file of human knowledge.",
+        "Training involves pre-training, supervised fine-tuning, and reinforcement learning stages.",
+        "Use \"Chain of Thought\" prompting for complex tasks to enable step-by-step reasoning.",
+        "Employ Retrieval Augmented Generation (RAG) to combat hallucinations with current data.",
+        "Define explicit roles and persistent context for LLMs to maximize accuracy and efficiency."
+      ],
+      "videoPublishedAt": "2025-12-12T02:47:38Z",
+      "addedToPlaylistAt": "2025-12-28T04:09:20Z"
     }
   ]
 }
