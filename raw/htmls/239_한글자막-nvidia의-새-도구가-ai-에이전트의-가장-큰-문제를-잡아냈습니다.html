@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="magazine-skim v1">
+<meta name="source-md" content="239_한글자막-nvidia의-새-도구가-ai-에이전트의-가장-큰-문제를-잡아냈습니다.md">
+<meta name="video-id" content="VBnG5Fse2ms">
+<title>[한글자막] Nvidia의 새 도구가 AI 에이전트의 가장 큰 문제를 잡아냈습니다</title>
+<script>(function(){try{var t=localStorage.getItem('html-doc-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<style>
+:root{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="light"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="dark"]{--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}}
+html.theme-ready body,html.theme-ready #theme-toggle,html.theme-ready #print-btn{transition:background-color .2s,color .2s}
+#theme-toggle,#print-btn{position:fixed;top:1rem;width:2.4rem;height:2.4rem;border-radius:50%;border:1px solid rgba(128,128,128,.35);background:var(--card);color:var(--ink);font-size:1.1rem;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;z-index:10}
+#theme-toggle{right:1rem}#print-btn{right:3.6rem}
+@media print{:root,:root:not([data-theme]),[data-theme="light"],[data-theme="dark"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}#theme-toggle,#print-btn{display:none}}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",'Apple SD Gothic Neo',Helvetica,Arial,sans-serif}
+.v4{max-width:50rem;margin:0 auto;background:var(--card);padding:2.8rem 3rem 4rem;box-shadow:var(--shadow)}
+html.theme-ready .v4{transition:background-color .2s,color .2s}
+.doc-title{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:2rem;line-height:1.2;margin:0 0 .15em}
+.doc-meta{color:var(--meta);font-size:.9rem;margin:0 0 1.8em}
+.doc-meta a{color:inherit;text-decoration:none}
+.doc-meta a:hover{text-decoration:underline}
+.callout{margin:0 0 2.4em;border-top:2px solid var(--goldline);border-bottom:2px solid var(--goldline);padding:1em 0}
+.callout .lbl{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-size:.7rem;font-weight:700;margin-bottom:.5em}
+.callout p{margin:.2em 0 .8em}
+.callout ul{padding-left:1.1em;margin:.4em 0 0}
+.callout li{margin:.25em 0}
+section{position:relative;padding:1.6em 0 1.2em;border-bottom:1px solid var(--rule)}
+.ghost{font:700 4.5rem/1 Georgia,serif;color:var(--ghost);position:absolute;right:0;top:.1em;pointer-events:none;user-select:none}
+h2{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:1.3rem;margin:.1em 0 .35em}
+.lead{font-size:1.02rem;line-height:1.5;color:var(--gold);font-weight:400;margin:.2em 0 .8em;max-width:90%}
+.ts{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.85rem;font-weight:400;text-decoration:none;white-space:nowrap}
+.ts:hover{text-decoration:underline}
+ul{padding-left:1.15em;margin:0}
+li{margin:.4em 0;line-height:1.6;color:var(--li)}
+footer{margin-top:2.5em;color:var(--foot);font-size:.8rem}
+@media print{body{background:#fff}.v4{box-shadow:none}}
+.dig{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.8rem;font-weight:400;text-decoration:none;white-space:nowrap;cursor:pointer}.dig:hover{text-decoration:underline}</style>
+</head>
+<body>
+<button id="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light/dark">🌙</button><button id="print-btn" type="button" onclick="window.print()" aria-label="Print" title="Print">🖨️</button>
+<article class="v4">
+  <h1 class="doc-title">[한글자막] Nvidia의 새 도구가 AI 에이전트의 가장 큰 문제를 잡아냈습니다</h1>
+  <p class="doc-meta">Tech Bridge · 9:17 · <a href="https://www.youtube.com/watch?v=VBnG5Fse2ms" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=VBnG5Fse2ms</a></p>
+  <div class="callout">
+    <div class="lbl">Quick Reference</div>
+    <p>This video demonstrates how to use Nvidia's Skill Specter and Claude Code to build a secure workflow for discovering, scanning, and installing AI agent skills</p>
+    <ul><li>Verify AI agent skills with tools like Skill Specter before installation to prevent vulnerabilities.</li><li>Enable advanced AI scans (via Claude headless mode) to detect sophisticated, camouflaged skill attacks.</li><li>Implement a secure workflow to search, scan, and automatically fix AI agent skill vulnerabilities.</li><li>Understand common AI skill attack vectors like hidden instructions, impersonation, and poison dependencies.</li></ul>
+  </div>
+  <section data-start="0">
+      <span class="ghost">1</span>
+      <h2>The Peril of AI Agent Skills and Nvidia's Skill Specter <a class="ts" href="https://www.youtube.com/watch?v=VBnG5Fse2ms&amp;t=0s" target="_blank" rel="noopener noreferrer">(0:00–1:22)</a> <a class="dig" data-type="deep-dive" data-t="0">dig deeper ▾</a></h2>
+      <p class="lead">Over a quarter of AI agent skills have security flaws; Nvidia's Skill Specter detects them, but advanced attacks require a specialized AI scan.</p>
+      <ul><li>Over a quarter of AI agent skills contain security vulnerabilities, posing a significant risk to systems.</li><li>Nvidia's Skill Specter is a tool designed to scan AI agent skills before installation.</li><li>Skill Specter provides a danger score and pinpoints the exact location of identified conflicts within the skills.</li><li>A specific type of attack can bypass Skill Specter's default settings, requiring an advanced scan.</li><li>Bypassed attacks necessitate an advanced, often paid, AI-powered scan for detection.</li></ul>
+    </section>
+<section data-start="82">
+      <span class="ghost">2</span>
+      <h2>Unmasking Malicious Skills: Six Categories of Attacks <a class="ts" href="https://www.youtube.com/watch?v=VBnG5Fse2ms&amp;t=82s" target="_blank" rel="noopener noreferrer">(1:22–4:02)</a> <a class="dig" data-type="deep-dive" data-t="82">dig deeper ▾</a></h2>
+      <p class="lead">Six attack categories target AI agent skills, from hidden code to credential theft, while basic scans catch only pattern-based threats.</p>
+      <ul><li>Malicious code can be embedded as hidden instructions in comments, invisible characters, or scrambled text readable only by AI.</li><li>Attackers create tools with names identical to trusted agent tools by using homoglyphs, facilitating impersonation.</li><li>Skills may lie about functionality, such as a formatter secretly accessing the internet or a reader writing files and running commands.</li><li>Some skills are designed to locate and exfiltrate sensitive information like API keys and passwords.</li><li>Malicious skills can execute known malware, including reverse shells, to gain remote control over systems.</li><li>Attacks can utilize malicious CLI tools or fake packages, often typos of legitimate ones, to execute malware.</li><li>Skill Specter's basic mode primarily catches vulnerabilities based on recognizable patterns.</li></ul>
+    </section>
+<section data-start="242">
+      <span class="ghost">3</span>
+      <h2>Activating the Advanced AI Scan for Deeper Vulnerability Detection <a class="ts" href="https://www.youtube.com/watch?v=VBnG5Fse2ms&amp;t=242s" target="_blank" rel="noopener noreferrer">(4:02–5:20)</a> <a class="dig" data-type="deep-dive" data-t="242">dig deeper ▾</a></h2>
+      <p class="lead">Skill Specter offers an advanced AI-powered scan to detect sophisticated attacks, which can be accessed via a workaround using Claude Code.</p>
+      <ul><li>The initial scanning mode relies on pattern matching, which can sometimes produce false positives.</li><li>A second, AI-powered scan is offered to catch more sophisticated attacks, like skills lying about their functionality.</li><li>This AI scan typically requires an OpenAI key and incurs a cost for its advanced analysis.</li><li>A workaround involves using Claude Code's headless mode and its monthly Anthropic credits to bypass the direct cost.</li><li>The workaround enables a deeper, context-aware analysis, thoroughly vetting skills that seem safe in the basic scan.</li></ul>
+    </section>
+<section data-start="320">
+      <span class="ghost">4</span>
+      <h2>Transforming Skill Specter into a Secure Skill Discovery Workflow <a class="ts" href="https://www.youtube.com/watch?v=VBnG5Fse2ms&amp;t=320s" target="_blank" rel="noopener noreferrer">(5:20–6:55)</a> <a class="dig" data-type="deep-dive" data-t="320">dig deeper ▾</a></h2>
+      <p class="lead">Skill Specter can become a skill discovery workflow using `skills.sh` and custom scripts for scanning and automated vulnerability fixing.</p>
+      <ul><li>Skill Specter can be integrated into a proactive 'discover skills' workflow by transforming the scanner into a skill.</li><li>The workflow utilizes `skills.sh`, a Git repository for AI agent skills, to search for new skills.</li><li>A custom `scan.sh` script is used to run Skill Specter, including the Claude headless mode fix for the AI check.</li><li>The process, outlined in `skill.md`, involves identifying targets, scanning them, and presenting findings.</li><li>The workflow includes automatically fixing vulnerabilities before re-scanning to ensure skill cleanliness.</li></ul>
+    </section>
+<section data-start="415">
+      <span class="ghost">5</span>
+      <h2>Practical Application: A Secure Design Skill Integration Example <a class="ts" href="https://www.youtube.com/watch?v=VBnG5Fse2ms&amp;t=415s" target="_blank" rel="noopener noreferrer">(6:55–7:59)</a> <a class="dig" data-type="deep-dive" data-t="415">dig deeper ▾</a></h2>
+      <p class="lead">A practical example demonstrates securely integrating design skills, revealing how the advanced AI check can reclassify a &quot;dangerous&quot; skill as safe.</p>
+      <ul><li>The video provides an example of creating a `make design.md` skill for an AI Labs design folder.</li><li>The workflow searches `skills.sh` and loads a discovery skill to identify potential candidate skills.</li><li>The system automatically scans selected skills before their installation and testing.</li><li>A skill initially flagged as highly dangerous by the basic scan was later found safe after the AI check via Claude's headless mode.</li><li>This reclassification highlights the crucial importance of conducting advanced AI analysis.</li></ul>
+    </section>
+<section data-start="479">
+      
+      <h2>Conclusion <a class="ts" href="https://www.youtube.com/watch?v=VBnG5Fse2ms&amp;t=479s" target="_blank" rel="noopener noreferrer">(7:59–9:17)</a> <a class="dig" data-type="deep-dive" data-t="479">dig deeper ▾</a></h2>
+      <p class="lead">Implementing Skill Specter as a workflow enables secure integration of AI agent skills, significantly mitigating malicious code risks.</p>
+      <ul><li>Users can move beyond blindly installing AI agent skills from the internet, ensuring secure integration.</li><li>The system provides a robust process to discover and thoroughly scan new skills.</li><li>This process includes advanced AI checks, utilizing a cost-effective workaround for deeper analysis.</li><li>The workflow significantly mitigates the risk of incorporating vulnerable or malicious code into AI agent environments.</li></ul>
+    </section>
+  <footer>Skim view — generated from the source note <code>한글자막-nvidia의-새-도구가-ai-에이전트의-가장-큰-문제를-잡아냈습니다.md</code>. Full text lives in the source <code>.md</code>.</footer>
+</article>
+<script>
+(function(){
+  document.querySelectorAll('a.dig').forEach(function(a){
+    var u=new URL(location.href);
+    u.searchParams.set('type',a.dataset.type);
+    u.hash='t='+a.dataset.t;
+    a.setAttribute('href',u.pathname+u.search+u.hash);
+  });
+  var m=location.hash.match(/^#t=(\d+)/);
+  if(m){
+    var sec=+m[1];
+    var starts=[].slice.call(document.querySelectorAll('[data-start]')).map(function(e){return +e.dataset.start;});
+    var t=Math.max.apply(null,starts.filter(function(s){return s<=sec;}).concat([-1]));
+    if(t>=0){var el=document.querySelector('[data-start="'+t+'"]'); if(el){el.scrollIntoView();}}
+  }
+})();
+</script><script>(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;function systemDark(){return!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)}function effective(){var a=root.getAttribute('data-theme');return a==='dark'||a==='light'?a:(systemDark()?'dark':'light')}function syncIcon(){btn.textContent=effective()==='dark'?'☀️':'🌙'}btn.addEventListener('click',function(){var next=effective()==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('html-doc-theme',next)}catch(e){}syncIcon()});syncIcon();requestAnimationFrame(function(){root.classList.add('theme-ready')})})();</script>
+</body>
+</html>

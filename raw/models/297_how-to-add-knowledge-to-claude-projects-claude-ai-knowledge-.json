@@ -1,0 +1,150 @@
+{
+  "sourceMd": "297_how-to-add-knowledge-to-claude-projects-claude-ai-knowledge-.md",
+  "generatedAt": "2026-06-30T03:56:53.256Z",
+  "sourceSections": [
+    "Navigating and Creating Projects",
+    "Understanding Cloud Project Components",
+    "Adding Files to Your Knowledge Base",
+    "Impact of Knowledge Base on AI Responses",
+    "Achieving Consistent Output with Instructions",
+    "Conclusion"
+  ],
+  "model": {
+    "sections": [
+      {
+        "lead": "Users can access the projects tab on the left to view existing projects or create new ones by assigning a title and optional description.",
+        "bullets": [
+          {
+            "label": "Access Projects",
+            "text": "The projects tab is located on the left side of the screen where existing projects will be visible."
+          },
+          {
+            "label": "New Project",
+            "text": "New users can create a new project by clicking \"new project\" and assigning a title."
+          },
+          {
+            "label": "Optional Description",
+            "text": "An optional description can be added when creating a new project."
+          }
+        ]
+      },
+      {
+        "lead": "Inside a project, three key components—project memory, instructions, and files—define how the AI interacts and generates responses.",
+        "bullets": [
+          {
+            "label": "Key Components",
+            "text": "Once inside a selected project, users will see three key components."
+          },
+          {
+            "label": "Project Memory",
+            "text": "One key component is project memory, which defines AI interaction."
+          },
+          {
+            "label": "Instructions",
+            "text": "Instructions are another component that defines how the AI will generate responses."
+          },
+          {
+            "label": "Files Knowledge Base",
+            "text": "Files, also referred to as the knowledge base, form the third key component."
+          },
+          {
+            "label": "Define AI Interaction",
+            "text": "These elements collectively define how the AI will interact and generate responses within that specific project."
+          }
+        ]
+      },
+      {
+        "lead": "Files are easily added to your project's knowledge base by clicking the plus icon and selecting upload options from your device.",
+        "bullets": [
+          {
+            "label": "Add Files",
+            "text": "To enrich your project's knowledge, files can be easily added to the knowledge base."
+          },
+          {
+            "label": "Plus Icon",
+            "text": "This is done by clicking the plus icon."
+          },
+          {
+            "label": "Upload Options",
+            "text": "Users select \"upload from device\" or other relevant upload options."
+          },
+          {
+            "label": "Accessible Knowledge",
+            "text": "The uploaded files will then become part of the project's accessible knowledge."
+          }
+        ]
+      },
+      {
+        "lead": "After a file upload, AI chat will reference its information, generating informed and contextually relevant responses using documents like scientific journals.",
+        "bullets": [
+          {
+            "label": "AI Referencing",
+            "text": "After a file is uploaded, any subsequent AI chat within that project will begin referencing the information contained in the new file."
+          },
+          {
+            "label": "Informed Responses",
+            "text": "The AI will use the document's content to generate more informed responses."
+          },
+          {
+            "label": "Relevant Context",
+            "text": "Responses will be more contextually relevant, leveraging the added knowledge."
+          },
+          {
+            "label": "Content Examples",
+            "text": "The AI can use content such as scientific journals or specific data."
+          }
+        ]
+      },
+      {
+        "lead": "Combining the knowledge base with project-specific instructions achieves consistent response types and styles across different chats.",
+        "bullets": [
+          {
+            "label": "Combine Resources",
+            "text": "The video highlights the utility of combining the knowledge base with project-specific instructions."
+          },
+          {
+            "label": "Consistent Responses",
+            "text": "Users can consistently achieve similar types or styles of responses across different chats."
+          },
+          {
+            "label": "Uniformity",
+            "text": "This ensures uniformity and predictability in the AI's output."
+          },
+          {
+            "label": "Alignment",
+            "text": "The AI's output is aligned with predefined guidelines and loaded knowledge."
+          }
+        ]
+      },
+      {
+        "lead": "Adding a knowledge base tailors AI interactions by guiding the AI with specific documents and instructions for consistent, relevant, context-aware responses.",
+        "bullets": [
+          {
+            "label": "Tailor AI",
+            "text": "Adding a knowledge base to your cloud projects is a powerful way to tailor AI interactions."
+          },
+          {
+            "label": "Guide AI",
+            "text": "By providing specific documents and instructions, you can guide the AI."
+          },
+          {
+            "label": "Consistent Responses",
+            "text": "The AI will produce consistent responses."
+          },
+          {
+            "label": "Relevant Responses",
+            "text": "The AI will produce relevant responses."
+          },
+          {
+            "label": "Context-Aware",
+            "text": "The AI will produce context-aware responses."
+          },
+          {
+            "label": "Enhance Utility",
+            "text": "This significantly enhances the utility of your projects."
+          }
+        ]
+      }
+    ]
+  }
+}

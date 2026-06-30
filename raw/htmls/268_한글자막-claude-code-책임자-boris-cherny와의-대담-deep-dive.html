@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="deep-dive-html v1">
+<meta name="source-md" content="268_한글자막-claude-code-책임자-boris-cherny와의-대담.md">
+<meta name="video-id" content="uvg9UmI0PuQ">
+<title>[한글자막] Claude Code 책임자 Boris Cherny와의 대담 (Deep Dive)</title>
+<script>(function(){try{var t=localStorage.getItem('html-doc-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<style>
+:root{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08);--link:#b07700;--h3:#5b463a;--h4:#6b5a4a;--codebg:#f1ebe0;--preborder:#e6ddcf;--quote:#8a8276;--meta:#8a8276}
+[data-theme="light"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08);--link:#b07700;--h3:#5b463a;--h4:#6b5a4a;--codebg:#f1ebe0;--preborder:#e6ddcf;--quote:#8a8276;--meta:#8a8276}
+[data-theme="dark"]{--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5);--link:#e6b54d;--h3:#d8cdb8;--h4:#c4b7a0;--codebg:#2a241c;--preborder:#332c24;--quote:#9a9082;--meta:#9a9082}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5);--link:#e6b54d;--h3:#d8cdb8;--h4:#c4b7a0;--codebg:#2a241c;--preborder:#332c24;--quote:#9a9082;--meta:#9a9082}}
+html.theme-ready body,html.theme-ready #theme-toggle,html.theme-ready #print-btn{transition:background-color .2s,color .2s}
+#theme-toggle,#print-btn{position:fixed;top:1rem;width:2.4rem;height:2.4rem;border-radius:50%;border:1px solid rgba(128,128,128,.35);background:var(--card);color:var(--ink);font-size:1.1rem;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;z-index:10}
+#theme-toggle{right:1rem}#print-btn{right:3.6rem}
+@media print{:root,:root:not([data-theme]),[data-theme="light"],[data-theme="dark"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08);--link:#b07700;--h3:#5b463a;--h4:#6b5a4a;--codebg:#f1ebe0;--preborder:#e6ddcf;--quote:#8a8276;--meta:#8a8276}#theme-toggle,#print-btn{display:none}}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);line-height:1.7;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",'Apple SD Gothic Neo','Malgun Gothic',Helvetica,Arial,sans-serif}
+.dd{max-width:52rem;margin:0 auto;background:var(--card);padding:2.8rem 3rem 4rem;box-shadow:var(--shadow);counter-reset:sec}
+html.theme-ready .dd{transition:background-color .2s,color .2s}
+.dd h1{font-family:Georgia,'Nanum Myeongjo','Apple SD Gothic Neo','Times New Roman',serif;font-size:2rem;line-height:1.2;margin:0 0 .15em;color:var(--ink)}
+.dd h2{counter-increment:sec;position:relative;font-family:Georgia,'Nanum Myeongjo',serif;font-size:1.5rem;
+  margin:2.2em 0 .35em;padding-top:1.5em;border-top:1px solid var(--rule);color:var(--ink)}
+.dd h2:first-of-type{border-top:0;padding-top:0;margin-top:.4em}
+.dd h2::before{content:counter(sec);position:absolute;right:0;top:.55em;font:700 4.2rem/1 Georgia,serif;
+  color:var(--ghost);pointer-events:none;user-select:none}
+.dd .lead{font-size:1.02rem;line-height:1.55;color:var(--ink);font-weight:400;margin:.3em 0 .9em;max-width:92%}
+.dd .lead-accent{color:var(--gold);font-weight:400}
+.dd .ts{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.85rem;font-weight:400;text-decoration:none;white-space:nowrap}
+.dd .ts:hover{text-decoration:underline}
+.dd h3{font-size:1.15rem;margin:1.6em 0 .3em;color:var(--h3)}
+.dd h4{font-size:1.02rem;margin:1.2em 0 .3em;color:var(--h4)}
+.dd p{margin:.75em 0;color:var(--ink)}
+.dd a{color:var(--link)}
+.dd ul,.dd ol{padding-left:1.4em;margin:.5em 0}
+.dd li{margin:.4em 0;color:var(--li);line-height:1.65}
+.dd strong{color:var(--ink);font-weight:700}
+.dd blockquote{border-left:3px solid var(--goldline);margin:1.1em 0;padding:.2em 1.1em;color:var(--quote);font-style:italic}
+.dd code{font-family:'SF Mono',Menlo,Monaco,Consolas,monospace;font-size:.88em;background:var(--codebg);padding:.1em .35em;border-radius:4px}
+.dd pre{background:var(--codebg);border:1px solid var(--preborder);border-radius:8px;padding:1em 1.2em;overflow:auto;line-height:1.4}
+.dd pre code{background:none;padding:0;font-size:.85em;white-space:pre}
+.dd footer{margin-top:2.6em;padding-top:1.2em;border-top:1px solid var(--rule);color:var(--foot);font-size:.8rem}
+@media print{body{background:#fff}.dd{box-shadow:none}#theme-toggle{display:none}}
+.dig{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.8rem;font-weight:400;text-decoration:none;white-space:nowrap;cursor:pointer}.dig:hover{text-decoration:underline}</style>
+</head>
+<body>
+<button id="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light/dark">🌙</button><button id="print-btn" type="button" onclick="window.print()" aria-label="Print" title="Print">🖨️</button>
+<article class="dd">
+<h1>[한글자막] Claude Code 책임자 Boris Cherny와의 대담 (Deep Dive)</h1>
+<p><strong>Channel:</strong> Tech Bridge | <strong>Duration:</strong> 41:05 | <strong>URL:</strong> <a href="https://www.youtube.com/watch?v=uvg9UmI0PuQ">https://www.youtube.com/watch?v=uvg9UmI0PuQ</a></p>
+<hr>
+<p>This is a comprehensive, structured deep-dive of the video.</p>
+
+<h2 data-start="3">Introduction and Audience Poll on AI Adoption <a class="ts" href="https://www.youtube.com/watch?v=uvg9UmI0PuQ&amp;t=3s" target="_blank" rel="noopener noreferrer">(0:03–1:45)</a> <a class="dig" data-type="summary" data-t="3">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">The session begins with a &quot;Live Fireside Chat&quot; featuring Jesse Chen from Meta and Boris Cherny from Anthropic.</span> Jesse Chen, a Director of Product on the Dev Infra team at Meta, introduces his guest, Boris Cherny, the Head of Claude Code at Anthropic.</p><p>Before diving into the discussion, Jesse Chen conducts a quick poll of the audience to gauge the adoption of AI in coding:</p>
+<ol>
+<li><strong>&quot;How many people here use AI to write their code?&quot;</strong> A significant portion of the audience raises their hands.</li>
+<li><strong>&quot;Keep your hands up though if you 100% of your code is written by AI.&quot;</strong> A smaller, but still notable, number of people keep their hands up. Jesse remarks, &quot;it's a lot more than before when I ask these questions,&quot; highlighting the rapid transformation in the industry.</li>
+</ol>
+
+<h2 data-start="105">Boris Cherny's Personal Coding Metrics and Workflow <a class="ts" href="https://www.youtube.com/watch?v=uvg9UmI0PuQ&amp;t=105s" target="_blank" rel="noopener noreferrer">(1:45–2:59)</a> <a class="dig" data-type="summary" data-t="105">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">Boris Cherny shares his personal coding and AI usage statistics for the year, demonstrating the profound impact of AI on his own productivity:
+*   <strong>Pull Requests:</strong> 1,700
+*   <strong>Lines of Code:</strong> 400,000 added, 250,000 deleted.</span> He notes that in the previous year, he deleted more code than he added.
+*   <strong>Token Usage:</strong> 8 billion tokens since March.</p><p>When asked how much of this code was written by him versus an AI, Boris states, &quot;100% of my code has been written by Claude code since Opus 4.5. So, that's like November of last year.&quot; This was the moment he uninstalled his IDE because he was no longer using it.</p>
+<p>He also notes a significant shift in his work environment, stating, &quot;most of my coding now is on my phone,&quot; a change he would have found &quot;crazy&quot; just six months prior.</p>
+
+<h2 data-start="179">ROI vs. Cost: A Framework for AI Adoption <a class="ts" href="https://www.youtube.com/watch?v=uvg9UmI0PuQ&amp;t=179s" target="_blank" rel="noopener noreferrer">(2:59–7:16)</a> <a class="dig" data-type="summary" data-t="179">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">The discussion shifts to the business considerations of AI adoption, specifically the tension between efficiency/cost and the power of more expensive, capable models.</span> Boris Cherny outlines two primary ways companies approach this:
+1.  <strong>Cost-focused:</strong> Some companies view the technology primarily through the lens of its cost.
+2.  <strong>ROI-focused:</strong> Other companies think in terms of Return on Investment (ROI), which Boris advocates as &quot;absolutely the right framing.&quot;</p><p>He proposes a strategy for deploying AI tools like Claude Code within an organization:</p>
+<ul>
+<li><strong>Initial Phase (Experimentation):</strong> Give tokens to <em>everyone</em> in the organization—not just engineers, but also product managers, designers, data scientists, and marketers. The goal is to let the entire company experiment and discover where the most valuable ideas emerge. Boris emphasizes that innovation often comes from unexpected places, such as &quot;an accountant somewhere in the corner of the org.&quot;</li>
+<li><strong>Scaling Phase (Optimization):</strong> Once successful internal use cases are identified and begin consuming a lot of tokens, the focus can shift to controlling costs on the backend. Boris states it's &quot;too early in the adoption of this technology to think a lot about&quot; cost-cutting upfront. He recommends focusing on increasing the return, as &quot;there's so much more upside right now than there is room to optimize the downside.&quot;</li>
+</ul>
+
+<h2 data-start="436">The Abstraction Ladder: From Code to Agents to Loops <a class="ts" href="https://www.youtube.com/watch?v=uvg9UmI0PuQ&amp;t=436s" target="_blank" rel="noopener noreferrer">(7:16–41:04)</a> <a class="dig" data-type="summary" data-t="436">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">Boris introduces the concept of &quot;Loops&quot; (or routines) as the next major step up the &quot;abstraction ladder&quot; in software development.</span> He explains this progression as a series of increasingly powerful abstractions, which can be visualized as follows:</p><pre><code class="language-ascii">     +-------------------------------------------------+
+     | Loops / Routines (Agents prompting other agents)|
+     +-------------------------------------------------+
+                             ↑ (The next major step)
+     +-------------------------------------------------+
+     | Agents (AI writes the code from a prompt)       |
+     +-------------------------------------------------+
+                             ↑ (The transition we're in now)
+     +-------------------------------------------------+
+     | Source Code (Humans write the code by hand)     |
+     +-------------------------------------------------+
+</code></pre>
+<p>He analogizes this to the levels of abstraction in traditional programming:</p>
+<ul>
+<li><strong>Source Code</strong> is like a <strong>statement</strong>.</li>
+<li>An <strong>agent run</strong> is like a <strong>function</strong>.</li>
+<li>A <strong>Loop</strong> is like a <strong>higher-order function</strong>.</li>
+</ul>
+<p>Boris explains that &quot;Loops&quot; are as significant a step from &quot;Agents&quot; as &quot;Agents&quot; were from &quot;Source Code.&quot; He personally uses Loops for tasks like automating his team's daily stand-up process and booking all of his work-related travel (flights and hotels) automatically by having the agent read his emails and Google Calendar.</p>
+
+<h2>The Evolving Role of the Software Engineer</h2>
+<p class="lead"><span class="lead-accent">The conversation addresses the question of how the role of a software engineer is changing now that AI can handle most of the coding.</span> Boris argues that the bottleneck is shifting away from the physical act of writing code.</p><h3>From Coding to Higher-Level Tasks</h3>
+<p>Boris notes that engineers do many things besides coding, such as:</p>
+<ul>
+<li>Talking to customers</li>
+<li>Idea generation and jamming with PMs and designers</li>
+<li>Data analysis</li>
+<li>Figuring out what to build next</li>
+<li>Aligning with other parts of the organization</li>
+</ul>
+<p>With AI handling the coding, engineers can focus more on these higher-value, upstream activities. The new bottleneck becomes &quot;good ideas,&quot; so the engineer's role shifts to supervising agents, managing the end-to-end process, and helping to productize ideas.</p>
+
+<h3>Preventing Laziness and Ensuring Learning</h3>
+<p>Addressing the concern that engineers might get &quot;lazy&quot; and blindly accept AI-generated code, Boris explains how Claude's design helps mitigate this and fosters learning.</p>
+<ul>
+<li><strong>Permission Prompts and &quot;Auto Mode&quot;:</strong> Initially, Claude Code required a human to approve every command (e.g., run a bash command, fetch a URL). However, they observed &quot;prompt fatigue&quot; where users would just click &quot;yes&quot; without reading. To solve this, they created &quot;Auto Mode,&quot; where another AI model reviews the permission prompt and decides whether to approve it based on the conversation's context. This is both more secure and removes a tedious task from the engineer.</li>
+<li><strong>Output Styles for Learning:</strong> Claude Code has different output styles to help engineers stay in the loop and learn.
+<ul>
+<li><strong>Exploratory Style:</strong> When Claude makes a change, it explains the architecture, the language (if new to the user), and the relevant part of the codebase. This is recommended for new engineers joining a team.</li>
+<li><strong>Learning Style:</strong> For non-coders, this style teaches them <em>how</em> to do a task rather than just doing it for them. It provides a step-by-step walkthrough (e.g., &quot;Step 1 is open this file and edit it in this way. Step 2 is run this command.&quot;).</li>
+</ul>
+</li>
+</ul>
+
+<h2>Tackling Downstream Bottlenecks: Code Review and Security</h2>
+<p class="lead"><span class="lead-accent">Boris describes Anthropic's process of identifying and solving the &quot;next bottleneck&quot; after coding itself was largely addressed.</span> *   <strong>Code Review Bottleneck:</strong> With AI generating so much code, the new bottleneck became code review. To solve this, Anthropic built <code>Claude Code Review</code>, a product that automates the process and is now publicly available. It is the exact same tool used internally at Anthropic and is capable of catching 98-99% of bugs before a human ever sees the pull request.
+*   <strong>Security Review Bottleneck:</strong> The subsequent bottleneck was security review. Their solution is the <code>Claude Security</code> product, which runs weekly, scans all codebases, finds security issues, and fixes them autonomously. This tool has become so effective that it is &quot;catching issues that even pen testers didn't catch.&quot;</p>
+<h2>Future Vision: What's Next for Claude Code</h2>
+<p class="lead"><span class="lead-accent">Boris outlines the broad, high-level vision for Claude Code and Anthropic's products over the next year.</span> He prefaces this by noting that they plan on a weekly or monthly cycle because &quot;this space is changing too fast.&quot;
+The core goals are:
+1.  <strong>Be the Most Capable Agent:</strong> Continue to improve the model's core capabilities, especially in long-running tasks and complex reasoning.
+2.  <strong>Work Everywhere:</strong> Ensure Claude can integrate into any team's existing workflow and toolset without requiring them to switch to a proprietary full stack.
+3.  <strong>Experience New Capabilities:</strong> Build products that allow users to fully experience the new capabilities of each model generation, focusing on better alignment with user intent, increased nuance, and higher-quality outputs.</p></article>
+<script>
+(function(){
+  document.querySelectorAll('a.dig').forEach(function(a){
+    var u=new URL(location.href);
+    u.searchParams.set('type',a.dataset.type);
+    u.hash='t='+a.dataset.t;
+    a.setAttribute('href',u.pathname+u.search+u.hash);
+  });
+  var m=location.hash.match(/^#t=(\d+)/);
+  if(m){
+    var sec=+m[1];
+    var starts=[].slice.call(document.querySelectorAll('[data-start]')).map(function(e){return +e.dataset.start;});
+    var t=Math.max.apply(null,starts.filter(function(s){return s<=sec;}).concat([-1]));
+    if(t>=0){var el=document.querySelector('[data-start="'+t+'"]'); if(el){el.scrollIntoView();}}
+  }
+})();
+</script><script>(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;function systemDark(){return!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)}function effective(){var a=root.getAttribute('data-theme');return a==='dark'||a==='light'?a:(systemDark()?'dark':'light')}function syncIcon(){btn.textContent=effective()==='dark'?'☀️':'🌙'}btn.addEventListener('click',function(){var next=effective()==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('html-doc-theme',next)}catch(e){}syncIcon()});syncIcon();requestAnimationFrame(function(){root.classList.add('theme-ready')})})();</script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="deep-dive-html v1">
+<meta name="source-md" content="104_accelerating-ai-on-edge-chintan-parikh-and-weiyi-wang-google.md">
+<meta name="video-id" content="Lm8BLHkxiAo">
+<title>Accelerating AI on Edge — Chintan Parikh and Weiyi Wang, Google DeepMind (Deep Dive)</title>
+<script>(function(){try{var t=localStorage.getItem('html-doc-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<style>
+:root{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08);--link:#b07700;--h3:#5b463a;--h4:#6b5a4a;--codebg:#f1ebe0;--preborder:#e6ddcf;--quote:#8a8276;--meta:#8a8276}
+[data-theme="light"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08);--link:#b07700;--h3:#5b463a;--h4:#6b5a4a;--codebg:#f1ebe0;--preborder:#e6ddcf;--quote:#8a8276;--meta:#8a8276}
+[data-theme="dark"]{--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5);--link:#e6b54d;--h3:#d8cdb8;--h4:#c4b7a0;--codebg:#2a241c;--preborder:#332c24;--quote:#9a9082;--meta:#9a9082}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5);--link:#e6b54d;--h3:#d8cdb8;--h4:#c4b7a0;--codebg:#2a241c;--preborder:#332c24;--quote:#9a9082;--meta:#9a9082}}
+html.theme-ready body,html.theme-ready #theme-toggle,html.theme-ready #print-btn{transition:background-color .2s,color .2s}
+#theme-toggle,#print-btn{position:fixed;top:1rem;width:2.4rem;height:2.4rem;border-radius:50%;border:1px solid rgba(128,128,128,.35);background:var(--card);color:var(--ink);font-size:1.1rem;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;z-index:10}
+#theme-toggle{right:1rem}#print-btn{right:3.6rem}
+@media print{:root,:root:not([data-theme]),[data-theme="light"],[data-theme="dark"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08);--link:#b07700;--h3:#5b463a;--h4:#6b5a4a;--codebg:#f1ebe0;--preborder:#e6ddcf;--quote:#8a8276;--meta:#8a8276}#theme-toggle,#print-btn{display:none}}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);line-height:1.7;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",'Apple SD Gothic Neo','Malgun Gothic',Helvetica,Arial,sans-serif}
+.dd{max-width:52rem;margin:0 auto;background:var(--card);padding:2.8rem 3rem 4rem;box-shadow:var(--shadow);counter-reset:sec}
+html.theme-ready .dd{transition:background-color .2s,color .2s}
+.dd h1{font-family:Georgia,'Nanum Myeongjo','Apple SD Gothic Neo','Times New Roman',serif;font-size:2rem;line-height:1.2;margin:0 0 .15em;color:var(--ink)}
+.dd h2{counter-increment:sec;position:relative;font-family:Georgia,'Nanum Myeongjo',serif;font-size:1.5rem;
+  margin:2.2em 0 .35em;padding-top:1.5em;border-top:1px solid var(--rule);color:var(--ink)}
+.dd h2:first-of-type{border-top:0;padding-top:0;margin-top:.4em}
+.dd h2::before{content:counter(sec);position:absolute;right:0;top:.55em;font:700 4.2rem/1 Georgia,serif;
+  color:var(--ghost);pointer-events:none;user-select:none}
+.dd .lead{font-size:1.02rem;line-height:1.55;color:var(--ink);font-weight:400;margin:.3em 0 .9em;max-width:92%}
+.dd .lead-accent{color:var(--gold);font-weight:400}
+.dd .ts{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.85rem;font-weight:400;text-decoration:none;white-space:nowrap}
+.dd .ts:hover{text-decoration:underline}
+.dd h3{font-size:1.15rem;margin:1.6em 0 .3em;color:var(--h3)}
+.dd h4{font-size:1.02rem;margin:1.2em 0 .3em;color:var(--h4)}
+.dd p{margin:.75em 0;color:var(--ink)}
+.dd a{color:var(--link)}
+.dd ul,.dd ol{padding-left:1.4em;margin:.5em 0}
+.dd li{margin:.4em 0;color:var(--li);line-height:1.65}
+.dd strong{color:var(--ink);font-weight:700}
+.dd blockquote{border-left:3px solid var(--goldline);margin:1.1em 0;padding:.2em 1.1em;color:var(--quote);font-style:italic}
+.dd code{font-family:'SF Mono',Menlo,Monaco,Consolas,monospace;font-size:.88em;background:var(--codebg);padding:.1em .35em;border-radius:4px}
+.dd pre{background:var(--codebg);border:1px solid var(--preborder);border-radius:8px;padding:1em 1.2em;overflow:auto;line-height:1.4}
+.dd pre code{background:none;padding:0;font-size:.85em;white-space:pre}
+.dd footer{margin-top:2.6em;padding-top:1.2em;border-top:1px solid var(--rule);color:var(--foot);font-size:.8rem}
+@media print{body{background:#fff}.dd{box-shadow:none}#theme-toggle{display:none}}
+.dig{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.8rem;font-weight:400;text-decoration:none;white-space:nowrap;cursor:pointer}.dig:hover{text-decoration:underline}</style>
+</head>
+<body>
+<button id="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light/dark">🌙</button><button id="print-btn" type="button" onclick="window.print()" aria-label="Print" title="Print">🖨️</button>
+<article class="dd">
+<h1>Accelerating AI on Edge — Chintan Parikh and Weiyi Wang, Google DeepMind (Deep Dive)</h1>
+<p><strong>Channel:</strong> AI Engineer | <strong>Duration:</strong> 23:58 | <strong>URL:</strong> <a href="https://www.youtube.com/watch?v=Lm8BLHkxiAo">https://www.youtube.com/watch?v=Lm8BLHkxiAo</a></p>
+<hr>
+
+<h2 data-start="15">Introduction and Agenda <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=15s" target="_blank" rel="noopener noreferrer">(0:15–1:27)</a> <a class="dig" data-type="summary" data-t="15">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">The presentation is given by Chintan Parekh, a product manager for LiteRT, which is part of Google AI Edge.</span> The talk begins with an overview of the agenda, which includes:
+*   New models, specifically the Gemma 4 family.
+*   Relevant on-device (Edge) use cases.
+*   New capabilities demonstrated through a gallery app.
+*   The technology stack for deploying AI on Edge devices.
+*   Emphasis on the cross-platform support offered.</p><p>The speaker's goal is to cover these topics and leave time for discussion about specific use cases attendees might be working on.</p>
+
+<h2 data-start="87">Google's On-Device Models: Gemma 4 and Gemma 3 <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=87s" target="_blank" rel="noopener noreferrer">(1:27–2:13)</a> <a class="dig" data-type="summary" data-t="87">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">Google DeepMind recently launched the Gemma 4 family of models.</span> This presentation focuses specifically on the smaller variants designed for on-device deployment: the 2-billion (2B) and 4-billion (4B) parameter Edge models.</p><p>The speaker notes that the evolution with Gemma 4 represents a significant shift in capability, moving &quot;from chatbot type capabilities to more autonomous agents that also support reasoning capabilities and more sophisticated features.&quot;</p>
+<p>Alongside Gemma 4, the Gemma 3 family also includes smaller models, with sizes down to 270 million parameters, suitable for fine-tuning on extremely constrained devices. These models are available on Google's Hugging Face page.</p>
+
+<h2 data-start="133">Benefits of On-Device AI (Running on Edge) <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=133s" target="_blank" rel="noopener noreferrer">(2:13–3:10)</a> <a class="dig" data-type="summary" data-t="133">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">Running AI models directly on edge devices offers several key advantages over cloud-based execution:</span></p><ul>
+<li><strong>Latency:</strong> For real-time applications like camera filters, background replacement, or video calls, low latency is critical. On-device processing eliminates network round-trip time.</li>
+<li><strong>Privacy:</strong> When dealing with sensitive data, such as summarizing confidential documents, processing on-device ensures the information never leaves the user's control.</li>
+<li><strong>Offline Capability:</strong> Models can function in environments with poor or no internet connectivity.</li>
+<li><strong>Cost:</strong> On-device inference can offset the cost of cloud computing. The speaker notes that many AI engineers complain about token usage, and a hybrid approach (running some tasks on-device and some in the cloud) can provide a cost-effective balance.</li>
+</ul>
+
+<h2 data-start="190">Gemma 4 Edge Models Deep-Dive <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=190s" target="_blank" rel="noopener noreferrer">(3:10–3:51)</a> <a class="dig" data-type="summary" data-t="190">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">The presentation focuses on two specific models from the Gemma 4 family, designed for edge deployment.</span> Their characteristics are:</p><ul>
+<li><strong>Gemma 4 E2B (2 Billion parameters):</strong>
+<ul>
+<li><strong>RAM Usage:</strong> Approximately 1 to 2 GB after quantization.</li>
+<li><strong>Use Cases:</strong> Well-suited for voice interfaces, summarization, and other low-latency local processing tasks.</li>
+</ul>
+</li>
+<li><strong>Gemma 4 4B (4 Billion parameters):</strong>
+<ul>
+<li><strong>RAM Usage:</strong> Higher RAM requirement, making it more suitable for &quot;heavy duty&quot; tasks.</li>
+<li><strong>Target Platforms:</strong> Laptops and more powerful IoT devices.</li>
+</ul>
+</li>
+</ul>
+<p>The RAM usage figures are based on the models being quantized to a desired size.</p>
+
+<h2 data-start="231">New Agent Capabilities in Gemma 4 <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=231s" target="_blank" rel="noopener noreferrer">(3:51–5:12)</a> <a class="dig" data-type="summary" data-t="231">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">Gemma 4 introduces several new capabilities that support the development of more sophisticated on-device agents:</span></p><ul>
+<li><strong>Function Calling:</strong> The models have built-in support for tool calling, allowing them to interact with other local or external APIs. An inference task can start on the edge and then call out to other services to complete its work.</li>
+<li><strong>Structured JSON Output:</strong> The models natively support generating structured JSON. This capability is &quot;built into the model architecture rather than achieving through some kind of specific prompt engineering.&quot;</li>
+<li><strong>Chain of Thought:</strong> A new &quot;thinking mode&quot; is available, which allows an application to demonstrate the model's thought process as it works through a problem. This feature is supported in the showcase gallery app.</li>
+<li><strong>Hardware Optimization:</strong> The models are optimized for hardware-native support, enabling them to run &quot;seamlessly across multiple platforms and multiple hardwares&quot; to provide developers with deployment flexibility.</li>
+</ul>
+
+<h2 data-start="312">Model Availability <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=312s" target="_blank" rel="noopener noreferrer">(5:12–5:33)</a> <a class="dig" data-type="summary" data-t="312">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">The Gemma models discussed are readily available for developers to use.</span> They are hosted on Google's Hugging Face page and are licensed under the Apache 2.0 license. This allows developers to download the models and begin building applications with them immediately.</p>
+<h2 data-start="333">Use Cases and The Gallery App <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=333s" target="_blank" rel="noopener noreferrer">(5:33–7:09)</a> <a class="dig" data-type="summary" data-t="333">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">A gallery app is presented as a &quot;playground to get a feel for what these models are capable of.&quot; All processing in the app happens on-device.</span> The app demonstrates the new agent skills of Gemma 4 and provides sample code for each feature, which developers can use or fork to build their own experiences.</p><p>The new use cases focus on three key pillars: voice agent capabilities, local agent capabilities, and privacy.</p>
+
+<h3>Augmenting Knowledge <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=429s" target="_blank" rel="noopener noreferrer">(7:09–7:36)</a></h3>
+<p>A skill is demonstrated where the on-device agent can query Wikipedia. This allows the agent to answer encyclopedic questions by augmenting its knowledge with an external API call, showcasing the function-calling capability.</p>
+
+<h3>Personal Tracking and Data Analysis <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=456s" target="_blank" rel="noopener noreferrer">(7:36–8:34)</a></h3>
+<p>A video demo shows a user creating a &quot;sleep and mood&quot; tracking agent.</p>
+<ol>
+<li>The user provides a voice entry: &quot;8 hours of sleep and I'm looking forward to hanging out with Amy today.&quot;</li>
+<li>The user then asks the agent to &quot;Analyze the trend in my mood over the last 7 days.&quot;</li>
+<li>The agent processes this data entirely on-device and generates a chart showing the trend. This demonstrates the model's new reasoning and thinking capabilities.</li>
+</ol>
+
+<h3>Creative Generation <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=514s" target="_blank" rel="noopener noreferrer">(8:34–9:29)</a></h3>
+<p>Another demo showcases the model's ability to pair a photo with music.</p>
+<ol>
+<li>The user sends a photo to the agent and says, &quot;Can you pair this vibe with some music?&quot;</li>
+<li>The model uses its image understanding to analyze the photo's &quot;vibe&quot; and generates a piece of music to match it, all on the device.</li>
+</ol>
+
+<h3>Complex Workflows <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=569s" target="_blank" rel="noopener noreferrer">(9:29–10:09)</a></h3>
+<p>The final example demonstrates managing a more complex workflow involving multiple apps and users. The user gives a prompt to describe the vocal calls of animals, and the on-device agent generates the corresponding sound. This skill, like others, can be written and loaded by the user directly within the gallery app.</p>
+
+<h2 data-start="609">Building Your Own Experiences <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=609s" target="_blank" rel="noopener noreferrer">(10:09–11:02)</a> <a class="dig" data-type="summary" data-t="609">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">The speaker emphasizes that the ecosystem is designed to be open and extensible.</span> *   <strong>GitHub Repository:</strong> There is a GitHub repository where users post their own custom &quot;skills&quot; for the gallery app, sharing them with the community.
+*   <strong>Open Source App:</strong> The sample gallery app itself is open source on GitHub, allowing developers to fork it and make changes.
+*   <strong>Instructions:</strong> A QR code is provided that links to instructions on how to build a new skill from scratch.</p>
+<h2 data-start="662">The LiteRT Deployment Framework <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=662s" target="_blank" rel="noopener noreferrer">(11:02–12:41)</a> <a class="dig" data-type="summary" data-t="662">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">The underlying technology powering these on-device experiences is <strong>LiteRT</strong>.</span></p><ul>
+<li><strong>Foundation:</strong> LiteRT is Google's on-device AI framework, built upon the well-established <strong>TensorFlow Lite</strong>. It uses the same <code>.tflite</code> model format.</li>
+<li><strong>Scale:</strong> It is a widely deployed and trusted framework, with statistics cited as:
+<ul>
+<li>100,000+ apps in production.</li>
+<li>Billions of active users.</li>
+<li>Vast numbers of daily &quot;interpreter invocations&quot; (inferences).</li>
+</ul>
+</li>
+<li><strong>Multi-Framework Support:</strong> The rebranding from TensorFlow Lite to LiteRT was partly to &quot;demonstrate that it's not just TensorFlow Lite models that we accept, but also PyTorch models and JAX models.&quot;</li>
+</ul>
+<p>A developer can take a model from PyTorch or JAX, convert it to the TFLite file format, and then deploy it using the LiteRT stack.</p>
+
+<h2 data-start="761">Developer Workflow and The LiteRT Stack <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=761s" target="_blank" rel="noopener noreferrer">(12:41–16:30)</a> <a class="dig" data-type="summary" data-t="761">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">LiteRT provides a complete, unified, cross-platform architecture for on-device AI deployment.</span> The workflow and components of the stack are as follows:</p><pre><code class="language-ascii">      [PyTorch / JAX / TensorFlow Models]
+                       |
+                       ↓ (Convert model)
+               [LiteRT torch / Converter]
+                       |
+                       ↓ (Produces a .tflite model file)
+            [.tflite Model Format]
+                       |
+   +-------------------+-------------------+
+   | (LLM path)                            | (Other models)
+   ↓                                       ↓
+[LiteRT LLM]                           [LiteRT]
+   |                                       |
+   +-------------------+-------------------+
+                       |
+                       ↓ (Analyze and optimize graph)
+      [Model Explorer &amp; Quantization Tools]
+                       |
+                       ↓ (Benchmark on real devices)
+                 [AI Edge Portal]
+                       |
+                       ↓ (Deploy to hardware)
+        [CPU / GPU / NPU Acceleration]
+                       |
+                       ↓ (Run on target platform)
+    [Android / iOS / Linux / Windows / Web / IoT]
+</code></pre>
+
+<h3>Stack Components</h3>
+<ul>
+<li><strong>Model Conversion (LiteRT torch):</strong> Tools to convert models from PyTorch and JAX into the <code>.tflite</code> format.</li>
+<li><strong>Runtimes (LiteRT / LiteRT LLM):</strong> Optimized runtimes for general AI models (LiteRT) and Large Language Models (LiteRT LLM).</li>
+<li><strong>Model Explorer:</strong> A tool to visualize the model graph, allowing developers to inspect it and decide how to apply optimizations like mixed-precision quantization.</li>
+<li><strong>AI Edge Portal:</strong> A cloud-based benchmarking service that helps developers test their models on a broad fleet of real Android devices. This helps determine the right compilation strategy (e.g., ahead-of-time vs. just-in-time) to ensure reliability and performance.</li>
+<li><strong>Acceleration:</strong>
+<ul>
+<li><strong>CPU/GPU:</strong> Universal support is available across platforms.</li>
+<li><strong>NPU (Neural Processing Unit):</strong> Integration is complete with partners like Qualcomm and MediaTek, with more in progress. NPU acceleration is a &quot;game-changer,&quot; offering a <strong>3 to 10x improvement in performance</strong> and energy efficiency, which is critical for real-time AR/VR and TTS applications.</li>
+</ul>
+</li>
+</ul>
+
+<h2 data-start="990">Cross-Platform Support and Performance <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=990s" target="_blank" rel="noopener noreferrer">(16:30–19:08)</a> <a class="dig" data-type="summary" data-t="990">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">A key strength of the LiteRT framework is its ability to deploy a single model file across numerous platforms.</span> The Gemma models have been tested and verified on:
+*   Android
+*   iOS
+*   Linux
+*   macOS
+*   Windows
+*   Web
+*   Raspberry Pi</p><p>A demo shows a small robot built with a Raspberry Pi running the Gemma model on-device via the LiteRT LLM runtime on its CPU. When shown a sign that says &quot;move your antenna,&quot; the robot performs inference and then wiggles its &quot;antennas&quot; (made of Sharpies).</p>
+<p>A new CLI tool with Python bindings is also available to simplify the deployment process.</p>
+
+<h3>Performance Benchmarks</h3>
+<ul>
+<li><strong>NPU Boost:</strong> Using NPUs can provide up to a <strong>13x performance boost</strong> in some cases.</li>
+<li><strong>iOS:</strong> Performance on iOS is cited at roughly <strong>56 tokens per second</strong>.</li>
+<li><strong>Desktop &amp; IoT:</strong> Performance numbers for these platforms are available on the Hugging Face model pages.</li>
+<li><strong>Runtime Comparison:</strong> The LiteRT runtime is benchmarked against Llama.cpp:
+<ul>
+<li><strong>Mobile:</strong> Up to <strong>35x faster</strong>.</li>
+<li><strong>Desktop:</strong> At par.</li>
+<li><strong>IoT:</strong> Up to <strong>3x faster</strong>.</li>
+</ul>
+</li>
+</ul>
+
+<h2 data-start="1148">Summary and Q&amp;A <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=1148s" target="_blank" rel="noopener noreferrer">(19:08–23:43)</a> <a class="dig" data-type="summary" data-t="1148">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">In summary, LiteRT supports multiple frameworks (TensorFlow, PyTorch, JAX), provides open-weight Gemma models on Hugging Face, and offers the gallery app as a playground for developers.</span></p><h3>Q&amp;A Session</h3>
+<ul>
+<li><strong>Q: Can this be used for on-device face unlock for a home camera?</strong>
+<ul>
+<li><strong>A:</strong> Yes. Face unlock on phones (like Pixels and iPhones) already runs locally using similar on-device frameworks (LiteRT on Google devices, CoreML on Apple). A home camera solution would be slightly different, potentially requiring algorithms to check authenticity, but it is &quot;totally&quot; possible to run on-device, for instance on a Raspberry Pi, which could then send a message to your phone.</li>
+</ul>
+</li>
+<li><strong>Q: Do you have performance numbers for NVIDIA Orin?</strong>
+<ul>
+<li><strong>A:</strong> The speaker does not have the numbers in the slides but believes they are available on the Hugging Face page for the models.</li>
+</ul>
+</li>
+<li><strong>Q: Are there examples of hybrid architectures that split work between edge and cloud?</strong>
+<ul>
+<li><strong>A:</strong> Yes, there are groups working on concepts like &quot;speaker and a thinking agent&quot; architectures. An orchestration layer decides which tasks should run locally and which should be sent elsewhere. The speaker mentions potential applications like a &quot;health agent or coaching agent&quot; but has no specific examples to share in the presentation.</li>
+</ul>
+</li>
+<li><strong>Q: Do you support other open-weight models besides Gemma?</strong>
+<ul>
+<li><strong>A:</strong> Yes. The framework can support any open-weight model, provided it can be converted to the correct file format and its size is appropriate for the target device. The Hugging Face page has other models available, and developers are welcome to convert and use their own preferred models.</li>
+</ul>
+</li>
+</ul>
+</article>
+<script>
+(function(){
+  // ── cross-doc nav (deep-dive → summary) ──────────────────────────────────
+  document.querySelectorAll('a.dig').forEach(function(a){
+    if(!a.dataset.type)return;
+    var u=new URL(location.href);
+    u.searchParams.set('type',a.dataset.type);
+    u.hash='t='+a.dataset.t;
+    a.setAttribute('href',u.pathname+u.search+u.hash);
+  });
+  // ── scroll to #t= hash ────────────────────────────────────────────────────
+  var m=location.hash.match(/^#t=(\d+)/);
+  if(m){
+    var sec=+m[1];
+    var starts=[].slice.call(document.querySelectorAll('[data-start]')).map(function(e){return +e.dataset.start;});
+    var t=Math.max.apply(null,starts.filter(function(s){return s<=sec;}).concat([-1]));
+    if(t>=0){var el=document.querySelector('[data-start="'+t+'"]'); if(el){el.scrollIntoView();}}
+  }
+  // ── dig-state machine (summary-side only) ────────────────────────────────
+  var parts=location.pathname.split('/');
+  var videoId=parts[3];
+  var outputFolder=new URLSearchParams(location.search).get('outputFolder');
+  if(!videoId||!outputFolder)return;
+  var controls=[].slice.call(document.querySelectorAll('a.dig[data-section]')).filter(function(a){return!a.dataset.type;});
+  if(!controls.length)return;
+  function viewHref(sec){
+    var p=new URLSearchParams();
+    p.set('outputFolder',outputFolder);
+    p.set('type','dig-deeper');
+    return '/api/html/'+videoId+'?'+p.toString()+'#t='+sec;
+  }
+  function applyDug(el,sec){
+    el.textContent='view detail ↓';
+    el.setAttribute('href',viewHref(sec));
+    el.dataset.state='dug';
+    if(!el.nextElementSibling||!el.nextElementSibling.matches('[data-force-section]')){
+      var btn=document.createElement('button');
+      btn.textContent='↻';
+      btn.setAttribute('data-force-section',String(sec));
+      btn.setAttribute('title','Force re-generate section deep-dive');
+      el.insertAdjacentElement('afterend',btn);
+    }
+  }
+  function applyLoading(el){el.textContent='⏳';el.dataset.state='loading';el.removeAttribute('href');}
+  function applyError(el){el.textContent='⚠ retry';el.dataset.state='error';el.removeAttribute('href');}
+  function applyIdle(el){el.textContent='dig deeper \u25b6';el.dataset.state='idle';el.removeAttribute('href');}
+  function startDig(el,sec,force){
+    applyLoading(el);
+    var body={outputFolder:outputFolder};
+    if(force)body.force=true;
+    fetch('/api/videos/'+videoId+'/dig/'+sec,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var es=new EventSource('/api/videos/'+videoId+'/dig/'+sec+'/stream?jobId='+encodeURIComponent(d.jobId));
+        es.onmessage=function(ev){
+          try{var data=JSON.parse(ev.data);
+            if(data.type==='done'){es.close();applyDug(el,sec);}
+            else if(data.type==='error'){es.close();applyError(el);}
+          }catch(e){}
+        };
+        es.onerror=function(){es.close();applyError(el);};
+      })
+      .catch(function(){applyError(el);});
+  }
+  fetch('/api/videos/'+videoId+'/dig-state?outputFolder='+encodeURIComponent(outputFolder))
+    .then(function(r){return r.ok?r.json():Promise.resolve({sectionIds:[]});})
+    .then(function(data){
+      var dug=data.sectionIds||[];
+      controls.forEach(function(el){
+        var sec=+el.dataset.section;
+        if(dug.indexOf(sec)>=0){applyDug(el,sec);}else{applyIdle(el);}
+        el.addEventListener('click',function(e){
+          e.preventDefault();
+          var st=el.dataset.state;
+          if(st==='loading')return;
+          if(st==='error'){applyIdle(el);startDig(el,sec);return;}
+          if(st==='idle')startDig(el,sec);
+        });
+      });
+      document.querySelectorAll('[data-force-section]').forEach(function(btn){
+        var fSec=+btn.dataset.forceSection;
+        var ctrl=btn.previousElementSibling;
+        if(!ctrl)return;
+        btn.addEventListener('click',function(e){e.preventDefault();startDig(ctrl,fSec,true);});
+      });
+    })
+    .catch(function(){
+      controls.forEach(function(el){applyIdle(el);
+        el.addEventListener('click',function(e){
+          e.preventDefault();
+          var st=el.dataset.state;
+          if(st==='loading')return;
+          if(st==='error'){applyIdle(el);startDig(el,+el.dataset.section);return;}
+          if(st==='idle')startDig(el,+el.dataset.section);
+        });
+      });
+    });
+})();
+</script><script>(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;function systemDark(){return!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)}function effective(){var a=root.getAttribute('data-theme');return a==='dark'||a==='light'?a:(systemDark()?'dark':'light')}function syncIcon(){btn.textContent=effective()==='dark'?'☀️':'🌙'}btn.addEventListener('click',function(){var next=effective()==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('html-doc-theme',next)}catch(e){}syncIcon()});syncIcon();requestAnimationFrame(function(){root.classList.add('theme-ready')})})();</script>
+</body>
+</html>

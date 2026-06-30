@@ -1,0 +1,180 @@
+{
+  "sourceMd": "282_ornith-1-0-is-insane-with-claude-code-free-local-open-source.md",
+  "generatedAt": "2026-06-29T18:02:59.309Z",
+  "sourceSections": [
+    "The Ornith 1.0 Release and Initial Misconception",
+    "Deep Dive into Ornith's Architecture and Performance",
+    "The Power of Self-Scaffolding",
+    "Understanding Claude Code as an Agent Harness",
+    "The Synergy: Brain and Hands Working Together",
+    "Practical Integration Steps",
+    "Conclusion"
+  ],
+  "model": {
+    "sections": [
+      {
+        "lead": "Ornith 1.0, released June 25, 2026, by Deep Reinforce, was an open-weight coding model initially mistaken for an agent harness competitor, clarified as a \"brain.\"",
+        "bullets": [
+          {
+            "label": "Release Details",
+            "text": "Deep Reinforce released Ornith 1.0 on June 25th, 2026, as an open-weight, MIT-licensed coding model."
+          },
+          {
+            "label": "Core Feature",
+            "text": "Its significant feature is autonomously learning and generating its own scaffold, plan, and tool calls, plus checking and repairing its work."
+          },
+          {
+            "label": "Initial Misconception",
+            "text": "Many assumed Ornith would compete with or replace agent harnesses such as Claude Code."
+          },
+          {
+            "label": "Role Clarification",
+            "text": "The video clarifies Ornith is a \"brain\" and Claude Code is \"hands,\" meaning they are different tools designed to compose."
+          },
+          {
+            "label": "Team Use",
+            "text": "Ornith's development team even used Claude Code as a harness to measure its performance."
+          }
+        ]
+      },
+      {
+        "lead": "Deep Reinforce's Ornith models, built on Gemma 4 and Quinn 3.5, come in four sizes with large context windows and frontier-scale performance.",
+        "bullets": [
+          {
+            "label": "Model Basis",
+            "text": "Ornith is a family of open coding models from Deep Reinforce, built upon Gemma 4 and Quinn 3.5, enhanced with reinforcement learning."
+          },
+          {
+            "label": "Four Sizes",
+            "text": "It comes in four sizes: 9 billion, 31 billion (dense workhorse), 35 billion (mixture of experts), and a 397 billion flagship model."
+          },
+          {
+            "label": "Context Windows",
+            "text": "All versions support large context windows ranging from 250,000 to 400,000 tokens."
+          },
+          {
+            "label": "Agentic Features",
+            "text": "The models are agentic, emitting visible thinking blocks and clean, OpenAI-style tool calls."
+          },
+          {
+            "label": "Flagship Performance",
+            "text": "The 397 billion flagship model achieves 82.4 on SWE bench verified, matching Claude Opus 4.7 and closely trailing 4.8."
+          }
+        ]
+      },
+      {
+        "lead": "Ornith's self-scaffolding process allows it to learn \"how to work\" efficiently over thousands of rounds, outperforming larger competitors like Quinn 3.5.",
+        "bullets": [
+          {
+            "label": "Unique Learning",
+            "text": "Ornith learns to design, refine, and rewrite its own operational process, unlike models with fixed human-written scaffolds."
+          },
+          {
+            "label": "Two-Stage Process",
+            "text": "Its two-stage process involves proposing a scaffold, using it to solve a task, and feeding performance rewards back into planning and execution."
+          },
+          {
+            "label": "Guardrails Present",
+            "text": "Guardrails like a trust boundary, a deterministic monitor, and a frozen judge model prevent gaming the system."
+          },
+          {
+            "label": "Efficiency Gain",
+            "text": "The 9-billion parameter model efficiently outperforms larger competitors, including Quinn 3.5 and Gemma 4, on SWE bench."
+          }
+        ]
+      },
+      {
+        "lead": "Claude Code is an agent harness, not an LLM, that orchestrates real-world actions, manages environment interactions, and can drive different models.",
+        "bullets": [
+          {
+            "label": "Not LLM",
+            "text": "Claude Code is an agent harness, not a large language model, that orchestrates a model's actions."
+          },
+          {
+            "label": "Real-World Actions",
+            "text": "It translates a model's generated text into real-world actions such as opening files, running commands, and handling errors."
+          },
+          {
+            "label": "Environmental Control",
+            "text": "The harness manages critical elements like file system access, terminal interaction, and external tool connections, ensuring safety."
+          },
+          {
+            "label": "Brain Agnostic",
+            "text": "Claude Code is brain-agnostic and can drive different models by simply changing an environment variable."
+          }
+        ]
+      },
+      {
+        "lead": "Combining Ornith's \"brain\" (planning) with Claude Code's \"hands\" (execution) creates a powerful, safe synergy, rather than competition.",
+        "bullets": [
+          {
+            "label": "Category Error",
+            "text": "The idea of Ornith (brain) replacing Claude Code (hands) is a \"category error\" because their functions differ."
+          },
+          {
+            "label": "Ornith's Focus",
+            "text": "Ornith's internal scaffolding focuses on planning and tool selection within its cognitive process."
+          },
+          {
+            "label": "Claude Code's Role",
+            "text": "Claude Code provides the essential runtime scaffolding and environmental control for safe execution."
+          },
+          {
+            "label": "Powerful Synergy",
+            "text": "Combining Ornith's planning capabilities with Claude Code's safe execution environment creates a powerful synergy."
+          },
+          {
+            "label": "Safe Execution",
+            "text": "This setup enables a model that knows how to act, safely performing actions on your machine with guardrails and user approval."
+          }
+        ]
+      },
+      {
+        "lead": "Integrating Ornith with Claude Code involves serving Ornith locally, using a translator for communication, and configuring Claude Code to point to this setup.",
+        "bullets": [
+          {
+            "label": "Serve Ornith",
+            "text": "Serve the Ornith model locally using a tool like VLLM, setting it up as an OpenAI-compatible endpoint."
+          },
+          {
+            "label": "Add Translator",
+            "text": "Introduce a small translator or proxy to bridge communication between Claude Code's Anthropic message format and Ornith's OpenAI style."
+          },
+          {
+            "label": "Configure Claude Code",
+            "text": "Configure Claude Code by setting the base URL variable to point to the proxy and specifying Ornith as the model."
+          },
+          {
+            "label": "Local Execution",
+            "text": "This setup allows Claude Code to leverage Ornith as its underlying \"brain\" for local, agentic code execution with user approval."
+          }
+        ]
+      },
+      {
+        "lead": "Ornith offers a powerful open \"brain\" for Claude Code, ideal for local, cost-sensitive tasks, significantly narrowing the gap with frontier models.",
+        "bullets": [
+          {
+            "label": "Flagship Performance",
+            "text": "Ornith's flagship model performs remarkably well, matching Claude Opus 4.7 and slightly trailing Opus 4.8 on SWE bench."
+          },
+          {
+            "label": "Frontier Advantage",
+            "text": "Frontier closed models still hold an edge in the hardest, longest-horizon tasks."
+          },
+          {
+            "label": "Ornith's Niche",
+            "text": "Ornith excels when code must remain local, offline, under a permissive license, or when avoiding per-token costs is crucial."
+          },
+          {
+            "label": "Key Strategy",
+            "text": "The key insight is to use Claude Code as a constant harness and swap the \"brain\" (Ornith or a frontier model) to fit the job."
+          },
+          {
+            "label": "Gap Narrows",
+            "text": "This development signifies a significant narrowing of the gap between open-weight and frontier AI models."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "sourceMd": "296_how-to-create-a-knowledge-base-with-ai-in-30-minutes-no-code.md",
+  "generatedAt": "2026-06-30T03:56:31.034Z",
+  "sourceSections": [
+    "Introduction to AI-Powered Knowledge Bases and Their Value",
+    "Essential Tools for Building an AI Knowledge Base",
+    "Building and Refining with Agent Zero: Initial Knowledge Base & Behavioral Adjustments",
+    "Leveraging Claude Code for Comprehensive Knowledge Base Creation and HTML Output",
+    "Generating Detailed YouTube Video Treatments and Production Budgets",
+    "Conclusion"
+  ],
+  "model": {
+    "sections": [
+      {
+        "lead": "AI-powered knowledge bases serve as a single source of truth, enabling AI agents to deeply understand project details and save thousands of dollars.",
+        "bullets": [
+          {
+            "label": "AI Agents",
+            "text": "A knowledge base helps AI agents deeply understand and reference project specifics from content creation to business operations."
+          },
+          {
+            "label": "Business Benefits",
+            "text": "This method establishes brand identity, refines messaging, brainstorms ideas, and visualizes concepts for various projects."
+          },
+          {
+            "label": "Cost Savings",
+            "text": "Implementing an AI knowledge base aims to save businesses thousands of dollars and extensive trial and error."
+          }
+        ]
+      },
+      {
+        "lead": "Building an AI knowledge base relies on AI agents like Agent Zero and Claude Code, supported by Multi-Cloud Platform servers and specialized tools.",
+        "bullets": [
+          {
+            "label": "Core Agents",
+            "text": "The primary AI agents used for this process are Agent Zero and Claude Code, running on Multi-Cloud Platform (MCP) servers."
+          },
+          {
+            "label": "Scraping Tools",
+            "text": "Apify Actors facilitate web scraping across various platforms, Firecrawl handles web searching, and Playwright aids advanced scraping."
+          },
+          {
+            "label": "Support Tools",
+            "text": "Context 7 provides up-to-date documentation for LLMs, while Mailgun is used for email notifications."
+          }
+        ]
+      },
+      {
+        "lead": "Agent Zero can build an initial knowledge base by scraping web data, but requires explicit instructions for referencing and saving progress.",
+        "bullets": [
+          {
+            "label": "Initial Task",
+            "text": "Agent Zero created an 'AI video generation' knowledge base by populating a folder with markdown files from scraped web data comparing AI video models."
+          },
+          {
+            "label": "Behavioral Adjustments",
+            "text": "It is crucial to adjust Agent Zero's behavior to automatically reference this knowledge base whenever AI video generation is mentioned."
+          },
+          {
+            "label": "Saving Progress",
+            "text": "The video emphasizes instructing Agent Zero to save scraping progress frequently to prevent context length issues and data loss."
+          },
+          {
+            "label": "Verbose Output",
+            "text": "Agent Zero's verbose thought process is useful for understanding its actions during knowledge base creation."
+          }
+        ]
+      },
+      {
+        "lead": "Claude Code conducts robust research, generating detailed information including API examples and HTML websites, but differs in its interaction patterns.",
+        "bullets": [
+          {
+            "label": "Comprehensive Research",
+            "text": "Claude Code conducts more robust and comprehensive research in its 'plan mode', gathering detailed information like API code examples and cost comparisons for AI video models."
+          },
+          {
+            "label": "HTML Output",
+            "text": "A notable feature of Claude Code is its ability to directly generate an HTML website to present structured data cleanly."
+          },
+          {
+            "label": "Interaction Differences",
+            "text": "Claude Code requires constant permission requests and tends to keep scraped data in context instead of immediately saving it to files, unlike Agent Zero."
+          }
+        ]
+      },
+      {
+        "lead": "Both AI agents utilize the knowledge base to produce detailed YouTube video treatments and comprehensive production cost analyses.",
+        "bullets": [
+          {
+            "label": "Video Treatments",
+            "text": "Both Agent Zero and Claude Code create YouTube video treatments, including script outlines, creator notes, important lines, and B-roll ideas for editors."
+          },
+          {
+            "label": "Frameworks",
+            "text": "Claude Code particularly excels at generating detailed frameworks, such as a six-layer prompt engineering framework, for content planning."
+          },
+          {
+            "label": "Cost Analysis",
+            "text": "Claude Code also provides comprehensive production cost analyses, detailing estimated API credits and various money-saving strategies."
+          }
+        ]
+      },
+      {
+        "lead": "Claude Code excels at deep research and initial knowledge base construction, while Agent Zero is ideal for automation and ongoing task management.",
+        "bullets": [
+          {
+            "label": "Claude Strengths",
+            "text": "Claude Code is superior for robust research, comprehensive knowledge base construction, and code production, such as generating websites."
+          },
+          {
+            "label": "Agent Strengths",
+            "text": "Agent Zero functions well as a personal assistant, excelling at automating recurring tasks like daily video treatment drafts and integrating with tools such as Google Calendar and Mailgun."
+          },
+          {
+            "label": "Optimized Workflow",
+            "text": "The ideal workflow involves using Claude Code for initial, deep knowledge base creation, then transferring that data to Agent Zero for ongoing automation and task management."
+          }
+        ]
+      }
+    ]
+  }
+}

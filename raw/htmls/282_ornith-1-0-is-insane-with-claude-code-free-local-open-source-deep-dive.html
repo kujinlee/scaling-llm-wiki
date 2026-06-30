@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="deep-dive-html v1">
+<meta name="source-md" content="282_ornith-1-0-is-insane-with-claude-code-free-local-open-source-deep-dive.md">
+<meta name="video-id" content="aKe71FrwL1o">
+<title>Ornith 1.0 Is INSANE with Claude Code (FREE + Local + open Source) (Deep Dive)</title>
+<script>(function(){try{var t=localStorage.getItem('html-doc-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<style>
+:root{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08);--link:#b07700;--h3:#5b463a;--h4:#6b5a4a;--codebg:#f1ebe0;--preborder:#e6ddcf;--quote:#8a8276;--meta:#8a8276}
+[data-theme="light"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08);--link:#b07700;--h3:#5b463a;--h4:#6b5a4a;--codebg:#f1ebe0;--preborder:#e6ddcf;--quote:#8a8276;--meta:#8a8276}
+[data-theme="dark"]{--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5);--link:#e6b54d;--h3:#d8cdb8;--h4:#c4b7a0;--codebg:#2a241c;--preborder:#332c24;--quote:#9a9082;--meta:#9a9082}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5);--link:#e6b54d;--h3:#d8cdb8;--h4:#c4b7a0;--codebg:#2a241c;--preborder:#332c24;--quote:#9a9082;--meta:#9a9082}}
+html.theme-ready body,html.theme-ready #theme-toggle,html.theme-ready #print-btn{transition:background-color .2s,color .2s}
+#theme-toggle,#print-btn{position:fixed;top:1rem;width:2.4rem;height:2.4rem;border-radius:50%;border:1px solid rgba(128,128,128,.35);background:var(--card);color:var(--ink);font-size:1.1rem;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;z-index:10}
+#theme-toggle{right:1rem}#print-btn{right:3.6rem}
+@media print{:root,:root:not([data-theme]),[data-theme="light"],[data-theme="dark"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08);--link:#b07700;--h3:#5b463a;--h4:#6b5a4a;--codebg:#f1ebe0;--preborder:#e6ddcf;--quote:#8a8276;--meta:#8a8276}#theme-toggle,#print-btn{display:none}}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);line-height:1.7;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",'Apple SD Gothic Neo','Malgun Gothic',Helvetica,Arial,sans-serif}
+.dd{max-width:52rem;margin:0 auto;background:var(--card);padding:2.8rem 3rem 4rem;box-shadow:var(--shadow);counter-reset:sec}
+html.theme-ready .dd{transition:background-color .2s,color .2s}
+.dd h1{font-family:Georgia,'Nanum Myeongjo','Apple SD Gothic Neo','Times New Roman',serif;font-size:2rem;line-height:1.2;margin:0 0 .15em;color:var(--ink)}
+.dd h2{counter-increment:sec;position:relative;font-family:Georgia,'Nanum Myeongjo',serif;font-size:1.5rem;
+  margin:2.2em 0 .35em;padding-top:1.5em;border-top:1px solid var(--rule);color:var(--ink)}
+.dd h2:first-of-type{border-top:0;padding-top:0;margin-top:.4em}
+.dd h2::before{content:counter(sec);position:absolute;right:0;top:.55em;font:700 4.2rem/1 Georgia,serif;
+  color:var(--ghost);pointer-events:none;user-select:none}
+.dd .lead{font-size:1.02rem;line-height:1.55;color:var(--ink);font-weight:400;margin:.3em 0 .9em;max-width:92%}
+.dd .lead-accent{color:var(--gold);font-weight:400}
+.dd .ts{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.85rem;font-weight:400;text-decoration:none;white-space:nowrap}
+.dd .ts:hover{text-decoration:underline}
+.dd h3{font-size:1.15rem;margin:1.6em 0 .3em;color:var(--h3)}
+.dd h4{font-size:1.02rem;margin:1.2em 0 .3em;color:var(--h4)}
+.dd p{margin:.75em 0;color:var(--ink)}
+.dd a{color:var(--link)}
+.dd ul,.dd ol{padding-left:1.4em;margin:.5em 0}
+.dd li{margin:.4em 0;color:var(--li);line-height:1.65}
+.dd strong{color:var(--ink);font-weight:700}
+.dd blockquote{border-left:3px solid var(--goldline);margin:1.1em 0;padding:.2em 1.1em;color:var(--quote);font-style:italic}
+.dd code{font-family:'SF Mono',Menlo,Monaco,Consolas,monospace;font-size:.88em;background:var(--codebg);padding:.1em .35em;border-radius:4px}
+.dd pre{background:var(--codebg);border:1px solid var(--preborder);border-radius:8px;padding:1em 1.2em;overflow:auto;line-height:1.4}
+.dd pre code{background:none;padding:0;font-size:.85em;white-space:pre}
+.dd footer{margin-top:2.6em;padding-top:1.2em;border-top:1px solid var(--rule);color:var(--foot);font-size:.8rem}
+@media print{body{background:#fff}.dd{box-shadow:none}#theme-toggle{display:none}}
+.dig{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.8rem;font-weight:400;text-decoration:none;white-space:nowrap;cursor:pointer}.dig:hover{text-decoration:underline}</style>
+</head>
+<body>
+<button id="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light/dark">🌙</button><button id="print-btn" type="button" onclick="window.print()" aria-label="Print" title="Print">🖨️</button>
+<article class="dd">
+<h1>Ornith 1.0 Is INSANE with Claude Code (FREE + Local + open Source) (Deep Dive)</h1>
+<p><strong>Channel:</strong> Cloud Codes | <strong>Duration:</strong> 9:57 | <strong>URL:</strong> <a href="https://www.youtube.com/watch?v=aKe71FrwL1o">https://www.youtube.com/watch?v=aKe71FrwL1o</a></p>
+<hr>
+<p>This document provides a comprehensive, structured deep-dive into the video, explaining its core concepts and technical details.</p>
+
+<h2 data-start="0">The &quot;Cage Match&quot; Fallacy <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=0s" target="_blank" rel="noopener noreferrer">(0:00–0:12)</a> <a class="dig" data-type="summary" data-t="0">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">The video begins by addressing a common misconception that emerged on the internet: a &quot;cage match&quot; between two top-tier coding tools, <strong>Ornith 1.0</strong> and <strong>Claude Code</strong>.</span> Ornith 1.0 is described as a &quot;brand new open weight model,&quot; while Claude Code is a well-established tool. The central premise of the video is that this framing of a direct fight is a &quot;completely wrong&quot; category error. The rivalry is described as &quot;imaginary from the start&quot; because the two tools are not competitors but complementary components of a larger system.</p>
+<h2 data-start="12">Meet Ornith 1.0 <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=12s" target="_blank" rel="noopener noreferrer">(0:12–0:54)</a> <a class="dig" data-type="summary" data-t="12">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">Ornith 1.0 is an open-weight model released on June 25, 2026, by a research lab named <strong>DeepReinforce</strong>.</span> Its key characteristics are:
+- <strong>Open Weights:</strong> The model's parameters are publicly available.
+- <strong>MIT License:</strong> It uses a permissive license, allowing broad use.
+- <strong>No Regional Locks:</strong> It is globally accessible without geographic restrictions.
+- <strong>Local Execution:</strong> It can be downloaded and run entirely on a user's own hardware.</p><p>The video highlights that Ornith's most &quot;short-circuiting&quot; feature is its ability to learn its own problem-solving process during training. This &quot;self-scaffolding&quot; capability means it doesn't just write code; it learns to generate its own plans, make tool calls, inspect results, and repair its own work. Unlike most models that &quot;wait to be told how to behave,&quot; Ornith &quot;figured out the how on its own.&quot;</p>
+<p>The on-screen graphic illustrates this self-written plan:</p>
+<pre><code class="language-ascii">      +---------------------+
+      |   SELF-WRITTEN PLAN   |
+      +---------------------+
+      | 1. plan the task      |
+      | 2. call the tools     |
+      | 3. inspect results    |
+      | 4. rewrite what failed|
+      +---------------------+
+</code></pre>
+<p>This led to the &quot;hot take&quot; that if a model can scaffold itself, an external agent harness like Claude Code might no longer be necessary.</p>
+
+<h2 data-start="54">The Category Error: A Brain vs. A Pair of Hands <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=54s" target="_blank" rel="noopener noreferrer">(0:54–1:21)</a> <a class="dig" data-type="summary" data-t="54">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">The video's central thesis is that Ornith and Claude Code are fundamentally different types of tools that operate on different layers.</span> - <strong>Ornith</strong> is a <strong>brain</strong>; its function is to think and reason.
+- <strong>Claude Code</strong> is a <strong>pair of hands</strong>; its function is to act and interact with the user's machine.</p><pre><code class="language-ascii">     +-----------------+       +-----------------+
+     |      Ornith     |       |    Claude Code  |
+     |    IT THINKS    |       |     IT ACTS     |
+     +-----------------+       +-----------------+
+              ↓                     ↑
+              +---------------------+
+              |    They compose,    |
+              |    not compete.     |
+              +---------------------+
+</code></pre>
+<p>They are not interchangeable and are designed to work together. As proof, the video reveals that when DeepReinforce benchmarked Ornith, one of the harnesses they used to run the model was <strong>Claude Code itself</strong>. The on-screen text emphasizes, &quot;they composed, not competed,&quot; dissolving the idea of a rivalry. A Terminal-Bench 2.1 benchmark shows Ornith achieving a score of <strong>40.6</strong> when &quot;loaded as the brain&quot; inside the Claude Code harness.</p>
+
+<h2 data-start="81">Ornith Model Family and Performance <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=81s" target="_blank" rel="noopener noreferrer">(1:21–1:51)</a> <a class="dig" data-type="summary" data-t="81">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">Ornith 1.0 is not a single model but a family of four, scaling from laptop-sized to data-center scale:
+- <strong>9B:</strong> A dense model that can run on a single GPU.</span> - <strong>31B:</strong> A dense &quot;workhorse&quot; model.
+- <strong>35B:</strong> A Mixture-of-Experts (MoE) model with approximately 3 billion active parameters per token.
+- <strong>397B:</strong> The flagship model.</p><p>The flagship 397B model is shown to be highly competitive with frontier closed-source models. On the <strong>SWE-Bench Verified</strong> benchmark, Ornith 397B scores <strong>82.4</strong>, which ties with Claude Opus 4.7 (which scored 80.8 in the graphic, but the text says 82.4 ties it) and is only a few points behind the top-performing Claude Opus 4.8 (87.6). This places a fully open model in direct conversation with the best proprietary models.</p>
+
+<h2 data-start="111">A New Paradigm: An Open Brain in a Frontier-Grade Harness <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=111s" target="_blank" rel="noopener noreferrer">(1:51–2:16)</a> <a class="dig" data-type="summary" data-t="111">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">The combination of Ornith and Claude Code creates a new, powerful paradigm.</span> By running an open-source &quot;brain&quot; like Ornith inside a top-tier &quot;harness&quot; like Claude Code, users can achieve a setup with unprecedented benefits:
+- <strong>Private:</strong> All data and code remain on the user's machine.
+- <strong>Local:</strong> The entire stack can run offline without an internet connection.
+- <strong>MIT-licensed:</strong> Permissive and suitable for commercial use.
+- <strong>$0 / token:</strong> No per-token costs, as the model is run locally.</p><p>The video states that &quot;that exact combination simply did not exist a year ago.&quot;</p>
+
+<h2 data-start="136">Deep Dive: The Model (Ornith 1.0) <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=136s" target="_blank" rel="noopener noreferrer">(2:16–2:17)</a> <a class="dig" data-type="summary" data-t="136">↑ summary</a></h2>
+<h3>Training and Architecture <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=137s" target="_blank" rel="noopener noreferrer">(2:17–2:47)</a></h3>
+<p>Ornith is not built from scratch. It is post-trained on two strong open base models: <strong>Gemma 4</strong> and <strong>Qwen 3.5</strong>. DeepReinforce took these existing models and pushed them &quot;much, much further with reinforcement learning&quot; to teach them to be effective agents.</p>
+<pre><code class="language-ascii">      +-----------------+
+      |     Gemma 4     |
+      | OPEN BASE MODEL |
+      +-----------------+
+              ↓
+      +-----------------+
+      |      + RL       |
+      +-----------------+
+              ↓
+      +-----------------+
+      |    Qwen 3.5     |
+      | OPEN BASE MODEL |
+      +-----------------+
+              ↓
+      +-----------------+
+      |    ORNITH 1.0   |
+      +-----------------+
+</code></pre>
+
+<h3>Context Window and Hardware <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=167s" target="_blank" rel="noopener noreferrer">(2:47–3:01)</a></h3>
+<p>All models in the Ornith family support a large context window of <strong>256K tokens</strong>, which can be extended to <strong>400K tokens</strong> for tasks involving whole repositories. The smallest 9B model can run with this full context on a single 80GB GPU, requiring approximately 19 GB of memory in <code>bf16</code> (half precision).</p>
+
+<h3>Agentic Behavior by Default <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=181s" target="_blank" rel="noopener noreferrer">(3:01–3:19)</a></h3>
+<p>Ornith is &quot;agentic out of the box.&quot; Its responses are structured to be easily parsed by agentic systems. Each response begins with a <code>&lt;think&gt;</code> block, where the model outlines its plan, followed by one or more <code>&lt;tool_call&gt;</code> blocks. Critically, these tool calls follow the standard <strong>OpenAI-compatible format</strong>, meaning that &quot;every harness already understands it&quot; without needing &quot;exotic glue.&quot; This compatibility is what allows it to slot directly into a tool like Claude Code.</p>
+
+<h3>Self-Scaffolding RL <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=199s" target="_blank" rel="noopener noreferrer">(3:19–3:51)</a></h3>
+<p>This is Ornith's core innovation. While most models are trained with a fixed, human-written scaffold, Ornith treats the scaffold itself as a learnable object that it proposes, refines, and rewrites. This is achieved through a two-stage reinforcement learning process:</p>
+<ol>
+<li><strong>Stage 1: Propose a scaffold.</strong> The model first generates a plan or process to solve the given task.</li>
+<li><strong>Stage 2: Solve the task.</strong> The model then executes that plan to arrive at a solution.</li>
+</ol>
+<p>The reward signal from the final outcome is fed back to both stages, allowing the model to improve not just its ability to answer questions but also its fundamental process for <em>how to work</em>.</p>
+<pre><code class="language-ascii">+-----------------------+      +------------------+
+|        STAGE 1        |      |      STAGE 2     |
+|  Propose a scaffold   |-----&gt;|   Solve the task |
++-----------------------+      +------------------+
+          ↑                            ↑
+          |                            |
+          +----(reward + both stages)--+
+</code></pre>
+
+<h3>Safeguards <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=231s" target="_blank" rel="noopener noreferrer">(3:51–4:05)</a></h3>
+<p>To prevent a model that designs its own process from &quot;gaming&quot; the system, DeepReinforce implemented three key guardrails:</p>
+<ol>
+<li><strong>Trust boundary:</strong> A hard outer wall that the model cannot cross.</li>
+<li><strong>Deterministic monitor:</strong> A system that flags any forbidden or unsafe moves.</li>
+<li><strong>Frozen judge:</strong> A separate, fixed model that can veto an entire run if it detects undesirable behavior.</li>
+</ol>
+
+<h3>Efficiency <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=245s" target="_blank" rel="noopener noreferrer">(4:05–4:21)</a></h3>
+<p>The payoff for this advanced training method is extreme efficiency. The <strong>Ornith 9B</strong> model, despite its small size, performs on par with or better than much larger models. On SWE-Bench Verified, it scores <strong>69.4</strong>, slightly behind <strong>Qwen 3.5 35B</strong> (70.0) but significantly ahead of <strong>Gemma4 31B</strong> (52.0). This demonstrates that &quot;learning a better process... is worth a lot of raw parameters.&quot;</p>
+
+<h2 data-start="261">Deep Dive: The Harness (Claude Code) <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=261s" target="_blank" rel="noopener noreferrer">(4:21–4:23)</a> <a class="dig" data-type="summary" data-t="261">↑ summary</a></h2>
+<h3>The Agent Loop <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=263s" target="_blank" rel="noopener noreferrer">(4:23–4:38)</a></h3>
+<p>Claude Code is not a model but a <strong>harness</strong>. It is the agent loop that orchestrates the problem-solving process. This loop consists of four steps:</p>
+<ol>
+<li>Take a goal.</li>
+<li>Plan a step.</li>
+<li>Run a tool.</li>
+<li>Read the result.
+The harness repeats this cycle until the job is complete.</li>
+</ol>
+
+<h3>The Power of the Harness <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=278s" target="_blank" rel="noopener noreferrer">(4:38–4:50)</a></h3>
+<p>The harness is crucial because it translates a model's text-only output into real-world actions. A raw model can only talk; the harness is what allows it to <em>do</em>. It is the layer that actually opens files, runs commands, and feeds error messages back to the model for correction.</p>
+
+<h3>Security and Control <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=290s" target="_blank" rel="noopener noreferrer">(4:50–5:07)</a></h3>
+<p>The harness is also the layer responsible for security and control. It holds the &quot;real keys&quot; to the system, which a raw model should never have direct access to. This includes:</p>
+<ul>
+<li><strong>Real file system</strong> access (edit, create, move).</li>
+<li>A <strong>real terminal</strong> to run any command.</li>
+<li>A <strong>permission gate</strong> that pauses and asks for user approval before executing potentially dangerous commands.</li>
+</ul>
+
+<h3>Model-Agnosticism: The &quot;Quiet Superpower&quot; <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=307s" target="_blank" rel="noopener noreferrer">(5:07–5:21)</a></h3>
+<p>A key feature of Claude Code is that it is <strong>model-agnostic</strong>. It does not care which &quot;brain&quot; is powering it. By changing a single environment variable (<code>ANTHROPIC_BASE_URL</code>), a user can point the same harness at a completely different model, such as a local Ornith instance running on <code>localhost:8000</code>, instead of the default Anthropic API.</p>
+
+<h2 data-start="321">The Complete Stack <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=321s" target="_blank" rel="noopener noreferrer">(5:21–5:36)</a> <a class="dig" data-type="summary" data-t="321">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">The video presents the full system as a three-layer stack:
+<code>ascii       +---------------------+       |         YOU         |       |      (the goal)     |       +---------------------+               ↓       +---------------------+       | HARNESS (Claude Code) |       |      (the hands)    |       +---------------------+               ↓       +---------------------+       |   MODEL (Ornith)    |       |      (the brain)    |       +---------------------+ </code>
+You provide the high-level goal, the harness (Claude Code) provides the safe execution environment and tools, and the model (Ornith) provides the reasoning and planning to achieve the goal.</span></p>
+<h2 data-start="336">The Myth of the Retired Harness <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=336s" target="_blank" rel="noopener noreferrer">(5:36–6:45)</a> <a class="dig" data-type="summary" data-t="336">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">The video circles back to debunk the initial hot take: if Ornith can self-scaffold, is a harness like Claude Code just &quot;dead weight&quot;?</span> The answer is a definitive <strong>no</strong>, because the two systems provide two different kinds of scaffolds at different times.
+- <strong>Training-Time Scaffold (Ornith):</strong> This is what Ornith learned internally. It's about <em>how to behave</em> like a disciplined agent: planning before acting, using tools instead of guessing, checking its own output, and recovering from failure.
+- <strong>Runtime Harness (Claude Code):</strong> This provides the tools and safety rails for the agent to <em>act</em> on a real machine. It manages the actual file edits and command executions.</p><p>Ornith's self-scaffolding training doesn't make the harness obsolete; it makes Ornith a &quot;far better tenant for a harness.&quot;</p>
+
+<h2 data-start="405">Practical Setup Guide <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=405s" target="_blank" rel="noopener noreferrer">(6:45–7:56)</a> <a class="dig" data-type="summary" data-t="405">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">The video provides a three-step guide to run Ornith inside the Claude Code harness.</span></p><pre><code class="language-ascii">+----------------+      +----------------+      +--------------+
+|   Claude Code  |-----&gt;| PROXY / ADAPTER|-----&gt;| ORNITH + VLLM|
+| (Anthropic fmt)|      | (maps both ways) |      | (OpenAI fmt)   |
++----------------+      +----------------+      +--------------+
+</code></pre>
+<ol>
+<li><strong>Step 1: Serve the model.</strong> Use a tool like <strong>vLLM</strong> to serve the Ornith model on a local port (e.g., 8000), creating an OpenAI-compatible API endpoint.</li>
+<li><strong>Step 2: Use a thin translator.</strong> Because Claude Code expects an Anthropic message format and Ornith speaks an OpenAI format, a small proxy adapter is needed to translate requests and responses between them.</li>
+<li><strong>Step 3: Point Claude Code at the translator.</strong> Set two environment variables in the terminal before running the <code>claude</code> command:
+<ul>
+<li><code>export ANTHROPIC_BASE_URL=&quot;http://localhost:8000&quot;</code></li>
+<li><code>export ANTHROPIC_MODEL=&quot;Ornith-1.0-9B&quot;</code>
+This redirects the existing Claude Code CLI to use the local, open brain.</li>
+</ul>
+</li>
+</ol>
+<p>A live demo shows this setup successfully fixing a <code>TypeError: cannot read 'token' of null</code> in a failing test file (<code>auth.test.ts</code>).</p>
+
+<h2 data-start="476">Performance Reality Check <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=476s" target="_blank" rel="noopener noreferrer">(7:56–8:43)</a> <a class="dig" data-type="summary" data-t="476">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">While Ornith is highly capable, the video provides an &quot;honest&quot; assessment of where it stands relative to the absolute frontier.</span> - <strong>When the open brain wins:</strong> The open, local setup is the clear winner for tasks requiring privacy (code stays on your hardware), offline capability, a permissive MIT license, or zero per-token cost.
+- <strong>When the frontier still wins:</strong> For the &quot;hardest, longest-horizon jobs,&quot; the most advanced closed-source models (like Opus 4.8) still have a performance edge. The few extra percentage points on benchmarks can be the difference between a task succeeding or stalling.</p>
+<h2 data-start="523">The Professional Workflow: Keep the Harness, Swap the Brain <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=523s" target="_blank" rel="noopener noreferrer">(8:43–9:33)</a> <a class="dig" data-type="summary" data-t="523">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">The ultimate answer is not to choose one over the other, but to use both.</span> The recommended &quot;pro setup&quot; is:
+- <strong>Keep Claude Code as the constant harness.</strong>
+- <strong>Swap the brain to fit the job.</strong>
+- Use <strong>Ornith</strong> for default, local, private, and free tasks.
+- Switch to a <strong>frontier model like Opus</strong> for the most difficult tasks where maximum performance is required.</p><pre><code class="language-ascii">        +--------------------------------+
+        | Claude Code (the constant)     |
+        +--------------------------------+
+                     ↑ (Same Harness)
+                     ↓ (Swap Below)
++---------------------+ +--------------------+
+|    Ornith - local   | |   Opus - frontier  |
+| (default, private)  | | (when it counts)   |
++---------------------+ +--------------------+
+</code></pre>
+
+<h2 data-start="573">Conclusion: Not a Fight, A Stack <a class="ts" href="https://www.youtube.com/watch?v=aKe71FrwL1o&amp;t=573s" target="_blank" rel="noopener noreferrer">(9:33–9:58)</a> <a class="dig" data-type="summary" data-t="573">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">The video concludes by reiterating its main points.</span> The relationship between Ornith and Claude Code is not a fight but a <strong>stack</strong>. An open-weight model is now good enough to be the &quot;brain&quot; in a top-tier &quot;harness,&quot; a milestone that was just a research demo a year ago. The myth that a self-scaffolding model retires the harness is false, akin to saying &quot;a better engine retires the car.&quot; The best systems combine a great brain with great hands.</p><pre><code class="language-ascii">+----------------+      +-------------+      +-------------+
+|     Ornith     |-----&gt;| Claude Code |-----&gt;| Your Machine|
+| (the open brain) |      | (the hands)   |      | (real work)   |
++----------------+      +-------------+      +-------------+
+</code></pre>
+</article>
+<script>
+(function(){
+  // ── cross-doc nav (deep-dive → summary) ──────────────────────────────────
+  document.querySelectorAll('a.dig').forEach(function(a){
+    if(!a.dataset.type)return;
+    var u=new URL(location.href);
+    u.searchParams.set('type',a.dataset.type);
+    u.hash='t='+a.dataset.t;
+    a.setAttribute('href',u.pathname+u.search+u.hash);
+  });
+  // ── scroll to #t= hash ────────────────────────────────────────────────────
+  var m=location.hash.match(/^#t=(\d+)/);
+  if(m){
+    var sec=+m[1];
+    var starts=[].slice.call(document.querySelectorAll('[data-start]')).map(function(e){return +e.dataset.start;});
+    var t=Math.max.apply(null,starts.filter(function(s){return s<=sec;}).concat([-1]));
+    if(t>=0){var el=document.querySelector('[data-start="'+t+'"]'); if(el){el.scrollIntoView();}}
+  }
+  // ── dig-state machine (summary-side only) ────────────────────────────────
+  var parts=location.pathname.split('/');
+  var videoId=parts[3];
+  var _sp=new URLSearchParams(location.search);
+  var outputFolder=_sp.get('outputFolder');
+  if(!videoId||!outputFolder)return;
+  // ── dig-doc client (dig-deeper page only) ────────────────────────────────
+  // Correctness premise: the POST job calls upsertDugSection BEFORE emitting
+  // "done", so the re-GET of the current page reflects the new dug section.
+  if(_sp.get('type')==='dig-deeper'){
+    var _dg=document.querySelector('.dg');
+    if(_dg){
+      function _applyDigErr(el){el.textContent='\u26a0 retry';el.dataset.state='error';el.removeAttribute('href');}
+      // ── Promise-based dig: single POST→SSE→swap core ─────────────────────
+      function _startDocDigAsync(trigger){
+        return new Promise(function(resolve,reject){
+          var startSec=+trigger.dataset.section;
+          trigger.textContent='\u23f3';trigger.dataset.state='loading';trigger.removeAttribute('href');
+          fetch('/api/videos/'+videoId+'/dig/'+startSec,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({outputFolder:outputFolder})})
+            .then(function(r){if(!r.ok)throw new Error('POST '+r.status);return r.json();})
+            .then(function(d){
+              var es=new EventSource('/api/videos/'+videoId+'/dig/'+startSec+'/stream?jobId='+encodeURIComponent(d.jobId));
+              es.onmessage=function(ev){
+                try{var msg=JSON.parse(ev.data);
+                  if(msg.type==='done'){
+                    es.close();
+                    fetch(location.href)
+                      .then(function(res){return res.text();})
+                      .then(function(html){
+                        var dp=new DOMParser();
+                        var fd=dp.parseFromString(html,'text/html');
+                        var fresh=fd.querySelector('[data-start="'+startSec+'"]');
+                        var cur=document.querySelector('[data-start="'+startSec+'"]');
+                        if(fresh&&cur&&cur.parentNode){cur.parentNode.replaceChild(document.adoptNode(fresh),cur);}
+                        resolve();
+                      })
+                      .catch(function(err){_applyDigErr(trigger);reject(err);});
+                  }else if(msg.type==='error'){es.close();_applyDigErr(trigger);reject(new Error('stream error'));}
+                }catch(e){}
+              };
+              es.onerror=function(){es.close();_applyDigErr(trigger);reject(new Error('SSE error'));};
+            })
+            .catch(function(err){_applyDigErr(trigger);reject(err);});
+        });
+      }
+      // ── Single-click path: delegate to the async core ─────────────────────
+      function _startDocDig(trigger){_startDocDigAsync(trigger).catch(function(){});}
+      // ── ⤢ expand all — confirm → serialized loop ──────────────────────────
+      var _eaBtn=_dg.querySelector('.dg-expand-all');
+      if(_eaBtn){
+        var _eaDlg=document.getElementById('_dg-ea-dlg');
+        var _eaProg=document.getElementById('_dg-ea-prog');
+        var _eaMsg=document.getElementById('_dg-ea-msg');
+        var _eaProgMsg=document.getElementById('_dg-ea-prog-msg');
+        var _eaFailMsg=document.getElementById('_dg-ea-fail-msg');
+        var _eaCancelProg=document.getElementById('_dg-ea-cancel-prog');
+        function _eaClose(el){el.removeAttribute('data-open');}
+        function _eaOpen(el){el.setAttribute('data-open','');}
+        function _eaRunBatch(triggers,N){
+          _eaOpen(_eaProg);
+          var cancelled=false;
+          var failures=[];
+          var k=0;
+          _eaCancelProg.onclick=function(){cancelled=true;};
+          function _next(){
+            // Collect still-un-dug triggers (may have changed if DOM was swapped).
+            // Exclude error-state triggers — they already failed in this batch run.
+            var remaining=[].slice.call(document.querySelectorAll('.dig-trigger[data-section], .dig-refresh[data-section]'))
+              .filter(function(t){return t.dataset.state!=='error'&&t.dataset.state!=='loading';});
+            if(cancelled||remaining.length===0){
+              if(failures.length>0){
+                // Show failure summary in the progress overlay then auto-close.
+                _eaProgMsg.textContent='Done with '+failures.length+' failure(s).';
+                _eaFailMsg.textContent='Failed sections: '+failures.join(', ');
+                _eaFailMsg.style.display='';
+                setTimeout(function(){_eaClose(_eaProg);_eaFailMsg.style.display='none';},6000);
+              }else{
+                _eaClose(_eaProg);
+              }
+              return;
+            }
+            k++;
+            _eaProgMsg.textContent='section '+k+' of '+N+'\u2026';
+            var trig=remaining[0];
+            _startDocDigAsync(trig)
+              .then(function(){_next();})
+              .catch(function(){failures.push(trig.dataset.section);_next();});
+          }
+          _next();
+        }
+        _eaBtn.addEventListener('click',function(){
+          var triggers=[].slice.call(document.querySelectorAll('.dig-trigger[data-section], .dig-refresh[data-section]'));
+          var N=triggers.length;
+          if(N===0)return;
+          var X=(N*0.05).toFixed(2);
+          var Y=Math.ceil(N*30/60);
+          _eaMsg.textContent='Expand '+N+' remaining sections? ~$'+X+', ~'+Y+' min (rough estimate)';
+          _eaOpen(_eaDlg);
+          var _escHandler=function(e){if(e.key==='Escape'){_eaClose(_eaDlg);document.removeEventListener('keydown',_escHandler);}};
+          document.addEventListener('keydown',_escHandler);
+          _eaDlg.onclick=function(e){if(e.target===_eaDlg){_eaClose(_eaDlg);document.removeEventListener('keydown',_escHandler);}};
+          document.getElementById('_dg-ea-confirm').onclick=function(){
+            document.removeEventListener('keydown',_escHandler);
+            _eaClose(_eaDlg);
+            _eaRunBatch(triggers,N);
+          };
+          document.getElementById('_dg-ea-cancel-dlg').onclick=function(){
+            _eaClose(_eaDlg);
+            document.removeEventListener('keydown',_escHandler);
+          };
+        });
+      }
+      _dg.addEventListener('click',function(e){
+        // Toggle (dug → show gist or dug) — zero fetch
+        var tog=(e.target.closest?e.target.closest('.dig-toggle'):null);
+        if(tog){e.preventDefault();var s=tog.closest('section');if(s){s.classList.toggle('show-gist');tog.textContent=s.classList.contains('show-gist')?'show dig deeper \u25b6':'show summary \u2303';}return;}
+        // Refresh (stale dug → re-dig in place) — must be before .dig-trigger check
+        var refresh=(e.target.closest?e.target.closest('.dig-refresh[data-section]'):null);
+        if(refresh){e.preventDefault();_startDocDig(refresh);return;}
+        // Trigger (un-dug → expand in place)
+        var trig=(e.target.closest?e.target.closest('.dig-trigger[data-section]'):null);
+        if(!trig)return;
+        e.preventDefault();
+        var st=trig.dataset.state;
+        if(st==='loading')return;
+        _startDocDig(trig);
+      });
+      // ── ?dig=N auto-trigger ───────────────────────────────────────────────
+      // Strip ?dig from URL immediately (keep type, outputFolder, hash) so
+      // reload / back-forward never re-fires generation.
+      function _stripDigParam(){
+        var u2=new URL(location.href);
+        u2.searchParams.delete('dig');
+        history.replaceState(null,'',u2.pathname+u2.search+(u2.hash||''));
+      }
+      function _applyDigDocState(dugIds){
+        // Re-apply control visibility to reflect current dug state.
+        // (Used by pageshow to refresh a bfcache-restored page.)
+        dugIds.forEach(function(id){
+          var el=document.querySelector('[data-start="'+id+'"]');
+          if(el)el.setAttribute('data-dug','true');
+        });
+      }
+      function _handleDigParam(isPageshow){
+        var digN=isPageshow?null:_sp.get('dig');
+        var digSec=digN!==null&&digN!==''?+digN:null;
+        fetch('/api/videos/'+videoId+'/dig-state?outputFolder='+encodeURIComponent(outputFolder))
+          .then(function(r){return r.ok?r.json():Promise.resolve({sectionIds:[]});})
+          .then(function(data){
+            var dugIds=data.sectionIds||[];
+            if(isPageshow){
+              // bfcache restore: re-apply states only, no auto-trigger
+              _applyDigDocState(dugIds);
+              return;
+            }
+            if(digSec===null)return;
+            // Strip ?dig immediately regardless of dug state
+            _stripDigParam();
+            var trigger=document.querySelector('.dig-trigger[data-section="'+digSec+'"]');
+            if(!trigger)return; // invalid/unknown N — no-op
+            if(dugIds.indexOf(digSec)>=0){
+              // Already dug: scroll only, no POST
+              var sect=document.querySelector('[data-start="'+digSec+'"]');
+              if(sect)sect.scrollIntoView();
+            }else{
+              // Un-dug: trigger once then scroll after re-GET replaces section
+              _startDocDig(trigger);
+            }
+          })
+          .catch(function(){
+            if(!isPageshow)_stripDigParam();
+          });
+      }
+      _handleDigParam(false);
+      window.addEventListener('pageshow',function(ev){
+        if(ev.persisted)_handleDigParam(true);
+      });
+    }
+    return;
+  }
+  // ── summary-side nav links ────────────────────────────────────────────────
+  var controls=[].slice.call(document.querySelectorAll('a.dig[data-section]')).filter(function(a){return!a.dataset.type;});
+  if(!controls.length)return;
+  function viewHref(sec){
+    var p=new URLSearchParams();
+    p.set('outputFolder',outputFolder);
+    p.set('type','dig-deeper');
+    return '/api/html/'+videoId+'?'+p.toString()+'#t='+sec;
+  }
+  function digHref(sec){
+    var p=new URLSearchParams();
+    p.set('outputFolder',outputFolder);
+    p.set('type','dig-deeper');
+    p.set('dig',String(sec));
+    return '/api/html/'+videoId+'?'+p.toString()+'#t='+sec;
+  }
+  function applyDug(el,sec){
+    el.textContent='view detail \u2193';
+    el.setAttribute('href',viewHref(sec));
+    el.removeAttribute('target');
+    el.removeAttribute('rel');
+    el.dataset.state='dug';
+  }
+  function applyIdle(el,sec){
+    el.textContent='dig deeper \u25b6';
+    el.setAttribute('href',digHref(sec));
+    el.removeAttribute('target');
+    el.removeAttribute('rel');
+    el.dataset.state='idle';
+  }
+  function applyControls(dugIds){
+    controls.forEach(function(el){
+      var sec=+el.dataset.section;
+      if(dugIds.indexOf(sec)>=0){applyDug(el,sec);}else{applyIdle(el,sec);}
+    });
+  }
+  function fetchAndApply(){
+    fetch('/api/videos/'+videoId+'/dig-state?outputFolder='+encodeURIComponent(outputFolder))
+      .then(function(r){return r.ok?r.json():Promise.resolve({sectionIds:[]});})
+      .then(function(data){applyControls(data.sectionIds||[]);})
+      .catch(function(){applyControls([]);});
+  }
+  fetchAndApply();
+  window.addEventListener('pageshow',function(ev){
+    if(ev.persisted)fetchAndApply();
+  });
+})();
+</script><script>(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;function systemDark(){return!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)}function effective(){var a=root.getAttribute('data-theme');return a==='dark'||a==='light'?a:(systemDark()?'dark':'light')}function syncIcon(){btn.textContent=effective()==='dark'?'☀️':'🌙'}btn.addEventListener('click',function(){var next=effective()==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('html-doc-theme',next)}catch(e){}syncIcon()});syncIcon();requestAnimationFrame(function(){root.classList.add('theme-ready')})})();</script>
+</body>
+</html>

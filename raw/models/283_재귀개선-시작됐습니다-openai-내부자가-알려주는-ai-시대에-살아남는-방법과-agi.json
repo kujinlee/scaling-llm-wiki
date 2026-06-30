@@ -1,0 +1,156 @@
+{
+  "sourceMd": "283_재귀개선-시작됐습니다-openai-내부자가-알려주는-ai-시대에-살아남는-방법과-agi.md",
+  "generatedAt": "2026-06-29T17:14:36.313Z",
+  "sourceSections": [
+    "Defining AI-Native Startups and OpenAI's Role",
+    "Real-World Applications and Advanced Codex Usage",
+    "The Impact of AI on Startup Structure and Human Capital",
+    "Staying Ahead in a Rapidly Evolving AI Landscape",
+    "Cultivating an AI-Native Culture and Organizational Structure",
+    "Essential Skills for the AI Era and Future Opportunities",
+    "Conclusion"
+  ],
+  "model": {
+    "sections": [
+      {
+        "lead": "OpenAI's AGI mission defines its role as an intelligence utility, fostering AI-native startups focused on specific problems with a \"tinkerer\" attitude.",
+        "bullets": [
+          {
+            "label": "OpenAI Mission",
+            "text": "OpenAI's core mission is to achieve AGI (Artificial General Intelligence), influencing their product development and partnership strategy."
+          },
+          {
+            "label": "AI-Native Define",
+            "text": "Truly \"AI-native\" companies solve specific, real-world problems and are characterized by a \"tinkerer\" attitude, experimenting with AI."
+          },
+          {
+            "label": "Intelligence Utility",
+            "text": "OpenAI aims to be an intelligence utility, providing a foundational platform rather than directly competing in specialized verticals."
+          }
+        ]
+      },
+      {
+        "lead": "OpenAI employees extensively use Codex for diverse tasks like data analysis, feedback summaries, and research, leveraging advanced features for automation and control.",
+        "bullets": [
+          {
+            "label": "Codex Applications",
+            "text": "OpenAI employees use Codex for data analysis (e.g., tracking startup product usage trends), summarizing alpha program feedback, and conducting research with sub-agents."
+          },
+          {
+            "label": "Advanced Features",
+            "text": "Advanced Codex features include automations for recurring tasks like daily feedback summaries, \"computer use\" functionality, and a mobile app for on-the-go control."
+          },
+          {
+            "label": "Seamless Integration",
+            "text": "Connecting Codex to tools such as Slack, Gmail, and Google Calendar is recommended for seamless integration into workflows."
+          }
+        ]
+      },
+      {
+        "lead": "AI is enabling lean startups and \"one-person unicorns\" by automating core business functions, empowering non-technical founders, and blurring traditional job roles.",
+        "bullets": [
+          {
+            "label": "Lean Scale",
+            "text": "AI enables startups to remain lean and small while achieving significant scale, challenging traditional operational models."
+          },
+          {
+            "label": "One-Person Unicorns",
+            "text": "The concept of \"one-person unicorns\" is emerging, as companies automate core functions like customer support, sales, and product development with AI agents."
+          },
+          {
+            "label": "Founder Empowerment",
+            "text": "This shift empowers solopreneurs and allows \"non-technical\" founders to build sophisticated products without extensive technical expertise."
+          },
+          {
+            "label": "Hybrid Roles",
+            "text": "AI blurs traditional job roles, fostering hybrid profiles that combine customer-facing skills with technical engineering for more integrated teams."
+          }
+        ]
+      },
+      {
+        "lead": "The AI landscape is evolving rapidly, requiring founders to obsess over customer problems while building for the future and adapting to new model capabilities.",
+        "bullets": [
+          {
+            "label": "Rapid Evolution",
+            "text": "The AI landscape changes at an unprecedented pace, with model capabilities improving significantly every few months."
+          },
+          {
+            "label": "Agent Capabilities",
+            "text": "In the last nine months, AI agents have gained the ability to be reliable, long-duration, self-correcting, and effective tool users."
+          },
+          {
+            "label": "Founder Mindset",
+            "text": "Founders must obsess over customer problems, build with a \"6 months in the future\" mindset, and anticipate model improvements."
+          },
+          {
+            "label": "Adaptability Key",
+            "text": "Adaptability is critical, requiring a willingness to discard previous architectural choices and continuously test new models."
+          }
+        ]
+      },
+      {
+        "lead": "Cultivating an AI-native culture involves integrating AI from employee onboarding, encouraging experimentation, empowering champions, and fostering flatter organizations.",
+        "bullets": [
+          {
+            "label": "AI Onboarding",
+            "text": "AI-native organizations should provide new employees instant access to knowledge via AI tools connected to company data like Slack, Notion, and Google Drive."
+          },
+          {
+            "label": "Experimentation Culture",
+            "text": "Companies should encourage a \"tinkerer\" attitude, allowing employees to experiment with AI in their daily workflows."
+          },
+          {
+            "label": "Champion Adoption",
+            "text": "Internally, identifying and empowering early adopters and \"champions\" of AI can accelerate company-wide adoption."
+          },
+          {
+            "label": "Flatter Structure",
+            "text": "AI fosters smaller, flatter organizations by automating tasks traditionally handled by middle management and promoting forward-deployed engineering teams."
+          }
+        ]
+      },
+      {
+        "lead": "The AI era emphasizes adaptability, cross-domain skills, precise human-to-agent communication, authentic relationships, and offers new opportunities in education and health.",
+        "bullets": [
+          {
+            "label": "Foundational Skills",
+            "text": "Foundational knowledge in computer science, mathematics, and critical thinking remains crucial for success in the AI era."
+          },
+          {
+            "label": "Hybrid Abilities",
+            "text": "The AI era places increased emphasis on adaptability and flexibility for individuals who can span different domains, such as engineering and sales."
+          },
+          {
+            "label": "Communication Demands",
+            "text": "Communication skills, both human-to-human and human-to-agent (prompt engineering), require clarity and precision and are more important than ever."
+          },
+          {
+            "label": "Future Ventures",
+            "text": "Promising areas for future AI-driven startups include education (democratizing access) and health (accelerating research on aging and diseases)."
+          }
+        ]
+      },
+      {
+        "lead": "AI fundamentally reshapes the startup landscape, enabling efficiency and innovation, requiring customer focus, proactive adoption, experimentation, and hybrid skillsets.",
+        "bullets": [
+          {
+            "label": "Reshaping Startups",
+            "text": "AI is fundamentally reshaping the startup landscape, enabling unprecedented efficiency and innovation across industries."
+          },
+          {
+            "label": "Success Pillars",
+            "text": "Success hinges on a deep understanding of customer problems and a proactive approach to adopting new AI capabilities."
+          },
+          {
+            "label": "Culture & Skills",
+            "text": "Fostering a culture of continuous experimentation and developing hybrid skillsets blending technical prowess with strong communication are vital."
+          },
+          {
+            "label": "OpenAI Vision",
+            "text": "OpenAI envisions an intelligence utility where others build on their AGI foundation, driving a future of leaner, more adaptive, and highly impactful companies."
+          }
+        ]
+      }
+    ]
+  }
+}

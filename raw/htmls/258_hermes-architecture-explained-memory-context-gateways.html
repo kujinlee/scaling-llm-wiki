@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="magazine-skim v1">
+<meta name="source-md" content="258_hermes-architecture-explained-memory-context-gateways.md">
+<meta name="video-id" content="n32qq7Kwzh0">
+<title>Hermes Architecture EXPLAINED: Memory, Context &amp; Gateways</title>
+<script>(function(){try{var t=localStorage.getItem('html-doc-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<style>
+:root{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="light"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="dark"]{--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}}
+html.theme-ready body,html.theme-ready #theme-toggle,html.theme-ready #print-btn{transition:background-color .2s,color .2s}
+#theme-toggle,#print-btn{position:fixed;top:1rem;width:2.4rem;height:2.4rem;border-radius:50%;border:1px solid rgba(128,128,128,.35);background:var(--card);color:var(--ink);font-size:1.1rem;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;z-index:10}
+#theme-toggle{right:1rem}#print-btn{right:3.6rem}
+@media print{:root,:root:not([data-theme]),[data-theme="light"],[data-theme="dark"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}#theme-toggle,#print-btn{display:none}}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",'Apple SD Gothic Neo',Helvetica,Arial,sans-serif}
+.v4{max-width:50rem;margin:0 auto;background:var(--card);padding:2.8rem 3rem 4rem;box-shadow:var(--shadow)}
+html.theme-ready .v4{transition:background-color .2s,color .2s}
+.doc-title{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:2rem;line-height:1.2;margin:0 0 .15em}
+.doc-meta{color:var(--meta);font-size:.9rem;margin:0 0 1.8em}
+.doc-meta a{color:inherit;text-decoration:none}
+.doc-meta a:hover{text-decoration:underline}
+.callout{margin:0 0 2.4em;border-top:2px solid var(--goldline);border-bottom:2px solid var(--goldline);padding:1em 0}
+.callout .lbl{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-size:.7rem;font-weight:700;margin-bottom:.5em}
+.callout p{margin:.2em 0 .8em}
+.callout ul{padding-left:1.1em;margin:.4em 0 0}
+.callout li{margin:.25em 0}
+section{position:relative;padding:1.6em 0 1.2em;border-bottom:1px solid var(--rule)}
+.ghost{font:700 4.5rem/1 Georgia,serif;color:var(--ghost);position:absolute;right:0;top:.1em;pointer-events:none;user-select:none}
+h2{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:1.3rem;margin:.1em 0 .35em}
+.lead{font-size:1.02rem;line-height:1.5;color:var(--gold);font-weight:400;margin:.2em 0 .8em;max-width:90%}
+.ts{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.85rem;font-weight:400;text-decoration:none;white-space:nowrap}
+.ts:hover{text-decoration:underline}
+ul{padding-left:1.15em;margin:0}
+li{margin:.4em 0;line-height:1.6;color:var(--li)}
+footer{margin-top:2.5em;color:var(--foot);font-size:.8rem}
+@media print{body{background:#fff}.v4{box-shadow:none}}
+.dig{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.8rem;font-weight:400;text-decoration:none;white-space:nowrap;cursor:pointer}.dig:hover{text-decoration:underline}</style>
+</head>
+<body>
+<button id="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light/dark">🌙</button><button id="print-btn" type="button" onclick="window.print()" aria-label="Print" title="Print">🖨️</button>
+<article class="v4">
+  <h1 class="doc-title">Hermes Architecture EXPLAINED: Memory, Context &amp; Gateways</h1>
+  <p class="doc-meta">Hugging Face · 40:29 · <a href="https://www.youtube.com/watch?v=n32qq7Kwzh0" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=n32qq7Kwzh0</a></p>
+  <div class="callout">
+    <div class="lbl">Quick Reference</div>
+    <p>This video explains the modular Hermes AI agent architecture, detailing its agentic loop, context building, multi-platform gateway, and comprehensive memory management.</p>
+    <ul><li>Hermes utilizes a modular architecture with an AI agent core, accessible via CLI, API, or messaging gateways.</li><li>The agentic loop processes messages, builds context, uses LLMs, executes tools, and learns from interactions.</li><li>Context is dynamically built from markdown files (soul, user, memory), skills, and compressed message history.</li><li>A gateway system handles multi-platform communication, managing sessions and conversation history via SQLite.</li><li>Memory combines persistent markdown files, a SQLite database, and optional external memory providers.</li></ul>
+  </div>
+  <section data-start="58">
+      <span class="ghost">1</span>
+      <h2>High-Level Architecture Overview <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=58s" target="_blank" rel="noopener noreferrer">(0:58–3:58)</a> <a class="dig" data-type="deep-dive" data-t="58">dig deeper ▾</a></h2>
+      <p class="lead">The Hermes AI agent features a simple, modular architecture with an AI core, accessible via CLI, API, or messaging gateway, and uses dual memory.</p>
+      <ul><li>The agent can be accessed via a command-line interface (CLI), an API, or a gateway connecting to messaging services like Telegram, email, and Slack.</li><li>The agent comes pre-installed with a suite of tools and skills.</li><li>Hermes utilizes a dual memory system: internal memory (session transcripts, soul.md, user.md) and external memory (providers like MemZero).</li></ul>
+    </section>
+<section data-start="238">
+      <span class="ghost">2</span>
+      <h2>The Agent Loop <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=238s" target="_blank" rel="noopener noreferrer">(3:58–7:52)</a> <a class="dig" data-type="deep-dive" data-t="238">dig deeper ▾</a></h2>
+      <p class="lead">Hermes' agentic loop processes user messages, building context, interacting with an LLM, executing tools, providing a response, and updating its memory.</p>
+      <ul><li>The core of Hermes operates on a straightforward agentic loop, which is triggered by every user message.</li><li>Hermes builds its context by integrating internal memory and prompts, along with message history.</li><li>This context and message history are sent to the Large Language Model (LLM) for processing.</li><li>The LLM decides whether to call and execute specific tools.</li><li>A crucial &quot;memory update&quot; step follows, where the agent analyzes the interaction to learn and store relevant information.</li></ul>
+    </section>
+<section data-start="472">
+      <span class="ghost">3</span>
+      <h2>Context Building and Compression <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=472s" target="_blank" rel="noopener noreferrer">(7:52–20:21)</a> <a class="dig" data-type="deep-dive" data-t="472">dig deeper ▾</a></h2>
+      <p class="lead">Hermes constructs its LLM context from specific markdown files, skill descriptions, and message history, using compression to manage token limits.</p>
+      <ul><li>Hermes builds context from `soul.md` for personality, `user.md` for user information, and `memory.md` for facts and workflows.</li><li>Descriptions of available skills and tools are also included in the context.</li><li>Recent message history contributes to the overall context.</li><li>Context compression is employed when the message history exceeds a set threshold, specifically 50% of the context window.</li><li>Previous messages are summarized and appended to the context, replacing the original verbose history, before each LLM turn or on context window errors.</li></ul>
+    </section>
+<section data-start="1221">
+      <span class="ghost">4</span>
+      <h2>The Gateway System <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=1221s" target="_blank" rel="noopener noreferrer">(20:21–28:10)</a> <a class="dig" data-type="deep-dive" data-t="1221">dig deeper ▾</a></h2>
+      <p class="lead">The gateway enables Hermes to communicate across platforms, polling services, formatting messages, building conversation context, and managing user sessions.</p>
+      <ul><li>The gateway allows Hermes to communicate with users across multiple messaging platforms, including Telegram, WhatsApp, email, and Slack.</li><li>It operates an asynchronous I/O loop that continuously polls these services for incoming messages.</li><li>The gateway formats messages correctly and constructs the full conversation context, including message history from a local SQLite database.</li><li>It features a session manager to handle message flow, enabling users to interrupt, steer, or queue commands.</li></ul>
+    </section>
+<section data-start="1690">
+      <span class="ghost">5</span>
+      <h2>Memory Management <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=1690s" target="_blank" rel="noopener noreferrer">(28:10–34:53)</a> <a class="dig" data-type="deep-dive" data-t="1690">dig deeper ▾</a></h2>
+      <p class="lead">Hermes manages memory through markdown files for persistent context, a SQLite database for session transcripts, and optional external providers for enhanced recall.</p>
+      <ul><li>Markdown files like `soul.md`, `memory.md`, and `user.md` provide persistent context for agent personality and learned facts.</li><li>A local SQLite database stores full transcripts of all user sessions, enabling efficient retrieval of conversation history.</li><li>This database also maintains a bare text table specifically for similarity searches.</li><li>Optional external memory providers, such as MemZero and Super Memory, can be integrated to enhance recall by dynamically querying for context.</li></ul>
+    </section>
+<section data-start="2093">
+      <span class="ghost">6</span>
+      <h2>Cron Jobs for Automation <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=2093s" target="_blank" rel="noopener noreferrer">(34:53–40:30)</a> <a class="dig" data-type="deep-dive" data-t="2093">dig deeper ▾</a></h2>
+      <p class="lead">Hermes supports cron jobs, an internal loop running every minute to schedule and execute automated tasks.</p>
+      <ul><li>Hermes supports cron jobs for scheduling automated tasks.</li><li>This system is an internal loop within Hermes.</li><li>The internal loop runs every minute to execute scheduled tasks.</li></ul>
+    </section>
+  <footer>Skim view — generated from the source note <code>hermes-architecture-explained-memory-context-gateways.md</code>. Full text lives in the source <code>.md</code>.</footer>
+</article>
+<script>
+(function(){
+  document.querySelectorAll('a.dig').forEach(function(a){
+    var u=new URL(location.href);
+    u.searchParams.set('type',a.dataset.type);
+    u.hash='t='+a.dataset.t;
+    a.setAttribute('href',u.pathname+u.search+u.hash);
+  });
+  var m=location.hash.match(/^#t=(\d+)/);
+  if(m){
+    var sec=+m[1];
+    var starts=[].slice.call(document.querySelectorAll('[data-start]')).map(function(e){return +e.dataset.start;});
+    var t=Math.max.apply(null,starts.filter(function(s){return s<=sec;}).concat([-1]));
+    if(t>=0){var el=document.querySelector('[data-start="'+t+'"]'); if(el){el.scrollIntoView();}}
+  }
+})();
+</script><script>(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;function systemDark(){return!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)}function effective(){var a=root.getAttribute('data-theme');return a==='dark'||a==='light'?a:(systemDark()?'dark':'light')}function syncIcon(){btn.textContent=effective()==='dark'?'☀️':'🌙'}btn.addEventListener('click',function(){var next=effective()==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('html-doc-theme',next)}catch(e){}syncIcon()});syncIcon();requestAnimationFrame(function(){root.classList.add('theme-ready')})})();</script>
+</body>
+</html>

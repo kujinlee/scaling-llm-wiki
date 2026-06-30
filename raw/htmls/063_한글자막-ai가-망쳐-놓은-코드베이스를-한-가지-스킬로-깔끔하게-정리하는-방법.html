@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="magazine-skim v1">
+<meta name="source-md" content="063_한글자막-ai가-망쳐-놓은-코드베이스를-한-가지-스킬로-깔끔하게-정리하는-방법.md">
+<meta name="video-id" content="IL6JhcEoeKE">
+<title>[한글자막] AI가 망쳐 놓은 코드베이스를 한 가지 스킬로 깔끔하게 정리하는 방법</title>
+<script>(function(){try{var t=localStorage.getItem('html-doc-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<style>
+:root{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="light"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="dark"]{--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}}
+html.theme-ready body,html.theme-ready #theme-toggle{transition:background-color .2s,color .2s}
+#theme-toggle{position:fixed;top:1rem;right:1rem;width:2.4rem;height:2.4rem;border-radius:50%;border:1px solid rgba(128,128,128,.35);background:var(--card);color:var(--ink);font-size:1.1rem;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;z-index:10}
+@media print{:root,:root:not([data-theme]),[data-theme="light"],[data-theme="dark"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}#theme-toggle{display:none}}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",'Apple SD Gothic Neo',Helvetica,Arial,sans-serif}
+.v4{max-width:50rem;margin:0 auto;background:var(--card);padding:2.8rem 3rem 4rem;box-shadow:var(--shadow)}
+html.theme-ready .v4{transition:background-color .2s,color .2s}
+.doc-title{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:2rem;line-height:1.2;margin:0 0 .15em}
+.doc-meta{color:var(--meta);font-size:.9rem;margin:0 0 1.8em}
+.callout{margin:0 0 2.4em;border-top:2px solid var(--goldline);border-bottom:2px solid var(--goldline);padding:1em 0}
+.callout .lbl{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-size:.7rem;font-weight:700;margin-bottom:.5em}
+.callout p{margin:.2em 0 .8em}
+.callout ul{padding-left:1.1em;margin:.4em 0 0}
+.callout li{margin:.25em 0}
+section{position:relative;padding:1.6em 0 1.2em;border-bottom:1px solid var(--rule)}
+.ghost{font:700 4.5rem/1 Georgia,serif;color:var(--ghost);position:absolute;right:0;top:.1em;pointer-events:none;user-select:none}
+h2{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:1.3rem;margin:.1em 0 .35em}
+.lead{font-size:1.02rem;line-height:1.5;color:var(--gold);font-weight:400;margin:.2em 0 .8em;max-width:90%}
+.ts{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.85rem;font-weight:400;text-decoration:none;white-space:nowrap}
+.ts:hover{text-decoration:underline}
+ul{padding-left:1.15em;margin:0}
+li{margin:.4em 0;line-height:1.6;color:var(--li)}
+footer{margin-top:2.5em;color:var(--foot);font-size:.8rem}
+@media print{body{background:#fff}.v4{box-shadow:none}}
+</style>
+</head>
+<body>
+<button id="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light/dark">🌙</button>
+<article class="v4">
+  <h1 class="doc-title">[한글자막] AI가 망쳐 놓은 코드베이스를 한 가지 스킬로 깔끔하게 정리하는 방법</h1>
+  <p class="doc-meta">Tech Bridge · 11:19</p>
+  <div class="callout">
+    <div class="lbl">Quick Reference</div>
+    <p>This video demonstrates using an AI skill to refactor shallow modules into deep ones, improving codebase health and testability under human strategic guidance.</p>
+    <ul><li>Understand software entropy: AI can accelerate code degradation if not managed strategically.</li><li>Prioritize deep modules: Design modules that hide complexity behind simple interfaces for leverage.</li><li>Define clear seams: Identify interaction points between modules for effective testing.</li><li>Use AI as a tactical aid: Leverage AI agents for identifying refactoring opportunities, but provide strategic oversight.</li><li>Regularly improve architecture: Consistently refactor modules to maintain codebase health and testability.</li></ul>
+  </div>
+  <section>
+      <span class="ghost">1</span>
+      <h2>The Challenge of Software Entropy in the AI Era <a class="ts" href="https://www.youtube.com/watch?v=IL6JhcEoeKE&amp;t=9s" target="_blank" rel="noopener noreferrer">(0:09–1:24)</a></h2>
+      <p class="lead">AI's rapid code generation accelerates &quot;software entropy,&quot; degrading codebases into &quot;balls of mud&quot;; this video addresses rescuing them.</p>
+      <ul><li>AI's code generation speeds up &quot;software entropy,&quot; causing codebases to degrade more quickly into &quot;balls of mud.&quot;</li><li>Codebases degrade faster when changes do not consider the entire system, leading to complex and unmanageable structures.</li><li>The video aims to rescue these codebases using core software fundamentals and an &quot;improved codebase architecture skill.&quot;</li></ul>
+    </section>
+<section>
+      <span class="ghost">2</span>
+      <h2>Fundamental Software Architecture Concepts <a class="ts" href="https://www.youtube.com/watch?v=IL6JhcEoeKE&amp;t=84s" target="_blank" rel="noopener noreferrer">(1:24–2:41)</a></h2>
+      <p class="lead">This section defines fundamental software architecture concepts: modules, interfaces, and implementation.</p>
+      <ul><li>A &quot;module&quot; is a unit of application functionality, like React components for a page, authentication functions, or a logger.</li><li>Modules interact through their &quot;interfaces,&quot; which define the necessary information for a caller to correctly use the module, including methods and documentation.</li><li>The &quot;implementation&quot; refers to the internal workings and details that are deliberately hidden behind a module's interface.</li></ul>
+    </section>
+<section>
+      <span class="ghost">3</span>
+      <h2>Deep Modules, Seams, and Adapters for Better Design <a class="ts" href="https://www.youtube.com/watch?v=IL6JhcEoeKE&amp;t=161s" target="_blank" rel="noopener noreferrer">(2:41–4:44)</a></h2>
+      <p class="lead">Deep modules, seams, and adapters enhance software design by promoting simplicity, leverage, and testability.</p>
+      <ul><li>&quot;Deep modules&quot; are preferred because they hide significant implementation behind a simple interface, offering high &quot;leverage&quot; with more capability per learned interface unit.</li><li>In contrast, &quot;shallow modules&quot; are characterized by complex interfaces and very little internal implementation details.</li><li>&quot;Seams&quot; are specifically defined as the interfaces between different modules, which are ideal locations for conducting thorough testing.</li><li>&quot;Adapters&quot; are concrete implementations of modules designed to satisfy an interface at a seam, enabling interchangeable components such as fake clocks in tests.</li></ul>
+    </section>
+<section>
+      <span class="ghost">4</span>
+      <h2>The Benefits: Locality and Leverage <a class="ts" href="https://www.youtube.com/watch?v=IL6JhcEoeKE&amp;t=284s" target="_blank" rel="noopener noreferrer">(4:44–5:24)</a></h2>
+      <p class="lead">Deep modules primarily offer maintainers &quot;locality&quot; and users &quot;leverage,&quot; crucial for codebase improvement.</p>
+      <ul><li>Deep modules provide &quot;locality&quot; for maintainers, ensuring that changes and fixes are concentrated in a single place, which reduces scattered efforts.</li><li>For users, deep modules offer increased &quot;leverage,&quot; meaning they gain more functionality through a simpler and smaller interface.</li><li>These attributes of locality and leverage are identified as key targets for improving any codebase.</li></ul>
+    </section>
+<section>
+      <span class="ghost">5</span>
+      <h2>Applying AI for Codebase Improvement <a class="ts" href="https://www.youtube.com/watch?v=IL6JhcEoeKE&amp;t=324s" target="_blank" rel="noopener noreferrer">(5:24–9:16)</a></h2>
+      <p class="lead">The video shows Claude AI improving a React Router codebase by identifying &quot;deepening opportunities&quot; and proposing refactoring solutions.</p>
+      <ul><li>The video demonstrates an &quot;improve codebase architecture skill&quot; by using Claude AI to analyze a real React Router application.</li><li>The AI identifies &quot;deepening opportunities,&quot; such as concepts lacking single seams or exhibiting poor locality within the code.</li><li>A &quot;grilling session&quot; is initiated by the AI to discuss and propose specific refactoring solutions for the identified issues.</li><li>This process eventually leads to a proposed module shape and potentially a new GitHub issue for implementation.</li><li>The entire process is highly interactive and crucially requires significant human judgment to guide the AI.</li></ul>
+    </section>
+<section>
+      
+      <h2>Conclusion <a class="ts" href="https://www.youtube.com/watch?v=IL6JhcEoeKE&amp;t=556s" target="_blank" rel="noopener noreferrer">(9:16–11:20)</a></h2>
+      <p class="lead">Improving codebase architecture with AI requires human &quot;strategic programmer&quot; guidance for long-term healthy decisions.</p>
+      <ul><li>Human programmers must act as a &quot;strategic programmer&quot; (general) to guide the AI, which functions as a &quot;tactical programmer/sergeant.&quot;</li><li>This skill explicitly demands human judgment to ensure long-term healthy decisions are made for the codebase.</li><li>Regularly applying this process can identify numerous deepening opportunities, enhancing module leverage and testability.</li><li>Consistent use improves overall codebase health, particularly benefiting legacy systems that require a robust test harness.</li></ul>
+    </section>
+  <footer>Skim view — generated from the source note <code>한글자막-ai가-망쳐-놓은-코드베이스를-한-가지-스킬로-깔끔하게-정리하는-방법.md</code>. Full text lives in the source <code>.md</code>.</footer>
+</article>
+<script>(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;function systemDark(){return!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)}function effective(){var a=root.getAttribute('data-theme');return a==='dark'||a==='light'?a:(systemDark()?'dark':'light')}function syncIcon(){btn.textContent=effective()==='dark'?'☀️':'🌙'}btn.addEventListener('click',function(){var next=effective()==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('html-doc-theme',next)}catch(e){}syncIcon()});syncIcon();requestAnimationFrame(function(){root.classList.add('theme-ready')})})();</script>
+</body>
+</html>

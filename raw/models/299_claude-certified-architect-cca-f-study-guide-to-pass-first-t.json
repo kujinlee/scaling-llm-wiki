@@ -1,0 +1,96 @@
+{
+  "sourceMd": "299_claude-certified-architect-cca-f-study-guide-to-pass-first-t.md",
+  "generatedAt": "2026-06-30T14:48:59.082Z",
+  "sourceSections": [
+    "Exam Overview and Claude Fundamentals",
+    "Agentic Architecture and Orchestration",
+    "Claude Code Configuration and Workflows"
+  ],
+  "model": {
+    "sections": [
+      {
+        "lead": "The Anthropic Cloud Architect exam requires 75% on 60 scenario questions, testing Claude's stateless nature and its four augmentation layers.",
+        "bullets": [
+          {
+            "label": "Exam Structure",
+            "text": "The Anthropic Cloud Certified Architect exam has 60 multiple-choice scenario-based questions, requiring at least 75% correctness."
+          },
+          {
+            "label": "Exam Scenarios",
+            "text": "The exam draws from six production scenarios, presenting test-takers with four randomly selected ones."
+          },
+          {
+            "label": "Claude Stateless",
+            "text": "Claude is fundamentally a stateless language model accessed via the api.anthropic.com/v1/messages HTTP endpoint."
+          },
+          {
+            "label": "Core Limitations",
+            "text": "Claude has no memory between calls, doesn't run loops, and does not execute code directly."
+          },
+          {
+            "label": "Four Layers",
+            "text": "Claude's core engine is augmented by four layers: the Claude API, Agent SDK, Claude Code, and Model Context Protocol (MCP)."
+          }
+        ]
+      },
+      {
+        "lead": "Implement agent loops for stateless Claude using stop_reason; for larger tasks, multi-agent systems and targeted retries are key.",
+        "bullets": [
+          {
+            "label": "Agent Loop",
+            "text": "Your code must implement the agent loop for multi-step tasks because Claude is stateless."
+          },
+          {
+            "label": "Stop Reason",
+            "text": "The stop_reason field, when calling messages.create with tools, guides the agent loop: end_turn means Claude is done, tool_use means a function needs execution."
+          },
+          {
+            "label": "Full Cycle",
+            "text": "The full agent loop involves calling messages.create, inspecting tool_use, locally executing the function, appending tool_result, and recalling messages.create."
+          },
+          {
+            "label": "Multi-Agent",
+            "text": "For tasks exceeding a single Claude's context budget, use multi-agent systems with a coordinator Claude spawning sub-agents via the task_tool."
+          },
+          {
+            "label": "Task Decomposition",
+            "text": "Decompose tasks either sequentially for interdependent steps or adaptively for open-ended work."
+          },
+          {
+            "label": "Sub-Agent Retry",
+            "text": "When a sub-agent fails, almost always use a targeted retry of only that failed agent to prevent unwanted side effects."
+          }
+        ]
+      },
+      {
+        "lead": "Claude Code uses hierarchical Claude.md files for session context, supports custom slash commands, and integrates with CI/CD via claude code -p.",
+        "bullets": [
+          {
+            "label": "Code Memory",
+            "text": "Claude Code starts each session with no project memory, addressed by Claude.md files stitched into the system prompt."
+          },
+          {
+            "label": "User Level",
+            "text": "The user level Claude.md file, located at ~/.claude/claude.md, is for personal settings and is not version controlled."
+          },
+          {
+            "label": "Project Level",
+            "text": "The project level Claude.md file, found at repo root/claude.md, establishes team-wide conventions and is committed to Git."
+          },
+          {
+            "label": "Directory Level",
+            "text": "The directory level Claude.md file, in sub-package/claude.md, defines rules specific to a particular folder."
+          },
+          {
+            "label": "Slash Commands",
+            "text": "Custom slash commands, defined in .claude/commands/ with YAML front matter, offer reusable prompts and can constrain allowed_tools."
+          },
+          {
+            "label": "CI/CD Integration",
+            "text": "For headless CI/CD, use claude code -p with a structured output schema, failing pipelines only on explicitly named violation categories."
+          }
+        ]
+      }
+    ]
+  }
+}

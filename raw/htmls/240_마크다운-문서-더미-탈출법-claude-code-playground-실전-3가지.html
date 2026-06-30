@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="magazine-skim v1">
+<meta name="source-md" content="240_마크다운-문서-더미-탈출법-claude-code-playground-실전-3가지.md">
+<meta name="video-id" content="Mhl1kje4Mjc">
+<title>마크다운 문서 더미 탈출법 — Claude Code Playground 실전 3가지</title>
+<script>(function(){try{var t=localStorage.getItem('html-doc-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<style>
+:root{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="light"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="dark"]{--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}}
+html.theme-ready body,html.theme-ready #theme-toggle,html.theme-ready #print-btn{transition:background-color .2s,color .2s}
+#theme-toggle,#print-btn{position:fixed;top:1rem;width:2.4rem;height:2.4rem;border-radius:50%;border:1px solid rgba(128,128,128,.35);background:var(--card);color:var(--ink);font-size:1.1rem;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;z-index:10}
+#theme-toggle{right:1rem}#print-btn{right:3.6rem}
+@media print{:root,:root:not([data-theme]),[data-theme="light"],[data-theme="dark"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}#theme-toggle,#print-btn{display:none}}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",'Apple SD Gothic Neo',Helvetica,Arial,sans-serif}
+.v4{max-width:50rem;margin:0 auto;background:var(--card);padding:2.8rem 3rem 4rem;box-shadow:var(--shadow)}
+html.theme-ready .v4{transition:background-color .2s,color .2s}
+.doc-title{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:2rem;line-height:1.2;margin:0 0 .15em}
+.doc-meta{color:var(--meta);font-size:.9rem;margin:0 0 1.8em}
+.doc-meta a{color:inherit;text-decoration:none}
+.doc-meta a:hover{text-decoration:underline}
+.callout{margin:0 0 2.4em;border-top:2px solid var(--goldline);border-bottom:2px solid var(--goldline);padding:1em 0}
+.callout .lbl{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-size:.7rem;font-weight:700;margin-bottom:.5em}
+.callout p{margin:.2em 0 .8em}
+.callout ul{padding-left:1.1em;margin:.4em 0 0}
+.callout li{margin:.25em 0}
+section{position:relative;padding:1.6em 0 1.2em;border-bottom:1px solid var(--rule)}
+.ghost{font:700 4.5rem/1 Georgia,serif;color:var(--ghost);position:absolute;right:0;top:.1em;pointer-events:none;user-select:none}
+h2{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:1.3rem;margin:.1em 0 .35em}
+.lead{font-size:1.02rem;line-height:1.5;color:var(--gold);font-weight:400;margin:.2em 0 .8em;max-width:90%}
+.ts{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.85rem;font-weight:400;text-decoration:none;white-space:nowrap}
+.ts:hover{text-decoration:underline}
+ul{padding-left:1.15em;margin:0}
+li{margin:.4em 0;line-height:1.6;color:var(--li)}
+footer{margin-top:2.5em;color:var(--foot);font-size:.8rem}
+@media print{body{background:#fff}.v4{box-shadow:none}}
+.dig{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.8rem;font-weight:400;text-decoration:none;white-space:nowrap;cursor:pointer}.dig:hover{text-decoration:underline}</style>
+</head>
+<body>
+<button id="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light/dark">🌙</button><button id="print-btn" type="button" onclick="window.print()" aria-label="Print" title="Print">🖨️</button>
+<article class="v4">
+  <h1 class="doc-title">마크다운 문서 더미 탈출법 — Claude Code Playground 실전 3가지</h1>
+  <p class="doc-meta">AI는 야근중 · 4:27 · <a href="https://www.youtube.com/watch?v=Mhl1kje4Mjc" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=Mhl1kje4Mjc</a></p>
+  <div class="callout">
+    <div class="lbl">Quick Reference</div>
+    <p>This video shows how to transform unreadable AI-generated markdown into clear, interactive HTML using Claude Code and the Playground plugin for better comprehension.</p>
+    <ul><li>Transform long, unreadable AI-generated markdown into structured HTML with simple prompts.</li><li>Utilize Claude's Playground plugin for interactive code dependency maps and execution flows.</li><li>Add comments to interactive visualizations, which convert directly into actionable feedback prompts for AI.</li><li>Strategically use HTML for visual clarity and markdown for basic content to optimize token usage.</li><li>Prioritize quickly understanding AI outputs over just generating them for true productivity gains.</li></ul>
+  </div>
+  <section data-start="0">
+      <span class="ghost">1</span>
+      <h2>긴 마크다운 문서의 문제점과 HTML 전환의 필요성 <a class="ts" href="https://www.youtube.com/watch?v=Mhl1kje4Mjc&amp;t=0s" target="_blank" rel="noopener noreferrer">(0:00–0:28)</a> <a class="dig" data-section="0" data-t="0">dig deeper ▶</a></h2>
+      <p class="lead">100줄이 넘는 긴 마크다운 문서는 가독성이 떨어져 읽기 어려우며, 엔스로픽 엔지니어들도 HTML 전환의 필요성을 인정하고 있습니다.</p>
+      <ul><li>클로드 코드 작업 시 100줄이 넘는 마크다운 문서는 기호와 들여쓰기만 많아 읽기 어렵습니다.</li><li>엔스로픽 엔지니어들은 이 문제를 인지하고 있으며, HTML이 새로운 마크다운이라며 HTML로 결과물을 받고 있습니다.</li><li>마크다운 문서 중 기획 문서, 코드 분석, 리서치 요약 등은 내용이 충분해도 너무 길면 읽기 어렵습니다.</li></ul>
+    </section>
+<section data-start="28">
+      <span class="ghost">2</span>
+      <h2>기본 HTML 변환을 통한 가독성 향상 <a class="ts" href="https://www.youtube.com/watch?v=Mhl1kje4Mjc&amp;t=28s" target="_blank" rel="noopener noreferrer">(0:28–1:04)</a> <a class="dig" data-section="28" data-t="28">dig deeper ▶</a></h2>
+      <p class="lead">특정 프롬프트를 사용하여 마크다운을 HTML로 변환하면 채널별 탭과 주제별 카드 레이아웃으로 가독성과 이해 속도가 크게 향상됩니다.</p>
+      <ul><li>`내 리서치 마크다운 파일을 HTML로 변환해 줘. 상단에 탭을 만들어서 채널별로 정리하고 내용은 주제별로 묶어서 카드 레이아웃으로 만들어 줘.`와 같은 프롬프트를 사용합니다.</li><li>채널별 탭과 주제별 카드 레이아웃을 통해 스크롤 없이 한눈에 내용을 파악할 수 있어 이해 속도가 크게 향상됩니다.</li><li>레이아웃, 차트, 표 등을 명확히 지정하면 더욱 맞춤형 HTML 결과물을 얻을 수 있습니다.</li></ul>
+    </section>
+<section data-start="64">
+      <span class="ghost">3</span>
+      <h2>동적 시각화를 위한 플레이그라운드 플러그인 활용 <a class="ts" href="https://www.youtube.com/watch?v=Mhl1kje4Mjc&amp;t=64s" target="_blank" rel="noopener noreferrer">(1:04–1:48)</a> <a class="dig" data-section="64" data-t="64">dig deeper ▶</a></h2>
+      <p class="lead">단순 HTML 변환으로는 동적 시각화가 어렵지만, 엔스로픽의 '플레이그라운드' 플러그인은 두 줄의 코드로 인터랙티브한 결과물을 쉽게 구현합니다.</p>
+      <ul><li>버튼 클릭, 슬라이더 조작, 토글 변경 등을 통한 동적 시각화는 단순히 HTML을 요청해서는 구현하기 어렵습니다.</li><li>엔스로픽은 동적 시각화를 위해 '플레이그라운드'라는 플러그인을 제공합니다.</li><li>플레이그라운드는 두 줄의 코드로 쉽게 설치하고 내장 템플릿을 활용하여 다양한 문제 유형에 맞는 결과물을 생성할 수 있습니다.</li></ul>
+    </section>
+<section data-start="108">
+      <span class="ghost">4</span>
+      <h2>코드 의존성 맵을 통한 모듈 분석 <a class="ts" href="https://www.youtube.com/watch?v=Mhl1kje4Mjc&amp;t=108s" target="_blank" rel="noopener noreferrer">(1:48–2:57)</a> <a class="dig" data-section="108" data-t="108">dig deeper ▶</a></h2>
+      <p class="lead">플레이그라운드는 헤르메스 코드 구조의 시각적 의존성 맵을 생성하여 모듈을 색상 노드로 표현하고 코멘트 기능을 제공합니다.</p>
+      <ul><li>플레이그라운드를 활용하여 헤르메스 코드 구조를 시각적으로 보여주는 의존성 맵을 만들 수 있습니다.</li><li>`헤르메스 구조를 시각적으로 보여주는 플레이그라운드를 만들어 줘. 모듈한 의존성을 노드로 표시하고 내가 각 노드에 코멘트를 달 수 있게 해 줘.`와 같은 프롬프트를 사용합니다.</li><li>모듈 의존성이 노드로 표현되고 색상으로 구분되며, 노드를 클릭하여 코멘트를 달면 자동으로 피드백 프롬프트로 변환됩니다.</li></ul>
+    </section>
+<section data-start="177">
+      <span class="ghost">5</span>
+      <h2>코드 실행 흐름도를 통한 프로세스 이해 <a class="ts" href="https://www.youtube.com/watch?v=Mhl1kje4Mjc&amp;t=177s" target="_blank" rel="noopener noreferrer">(2:57–3:43)</a> <a class="dig" data-section="177" data-t="177">dig deeper ▶</a></h2>
+      <p class="lead">플레이그라운드는 헤르메스 에이전트 코드의 8단계 실행 흐름도를 인터랙티브 HTML로 생성하여 프로세스와 툴 활성화를 시각화합니다.</p>
+      <ul><li>헤르메스 에이전트 코드의 실행 흐름도를 인터랙티브 HTML로 생성할 수 있습니다.</li><li>`헤르메스 에이전트 코드를 분석해서 인터랙티브 HTML을 만들어 줘. 사용자 질문이 들어와서 답변이 나오기까지 전체 프로세스가 이해될 수 있도록 가시성 있게 보여줘.`와 같은 프롬프트를 사용합니다.</li><li>이 프롬프트로 8단계 다이어그램을 얻을 수 있으며, 사용자 질문 프리셋 선택 시 해당 요청 처리 과정이 강조됩니다.</li><li>각 레이어의 프로세스와 활성화되는 툴을 쉽게 확인할 수 있고, 자동 생성되는 피드백 프롬프트를 통해 수정 요청을 전달합니다.</li></ul>
+    </section>
+<section data-start="223">
+      <span class="ghost">6</span>
+      <h2>HTML과 마크다운의 적절한 활용 전략 <a class="ts" href="https://www.youtube.com/watch?v=Mhl1kje4Mjc&amp;t=223s" target="_blank" rel="noopener noreferrer">(3:43–4:07)</a> <a class="dig" data-section="223" data-t="223">dig deeper ▶</a></h2>
+      <p class="lead">토큰 소모가 많은 HTML과 플레이그라운드는 시각화가 중요한 내용에, 마크다운은 텍스트로 충분한 내용에 사용하여 전략적으로 활용해야 합니다.</p>
+      <ul><li>HTML 변환 및 플레이그라운드 사용은 더 많은 토큰을 소모합니다.</li><li>표, 다이어그램, 카드 등으로 보아야 이해가 빠른 시각화가 중요한 내용에는 HTML을 사용합니다.</li><li>초안, 메모, 에이전트 데이터처럼 텍스트로도 충분히 이해 가능한 내용에는 마크다운을 사용하여 토큰을 절약합니다.</li></ul>
+    </section>
+<section data-start="247">
+      
+      <h2>결론: AI 결과물 이해 속도 향상과 생산성 <a class="ts" href="https://www.youtube.com/watch?v=Mhl1kje4Mjc&amp;t=247s" target="_blank" rel="noopener noreferrer">(4:07–4:28)</a> <a class="dig" data-section="247" data-t="247">dig deeper ▶</a></h2>
+      <p class="lead">더 많은 토큰을 사용해도 HTML 및 플레이그라운드는 AI 생성물 이해 속도를 높여 생산성을 향상시키므로 충분히 가치 있습니다.</p>
+      <ul><li>토큰을 더 많이 사용하더라도 HTML 및 플레이그라운드 활용은 충분히 가치 있습니다.</li><li>AI가 문서를 만드는 속도가 사람이 이해하는 속도를 이미 앞질렀기 때문입니다.</li><li>이 간극을 줄이는 것이 현재 시점에서 진정한 생산성이라고 할 수 있습니다.</li><li>단순한 `HTML로 만들어 줘.` 한 마디로 AI 결과물 이해 속도를 높이는 과정을 시작할 수 있습니다.</li></ul>
+    </section>
+  <footer>Skim view — generated from the source note <code>마크다운-문서-더미-탈출법-claude-code-playground-실전-3가지.md</code>. Full text lives in the source <code>.md</code>.</footer>
+</article>
+<script>
+(function(){
+  // ── cross-doc nav (deep-dive → summary) ──────────────────────────────────
+  document.querySelectorAll('a.dig').forEach(function(a){
+    if(!a.dataset.type)return;
+    var u=new URL(location.href);
+    u.searchParams.set('type',a.dataset.type);
+    u.hash='t='+a.dataset.t;
+    a.setAttribute('href',u.pathname+u.search+u.hash);
+  });
+  // ── scroll to #t= hash ────────────────────────────────────────────────────
+  var m=location.hash.match(/^#t=(\d+)/);
+  if(m){
+    var sec=+m[1];
+    var starts=[].slice.call(document.querySelectorAll('[data-start]')).map(function(e){return +e.dataset.start;});
+    var t=Math.max.apply(null,starts.filter(function(s){return s<=sec;}).concat([-1]));
+    if(t>=0){var el=document.querySelector('[data-start="'+t+'"]'); if(el){el.scrollIntoView();}}
+  }
+  // ── dig-state machine (summary-side only) ────────────────────────────────
+  var parts=location.pathname.split('/');
+  var videoId=parts[3];
+  var outputFolder=new URLSearchParams(location.search).get('outputFolder');
+  if(!videoId||!outputFolder)return;
+  var controls=[].slice.call(document.querySelectorAll('a.dig[data-section]')).filter(function(a){return!a.dataset.type;});
+  if(!controls.length)return;
+  function viewHref(sec){
+    var p=new URLSearchParams();
+    p.set('outputFolder',outputFolder);
+    p.set('type','dig-deeper');
+    return '/api/html/'+videoId+'?'+p.toString()+'#t='+sec;
+  }
+  function applyDug(el,sec){
+    el.textContent='view detail ↓';
+    el.setAttribute('href',viewHref(sec));
+    el.setAttribute('target','_blank');
+    el.setAttribute('rel','noopener noreferrer');
+    el.dataset.state='dug';
+    if(!el.nextElementSibling||!el.nextElementSibling.matches('[data-force-section]')){
+      var btn=document.createElement('button');
+      btn.textContent='↻';
+      btn.setAttribute('data-force-section',String(sec));
+      btn.setAttribute('title','Force re-generate section deep-dive');
+      el.insertAdjacentElement('afterend',btn);
+    }
+  }
+  function applyLoading(el){el.textContent='⏳';el.dataset.state='loading';el.removeAttribute('href');}
+  function applyError(el){el.textContent='⚠ retry';el.dataset.state='error';el.removeAttribute('href');}
+  function applyIdle(el){el.textContent='dig deeper \u25b6';el.dataset.state='idle';el.removeAttribute('href');}
+  function startDig(el,sec,force){
+    applyLoading(el);
+    var body={outputFolder:outputFolder};
+    if(force)body.force=true;
+    fetch('/api/videos/'+videoId+'/dig/'+sec,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var es=new EventSource('/api/videos/'+videoId+'/dig/'+sec+'/stream?jobId='+encodeURIComponent(d.jobId));
+        es.onmessage=function(ev){
+          try{var data=JSON.parse(ev.data);
+            if(data.type==='done'){es.close();applyDug(el,sec);}
+            else if(data.type==='error'){es.close();applyError(el);}
+          }catch(e){}
+        };
+        es.onerror=function(){es.close();applyError(el);};
+      })
+      .catch(function(){applyError(el);});
+  }
+  fetch('/api/videos/'+videoId+'/dig-state?outputFolder='+encodeURIComponent(outputFolder))
+    .then(function(r){return r.ok?r.json():Promise.resolve({sectionIds:[]});})
+    .then(function(data){
+      var dug=data.sectionIds||[];
+      controls.forEach(function(el){
+        var sec=+el.dataset.section;
+        if(dug.indexOf(sec)>=0){applyDug(el,sec);}else{applyIdle(el);}
+        el.addEventListener('click',function(e){
+          e.preventDefault();
+          var st=el.dataset.state;
+          if(st==='loading')return;
+          if(st==='error'){applyIdle(el);startDig(el,sec);return;}
+          if(st==='idle')startDig(el,sec);
+        });
+      });
+      document.querySelectorAll('[data-force-section]').forEach(function(btn){
+        var fSec=+btn.dataset.forceSection;
+        var ctrl=btn.previousElementSibling;
+        if(!ctrl)return;
+        btn.addEventListener('click',function(e){e.preventDefault();startDig(ctrl,fSec,true);});
+      });
+    })
+    .catch(function(){
+      controls.forEach(function(el){applyIdle(el);
+        el.addEventListener('click',function(e){
+          e.preventDefault();
+          var st=el.dataset.state;
+          if(st==='loading')return;
+          if(st==='error'){applyIdle(el);startDig(el,+el.dataset.section);return;}
+          if(st==='idle')startDig(el,+el.dataset.section);
+        });
+      });
+    });
+})();
+</script><script>(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;function systemDark(){return!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)}function effective(){var a=root.getAttribute('data-theme');return a==='dark'||a==='light'?a:(systemDark()?'dark':'light')}function syncIcon(){btn.textContent=effective()==='dark'?'☀️':'🌙'}btn.addEventListener('click',function(){var next=effective()==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('html-doc-theme',next)}catch(e){}syncIcon()});syncIcon();requestAnimationFrame(function(){root.classList.add('theme-ready')})})();</script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+{
+  "sourceMd": "275_google-s-okf-the-simple-folder-replacing-vector-databases.md",
+  "generatedAt": "2026-06-26T23:55:27.357Z",
+  "sourceSections": [
+    "Google's Open Knowledge Format (OKF): A New AI Standard",
+    "Addressing the Context Problem for LLMs",
+    "OKF vs. RAG and the LLM Wiki Concept",
+    "Structure and Design Principles of an OKF Bundle",
+    "Practical Advantages and Use Cases",
+    "Conclusion"
+  ],
+  "model": {
+    "sections": [
+      {
+        "lead": "Google introduced Open Knowledge Format (OKF), a new AI standard turning text files into AI-readable knowledge, shipped by Google Cloud in June.",
+        "bullets": [
+          {
+            "label": "AI Standard",
+            "text": "Google introduced OKF, the Open Knowledge Format, making simple text files an official AI standard."
+          },
+          {
+            "label": "Challenges Databases",
+            "text": "This \"beautifully boring\" standard challenges expensive vector databases by allowing AI agents to read markdown and follow links."
+          },
+          {
+            "label": "Direct Reading",
+            "text": "OKF enables AI agents to directly read and follow links within markdown files to answer complex queries."
+          },
+          {
+            "label": "Version 0.1",
+            "text": "Version 0.1 of OKF was shipped by Google Cloud in June."
+          }
+        ]
+      },
+      {
+        "lead": "LLMs struggle with scattered context; OKF offers a unified, readable solution by enabling agents to access specific knowledge directly.",
+        "bullets": [
+          {
+            "label": "Context Problem",
+            "text": "Large Language Models often struggle with access to context, which includes specific knowledge about systems, metrics, and data structures."
+          },
+          {
+            "label": "Scattered Information",
+            "text": "This specific knowledge is usually scattered across various enterprise tools and documents."
+          },
+          {
+            "label": "Unified Context",
+            "text": "OKF provides a unified, readable context for AI agents."
+          },
+          {
+            "label": "Easier Access",
+            "text": "Agents can operate more effectively by simply opening an OKF file and following links, rather than reassembling context from disparate sources."
+          }
+        ]
+      },
+      {
+        "lead": "OKF, inspired by Andrej Karpathy's \"LLM wiki,\" offers a knowledge accumulation model, unlike RAG's repeated discovery from vector databases.",
+        "bullets": [
+          {
+            "label": "RAG Process",
+            "text": "Traditional Retrieval Augmented Generation (RAG) involves uploading documents, chunking them, vectorizing, and storing them in a vector database."
+          },
+          {
+            "label": "No Accumulation",
+            "text": "With RAG, the model \"rediscovers\" information repeatedly because knowledge does not accumulate."
+          },
+          {
+            "label": "LLM Wiki",
+            "text": "OKF is inspired by Andrej Karpathy's \"LLM wiki\" concept, which allows models to build and maintain a wiki where knowledge compounds."
+          },
+          {
+            "label": "Three Layers",
+            "text": "OKF defines three layers: raw sources, a model-owned wiki, and a schema file to manage it."
+          },
+          {
+            "label": "Standardized Solution",
+            "text": "OKF standardizes what were previously bespoke solutions for knowledge management."
+          }
+        ]
+      },
+      {
+        "lead": "An OKF bundle uses markdown files in a directory, linking concepts with paths and plain markdown to form a rich, portable graph.",
+        "bullets": [
+          {
+            "label": "Bundle Structure",
+            "text": "An OKF bundle is a directory containing markdown files."
+          },
+          {
+            "label": "Concept Per File",
+            "text": "Each markdown file within an OKF bundle represents a single concept, such as a table, a metric, or an API."
+          },
+          {
+            "label": "File Identity",
+            "text": "The file path serves as the identity for each concept."
+          },
+          {
+            "label": "YAML Front Matter",
+            "text": "Each file begins with a small YAML front matter block where only `type` is required."
+          },
+          {
+            "label": "Linked Concepts",
+            "text": "Ordinary markdown links connect concepts, transforming a flat folder into a rich graph."
+          },
+          {
+            "label": "Optional Files",
+            "text": "Optional `index` and `log` files provide navigation and version history."
+          },
+          {
+            "label": "Design Principles",
+            "text": "The design emphasizes minimal opinionation, independence of producers and consumers, and functioning purely as a format, not a platform."
+          }
+        ]
+      },
+      {
+        "lead": "OKF offers practical advantages over RAG, Notion, and vector indexes by storing curated, portable, cross-linked concepts for agents.",
+        "bullets": [
+          {
+            "label": "Curated Knowledge",
+            "text": "Unlike RAG, OKF stores curated, cross-linked concepts that agents can directly read and edit."
+          },
+          {
+            "label": "vs. Notion",
+            "text": "OKF offers significant advantages over solutions like Notion, which locks data into a database."
+          },
+          {
+            "label": "vs. Vector Indexes",
+            "text": "OKF provides benefits over vector indexes, which offer fuzzy chunks."
+          },
+          {
+            "label": "Portable Markdown",
+            "text": "OKF uses portable markdown, requiring zero translation for agents."
+          },
+          {
+            "label": "Reduced Costs",
+            "text": "It drastically reduces infrastructure costs and complexity compared to vector databases."
+          },
+          {
+            "label": "Google Tools",
+            "text": "Google has released supporting tools, including a BigQuery agent for bundle creation and a static visualizer."
+          },
+          {
+            "label": "Key Use Cases",
+            "text": "Key use cases include \"metadata as code,\" on-call agents utilizing runbooks, vendor catalogs for agents, and model-maintained team wikis."
+          }
+        ]
+      },
+      {
+        "lead": "OKF excels for curated, accurate, version-controlled knowledge where portability and context fit are crucial, marking a shift in the agent era.",
+        "bullets": [
+          {
+            "label": "Where OKF Shines",
+            "text": "OKF shines where knowledge is curated, requiring accuracy, version history, context fit, and portability."
+          },
+          {
+            "label": "Not for Unstructured",
+            "text": "OKF will not replace vector databases for large, unstructured, or uncurated document piles where semantic search is paramount."
+          },
+          {
+            "label": "Context Shift",
+            "text": "OKF represents a broader shift towards context becoming a portable, version-controlled artifact."
+          },
+          {
+            "label": "Open Formats",
+            "text": "This movement towards open formats, which previously revolutionized data, is now poised to win in the agent era."
+          },
+          {
+            "label": "Boring is Better",
+            "text": "Sometimes the \"boring\" solution is indeed the better one."
+          }
+        ]
+      }
+    ]
+  }
+}

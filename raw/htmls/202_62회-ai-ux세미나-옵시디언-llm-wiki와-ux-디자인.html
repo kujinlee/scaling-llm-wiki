@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="magazine-skim v1">
+<meta name="source-md" content="202_62회-ai-ux세미나-옵시디언-llm-wiki와-ux-디자인.md">
+<meta name="video-id" content="ZBjOXZ8Kzi0">
+<title>[62회 AI&amp;UX세미나] 옵시디언 LLM Wiki와 UX 디자인</title>
+<script>(function(){try{var t=localStorage.getItem('html-doc-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<style>
+:root{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="light"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="dark"]{--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}}
+html.theme-ready body,html.theme-ready #theme-toggle{transition:background-color .2s,color .2s}
+#theme-toggle{position:fixed;top:1rem;right:1rem;width:2.4rem;height:2.4rem;border-radius:50%;border:1px solid rgba(128,128,128,.35);background:var(--card);color:var(--ink);font-size:1.1rem;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;z-index:10}
+@media print{:root,:root:not([data-theme]),[data-theme="light"],[data-theme="dark"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}#theme-toggle{display:none}}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",'Apple SD Gothic Neo',Helvetica,Arial,sans-serif}
+.v4{max-width:50rem;margin:0 auto;background:var(--card);padding:2.8rem 3rem 4rem;box-shadow:var(--shadow)}
+html.theme-ready .v4{transition:background-color .2s,color .2s}
+.doc-title{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:2rem;line-height:1.2;margin:0 0 .15em}
+.doc-meta{color:var(--meta);font-size:.9rem;margin:0 0 1.8em}
+.callout{margin:0 0 2.4em;border-top:2px solid var(--goldline);border-bottom:2px solid var(--goldline);padding:1em 0}
+.callout .lbl{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-size:.7rem;font-weight:700;margin-bottom:.5em}
+.callout p{margin:.2em 0 .8em}
+.callout ul{padding-left:1.1em;margin:.4em 0 0}
+.callout li{margin:.25em 0}
+section{position:relative;padding:1.6em 0 1.2em;border-bottom:1px solid var(--rule)}
+.ghost{font:700 4.5rem/1 Georgia,serif;color:var(--ghost);position:absolute;right:0;top:.1em;pointer-events:none;user-select:none}
+h2{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:1.3rem;margin:.1em 0 .35em}
+.lead{font-size:1.02rem;line-height:1.5;color:var(--gold);font-weight:400;margin:.2em 0 .8em;max-width:90%}
+.ts{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.85rem;font-weight:400;text-decoration:none;white-space:nowrap}
+.ts:hover{text-decoration:underline}
+ul{padding-left:1.15em;margin:0}
+li{margin:.4em 0;line-height:1.6;color:var(--li)}
+footer{margin-top:2.5em;color:var(--foot);font-size:.8rem}
+@media print{body{background:#fff}.v4{box-shadow:none}}
+</style>
+</head>
+<body>
+<button id="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light/dark">🌙</button>
+<article class="v4">
+  <h1 class="doc-title">[62회 AI&amp;UX세미나] 옵시디언 LLM Wiki와 UX 디자인</h1>
+  <p class="doc-meta">유훈식 교수 : AI4UX · 57:17</p>
+  <div class="callout">
+    <div class="lbl">Quick Reference</div>
+    <p>This video introduces building an AI-native UX/UI design system using Obsidian as an LLM wiki and autonomous agents like Hermes for enhanced workflow and asset</p>
+    <ul><li>전통적인 UX/UI 디자인을 AI 네이티브 시스템으로 전환하세요.</li><li>옵시디언을 활용하여 마크다운 기반의 LLM 위키를 구축하세요.</li><li>AI 에이전트에게 UX/UI 리서치, 디자인, 평가 업무를 위임하세요.</li><li>헤르메스 에이전트 같은 자율형 AI로 개인화된 지식 자산을 성장시키세요.</li><li>UX/UI 디자이너의 역할을 AI 시대에 맞게 재정의하고 새로운 가치를 창출하세요.</li></ul>
+  </div>
+  <section>
+      <span class="ghost">1</span>
+      <h2>AI 네이티브 UX/UI 디자인으로의 전환 <a class="ts" href="https://www.youtube.com/watch?v=ZBjOXZ8Kzi0&amp;t=260s" target="_blank" rel="noopener noreferrer">(4:20–11:11)</a></h2>
+      <p class="lead">AI 시대는 챗봇을 넘어 AI 네이티브 시대로 진화하며, UX/UI 디자인 작업 방식의 시스템적 재구성이 필요합니다.</p>
+      <ul><li>AI 시대는 챗봇 시대를 넘어 에이전트 시대, 그리고 AI 네이티브 시대로 진화해야 합니다.</li><li>AI 네이티브는 단순히 AI 도구 활용을 넘어, UX/UI 디자인 작업 방식을 시스템적으로 재구성하는 것을 의미합니다.</li><li>궁극적으로 조직 전체가 미니 AGI처럼 작동하여 데이터 입력부터 제품/서비스 운영까지 AI 중심으로 이루어져야 합니다.</li></ul>
+    </section>
+<section>
+      <span class="ghost">2</span>
+      <h2>LLM 위키 패러다임과 옵시디언 활용 <a class="ts" href="https://www.youtube.com/watch?v=ZBjOXZ8Kzi0&amp;t=671s" target="_blank" rel="noopener noreferrer">(11:11–15:12)</a></h2>
+      <p class="lead">안드레 카파시의 LLM 위키 패러다임은 옵시디언을 활용하여 마크다운 형태로 지식 자산을 구축, AI 에이전트의 효율성을 극대화합니다.</p>
+      <ul><li>안드레 카파시가 제시한 LLM 위키 패러다임은 LLM과 위키를 결합하여 개인의 지식 자산을 구축하는 방식입니다.</li><li>옵시디언은 마크다운 형태로 데이터를 관리하여 AI 에이전트가 효율적으로 작업을 수행하도록 돕습니다.</li><li>마크다운은 데이터 효율성이 높아 AI가 데이터를 읽고 쓰는 시간과 토큰 사용량을 절감할 수 있습니다.</li><li>옵시디언의 연결성 중심 구조는 AI가 관련 파일을 빠르게 찾아 업무를 처리하도록 돕습니다.</li></ul>
+    </section>
+<section>
+      <span class="ghost">3</span>
+      <h2>로컬 데이터 기반의 디자인 자산 구축 <a class="ts" href="https://www.youtube.com/watch?v=ZBjOXZ8Kzi0&amp;t=912s" target="_blank" rel="noopener noreferrer">(15:12–18:44)</a></h2>
+      <p class="lead">AI 시대 디자이너는 AI 결과물의 품질을 높이기 위해 개인의 로컬 데이터를 옵시디언에 마크다운으로 자산화해야 합니다.</p>
+      <ul><li>디자이너는 AI가 생성하는 70~80점 수준의 결과물을 90점 이상으로 끌어올릴 전문성이 필요합니다.</li><li>개인의 독창적 경험과 노하우가 담긴 로컬 데이터(디자인 시스템, 리서치 방법론 등)를 옵시디언에 마크다운 형태로 자산화해야 합니다.</li><li>디자인 MD 파일처럼 디자인 자산을 축적하면 AI가 이를 참조하여 고품질의 결과물을 생성할 수 있습니다.</li><li>이 과정은 디자이너의 전문성 또한 시각적으로 누적되게 돕습니다.</li></ul>
+    </section>
+<section>
+      <span class="ghost">4</span>
+      <h2>AI 에이전트를 활용한 사용성 평가 및 업무 자동화 <a class="ts" href="https://www.youtube.com/watch?v=ZBjOXZ8Kzi0&amp;t=1124s" target="_blank" rel="noopener noreferrer">(18:44–24:15)</a></h2>
+      <p class="lead">AI 네이티브 방식은 AI 에이전트가 사용성 평가의 모든 단계를 '스킬'로 자동화하여 UX/UI 디자인 전반에 걸쳐 효율성을 높입니다.</p>
+      <ul><li>AI 네이티브 방식은 사용성 평가를 자동화하며, AI는 전문가 평가 수준의 의견을 신속하게 생성하고 반복적인 시뮬레이션도 수행합니다.</li><li>사용성 평가 계획, 시나리오 생성, 결과 분석, 개선 방안 도출 등 모든 단계를 마크다운 형태의 '스킬'로 정의하여 AI 에이전트에게 위임할 수 있습니다.</li><li>이는 UX/UI 디자인의 리서치, 디자인, 평가 단계에서 AI 에이전트가 지속 가능한 형태로 업무를 수행하도록 돕습니다.</li></ul>
+    </section>
+<section>
+      <span class="ghost">5</span>
+      <h2>클로드 코드 및 헤르메스 에이전트 연동 <a class="ts" href="https://www.youtube.com/watch?v=ZBjOXZ8Kzi0&amp;t=1455s" target="_blank" rel="noopener noreferrer">(24:15–45:02)</a></h2>
+      <p class="lead">옵시디언에 LLM과 헤르메스 에이전트를 연동하여 UX/UI 업무를 자동화하고 API 비용을 절감하며 효율성을 높일 수 있습니다.</p>
+      <ul><li>옵시디언에 LLM을 연동하기 위해 VS 코드와 같은 개발 환경에서 플러그인을 활용할 수 있습니다.</li><li>크롬 웹 클리퍼를 통해 웹 자료를 옵시디언으로 쉽게 캡처하여 마크다운 형태로 저장하고 LLM 위키의 데이터로 활용합니다.</li><li>헤르메스 에이전트는 오픈 클로와 유사하지만, 자기 진화 및 장기 기억 능력에 강하며 PC 제어, 웹사이트 로그인 등 다양한 작업을 수행합니다.</li><li>OpenAI 코덱스 모델을 구독 계정으로 연동하여 API 비용을 절감하며 효율적인 AI 에이전트 활용이 가능합니다.</li><li>이러한 연동을 통해 리서치, 코딩, 디자인 등 다양한 UX/UI 업무를 자동화하고 지속적으로 업데이트할 수 있습니다.</li></ul>
+    </section>
+<section>
+      
+      <h2>Conclusion <a class="ts" href="https://www.youtube.com/watch?v=ZBjOXZ8Kzi0&amp;t=2702s" target="_blank" rel="noopener noreferrer">(45:02–57:18)</a></h2>
+      <p class="lead">AI 네이티브 워크플로우는 AI 에이전트 시스템을 구축하여 복리 효과를 창출하며, 디자이너는 새로운 역할과 가치 창출에 집중해야 합니다.</p>
+      <ul><li>AI 네이티브 UX/UI 디자인 워크플로우 구축은 AI 에이전트가 효율적으로 일할 수 있는 시스템을 만드는 것입니다.</li><li>옵시디언을 중심으로 LLM 위키를 구축하고 자율형 에이전트를 활용하여 디자인 자산을 축적하며 업무를 자동화함으로써 복리 효과를 기대할 수 있습니다.</li><li>UX/UI 디자이너는 AI 시대에 맞는 역할과 정체성을 재정의하고, 사용자 경험의 가치를 기반으로 새로운 비즈니스 가치 창출에 집중해야 합니다.</li><li>AI 네이티브 시대에 필요한 무기들을 갖추고 끊임없이 학습하며 성장하는 것이 중요합니다.</li></ul>
+    </section>
+  <footer>Skim view — generated from the source note <code>62회-ai-ux세미나-옵시디언-llm-wiki와-ux-디자인.md</code>. Full text lives in the source <code>.md</code>.</footer>
+</article>
+<script>(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;function systemDark(){return!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)}function effective(){var a=root.getAttribute('data-theme');return a==='dark'||a==='light'?a:(systemDark()?'dark':'light')}function syncIcon(){btn.textContent=effective()==='dark'?'☀️':'🌙'}btn.addEventListener('click',function(){var next=effective()==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('html-doc-theme',next)}catch(e){}syncIcon()});syncIcon();requestAnimationFrame(function(){root.classList.add('theme-ready')})})();</script>
+</body>
+</html>

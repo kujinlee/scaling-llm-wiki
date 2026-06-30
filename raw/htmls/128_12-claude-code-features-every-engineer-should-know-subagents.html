@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="magazine-skim v1">
+<meta name="source-md" content="128_12-claude-code-features-every-engineer-should-know-subagents.md">
+<meta name="video-id" content="E4fzxVMOav4">
+<title>12 Claude Code Features Every Engineer Should Know: Subagents, CLAUDE.md, Checkpoints, MCP, and more</title>
+<script>(function(){try{var t=localStorage.getItem('html-doc-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<style>
+:root{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="light"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="dark"]{--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}}
+html.theme-ready body,html.theme-ready #theme-toggle{transition:background-color .2s,color .2s}
+#theme-toggle{position:fixed;top:1rem;right:1rem;width:2.4rem;height:2.4rem;border-radius:50%;border:1px solid rgba(128,128,128,.35);background:var(--card);color:var(--ink);font-size:1.1rem;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;z-index:10}
+@media print{:root,:root:not([data-theme]),[data-theme="light"],[data-theme="dark"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}#theme-toggle{display:none}}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",'Apple SD Gothic Neo',Helvetica,Arial,sans-serif}
+.v4{max-width:50rem;margin:0 auto;background:var(--card);padding:2.8rem 3rem 4rem;box-shadow:var(--shadow)}
+html.theme-ready .v4{transition:background-color .2s,color .2s}
+.doc-title{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:2rem;line-height:1.2;margin:0 0 .15em}
+.doc-meta{color:var(--meta);font-size:.9rem;margin:0 0 1.8em}
+.callout{margin:0 0 2.4em;border-top:2px solid var(--goldline);border-bottom:2px solid var(--goldline);padding:1em 0}
+.callout .lbl{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-size:.7rem;font-weight:700;margin-bottom:.5em}
+.callout p{margin:.2em 0 .8em}
+.callout ul{padding-left:1.1em;margin:.4em 0 0}
+.callout li{margin:.25em 0}
+section{position:relative;padding:1.6em 0 1.2em;border-bottom:1px solid var(--rule)}
+.ghost{font:700 4.5rem/1 Georgia,serif;color:var(--ghost);position:absolute;right:0;top:.1em;pointer-events:none;user-select:none}
+h2{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:1.3rem;margin:.1em 0 .35em}
+.lead{font-size:1.02rem;line-height:1.5;color:var(--gold);font-weight:400;margin:.2em 0 .8em;max-width:90%}
+.ts{display:inline-block;color:var(--gold);font-size:.8rem;font-weight:600;text-decoration:none;margin:.1em 0 .7em}
+.ts:hover{text-decoration:underline}
+ul{padding-left:1.15em;margin:0}
+li{margin:.4em 0;line-height:1.6;color:var(--li)}
+footer{margin-top:2.5em;color:var(--foot);font-size:.8rem}
+@media print{body{background:#fff}.v4{box-shadow:none}}
+</style>
+</head>
+<body>
+<button id="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light/dark">🌙</button>
+<article class="v4">
+  <h1 class="doc-title">12 Claude Code Features Every Engineer Should Know: Subagents, CLAUDE.md, Checkpoints, MCP, and more</h1>
+  <p class="doc-meta">ByteByteAI · 7:30</p>
+  <div class="callout">
+    <div class="lbl">Quick Reference</div>
+    <p>This video details Claude Code's features like memory, permissions, automation, and sub-agents to boost developer productivity, safety, and collaboration with AI.</p>
+    <ul><li>Use `claude.md` in your project root to provide Claude Code persistent project context and preferences.</li><li>Customize Permissions to pre-approve safe actions and use Plan Mode to review agent steps before execution.</li><li>Automate repetitive workflows by defining and sharing Skills in `skill.md` files for on-demand use.</li><li>Extend Claude Code's capabilities using the MCP to integrate external tools and services like Figma or Slack.</li><li>Delegate complex tasks to Sub-agents in separate sessions to keep the main conversation and context lean.</li></ul>
+  </div>
+  <section>
+      <span class="ghost">1</span>
+      <h2>Initializing Your Claude Code Environment</h2>
+      <a class="ts" href="https://www.youtube.com/watch?v=E4fzxVMOav4&amp;t=18s" target="_blank" rel="noopener noreferrer">▶ 0:18–1:06</a>
+      <p class="lead">Claude Code sessions use `claude.md` files for persistent memory, storing coding preferences and project structure.</p>
+      <ul><li>Claude Code sessions begin without project context, but `claude.md` files provide persistent memory.</li><li>This markdown file, placed in your project root, stores coding preferences and project structure.</li><li>It acts as a memory that Claude Code reads at the start of every session, ensuring consistent behavior like 'always write unit tests'.</li><li>You can easily create a `claude.md` file using the `/init` command.</li></ul>
+    </section>
+<section>
+      <span class="ghost">2</span>
+      <h2>Ensuring Safety and Structured Workflows</h2>
+      <a class="ts" href="https://www.youtube.com/watch=v=E4fzxVMOav4&amp;t=66s" target="_blank" rel="noopener noreferrer">▶ 1:06–3:06</a>
+      <p class="lead">Claude Code's Permissions and Plan Mode enhance safety and structure for powerful coding agent operations.</p>
+      <ul><li>Claude Code's Permissions feature allows customizing approval behavior, enabling pre-approval for safe actions like running tests.</li><li>Accessed via `/permissions`, this interactive menu helps balance speed and safety by blocking dangerous actions such as deleting files.</li><li>For complex tasks, Plan Mode, activated with Shift+Tab, separates planning from execution in a read-only state.</li><li>In Plan Mode, Claude Code proposes a step-by-step plan for your review and approval before actual execution.</li><li>This prevents wasted tokens and incorrect edits by allowing you to approve the plan prior to any changes.</li></ul>
+    </section>
+<section>
+      <span class="ghost">3</span>
+      <h2>Automating and Reusing Development Tasks</h2>
+      <a class="ts" href="https://www.youtube.com/watch?v=E4fzxVMOav4&amp;t=186s" target="_blank" rel="noopener noreferrer">▶ 3:06–4:20</a>
+      <p class="lead">Skills and Hooks in Claude Code automate repetitive tasks and ensure deterministic actions within development workflows.</p>
+      <ul><li>Skills are `skill.md` files containing a name, description, and instructions that Claude Code can load on demand.</li><li>By providing a list of available skills at session start, Claude Code can auto-invoke the appropriate skill when needed.</li><li>Skills turn repetitive tasks into shareable automation for your team.</li><li>Hooks are scripts that run automatically at specific points in Claude Code's workflow loop, such as before or after a tool run.</li><li>Hooks are ideal for deterministic actions that must always occur, like code formatting, security checks, or logging.</li></ul>
+    </section>
+<section>
+      <span class="ghost">4</span>
+      <h2>Expanding Capabilities and Sharing Configurations</h2>
+      <a class="ts" href="https://www.youtube.com/watch?v=E4fzxVMOav4&amp;t=260s" target="_blank" rel="noopener noreferrer">▶ 4:20–5:13</a>
+      <p class="lead">MCP and Plugins extend Claude Code capabilities, integrating external tools and sharing configurations across teams.</p>
+      <ul><li>The MCP (Agent Communication Protocol) is an open protocol allowing developers to build and expose external tools, integrating services like Figma or Slack.</li><li>By adding an MCP server, Claude Code gains access to thousands of publicly available tools.</li><li>Plugins bundle complex setups, including custom skills, hooks, and MCP servers, into a single installable unit.</li><li>You can create a plugin, publish it to a marketplace or Git repository, and teammates can install it with a single command.</li><li>Plugins ensure consistent environments across a team by streamlining the sharing of these configurations.</li></ul>
+    </section>
+<section>
+      <span class="ghost">5</span>
+      <h2>Efficient Session and Task Management</h2>
+      <a class="ts" href="https://www.youtube.com/watch?v=E4fzxVMOav4&amp;t=313s" target="_blank" rel="noopener noreferrer">▶ 5:13–6:57</a>
+      <p class="lead">Claude Code efficiently manages session context and tasks via compaction, Slash Commands, and Sub-agents.</p>
+      <ul><li>Claude Code operates within a fixed context window of around 200,000 tokens, which can fill as conversations grow.</li><li>Claude Code can compact the conversation, preserving key decisions while freeing up space in the context window.</li><li>You can check context consumption with `/context` and manually trigger compaction with `/compact` before it happens automatically.</li><li>Slash Commands act as keyboard shortcuts, triggering common workflows like checking costs or clearing sessions (e.g., `/init`, `/rewind`, `/context`).</li><li>For complex tasks, Sub-agents allow Claude Code to delegate specific jobs to separate sessions.</li><li>Sub-agents work independently and return a concise summary, keeping the main conversation clean and the context window lean.</li></ul>
+    </section>
+<section>
+      
+      <h2>Conclusion</h2>
+      <a class="ts" href="https://www.youtube.com/watch?v=E4fzxVMOav4&amp;t=417s" target="_blank" rel="noopener noreferrer">▶ 6:57–7:31</a>
+      <p class="lead">Claude Code's features enhance developer productivity, safety, and collaboration with coding agents.</p>
+      <ul><li>Claude Code offers a comprehensive suite of features designed to enhance developer productivity, safety, and collaboration.</li><li>These features include personalized memory, robust permission controls, advanced automation, and extensibility.</li><li>Efficient session management is also a core part of Claude Code's offerings.</li><li>These tools fundamentally change how software is built when working with coding agents.</li><li>Exploring these features by actively using Claude Code is encouraged to fully grasp their potential.</li></ul>
+    </section>
+  <footer>Skim view — generated from the source note <code>12-claude-code-features-every-engineer-should-know-subagents.md</code>. Full text lives in the source <code>.md</code>.</footer>
+</article>
+<script>(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;function systemDark(){return!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)}function effective(){var a=root.getAttribute('data-theme');return a==='dark'||a==='light'?a:(systemDark()?'dark':'light')}function syncIcon(){btn.textContent=effective()==='dark'?'☀️':'🌙'}btn.addEventListener('click',function(){var next=effective()==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('html-doc-theme',next)}catch(e){}syncIcon()});syncIcon();requestAnimationFrame(function(){root.classList.add('theme-ready')})})();</script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+{
+  "sourceMd": "285_한글자막-앤트로픽-ceo-다리오-아모데이의-생각을-들여다봅니다-the-circuit-확장-인터뷰.md",
+  "generatedAt": "2026-06-29T19:06:26.430Z",
+  "sourceSections": [
+    "The Accelerating Pace of AI and Rational Leadership",
+    "Anthropic's Values-Driven Enterprise Strategy",
+    "Trust, Disagreement, and Industry Cooperation",
+    "The Future of Work and AI's Economic Disruption",
+    "Geopolitics, Military AI, and Ethical Red Lines",
+    "Governing Powerful AI: Checks, Balances, and Trust",
+    "Conclusion"
+  ],
+  "model": {
+    "sections": [
+      {
+        "lead": "AI development is accelerating exponentially, requiring rational and calm leadership to proactively address challenges without succumbing to paranoia.",
+        "bullets": [
+          {
+            "label": "AI Pace",
+            "text": "AI development is described as a \"smooth exponential,\" comparable to relativistic travel where time passes faster on Earth."
+          },
+          {
+            "label": "Rational Response",
+            "text": "Leaders must respond rationally and calmly, like a surgeon or military officer, avoiding paranoia."
+          },
+          {
+            "label": "Proactive Leadership",
+            "text": "Effective leadership involves proactively addressing current issues and preparing for future challenges without overreacting."
+          }
+        ]
+      },
+      {
+        "lead": "Anthropic adopted an enterprise business model to align with its values, avoiding consumer issues and leveraging AI for positive impacts.",
+        "bullets": [
+          {
+            "label": "Enterprise Focus",
+            "text": "Anthropic intentionally chose an enterprise-focused business model over consumer applications, aligning with its core values."
+          },
+          {
+            "label": "Avoid Consumer",
+            "text": "Consumer models often prioritize engagement and addiction for advertising revenue, potentially leading to harmful \"slop.\""
+          },
+          {
+            "label": "Positive Impact",
+            "text": "Enterprise AI can achieve significant positive impacts in fields such as biotech, pharma, energy, and education."
+          },
+          {
+            "label": "Trust Synergy",
+            "text": "Enterprises value trust and long-term relationships, synergizing with Anthropic's goal of deploying AI safely and positively."
+          }
+        ]
+      },
+      {
+        "lead": "The speaker left OpenAI due to trust issues and values misalignment, now advocating for industry cooperation and standards among trustworthy AI actors.",
+        "bullets": [
+          {
+            "label": "OpenAI Departure",
+            "text": "The speaker's departure from OpenAI stemmed from a fundamental lack of trust, misaligned values, and observed dishonesty patterns, not just safety disagreements."
+          },
+          {
+            "label": "Industry Standards",
+            "text": "He advocates for trustworthy AI actors to collaborate and establish industry standards, inspiring others while implicitly pressing less scrupulous companies."
+          },
+          {
+            "label": "Competitor Collaboration",
+            "text": "Collaboration with competitors like Demis Hassabis of Google DeepMind on safety and research exemplifies positive industry interaction."
+          }
+        ]
+      },
+      {
+        "lead": "AI will significantly disrupt jobs, particularly white-collar roles, but will also grow the economy and create new human-centered positions.",
+        "bullets": [
+          {
+            "label": "Job Disruption",
+            "text": "AI's rapid advancement is expected to cause significant job disruption, potentially eliminating a large percentage of entry-level white-collar jobs."
+          },
+          {
+            "label": "Economic Growth",
+            "text": "The speaker suggests that the overall economic \"pie\" will grow, creating new roles despite job automation."
+          },
+          {
+            "label": "New Roles",
+            "text": "New positions are expected, especially in the physical world, human-centered services, and roles that direct AI."
+          },
+          {
+            "label": "Enterprise Choice",
+            "text": "Enterprises must choose between using AI to cut costs or to do more with existing resources, with Anthropic encouraging the latter."
+          }
+        ]
+      },
+      {
+        "lead": "Anthropic collaborates with the US Department of Defense on national security, establishing \"red lines\" against mass surveillance and fully autonomous weapons to protect democratic values.",
+        "bullets": [
+          {
+            "label": "Defense Collaboration",
+            "text": "Acknowledging changed geopolitics, Anthropic works with the US Department of Defense to enhance national security, despite the speaker's past anti-war stance."
+          },
+          {
+            "label": "Ethical Red Lines",
+            "text": "This support comes with clear \"red lines\" against mass surveillance and fully autonomous weapons, as these undermine democratic values."
+          },
+          {
+            "label": "AI-Assisted vs Autonomous",
+            "text": "He differentiates AI-assisted targeting, where a human makes the final call, from fully autonomous systems."
+          },
+          {
+            "label": "Deterrence",
+            "text": "Superior intelligence from AI can deter conflict, but strict ethical boundaries are crucial to prevent unintended consequences."
+          }
+        ]
+      },
+      {
+        "lead": "Robust checks and balances are crucial for AI governance, requiring a moderate, adaptable approach to regulation from both companies and government.",
+        "bullets": [
+          {
+            "label": "Private Sector Lead",
+            "text": "The private sector's lead in AI development presents a unique and potentially unstable situation, necessitating governance."
+          },
+          {
+            "label": "Company Accountability",
+            "text": "The speaker advocates for robust checks and balances on AI companies, citing Anthropic's Long-Term Benefit Trust for accountability."
+          },
+          {
+            "label": "Government Oversight",
+            "text": "Government also needs checks and balances, including legislative oversight, regulation, and pre-release testing for AI."
+          },
+          {
+            "label": "Moderate Regulation",
+            "text": "He criticizes \"yo-yoing\" reactions, urging a sensible, moderate, and continuously adapting approach to AI regulation."
+          },
+          {
+            "label": "Trust Building",
+            "text": "Building trust requires consistent action and demonstrated commitment to values, even if it entails commercial sacrifices."
+          }
+        ]
+      },
+      {
+        "lead": "Anthropic is committed to responsible AI development, aiming for a future where AI improves the human experience through thoughtful navigation of risks and cooperation.",
+        "bullets": [
+          {
+            "label": "Responsible Development",
+            "text": "The video highlights Anthropic's philosophy and strategic decisions, emphasizing a commitment to responsible AI development."
+          },
+          {
+            "label": "Future Vision",
+            "text": "The speaker believes AI can significantly improve the human experience, likening it to a \"century of scientific progress.\""
+          },
+          {
+            "label": "Thoughtful Navigation",
+            "text": "This positive future depends on society navigating AI's risks and societal disruptions thoughtfully and cooperatively."
+          },
+          {
+            "label": "Continuous Assessment",
+            "text": "The continuous, accelerating nature of AI demands constant assessment, measured policy responses, and an effort to uphold ethical principles and build trust."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="magazine-skim v2">
+<meta name="source-md" content="225_it-s-cognitive-uploading-how-google-notebooklm-s-steven-john.md">
+<meta name="video-id" content="1dYp9ymqy_g">
+<title>&quot;It's cognitive uploading&quot; | How Google NotebookLM's Steven Johnson uses AI as a second brain</title>
+<script>(function(){try{var t=localStorage.getItem('html-doc-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<style>
+:root{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="light"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="dark"]{--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}}
+html.theme-ready body,html.theme-ready #theme-toggle,html.theme-ready #print-btn{transition:background-color .2s,color .2s}
+#theme-toggle,#print-btn{position:fixed;top:1rem;width:2.4rem;height:2.4rem;border-radius:50%;border:1px solid rgba(128,128,128,.35);background:var(--card);color:var(--ink);font-size:1.1rem;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;z-index:10}
+#theme-toggle{right:1rem}#print-btn{right:3.6rem}
+@media print{:root,:root:not([data-theme]),[data-theme="light"],[data-theme="dark"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}#theme-toggle,#print-btn{display:none}}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",'Apple SD Gothic Neo',Helvetica,Arial,sans-serif}
+.v4{max-width:50rem;margin:0 auto;background:var(--card);padding:2.8rem 3rem 4rem;box-shadow:var(--shadow)}
+html.theme-ready .v4{transition:background-color .2s,color .2s}
+.doc-title{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:2rem;line-height:1.2;margin:0 0 .15em}
+.doc-meta{color:var(--meta);font-size:.9rem;margin:0 0 1.8em}
+.doc-meta a{color:inherit;text-decoration:none}
+.doc-meta a:hover{text-decoration:underline}
+.callout{margin:0 0 2.4em;border-top:2px solid var(--goldline);border-bottom:2px solid var(--goldline);padding:1em 0}
+.callout .lbl{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-size:.7rem;font-weight:700;margin-bottom:.5em}
+.callout p{margin:.2em 0 .8em}
+.callout ul{padding-left:1.1em;margin:.4em 0 0}
+.callout li{margin:.25em 0}
+section{position:relative;padding:1.6em 0 1.2em;border-bottom:1px solid var(--rule)}
+.ghost{font:700 4.5rem/1 Georgia,serif;color:var(--ghost);position:absolute;right:0;top:.1em;pointer-events:none;user-select:none}
+h2{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:1.3rem;margin:.1em 0 .35em}
+.lead{font-size:1.02rem;line-height:1.5;color:var(--gold);font-weight:400;margin:.2em 0 .8em;max-width:90%}
+.ts{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.85rem;font-weight:400;text-decoration:none;white-space:nowrap}
+.ts:hover{text-decoration:underline}
+ul{padding-left:1.15em;margin:0}
+li{margin:.4em 0;line-height:1.6;color:var(--li)}
+footer{margin-top:2.5em;color:var(--foot);font-size:.8rem}
+@media print{body{background:#fff}.v4{box-shadow:none}}
+.dig{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.8rem;font-weight:400;text-decoration:none;white-space:nowrap;cursor:pointer}.dig:hover{text-decoration:underline}</style>
+</head>
+<body>
+<button id="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light/dark">🌙</button><button id="print-btn" type="button" onclick="window.print()" aria-label="Print" title="Print">🖨️</button>
+<article class="v4">
+  <h1 class="doc-title">&quot;It's cognitive uploading&quot; | How Google NotebookLM's Steven Johnson uses AI as a second brain</h1>
+  <p class="doc-meta">Dan Blumberg · 42:13 · <a href="https://www.youtube.com/watch?v=1dYp9ymqy_g" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=1dYp9ymqy_g</a></p>
+  <div class="callout">
+    <div class="lbl">Quick Reference</div>
+    <p>This video explores how Google's Notebook LM, co-founded by Steven Johnson, acts as a &quot;second brain&quot; for &quot;cognitive uploading,&quot; enhancing learning, creativity, and research.</p>
+    <ul><li>Use AI tools like Notebook LM to build a &quot;second brain&quot; for efficient knowledge recall.</li><li>Leverage AI for &quot;cognitive uploading&quot; to extend memory and make new connections.</li><li>Apply AI to accelerate research and foster serendipitous discoveries in complex projects.</li><li>Utilize AI as a creative &quot;randomizer&quot; or ghostwriter to overcome writing blocks and refine prose.</li><li>Explore &quot;inverted search&quot; with AI to identify missing information or unanswered questions in datasets.</li></ul>
+  </div>
+  <section data-start="7">
+      <span class="ghost">1</span>
+      <h2>The Power of Cognitive Uploading with AI <a class="ts" href="https://www.youtube.com/watch?v=1dYp9ymqy_g&amp;t=7s" target="_blank" rel="noopener noreferrer">(0:07–1:29)</a> <a class="dig" data-section="7" data-t="7">dig deeper ▶</a></h2>
+      <p class="lead">Steven Johnson introduces &quot;cognitive uploading&quot; with Notebook LM, a &quot;second brain&quot; concept to enhance learning, memory, and writing by finding new connections.</p>
+      <ul><li>Steven Johnson, co-founder of Google's Notebook LM, defines &quot;cognitive uploading&quot; as an antidote to the fear of &quot;cognitive offloading.&quot;</li><li>Notebook LM allows users to create a &quot;second brain&quot; filled with forgotten information.</li><li>This second brain can then be prompted to find new connections and insights from the stored data.</li><li>The tool radically changes how users learn, remember, and write by leveraging these capabilities.</li></ul>
+    </section>
+<section data-start="89">
+      <span class="ghost">2</span>
+      <h2>From Visionary Author to Google Co-Founder <a class="ts" href="https://www.youtube.com/watch?v=1dYp9ymqy_g&amp;t=89s" target="_blank" rel="noopener noreferrer">(1:29–2:51)</a> <a class="dig" data-section="89" data-t="89">dig deeper ▶</a></h2>
+      <p class="lead">Steven Johnson's prescient AI article caught Google's attention, leading him to co-found Notebook LM, his lifelong dream AI research assistant.</p>
+      <ul><li>Steven Johnson, author of a dozen books, published a New York Times piece on AI's revolution just before ChatGPT's release.</li><li>Despite initial backlash, the article proved prescient and led to a cold call from Google Labs.</li><li>Google offered Johnson a team to build his lifelong dream: an ultimate AI research assistant.</li><li>This project ultimately became Notebook LM, Google's innovative AI tool.</li></ul>
+    </section>
+<section data-start="171">
+      <span class="ghost">3</span>
+      <h2>Versatile Features and Expanding Use Cases of Notebook LM <a class="ts" href="https://www.youtube.com/watch?v=1dYp9ymqy_g&amp;t=171s" target="_blank" rel="noopener noreferrer">(2:51–5:59)</a> <a class="dig" data-section="171" data-t="171">dig deeper ▶</a></h2>
+      <p class="lead">Notebook LM processes diverse content, generating study materials and podcasts, and is becoming a Google standard and new sellable content format.</p>
+      <ul><li>Notebook LM allows users to upload articles, videos, and PDFs for interaction.</li><li>Users can chat, summarize, or generate various materials like study guides, mind maps, quizzes, flashcards, slide decks, and NPR-style podcasts.</li><li>Power users include students managing multiple assignments and professionals creating one-off artifacts from meeting minutes or project bundles.</li><li>The &quot;notebook&quot; unit of knowledge is becoming a Google-wide standard, integrating with Gemini.</li><li>It is also evolving into a new sellable content format for publishers and institutions.</li></ul>
+    </section>
+<section data-start="359">
+      <span class="ghost">4</span>
+      <h2>Unconventional Applications and Curated Knowledge Bundles <a class="ts" href="https://www.youtube.com/watch?v=1dYp9ymqy_g&amp;t=359s" target="_blank" rel="noopener noreferrer">(5:59–11:08)</a> <a class="dig" data-section="359" data-t="359">dig deeper ▶</a></h2>
+      <p class="lead">Notebook LM supports curated knowledge bundles from partners and enables unconventional uses, like Dungeon Masters querying game lore from manuals.</p>
+      <ul><li>Featured notebooks, curated with partners like The Atlantic and The Economist, demonstrate Notebook LM's potential as a knowledge package.</li><li>Popular examples include financial analyst reports, The Economist's &quot;World Ahead&quot; issue, and the complete works of Shakespeare.</li><li>The Shakespeare notebook highlights AI's ability to translate archaic language to modern English and perform complex thematic searches, like finding all passages related to &quot;gold.&quot;</li><li>Role-playing game (RPG) players, such as Dungeon Masters, are power users who load game manuals and session audio.</li><li>Dungeon Masters use Notebook LM to generate play-by-play summaries and dynamically query game lore.</li></ul>
+    </section>
+<section data-start="668">
+      <span class="ghost">5</span>
+      <h2>Revolutionizing Research and Creative Writing <a class="ts" href="https://www.youtube.com/watch?v=1dYp9ymqy_g&amp;t=668s" target="_blank" rel="noopener noreferrer">(11:08–29:21)</a> <a class="dig" data-section="668" data-t="668">dig deeper ▶</a></h2>
+      <p class="lead">Steven Johnson uses Notebook LM to accelerate research, foster creative writing by breaking habits, and enable &quot;paragraph-by-paragraph directed writing.&quot;</p>
+      <ul><li>Steven Johnson describes using Notebook LM for his new book on the California Gold Rush as &quot;flying,&quot; accelerating obscure research from weeks to minutes.</li><li>The tool fosters serendipitous connections that would otherwise be missed during research.</li><li>For writing, Johnson uses AI as a creative &quot;randomizer&quot; to break predictable habits and generate alternative phrasings.</li><li>He advocates for &quot;paragraph-by-paragraph directed writing,&quot; where AI acts as a ghostwriter for ideas.</li><li>This method helps non-professional writers articulate thoughts into prose, provided the human guides the conceptual and structural work.</li></ul>
+    </section>
+<section data-start="1761">
+      <span class="ghost">6</span>
+      <h2>AI for Amplified Idea Generation and &quot;Inverted Search&quot; <a class="ts" href="https://www.youtube.com/watch?v=1dYp9ymqy_g&amp;t=1761s" target="_blank" rel="noopener noreferrer">(29:21–40:45)</a> <a class="dig" data-section="1761" data-t="1761">dig deeper ▶</a></h2>
+      <p class="lead">AI enhances idea generation by translating jargon and enables &quot;inverted search&quot; to find missing information, expanding the &quot;adjacent possible.&quot;</p>
+      <ul><li>AI aids in generating novel ideas by acting as a &quot;translator,&quot; bridging disciplinary jargon to facilitate concept migration across fields.</li><li>These tools enable &quot;inverted search,&quot; allowing users to identify what's *missing* from a body of knowledge.</li><li>Examples include asking the AI to find unasked questions within scientific literature or suggest overlooked elements in a written essay.</li><li>This capability expands the &quot;adjacent possible,&quot; moving towards a future where users can easily create custom software applications.</li><li>This vision is similar to the original potential envisioned by the PC revolution for custom software.</li></ul>
+    </section>
+<section data-start="2445">
+      
+      <h2>Conclusion <a class="ts" href="https://www.youtube.com/watch?v=1dYp9ymqy_g&amp;t=2445s" target="_blank" rel="noopener noreferrer">(40:45–42:09)</a> <a class="dig" data-section="2445" data-t="2445">dig deeper ▶</a></h2>
+      <p class="lead">AI tools like Notebook LM offer &quot;cognitive uploading,&quot; extending human memory and association abilities for deeper understanding and problem-solving.</p>
+      <ul><li>AI tools like Notebook LM offer unprecedented power for &quot;cognitive uploading.&quot;</li><li>This extends human memory and the ability to make associations, enhancing human capabilities.</li><li>It enables a deeper understanding and mastery of knowledge, contrasting with merely creating an illusion of understanding.</li><li>By maintaining an archive of ideas and leveraging AI, users can dynamically connect and retrieve forgotten insights.</li><li>This profoundly enhances users' learning, creativity, and problem-solving capabilities.</li><li>It pushes the boundaries of what's possible in various domains.</li></ul>
+    </section>
+  <footer>Skim view — generated from the source note <code>225_it-s-cognitive-uploading-how-google-notebooklm-s-steven-john.md</code>. Full text lives in the source <code>.md</code>.</footer>
+</article>
+<script>
+(function(){
+  // ── cross-doc nav (deep-dive → summary) ──────────────────────────────────
+  document.querySelectorAll('a.dig').forEach(function(a){
+    if(!a.dataset.type)return;
+    var u=new URL(location.href);
+    u.searchParams.set('type',a.dataset.type);
+    u.hash='t='+a.dataset.t;
+    a.setAttribute('href',u.pathname+u.search+u.hash);
+  });
+  // ── scroll to #t= hash ────────────────────────────────────────────────────
+  var m=location.hash.match(/^#t=(\d+)/);
+  if(m){
+    var sec=+m[1];
+    var starts=[].slice.call(document.querySelectorAll('[data-start]')).map(function(e){return +e.dataset.start;});
+    var t=Math.max.apply(null,starts.filter(function(s){return s<=sec;}).concat([-1]));
+    if(t>=0){var el=document.querySelector('[data-start="'+t+'"]'); if(el){el.scrollIntoView();}}
+  }
+  // ── dig-state machine (summary-side only) ────────────────────────────────
+  var parts=location.pathname.split('/');
+  var videoId=parts[3];
+  var _sp=new URLSearchParams(location.search);
+  var outputFolder=_sp.get('outputFolder');
+  if(!videoId||!outputFolder)return;
+  // ── dig-doc client (dig-deeper page only) ────────────────────────────────
+  // Correctness premise: the POST job calls upsertDugSection BEFORE emitting
+  // "done", so the re-GET of the current page reflects the new dug section.
+  if(_sp.get('type')==='dig-deeper'){
+    var _dg=document.querySelector('.dg');
+    if(_dg){
+      function _applyDigErr(el){el.textContent='\u26a0 retry';el.dataset.state='error';el.removeAttribute('href');}
+      // ── Promise-based dig: single POST→SSE→swap core ─────────────────────
+      function _startDocDigAsync(trigger){
+        return new Promise(function(resolve,reject){
+          var startSec=+trigger.dataset.section;
+          trigger.textContent='\u23f3';trigger.dataset.state='loading';trigger.removeAttribute('href');
+          fetch('/api/videos/'+videoId+'/dig/'+startSec,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({outputFolder:outputFolder})})
+            .then(function(r){if(!r.ok)throw new Error('POST '+r.status);return r.json();})
+            .then(function(d){
+              var es=new EventSource('/api/videos/'+videoId+'/dig/'+startSec+'/stream?jobId='+encodeURIComponent(d.jobId));
+              es.onmessage=function(ev){
+                try{var msg=JSON.parse(ev.data);
+                  if(msg.type==='done'){
+                    es.close();
+                    fetch(location.href)
+                      .then(function(res){return res.text();})
+                      .then(function(html){
+                        var dp=new DOMParser();
+                        var fd=dp.parseFromString(html,'text/html');
+                        var fresh=fd.querySelector('[data-start="'+startSec+'"]');
+                        var cur=document.querySelector('[data-start="'+startSec+'"]');
+                        if(fresh&&cur&&cur.parentNode){cur.parentNode.replaceChild(document.adoptNode(fresh),cur);}
+                        resolve();
+                      })
+                      .catch(function(err){_applyDigErr(trigger);reject(err);});
+                  }else if(msg.type==='error'){es.close();_applyDigErr(trigger);reject(new Error('stream error'));}
+                }catch(e){}
+              };
+              es.onerror=function(){es.close();_applyDigErr(trigger);reject(new Error('SSE error'));};
+            })
+            .catch(function(err){_applyDigErr(trigger);reject(err);});
+        });
+      }
+      // ── Single-click path: delegate to the async core ─────────────────────
+      function _startDocDig(trigger){_startDocDigAsync(trigger).catch(function(){});}
+      // ── ⤢ expand all — confirm → serialized loop ──────────────────────────
+      var _eaBtn=_dg.querySelector('.dg-expand-all');
+      if(_eaBtn){
+        var _eaDlg=document.getElementById('_dg-ea-dlg');
+        var _eaProg=document.getElementById('_dg-ea-prog');
+        var _eaMsg=document.getElementById('_dg-ea-msg');
+        var _eaProgMsg=document.getElementById('_dg-ea-prog-msg');
+        var _eaFailMsg=document.getElementById('_dg-ea-fail-msg');
+        var _eaCancelProg=document.getElementById('_dg-ea-cancel-prog');
+        function _eaClose(el){el.removeAttribute('data-open');}
+        function _eaOpen(el){el.setAttribute('data-open','');}
+        function _eaRunBatch(triggers,N){
+          _eaOpen(_eaProg);
+          var cancelled=false;
+          var failures=[];
+          var k=0;
+          _eaCancelProg.onclick=function(){cancelled=true;};
+          function _next(){
+            // Collect still-un-dug triggers (may have changed if DOM was swapped).
+            // Exclude error-state triggers — they already failed in this batch run.
+            var remaining=[].slice.call(document.querySelectorAll('.dig-trigger[data-section]'))
+              .filter(function(t){return t.dataset.state!=='error'&&t.dataset.state!=='loading';});
+            if(cancelled||remaining.length===0){
+              if(failures.length>0){
+                // Show failure summary in the progress overlay then auto-close.
+                _eaProgMsg.textContent='Done with '+failures.length+' failure(s).';
+                _eaFailMsg.textContent='Failed sections: '+failures.join(', ');
+                _eaFailMsg.style.display='';
+                setTimeout(function(){_eaClose(_eaProg);_eaFailMsg.style.display='none';},6000);
+              }else{
+                _eaClose(_eaProg);
+              }
+              return;
+            }
+            k++;
+            _eaProgMsg.textContent='section '+k+' of '+N+'\u2026';
+            var trig=remaining[0];
+            _startDocDigAsync(trig)
+              .then(function(){_next();})
+              .catch(function(){failures.push(trig.dataset.section);_next();});
+          }
+          _next();
+        }
+        _eaBtn.addEventListener('click',function(){
+          var triggers=[].slice.call(document.querySelectorAll('.dig-trigger[data-section]'));
+          var N=triggers.length;
+          if(N===0)return;
+          var X=(N*0.05).toFixed(2);
+          var Y=Math.ceil(N*30/60);
+          _eaMsg.textContent='Expand '+N+' remaining sections? ~$'+X+', ~'+Y+' min (rough estimate)';
+          _eaOpen(_eaDlg);
+          var _escHandler=function(e){if(e.key==='Escape'){_eaClose(_eaDlg);document.removeEventListener('keydown',_escHandler);}};
+          document.addEventListener('keydown',_escHandler);
+          _eaDlg.onclick=function(e){if(e.target===_eaDlg){_eaClose(_eaDlg);document.removeEventListener('keydown',_escHandler);}};
+          document.getElementById('_dg-ea-confirm').onclick=function(){
+            document.removeEventListener('keydown',_escHandler);
+            _eaClose(_eaDlg);
+            _eaRunBatch(triggers,N);
+          };
+          document.getElementById('_dg-ea-cancel-dlg').onclick=function(){
+            _eaClose(_eaDlg);
+            document.removeEventListener('keydown',_escHandler);
+          };
+        });
+      }
+      _dg.addEventListener('click',function(e){
+        // Toggle (dug → show gist or dug) — zero fetch
+        var tog=(e.target.closest?e.target.closest('.dig-toggle'):null);
+        if(tog){e.preventDefault();var s=tog.closest('section');if(s){s.classList.toggle('show-gist');tog.textContent=s.classList.contains('show-gist')?'show dig deeper \u25b6':'show summary \u2303';}return;}
+        // Trigger (un-dug → expand in place)
+        var trig=(e.target.closest?e.target.closest('.dig-trigger[data-section]'):null);
+        if(!trig)return;
+        e.preventDefault();
+        var st=trig.dataset.state;
+        if(st==='loading')return;
+        _startDocDig(trig);
+      });
+      // ── ?dig=N auto-trigger ───────────────────────────────────────────────
+      // Strip ?dig from URL immediately (keep type, outputFolder, hash) so
+      // reload / back-forward never re-fires generation.
+      function _stripDigParam(){
+        var u2=new URL(location.href);
+        u2.searchParams.delete('dig');
+        history.replaceState(null,'',u2.pathname+u2.search+(u2.hash||''));
+      }
+      function _applyDigDocState(dugIds){
+        // Re-apply control visibility to reflect current dug state.
+        // (Used by pageshow to refresh a bfcache-restored page.)
+        dugIds.forEach(function(id){
+          var el=document.querySelector('[data-start="'+id+'"]');
+          if(el)el.setAttribute('data-dug','true');
+        });
+      }
+      function _handleDigParam(isPageshow){
+        var digN=isPageshow?null:_sp.get('dig');
+        var digSec=digN!==null&&digN!==''?+digN:null;
+        fetch('/api/videos/'+videoId+'/dig-state?outputFolder='+encodeURIComponent(outputFolder))
+          .then(function(r){return r.ok?r.json():Promise.resolve({sectionIds:[]});})
+          .then(function(data){
+            var dugIds=data.sectionIds||[];
+            if(isPageshow){
+              // bfcache restore: re-apply states only, no auto-trigger
+              _applyDigDocState(dugIds);
+              return;
+            }
+            if(digSec===null)return;
+            // Strip ?dig immediately regardless of dug state
+            _stripDigParam();
+            var trigger=document.querySelector('.dig-trigger[data-section="'+digSec+'"]');
+            if(!trigger)return; // invalid/unknown N — no-op
+            if(dugIds.indexOf(digSec)>=0){
+              // Already dug: scroll only, no POST
+              var sect=document.querySelector('[data-start="'+digSec+'"]');
+              if(sect)sect.scrollIntoView();
+            }else{
+              // Un-dug: trigger once then scroll after re-GET replaces section
+              _startDocDig(trigger);
+            }
+          })
+          .catch(function(){
+            if(!isPageshow)_stripDigParam();
+          });
+      }
+      _handleDigParam(false);
+      window.addEventListener('pageshow',function(ev){
+        if(ev.persisted)_handleDigParam(true);
+      });
+    }
+    return;
+  }
+  // ── summary-side nav links ────────────────────────────────────────────────
+  var controls=[].slice.call(document.querySelectorAll('a.dig[data-section]')).filter(function(a){return!a.dataset.type;});
+  if(!controls.length)return;
+  function viewHref(sec){
+    var p=new URLSearchParams();
+    p.set('outputFolder',outputFolder);
+    p.set('type','dig-deeper');
+    return '/api/html/'+videoId+'?'+p.toString()+'#t='+sec;
+  }
+  function digHref(sec){
+    var p=new URLSearchParams();
+    p.set('outputFolder',outputFolder);
+    p.set('type','dig-deeper');
+    p.set('dig',String(sec));
+    return '/api/html/'+videoId+'?'+p.toString()+'#t='+sec;
+  }
+  function applyDug(el,sec){
+    el.textContent='view detail \u2193';
+    el.setAttribute('href',viewHref(sec));
+    el.removeAttribute('target');
+    el.removeAttribute('rel');
+    el.dataset.state='dug';
+  }
+  function applyIdle(el,sec){
+    el.textContent='dig deeper \u25b6';
+    el.setAttribute('href',digHref(sec));
+    el.removeAttribute('target');
+    el.removeAttribute('rel');
+    el.dataset.state='idle';
+  }
+  function applyControls(dugIds){
+    controls.forEach(function(el){
+      var sec=+el.dataset.section;
+      if(dugIds.indexOf(sec)>=0){applyDug(el,sec);}else{applyIdle(el,sec);}
+    });
+  }
+  function fetchAndApply(){
+    fetch('/api/videos/'+videoId+'/dig-state?outputFolder='+encodeURIComponent(outputFolder))
+      .then(function(r){return r.ok?r.json():Promise.resolve({sectionIds:[]});})
+      .then(function(data){applyControls(data.sectionIds||[]);})
+      .catch(function(){applyControls([]);});
+  }
+  fetchAndApply();
+  window.addEventListener('pageshow',function(ev){
+    if(ev.persisted)fetchAndApply();
+  });
+})();
+</script><script>(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;function systemDark(){return!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)}function effective(){var a=root.getAttribute('data-theme');return a==='dark'||a==='light'?a:(systemDark()?'dark':'light')}function syncIcon(){btn.textContent=effective()==='dark'?'☀️':'🌙'}btn.addEventListener('click',function(){var next=effective()==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('html-doc-theme',next)}catch(e){}syncIcon()});syncIcon();requestAnimationFrame(function(){root.classList.add('theme-ready')})})();</script>
+</body>
+</html>

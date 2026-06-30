@@ -1,0 +1,126 @@
+{
+  "sourceMd": "295_build-a-self-improving-claude-knowledge-base.md",
+  "generatedAt": "2026-06-30T03:56:03.808Z",
+  "sourceSections": [
+    "Building a Self-Improving AI System",
+    "Setting Up Your Knowledge Vault with Obsidian",
+    "Integrating AI Tools and Expanding Data Input",
+    "Automating Knowledge Organization and Indexing",
+    "Harnessing Your Enriched AI for Advanced Insights",
+    "Conclusion"
+  ],
+  "model": {
+    "sections": [
+      {
+        "lead": "This video details how to build a self-improving AI system, creating a dynamic knowledge base that continuously gets smarter by forming connections.",
+        "bullets": [
+          {
+            "label": "Self-Improving AI",
+            "text": "The system creates a self-improving knowledge base, similar to Andre Karpathy's \"LLM wiki\" or an \"AI map\", getting smarter daily."
+          },
+          {
+            "label": "Daily Breakthroughs",
+            "text": "This AI proactively forms connections between scattered ideas every day, leading to new insights and breakthroughs."
+          },
+          {
+            "label": "Existing Tools",
+            "text": "It uses existing tools like Claude Co-work or OpenAI's Codeex and a simple file system for quick setup of a self-maintaining agent."
+          }
+        ]
+      },
+      {
+        "lead": "Set up your knowledge vault using Obsidian, a free application, to organize notes and content for AI processing.",
+        "bullets": [
+          {
+            "label": "Download Obsidian",
+            "text": "Download Obsidian, a free application used to visualize and manage your knowledge base."
+          },
+          {
+            "label": "Create Vault",
+            "text": "Create a new \"vault\" in Obsidian, which is a folder on your computer, and name it, for example, \"knowledge base\"."
+          },
+          {
+            "label": "Add Content",
+            "text": "Populate the vault by dragging in existing notes or creating new ones directly within Obsidian."
+          },
+          {
+            "label": "Web Clipper",
+            "text": "Use the Obsidian Web Clipper Chrome extension to save articles or YouTube video transcripts directly to your vault for AI processing."
+          }
+        ]
+      },
+      {
+        "lead": "Integrate AI tools like Claude Co-work with your Obsidian vault and expand data input from various sources using native connectors and Zapier.",
+        "bullets": [
+          {
+            "label": "Choose AI Tool",
+            "text": "Choose an AI tool such as Claude Co-work to manage your knowledge base."
+          },
+          {
+            "label": "Grant Access",
+            "text": "Point Claude to your Obsidian vault folder, granting it access to all your files."
+          },
+          {
+            "label": "Native Connectors",
+            "text": "Claude offers native connectors to third-party tools like email, calendar, and Notion, integrating them into your knowledge base."
+          },
+          {
+            "label": "Zapier Integration",
+            "text": "Utilize Zapier's MCP (Multi-Channel Platform) to link Claude Co-work to thousands of additional applications, like your YouTube account, for data input."
+          }
+        ]
+      },
+      {
+        "lead": "Automate knowledge organization and indexing by using a specific prompt in Claude Co-work and scheduling daily updates for continuous improvement.",
+        "bullets": [
+          {
+            "label": "Use Prompt",
+            "text": "Use a specific prompt provided in the video's description by pasting it into Claude Co-work, pointing it to your knowledge base folder."
+          },
+          {
+            "label": "AI Organizes",
+            "text": "The AI will organize your knowledge into folders, build an index or map of connections, and ask for approval on its plan."
+          },
+          {
+            "label": "Schedule Task",
+            "text": "Schedule a daily task, for example at 2 AM, for the AI to automatically check for new additions and integrate them into the map."
+          }
+        ]
+      },
+      {
+        "lead": "Harness your enriched AI to leverage its knowledge base for relevant answers, identify patterns, and suggest solutions for various applications.",
+        "bullets": [
+          {
+            "label": "Relevant Answers",
+            "text": "Your AI will naturally leverage the knowledge base to provide more relevant and helpful answers without special commands."
+          },
+          {
+            "label": "Identify Patterns",
+            "text": "It can identify patterns, recognize similar past problems, and suggest solutions, such as finding patterns in your thinking."
+          },
+          {
+            "label": "Demonstrated Use",
+            "text": "The video demonstrates this with a business journal, where the AI connects current thoughts to past entries, and a health knowledge base for personalized insights."
+          }
+        ]
+      },
+      {
+        "lead": "Building a self-building and self-maintaining AI knowledge base takes less than an hour and significantly boosts your AI assistant's power.",
+        "bullets": [
+          {
+            "label": "Quick Setup",
+            "text": "Building this self-maintaining AI knowledge base is a highly useful system that takes less than an hour to set up."
+          },
+          {
+            "label": "Enhanced Power",
+            "text": "Feeding your AI assistant with organized knowledge makes it significantly more powerful."
+          },
+          {
+            "label": "Deeper Insights",
+            "text": "The AI can provide deeper insights and more effective assistance across various aspects, from business to personal health."
+          }
+        ]
+      }
+    ]
+  }
+}

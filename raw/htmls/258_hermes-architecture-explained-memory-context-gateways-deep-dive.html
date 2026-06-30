@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="deep-dive-html v1">
+<meta name="source-md" content="258_hermes-architecture-explained-memory-context-gateways.md">
+<meta name="video-id" content="n32qq7Kwzh0">
+<title>Hermes Architecture EXPLAINED: Memory, Context &amp; Gateways (Deep Dive)</title>
+<script>(function(){try{var t=localStorage.getItem('html-doc-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<style>
+:root{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08);--link:#b07700;--h3:#5b463a;--h4:#6b5a4a;--codebg:#f1ebe0;--preborder:#e6ddcf;--quote:#8a8276;--meta:#8a8276}
+[data-theme="light"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08);--link:#b07700;--h3:#5b463a;--h4:#6b5a4a;--codebg:#f1ebe0;--preborder:#e6ddcf;--quote:#8a8276;--meta:#8a8276}
+[data-theme="dark"]{--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5);--link:#e6b54d;--h3:#d8cdb8;--h4:#c4b7a0;--codebg:#2a241c;--preborder:#332c24;--quote:#9a9082;--meta:#9a9082}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5);--link:#e6b54d;--h3:#d8cdb8;--h4:#c4b7a0;--codebg:#2a241c;--preborder:#332c24;--quote:#9a9082;--meta:#9a9082}}
+html.theme-ready body,html.theme-ready #theme-toggle,html.theme-ready #print-btn{transition:background-color .2s,color .2s}
+#theme-toggle,#print-btn{position:fixed;top:1rem;width:2.4rem;height:2.4rem;border-radius:50%;border:1px solid rgba(128,128,128,.35);background:var(--card);color:var(--ink);font-size:1.1rem;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;z-index:10}
+#theme-toggle{right:1rem}#print-btn{right:3.6rem}
+@media print{:root,:root:not([data-theme]),[data-theme="light"],[data-theme="dark"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08);--link:#b07700;--h3:#5b463a;--h4:#6b5a4a;--codebg:#f1ebe0;--preborder:#e6ddcf;--quote:#8a8276;--meta:#8a8276}#theme-toggle,#print-btn{display:none}}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);line-height:1.7;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",'Apple SD Gothic Neo','Malgun Gothic',Helvetica,Arial,sans-serif}
+.dd{max-width:52rem;margin:0 auto;background:var(--card);padding:2.8rem 3rem 4rem;box-shadow:var(--shadow);counter-reset:sec}
+html.theme-ready .dd{transition:background-color .2s,color .2s}
+.dd h1{font-family:Georgia,'Nanum Myeongjo','Apple SD Gothic Neo','Times New Roman',serif;font-size:2rem;line-height:1.2;margin:0 0 .15em;color:var(--ink)}
+.dd h2{counter-increment:sec;position:relative;font-family:Georgia,'Nanum Myeongjo',serif;font-size:1.5rem;
+  margin:2.2em 0 .35em;padding-top:1.5em;border-top:1px solid var(--rule);color:var(--ink)}
+.dd h2:first-of-type{border-top:0;padding-top:0;margin-top:.4em}
+.dd h2::before{content:counter(sec);position:absolute;right:0;top:.55em;font:700 4.2rem/1 Georgia,serif;
+  color:var(--ghost);pointer-events:none;user-select:none}
+.dd .lead{font-size:1.02rem;line-height:1.55;color:var(--ink);font-weight:400;margin:.3em 0 .9em;max-width:92%}
+.dd .lead-accent{color:var(--gold);font-weight:400}
+.dd .ts{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.85rem;font-weight:400;text-decoration:none;white-space:nowrap}
+.dd .ts:hover{text-decoration:underline}
+.dd h3{font-size:1.15rem;margin:1.6em 0 .3em;color:var(--h3)}
+.dd h4{font-size:1.02rem;margin:1.2em 0 .3em;color:var(--h4)}
+.dd p{margin:.75em 0;color:var(--ink)}
+.dd a{color:var(--link)}
+.dd ul,.dd ol{padding-left:1.4em;margin:.5em 0}
+.dd li{margin:.4em 0;color:var(--li);line-height:1.65}
+.dd strong{color:var(--ink);font-weight:700}
+.dd blockquote{border-left:3px solid var(--goldline);margin:1.1em 0;padding:.2em 1.1em;color:var(--quote);font-style:italic}
+.dd code{font-family:'SF Mono',Menlo,Monaco,Consolas,monospace;font-size:.88em;background:var(--codebg);padding:.1em .35em;border-radius:4px}
+.dd pre{background:var(--codebg);border:1px solid var(--preborder);border-radius:8px;padding:1em 1.2em;overflow:auto;line-height:1.4}
+.dd pre code{background:none;padding:0;font-size:.85em;white-space:pre}
+.dd footer{margin-top:2.6em;padding-top:1.2em;border-top:1px solid var(--rule);color:var(--foot);font-size:.8rem}
+@media print{body{background:#fff}.dd{box-shadow:none}#theme-toggle{display:none}}
+.dig{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.8rem;font-weight:400;text-decoration:none;white-space:nowrap;cursor:pointer}.dig:hover{text-decoration:underline}</style>
+</head>
+<body>
+<button id="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light/dark">🌙</button><button id="print-btn" type="button" onclick="window.print()" aria-label="Print" title="Print">🖨️</button>
+<article class="dd">
+<h1>Hermes Architecture EXPLAINED: Memory, Context &amp; Gateways (Deep Dive)</h1>
+<p><strong>Channel:</strong> Hugging Face | <strong>Duration:</strong> 40:29 | <strong>URL:</strong> <a href="https://www.youtube.com/watch?v=n32qq7Kwzh0">https://www.youtube.com/watch?v=n32qq7Kwzh0</a></p>
+<hr>
+
+<h2 data-start="58">High-Level Architecture Overview <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=58s" target="_blank" rel="noopener noreferrer">(0:58–1:21)</a> <a class="dig" data-type="summary" data-t="58">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">The Hermes agent has a simple architecture with a few core components.</span> At the center is the AI Agent Core, which contains the main &quot;agentic loop.&quot; There are several ways for a user to connect to this core.</p><h3>Connection Methods <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=81s" target="_blank" rel="noopener noreferrer">(1:21–2:06)</a></h3>
+<p>There are three primary ways to interact with the Hermes agent's core:</p>
+<ol>
+<li><strong>CLI (Command Line Interface)</strong>: This is the most direct method, invoked by typing <code>Hermes</code> on the command line.</li>
+<li><strong>Gateway</strong>: An always-running system that allows the agent to connect to various external messaging services like Telegram, email, and Slack. This component is key to its popularity.</li>
+<li><strong>API</strong>: The agent can also be interacted with via an API.</li>
+</ol>
+<pre><code class="language-ascii">      +-----------------+
+      |       CLI       |
+      +-----------------+
+              ↓
++-----------------------------+     +-----------------+
+|           Gateway           | --&gt; | AI Agent Core   |
+| (Telegram, Slack, Email)    |     | (Agentic Loop)  |
++-----------------------------+     +-----------------+
+              ↑                             |
+      +-----------------+                   |
+      |       API       |                   |
+      +-----------------+                   ↓
+                                +---------------------------+
+                                |    Connected Services     |
+                                | (Tools, Skills, Memory)   |
+                                +---------------------------+
+</code></pre>
+
+<h3>Connected Services and Components <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=126s" target="_blank" rel="noopener noreferrer">(2:06–3:55)</a></h3>
+<p>The AI Agent Core connects to several other services and components that come pre-installed with Hermes:</p>
+<ul>
+<li><strong>Tools</strong>: A collection of available functions the agent can use, such as web search, reading/writing files, etc.</li>
+<li><strong>Skills</strong>: A set of available skills for the agent to leverage.</li>
+<li><strong>Memory</strong>: The agent's memory system is divided into two distinct parts:
+<ul>
+<li><strong>External Memory</strong>: This involves connecting to third-party providers like Mem Zero for more advanced memory capabilities. This is an optional setup.</li>
+<li><strong>Internal Memory</strong>: This consists of local files. It includes <strong>session transcripts</strong> from every conversation and key markdown files like <code>soul.md</code> (defining the agent's personality) and <code>user.md</code> (containing information about the user).</li>
+</ul>
+</li>
+</ul>
+
+<h2 data-start="235">The Agent Loop <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=235s" target="_blank" rel="noopener noreferrer">(3:55–7:52)</a> <a class="dig" data-type="summary" data-t="235">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">The agent loop is a simple, iterative process that runs every time a user sends a message.</span> It is similar to the loops found in minimalist agents like Pi agent or Open Code.</p><p>The process follows these steps:</p>
+<ol>
+<li><strong>User Sends Message</strong>: The loop is initiated by user input.</li>
+<li><strong>Build Context</strong>: Hermes assembles the context for the language model. This context includes the system prompt, contents of <code>soul.md</code> and <code>user.md</code> files, the message history, and other relevant information.</li>
+<li><strong>Send to LLM</strong>: The complete context is sent to the Large Language Model (LLM).</li>
+<li><strong>Tool Calls (Optional Loop)</strong>: The LLM may decide to call one or more tools (e.g., <code>web_search</code>, <code>write_file</code>). If it does, the tool is executed, and the result is returned to the LLM. This can happen multiple times until the LLM decides it has enough information.</li>
+<li><strong>Final Response</strong>: Once all necessary tool calls are complete, the LLM generates a final response for the user.</li>
+<li><strong>Memory Update</strong>: After providing the response, the agent analyzes the interaction to see if any new information is worth remembering. If so, it updates its memory. This step enables the agent to learn and improve over time.</li>
+</ol>
+<pre><code class="language-ascii">                  +---------------------+
+                  | User Sends Message  |
+                  +---------------------+
+                            ↓
+                  +---------------------+
+                  |   Builds Context    |
+                  +---------------------+
+                            ↓
+                  +---------------------+
+                  |   Sends to LLM      |
+                  +---------------------+
+                            ↓ (Decides to use tool)
++-----------------------------------------------------------+
+|                 +---------------------+                   |
+|                 |    Calls Tool(s)    | &lt;-----------------+
+|                 +---------------------+                   | (Continues using tools)
+|                           ↓ (Returns result)              |
+|                 +---------------------+                   |
+|                 |   Executes Tool     |                   |
+|                 +---------------------+                   |
++-----------------------------------------------------------+
+                            ↓ (Finishes tool use)
+                  +---------------------+
+                  |  Gives Final        |
+                  |  Response to User   |
+                  +---------------------+
+                            ↓
+                  +---------------------+
+                  |  Updates Memory     |
+                  +---------------------+
+</code></pre>
+
+<h2 data-start="472">Context Construction <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=472s" target="_blank" rel="noopener noreferrer">(7:52–8:18)</a> <a class="dig" data-type="summary" data-t="472">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">The context sent to the LLM is constructed from several sources, primarily a series of markdown files and other dynamic information.</span> This process is a key step in the agent loop.</p><h3>Markdown Files <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=498s" target="_blank" rel="noopener noreferrer">(8:18–11:41)</a></h3>
+<p>The core of the context comes from three specific <code>.md</code> files:</p>
+<ul>
+<li><strong><code>soul.md</code></strong>: This file defines the agent's <strong>personality</strong>. It contains instructions on its tone, goals, and overall behavior, similar to a detailed system prompt. If this file is empty, a default system prompt is used which identifies the agent as &quot;Hermes a virtual assistant.&quot;</li>
+<li><strong><code>user.md</code></strong>: Located in the <code>memory/</code> directory, this file stores information about the user that Hermes learns from conversations. For example, if a user mentions they are a &quot;software engineer,&quot; the agent will automatically update this file.</li>
+<li><strong><code>memory.md</code></strong>: Also in the <code>memory/</code> directory, this file is for storing &quot;arbitrary facts&quot; and memories that are not specifically about the user. This can include information about how to use tools, notes on workflows, or interesting things learned during conversations. The agent also updates this file automatically.</li>
+</ul>
+
+<h3>Other Context Components <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=701s" target="_blank" rel="noopener noreferrer">(11:41–13:32)</a></h3>
+<p>In addition to the markdown files, the context includes:</p>
+<ul>
+<li><strong>Information from External Memory</strong>: If an external memory provider is configured, summaries of relevant past conversations are included. This is not enabled by default.</li>
+<li><strong>Skill and Tool Descriptions</strong>: The definitions and descriptions of available skills and tools are added to the context so the LLM knows how to use them.</li>
+<li><strong>Messages</strong>: The recent message history from the current conversation is appended. If the conversation becomes too long and exceeds a certain token threshold, it is summarized.</li>
+</ul>
+
+<h2 data-start="812">Context Compression <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=812s" target="_blank" rel="noopener noreferrer">(13:32–14:09)</a> <a class="dig" data-type="summary" data-t="812">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">To manage the limited context window of LLMs, Hermes employs a context compression mechanism.</span> When a conversation's length exceeds a pre-defined threshold, the message history is summarized.</p><h3>Triggering Compression <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=849s" target="_blank" rel="noopener noreferrer">(14:09–16:17)</a></h3>
+<ul>
+<li><strong>Threshold</strong>: By default, compression is triggered when the context size reaches <strong>50%</strong> of the model's total context window. This threshold is customizable during setup and can be set higher (e.g., 70-80%) for models with smaller context windows.</li>
+<li><strong>Checkpoints</strong>: The agent checks if compression is needed at two key moments:
+<ol>
+<li><strong>Before each turn</strong>: After the user sends a message and before the context is sent to the LLM.</li>
+<li><strong>On error</strong>: If the LLM returns an error indicating the context window was exceeded.</li>
+</ol>
+</li>
+</ul>
+
+<h3>Token Estimation <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=977s" target="_blank" rel="noopener noreferrer">(16:17–18:21)</a></h3>
+<p>Hermes uses a two-stage process for estimating the token count to decide when to compress:</p>
+<ol>
+<li><strong>Before the first LLM call</strong>: Since the exact token count isn't known, it uses a simple approximation: <code>total number of characters / 4</code>. If this approximation exceeds the threshold, compression is triggered.</li>
+<li><strong>After the first LLM call</strong>: Subsequent checks are more accurate. The agent uses the <code>usage</code> data returned in the LLM's API response, which provides the precise number of input and output tokens used.</li>
+</ol>
+
+<h3>The Compressor Prompt <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=1101s" target="_blank" rel="noopener noreferrer">(18:21–20:20)</a></h3>
+<p>The prompt used for summarizing the conversation is detailed and structured. It asks the LLM to generate a summary with multiple sections, including:</p>
+<ul>
+<li>Full goal</li>
+<li>Constraints</li>
+<li>Completed actions</li>
+<li>Active state</li>
+<li>Historical progress</li>
+<li>What the agent is blocked on</li>
+<li>Key decisions made</li>
+<li>Resolved questions</li>
+<li>Relevant files</li>
+<li>Critical context</li>
+<li>Previous summaries</li>
+</ul>
+<p>This approach is noted as being much richer and less minimalist than the one used by the Pi agent.</p>
+
+<h2 data-start="1220">The Gateway <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=1220s" target="_blank" rel="noopener noreferrer">(20:20–20:56)</a> <a class="dig" data-type="summary" data-t="1220">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">The gateway is the component that allows Hermes to connect with external messaging platforms like Telegram, WhatsApp, Slack, and email.</span> It is a crucial feature that contributes significantly to the agent's popularity.</p><h3>Core Functionality <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=1256s" target="_blank" rel="noopener noreferrer">(20:56–24:03)</a></h3>
+<p>The gateway runs a continuous <code>async IO</code> loop to listen for incoming messages from configured services. Each service integration is unique and must be configured independently. The connection methods vary by service and can include:</p>
+<ul>
+<li>Webhooks</li>
+<li>Polling loops (e.g., checking the Telegram API every second)</li>
+<li>Websockets</li>
+</ul>
+<p>When a message is received, the gateway's responsibility is to format it correctly and pass it to the AI agent core.</p>
+
+<h3>Context and History Management <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=1443s" target="_blank" rel="noopener noreferrer">(24:03–26:39)</a></h3>
+<p>Since messaging platforms are stateless (i.e., they only send the latest message, not the whole conversation), the gateway must reconstruct the conversation history for each incoming message.</p>
+<ol>
+<li><strong>Receives a single message</strong>: For example, from Telegram.</li>
+<li><strong>Identifies the session</strong>: It creates a unique session identifier, often by combining the gateway name and the session ID from the platform (e.g., <code>Telegram-&lt;session_id&gt;</code>).</li>
+<li><strong>Queries the database</strong>: It uses this identifier to query a local <strong>SQLite database</strong>, which stores the full transcripts of all past conversations.</li>
+<li><strong>Rebuilds message history</strong>: It retrieves the message history for that session from the database.</li>
+<li><strong>Constructs full context</strong>: It combines this history with the other context elements (<code>soul.md</code>, tools, etc.) before sending it to the agent loop.</li>
+</ol>
+
+<h3>Session Manager <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=1599s" target="_blank" rel="noopener noreferrer">(26:39–28:05)</a></h3>
+<p>The gateway also includes a &quot;session manager&quot; that handles situations where the user sends multiple messages while the agent is still processing a previous one. It decides how to handle the new message based on user commands:</p>
+<ul>
+<li><strong>Queue</strong>: By default, the new message is queued to be processed after the current task is finished.</li>
+<li><strong>Interrupt</strong>: A command like <code>/interrupt</code> will stop the agent's current task.</li>
+<li><strong>Steer</strong>: A command like <code>/steer</code> will attempt to guide the agent's current task without stopping it.</li>
+</ul>
+
+<h2 data-start="1685">Memory Management <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=1685s" target="_blank" rel="noopener noreferrer">(28:05–28:31)</a> <a class="dig" data-type="summary" data-t="1685">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">Hermes utilizes a multi-layered memory system to retain information across conversations.</span> The memory is composed of three main types.</p><h3>1. Markdown Files <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=1711s" target="_blank" rel="noopener noreferrer">(28:31–29:32)</a></h3>
+<p>These are plain text files that are always loaded into the agent's context.</p>
+<ul>
+<li><strong><code>soul.md</code></strong>: Defines the agent's core personality.</li>
+<li><strong><code>memory.md</code></strong>: Stores arbitrary facts and learned information.</li>
+<li><strong><code>user.md</code></strong>: Stores facts learned specifically about the user.
+The latter two files are located in a <code>memory/</code> subdirectory.</li>
+</ul>
+
+<h3>2. SQLite Database <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=1772s" target="_blank" rel="noopener noreferrer">(29:32–31:03)</a></h3>
+<p>Hermes maintains a local SQLite database that stores the <strong>full transcripts of all sessions</strong>. Every single message from every interaction is saved here. This database is the source for reconstructing conversation histories, especially for interactions via the gateway. The database also contains a &quot;bare text&quot; table with just the text of all conversations, optimized for similarity searches.</p>
+
+<h3>3. External Memory <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=1863s" target="_blank" rel="noopener noreferrer">(31:03–34:49)</a></h3>
+<p>This is an optional feature that is not configured by default but is highly recommended. It integrates with third-party memory providers to give the agent more powerful, long-term memory capabilities.</p>
+<ul>
+<li><strong>Supported Providers</strong>: Examples include <strong>MemZero</strong>, <strong>Super memory</strong>, and <strong>Honcho</strong>.</li>
+<li><strong>Functionality</strong>: Each provider works differently. Some use similarity search, while others use LLMs to extract relevant memories from past conversation histories.</li>
+<li><strong>Query Cadence</strong>: When enabled, the external memory is not queried before every message. Instead, it is queried <strong>after the first message</strong> of a conversation. This allows the agent to first understand the topic of the current conversation and then search for relevant long-term memories to use in subsequent responses.</li>
+</ul>
+
+<h2 data-start="2089">Cron Jobs <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=2089s" target="_blank" rel="noopener noreferrer">(34:49–35:13)</a> <a class="dig" data-type="summary" data-t="2089">↑ summary</a></h2>
+<p class="lead"><span class="lead-accent">Cron jobs allow users to schedule recurring tasks for the Hermes agent to perform automatically.</span> Examples include sending a daily email with AI news or posting a weekly update to a Slack channel.</p><h3>Execution Loop <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=2113s" target="_blank" rel="noopener noreferrer">(35:13–37:01)</a></h3>
+<p>The cron system in Hermes is self-contained and not tied to the server's system-level cron. It operates on its own loop:</p>
+<ol>
+<li>A <code>tick</code> function runs <strong>every minute</strong>.</li>
+<li>In each tick, the function checks a list of scheduled jobs to see if any are due to run at that particular minute.</li>
+<li>If a job is due, it is executed.</li>
+</ol>
+
+<h3>Storage and Output <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=2221s" target="_blank" rel="noopener noreferrer">(37:01–38:54)</a></h3>
+<p>Contrary to some documentation that may suggest SQLite, the cron jobs are stored in a plain JSON file.</p>
+<ul>
+<li><strong>Job Definitions</strong>: All scheduled jobs are listed in a file located at <code>~/.hermes/cron/jobs.json</code>. This file contains the prompts and schedules for each task.</li>
+<li><strong>Output Logs</strong>: The output of each cron job execution is stored as a markdown file. These are organized in the <code>~/.hermes/cron/output/</code> directory, with subdirectories for each <code>job_id</code>, containing the <code>run.md</code> files for each execution.</li>
+</ul>
+
+<h3>Notification Delivery <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=2334s" target="_blank" rel="noopener noreferrer">(38:54–40:30)</a></h3>
+<p>When a cron job completes, it sends a notification. This notification is not sent via a standard <code>send_message</code> tool call. Instead, the system automatically delivers it to the user's &quot;home&quot; messaging platform. The &quot;home&quot; platform is designated during the gateway setup (e.g., a specific user ID on Telegram can be set as the home destination).</p>
+</article>
+<script>
+(function(){
+  document.querySelectorAll('a.dig').forEach(function(a){
+    var u=new URL(location.href);
+    u.searchParams.set('type',a.dataset.type);
+    u.hash='t='+a.dataset.t;
+    a.setAttribute('href',u.pathname+u.search+u.hash);
+  });
+  var m=location.hash.match(/^#t=(\d+)/);
+  if(m){
+    var sec=+m[1];
+    var starts=[].slice.call(document.querySelectorAll('[data-start]')).map(function(e){return +e.dataset.start;});
+    var t=Math.max.apply(null,starts.filter(function(s){return s<=sec;}).concat([-1]));
+    if(t>=0){var el=document.querySelector('[data-start="'+t+'"]'); if(el){el.scrollIntoView();}}
+  }
+})();
+</script><script>(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;function systemDark(){return!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)}function effective(){var a=root.getAttribute('data-theme');return a==='dark'||a==='light'?a:(systemDark()?'dark':'light')}function syncIcon(){btn.textContent=effective()==='dark'?'☀️':'🌙'}btn.addEventListener('click',function(){var next=effective()==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('html-doc-theme',next)}catch(e){}syncIcon()});syncIcon();requestAnimationFrame(function(){root.classList.add('theme-ready')})})();</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="magazine-skim v1">
+<meta name="source-md" content="074_don-t-use-karpathy-s-second-brain-i-built-something-better.md">
+<meta name="video-id" content="z02Y-1OvWSM">
+<title>Don't Use Karpathy's Second Brain (I BUILT SOMETHING BETTER)</title>
+<script>(function(){try{var t=localStorage.getItem('html-doc-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<style>
+:root{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="light"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="dark"]{--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}}
+html.theme-ready body,html.theme-ready #theme-toggle,html.theme-ready #print-btn{transition:background-color .2s,color .2s}
+#theme-toggle,#print-btn{position:fixed;top:1rem;width:2.4rem;height:2.4rem;border-radius:50%;border:1px solid rgba(128,128,128,.35);background:var(--card);color:var(--ink);font-size:1.1rem;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;z-index:10}
+#theme-toggle{right:1rem}#print-btn{right:3.6rem}
+@media print{:root,:root:not([data-theme]),[data-theme="light"],[data-theme="dark"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}#theme-toggle,#print-btn{display:none}}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",'Apple SD Gothic Neo',Helvetica,Arial,sans-serif}
+.v4{max-width:50rem;margin:0 auto;background:var(--card);padding:2.8rem 3rem 4rem;box-shadow:var(--shadow)}
+html.theme-ready .v4{transition:background-color .2s,color .2s}
+.doc-title{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:2rem;line-height:1.2;margin:0 0 .15em}
+.doc-meta{color:var(--meta);font-size:.9rem;margin:0 0 1.8em}
+.doc-meta a{color:inherit;text-decoration:none}
+.doc-meta a:hover{text-decoration:underline}
+.callout{margin:0 0 2.4em;border-top:2px solid var(--goldline);border-bottom:2px solid var(--goldline);padding:1em 0}
+.callout .lbl{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-size:.7rem;font-weight:700;margin-bottom:.5em}
+.callout p{margin:.2em 0 .8em}
+.callout ul{padding-left:1.1em;margin:.4em 0 0}
+.callout li{margin:.25em 0}
+section{position:relative;padding:1.6em 0 1.2em;border-bottom:1px solid var(--rule)}
+.ghost{font:700 4.5rem/1 Georgia,serif;color:var(--ghost);position:absolute;right:0;top:.1em;pointer-events:none;user-select:none}
+h2{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:1.3rem;margin:.1em 0 .35em}
+.lead{font-size:1.02rem;line-height:1.5;color:var(--gold);font-weight:400;margin:.2em 0 .8em;max-width:90%}
+.ts{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.85rem;font-weight:400;text-decoration:none;white-space:nowrap}
+.ts:hover{text-decoration:underline}
+ul{padding-left:1.15em;margin:0}
+li{margin:.4em 0;line-height:1.6;color:var(--li)}
+footer{margin-top:2.5em;color:var(--foot);font-size:.8rem}
+@media print{body{background:#fff}.v4{box-shadow:none}}
+.dig{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.8rem;font-weight:400;text-decoration:none;white-space:nowrap;cursor:pointer}.dig:hover{text-decoration:underline}</style>
+</head>
+<body>
+<button id="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light/dark">🌙</button><button id="print-btn" type="button" onclick="window.print()" aria-label="Print" title="Print">🖨️</button>
+<article class="v4">
+  <h1 class="doc-title">Don't Use Karpathy's Second Brain (I BUILT SOMETHING BETTER)</h1>
+  <p class="doc-meta">AI Impact · 12:43 · <a href="https://www.youtube.com/watch?v=z02Y-1OvWSM" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=z02Y-1OvWSM</a></p>
+  <div class="callout">
+    <div class="lbl">Quick Reference</div>
+    <p>This video introduces the &quot;Infinite Brain&quot; knowledge graph framework, optimizing personal knowledge management for AI by using atomic notes, granular types, and explicit relationship edges.</p>
+    <ul><li>Structure personal knowledge graphs for AI, not just humans, to maximize AI utility.</li><li>Adopt atomic notes and granular node types to reduce AI token consumption and improve relevance.</li><li>Utilize explicit edge types (e.g., &quot;supports,&quot; &quot;contradicts&quot;) to convey deeper relationships to AI.</li><li>Implement AI-optimized knowledge systems to preserve institutional knowledge and empower future AI assistance.</li></ul>
+  </div>
+  <section data-start="0">
+      <span class="ghost">1</span>
+      <h2>The Crucial Role of Personal Knowledge Graphs for AI <a class="ts" href="https://www.youtube.com/watch?v=z02Y-1OvWSM&amp;t=0s" target="_blank" rel="noopener noreferrer">(0:00–2:10)</a> <a class="dig" data-type="deep-dive" data-t="0">dig deeper ▾</a></h2>
+      <p class="lead">AI's effectiveness hinges on personalized knowledge graphs for expert business and personal assistance.</p>
+      <ul><li>AI without personalized knowledge remains mediocre despite its power.</li><li>Building your own knowledge graph is essential for high-quality, expert AI assistance.</li><li>Industry leaders like Andre Karpathy are adopting knowledge graphs for AI empowerment.</li></ul>
+    </section>
+<section data-start="130">
+      <span class="ghost">2</span>
+      <h2>Understanding Traditional Personal Knowledge Management (PKM) Systems <a class="ts" href="https://www.youtube.com/watch?v=z02Y-1OvWSM&amp;t=130s" target="_blank" rel="noopener noreferrer">(2:10–4:12)</a> <a class="dig" data-type="deep-dive" data-t="130">dig deeper ▾</a></h2>
+      <p class="lead">Traditional personal knowledge management systems (PKMs) focused on structuring notes for human understanding.</p>
+      <ul><li>PKMs, often called 'second brains,' were designed for human organization and thought tracing.</li><li>Systems like PARA grouped notes into categories such as Projects, Areas, Resources, and Archives.</li><li>Tools like Obsidian linked text files, helping individuals organize their knowledge pathways.</li></ul>
+    </section>
+<section data-start="252">
+      <span class="ghost">3</span>
+      <h2>Why Traditional PKM Falls Short for AI <a class="ts" href="https://www.youtube.com/watch?v=z02Y-1OvWSM&amp;t=252s" target="_blank" rel="noopener noreferrer">(4:12–5:01)</a> <a class="dig" data-type="deep-dive" data-t="252">dig deeper ▾</a></h2>
+      <p class="lead">Traditional PKM systems, effective for humans, fall short for AI due to inefficiency and cost.</p>
+      <ul><li>The PARA method creates massive, unstructured notes and untyped links, hindering AI retrieval.</li><li>Inefficiency leads to higher AI token usage as it sifts through vast amounts of data.</li><li>AI gets confused by irrelevant data, resulting in less accurate and more costly output.</li></ul>
+    </section>
+<section data-start="301">
+      <span class="ghost">4</span>
+      <h2>Introducing the &quot;Infinite Brain&quot;: A New Architecture for AI-Optimized Knowledge <a class="ts" href="https://www.youtube.com/watch?v=z02Y-1OvWSM&amp;t=301s" target="_blank" rel="noopener noreferrer">(5:01–6:12)</a> <a class="dig" data-type="deep-dive" data-t="301">dig deeper ▾</a></h2>
+      <p class="lead">The &quot;Infinite Brain&quot; offers a new knowledge architecture specifically designed for AI efficiency.</p>
+      <ul><li>This system dramatically restructures data for optimal AI interaction.</li><li>It significantly reduces AI token consumption, e.g., from 9,000 to 600 tokens for the same query.</li><li>AI's skill in generating and analyzing text makes it ideal for building and maintaining this base.</li></ul>
+    </section>
+<section data-start="372">
+      <span class="ghost">5</span>
+      <h2>Pillars of the Infinite Brain: Atomic Notes, Granular Types, and Advanced Relationships <a class="ts" href="https://www.youtube.com/watch?v=z02Y-1OvWSM&amp;t=372s" target="_blank" rel="noopener noreferrer">(6:12–10:00)</a> <a class="dig" data-type="deep-dive" data-t="372">dig deeper ▾</a></h2>
+      <p class="lead">Infinite Brain employs atomic notes, granular types, and advanced relationships for AI optimization.</p>
+      <ul><li>Individual notes are kept concise (50-300 lines) for quick AI ingestion of relevant information.</li><li>Instead of four categories, it uses 16 distinct node types for precise classification.</li><li>Ten complex 'edge types' define relationships between notes (e.g., 'supports', 'contradicts').</li><li>Explicit relationships enable AI to understand context without reading full documents, boosting accuracy.</li></ul>
+    </section>
+<section data-start="600">
+      <span class="ghost">6</span>
+      <h2>Real-World Impact and Institutional Knowledge Preservation <a class="ts" href="https://www.youtube.com/watch?v=z02Y-1OvWSM&amp;t=600s" target="_blank" rel="noopener noreferrer">(10:00–11:43)</a> <a class="dig" data-type="deep-dive" data-t="600">dig deeper ▾</a></h2>
+      <p class="lead">The Infinite Brain system significantly reduces AI costs and preserves institutional knowledge effectively.</p>
+      <ul><li>It offers quantitative benefits by optimizing AI token usage, providing rapid overviews.</li><li>AI can get simplified overviews from small nodes, then deep-dive for details efficiently.</li><li>The system documents institutional knowledge, making it resilient and accessible.</li><li>New team members or future AI instances can access comprehensive understanding of past decisions.</li></ul>
+    </section>
+<section data-start="703">
+      
+      <h2>Conclusion <a class="ts" href="https://www.youtube.com/watch?v=z02Y-1OvWSM&amp;t=703s" target="_blank" rel="noopener noreferrer">(11:43–12:44)</a> <a class="dig" data-type="deep-dive" data-t="703">dig deeper ▾</a></h2>
+      <p class="lead">The 'Infinite Brain' framework makes AI-optimized PKM practical, unlocking AI's full potential.</p>
+      <ul><li>It transforms personal knowledge management into a practical reality with AI.</li><li>Optimizing knowledge for AI enables it to understand your business and industry fully.</li><li>This approach allows AI to provide expert, informed guidance for personal and business growth.</li><li>It makes PKM viable for those who previously found it too time-consuming.</li></ul>
+    </section>
+  <footer>Skim view — generated from the source note <code>don-t-use-karpathy-s-second-brain-i-built-something-better.md</code>. Full text lives in the source <code>.md</code>.</footer>
+</article>
+<script>
+(function(){
+  document.querySelectorAll('a.dig').forEach(function(a){
+    var u=new URL(location.href);
+    u.searchParams.set('type',a.dataset.type);
+    u.hash='t='+a.dataset.t;
+    a.setAttribute('href',u.pathname+u.search+u.hash);
+  });
+  var m=location.hash.match(/^#t=(\d+)/);
+  if(m){
+    var sec=+m[1];
+    var starts=[].slice.call(document.querySelectorAll('[data-start]')).map(function(e){return +e.dataset.start;});
+    var t=Math.max.apply(null,starts.filter(function(s){return s<=sec;}).concat([-1]));
+    if(t>=0){var el=document.querySelector('[data-start="'+t+'"]'); if(el){el.scrollIntoView();}}
+  }
+})();
+</script><script>(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;function systemDark(){return!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)}function effective(){var a=root.getAttribute('data-theme');return a==='dark'||a==='light'?a:(systemDark()?'dark':'light')}function syncIcon(){btn.textContent=effective()==='dark'?'☀️':'🌙'}btn.addEventListener('click',function(){var next=effective()==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('html-doc-theme',next)}catch(e){}syncIcon()});syncIcon();requestAnimationFrame(function(){root.classList.add('theme-ready')})})();</script>
+</body>
+</html>

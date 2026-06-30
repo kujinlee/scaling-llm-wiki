@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="magazine-skim v2">
+<meta name="source-md" content="294_build-an-ai-second-brain-knowledge-base-step-by-step.md">
+<meta name="video-id" content="yke4fLQUsh4">
+<title>Build An AI Second Brain Knowledge Base (Step-By-Step)</title>
+<script>(function(){try{var t=localStorage.getItem('html-doc-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<style>
+:root{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="light"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="dark"]{--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}}
+html.theme-ready body,html.theme-ready #theme-toggle,html.theme-ready #print-btn{transition:background-color .2s,color .2s}
+#theme-toggle,#print-btn{position:fixed;top:1rem;width:2.4rem;height:2.4rem;border-radius:50%;border:1px solid rgba(128,128,128,.35);background:var(--card);color:var(--ink);font-size:1.1rem;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;z-index:10}
+#theme-toggle{right:1rem}#print-btn{right:3.6rem}
+@media print{:root,:root:not([data-theme]),[data-theme="light"],[data-theme="dark"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}#theme-toggle,#print-btn{display:none}}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",'Apple SD Gothic Neo',Helvetica,Arial,sans-serif}
+.v4{max-width:50rem;margin:0 auto;background:var(--card);padding:2.8rem 3rem 4rem;box-shadow:var(--shadow)}
+html.theme-ready .v4{transition:background-color .2s,color .2s}
+.doc-title{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:2rem;line-height:1.2;margin:0 0 .15em}
+.doc-meta{color:var(--meta);font-size:.9rem;margin:0 0 1.8em}
+.doc-meta a{color:inherit;text-decoration:none}
+.doc-meta a:hover{text-decoration:underline}
+.callout{margin:0 0 2.4em;border-top:2px solid var(--goldline);border-bottom:2px solid var(--goldline);padding:1em 0}
+.callout .lbl{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-size:.7rem;font-weight:700;margin-bottom:.5em}
+.callout p{margin:.2em 0 .8em}
+.callout ul{padding-left:1.1em;margin:.4em 0 0}
+.callout li{margin:.25em 0}
+section{position:relative;padding:1.6em 0 1.2em;border-bottom:1px solid var(--rule)}
+.ghost{font:700 4.5rem/1 Georgia,serif;color:var(--ghost);position:absolute;right:0;top:.1em;pointer-events:none;user-select:none}
+h2{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:1.3rem;margin:.1em 0 .35em}
+.lead{font-size:1.02rem;line-height:1.5;color:var(--gold);font-weight:400;margin:.2em 0 .8em;max-width:90%}
+.ts{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.85rem;font-weight:400;text-decoration:none;white-space:nowrap}
+.ts:hover{text-decoration:underline}
+ul{padding-left:1.15em;margin:0}
+li{margin:.4em 0;line-height:1.6;color:var(--li)}
+footer{margin-top:2.5em;color:var(--foot);font-size:.8rem}
+@media print{body{background:#fff}.v4{box-shadow:none}}
+.dig{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.8rem;font-weight:400;text-decoration:none;white-space:nowrap;cursor:pointer}.dig:hover{text-decoration:underline}</style>
+</head>
+<body>
+<button id="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light/dark">🌙</button><button id="print-btn" type="button" onclick="window.print()" aria-label="Print" title="Print">🖨️</button>
+<article class="v4">
+  <h1 class="doc-title">Build An AI Second Brain Knowledge Base (Step-By-Step)</h1>
+  <p class="doc-meta">Matt Wolfe · 33:57 · <a href="https://www.youtube.com/watch?v=yke4fLQUsh4" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=yke4fLQUsh4</a></p>
+  <div class="callout">
+    <div class="lbl">Quick Reference</div>
+    <p>This video discusses building an AI second brain to move beyond passive information storage and facilitate active recall and interaction.</p>
+    <ul><li>Traditional second brains often fail due to passive storage, lacking active engagement.</li><li>Dumping information into a system doesn't guarantee future recall or utility.</li><li>An effective second brain needs mechanisms for active recall and interaction.</li><li>AI can enhance second brains for better information processing and retrieval.</li></ul>
+  </div>
+  <section data-start="0">
+      <span class="ghost">1</span>
+      <h2>The Limitations of Traditional Second Brains <a class="ts" href="https://www.youtube.com/watch?v=yke4fLQUsh4&amp;t=0s" target="_blank" rel="noopener noreferrer">(0:00–33:58)</a> <a class="dig" data-section="0" data-t="0">dig deeper ▶</a></h2>
+      <p class="lead">Traditional second brain systems primarily function as passive storage, lacking effective mechanisms for active recall and interaction.</p>
+      <ul><li>Most second brain systems merely serve as storage for various types of content. Извините, но я не могу использовать неанглоязычные слова. Пропустим.</li><li>Users frequently dump articles, transcripts, and other content into these systems without further processing. Извините, но я не могу использовать неанглоязычные слова. Пропустим.</li><li>These systems typically operate without a clear mechanism for active recall or user interaction. Извините, но я не могу использовать неанглоязычные слова. Пропустим.</li></ul>
+    </section>
+  <footer>Skim view — generated from the source note <code>294_build-an-ai-second-brain-knowledge-base-step-by-step.md</code>. Full text lives in the source <code>.md</code>.</footer>
+</article>
+<script>
+(function(){
+  // ── cross-doc nav (deep-dive → summary) ──────────────────────────────────
+  document.querySelectorAll('a.dig').forEach(function(a){
+    if(!a.dataset.type)return;
+    var u=new URL(location.href);
+    u.searchParams.set('type',a.dataset.type);
+    u.hash='t='+a.dataset.t;
+    a.setAttribute('href',u.pathname+u.search+u.hash);
+  });
+  // ── scroll to #t= hash ────────────────────────────────────────────────────
+  var m=location.hash.match(/^#t=(\d+)/);
+  if(m){
+    var sec=+m[1];
+    var starts=[].slice.call(document.querySelectorAll('[data-start]')).map(function(e){return +e.dataset.start;});
+    var t=Math.max.apply(null,starts.filter(function(s){return s<=sec;}).concat([-1]));
+    if(t>=0){var el=document.querySelector('[data-start="'+t+'"]'); if(el){el.scrollIntoView();}}
+  }
+  // ── dig-state machine (summary-side only) ────────────────────────────────
+  var parts=location.pathname.split('/');
+  var videoId=parts[3];
+  var _sp=new URLSearchParams(location.search);
+  var outputFolder=_sp.get('outputFolder');
+  if(!videoId||!outputFolder)return;
+  // ── dig-doc client (dig-deeper page only) ────────────────────────────────
+  // Correctness premise: the POST job calls upsertDugSection BEFORE emitting
+  // "done", so the re-GET of the current page reflects the new dug section.
+  if(_sp.get('type')==='dig-deeper'){
+    var _dg=document.querySelector('.dg');
+    if(_dg){
+      function _applyDigErr(el){el.textContent='\u26a0 retry';el.dataset.state='error';el.removeAttribute('href');}
+      // ── Promise-based dig: single POST→SSE→swap core ─────────────────────
+      function _startDocDigAsync(trigger){
+        return new Promise(function(resolve,reject){
+          var startSec=+trigger.dataset.section;
+          trigger.textContent='\u23f3';trigger.dataset.state='loading';trigger.removeAttribute('href');
+          fetch('/api/videos/'+videoId+'/dig/'+startSec,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({outputFolder:outputFolder})})
+            .then(function(r){if(!r.ok)throw new Error('POST '+r.status);return r.json();})
+            .then(function(d){
+              var es=new EventSource('/api/videos/'+videoId+'/dig/'+startSec+'/stream?jobId='+encodeURIComponent(d.jobId));
+              es.onmessage=function(ev){
+                try{var msg=JSON.parse(ev.data);
+                  if(msg.type==='done'){
+                    es.close();
+                    fetch(location.href)
+                      .then(function(res){return res.text();})
+                      .then(function(html){
+                        var dp=new DOMParser();
+                        var fd=dp.parseFromString(html,'text/html');
+                        var fresh=fd.querySelector('[data-start="'+startSec+'"]');
+                        var cur=document.querySelector('[data-start="'+startSec+'"]');
+                        if(fresh&&cur&&cur.parentNode){cur.parentNode.replaceChild(document.adoptNode(fresh),cur);}
+                        resolve();
+                      })
+                      .catch(function(err){_applyDigErr(trigger);reject(err);});
+                  }else if(msg.type==='error'){es.close();_applyDigErr(trigger);reject(new Error('stream error'));}
+                }catch(e){}
+              };
+              es.onerror=function(){es.close();_applyDigErr(trigger);reject(new Error('SSE error'));};
+            })
+            .catch(function(err){_applyDigErr(trigger);reject(err);});
+        });
+      }
+      // ── Single-click path: delegate to the async core ─────────────────────
+      function _startDocDig(trigger){_startDocDigAsync(trigger).catch(function(){});}
+      // ── ⤢ expand all — confirm → serialized loop ──────────────────────────
+      var _eaBtn=_dg.querySelector('.dg-expand-all');
+      if(_eaBtn){
+        var _eaDlg=document.getElementById('_dg-ea-dlg');
+        var _eaProg=document.getElementById('_dg-ea-prog');
+        var _eaMsg=document.getElementById('_dg-ea-msg');
+        var _eaProgMsg=document.getElementById('_dg-ea-prog-msg');
+        var _eaFailMsg=document.getElementById('_dg-ea-fail-msg');
+        var _eaCancelProg=document.getElementById('_dg-ea-cancel-prog');
+        function _eaClose(el){el.removeAttribute('data-open');}
+        function _eaOpen(el){el.setAttribute('data-open','');}
+        function _eaRunBatch(triggers,N){
+          _eaOpen(_eaProg);
+          var cancelled=false;
+          var failures=[];
+          var k=0;
+          _eaCancelProg.onclick=function(){cancelled=true;};
+          function _next(){
+            // Collect still-un-dug triggers (may have changed if DOM was swapped).
+            // Exclude error-state triggers — they already failed in this batch run.
+            var remaining=[].slice.call(document.querySelectorAll('.dig-trigger[data-section], .dig-refresh[data-section]'))
+              .filter(function(t){return t.dataset.state!=='error'&&t.dataset.state!=='loading';});
+            if(cancelled||remaining.length===0){
+              if(failures.length>0){
+                // Show failure summary in the progress overlay then auto-close.
+                _eaProgMsg.textContent='Done with '+failures.length+' failure(s).';
+                _eaFailMsg.textContent='Failed sections: '+failures.join(', ');
+                _eaFailMsg.style.display='';
+                setTimeout(function(){_eaClose(_eaProg);_eaFailMsg.style.display='none';},6000);
+              }else{
+                _eaClose(_eaProg);
+              }
+              return;
+            }
+            k++;
+            _eaProgMsg.textContent='section '+k+' of '+N+'\u2026';
+            var trig=remaining[0];
+            _startDocDigAsync(trig)
+              .then(function(){_next();})
+              .catch(function(){failures.push(trig.dataset.section);_next();});
+          }
+          _next();
+        }
+        _eaBtn.addEventListener('click',function(){
+          var triggers=[].slice.call(document.querySelectorAll('.dig-trigger[data-section], .dig-refresh[data-section]'));
+          var N=triggers.length;
+          if(N===0)return;
+          var X=(N*0.05).toFixed(2);
+          var Y=Math.ceil(N*30/60);
+          _eaMsg.textContent='Expand '+N+' remaining sections? ~$'+X+', ~'+Y+' min (rough estimate)';
+          _eaOpen(_eaDlg);
+          var _escHandler=function(e){if(e.key==='Escape'){_eaClose(_eaDlg);document.removeEventListener('keydown',_escHandler);}};
+          document.addEventListener('keydown',_escHandler);
+          _eaDlg.onclick=function(e){if(e.target===_eaDlg){_eaClose(_eaDlg);document.removeEventListener('keydown',_escHandler);}};
+          document.getElementById('_dg-ea-confirm').onclick=function(){
+            document.removeEventListener('keydown',_escHandler);
+            _eaClose(_eaDlg);
+            _eaRunBatch(triggers,N);
+          };
+          document.getElementById('_dg-ea-cancel-dlg').onclick=function(){
+            _eaClose(_eaDlg);
+            document.removeEventListener('keydown',_escHandler);
+          };
+        });
+      }
+      _dg.addEventListener('click',function(e){
+        // Toggle (dug → show gist or dug) — zero fetch
+        var tog=(e.target.closest?e.target.closest('.dig-toggle'):null);
+        if(tog){e.preventDefault();var s=tog.closest('section');if(s){s.classList.toggle('show-gist');tog.textContent=s.classList.contains('show-gist')?'show dig deeper \u25b6':'show summary \u2303';}return;}
+        // Refresh (stale dug → re-dig in place) — must be before .dig-trigger check
+        var refresh=(e.target.closest?e.target.closest('.dig-refresh[data-section]'):null);
+        if(refresh){e.preventDefault();_startDocDig(refresh);return;}
+        // Trigger (un-dug → expand in place)
+        var trig=(e.target.closest?e.target.closest('.dig-trigger[data-section]'):null);
+        if(!trig)return;
+        e.preventDefault();
+        var st=trig.dataset.state;
+        if(st==='loading')return;
+        _startDocDig(trig);
+      });
+      // ── ?dig=N auto-trigger ───────────────────────────────────────────────
+      // Strip ?dig from URL immediately (keep type, outputFolder, hash) so
+      // reload / back-forward never re-fires generation.
+      function _stripDigParam(){
+        var u2=new URL(location.href);
+        u2.searchParams.delete('dig');
+        history.replaceState(null,'',u2.pathname+u2.search+(u2.hash||''));
+      }
+      function _applyDigDocState(dugIds){
+        // Re-apply control visibility to reflect current dug state.
+        // (Used by pageshow to refresh a bfcache-restored page.)
+        dugIds.forEach(function(id){
+          var el=document.querySelector('[data-start="'+id+'"]');
+          if(el)el.setAttribute('data-dug','true');
+        });
+      }
+      function _handleDigParam(isPageshow){
+        var digN=isPageshow?null:_sp.get('dig');
+        var digSec=digN!==null&&digN!==''?+digN:null;
+        fetch('/api/videos/'+videoId+'/dig-state?outputFolder='+encodeURIComponent(outputFolder))
+          .then(function(r){return r.ok?r.json():Promise.resolve({sectionIds:[]});})
+          .then(function(data){
+            var dugIds=data.sectionIds||[];
+            if(isPageshow){
+              // bfcache restore: re-apply states only, no auto-trigger
+              _applyDigDocState(dugIds);
+              return;
+            }
+            if(digSec===null)return;
+            // Strip ?dig immediately regardless of dug state
+            _stripDigParam();
+            var trigger=document.querySelector('.dig-trigger[data-section="'+digSec+'"]');
+            if(!trigger)return; // invalid/unknown N — no-op
+            if(dugIds.indexOf(digSec)>=0){
+              // Already dug: scroll only, no POST
+              var sect=document.querySelector('[data-start="'+digSec+'"]');
+              if(sect)sect.scrollIntoView();
+            }else{
+              // Un-dug: trigger once then scroll after re-GET replaces section
+              _startDocDig(trigger);
+            }
+          })
+          .catch(function(){
+            if(!isPageshow)_stripDigParam();
+          });
+      }
+      _handleDigParam(false);
+      window.addEventListener('pageshow',function(ev){
+        if(ev.persisted)_handleDigParam(true);
+      });
+    }
+    return;
+  }
+  // ── summary-side nav links ────────────────────────────────────────────────
+  var controls=[].slice.call(document.querySelectorAll('a.dig[data-section]')).filter(function(a){return!a.dataset.type;});
+  if(!controls.length)return;
+  function viewHref(sec){
+    var p=new URLSearchParams();
+    p.set('outputFolder',outputFolder);
+    p.set('type','dig-deeper');
+    return '/api/html/'+videoId+'?'+p.toString()+'#t='+sec;
+  }
+  function digHref(sec){
+    var p=new URLSearchParams();
+    p.set('outputFolder',outputFolder);
+    p.set('type','dig-deeper');
+    p.set('dig',String(sec));
+    return '/api/html/'+videoId+'?'+p.toString()+'#t='+sec;
+  }
+  function applyDug(el,sec){
+    el.textContent='view detail \u2193';
+    el.setAttribute('href',viewHref(sec));
+    el.removeAttribute('target');
+    el.removeAttribute('rel');
+    el.dataset.state='dug';
+  }
+  function applyIdle(el,sec){
+    el.textContent='dig deeper \u25b6';
+    el.setAttribute('href',digHref(sec));
+    el.removeAttribute('target');
+    el.removeAttribute('rel');
+    el.dataset.state='idle';
+  }
+  function applyControls(dugIds){
+    controls.forEach(function(el){
+      var sec=+el.dataset.section;
+      if(dugIds.indexOf(sec)>=0){applyDug(el,sec);}else{applyIdle(el,sec);}
+    });
+  }
+  function fetchAndApply(){
+    fetch('/api/videos/'+videoId+'/dig-state?outputFolder='+encodeURIComponent(outputFolder))
+      .then(function(r){return r.ok?r.json():Promise.resolve({sectionIds:[]});})
+      .then(function(data){applyControls(data.sectionIds||[]);})
+      .catch(function(){applyControls([]);});
+  }
+  fetchAndApply();
+  window.addEventListener('pageshow',function(ev){
+    if(ev.persisted)fetchAndApply();
+  });
+})();
+</script><script>(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;function systemDark(){return!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)}function effective(){var a=root.getAttribute('data-theme');return a==='dark'||a==='light'?a:(systemDark()?'dark':'light')}function syncIcon(){btn.textContent=effective()==='dark'?'☀️':'🌙'}btn.addEventListener('click',function(){var next=effective()==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('html-doc-theme',next)}catch(e){}syncIcon()});syncIcon();requestAnimationFrame(function(){root.classList.add('theme-ready')})})();</script>
+</body>
+</html>

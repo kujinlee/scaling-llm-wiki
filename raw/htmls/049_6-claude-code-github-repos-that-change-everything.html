@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="magazine-skim v1">
+<meta name="source-md" content="049_6-claude-code-github-repos-that-change-everything.md">
+<meta name="video-id" content="L2JKgj7WzU4">
+<title>6 Claude Code GitHub Repos That Change Everything</title>
+<script>(function(){try{var t=localStorage.getItem('html-doc-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<style>
+:root{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="light"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="dark"]{--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}}
+html.theme-ready body,html.theme-ready #theme-toggle,html.theme-ready #print-btn{transition:background-color .2s,color .2s}
+#theme-toggle,#print-btn{position:fixed;top:1rem;width:2.4rem;height:2.4rem;border-radius:50%;border:1px solid rgba(128,128,128,.35);background:var(--card);color:var(--ink);font-size:1.1rem;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;z-index:10}
+#theme-toggle{right:1rem}#print-btn{right:3.6rem}
+@media print{:root,:root:not([data-theme]),[data-theme="light"],[data-theme="dark"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}#theme-toggle,#print-btn{display:none}}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",'Apple SD Gothic Neo',Helvetica,Arial,sans-serif}
+.v4{max-width:50rem;margin:0 auto;background:var(--card);padding:2.8rem 3rem 4rem;box-shadow:var(--shadow)}
+html.theme-ready .v4{transition:background-color .2s,color .2s}
+.doc-title{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:2rem;line-height:1.2;margin:0 0 .15em}
+.doc-meta{color:var(--meta);font-size:.9rem;margin:0 0 1.8em}
+.doc-meta a{color:inherit;text-decoration:none}
+.doc-meta a:hover{text-decoration:underline}
+.callout{margin:0 0 2.4em;border-top:2px solid var(--goldline);border-bottom:2px solid var(--goldline);padding:1em 0}
+.callout .lbl{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-size:.7rem;font-weight:700;margin-bottom:.5em}
+.callout p{margin:.2em 0 .8em}
+.callout ul{padding-left:1.1em;margin:.4em 0 0}
+.callout li{margin:.25em 0}
+section{position:relative;padding:1.6em 0 1.2em;border-bottom:1px solid var(--rule)}
+.ghost{font:700 4.5rem/1 Georgia,serif;color:var(--ghost);position:absolute;right:0;top:.1em;pointer-events:none;user-select:none}
+h2{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:1.3rem;margin:.1em 0 .35em}
+.lead{font-size:1.02rem;line-height:1.5;color:var(--gold);font-weight:400;margin:.2em 0 .8em;max-width:90%}
+.ts{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.85rem;font-weight:400;text-decoration:none;white-space:nowrap}
+.ts:hover{text-decoration:underline}
+ul{padding-left:1.15em;margin:0}
+li{margin:.4em 0;line-height:1.6;color:var(--li)}
+footer{margin-top:2.5em;color:var(--foot);font-size:.8rem}
+@media print{body{background:#fff}.v4{box-shadow:none}}
+.dig{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.8rem;font-weight:400;text-decoration:none;white-space:nowrap;cursor:pointer}.dig:hover{text-decoration:underline}</style>
+</head>
+<body>
+<button id="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light/dark">🌙</button><button id="print-btn" type="button" onclick="window.print()" aria-label="Print" title="Print">🖨️</button>
+<article class="v4">
+  <h1 class="doc-title">6 Claude Code GitHub Repos That Change Everything</h1>
+  <p class="doc-meta">Nuno Tavares | Automated Marketer · 21:19 · <a href="https://www.youtube.com/watch?v=L2JKgj7WzU4" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=L2JKgj7WzU4</a></p>
+  <div class="callout">
+    <div class="lbl">Quick Reference</div>
+    <p>This video introduces six essential GitHub repositories that transform Claude Code from a basic autocomplete tool into a powerful, disciplined senior engineer for various development</p>
+    <ul><li>Enhance Claude Code's planning and execution with Superpowers.</li><li>Optimize Claude Code with 'Everything Claude Code' for broad functionality.</li><li>Deploy agent swarms for complex projects and shared memory using Roof Flow.</li><li>Generate professional designs and artifacts efficiently with Open Design.</li><li>Integrate Obsidian for AI access and improve code quality with Karpathy skills.</li></ul>
+  </div>
+  <section data-start="0">
+      <span class="ghost">1</span>
+      <h2>Introduction: Transforming Claude Code from Good to Senior Engineer <a class="ts" href="https://www.youtube.com/watch?v=L2JKgj7WzU4&amp;t=0s" target="_blank" rel="noopener noreferrer">(0:00–0:38)</a> <a class="dig" data-type="deep-dive" data-t="0">dig deeper ▾</a></h2>
+      <p class="lead">Integrating specific GitHub repositories transforms Claude Code from a fancy autocomplete into a senior engineer, disciplined designer, or AI swarm.</p>
+      <ul><li>Most users currently treat Claude Code as just a fancy autocomplete tool.</li><li>By integrating specific GitHub repositories, Claude Code can transform into a senior engineer or a disciplined designer.</li><li>The integration allows Claude Code to function as a business-running AI swarm.</li><li>This video introduces six essential repositories that elevate Claude Code's capabilities.</li><li>The video provides exact names, functions, and one-line install commands for these repositories.</li></ul>
+    </section>
+<section data-start="38">
+      <span class="ghost">2</span>
+      <h2>Superpowers: The Core Development Methodology <a class="ts" href="https://www.youtube.com/watch?v=L2JKgj7WzU4&amp;t=38s" target="_blank" rel="noopener noreferrer">(0:38–5:42)</a> <a class="dig" data-type="deep-dive" data-t="38">dig deeper ▾</a></h2>
+      <p class="lead">Superpowers is a comprehensive development methodology that transforms Claude Code into a disciplined junior engineer with enhanced capabilities.</p>
+      <ul><li>Superpowers is a comprehensive development methodology, not merely a prompt pack, that significantly enhances Claude Code.</li><li>It includes specific skills, agents, hooks (rules), and various configuration files to guide development.</li><li>Superpowers forces a conversation, generates detailed specifications, plans for 2-5 minutes, and implements a red-green-refactor TDD approach.</li><li>It dispatches sub-agents to work in parallel and reviews its own generated code.</li><li>Superpowers handles advanced tasks such as branch completion and pushing completed code to GitHub.</li><li>Installing Superpowers transforms Claude from a basic autocomplete tool into a junior engineer with immense discipline.</li><li>Superpowers can be installed directly as a plugin via '/plugin install superpowers' or by cloning the github.com/obra/superpowers GitHub repository.</li></ul>
+    </section>
+<section data-start="342">
+      <span class="ghost">3</span>
+      <h2>Everything Claude Code: Comprehensive Enhancement for Beginners <a class="ts" href="https://www.youtube.com/watch?v=L2JKgj7WzU4&amp;t=342s" target="_blank" rel="noopener noreferrer">(5:42–21:14)</a> <a class="dig" data-type="deep-dive" data-t="342">dig deeper ▾</a></h2>
+      <p class="lead">This section outlines comprehensive enhancements specifically designed for beginners using Claude Code.</p>
+      <ul><li>This section is dedicated to providing comprehensive enhancements.</li><li>The enhancements discussed are specifically tailored for beginners.</li><li>All information presented here relates to improving Claude Code functionality.</li></ul>
+    </section>
+  <footer>Skim view — generated from the source note <code>6-claude-code-github-repos-that-change-everything.md</code>. Full text lives in the source <code>.md</code>.</footer>
+</article>
+<script>
+(function(){
+  document.querySelectorAll('a.dig').forEach(function(a){
+    var u=new URL(location.href);
+    u.searchParams.set('type',a.dataset.type);
+    u.hash='t='+a.dataset.t;
+    a.setAttribute('href',u.pathname+u.search+u.hash);
+  });
+  var m=location.hash.match(/^#t=(\d+)/);
+  if(m){
+    var sec=+m[1];
+    var starts=[].slice.call(document.querySelectorAll('[data-start]')).map(function(e){return +e.dataset.start;});
+    var t=Math.max.apply(null,starts.filter(function(s){return s<=sec;}).concat([-1]));
+    if(t>=0){var el=document.querySelector('[data-start="'+t+'"]'); if(el){el.scrollIntoView();}}
+  }
+})();
+</script><script>(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;function systemDark(){return!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)}function effective(){var a=root.getAttribute('data-theme');return a==='dark'||a==='light'?a:(systemDark()?'dark':'light')}function syncIcon(){btn.textContent=effective()==='dark'?'☀️':'🌙'}btn.addEventListener('click',function(){var next=effective()==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('html-doc-theme',next)}catch(e){}syncIcon()});syncIcon();requestAnimationFrame(function(){root.classList.add('theme-ready')})})();</script>
+</body>
+</html>

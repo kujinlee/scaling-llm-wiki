@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="magazine-skim v1">
+<meta name="source-md" content="260_클로드-코드에서-opus-대신-glm-5-2-쓰는게-답이네요-오픈웨이트-sota-모델.md">
+<meta name="video-id" content="yB16BT1IMag">
+<title>클로드 코드에서 Opus 대신 GLM 5.2 쓰는게 답이네요 | 오픈웨이트 SOTA 모델</title>
+<script>(function(){try{var t=localStorage.getItem('html-doc-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<style>
+:root{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="light"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="dark"]{--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}}
+html.theme-ready body,html.theme-ready #theme-toggle,html.theme-ready #print-btn{transition:background-color .2s,color .2s}
+#theme-toggle,#print-btn{position:fixed;top:1rem;width:2.4rem;height:2.4rem;border-radius:50%;border:1px solid rgba(128,128,128,.35);background:var(--card);color:var(--ink);font-size:1.1rem;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;z-index:10}
+#theme-toggle{right:1rem}#print-btn{right:3.6rem}
+@media print{:root,:root:not([data-theme]),[data-theme="light"],[data-theme="dark"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}#theme-toggle,#print-btn{display:none}}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",'Apple SD Gothic Neo',Helvetica,Arial,sans-serif}
+.v4{max-width:50rem;margin:0 auto;background:var(--card);padding:2.8rem 3rem 4rem;box-shadow:var(--shadow)}
+html.theme-ready .v4{transition:background-color .2s,color .2s}
+.doc-title{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:2rem;line-height:1.2;margin:0 0 .15em}
+.doc-meta{color:var(--meta);font-size:.9rem;margin:0 0 1.8em}
+.doc-meta a{color:inherit;text-decoration:none}
+.doc-meta a:hover{text-decoration:underline}
+.callout{margin:0 0 2.4em;border-top:2px solid var(--goldline);border-bottom:2px solid var(--goldline);padding:1em 0}
+.callout .lbl{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-size:.7rem;font-weight:700;margin-bottom:.5em}
+.callout p{margin:.2em 0 .8em}
+.callout ul{padding-left:1.1em;margin:.4em 0 0}
+.callout li{margin:.25em 0}
+section{position:relative;padding:1.6em 0 1.2em;border-bottom:1px solid var(--rule)}
+.ghost{font:700 4.5rem/1 Georgia,serif;color:var(--ghost);position:absolute;right:0;top:.1em;pointer-events:none;user-select:none}
+h2{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:1.3rem;margin:.1em 0 .35em}
+.lead{font-size:1.02rem;line-height:1.5;color:var(--gold);font-weight:400;margin:.2em 0 .8em;max-width:90%}
+.ts{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.85rem;font-weight:400;text-decoration:none;white-space:nowrap}
+.ts:hover{text-decoration:underline}
+ul{padding-left:1.15em;margin:0}
+li{margin:.4em 0;line-height:1.6;color:var(--li)}
+footer{margin-top:2.5em;color:var(--foot);font-size:.8rem}
+@media print{body{background:#fff}.v4{box-shadow:none}}
+.dig{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.8rem;font-weight:400;text-decoration:none;white-space:nowrap;cursor:pointer}.dig:hover{text-decoration:underline}</style>
+</head>
+<body>
+<button id="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light/dark">🌙</button><button id="print-btn" type="button" onclick="window.print()" aria-label="Print" title="Print">🖨️</button>
+<article class="v4">
+  <h1 class="doc-title">클로드 코드에서 Opus 대신 GLM 5.2 쓰는게 답이네요 | 오픈웨이트 SOTA 모델</h1>
+  <p class="doc-meta">개발동생 · 14:42 · <a href="https://www.youtube.com/watch?v=yB16BT1IMag" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=yB16BT1IMag</a></p>
+  <div class="callout">
+    <div class="lbl">Quick Reference</div>
+    <p>This video compares GLM 5.2 and Opus 4.8, highlighting GLM 5.2 as a cost-effective, usable open-weight alternative for coding tasks.</p>
+    <ul><li>GLM 5.2 offers comparable frontend design quality to Opus 4.8, excelling in interaction and animation.</li><li>Opus 4.8 handles complex API integrations better; GLM 5.2 uses more tokens and takes longer.</li><li>GLM 5.2 is highly cost-efficient, with significantly cheaper input and output tokens than Opus 4.8.</li><li>Open-weight models like GLM 5.2 ensure vendor independence, enhance data security, and allow local deployment.</li><li>Advancements in open-weight models and hardware make high-performance AI deployment increasingly feasible locally.</li></ul>
+  </div>
+  <section data-start="0">
+      <span class="ghost">1</span>
+      <h2>GLM 5.2와 Opus 4.8 성능 비교 개요 <a class="ts" href="https://www.youtube.com/watch?v=yB16BT1IMag&amp;t=0s" target="_blank" rel="noopener noreferrer">(0:00–0:33)</a> <a class="dig" data-type="deep-dive" data-t="0">dig deeper ▾</a></h2>
+      <p class="lead">클로드 코드에서 GLM 5.2와 Opus 4.8의 성능을 다양한 작업에 걸쳐 비교 평가했으며, GLM 5.2는 &quot;쓸 만한&quot; 오픈웨이트 모델로 등장했습니다.</p>
+      <ul><li>클로드 코드에 GLM 5.2 모델을 직접 적용하여 Opus 4.8과 동일한 다양한 작업을 비교 평가했습니다.</li><li>GLM 5.2 모델은 드디어 &quot;쓸 만한&quot; 오픈웨이트 모델로 등장했습니다.</li><li>영상에서는 두 모델의 실제 성능을 과장 없이 전달합니다.</li></ul>
+    </section>
+<section data-start="33">
+      <span class="ghost">2</span>
+      <h2>프론트엔드 및 시각화 작업 비교 <a class="ts" href="https://www.youtube.com/watch?v=yB16BT1IMag&amp;t=33s" target="_blank" rel="noopener noreferrer">(0:33–2:07)</a> <a class="dig" data-type="deep-dive" data-t="33">dig deeper ▾</a></h2>
+      <p class="lead">프론트엔드 디자인에서 GLM 5.2와 Opus 4.8은 유사한 디자인 품질을 보였고, GLM 5.2가 마우스 인터랙션과 애니메이션 처리에 강점을 보였습니다.</p>
+      <ul><li>프론트엔드 디자인(랜딩 페이지)에서 GLM 5.2와 Opus 4.8은 거의 동일한 디자인 품질을 보였습니다.</li><li>GLM 5.2가 마우스 인터랙션과 애니메이션 처리에 강점을 보였습니다.</li><li>SVG 로딩 스피너 구현은 두 모델 모두 완벽하게 수행했습니다.</li></ul>
+    </section>
+<section data-start="127">
+      <span class="ghost">3</span>
+      <h2>복잡한 작업 처리 및 성능 지표 <a class="ts" href="https://www.youtube.com/watch?v=yB16BT1IMag&amp;t=127s" target="_blank" rel="noopener noreferrer">(2:07–7:11)</a> <a class="dig" data-type="deep-dive" data-t="127">dig deeper ▾</a></h2>
+      <p class="lead">복잡한 작업에서 Opus 4.8이 GLM 5.2보다 나은 결과를 보였고, GLM 5.2는 작업 시간과 토큰 사용량이 더 많았습니다.</p>
+      <ul><li>외부 API 연동이 필요한 기후 대시보드 작업에서 GLM 5.2는 애니메이션은 좋았지만 API 호출 결과 렌더링에 실패했습니다.</li><li>기후 대시보드 작업에서 Opus 4.8은 더 나은 결과물을 도출했습니다.</li><li>SQL DDL을 ER 다이어그램으로 변환하는 작업은 둘 다 잘 수행했으나, GLM 5.2는 세부적인 키 체인 표시에서 미흡함이 있었습니다.</li><li>3D 시뮬레이션 및 게임 구현에서는 Opus 4.8의 애니메이션 퀄리티가 약간 더 우수했습니다.</li><li>전반적으로 GLM 5.2는 Opus 4.8보다 작업 시간이 더 길었습니다.</li><li>GLM 5.2는 Opus 4.8보다 토큰 사용량도 많았습니다.</li></ul>
+    </section>
+<section data-start="431">
+      <span class="ghost">4</span>
+      <h2>벤치마크 결과 및 비용 효율성 <a class="ts" href="https://www.youtube.com/watch?v=yB16BT1IMag&amp;t=431s" target="_blank" rel="noopener noreferrer">(7:11–10:01)</a> <a class="dig" data-type="deep-dive" data-t="431">dig deeper ▾</a></h2>
+      <p class="lead">GLM 5.2는 LM Arena 벤치마크에서 오픈웨이트 모델 중 최고 성능을 기록했으며, 특히 웹 개발에서 Opus 4.7, 4.8보다 높은 순위를 차지하고 비용 효율성도 뛰어납니다.</p>
+      <ul><li>LM Arena 벤치마크에서 GLM 5.2는 프론티어 모델보다 순위는 낮지만, 현존하는 오픈웨이트 모델 중 최고 성능을 기록했습니다.</li><li>GLM 5.2는 웹 개발 랭킹에서 Opus 4.7, 4.8보다 높은 순위를 차지했습니다.</li><li>API 비용 측면에서 GLM 5.2는 Opus 4.8 대비 인풋 토큰이 저렴합니다.</li><li>GLM 5.2는 Opus 4.8 대비 아웃풋 토큰이 약 6배 저렴하여 매우 높은 비용 효율성을 보입니다.</li></ul>
+    </section>
+<section data-start="601">
+      <span class="ghost">5</span>
+      <h2>오픈 웨이트 모델의 의미와 중요성 <a class="ts" href="https://www.youtube.com/watch?v=yB16BT1IMag&amp;t=601s" target="_blank" rel="noopener noreferrer">(10:01–13:40)</a> <a class="dig" data-type="deep-dive" data-t="601">dig deeper ▾</a></h2>
+      <p class="lead">오픈 웨이트 모델은 LLM을 자유롭게 운용, 파인튜닝, 배포할 수 있으며, 벤더 종속과 데이터 보안 문제 해결에 중요합니다.</p>
+      <ul><li>오픈 웨이트 모델은 LLM 자체를 다운로드하여 로컬 또는 자체 서버에서 실행, 파인튜닝, 배포가 자유로운 모델입니다.</li><li>오픈 소스와 달리 학습 데이터셋은 공개되지 않지만, MIT 라이센스로 상업적 이용이 가능합니다.</li><li>특정 벤더 종속을 피하고, 정부나 기업의 결정에 따른 접근 제한 위험 없이 모델을 안정적으로 운용할 수 있습니다.</li><li>기업 내부 데이터 보안에도 유리하다는 장점이 강조됩니다.</li></ul>
+    </section>
+<section data-start="820">
+      
+      <h2>Conclusion <a class="ts" href="https://www.youtube.com/watch?v=yB16BT1IMag&amp;t=820s" target="_blank" rel="noopener noreferrer">(13:40–14:42)</a> <a class="dig" data-type="deep-dive" data-t="820">dig deeper ▾</a></h2>
+      <p class="lead">GLM 5.2는 오픈웨이트 모델의 성능을 크게 향상시켰으며, 저렴한 비용으로 프론티어 모델급 성능을 제공하여 벤더에 종속되지 않는 AI 활용의 가능성을 제시합니다.</p>
+      <ul><li>GLM 5.2 모델은 기존 오픈웨이트 모델 대비 실제 사용 가능한 수준으로 성능이 크게 향상되었습니다.</li><li>GLM 5.2는 저렴한 비용으로 프론티어 모델급 성능을 활용할 수 있는 선택지를 제공합니다.</li><li>앞으로 모델의 경량화와 장비 성능 향상 추세에 따라, 로컬에서 고성능 모델을 돌리는 것이 점차 현실화될 것입니다.</li><li>이는 사용자들이 특정 벤더에 종속되지 않고 AI 모델을 자유롭게 활용하는 데 중요한 방향성을 제시합니다.</li></ul>
+    </section>
+  <footer>Skim view — generated from the source note <code>클로드-코드에서-opus-대신-glm-5-2-쓰는게-답이네요-오픈웨이트-sota-모델.md</code>. Full text lives in the source <code>.md</code>.</footer>
+</article>
+<script>
+(function(){
+  document.querySelectorAll('a.dig').forEach(function(a){
+    var u=new URL(location.href);
+    u.searchParams.set('type',a.dataset.type);
+    u.hash='t='+a.dataset.t;
+    a.setAttribute('href',u.pathname+u.search+u.hash);
+  });
+  var m=location.hash.match(/^#t=(\d+)/);
+  if(m){
+    var sec=+m[1];
+    var starts=[].slice.call(document.querySelectorAll('[data-start]')).map(function(e){return +e.dataset.start;});
+    var t=Math.max.apply(null,starts.filter(function(s){return s<=sec;}).concat([-1]));
+    if(t>=0){var el=document.querySelector('[data-start="'+t+'"]'); if(el){el.scrollIntoView();}}
+  }
+})();
+</script><script>(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;function systemDark(){return!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)}function effective(){var a=root.getAttribute('data-theme');return a==='dark'||a==='light'?a:(systemDark()?'dark':'light')}function syncIcon(){btn.textContent=effective()==='dark'?'☀️':'🌙'}btn.addEventListener('click',function(){var next=effective()==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('html-doc-theme',next)}catch(e){}syncIcon()});syncIcon();requestAnimationFrame(function(){root.classList.add('theme-ready')})})();</script>
+</body>
+</html>

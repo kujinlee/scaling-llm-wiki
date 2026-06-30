@@ -1,0 +1,150 @@
+{
+  "sourceMd": "279_day-1-livestream-5-day-ai-agents-intensive-vibe-coding-cours.md",
+  "generatedAt": "2026-06-26T15:14:17.392Z",
+  "sourceSections": [
+    "Course Overview and Evolution of Software Development",
+    "The New SDLC and Agentic Engineering",
+    "Impact on CS Education, Hiring, and AI Tools",
+    "Advanced AI Agent Capabilities and Architectural Patterns",
+    "Risks and Use Cases for Long-Running Agents",
+    "Conclusion"
+  ],
+  "model": {
+    "sections": [
+      {
+        "lead": "This course, now in its fourth iteration, addresses significant shifts in software development due to the widespread adoption of AI coding agents.",
+        "bullets": [
+          {
+            "label": "Course Details",
+            "text": "The Kaggle and Google 5-day AI agents intensive course includes white papers, companion podcasts, hands-on codelabs, daily live streams, AMAs, and an optional capstone project with prizes."
+          },
+          {
+            "label": "AI Adoption",
+            "text": "AI coding agents are now used by 85% of professional developers, and 41% of new code is AI-generated, making AI deployment a critical skill."
+          },
+          {
+            "label": "Course Evolution",
+            "text": "The course is in its fourth iteration, highlighting the need to adapt to the profound changes occurring in the software development landscape."
+          }
+        ]
+      },
+      {
+        "lead": "The new Software Development Life Cycle (SDLC) emphasizes ",
+        "bullets": [
+          {
+            "label": "Vibe Coding",
+            "text": "The white paper for day one introduces \"vibe coding,\" a shift from translating syntax to expressing intent via natural language."
+          },
+          {
+            "label": "Agentic Engineering",
+            "text": "Agentic engineering involves AI operating within structured, deterministic boundaries, contrasting with casual prompting."
+          },
+          {
+            "label": "Context Engineering",
+            "text": "Context engineering is a modern skill that differentiates between static system instructions and dynamic agent skills."
+          },
+          {
+            "label": "SDLC Impact",
+            "text": "The new SDLC collapses implementation time from weeks to minutes, making requirements specification and verification the new human bottlenecks."
+          },
+          {
+            "label": "Agent Formula",
+            "text": "The formula `Agent = Model + Harness` indicates that the harness, including sandboxes and guardrails, constitutes 90% of a reliable agentic system."
+          }
+        ]
+      },
+      {
+        "lead": "AI-driven coding is poised to transform computer science education, shifting the focus towards high-level architectural judgment and enabling new business models.",
+        "bullets": [
+          {
+            "label": "CS Education Shift",
+            "text": "Computer science education is expected to prioritize high-level architectural judgment over syntactic mastery, focusing on *how to think*."
+          },
+          {
+            "label": "System Building",
+            "text": "This change could empower students to build entire systems or businesses during their education."
+          },
+          {
+            "label": "Google AI Studio",
+            "text": "Tools like Google AI Studio are designed to facilitate this shift, moving from \"prompt to prototype\" towards \"prompt to profitable company.\""
+          },
+          {
+            "label": "Creator Empowerment",
+            "text": "This transformation is compared to how YouTube empowered creators, enabling individuals to build software businesses."
+          }
+        ]
+      },
+      {
+        "lead": "Advanced AI agents optimize complex problems using self-evolving capabilities and employ architectural patterns like sandbox environments for robust, self-improving systems.",
+        "bullets": [
+          {
+            "label": "Self-Evolving Agents",
+            "text": "DeepMind's Alpha Evolve is an example of self-evolving AI agents that optimize algorithms for complex problems like matrix multiplication and hardware design."
+          },
+          {
+            "label": "Architectural Patterns",
+            "text": "Successful patterns include agents writing code within sandbox environments and creating their own tools and sub-agents."
+          },
+          {
+            "label": "Verification Loops",
+            "text": "Robust automated and human-in-the-loop verification loops generate data for agents' self-improvement over time."
+          },
+          {
+            "label": "Semantic Understanding",
+            "text": "The Open Knowledge Format combined with Graph RAG architecture helps agents achieve a semantic graph-level understanding of entire systems before writing code."
+          }
+        ]
+      },
+      {
+        "lead": "The AI-driven SDLC brings risks like expertise erosion, but long-running autonomous agents are highly effective for specific use cases requiring continuous operation.",
+        "bullets": [
+          {
+            "label": "Expertise Erosion",
+            "text": "Long-term risks include the erosion of human expertise with codebases and challenges in accountability for issues."
+          },
+          {
+            "label": "Human Oversight",
+            "text": "Mitigation requires continuous human understanding and oversight, especially concerning security, to ensure human-driven innovation is not lost."
+          },
+          {
+            "label": "Research Agents",
+            "text": "Long-running agents are effective for deep research, which involves collating comprehensive information over extended periods."
+          },
+          {
+            "label": "Dynamic Environments",
+            "text": "They are also well-suited for dynamic environments like loan processing, insurance claims, and legal cases where inputs change over time."
+          },
+          {
+            "label": "Tool Optimization",
+            "text": "A key challenge for long-running agents is optimizing external tools that were not originally designed for AI interaction."
+          }
+        ]
+      },
+      {
+        "lead": "This course prepares developers for the new AI era, emphasizing agentic engineering and practical tools while balancing opportunities with critical challenges.",
+        "bullets": [
+          {
+            "label": "Course Focus",
+            "text": "The intensive course aims to equip developers for the new era of AI-driven software development, focusing on the shift from syntax to intent and agentic engineering."
+          },
+          {
+            "label": "Practical Tools",
+            "text": "It highlights practical tools such as Antigravity and Google AI Studio to aid in this transition."
+          },
+          {
+            "label": "Opportunities",
+            "text": "The discussions underscore the immense opportunities presented by AI agents for accelerated development and optimization."
+          },
+          {
+            "label": "Critical Challenges",
+            "text": "Key challenges include maintaining human expertise, ensuring accountability, and developing sustainable and robust AI solutions."
+          },
+          {
+            "label": "Hands-on Learning",
+            "text": "Participants gain hands-on experience through codelabs, encouraging them to deploy and share their vibe-coded applications."
+          }
+        ]
+      }
+    ]
+  }
+}

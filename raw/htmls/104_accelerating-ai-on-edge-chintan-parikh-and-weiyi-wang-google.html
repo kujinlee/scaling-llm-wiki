@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="magazine-skim v1">
+<meta name="source-md" content="104_accelerating-ai-on-edge-chintan-parikh-and-weiyi-wang-google.md">
+<meta name="video-id" content="Lm8BLHkxiAo">
+<title>Accelerating AI on Edge — Chintan Parikh and Weiyi Wang, Google DeepMind</title>
+<script>(function(){try{var t=localStorage.getItem('html-doc-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<style>
+:root{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="light"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}
+[data-theme="dark"]{--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--page:#1a1714;--card:#221d18;--ink:#e8e2d6;--meta:#9a9082;--rule:#332c24;--ghost:#2e2820;--gold:#e6b54d;--goldline:#e0a800;--li:#cfc8ba;--foot:#8a8174;--shadow:0 1px 3px rgba(0,0,0,.5)}}
+html.theme-ready body,html.theme-ready #theme-toggle,html.theme-ready #print-btn{transition:background-color .2s,color .2s}
+#theme-toggle,#print-btn{position:fixed;top:1rem;width:2.4rem;height:2.4rem;border-radius:50%;border:1px solid rgba(128,128,128,.35);background:var(--card);color:var(--ink);font-size:1.1rem;line-height:1;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;z-index:10}
+#theme-toggle{right:1rem}#print-btn{right:3.6rem}
+@media print{:root,:root:not([data-theme]),[data-theme="light"],[data-theme="dark"]{--page:#eef0f3;--card:#fbf9f6;--ink:#2a2622;--meta:#8a8276;--rule:#ece7df;--ghost:#f0e7d6;--gold:#b07700;--goldline:#e0a800;--li:#4a463f;--foot:#9a917f;--shadow:0 1px 3px rgba(0,0,0,.08)}#theme-toggle,#print-btn{display:none}}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",'Apple SD Gothic Neo',Helvetica,Arial,sans-serif}
+.v4{max-width:50rem;margin:0 auto;background:var(--card);padding:2.8rem 3rem 4rem;box-shadow:var(--shadow)}
+html.theme-ready .v4{transition:background-color .2s,color .2s}
+.doc-title{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:2rem;line-height:1.2;margin:0 0 .15em}
+.doc-meta{color:var(--meta);font-size:.9rem;margin:0 0 1.8em}
+.doc-meta a{color:inherit;text-decoration:none}
+.doc-meta a:hover{text-decoration:underline}
+.callout{margin:0 0 2.4em;border-top:2px solid var(--goldline);border-bottom:2px solid var(--goldline);padding:1em 0}
+.callout .lbl{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-size:.7rem;font-weight:700;margin-bottom:.5em}
+.callout p{margin:.2em 0 .8em}
+.callout ul{padding-left:1.1em;margin:.4em 0 0}
+.callout li{margin:.25em 0}
+section{position:relative;padding:1.6em 0 1.2em;border-bottom:1px solid var(--rule)}
+.ghost{font:700 4.5rem/1 Georgia,serif;color:var(--ghost);position:absolute;right:0;top:.1em;pointer-events:none;user-select:none}
+h2{font-family:Georgia, 'Nanum Myeongjo', 'Apple SD Gothic Neo', 'Times New Roman', serif;font-size:1.3rem;margin:.1em 0 .35em}
+.lead{font-size:1.02rem;line-height:1.5;color:var(--gold);font-weight:400;margin:.2em 0 .8em;max-width:90%}
+.ts{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.85rem;font-weight:400;text-decoration:none;white-space:nowrap}
+.ts:hover{text-decoration:underline}
+ul{padding-left:1.15em;margin:0}
+li{margin:.4em 0;line-height:1.6;color:var(--li)}
+footer{margin-top:2.5em;color:var(--foot);font-size:.8rem}
+@media print{body{background:#fff}.v4{box-shadow:none}}
+.dig{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--meta);font-size:.8rem;font-weight:400;text-decoration:none;white-space:nowrap;cursor:pointer}.dig:hover{text-decoration:underline}</style>
+</head>
+<body>
+<button id="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle light/dark">🌙</button><button id="print-btn" type="button" onclick="window.print()" aria-label="Print" title="Print">🖨️</button>
+<article class="v4">
+  <h1 class="doc-title">Accelerating AI on Edge — Chintan Parikh and Weiyi Wang, Google DeepMind</h1>
+  <p class="doc-meta">AI Engineer · 23:58 · <a href="https://www.youtube.com/watch?v=Lm8BLHkxiAo" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=Lm8BLHkxiAo</a></p>
+  <div class="callout">
+    <div class="lbl">Quick Reference</div>
+    <p>This video introduces Google's Lite RT framework for deploying Gemma 4 Edge models, highlighting on-device AI benefits, new agent capabilities, and cross-platform performance.</p>
+    <ul><li>Utilize Google's Gemma 4 Edge models for on-device AI to achieve low latency and enhanced privacy.</li><li>Leverage Lite RT, built on TensorFlow Lite, for cross-platform deployment of various ML models.</li><li>Explore the Gallery app and GitHub resources to build and share custom on-device AI experiences.</li><li>Optimize model performance significantly by using NPU acceleration on supported hardware.</li><li>Convert PyTorch or JAX models to TFLite format for seamless integration with the Lite RT framework.</li></ul>
+  </div>
+  <section data-start="16">
+      <span class="ghost">1</span>
+      <h2>Introduction to Google's Edge AI and Gemma Models <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=16s" target="_blank" rel="noopener noreferrer">(0:16–2:13)</a> <a class="dig" data-section="16" data-t="16">dig deeper ▶</a></h2>
+      <p class="lead">Chintan Parekh introduced Gemma 4 Edge 2B and 4B models, designed for on-device AI, evolving from chatbots to autonomous agents.</p>
+      <ul><li>Gemma 4 Edge 2B and 4B are new models introduced for on-device deployment, alongside smaller Gemma 3 models.</li><li>The session focuses on deploying AI models directly on edge devices efficiently.</li><li>Gemma 4 represents an evolution from chatbots to more sophisticated autonomous agents with advanced reasoning capabilities.</li></ul>
+    </section>
+<section data-start="133">
+      <span class="ghost">2</span>
+      <h2>Key Advantages of On-Device AI Deployment <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=133s" target="_blank" rel="noopener noreferrer">(2:13–3:51)</a> <a class="dig" data-section="133" data-t="133">dig deeper ▶</a></h2>
+      <p class="lead">On-device AI deployment provides key benefits including reduced latency, enhanced data privacy, offline reliability, and cost savings.</p>
+      <ul><li>On-device deployment offers significantly reduced latency crucial for real-time applications like video filters and calls.</li><li>Enhanced data privacy is achieved by processing sensitive information locally on the device.</li><li>Reliable operation is maintained in offline scenarios or environments with poor connectivity.</li><li>Cost savings are realized by reducing reliance on cloud-based inference, fostering a hybrid cloud-edge approach.</li></ul>
+    </section>
+<section data-start="231">
+      <span class="ghost">3</span>
+      <h2>Advanced Capabilities of Gemma 4 Edge Models <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=231s" target="_blank" rel="noopener noreferrer">(3:51–5:43)</a> <a class="dig" data-section="231" data-t="231">dig deeper ▶</a></h2>
+      <p class="lead">Gemma 4E2B and 4E4B models introduce new agent capabilities including function calling, structured JSON output, and a &quot;chain of thought&quot; feature.</p>
+      <ul><li>The Gemma 4E2B (1-2 GB RAM) and 4E4B models include native support for function calling and tool integration to interact with local and external APIs.</li><li>Structured JSON output is built directly into the model architecture of these Gemma 4 Edge models.</li><li>A novel &quot;chain of thought&quot; or &quot;thinking mode&quot; is featured for transparent reasoning processes.</li><li>These models are optimized for hardware to ensure seamless cross-platform deployment.</li></ul>
+    </section>
+<section data-start="343">
+      <span class="ghost">4</span>
+      <h2>Demonstrating On-Device AI with the Gallery App <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=343s" target="_blank" rel="noopener noreferrer">(5:43–11:03)</a> <a class="dig" data-section="343" data-t="343">dig deeper ▶</a></h2>
+      <p class="lead">Google's Gallery app demonstrates Gemma 4 Edge models' agent skills with on-device examples like Wikipedia queries and image understanding.</p>
+      <ul><li>The Gallery app showcases an agent augmenting knowledge by querying Wikipedia directly on-device.</li><li>A personal tracker summarizes mood and sleep trends, running entirely on-device within the app.</li><li>An image understanding feature pairs photos with music, all processed locally.</li><li>The app manages complex workflows, such as identifying animal vocalizations using the on-device model.</li><li>The Gallery app and its sample code are open-source, encouraging developers to build custom experiences.</li></ul>
+    </section>
+<section data-start="663">
+      <span class="ghost">5</span>
+      <h2>Lite RT Framework for Cross-Platform Edge Deployment <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=663s" target="_blank" rel="noopener noreferrer">(11:03–16:43)</a> <a class="dig" data-section="663" data-t="663">dig deeper ▶</a></h2>
+      <p class="lead">Google's Lite RT framework, built on TensorFlow Lite, enables cross-platform AI deployment through model conversion, optimization, and cloud benchmarking.</p>
+      <ul><li>Lite RT is Google's widely adopted on-device framework, built upon TensorFlow Lite, for AI deployment.</li><li>It supports models from various frameworks, including TensorFlow Lite, PyTorch, and JAX, by converting them into the cross-platform TFLite format.</li><li>Tools like Model Explorer help optimize models through techniques such as quantization.</li><li>The AI Edge Portal provides cloud-based benchmarking to ensure broad Android device compatibility and reliable deployment strategies.</li></ul>
+    </section>
+<section data-start="1003">
+      <span class="ghost">6</span>
+      <h2>Performance and Acceleration on Edge Devices <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=1003s" target="_blank" rel="noopener noreferrer">(16:43–19:10)</a> <a class="dig" data-section="1003" data-t="1003">dig deeper ▶</a></h2>
+      <p class="lead">Lite RT delivers robust performance across diverse edge devices, using NPU acceleration for significant speed boosts and energy efficiency.</p>
+      <ul><li>The Lite RT framework ensures robust performance across Android, iOS, Linux, Raspberry Pi, and other IoT devices.</li><li>NPU acceleration, with integrations for Qualcomm and MediaTek, can yield a 3-10x to 13x performance boost.</li><li>NPU acceleration significantly improves energy efficiency and unlocks real-time AR/VR applications.</li><li>Lite RT demonstrates superior inference speed, being up to 35 times faster than Llama on mobile, with comparable or better performance on other platforms.</li><li>A CLI tool further simplifies the deployment process for developers.</li></ul>
+    </section>
+<section data-start="1150">
+      
+      <h2>Conclusion <a class="ts" href="https://www.youtube.com/watch?v=Lm8BLHkxiAo&amp;t=1150s" target="_blank" rel="noopener noreferrer">(19:10–23:43)</a> <a class="dig" data-section="1150" data-t="1150">dig deeper ▶</a></h2>
+      <p class="lead">Lite RT provides a comprehensive, high-performance solution for flexible on-device ML model deployment across various platforms.</p>
+      <ul><li>Lite RT offers a comprehensive solution for deploying machine learning models on edge devices.</li><li>It delivers a high-performance solution with significant performance advantages for on-device AI applications.</li><li>Lite RT ensures flexibility for deployment across various platforms.</li><li>Extensive tool support is provided to aid in machine learning model deployment.</li></ul>
+    </section>
+  <footer>Skim view — generated from the source note <code>accelerating-ai-on-edge-chintan-parikh-and-weiyi-wang-google.md</code>. Full text lives in the source <code>.md</code>.</footer>
+</article>
+<script>
+(function(){
+  // ── cross-doc nav (deep-dive → summary) ──────────────────────────────────
+  document.querySelectorAll('a.dig').forEach(function(a){
+    if(!a.dataset.type)return;
+    var u=new URL(location.href);
+    u.searchParams.set('type',a.dataset.type);
+    u.hash='t='+a.dataset.t;
+    a.setAttribute('href',u.pathname+u.search+u.hash);
+  });
+  // ── scroll to #t= hash ────────────────────────────────────────────────────
+  var m=location.hash.match(/^#t=(\d+)/);
+  if(m){
+    var sec=+m[1];
+    var starts=[].slice.call(document.querySelectorAll('[data-start]')).map(function(e){return +e.dataset.start;});
+    var t=Math.max.apply(null,starts.filter(function(s){return s<=sec;}).concat([-1]));
+    if(t>=0){var el=document.querySelector('[data-start="'+t+'"]'); if(el){el.scrollIntoView();}}
+  }
+  // ── dig-state machine (summary-side only) ────────────────────────────────
+  var parts=location.pathname.split('/');
+  var videoId=parts[3];
+  var outputFolder=new URLSearchParams(location.search).get('outputFolder');
+  if(!videoId||!outputFolder)return;
+  var controls=[].slice.call(document.querySelectorAll('a.dig[data-section]')).filter(function(a){return!a.dataset.type;});
+  if(!controls.length)return;
+  function viewHref(sec){
+    var p=new URLSearchParams();
+    p.set('outputFolder',outputFolder);
+    p.set('type','dig-deeper');
+    return '/api/html/'+videoId+'?'+p.toString()+'#t='+sec;
+  }
+  function applyDug(el,sec){
+    el.textContent='view detail ↓';
+    el.setAttribute('href',viewHref(sec));
+    el.dataset.state='dug';
+    if(!el.nextElementSibling||!el.nextElementSibling.matches('[data-force-section]')){
+      var btn=document.createElement('button');
+      btn.textContent='↻';
+      btn.setAttribute('data-force-section',String(sec));
+      btn.setAttribute('title','Force re-generate section deep-dive');
+      el.insertAdjacentElement('afterend',btn);
+    }
+  }
+  function applyLoading(el){el.textContent='⏳';el.dataset.state='loading';el.removeAttribute('href');}
+  function applyError(el){el.textContent='⚠ retry';el.dataset.state='error';el.removeAttribute('href');}
+  function applyIdle(el){el.textContent='dig deeper \u25b6';el.dataset.state='idle';el.removeAttribute('href');}
+  function startDig(el,sec,force){
+    applyLoading(el);
+    var body={outputFolder:outputFolder};
+    if(force)body.force=true;
+    fetch('/api/videos/'+videoId+'/dig/'+sec,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var es=new EventSource('/api/videos/'+videoId+'/dig/'+sec+'/stream?jobId='+encodeURIComponent(d.jobId));
+        es.onmessage=function(ev){
+          try{var data=JSON.parse(ev.data);
+            if(data.type==='done'){es.close();applyDug(el,sec);}
+            else if(data.type==='error'){es.close();applyError(el);}
+          }catch(e){}
+        };
+        es.onerror=function(){es.close();applyError(el);};
+      })
+      .catch(function(){applyError(el);});
+  }
+  fetch('/api/videos/'+videoId+'/dig-state?outputFolder='+encodeURIComponent(outputFolder))
+    .then(function(r){return r.ok?r.json():Promise.resolve({sectionIds:[]});})
+    .then(function(data){
+      var dug=data.sectionIds||[];
+      controls.forEach(function(el){
+        var sec=+el.dataset.section;
+        if(dug.indexOf(sec)>=0){applyDug(el,sec);}else{applyIdle(el);}
+        el.addEventListener('click',function(e){
+          e.preventDefault();
+          var st=el.dataset.state;
+          if(st==='loading')return;
+          if(st==='error'){applyIdle(el);startDig(el,sec);return;}
+          if(st==='idle')startDig(el,sec);
+        });
+      });
+      document.querySelectorAll('[data-force-section]').forEach(function(btn){
+        var fSec=+btn.dataset.forceSection;
+        var ctrl=btn.previousElementSibling;
+        if(!ctrl)return;
+        btn.addEventListener('click',function(e){e.preventDefault();startDig(ctrl,fSec,true);});
+      });
+    })
+    .catch(function(){
+      controls.forEach(function(el){applyIdle(el);
+        el.addEventListener('click',function(e){
+          e.preventDefault();
+          var st=el.dataset.state;
+          if(st==='loading')return;
+          if(st==='error'){applyIdle(el);startDig(el,+el.dataset.section);return;}
+          if(st==='idle')startDig(el,+el.dataset.section);
+        });
+      });
+    });
+})();
+</script><script>(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;function systemDark(){return!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)}function effective(){var a=root.getAttribute('data-theme');return a==='dark'||a==='light'?a:(systemDark()?'dark':'light')}function syncIcon(){btn.textContent=effective()==='dark'?'☀️':'🌙'}btn.addEventListener('click',function(){var next=effective()==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('html-doc-theme',next)}catch(e){}syncIcon()});syncIcon();requestAnimationFrame(function(){root.classList.add('theme-ready')})})();</script>
+</body>
+</html>
