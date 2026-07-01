@@ -2074,41 +2074,41 @@
       "ratings": {
         "usefulness": 5,
         "depth": 4,
-        "originality": 4,
-        "recency": 5,
-        "completeness": 4
+        "originality": 3,
+        "recency": 4,
+        "completeness": 5
       },
-      "overallScore": 4.4,
+      "overallScore": 4.2,
       "summaryMd": "049_6-claude-code-github-repos-that-change-everything.md",
       "processedAt": "2026-05-28T02:14:25.330Z",
       "playlistIndex": 176,
-      "videoType": "Framework",
+      "videoType": "Tutorial",
       "audience": "Intermediate",
       "channel": "Nuno Tavares | Automated Marketer",
       "tags": [
         "claude code",
         "ai development",
-        "coding tools",
-        "agent swarms",
-        "design systems",
-        "obsidian integration",
-        "code quality"
+        "github",
+        "developer tools",
+        "ai agents",
+        "code quality",
+        "ui/ux design"
       ],
       "videoPublishedAt": "2026-05-12T16:00:35Z",
       "addedToPlaylistAt": "2026-05-13T15:21:52Z",
-      "tldr": "This video introduces six essential GitHub repositories that transform Claude Code from a basic autocomplete tool into a powerful, disciplined senior engineer for various development",
+      "tldr": "This video introduces six essential GitHub repositories that transform Claude Code into a more powerful AI development and design assistant for enhanced productivity.",
       "takeaways": [
-        "Enhance Claude Code's planning and execution with Superpowers.",
-        "Optimize Claude Code with 'Everything Claude Code' for broad functionality.",
-        "Deploy agent swarms for complex projects and shared memory using Roof Flow.",
-        "Generate professional designs and artifacts efficiently with Open Design.",
-        "Integrate Obsidian for AI access and improve code quality with Karpathy skills."
+        "Transform Claude Code from autocomplete to a disciplined AI engineer with key repos.",
+        "Adopt Superpowers to enforce methodical planning and sub-agent execution in projects.",
+        "Use Open Design to generate professional UI/UX artifacts with brand-grade design systems.",
+        "Integrate Obsidian skills to enable Claude AI to access and leverage your second brain.",
+        "Apply Karpathy skills to guide Claude in writing simpler, more focused, and higher-quality code."
       ],
       "removedFromPlaylist": false,
       "summaryHtml": "htmls/049_6-claude-code-github-repos-that-change-everything.html",
       "docVersion": {
         "major": 3,
-        "minor": 2
+        "minor": 3
       },
       "serialNumber": 49
     },
