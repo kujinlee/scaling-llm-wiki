@@ -1,1 +1,132 @@
-{"sourceMd":"255_i-made-opus-4-8-and-fable-5-build-the-same-app-raw-results.md","generatedAt":"2026-06-23T17:23:21.926Z","sourceSections":["Introduction to Next-Gen LLM Comparison","E-commerce Website Development: Opus 48 vs. Fable 5"],"model":{"sections":[{"lead":"This video directly compares Anthropic's Fable 5 and Opus 48 by building three complex coding projects from a single prompt.","bullets":[{"label":"Model Comparison","text":"The video presents a head-to-head comparison between Anthropic's new flagship model, Fable 5, and Opus 48."},{"label":"Coding Challenge","text":"The challenge involved building three ambitious and complex coding projects from a single prompt with no revisions."},{"label":"Project Examples","text":"The projects included a fully functioning e-commerce store, an interactive 3D art museum, and an Age of Empires-style real-time strategy game."},{"label":"Evaluation Goal","text":"The objective was to evaluate which model delivered superior quality, speed, and efficiency in generating sophisticated applications."}]},{"lead":"The initial comparison tasked both models with developing a complete e-commerce website for a fictional candle brand.","bullets":[{"label":"First Task","text":"The first build tasked the models with creating a complete e-commerce site."},{"label":"Brand Type","text":"The e-commerce site was specifically for a fictional candle brand."},{"label":"Project Scope","text":"This task involved developing a comprehensive e-commerce platform for the specified brand."}]}]}}
+{
+  "sourceMd": "255_i-made-opus-4-8-and-fable-5-build-the-same-app-raw-results.md",
+  "generatedAt": "2026-07-01T00:44:59.640Z",
+  "sourceSections": [
+    "Introduction to the AI Model Showdown",
+    "E-commerce Store: Functionality vs. Finesse",
+    "Interactive 3D Art Museum: A Vision Realized",
+    "Age of Empires Clone: The Ultimate 3D Game Test",
+    "Conclusion: Fable 5's Dominance and Cost Implications"
+  ],
+  "model": {
+    "sections": [
+      {
+        "lead": "This video compares Claude's Opus 48 and its new flagship model, Fable 5, by having them build three complex projects.",
+        "bullets": [
+          {
+            "label": "Models Tested",
+            "text": "The comparison involves Claude's Opus 48 and its new flagship model, Fable 5, in a head-to-head showdown."
+          },
+          {
+            "label": "Projects",
+            "text": "Both models were tasked with building an e-commerce store, an interactive 3D art museum, and an Age of Empires clone."
+          },
+          {
+            "label": "Test Rules",
+            "text": "Strict rules included a single one-shot output with no revisions, deployed live on the internet."
+          },
+          {
+            "label": "Initial Impression",
+            "text": "The initial impression suggests that the results between the two models were not even close."
+          }
+        ]
+      },
+      {
+        "lead": "Fable 5 clearly won the e-commerce challenge, delivering a more polished site faster and with superior UI/UX compared to Opus 48.",
+        "bullets": [
+          {
+            "label": "Project Goal",
+            "text": "The task was to build a complete e-commerce site for a fictional candle brand, 'Slow Burn,' aiming for Shopify-level quality with 30 products."
+          },
+          {
+            "label": "Opus 48 Output",
+            "text": "Opus 48 delivered a functional site with readable text but had UI/UX flaws, including poor candle placement, an unappealing CTA, and a terrible navbar."
+          },
+          {
+            "label": "Fable 5 Output",
+            "text": "Fable 5 produced a significantly cleaner and more polished site with classic e-commerce elements, better buttons, and a superior filtering system."
+          },
+          {
+            "label": "Image Generation",
+            "text": "Fable 5 demonstrated a smarter approach to prompting image generation for product photos, resulting in a more cohesive aesthetic."
+          },
+          {
+            "label": "Time & Cost",
+            "text": "Fable 5 was 15 minutes faster (35 minutes total), using 188k output tokens for $36.84, while Opus 48 used 198k tokens for $21.41."
+          }
+        ]
+      },
+      {
+        "lead": "Fable 5 delivered an exceptionally clean and functional interactive 3D art museum, vastly outperforming Opus 48 in quality and functionality.",
+        "bullets": [
+          {
+            "label": "Project Goal",
+            "text": "The ambitious project was to create an interactive 3D art history museum in the browser with a zoomable timeline, placards, and realistic 3D galleries from Wikimedia Commons."
+          },
+          {
+            "label": "Opus 48 Output",
+            "text": "Opus 48 generated a zoomable color-coded timeline, but artist elements were scattered, overlapped, and crucially, its galleries were not clickable."
+          },
+          {
+            "label": "Fable 5 Output",
+            "text": "Fable 5 delivered an exceptionally clean 3D museum with an astrological timeline, smooth zooming, and fully functional, highly realistic 3D galleries."
+          },
+          {
+            "label": "Self-Correction",
+            "text": "Fable 5 showed advanced self-correction, identifying complex data parsing errors like 'Francis Bacon (artist)' and disliking a 'pitch black floor'."
+          },
+          {
+            "label": "Time & Cost",
+            "text": "Fable 5 completed its output about 15 minutes faster; Opus 48 used 437k output tokens ($46), while Fable 5 used 280k output tokens ($64)."
+          }
+        ]
+      },
+      {
+        "lead": "Fable 5 astonishingly created a playable, high-quality Age of Empires-style game, while Opus 48 produced a completely broken application.",
+        "bullets": [
+          {
+            "label": "Project Goal",
+            "text": "The final task was to build a fully playable Age of Empires-style RTS game in the browser with a 3D world, units, attack mechanics, and realistic graphics."
+          },
+          {
+            "label": "Opus 48 Output",
+            "text": "Opus 48 finished in 33 minutes but produced "
+          },
+          {
+            "label": "Fable 5 Output",
+            "text": "Fable 5 completed in 30 minutes, delivering an astonishing 'Empires of Dawn' game with graphics described as 'insane' and 'just as good as Age of Empires'."
+          },
+          {
+            "label": "Game Features",
+            "text": "Fable 5's game featured detailed civilizations, navigable maps, enemies with armor, and appeared fully playable with building mechanics and resource management."
+          }
+        ]
+      },
+      {
+        "lead": "Fable 5 consistently outperformed Opus 48 across all three challenges, demonstrating superior quality, functionality, and often efficiency.",
+        "bullets": [
+          {
+            "label": "Performance",
+            "text": "Fable 5 demonstrated superior speed, token efficiency (in two of three tasks), and significantly higher quality and functionality in its outputs."
+          },
+          {
+            "label": "Strengths",
+            "text": "It excelled in UI/UX design, realistic 3D rendering, complex data handling, and delivering truly interactive experiences."
+          },
+          {
+            "label": "Opus Weaknesses",
+            "text": "Opus 48 often produced functional but flawed or broken applications, whereas Fable 5 delivered complete and polished solutions."
+          },
+          {
+            "label": "Cost vs. Value",
+            "text": "While Fable 5's usage-based pricing is higher, the substantial leap in quality and capability it offers makes it a compelling choice."
+          },
+          {
+            "label": "Overall Dominance",
+            "text": "This comparison solidifies Fable 5's position as a powerful, next-generation AI model for code generation."
+          }
+        ]
+      }
+    ]
+  }
+}

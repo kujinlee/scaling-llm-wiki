@@ -1,0 +1,176 @@
+{
+  "sourceMd": "290_google-just-invented-a-universal-language-for-ai-knowledge.md",
+  "generatedAt": "2026-07-01T00:51:39.588Z",
+  "sourceSections": [
+    "The AI Context Problem",
+    "The LLM Wiki Solution",
+    "Enter Open Knowledge Format (OKF)",
+    "Anatomy of an OKF Bundle",
+    "Core OKF Design Principles",
+    "How to Get Started",
+    "Conclusion"
+  ],
+  "model": {
+    "sections": [
+      {
+        "lead": "Foundation models struggle to build autonomous AI agents because they lack specific organizational context, leading to inaccurate results.",
+        "bullets": [
+          {
+            "label": "Brick Wall",
+            "text": "Agents hit a \"brick wall\" because they lack internal context to produce accurate, actionable results."
+          },
+          {
+            "label": "Specific Knowledge",
+            "text": "They fail to understand tasks like how to compute \"weekly active users\" from proprietary data."
+          },
+          {
+            "label": "Scattered Context",
+            "text": "Vital corporate knowledge is scattered across metadata catalogs, wikis, code comments, or engineers' heads."
+          },
+          {
+            "label": "Solve From Scratch",
+            "text": "Developers are forced to repeatedly solve context assembly from scratch for each new project."
+          }
+        ]
+      },
+      {
+        "lead": "Developers are addressing the AI context problem by using shared markdown libraries as living wikis, leveraging LLMs for management.",
+        "bullets": [
+          {
+            "label": "Markdown Libraries",
+            "text": "Developers provide AI agents with shared markdown libraries that act as living wikis."
+          },
+          {
+            "label": "LLM Strength",
+            "text": "This approach leverages LLMs' strength in tedious bookkeeping and cross-referencing tasks."
+          },
+          {
+            "label": "Bespoke Implementations",
+            "text": "Current implementations are often bespoke and siloed, preventing knowledge sharing across teams."
+          },
+          {
+            "label": "OKF Need",
+            "text": "An open standard like OKF is needed for interoperable knowledge sharing across all teams and vendors."
+          }
+        ]
+      },
+      {
+        "lead": "Open Knowledge Format (OKF) version 0.1 is proposed as a vendor-neutral specification to formalize the LLM Wiki pattern.",
+        "bullets": [
+          {
+            "label": "Vendor Neutral",
+            "text": "OKF version 0.1 is proposed as a vendor-neutral specification to solve knowledge fragmentation."
+          },
+          {
+            "label": "Portable Interoperable",
+            "text": "It formalizes the LLM Wiki pattern into a portable, interoperable format specifically for AI metadata and context."
+          },
+          {
+            "label": "Version Control",
+            "text": "OKF knowledge can live in version control alongside code, effortlessly moving between systems."
+          },
+          {
+            "label": "Simple Format",
+            "text": "It consists of markdown files with YAML front matter, requiring no complex compression, new runtimes, or SDKs."
+          }
+        ]
+      },
+      {
+        "lead": "An OKF bundle structures knowledge with lightweight YAML front matter, where the file path defines the concept's identity.",
+        "bullets": [
+          {
+            "label": "YAML Front Matter",
+            "text": "An OKF bundle is structured with lightweight YAML front matter at the top of an OKF document."
+          },
+          {
+            "label": "Type Field",
+            "text": "The `type` field is the only required element, defining the concept, such as a BigQuery table or metric."
+          },
+          {
+            "label": "File Path Identity",
+            "text": "The file path itself acts as the concept's identity, and directories form rich graphs."
+          },
+          {
+            "label": "Markdown Links",
+            "text": "Standard markdown links connect concepts, allowing a metric to link to its underlying database table."
+          },
+          {
+            "label": "Index Log",
+            "text": "Bundles can also include `index.md` for navigation and `log.md` for history tracking."
+          }
+        ]
+      },
+      {
+        "lead": "OKF is built on three core design principles: minimal opinionation, independent producer/consumer, and being a format, not a platform.",
+        "bullets": [
+          {
+            "label": "Minimally Opinionated",
+            "text": "OKF is minimally opinionated, requiring only a `type` field, leaving content structure to the knowledge producer."
+          },
+          {
+            "label": "Producer Independence",
+            "text": "It ensures producer and consumer independence, acting as a clean, standardized contract between parties."
+          },
+          {
+            "label": "Format Not Platform",
+            "text": "OKF is a format, not a platform, not tied to any proprietary cloud, database, or agent framework."
+          },
+          {
+            "label": "Tooling Swaps",
+            "text": "This design allows for independent tooling swaps for both knowledge writers and readers, like AI agents."
+          }
+        ]
+      },
+      {
+        "lead": "To get started with OKF, read the V0.1 spec, write producers and consumers, and explore Google Cloud's GitHub proofs of concept.",
+        "bullets": [
+          {
+            "label": "Google PoC",
+            "text": "Google Cloud has provided proofs of concept on GitHub, including a BigQuery enrichment agent and an HTML graph visualizer."
+          },
+          {
+            "label": "Sample Bundles",
+            "text": "Sample OKF bundles are available for GA4, Stack Overflow, and Bitcoin to demonstrate its use."
+          },
+          {
+            "label": "Read V0.1 Spec",
+            "text": "The first step is to read the V0.1 spec, which is presented as a single page document."
+          },
+          {
+            "label": "Write Producer",
+            "text": "Users should write a producer for their source system to generate OKF knowledge."
+          },
+          {
+            "label": "Write Consumer",
+            "text": "Users should also write a consumer, which could be a viewer, search index, or an AI agent."
+          },
+          {
+            "label": "Contribute",
+            "text": "Users can contribute to the open standard by filing issues or proposing extensions."
+          }
+        ]
+      },
+      {
+        "lead": "OKF empowers AI agents by providing a standard, interoperable way to understand internal organizational knowledge.",
+        "bullets": [
+          {
+            "label": "Overcome Fragmentation",
+            "text": "OKF enables AI systems to overcome context fragmentation within an organization."
+          },
+          {
+            "label": "Eliminate Busy Work",
+            "text": "This approach eliminates tedious human busy work related to context assembly."
+          },
+          {
+            "label": "Unlock Capabilities",
+            "text": "It unlocks new capabilities for building intelligent AI systems that understand proprietary data."
+          },
+          {
+            "label": "Explore GitHub",
+            "text": "Users are encouraged to explore the GitHub repo and experiment with OKF to see its impact."
+          }
+        ]
+      }
+    ]
+  }
+}

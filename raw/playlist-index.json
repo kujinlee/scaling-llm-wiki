@@ -2465,37 +2465,33 @@
       "ratings": {
         "usefulness": 5,
         "depth": 4,
-        "originality": 4,
+        "originality": 3,
         "recency": 5,
         "completeness": 4
       },
-      "overallScore": 4.4,
+      "overallScore": 4.2,
       "summaryMd": "058_openai-codex로-하는-하네스-엔지니어링-실습-요약본-라이브-너무-길어서-망설였던-분들-이걸로-보세요.md",
       "processedAt": "2026-05-28T02:17:52.435Z",
       "playlistIndex": 185,
-      "videoType": "Tutorial",
-      "audience": "Intermediate",
+      "videoType": "Framework",
       "channel": "ZeroCho TV",
-      "tags": [
-        "하네스 엔지니어링",
-        "AI 코딩",
-        "코덱스",
-        "Superpowers",
-        "GPT-5.5",
-        "소프트웨어 개발",
-        "보안 점검"
-      ],
       "videoPublishedAt": "2026-05-12T06:04:30Z",
       "addedToPlaylistAt": "2026-05-12T12:33:26Z",
-      "tldr": "This video summarizes a practical session on Harness Engineering using OpenAI Codex, explaining its core understanding and necessity for developers.",
+      "tldr": "This video explains Harness Engineering with OpenAI Codex to efficiently develop software by controlling AI output and ensuring quality.",
       "takeaways": [
-        "Learn practical applications of Harness Engineering with AI tools.",
-        "Grasp the fundamental concepts behind Harness Engineering practices.",
-        "Identify the crucial reasons for implementing Harness Engineering in projects.",
-        "Explore how OpenAI Codex can be applied to engineering workflows."
+        "Harness engineering controls AI output for consistent, high-quality software development.",
+        "Collaborate with AI to create detailed project plans, error handling, and TDD strategies.",
+        "Leverage plugins like Superpowers for AI-guided brainstorming and prompt refinement.",
+        "Implement Compound Engineering to learn from past errors and conduct thorough security checks.",
+        "Always customize AI harnesses based on project needs to optimize token usage and efficiency."
       ],
       "removedFromPlaylist": false,
-      "serialNumber": 58
+      "serialNumber": 58,
+      "summaryHtml": "htmls/058_openai-codex로-하는-하네스-엔지니어링-실습-요약본-라이브-너무-길어서-망설였던-분들-이걸로-보세요.html",
+      "docVersion": {
+        "major": 3,
+        "minor": 3
+      }
     },
     {
       "id": "MYEYID9Euzs",
@@ -10492,9 +10488,9 @@
         "depth": 5,
         "originality": 4,
         "recency": 5,
-        "completeness": 5
+        "completeness": 4
       },
-      "overallScore": 4.8,
+      "overallScore": 4.6,
       "summaryMd": "243_google-deepmind-distinguished-eng-l9-how-to-land-a-job-at-a-.md",
       "processedAt": "2026-06-20T16:21:57.751Z",
       "docVersion": {
@@ -10503,25 +10499,25 @@
       },
       "playlistIndex": 43,
       "videoType": "Interview",
-      "audience": "Intermediate",
+      "audience": "Advanced",
       "channel": "Ryan Peterman",
       "tags": [
-        "llm",
+        "llm development",
+        "ai career",
         "deepmind",
-        "ai careers",
-        "research engineering",
-        "large language models",
-        "quantization",
+        "machine learning engineering",
+        "model optimization",
+        "reinforcement learning",
         "distributed systems",
-        "pre-training"
+        "quantization"
       ],
-      "tldr": "This video features Vlad Feinberg discussing essential skills for frontier AI labs, blurring lines between research and applied roles, and DeepMind's technical challenges in LLM",
+      "tldr": "This video provides an in-depth interview with Google DeepMind's pre-training lead on essential skills, research areas, and career advice for working at frontier AI labs.",
       "takeaways": [
-        "Master low-level engineering for LLM efficiency.",
-        "Cultivate \"research taste\" to navigate stochastic project paths.",
-        "Understand foundational scaling laws and relevant literature.",
-        "Invest in infrastructure and optimization for large-scale AI.",
-        "Be a supportive coworker to foster collaboration and success."
+        "Master low-level engineering and kernel development for LLM runtime optimization.",
+        "Develop \"research taste\" by understanding stochastic problem-solving and literature review.",
+        "Investigate quantization and inference co-design to build efficient AI models.",
+        "Contribute to open-source LLM projects to demonstrate practical skills.",
+        "Cultivate a collaborative mindset to enable large-scale project success."
       ],
       "videoPublishedAt": "2026-06-15T13:00:35Z",
       "addedToPlaylistAt": "2026-06-16T13:56:52Z",
@@ -10722,13 +10718,13 @@
       "durationSeconds": 6212,
       "archived": false,
       "ratings": {
-        "usefulness": 4,
-        "depth": 3,
+        "usefulness": 5,
+        "depth": 4,
         "originality": 3,
         "recency": 5,
         "completeness": 3
       },
-      "overallScore": 3.6,
+      "overallScore": 4,
       "summaryMd": "248_emergency-debate-they-are-lying-to-us-about-ai-cenk-uygur-ba.md",
       "processedAt": "2026-06-20T16:25:12.107Z",
       "docVersion": {
@@ -10737,26 +10733,14 @@
       },
       "playlistIndex": 48,
       "videoType": "Analysis",
-      "audience": "Intermediate",
       "channel": "The Diary Of A CEO",
-      "tags": [
-        "artificial intelligence",
-        "unemployment",
-        "geopolitics",
-        "middle east conflict",
-        "us politics",
-        "economic impact",
-        "china",
-        "israel",
-        "iran"
-      ],
-      "tldr": "This video debates the complex impacts of AI on employment and the economy, alongside the geopolitical implications of the Middle East conflict and US political",
+      "tldr": "This video debates AI's job displacement, energy demands, geopolitical interference, Middle East conflicts, and the evolving views on capitalism.",
       "takeaways": [
-        "AI development creates jobs but also risks mass unemployment, requiring societal planning.",
-        "Geopolitical conflicts, especially in the Middle East, have significant global economic repercussions.",
-        "The US political system faces challenges from corporate lobbying and voter dissatisfaction.",
-        "Different perspectives exist on how AI will shape the future, from dystopian to highly opportunistic.",
-        "Understanding the interconnectedness of technology, economics, and politics is crucial for future stability."
+        "AI is projected to significantly displace jobs, requiring proactive government planning to prevent economic instability.",
+        "Expanding AI data centers raise concerns about local energy costs and infrastructure, needing sustainable power solutions.",
+        "Foreign interference in US AI infrastructure is a geopolitical concern, vital for national defense and economic competitiveness.",
+        "US foreign policy is heavily influenced by powerful lobbying, potentially leading to policies not serving national interest.",
+        "Growing discontent with capitalism and wealth inequality fuels interest in democratic capitalism or socialist alternatives."
       ],
       "videoPublishedAt": "2026-05-28T07:00:07Z",
       "addedToPlaylistAt": "2026-06-14T02:58:31Z",
@@ -11048,12 +11032,12 @@
       "archived": false,
       "ratings": {
         "usefulness": 5,
-        "depth": 5,
-        "originality": 5,
+        "depth": 4,
+        "originality": 4,
         "recency": 5,
-        "completeness": 4
+        "completeness": 5
       },
-      "overallScore": 4.8,
+      "overallScore": 4.6,
       "summaryMd": "255_i-made-opus-4-8-and-fable-5-build-the-same-app-raw-results.md",
       "processedAt": "2026-06-20T16:28:50.852Z",
       "docVersion": {
@@ -11061,25 +11045,25 @@
         "minor": 3
       },
       "playlistIndex": 55,
-      "videoType": "Demo",
+      "videoType": "Analysis",
       "audience": "Advanced",
       "channel": "Pat Simmons",
       "tags": [
-        "llm comparison",
+        "ai models",
+        "code generation",
         "fable 5",
         "opus 48",
-        "generative ai",
-        "web development",
-        "3d graphics",
-        "game development"
+        "3d rendering",
+        "e-commerce",
+        "real-time strategy games"
       ],
-      "tldr": "This video directly compares Anthropic's new Fable 5 with Opus 48 on three complex coding challenges, revealing Fable 5's superior quality and performance across the",
+      "tldr": "This video critically compares Claude's new Fable 5 and Opus 48 by tasking them with building three complex web applications, revealing Fable 5's clear superiority.",
       "takeaways": [
-        "Fable 5 significantly outperforms Opus 48 in complex code generation and realism.",
-        "LLMs can now create highly interactive and visually rich 3D applications.",
-        "Even advanced LLMs may face copyright limitations in data extraction.",
-        "Fable 5 demonstrates impressive agent orchestration and design sensibilities.",
-        "High-quality AI-generated projects come with increased token costs."
+        "Fable 5 significantly outperforms Opus 48 in complex code generation tasks.",
+        "Fable 5 excels in realistic 3D rendering and interactive UI/UX design.",
+        "Despite higher per-token cost, Fable 5's output quality often justifies the expense.",
+        "Expect higher quality and more functional applications from Fable 5.",
+        "AI models can now generate complex, interactive 3D environments and games."
       ],
       "videoPublishedAt": "2026-06-11T01:13:16Z",
       "addedToPlaylistAt": "2026-06-12T21:59:05Z",
@@ -11186,13 +11170,13 @@
       "durationSeconds": 2429,
       "archived": false,
       "ratings": {
-        "usefulness": 4,
+        "usefulness": 5,
         "depth": 4,
-        "originality": 3,
-        "recency": 3,
-        "completeness": 4
+        "originality": 4,
+        "recency": 4,
+        "completeness": 5
       },
-      "overallScore": 3.6,
+      "overallScore": 4.4,
       "summaryMd": "258_hermes-architecture-explained-memory-context-gateways.md",
       "processedAt": "2026-06-22T14:02:44.930Z",
       "docVersion": {
@@ -11201,27 +11185,27 @@
       },
       "playlistIndex": 35,
       "videoType": "Analysis",
-      "audience": "Intermediate",
+      "audience": "Advanced",
       "channel": "Hugging Face",
       "tags": [
         "hermes agent",
-        "llm architecture",
-        "ai agent",
+        "ai architecture",
         "agentic loop",
-        "context management",
+        "llm context",
         "memory systems",
-        "cron jobs"
+        "cron jobs",
+        "messaging gateways"
       ],
-      "tldr": "This video explains the modular Hermes AI agent architecture, detailing its agentic loop, context building, multi-platform gateway, and comprehensive memory management.",
+      "tldr": "This video explains the Hermes AI agent's architecture, detailing its core agentic loop, memory systems, context management, and multi-platform messaging gateway.",
       "videoPublishedAt": "2026-06-17T06:05:39Z",
       "addedToPlaylistAt": "2026-06-22T12:36:45Z",
       "summaryHtml": "htmls/258_hermes-architecture-explained-memory-context-gateways.html",
       "takeaways": [
-        "Hermes utilizes a modular architecture with an AI agent core, accessible via CLI, API, or messaging gateways.",
-        "The agentic loop processes messages, builds context, uses LLMs, executes tools, and learns from interactions.",
-        "Context is dynamically built from markdown files (soul, user, memory), skills, and compressed message history.",
-        "A gateway system handles multi-platform communication, managing sessions and conversation history via SQLite.",
-        "Memory combines persistent markdown files, a SQLite database, and optional external memory providers."
+        "Hermes uses an agentic loop: user message -> context -> LLM -> tools -> response -> memory update.",
+        "Context is managed via soul.md, user.md, and memory.md files, with compression for LLM efficiency.",
+        "Memory involves persistent markdown files, a SQLite DB for transcripts, and optional external semantic search.",
+        "A versatile gateway connects Hermes to multiple messaging platforms, maintaining conversation history per session.",
+        "Automated tasks run via an internal cron system, storing jobs in JSON and outputs in markdown files."
       ],
       "serialNumber": 258
     },
@@ -11465,23 +11449,26 @@
       "audience": "Advanced",
       "channel": "Claude",
       "tags": [
-        "ai analytics",
-        "llm agents",
-        "semantic layer",
-        "data warehousing",
-        "sql generation",
         "claude",
-        "engineering productivity"
+        "llm development",
+        "ai analytics",
+        "semantic layer",
+        "agentic ai",
+        "sql generation",
+        "error recovery"
       ],
-      "tldr": "This video details how Claude Code significantly boosts engineering productivity and code velocity, enabling efficient development of agentic analytics harnesses.",
+      "tldr": "This video details how Omni built its AI analytics platform, Blobby, using Claude, focusing on the evolution of its agentic architecture and semantic layer.",
       "videoPublishedAt": "2026-05-21T19:42:40Z",
       "addedToPlaylistAt": "2026-05-21T19:48:45Z",
       "takeaways": [
-        "Claude Code accelerates engineering productivity and code commit velocity significantly.",
-        "AI tools empower even CTOs to remain hands-on and contribute code effectively.",
-        "Leverage AI models like Claude for rapid development of complex agentic analytics solutions."
+        "Invest in developer tools that mirror user experience to improve product design.",
+        "Localize context next to data definitions for better LLM performance.",
+        "Implement robust agentic loops with error recovery for system reliability.",
+        "Consolidate agent \"brains\" to avoid split-knowledge issues in complex systems.",
+        "Leverage LLMs' inherent SQL capabilities for efficient query generation."
       ],
-      "serialNumber": 264
+      "serialNumber": 264,
+      "summaryHtml": "htmls/264_building-the-best-agentic-analytics-harness-powered-by-claud.html"
     },
     {
       "id": "wI0ptqCSL0I",
@@ -11509,14 +11496,26 @@
       "channel": "Claude",
       "videoPublishedAt": "2026-05-20T11:49:28Z",
       "addedToPlaylistAt": "2026-05-21T17:09:36Z",
-      "tldr": "This video argues for new agent-centric tooling and self-verification loops to stop developers from babysitting increasingly smart AI agents.",
+      "tldr": "This video provides advanced strategies for developers to stop manually overseeing AI agents by implementing verification loops, multi-cloud management, and automated background routines.",
       "takeaways": [
-        "Shift to agent-centric tooling as AI agents write more code, moving beyond human-focused tools.",
-        "Maintain high-quality CloudMD and integrate dev tools like Slack/DataDog for enhanced AI context and performance.",
-        "Set up remote Cloud Code web environments to decouple compute, improving AI efficiency.",
-        "Enable AI agents to verify their own work by adopting human-like verification playbooks."
+        "Implement verification loops to enable AI agents to autonomously check and debug their own code.",
+        "Package verification steps into self-improving \"skills\" for team-wide reusability and documentation.",
+        "Utilize multi-cloud tools like desktop apps or agent views to effectively manage multiple concurrent agent sessions.",
+        "Delegate routine development tasks to background loops and routines to free up human attention.",
+        "Leverage remote control to monitor and interact with AI agents from any device, anytime."
       ],
-      "serialNumber": 265
+      "serialNumber": 265,
+      "audience": "Advanced",
+      "tags": [
+        "cloud code",
+        "ai agents",
+        "autonomous development",
+        "verification loops",
+        "developer productivity",
+        "software automation",
+        "agent management"
+      ],
+      "summaryHtml": "htmls/265_stop-babysitting-your-agents.html"
     },
     {
       "id": "GMIWm5y90xA",
@@ -11751,9 +11750,9 @@
       "ratings": {
         "usefulness": 5,
         "depth": 4,
-        "originality": 4,
+        "originality": 5,
         "recency": 5,
-        "completeness": 5
+        "completeness": 4
       },
       "overallScore": 4.6,
       "serialNumber": 271,
@@ -11770,21 +11769,25 @@
       "tags": [
         "protein folding",
         "artificial intelligence",
-        "AlphaFold",
-        "DeepMind",
+        "deepmind",
+        "alphafold",
+        "protein design",
+        "biochemistry",
+        "scientific discovery",
         "computational biology",
-        "drug discovery",
-        "Nobel Prize"
+        "molecular biology"
       ],
-      "tldr": "This video highlights AlphaFold, an AI breakthrough that rapidly predicted millions of protein structures, a monumental challenge in biology.",
+      "tldr": "This video explains how AI, particularly AlphaFold, solved the complex protein folding problem, leading to new ways of designing proteins and accelerating scientific breakthroughs.",
       "takeaways": [
-        "A protein's 3D shape dictates its function, crucial for processes like oxygen transport or muscle contraction.",
-        "Traditional X-ray crystallography was a slow, expensive method for determining protein structures.",
-        "AlphaFold AI rapidly determined 200 million protein structures, revolutionizing the field in just a few years.",
-        "Levinthal's Paradox underscored the immense computational complexity of protein folding prediction."
+        "AI has solved the long-standing protein folding problem, accurately predicting 3D structures from amino acid sequences.",
+        "DeepMind's AlphaFold 2 achieved near-experimental accuracy using transformer-like architectures and iterative refinement.",
+        "Generative AI now enables the design of entirely new proteins for specific functions, like medicines or enzymes.",
+        "This breakthrough accelerates drug discovery, material science, and environmental solutions dramatically.",
+        "The success of AI in protein science exemplifies its transformative potential across all scientific fields."
       ],
       "videoPublishedAt": "2025-02-10T14:03:41Z",
-      "addedToPlaylistAt": "2026-06-26T12:09:02Z"
+      "addedToPlaylistAt": "2026-06-26T12:09:02Z",
+      "summaryHtml": "htmls/271_alphafold-the-most-useful-thing-ai-has-ever-done.html"
     },
     {
       "id": "pdNYw6qwuNc",
@@ -12158,12 +12161,12 @@
       "archived": false,
       "ratings": {
         "usefulness": 5,
-        "depth": 5,
-        "originality": 5,
+        "depth": 4,
+        "originality": 4,
         "recency": 5,
-        "completeness": 5
+        "completeness": 4
       },
-      "overallScore": 5,
+      "overallScore": 4.4,
       "serialNumber": 280,
       "summaryMd": "280_한글자막-deepmind-ceo-데미스-하사비스-google은-여전히-ai-인재-경쟁에서-이기고-있다고-말합.md",
       "processedAt": "2026-06-26T15:13:12.517Z",
@@ -12176,24 +12179,26 @@
       "audience": "Intermediate",
       "channel": "Tech Bridge",
       "tags": [
-        "ai",
-        "agi",
-        "generative ai",
+        "artificial intelligence",
+        "AGI",
         "deepmind",
+        "generative AI",
         "creativity",
-        "ai ethics",
-        "simulations"
+        "AI ethics",
+        "simulations",
+        "multimodal AI"
       ],
-      "tldr": "Demis Hassabis discusses AGI's development, risks, generative AI's creative impact, and the critical role of multimodal learning and simulation for science.",
+      "tldr": "This video features Demis Hassabis discussing AGI's risks and opportunities, DeepMind's multimodal approach, AI's impact on creativity, and the power of simulations for scientific advancement.",
       "takeaways": [
-        "Implement international standards to manage emerging AGI risks.",
-        "Utilize generative AI tools for fine-grained creative control and rapid iteration.",
-        "Adopt digital watermarking (SynthID) for provenance in AI-generated media.",
-        "Leverage AI to democratize creativity and lower industry entry barriers.",
-        "Recognize simulations and imagination as fundamental to AGI and scientific progress."
+        "AI development requires international regulation and robust safety standards.",
+        "Multimodal AI is crucial for a comprehensive understanding of the physical world.",
+        "Generative AI tools empower creators with fine-grained control and faster iteration.",
+        "Digital watermarking (SynthID) is essential for detecting AI-generated content.",
+        "Simulations are a core mechanism for AGI to learn, imagine, and solve complex problems."
       ],
       "videoPublishedAt": "2026-06-26T13:00:12Z",
-      "addedToPlaylistAt": "2026-06-26T13:36:21Z"
+      "addedToPlaylistAt": "2026-06-26T13:36:21Z",
+      "summaryHtml": "htmls/280_한글자막-deepmind-ceo-데미스-하사비스-google은-여전히-ai-인재-경쟁에서-이기고-있다고-말합.html"
     },
     {
       "id": "t9c7kEktM3Q",
@@ -12410,7 +12415,8 @@
       ],
       "videoPublishedAt": "2026-06-24T09:00:38Z",
       "addedToPlaylistAt": "2026-06-28T14:52:28Z",
-      "summaryHtml": "htmls/285_한글자막-앤트로픽-ceo-다리오-아모데이의-생각을-들여다봅니다-the-circuit-확장-인터뷰.html"
+      "summaryHtml": "htmls/285_한글자막-앤트로픽-ceo-다리오-아모데이의-생각을-들여다봅니다-the-circuit-확장-인터뷰.html",
+      "digDeeperMd": "285_한글자막-앤트로픽-ceo-다리오-아모데이의-생각을-들여다봅니다-the-circuit-확장-인터뷰-dig-deeper.md"
     },
     {
       "id": "_X55fkwdC-Q",
@@ -12600,9 +12606,9 @@
         "depth": 4,
         "originality": 4,
         "recency": 5,
-        "completeness": 4
+        "completeness": 5
       },
-      "overallScore": 4.4,
+      "overallScore": 4.6,
       "serialNumber": 290,
       "summaryMd": "290_google-just-invented-a-universal-language-for-ai-knowledge.md",
       "processedAt": "2026-06-29T16:49:00.878Z",
@@ -12613,15 +12619,27 @@
       "playlistIndex": 16,
       "videoType": "Analysis",
       "channel": "TLDResearch",
-      "tldr": "This video introduces Google's Open Knowledge Format (OKF), an open standard to unify fragmented internal knowledge for AI agents.",
+      "tldr": "This video introduces Google Cloud's Open Knowledge Format (OKF), an open standard that provides AI agents with structured, interoperable organizational knowledge.",
       "takeaways": [
-        "AI agents need a unified context to avoid constantly solving knowledge fragmentation.",
-        "Custom \"LLM wikis\" create new silos; an open standard is crucial for interoperability.",
-        "Open Knowledge Format (OKF) unifies AI context using simple markdown and YAML in version control.",
-        "OKF design emphasizes minimal opinion, producer/consumer independence, and format over platform."
+        "AI agents struggle with fragmented, specific organizational knowledge crucial for actionable results.",
+        "Standardized formats like OKF enable LLMs to manage and update shared knowledge efficiently.",
+        "OKF uses simple markdown and YAML for portable, version-controlled AI context.",
+        "Adopt OKF by reading the spec, creating producers/consumers, and contributing to the open standard.",
+        "OKF is minimally opinionated, platform-neutral, and ensures producer-consumer independence."
       ],
       "videoPublishedAt": "2026-06-15T20:50:07Z",
-      "addedToPlaylistAt": "2026-06-27T04:14:06Z"
+      "addedToPlaylistAt": "2026-06-27T04:14:06Z",
+      "audience": "Intermediate",
+      "tags": [
+        "ai",
+        "llms",
+        "open knowledge format",
+        "okf",
+        "data context",
+        "ai agents",
+        "google cloud"
+      ],
+      "summaryHtml": "htmls/290_google-just-invented-a-universal-language-for-ai-knowledge.html"
     },
     {
       "id": "tIjUBZvTAkg",
@@ -12741,11 +12759,11 @@
       "ratings": {
         "usefulness": 5,
         "depth": 4,
-        "originality": 4,
+        "originality": 3,
         "recency": 5,
         "completeness": 5
       },
-      "overallScore": 4.6,
+      "overallScore": 4.4,
       "serialNumber": 294,
       "summaryMd": "294_build-an-ai-second-brain-knowledge-base-step-by-step.md",
       "processedAt": "2026-06-30T03:55:33.926Z",
@@ -12754,19 +12772,31 @@
         "minor": 3
       },
       "playlistIndex": 3,
-      "videoType": "Tutorial",
       "channel": "Matt Wolfe",
-      "tldr": "This video discusses building an AI second brain to move beyond passive information storage and facilitate active recall and interaction.",
+      "tldr": "This video demonstrates building a personalized, AI-powered second brain system in Obsidian with a wiki, CRM, and intelligent journaling, leveraging web clipping and automation.",
       "takeaways": [
-        "Traditional second brains often fail due to passive storage, lacking active engagement.",
-        "Dumping information into a system doesn't guarantee future recall or utility.",
-        "An effective second brain needs mechanisms for active recall and interaction.",
-        "AI can enhance second brains for better information processing and retrieval."
+        "Transform passive notes into an active, interconnected knowledge base.",
+        "Integrate web content, CRM contacts, and journal entries into one system.",
+        "Utilize AI to summarize, extract entities, and cross-reference information automatically.",
+        "Ground AI responses to journal entries in your personal saved knowledge.",
+        "Automate processing and backups to maintain your second brain effortlessly."
       ],
       "videoPublishedAt": "2026-05-06T18:19:41Z",
       "addedToPlaylistAt": "2026-06-30T03:53:12Z",
       "summaryHtml": "htmls/294_build-an-ai-second-brain-knowledge-base-step-by-step.html",
-      "digDeeperMd": "294_build-an-ai-second-brain-knowledge-base-step-by-step-dig-deeper.md"
+      "digDeeperMd": "294_build-an-ai-second-brain-knowledge-base-step-by-step-dig-deeper.md",
+      "audience": "Intermediate",
+      "tags": [
+        "second brain",
+        "knowledge management",
+        "obsidian",
+        "llm wiki",
+        "ai tools",
+        "personal crm",
+        "journaling",
+        "automation",
+        "codex"
+      ]
     },
     {
       "id": "0-QDPnEIkvw",
@@ -12969,12 +12999,12 @@
       "archived": false,
       "ratings": {
         "usefulness": 5,
-        "depth": 5,
-        "originality": 4,
+        "depth": 4,
+        "originality": 3,
         "recency": 5,
         "completeness": 5
       },
-      "overallScore": 4.8,
+      "overallScore": 4.4,
       "serialNumber": 299,
       "summaryMd": "299_claude-certified-architect-cca-f-study-guide-to-pass-first-t.md",
       "processedAt": "2026-06-30T14:48:45.315Z",
@@ -12988,20 +13018,19 @@
       "channel": "Preporato | AI for Engineers",
       "tags": [
         "anthropic",
-        "cloud architect",
-        "certification prep",
         "claude",
-        "agentic ai",
-        "prompt engineering",
-        "mcp"
+        "certification",
+        "llm architecture",
+        "agentic design",
+        "prompt engineering"
       ],
-      "tldr": "This video provides a comprehensive guide to passing the Anthropic Cloud Certified Architect exam, covering key domains, architectural patterns, and a detailed 4-week study plan.",
+      "tldr": "This video provides a comprehensive guide to passing the Anthropic Cloud Certified Architect exam, covering core concepts, domain knowledge, a study plan, and common pitfalls.",
       "takeaways": [
-        "Master the Claude agent loop (call, inspect, execute, append) and targeted sub-agent retries.",
-        "Configure Claude Code with hierarchical Claude.md files for team-wide conventions.",
-        "Implement structured output using tool schemas and validate/retry loops for reliability.",
-        "Design robust MCP tools with descriptive names and structured error responses.",
-        "Combat \"lost in the middle\" by re-anchoring durable facts in a case block."
+        "Master the `call-inspect-execute-append-call` agent loop for multi-step tasks.",
+        "Configure Claude Code with `Claude.md` hierarchy and slash commands for team conventions.",
+        "Use explicit, categorical rules in prompts and tool schemas for reliable structured output.",
+        "Mitigate \"lost in the middle\" by anchoring durable facts in a case block.",
+        "Implement prompt caching for static sections to significantly reduce API costs."
       ],
       "videoPublishedAt": "2026-06-23T22:30:12Z",
       "addedToPlaylistAt": "2026-06-30T14:08:03Z",

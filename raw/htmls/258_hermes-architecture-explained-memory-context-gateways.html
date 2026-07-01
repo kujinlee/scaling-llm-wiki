@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="generator" content="magazine-skim v1">
+<meta name="generator" content="magazine-skim v2">
 <meta name="source-md" content="258_hermes-architecture-explained-memory-context-gateways.md">
 <meta name="video-id" content="n32qq7Kwzh0">
 <title>Hermes Architecture EXPLAINED: Memory, Context &amp; Gateways</title>
@@ -51,55 +51,64 @@ footer{margin-top:2.5em;color:var(--foot);font-size:.8rem}
   <p class="doc-meta">Hugging Face · 40:29 · <a href="https://www.youtube.com/watch?v=n32qq7Kwzh0" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=n32qq7Kwzh0</a></p>
   <div class="callout">
     <div class="lbl">Quick Reference</div>
-    <p>This video explains the modular Hermes AI agent architecture, detailing its agentic loop, context building, multi-platform gateway, and comprehensive memory management.</p>
-    <ul><li>Hermes utilizes a modular architecture with an AI agent core, accessible via CLI, API, or messaging gateways.</li><li>The agentic loop processes messages, builds context, uses LLMs, executes tools, and learns from interactions.</li><li>Context is dynamically built from markdown files (soul, user, memory), skills, and compressed message history.</li><li>A gateway system handles multi-platform communication, managing sessions and conversation history via SQLite.</li><li>Memory combines persistent markdown files, a SQLite database, and optional external memory providers.</li></ul>
+    <p>This video explains the Hermes AI agent's architecture, detailing its core agentic loop, memory systems, context management, and multi-platform messaging gateway.</p>
+    <ul><li>Hermes uses an agentic loop: user message -&gt; context -&gt; LLM -&gt; tools -&gt; response -&gt; memory update.</li><li>Context is managed via soul.md, user.md, and memory.md files, with compression for LLM efficiency.</li><li>Memory involves persistent markdown files, a SQLite DB for transcripts, and optional external semantic search.</li><li>A versatile gateway connects Hermes to multiple messaging platforms, maintaining conversation history per session.</li><li>Automated tasks run via an internal cron system, storing jobs in JSON and outputs in markdown files.</li></ul>
   </div>
   <section data-start="58">
       <span class="ghost">1</span>
-      <h2>High-Level Architecture Overview <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=58s" target="_blank" rel="noopener noreferrer">(0:58–3:58)</a> <a class="dig" data-type="deep-dive" data-t="58">dig deeper ▾</a></h2>
-      <p class="lead">The Hermes AI agent features a simple, modular architecture with an AI core, accessible via CLI, API, or messaging gateway, and uses dual memory.</p>
-      <ul><li>The agent can be accessed via a command-line interface (CLI), an API, or a gateway connecting to messaging services like Telegram, email, and Slack.</li><li>The agent comes pre-installed with a suite of tools and skills.</li><li>Hermes utilizes a dual memory system: internal memory (session transcripts, soul.md, user.md) and external memory (providers like MemZero).</li></ul>
+      <h2>High-Level Architecture Overview <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=58s" target="_blank" rel="noopener noreferrer">(0:58–3:51)</a> <a class="dig" data-section="58" data-t="58">dig deeper ▶</a></h2>
+      <p class="lead">The Hermes agent features an AI core, agentic loop, and interfaces for CLI, API, and a gateway integrating diverse messaging services like Telegram.</p>
+      <ul><li>The core AI agent leverages pre-installed tools and skills to perform diverse functions within an agentic loop.</li><li>Users can interact with Hermes via a Command Line Interface, an API, or a robust gateway.</li><li>The gateway integrates with various messaging services such as Telegram, email, and Slack.</li><li>Hermes' memory system is bifurcated into external memory (e.g., Mem Zero) and internal memory (`soul.md`, `user.md`).</li></ul>
     </section>
-<section data-start="238">
+<section data-start="231">
       <span class="ghost">2</span>
-      <h2>The Agent Loop <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=238s" target="_blank" rel="noopener noreferrer">(3:58–7:52)</a> <a class="dig" data-type="deep-dive" data-t="238">dig deeper ▾</a></h2>
-      <p class="lead">Hermes' agentic loop processes user messages, building context, interacting with an LLM, executing tools, providing a response, and updating its memory.</p>
-      <ul><li>The core of Hermes operates on a straightforward agentic loop, which is triggered by every user message.</li><li>Hermes builds its context by integrating internal memory and prompts, along with message history.</li><li>This context and message history are sent to the Large Language Model (LLM) for processing.</li><li>The LLM decides whether to call and execute specific tools.</li><li>A crucial &quot;memory update&quot; step follows, where the agent analyzes the interaction to learn and store relevant information.</li></ul>
+      <h2>The Hermes Agent Loop <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=231s" target="_blank" rel="noopener noreferrer">(3:51–7:52)</a> <a class="dig" data-section="231" data-t="231">dig deeper ▶</a></h2>
+      <p class="lead">Hermes' agentic loop is a cyclical process, initiated by user input, involving context building, LLM interaction, tool calling, response, and memory updates.</p>
+      <ul><li>The agentic cycle begins when a user sends a message to the Hermes agent.</li><li>Hermes dynamically constructs a comprehensive context from its internal memory and predefined prompts.</li><li>The assembled context and message history are transmitted to the Large Language Model (LLM).</li><li>The LLM determines whether to invoke available tools (e.g., web search), potentially iterating if multiple are required.</li><li>Once all necessary tool actions complete, the LLM generates and delivers a final response to the user.</li><li>The agent analyzes the interaction to extract and store pertinent information for future engagements.</li></ul>
     </section>
 <section data-start="472">
       <span class="ghost">3</span>
-      <h2>Context Building and Compression <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=472s" target="_blank" rel="noopener noreferrer">(7:52–20:21)</a> <a class="dig" data-type="deep-dive" data-t="472">dig deeper ▾</a></h2>
-      <p class="lead">Hermes constructs its LLM context from specific markdown files, skill descriptions, and message history, using compression to manage token limits.</p>
-      <ul><li>Hermes builds context from `soul.md` for personality, `user.md` for user information, and `memory.md` for facts and workflows.</li><li>Descriptions of available skills and tools are also included in the context.</li><li>Recent message history contributes to the overall context.</li><li>Context compression is employed when the message history exceeds a set threshold, specifically 50% of the context window.</li><li>Previous messages are summarized and appended to the context, replacing the original verbose history, before each LLM turn or on context window errors.</li></ul>
+      <h2>Agent Context Management <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=472s" target="_blank" rel="noopener noreferrer">(7:52–19:58)</a> <a class="dig" data-section="472" data-t="472">dig deeper ▶</a></h2>
+      <p class="lead">Hermes manages LLM context using core markdown files and a sophisticated compression strategy to prevent overflow within the context window.</p>
+      <ul><li>The agent constructs context from `soul.md` (personality), `user.md` (user information), and `memory.md` (facts, workflows).</li><li>Context compression is typically triggered when 50% of the context window is utilized, a customizable threshold.</li><li>Upon activation, previous conversation messages are summarized and replaced with this summary to optimize token usage.</li><li>Compression checks occur before each LLM turn and as a fallback mechanism on context window errors.</li><li>A rich internal prompt guides the summarization process during context compression.</li></ul>
     </section>
-<section data-start="1221">
+<section data-start="1198">
       <span class="ghost">4</span>
-      <h2>The Gateway System <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=1221s" target="_blank" rel="noopener noreferrer">(20:21–28:10)</a> <a class="dig" data-type="deep-dive" data-t="1221">dig deeper ▾</a></h2>
-      <p class="lead">The gateway enables Hermes to communicate across platforms, polling services, formatting messages, building conversation context, and managing user sessions.</p>
-      <ul><li>The gateway allows Hermes to communicate with users across multiple messaging platforms, including Telegram, WhatsApp, email, and Slack.</li><li>It operates an asynchronous I/O loop that continuously polls these services for incoming messages.</li><li>The gateway formats messages correctly and constructs the full conversation context, including message history from a local SQLite database.</li><li>It features a session manager to handle message flow, enabling users to interrupt, steer, or queue commands.</li></ul>
+      <h2>Understanding the Gateway <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=1198s" target="_blank" rel="noopener noreferrer">(19:58–28:05)</a> <a class="dig" data-section="1198" data-t="1198">dig deeper ▶</a></h2>
+      <p class="lead">The gateway enables Hermes interaction across various messaging platforms, manages conversation history via SQLite, and handles incoming messages effectively.</p>
+      <ul><li>The gateway enables interaction with Hermes across Telegram, email, Slack, WhatsApp, and SMS messaging platforms.</li><li>It maintains an `async IO loop` that continuously listens for or polls incoming messages from diverse providers.</li><li>When a message arrives, it queries a local SQLite database using a session identifier (e.g., `Telegram + session_ID`) to retrieve complete message history.</li><li>A session manager handles incoming messages while the agent processes a request, allowing interruption, steering, or queuing messages.</li></ul>
     </section>
-<section data-start="1690">
+<section data-start="1685">
       <span class="ghost">5</span>
-      <h2>Memory Management <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=1690s" target="_blank" rel="noopener noreferrer">(28:10–34:53)</a> <a class="dig" data-type="deep-dive" data-t="1690">dig deeper ▾</a></h2>
-      <p class="lead">Hermes manages memory through markdown files for persistent context, a SQLite database for session transcripts, and optional external providers for enhanced recall.</p>
-      <ul><li>Markdown files like `soul.md`, `memory.md`, and `user.md` provide persistent context for agent personality and learned facts.</li><li>A local SQLite database stores full transcripts of all user sessions, enabling efficient retrieval of conversation history.</li><li>This database also maintains a bare text table specifically for similarity searches.</li><li>Optional external memory providers, such as MemZero and Super Memory, can be integrated to enhance recall by dynamically querying for context.</li></ul>
+      <h2>Hermes Memory System <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=1685s" target="_blank" rel="noopener noreferrer">(28:05–34:43)</a> <a class="dig" data-section="1685" data-t="1685">dig deeper ▶</a></h2>
+      <p class="lead">Hermes' memory includes markdown files, a SQLite database for transcripts, and optional external memory via third-party providers for intelligence.</p>
+      <ul><li>`soul.md`, `memory.md`, and `user.md` are persistent files consistently included in the LLM's context window.</li><li>This local database stores full transcripts of every interaction session and includes a bare text table for similarity searches.</li><li>An optional external memory component integrates with third-party providers like MemZero, Super Memory, and Honcho.</li><li>When enabled, Hermes queries external memory after the first message of a new turn to enhance recall.</li></ul>
     </section>
-<section data-start="2093">
+<section data-start="2083">
       <span class="ghost">6</span>
-      <h2>Cron Jobs for Automation <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=2093s" target="_blank" rel="noopener noreferrer">(34:53–40:30)</a> <a class="dig" data-type="deep-dive" data-t="2093">dig deeper ▾</a></h2>
-      <p class="lead">Hermes supports cron jobs, an internal loop running every minute to schedule and execute automated tasks.</p>
-      <ul><li>Hermes supports cron jobs for scheduling automated tasks.</li><li>This system is an internal loop within Hermes.</li><li>The internal loop runs every minute to execute scheduled tasks.</li></ul>
+      <h2>Cron Jobs <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=2083s" target="_blank" rel="noopener noreferrer">(34:43–39:53)</a> <a class="dig" data-section="2083" data-t="2083">dig deeper ▶</a></h2>
+      <p class="lead">Hermes includes an internal cron system for automated tasks, storing jobs in a JSON file and delivering notifications directly to the user.</p>
+      <ul><li>Hermes incorporates its own internal cron system for automating scheduled tasks, such as sending daily news updates.</li><li>This system operates independently of server-level cron processes, executing a `tick` function every minute.</li><li>All scheduled cron jobs are stored in a plain JSON file located at `.hermes/cron/jobs.json`.</li><li>The results of each job run are saved as a markdown file within a job-specific directory under `.hermes/cron/output/`.</li><li>Cron job notifications are delivered directly to the user's designated &quot;home&quot; messaging platform by the system itself.</li></ul>
     </section>
-  <footer>Skim view — generated from the source note <code>hermes-architecture-explained-memory-context-gateways.md</code>. Full text lives in the source <code>.md</code>.</footer>
+<section data-start="2393">
+      
+      <h2>Conclusion <a class="ts" href="https://www.youtube.com/watch?v=n32qq7Kwzh0&amp;t=2393s" target="_blank" rel="noopener noreferrer">(39:53–40:30)</a> <a class="dig" data-section="2393" data-t="2393">dig deeper ▶</a></h2>
+      <p class="lead">This overview provides a high-level understanding of Hermes AI agent's architecture, components, and capabilities for developers and enthusiasts.</p>
+      <ul><li>The overview provided a comprehensive understanding of the Hermes AI agent's core components and operational loops.</li><li>It covered context management, communication gateway, memory systems, and automation capabilities like cron jobs.</li><li>This detailed analysis serves as a valuable resource for developers and enthusiasts understanding or customizing AI agents like Hermes.</li></ul>
+    </section>
+  <footer>Skim view — generated from the source note <code>258_hermes-architecture-explained-memory-context-gateways.md</code>. Full text lives in the source <code>.md</code>.</footer>
 </article>
 <script>
 (function(){
+  // ── cross-doc nav (dig-deeper → summary) ─────────────────────────────────
   document.querySelectorAll('a.dig').forEach(function(a){
+    if(!a.dataset.type)return;
     var u=new URL(location.href);
     u.searchParams.set('type',a.dataset.type);
     u.hash='t='+a.dataset.t;
     a.setAttribute('href',u.pathname+u.search+u.hash);
   });
+  // ── scroll to #t= hash ────────────────────────────────────────────────────
   var m=location.hash.match(/^#t=(\d+)/);
   if(m){
     var sec=+m[1];
@@ -107,6 +116,232 @@ footer{margin-top:2.5em;color:var(--foot);font-size:.8rem}
     var t=Math.max.apply(null,starts.filter(function(s){return s<=sec;}).concat([-1]));
     if(t>=0){var el=document.querySelector('[data-start="'+t+'"]'); if(el){el.scrollIntoView();}}
   }
+  // ── dig-state machine (summary-side only) ────────────────────────────────
+  var parts=location.pathname.split('/');
+  var videoId=parts[3];
+  var _sp=new URLSearchParams(location.search);
+  var outputFolder=_sp.get('outputFolder');
+  if(!videoId||!outputFolder)return;
+  // ── dig-doc client (dig-deeper page only) ────────────────────────────────
+  // Correctness premise: the POST job calls upsertDugSection BEFORE emitting
+  // "done", so the re-GET of the current page reflects the new dug section.
+  if(_sp.get('type')==='dig-deeper'){
+    var _dg=document.querySelector('.dg');
+    if(_dg){
+      function _applyDigErr(el){el.textContent='\u26a0 retry';el.dataset.state='error';el.removeAttribute('href');}
+      // ── Promise-based dig: single POST→SSE→swap core ─────────────────────
+      function _startDocDigAsync(trigger){
+        return new Promise(function(resolve,reject){
+          var startSec=+trigger.dataset.section;
+          trigger.textContent='\u23f3';trigger.dataset.state='loading';trigger.removeAttribute('href');
+          fetch('/api/videos/'+videoId+'/dig/'+startSec,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({outputFolder:outputFolder})})
+            .then(function(r){if(!r.ok)throw new Error('POST '+r.status);return r.json();})
+            .then(function(d){
+              var es=new EventSource('/api/videos/'+videoId+'/dig/'+startSec+'/stream?jobId='+encodeURIComponent(d.jobId));
+              es.onmessage=function(ev){
+                try{var msg=JSON.parse(ev.data);
+                  if(msg.type==='done'){
+                    es.close();
+                    fetch(location.href)
+                      .then(function(res){return res.text();})
+                      .then(function(html){
+                        var dp=new DOMParser();
+                        var fd=dp.parseFromString(html,'text/html');
+                        var fresh=fd.querySelector('[data-start="'+startSec+'"]');
+                        var cur=document.querySelector('[data-start="'+startSec+'"]');
+                        if(fresh&&cur&&cur.parentNode){cur.parentNode.replaceChild(document.adoptNode(fresh),cur);}
+                        resolve();
+                      })
+                      .catch(function(err){_applyDigErr(trigger);reject(err);});
+                  }else if(msg.type==='error'){es.close();_applyDigErr(trigger);reject(new Error('stream error'));}
+                }catch(e){}
+              };
+              es.onerror=function(){es.close();_applyDigErr(trigger);reject(new Error('SSE error'));};
+            })
+            .catch(function(err){_applyDigErr(trigger);reject(err);});
+        });
+      }
+      // ── Single-click path: delegate to the async core ─────────────────────
+      function _startDocDig(trigger){_startDocDigAsync(trigger).catch(function(){});}
+      // ── ⤢ expand all — confirm → serialized loop ──────────────────────────
+      var _eaBtn=_dg.querySelector('.dg-expand-all');
+      if(_eaBtn){
+        var _eaDlg=document.getElementById('_dg-ea-dlg');
+        var _eaProg=document.getElementById('_dg-ea-prog');
+        var _eaMsg=document.getElementById('_dg-ea-msg');
+        var _eaProgMsg=document.getElementById('_dg-ea-prog-msg');
+        var _eaFailMsg=document.getElementById('_dg-ea-fail-msg');
+        var _eaCancelProg=document.getElementById('_dg-ea-cancel-prog');
+        function _eaClose(el){el.removeAttribute('data-open');}
+        function _eaOpen(el){el.setAttribute('data-open','');}
+        function _eaRunBatch(triggers,N){
+          _eaOpen(_eaProg);
+          var cancelled=false;
+          var failures=[];
+          var k=0;
+          _eaCancelProg.onclick=function(){cancelled=true;};
+          function _next(){
+            // Collect still-un-dug triggers (may have changed if DOM was swapped).
+            // Exclude error-state triggers — they already failed in this batch run.
+            var remaining=[].slice.call(document.querySelectorAll('.dig-trigger[data-section], .dig-refresh[data-section]'))
+              .filter(function(t){return t.dataset.state!=='error'&&t.dataset.state!=='loading';});
+            if(cancelled||remaining.length===0){
+              if(failures.length>0){
+                // Show failure summary in the progress overlay then auto-close.
+                _eaProgMsg.textContent='Done with '+failures.length+' failure(s).';
+                _eaFailMsg.textContent='Failed sections: '+failures.join(', ');
+                _eaFailMsg.style.display='';
+                setTimeout(function(){_eaClose(_eaProg);_eaFailMsg.style.display='none';},6000);
+              }else{
+                _eaClose(_eaProg);
+              }
+              return;
+            }
+            k++;
+            _eaProgMsg.textContent='section '+k+' of '+N+'\u2026';
+            var trig=remaining[0];
+            _startDocDigAsync(trig)
+              .then(function(){_next();})
+              .catch(function(){failures.push(trig.dataset.section);_next();});
+          }
+          _next();
+        }
+        _eaBtn.addEventListener('click',function(){
+          var triggers=[].slice.call(document.querySelectorAll('.dig-trigger[data-section], .dig-refresh[data-section]'));
+          var N=triggers.length;
+          if(N===0)return;
+          var X=(N*0.05).toFixed(2);
+          var Y=Math.ceil(N*30/60);
+          _eaMsg.textContent='Expand '+N+' remaining sections? ~$'+X+', ~'+Y+' min (rough estimate)';
+          _eaOpen(_eaDlg);
+          var _escHandler=function(e){if(e.key==='Escape'){_eaClose(_eaDlg);document.removeEventListener('keydown',_escHandler);}};
+          document.addEventListener('keydown',_escHandler);
+          _eaDlg.onclick=function(e){if(e.target===_eaDlg){_eaClose(_eaDlg);document.removeEventListener('keydown',_escHandler);}};
+          document.getElementById('_dg-ea-confirm').onclick=function(){
+            document.removeEventListener('keydown',_escHandler);
+            _eaClose(_eaDlg);
+            _eaRunBatch(triggers,N);
+          };
+          document.getElementById('_dg-ea-cancel-dlg').onclick=function(){
+            _eaClose(_eaDlg);
+            document.removeEventListener('keydown',_escHandler);
+          };
+        });
+      }
+      _dg.addEventListener('click',function(e){
+        // Toggle (dug → show gist or dug) — zero fetch
+        var tog=(e.target.closest?e.target.closest('.dig-toggle'):null);
+        if(tog){e.preventDefault();var s=tog.closest('section');if(s){s.classList.toggle('show-gist');tog.textContent=s.classList.contains('show-gist')?'show dig deeper \u25b6':'show summary \u2303';}return;}
+        // Refresh (stale dug → re-dig in place) — must be before .dig-trigger check
+        var refresh=(e.target.closest?e.target.closest('.dig-refresh[data-section]'):null);
+        if(refresh){e.preventDefault();_startDocDig(refresh);return;}
+        // Trigger (un-dug → expand in place)
+        var trig=(e.target.closest?e.target.closest('.dig-trigger[data-section]'):null);
+        if(!trig)return;
+        e.preventDefault();
+        var st=trig.dataset.state;
+        if(st==='loading')return;
+        _startDocDig(trig);
+      });
+      // ── ?dig=N auto-trigger ───────────────────────────────────────────────
+      // Strip ?dig from URL immediately (keep type, outputFolder, hash) so
+      // reload / back-forward never re-fires generation.
+      function _stripDigParam(){
+        var u2=new URL(location.href);
+        u2.searchParams.delete('dig');
+        history.replaceState(null,'',u2.pathname+u2.search+(u2.hash||''));
+      }
+      function _applyDigDocState(dugIds){
+        // Re-apply control visibility to reflect current dug state.
+        // (Used by pageshow to refresh a bfcache-restored page.)
+        dugIds.forEach(function(id){
+          var el=document.querySelector('[data-start="'+id+'"]');
+          if(el)el.setAttribute('data-dug','true');
+        });
+      }
+      function _handleDigParam(isPageshow){
+        var digN=isPageshow?null:_sp.get('dig');
+        var digSec=digN!==null&&digN!==''?+digN:null;
+        fetch('/api/videos/'+videoId+'/dig-state?outputFolder='+encodeURIComponent(outputFolder))
+          .then(function(r){return r.ok?r.json():Promise.resolve({sectionIds:[]});})
+          .then(function(data){
+            var dugIds=data.sectionIds||[];
+            if(isPageshow){
+              // bfcache restore: re-apply states only, no auto-trigger
+              _applyDigDocState(dugIds);
+              return;
+            }
+            if(digSec===null)return;
+            // Strip ?dig immediately regardless of dug state
+            _stripDigParam();
+            var trigger=document.querySelector('.dig-trigger[data-section="'+digSec+'"]');
+            if(!trigger)return; // invalid/unknown N — no-op
+            if(dugIds.indexOf(digSec)>=0){
+              // Already dug: scroll only, no POST
+              var sect=document.querySelector('[data-start="'+digSec+'"]');
+              if(sect)sect.scrollIntoView();
+            }else{
+              // Un-dug: trigger once then scroll after re-GET replaces section
+              _startDocDig(trigger);
+            }
+          })
+          .catch(function(){
+            if(!isPageshow)_stripDigParam();
+          });
+      }
+      _handleDigParam(false);
+      window.addEventListener('pageshow',function(ev){
+        if(ev.persisted)_handleDigParam(true);
+      });
+    }
+    return;
+  }
+  // ── summary-side nav links ────────────────────────────────────────────────
+  var controls=[].slice.call(document.querySelectorAll('a.dig[data-section]')).filter(function(a){return!a.dataset.type;});
+  if(!controls.length)return;
+  function viewHref(sec){
+    var p=new URLSearchParams();
+    p.set('outputFolder',outputFolder);
+    p.set('type','dig-deeper');
+    return '/api/html/'+videoId+'?'+p.toString()+'#t='+sec;
+  }
+  function digHref(sec){
+    var p=new URLSearchParams();
+    p.set('outputFolder',outputFolder);
+    p.set('type','dig-deeper');
+    p.set('dig',String(sec));
+    return '/api/html/'+videoId+'?'+p.toString()+'#t='+sec;
+  }
+  function applyDug(el,sec){
+    el.textContent='view detail \u2193';
+    el.setAttribute('href',viewHref(sec));
+    el.removeAttribute('target');
+    el.removeAttribute('rel');
+    el.dataset.state='dug';
+  }
+  function applyIdle(el,sec){
+    el.textContent='dig deeper \u25b6';
+    el.setAttribute('href',digHref(sec));
+    el.removeAttribute('target');
+    el.removeAttribute('rel');
+    el.dataset.state='idle';
+  }
+  function applyControls(dugIds){
+    controls.forEach(function(el){
+      var sec=+el.dataset.section;
+      if(dugIds.indexOf(sec)>=0){applyDug(el,sec);}else{applyIdle(el,sec);}
+    });
+  }
+  function fetchAndApply(){
+    fetch('/api/videos/'+videoId+'/dig-state?outputFolder='+encodeURIComponent(outputFolder))
+      .then(function(r){return r.ok?r.json():Promise.resolve({sectionIds:[]});})
+      .then(function(data){applyControls(data.sectionIds||[]);})
+      .catch(function(){applyControls([]);});
+  }
+  fetchAndApply();
+  window.addEventListener('pageshow',function(ev){
+    if(ev.persisted)fetchAndApply();
+  });
 })();
 </script><script>(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;function systemDark(){return!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)}function effective(){var a=root.getAttribute('data-theme');return a==='dark'||a==='light'?a:(systemDark()?'dark':'light')}function syncIcon(){btn.textContent=effective()==='dark'?'☀️':'🌙'}btn.addEventListener('click',function(){var next=effective()==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('html-doc-theme',next)}catch(e){}syncIcon()});syncIcon();requestAnimationFrame(function(){root.classList.add('theme-ready')})})();</script>
 </body>

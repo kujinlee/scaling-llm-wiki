@@ -1,0 +1,164 @@
+{
+  "sourceMd": "265_stop-babysitting-your-agents.md",
+  "generatedAt": "2026-07-01T00:49:49.398Z",
+  "sourceSections": [
+    "The Problem of \"Babysitting\" AI Agents and Cloud Code Prerequisites",
+    "Rethinking Software Tooling for AI Agents",
+    "Verification Loops: Teaching Cloud to Check Its Own Work",
+    "Practical Implementation: Building Self-Improving Verification Skills (with Demo)",
+    "Scaling Agent Operations with Multi-Cloud Strategies",
+    "Automating Routine Tasks with Background Loops and Routines",
+    "Conclusion"
+  ],
+  "model": {
+    "sections": [
+      {
+        "lead": "Sid Bisaria addresses the inefficiency of monitoring AI agents, offering advanced Cloud Code strategies to better manage them and reclaim developer time.",
+        "bullets": [
+          {
+            "label": "Problem Highlighted",
+            "text": "Sid Bisaria highlights the inefficient time developers spend monitoring and QA testing AI agents."
+          },
+          {
+            "label": "Talk Level",
+            "text": "This is an \"advanced Cloud Code talk\" (301 level) requiring specific prerequisites for optimal understanding."
+          },
+          {
+            "label": "Tool Prerequisites",
+            "text": "Users need a high-quality Cloud MD and essential developer tools like Slack, Asana, and Datadog connected."
+          },
+          {
+            "label": "Environment Setup",
+            "text": "A remote environment on Cloud Code Web must be set up to decouple compute from the local machine."
+          }
+        ]
+      },
+      {
+        "lead": "Software tooling, traditionally for humans, needs rethinking as AI agents now write a significant portion of code.",
+        "bullets": [
+          {
+            "label": "Tooling Shift",
+            "text": "Traditional software tooling was built primarily for human developers, but AI agents now write a significant portion of code."
+          },
+          {
+            "label": "Agent Needs",
+            "text": "While tools like linters are beneficial, human developers make assumptions about tooling that agents don't share."
+          },
+          {
+            "label": "Key Question",
+            "text": "The crucial question is what an AI agent needs from a codebase that a human takes for granted."
+          },
+          {
+            "label": "Core Concepts",
+            "text": "The presentation will outline three core concepts to address this: verification, multi-clouding, and background loops."
+          }
+        ]
+      },
+      {
+        "lead": "Cloud can verify its own work by adopting human development processes through autonomous \"verification loops.\"",
+        "bullets": [
+          {
+            "label": "Verification Loop",
+            "text": "Cloud can adopt the human playbook of designing, building, running tests, checking side effects, and finally deploying code."
+          },
+          {
+            "label": "Autonomous Circuit",
+            "text": "A \"loop\" is an autonomous circuit where Cloud writes code, checks for failures, debugs, and reiterates until a success state is achieved."
+          },
+          {
+            "label": "Verification Scope",
+            "text": "Verification can apply to various aspects, including UX, backend, and end-to-end functionality."
+          },
+          {
+            "label": "UX Implementation",
+            "text": "Concrete UX verification involves running an application, enabling Cloud via browser control tools like Chrome MCP, proving functionality with screenshots, and dynamically unblocking issues like authentication."
+          }
+        ]
+      },
+      {
+        "lead": "Verification \"skills\" can be self-improving, allowing agents to autonomously verify new features, as demonstrated in a live demo.",
+        "bullets": [
+          {
+            "label": "Skills Packaging",
+            "text": "Verification loops can be packaged and distributed using \"skills,\" which store arbitrary context about a topic."
+          },
+          {
+            "label": "Self-Improving",
+            "text": "Skills can be made \"self-improving\" by including instructions for the agent to update them whenever it overcomes a blocker."
+          },
+          {
+            "label": "Demo Application",
+            "text": "A live demo showcased this process using a Monkey Type application where Cloud spun up a dev server."
+          },
+          {
+            "label": "Agent Interaction",
+            "text": "Cloud used the Chrome MCP to interact with the frontend, performing actions like typing and changing settings."
+          },
+          {
+            "label": "Feature Verification",
+            "text": "Cloud implemented a new feature (confetti on mistype), debugged lint errors, and confirmed functionality using the newly created verification skill."
+          }
+        ]
+      },
+      {
+        "lead": "Multi-cloud strategies offer tools to manage multiple AI agent instances, scaling operations while protecting human attention.",
+        "bullets": [
+          {
+            "label": "Desktop App",
+            "text": "The Cloud Code desktop app provides a graphical user interface for managing sessions across all surfaces, allowing users to pin, rename, and color sessions."
+          },
+          {
+            "label": "Terminal View",
+            "text": "\"Cloud Agents\" offers a similar terminal-based view, prioritizing sessions that require immediate attention."
+          },
+          {
+            "label": "Decoupled Compute",
+            "text": "Running Cloud Code on the web decouples agent compute from your local laptop, enabling continuous operation regardless of your device's status."
+          },
+          {
+            "label": "Remote Control",
+            "text": "\"Remote control\" allows users to monitor and interact with any agent session from their phone, receiving notifications when input is needed."
+          }
+        ]
+      },
+      {
+        "lead": "Cloud Code's `/loop` command and \"routines\" automate \"bookkeeping\" tasks, freeing developers for higher-value activities.",
+        "bullets": [
+          {
+            "label": "Routine Tasks",
+            "text": "Software engineers spend significant time on \"bookkeeping\" tasks such as babysitting PRs, updating documentation, triaging feedback, and maintaining CI health."
+          },
+          {
+            "label": "Loop Command",
+            "text": "The `/loop` command in Cloud Code allows a prompt to be run at a specified interval, enabling autonomous task management (e.g., `/loop 10 minutes and babysit my open PRs`)."
+          },
+          {
+            "label": "Routines Functionality",
+            "text": "\"Routines\" are remote loops, managed via the web or desktop app, with time-based or event-based triggers."
+          },
+          {
+            "label": "Full Automation",
+            "text": "Routines can spawn new Cloud Code sessions to execute predefined prompts, enabling full automation of routine operational tasks."
+          }
+        ]
+      },
+      {
+        "lead": "Integrating verification loops, multi-cloud management, and background routines establishes a system for reliable AI agent task delegation.",
+        "bullets": [
+          {
+            "label": "Integrated System",
+            "text": "The framework integrates verification loops, multi-cloud management strategies, and automated background routines."
+          },
+          {
+            "label": "Reliable Delegation",
+            "text": "This system allows for significant delegation of work to Cloud with high reliability and confidence."
+          },
+          {
+            "label": "Human Focus",
+            "text": "Humans can ultimately allocate their attention and time to the most critical and creative aspects of software engineering."
+          }
+        ]
+      }
+    ]
+  }
+}

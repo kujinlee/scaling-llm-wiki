@@ -1,0 +1,146 @@
+{
+  "sourceMd": "264_building-the-best-agentic-analytics-harness-powered-by-claud.md",
+  "generatedAt": "2026-07-01T01:15:26.506Z",
+  "sourceSections": [
+    "Claude's Impact on Omni's Engineering",
+    "Omni AI Analytics and the Semantic Layer",
+    "The Evolution of Blobby: From Single-Shot to Agentic AI",
+    "Consolidating the Brain and SQL Generation",
+    "Current Platform Capabilities and Evaluation",
+    "Conclusion"
+  ],
+  "model": {
+    "sections": [
+      {
+        "lead": "Claude greatly enhanced Omni's engineering velocity and culture, leading to increased commits and rapid skill development across the team.",
+        "bullets": [
+          {
+            "label": "Code Velocity",
+            "text": "Omni saw a notable increase in commits to the main branch after the release of Claude Code with the OS model."
+          },
+          {
+            "label": "CTO Contribution",
+            "text": "Claude even allowed Omni's CTO to continue contributing code, which was an unexpected benefit."
+          },
+          {
+            "label": "Skill Development",
+            "text": "The engineering team rapidly skilled up in AI tools by January due to Claude consistently providing real help."
+          },
+          {
+            "label": "Public Demos",
+            "text": "Omni releases public demo features every Friday, showcasing their \"ship it\" and transparency values."
+          }
+        ]
+      },
+      {
+        "lead": "Omni's platform utilizes Claude and a crucial semantic layer to allow users to interact with complex enterprise data via natural language queries.",
+        "bullets": [
+          {
+            "label": "Natural Language",
+            "text": "Omni's platform enables users to interact with their data using natural language, translating questions into semantic queries via Claude."
+          },
+          {
+            "label": "Semantic Layer",
+            "text": "A crucial semantic layer sits atop data warehouses or databases, acting as a translation layer for queries."
+          },
+          {
+            "label": "Data Curation",
+            "text": "This layer curates data and provides a map for translating queries into SQL, handling vast enterprise data sets."
+          },
+          {
+            "label": "Terminology Ambiguity",
+            "text": "The semantic layer resolves business terminology ambiguities, such as \"last quarter\" having different meanings across departments."
+          }
+        ]
+      },
+      {
+        "lead": "Omni's AI agent, Blobby, evolved over 18 months from a single-shot system to an agentic AI with improved context and error recovery.",
+        "bullets": [
+          {
+            "label": "Blobby Evolution",
+            "text": "Omni's AI agent, Blobby, significantly evolved over 18 months from an initial single-question, single-answer system."
+          },
+          {
+            "label": "Context Metadata",
+            "text": "Early improvements included adding \"AI context,\" \"sample queries,\" and a \"taste of values\" to guide LLM interpretation."
+          },
+          {
+            "label": "Agentic Loop",
+            "text": "The next major leap was adding an agentic loop with a custom harness to enable Blobby to recover from errors."
+          },
+          {
+            "label": "Claude Upgrade",
+            "text": "The transition from Claude Haiku to Sonnet further unlocked more complex, elaborate agentic conversations for Blobby."
+          }
+        ]
+      },
+      {
+        "lead": "Omni resolved Blobby's \"split brain\" issue and enhanced SQL generation by consolidating knowledge into the outer agent and utilizing raw SQL.",
+        "bullets": [
+          {
+            "label": "Split Brain Fix",
+            "text": "Omni addressed a \"split brain\" problem where an outer agent and a sub-agent had misaligned knowledge regarding query generation."
+          },
+          {
+            "label": "Knowledge Consolidation",
+            "text": "The solution involved \"consolidating the brain\" by pulling all tools and knowledge into the outer agent to eliminate unpredictable behavior."
+          },
+          {
+            "label": "SQL Engine Revival",
+            "text": "Omni revived an old, discarded SQL parsing engine to improve query generation capabilities."
+          },
+          {
+            "label": "Raw SQL",
+            "text": "Allowing Claude to generate raw SQL with parsing guidelines enabled Blobby to answer complex questions efficiently in single queries."
+          }
+        ]
+      },
+      {
+        "lead": "Omni's agentic system features advanced capabilities, including data modeling, and relies heavily on internal and customer evaluation for quality.",
+        "bullets": [
+          {
+            "label": "Agentic Structure",
+            "text": "Omni's current agentic system features an outer loop for checkpointing and an inner loop with tools for dashboards and visualizations."
+          },
+          {
+            "label": "Data Modeling",
+            "text": "The inner loop's growing set of tools now includes capabilities for performing data modeling to improve the semantic layer."
+          },
+          {
+            "label": "Eval Systems",
+            "text": "The platform heavily relies on both internal and customer evaluation (Eval) systems to ensure predictable and consistent answer quality."
+          },
+          {
+            "label": "Trace Data",
+            "text": "Evals are invaluable for the raw trace data they provide, offering deep observability into agent behavior for debugging and improvement."
+          },
+          {
+            "label": "Harness Insights",
+            "text": "Using Claude Code internally helped Omni engineers understand good AI harness design, applying lessons to Blobby's development."
+          }
+        ]
+      },
+      {
+        "lead": "Omni's AI platform, powered by Claude, enables intelligent data interaction through iterative development, robust agentic design, and continuous evaluation.",
+        "bullets": [
+          {
+            "label": "Sophisticated Approach",
+            "text": "Omni's AI analytics platform, powered by Claude, demonstrates a sophisticated approach to building intelligent data interaction systems."
+          },
+          {
+            "label": "Core Principles",
+            "text": "The platform's journey highlights key architectural and learning principles for developing reliable LLM-powered applications."
+          },
+          {
+            "label": "Intelligent Context",
+            "text": "Intelligent context management via a semantic layer is crucial to the platform's ability to 'talk to their data'."
+          },
+          {
+            "label": "Continuous Evaluation",
+            "text": "Continuous evaluation ensures the reliability and high quality of Omni's LLM-powered applications."
+          }
+        ]
+      }
+    ]
+  }
+}

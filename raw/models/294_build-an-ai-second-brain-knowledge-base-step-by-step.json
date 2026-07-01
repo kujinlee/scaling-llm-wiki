@@ -1,25 +1,139 @@
 {
   "sourceMd": "294_build-an-ai-second-brain-knowledge-base-step-by-step.md",
-  "generatedAt": "2026-06-30T03:55:36.794Z",
+  "generatedAt": "2026-07-01T00:52:14.225Z",
   "sourceSections": [
-    "The Limitations of Traditional Second Brains"
+    "Introducing the Dynamic Second Brain Concept",
+    "Core Pillars: Wiki, CRM, and Journal",
+    "Building the Foundation: Tools and Architecture Setup",
+    "Ingesting Data and Initial Wiki Generation",
+    "Extending with Journaling, CRM, and Automation",
+    "Conclusion"
   ],
   "model": {
     "sections": [
       {
-        "lead": "Traditional second brain systems primarily function as passive storage, lacking effective mechanisms for active recall and interaction.",
+        "lead": "This video introduces a revolutionary second brain system integrating a dynamic wiki, CRM, and intelligent journal, powered by AI for actionable insights.",
         "bullets": [
           {
-            "label": "Passive Storage",
-            "text": "Most second brain systems merely serve as storage for various types of content. Извините, но я не могу использовать неанглоязычные слова. Пропустим."
+            "label": "Old Systems",
+            "text": "Traditional second brain systems frequently become passive dumping grounds for saved information."
           },
           {
-            "label": "Content Dumping",
-            "text": "Users frequently dump articles, transcripts, and other content into these systems without further processing. Извините, но я не могу использовать неанглоязычные слова. Пропустим."
+            "label": "New System",
+            "text": "This revolutionary system integrates a dynamic wiki, a Customer Relationship Management (CRM) system, and an intelligent journal."
           },
           {
-            "label": "Lacks Interaction",
-            "text": "These systems typically operate without a clear mechanism for active recall or user interaction. Извините, но я не могу использовать неанглоязычные слова. Пропустим."
+            "label": "Active Processing",
+            "text": "Unlike passive storage, the new system actively processes, interlinks, and retrieves information, making content actionable."
+          },
+          {
+            "label": "AI Power",
+            "text": "AI-powered chat and journaling functionalities transform static data into a living, intelligent resource."
+          }
+        ]
+      },
+      {
+        "lead": "The second brain system is built upon three core pillars: a wiki, a CRM, and an intelligent journal.",
+        "bullets": [
+          {
+            "label": "Wiki Content",
+            "text": "The wiki/knowledge base stores saved content from the web, including YouTube transcripts, articles, and podcasts."
+          },
+          {
+            "label": "CRM Tracking",
+            "text": "A personalized CRM tracks interactions, details, and conversations with people from events or meetings."
+          },
+          {
+            "label": "Journal Reflection",
+            "text": "The journal serves as the primary interaction layer for users to reflect on daily experiences, challenges, and successes."
+          },
+          {
+            "label": "AI Insights",
+            "text": "AI within the journal pulls relevant insights from both the wiki and CRM to provide grounded, personalized responses."
+          }
+        ]
+      },
+      {
+        "lead": "Building the system's foundation involves Codex, Obsidian, and its Web Clipper, storing data and deploying wiki architecture.",
+        "bullets": [
+          {
+            "label": "Key Tools",
+            "text": "The primary tools are Codex, Obsidian, and the Obsidian Web Clipper Chrome extension."
+          },
+          {
+            "label": "Obsidian Setup",
+            "text": "The setup involves creating an Obsidian vault to store all data."
+          },
+          {
+            "label": "Wiki Architecture",
+            "text": "Andrej Karpathy's LLM Wiki concept provides the foundational architecture for the wiki, deployed in Codex."
+          },
+          {
+            "label": "Web Content",
+            "text": "The Obsidian Web Clipper saves web content, including full YouTube video transcripts, to the Obsidian vault's raw folder."
+          }
+        ]
+      },
+      {
+        "lead": "Content ingestion uses the Web Clipper to save to Obsidian, then AI in Codex processes files to build a dynamic wiki.",
+        "bullets": [
+          {
+            "label": "Data Ingestion",
+            "text": "The Obsidian Web Clipper saves web sources like GitHub pages and YouTube videos into the raw folder."
+          },
+          {
+            "label": "AI Processing",
+            "text": "Codex processes these raw files, and the AI-powered system summarizes content and extracts key entities."
+          },
+          {
+            "label": "Wiki Generation",
+            "text": "The system creates interlinked markdown pages within the wiki folder, dynamically building out the knowledge base."
+          },
+          {
+            "label": "Queryable Knowledge",
+            "text": "The interconnected knowledge network can be queried directly via chat, with AI responses grounded in the saved information."
+          }
+        ]
+      },
+      {
+        "lead": "The system is customized with automation for file processing, journaling, CRM, and hourly backups to a private GitHub repository.",
+        "bullets": [
+          {
+            "label": "Custom Instructions",
+            "text": "The agents.md file is updated to move processed raw files, extract YouTube channel names, and cross-link wiki pages."
+          },
+          {
+            "label": "Journal CRM",
+            "text": "Dedicated folders and index files are created for journaling and CRM, allowing chat-based user interaction."
+          },
+          {
+            "label": "Grounded AI",
+            "text": "The AI provides grounded responses by consulting the wiki, past journal entries, and CRM data."
+          },
+          {
+            "label": "Hourly Backup",
+            "text": "An hourly automation in Codex processes new raw files and pushes updates to a private GitHub repository for backup."
+          }
+        ]
+      },
+      {
+        "lead": "This comprehensive system transforms personal knowledge management with an interconnected knowledge base, intelligent journaling, and personalized CRM.",
+        "bullets": [
+          {
+            "label": "Beyond Notes",
+            "text": "This comprehensive second brain system goes beyond simple note-taking, creating an interconnected knowledge base with intelligent journaling and a personalized CRM."
+          },
+          {
+            "label": "Dynamic System",
+            "text": "Leveraging Obsidian and Codex, users build a dynamic system that continuously learns and synthesizes information."
+          },
+          {
+            "label": "Smart Assistant",
+            "text": "The modular, prompt-based system allows customization, making it an increasingly powerful and smart personal assistant."
+          },
+          {
+            "label": "Knowledge Transform",
+            "text": "Its ability to interlink disparate pieces of information truly transforms personal knowledge management."
           }
         ]
       }

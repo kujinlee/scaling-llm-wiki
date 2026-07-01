@@ -51,32 +51,50 @@ footer{margin-top:2.5em;color:var(--foot);font-size:.8rem}
   <p class="doc-meta">Preporato | AI for Engineers · 24:47 · <a href="https://www.youtube.com/watch?v=akzKBQVyFEI" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=akzKBQVyFEI</a></p>
   <div class="callout">
     <div class="lbl">Quick Reference</div>
-    <p>This video provides a comprehensive guide to passing the Anthropic Cloud Certified Architect exam, covering key domains, architectural patterns, and a detailed 4-week study plan.</p>
-    <ul><li>Master the Claude agent loop (call, inspect, execute, append) and targeted sub-agent retries.</li><li>Configure Claude Code with hierarchical Claude.md files for team-wide conventions.</li><li>Implement structured output using tool schemas and validate/retry loops for reliability.</li><li>Design robust MCP tools with descriptive names and structured error responses.</li><li>Combat &quot;lost in the middle&quot; by re-anchoring durable facts in a case block.</li></ul>
+    <p>This video provides a comprehensive guide to passing the Anthropic Cloud Certified Architect exam, covering core concepts, domain knowledge, a study plan, and common pitfalls.</p>
+    <ul><li>Master the `call-inspect-execute-append-call` agent loop for multi-step tasks.</li><li>Configure Claude Code with `Claude.md` hierarchy and slash commands for team conventions.</li><li>Use explicit, categorical rules in prompts and tool schemas for reliable structured output.</li><li>Mitigate &quot;lost in the middle&quot; by anchoring durable facts in a case block.</li><li>Implement prompt caching for static sections to significantly reduce API costs.</li></ul>
   </div>
   <section data-start="6">
       <span class="ghost">1</span>
-      <h2>Exam Overview and Claude Fundamentals <a class="ts" href="https://www.youtube.com/watch?v=akzKBQVyFEI&amp;t=6s" target="_blank" rel="noopener noreferrer">(0:06–3:06)</a> <a class="dig" data-section="6" data-t="6">dig deeper ▶</a></h2>
-      <p class="lead">The Anthropic Cloud Architect exam requires 75% on 60 scenario questions, testing Claude's stateless nature and its four augmentation layers.</p>
-      <ul><li>The Anthropic Cloud Certified Architect exam has 60 multiple-choice scenario-based questions, requiring at least 75% correctness.</li><li>The exam draws from six production scenarios, presenting test-takers with four randomly selected ones.</li><li>Claude is fundamentally a stateless language model accessed via the api.anthropic.com/v1/messages HTTP endpoint.</li><li>Claude has no memory between calls, doesn't run loops, and does not execute code directly.</li><li>Claude's core engine is augmented by four layers: the Claude API, Agent SDK, Claude Code, and Model Context Protocol (MCP).</li></ul>
+      <h2>Anthropic Certified Architect Exam Structure and Claude Fundamentals <a class="ts" href="https://www.youtube.com/watch?v=akzKBQVyFEI&amp;t=6s" target="_blank" rel="noopener noreferrer">(0:06–3:06)</a> <a class="dig" data-section="6" data-t="6">dig deeper ▶</a></h2>
+      <p class="lead">The Anthropic Cloud Certified Architect exam has 60 scenario-based multiple-choice questions requiring a 75% score, testing knowledge across four out of six production scenarios.</p>
+      <ul><li>Claude is a stateless language model accessed via a single HTTP endpoint, `api.anthropic.com/v1/messages`, operating without memory between calls.</li><li>Claude's functionalities are built as layers, including the Claude API, Agent SDK, Claude Code, and the Model Context Protocol (MCP).</li><li>Understanding which specific layer handles particular behaviors is crucial for success on the exam.</li></ul>
     </section>
 <section data-start="186">
       <span class="ghost">2</span>
-      <h2>Agentic Architecture and Orchestration <a class="ts" href="https://www.youtube.com/watch?v=akzKBQVyFEI&amp;t=186s" target="_blank" rel="noopener noreferrer">(3:06–6:14)</a> <a class="dig" data-section="186" data-t="186">dig deeper ▶</a></h2>
-      <p class="lead">Implement agent loops for stateless Claude using stop_reason; for larger tasks, multi-agent systems and targeted retries are key.</p>
-      <ul><li>Your code must implement the agent loop for multi-step tasks because Claude is stateless.</li><li>The stop_reason field, when calling messages.create with tools, guides the agent loop: end_turn means Claude is done, tool_use means a function needs execution.</li><li>The full agent loop involves calling messages.create, inspecting tool_use, locally executing the function, appending tool_result, and recalling messages.create.</li><li>For tasks exceeding a single Claude's context budget, use multi-agent systems with a coordinator Claude spawning sub-agents via the task_tool.</li><li>Decompose tasks either sequentially for interdependent steps or adaptively for open-ended work.</li><li>When a sub-agent fails, almost always use a targeted retry of only that failed agent to prevent unwanted side effects.</li></ul>
+      <h2>Designing Agentic Architectures and Orchestration <a class="ts" href="https://www.youtube.com/watch?v=akzKBQVyFEI&amp;t=186s" target="_blank" rel="noopener noreferrer">(3:06–6:07)</a> <a class="dig" data-section="186" data-t="186">dig deeper ▶</a></h2>
+      <p class="lead">Claude's stateless nature requires external code for orchestration, using a `call-inspect-execute-append-call` cycle for multi-step tasks.</p>
+      <ul><li>External code acts as the orchestrating agent loop for multi-step tasks, following a `call-inspect-execute-append-call` cycle.</li><li>For complex tasks, a &quot;coordinator&quot; Claude spawns smaller &quot;sub-agents&quot; via the Agent SDK's `task` tool, passing specific tasks.</li><li>When a sub-agent fails, the correct recovery is a targeted retry of only the failed agent to prevent unintended side effects.</li></ul>
     </section>
-<section data-start="374">
+<section data-start="367">
       <span class="ghost">3</span>
-      <h2>Claude Code Configuration and Workflows <a class="ts" href="https://www.youtube.com/watch?v=akzKBQVyFEI&amp;t=374s" target="_blank" rel="noopener noreferrer">(6:14–24:47)</a> <a class="dig" data-section="374" data-t="374">dig deeper ▶</a></h2>
-      <p class="lead">Claude Code uses hierarchical Claude.md files for session context, supports custom slash commands, and integrates with CI/CD via claude code -p.</p>
-      <ul><li>Claude Code starts each session with no project memory, addressed by Claude.md files stitched into the system prompt.</li><li>The user level Claude.md file, located at ~/.claude/claude.md, is for personal settings and is not version controlled.</li><li>The project level Claude.md file, found at repo root/claude.md, establishes team-wide conventions and is committed to Git.</li><li>The directory level Claude.md file, in sub-package/claude.md, defines rules specific to a particular folder.</li><li>Custom slash commands, defined in .claude/commands/ with YAML front matter, offer reusable prompts and can constrain allowed_tools.</li><li>For headless CI/CD, use claude code -p with a structured output schema, failing pipelines only on explicitly named violation categories.</li></ul>
+      <h2>Effective Claude Code Configuration and Prompt Engineering <a class="ts" href="https://www.youtube.com/watch?v=akzKBQVyFEI&amp;t=367s" target="_blank" rel="noopener noreferrer">(6:07–12:42)</a> <a class="dig" data-section="367" data-t="367">dig deeper ▶</a></h2>
+      <p class="lead">Claude Code's behavior is configured with hierarchical `Claude.md` files and custom slash commands, emphasizing specific prompt rules and structured outputs.</p>
+      <ul><li>Claude Code's behavior is configured using `Claude.md` files, which are stitched into the session's system prompt and operate in a hierarchy.</li><li>Custom slash commands, defined in `.claude/commands`, allow reusable prompts and use YAML front matter for `allowed_tools` and `argument_hint`.</li><li>Prompt engineering emphasizes specific, mechanically checkable rules like &quot;flag if function exceeds 40 lines&quot; over vague adjectives for clarity.</li><li>For reliable structured output, declare the output shape as a tool using `input_schema` and force its use with `tool_choice`.</li><li>For large-scale, offline, latency-insensitive tasks, use the message batches API for cost-effective processing.</li></ul>
+    </section>
+<section data-start="762">
+      <span class="ghost">4</span>
+      <h2>Designing Robust Tools and Managing Context <a class="ts" href="https://www.youtube.com/watch?v=akzKBQVyFEI&amp;t=762s" target="_blank" rel="noopener noreferrer">(12:42–20:27)</a> <a class="dig" data-section="762" data-t="762">dig deeper ▶</a></h2>
+      <p class="lead">Robust tool design requires clear MCP descriptions and structured errors; context management, prompt caching, and agent escalation are key.</p>
+      <ul><li>Effective Model Context Protocol (MCP) tool descriptions must clarify functionality, disambiguation rules, example invocations, and error conditions.</li><li>Tools should return structured JSON error responses with fields like `is_error`, `category`, `retryable`, and `retry_after_ms` for intelligent recovery.</li><li>Choose STDIO for tools in the same process (zero latency/auth) and SSE only when a remote server is necessary (HTTP, network latency/auth).</li><li>To combat the &quot;lost in the middle&quot; effect, extract durable facts into a small &quot;case block&quot; and re-anchor it at the end of the context on every turn.</li><li>Prompt caching reduces costs for repetitive sections like system prompts by adding a `cash_control_breakpoint` to cache internal states.</li><li>Reliable agents must know when to escalate by implementing explicit confidence checks and ambiguity detection to trigger human handoff with a structured summary.</li></ul>
+    </section>
+<section data-start="1227">
+      <span class="ghost">5</span>
+      <h2>Comprehensive Study Plan and Exam Distractor Patterns <a class="ts" href="https://www.youtube.com/watch?v=akzKBQVyFEI&amp;t=1227s" target="_blank" rel="noopener noreferrer">(20:27–24:21)</a> <a class="dig" data-section="1227" data-t="1227">dig deeper ▶</a></h2>
+      <p class="lead">A 4-week study plan combines theory, projects, and practice exams, while recognizing five common distractor patterns is crucial for success.</p>
+      <ul><li>The recommended 4-week study plan involves weekly reading domain guides, building graded projects, and consistent flashcard review.</li><li>Six practice exams serve as checkpoints, with Week 4 concluding with a full dress rehearsal using timed practice exams.</li><li>Avoid prompts using vague adjectives like &quot;careful&quot; or &quot;thorough&quot;; use numbered, categorical rules instead.</li><li>Do not summarize long conversations with critical IDs/amounts; extract durable facts into a case block to avoid loss.</li><li>Do not rerun all sub-agents if one fails after others had side effects; retry only the failed agent.</li><li>Don't put team-shared configuration in the user-level `claude.md`; use the project-level file at the repo root.</li><li>Pick STDIO for tools running on the same machine as the client, not SSE, to avoid unnecessary network overhead.</li></ul>
+    </section>
+<section data-start="1461">
+      
+      <h2>Conclusion <a class="ts" href="https://www.youtube.com/watch?v=akzKBQVyFEI&amp;t=1461s" target="_blank" rel="noopener noreferrer">(24:21–24:47)</a> <a class="dig" data-section="1461" data-t="1461">dig deeper ▶</a></h2>
+      <p class="lead">Success on the Anthropic Cloud Certified Architect exam requires deep architectural understanding, practical agentic design, and prompt engineering skills.</p>
+      <ul><li>Passing requires a deep understanding of Claude's architecture, agentic design principles, and prompt engineering best practices.</li><li>Robust tool integration, context management, and reliability patterns are also essential for success.</li><li>Diligently follow a structured study plan, including hands-on building, and recognize common exam traps to prepare confidently.</li></ul>
     </section>
   <footer>Skim view — generated from the source note <code>299_claude-certified-architect-cca-f-study-guide-to-pass-first-t.md</code>. Full text lives in the source <code>.md</code>.</footer>
 </article>
 <script>
 (function(){
-  // ── cross-doc nav (deep-dive → summary) ──────────────────────────────────
+  // ── cross-doc nav (dig-deeper → summary) ─────────────────────────────────
   document.querySelectorAll('a.dig').forEach(function(a){
     if(!a.dataset.type)return;
     var u=new URL(location.href);

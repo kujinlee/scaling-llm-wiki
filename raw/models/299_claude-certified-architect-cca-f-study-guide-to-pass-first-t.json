@@ -1,93 +1,151 @@
 {
   "sourceMd": "299_claude-certified-architect-cca-f-study-guide-to-pass-first-t.md",
-  "generatedAt": "2026-06-30T14:48:59.082Z",
+  "generatedAt": "2026-07-01T01:16:38.936Z",
   "sourceSections": [
-    "Exam Overview and Claude Fundamentals",
-    "Agentic Architecture and Orchestration",
-    "Claude Code Configuration and Workflows"
+    "Anthropic Certified Architect Exam Structure and Claude Fundamentals",
+    "Designing Agentic Architectures and Orchestration",
+    "Effective Claude Code Configuration and Prompt Engineering",
+    "Designing Robust Tools and Managing Context",
+    "Comprehensive Study Plan and Exam Distractor Patterns",
+    "Conclusion"
   ],
   "model": {
     "sections": [
       {
-        "lead": "The Anthropic Cloud Architect exam requires 75% on 60 scenario questions, testing Claude's stateless nature and its four augmentation layers.",
+        "lead": "The Anthropic Cloud Certified Architect exam has 60 scenario-based multiple-choice questions requiring a 75% score, testing knowledge across four out of six production scenarios.",
         "bullets": [
           {
-            "label": "Exam Structure",
-            "text": "The Anthropic Cloud Certified Architect exam has 60 multiple-choice scenario-based questions, requiring at least 75% correctness."
+            "label": "Claude Core",
+            "text": "Claude is a stateless language model accessed via a single HTTP endpoint, `api.anthropic.com/v1/messages`, operating without memory between calls."
           },
           {
-            "label": "Exam Scenarios",
-            "text": "The exam draws from six production scenarios, presenting test-takers with four randomly selected ones."
+            "label": "Functionality Layers",
+            "text": "Claude's functionalities are built as layers, including the Claude API, Agent SDK, Claude Code, and the Model Context Protocol (MCP)."
           },
           {
-            "label": "Claude Stateless",
-            "text": "Claude is fundamentally a stateless language model accessed via the api.anthropic.com/v1/messages HTTP endpoint."
-          },
-          {
-            "label": "Core Limitations",
-            "text": "Claude has no memory between calls, doesn't run loops, and does not execute code directly."
-          },
-          {
-            "label": "Four Layers",
-            "text": "Claude's core engine is augmented by four layers: the Claude API, Agent SDK, Claude Code, and Model Context Protocol (MCP)."
+            "label": "Exam Focus",
+            "text": "Understanding which specific layer handles particular behaviors is crucial for success on the exam."
           }
         ]
       },
       {
-        "lead": "Implement agent loops for stateless Claude using stop_reason; for larger tasks, multi-agent systems and targeted retries are key.",
+        "lead": "Claude's stateless nature requires external code for orchestration, using a `call-inspect-execute-append-call` cycle for multi-step tasks.",
         "bullets": [
           {
-            "label": "Agent Loop",
-            "text": "Your code must implement the agent loop for multi-step tasks because Claude is stateless."
+            "label": "Orchestration Loop",
+            "text": "External code acts as the orchestrating agent loop for multi-step tasks, following a `call-inspect-execute-append-call` cycle."
           },
           {
-            "label": "Stop Reason",
-            "text": "The stop_reason field, when calling messages.create with tools, guides the agent loop: end_turn means Claude is done, tool_use means a function needs execution."
+            "label": "Multi-Agent Systems",
+            "text": "For complex tasks, a \"coordinator\" Claude spawns smaller \"sub-agents\" via the Agent SDK's `task` tool, passing specific tasks."
           },
           {
-            "label": "Full Cycle",
-            "text": "The full agent loop involves calling messages.create, inspecting tool_use, locally executing the function, appending tool_result, and recalling messages.create."
-          },
-          {
-            "label": "Multi-Agent",
-            "text": "For tasks exceeding a single Claude's context budget, use multi-agent systems with a coordinator Claude spawning sub-agents via the task_tool."
-          },
-          {
-            "label": "Task Decomposition",
-            "text": "Decompose tasks either sequentially for interdependent steps or adaptively for open-ended work."
-          },
-          {
-            "label": "Sub-Agent Retry",
-            "text": "When a sub-agent fails, almost always use a targeted retry of only that failed agent to prevent unwanted side effects."
+            "label": "Recovery Strategy",
+            "text": "When a sub-agent fails, the correct recovery is a targeted retry of only the failed agent to prevent unintended side effects."
           }
         ]
       },
       {
-        "lead": "Claude Code uses hierarchical Claude.md files for session context, supports custom slash commands, and integrates with CI/CD via claude code -p.",
+        "lead": "Claude Code's behavior is configured with hierarchical `Claude.md` files and custom slash commands, emphasizing specific prompt rules and structured outputs.",
         "bullets": [
           {
-            "label": "Code Memory",
-            "text": "Claude Code starts each session with no project memory, addressed by Claude.md files stitched into the system prompt."
+            "label": "Claude Code Config",
+            "text": "Claude Code's behavior is configured using `Claude.md` files, which are stitched into the session's system prompt and operate in a hierarchy."
           },
           {
-            "label": "User Level",
-            "text": "The user level Claude.md file, located at ~/.claude/claude.md, is for personal settings and is not version controlled."
+            "label": "Custom Commands",
+            "text": "Custom slash commands, defined in `.claude/commands`, allow reusable prompts and use YAML front matter for `allowed_tools` and `argument_hint`."
           },
           {
-            "label": "Project Level",
-            "text": "The project level Claude.md file, found at repo root/claude.md, establishes team-wide conventions and is committed to Git."
+            "label": "Prompt Rules",
+            "text": "Prompt engineering emphasizes specific, mechanically checkable rules like \"flag if function exceeds 40 lines\" over vague adjectives for clarity."
           },
           {
-            "label": "Directory Level",
-            "text": "The directory level Claude.md file, in sub-package/claude.md, defines rules specific to a particular folder."
+            "label": "Structured Output",
+            "text": "For reliable structured output, declare the output shape as a tool using `input_schema` and force its use with `tool_choice`."
           },
           {
-            "label": "Slash Commands",
-            "text": "Custom slash commands, defined in .claude/commands/ with YAML front matter, offer reusable prompts and can constrain allowed_tools."
+            "label": "Message Batches",
+            "text": "For large-scale, offline, latency-insensitive tasks, use the message batches API for cost-effective processing."
+          }
+        ]
+      },
+      {
+        "lead": "Robust tool design requires clear MCP descriptions and structured errors; context management, prompt caching, and agent escalation are key.",
+        "bullets": [
+          {
+            "label": "Tool Descriptions",
+            "text": "Effective Model Context Protocol (MCP) tool descriptions must clarify functionality, disambiguation rules, example invocations, and error conditions."
           },
           {
-            "label": "CI/CD Integration",
-            "text": "For headless CI/CD, use claude code -p with a structured output schema, failing pipelines only on explicitly named violation categories."
+            "label": "Error Responses",
+            "text": "Tools should return structured JSON error responses with fields like `is_error`, `category`, `retryable`, and `retry_after_ms` for intelligent recovery."
+          },
+          {
+            "label": "MCP Transports",
+            "text": "Choose STDIO for tools in the same process (zero latency/auth) and SSE only when a remote server is necessary (HTTP, network latency/auth)."
+          },
+          {
+            "label": "Context Management",
+            "text": "To combat the \"lost in the middle\" effect, extract durable facts into a small \"case block\" and re-anchor it at the end of the context on every turn."
+          },
+          {
+            "label": "Prompt Caching",
+            "text": "Prompt caching reduces costs for repetitive sections like system prompts by adding a `cash_control_breakpoint` to cache internal states."
+          },
+          {
+            "label": "Agent Escalation",
+            "text": "Reliable agents must know when to escalate by implementing explicit confidence checks and ambiguity detection to trigger human handoff with a structured summary."
+          }
+        ]
+      },
+      {
+        "lead": "A 4-week study plan combines theory, projects, and practice exams, while recognizing five common distractor patterns is crucial for success.",
+        "bullets": [
+          {
+            "label": "Study Plan",
+            "text": "The recommended 4-week study plan involves weekly reading domain guides, building graded projects, and consistent flashcard review."
+          },
+          {
+            "label": "Practice Exams",
+            "text": "Six practice exams serve as checkpoints, with Week 4 concluding with a full dress rehearsal using timed practice exams."
+          },
+          {
+            "label": "Vague Adjective Trap",
+            "text": "Avoid prompts using vague adjectives like \"careful\" or \"thorough\"; use numbered, categorical rules instead."
+          },
+          {
+            "label": "Summarization Trap",
+            "text": "Do not summarize long conversations with critical IDs/amounts; extract durable facts into a case block to avoid loss."
+          },
+          {
+            "label": "Blanket Retry Trap",
+            "text": "Do not rerun all sub-agents if one fails after others had side effects; retry only the failed agent."
+          },
+          {
+            "label": "User claude.md Trap",
+            "text": "Don't put team-shared configuration in the user-level `claude.md`; use the project-level file at the repo root."
+          },
+          {
+            "label": "SSE on Localhost",
+            "text": "Pick STDIO for tools running on the same machine as the client, not SSE, to avoid unnecessary network overhead."
+          }
+        ]
+      },
+      {
+        "lead": "Success on the Anthropic Cloud Certified Architect exam requires deep architectural understanding, practical agentic design, and prompt engineering skills.",
+        "bullets": [
+          {
+            "label": "Core Understanding",
+            "text": "Passing requires a deep understanding of Claude's architecture, agentic design principles, and prompt engineering best practices."
+          },
+          {
+            "label": "Key Skills",
+            "text": "Robust tool integration, context management, and reliability patterns are also essential for success."
+          },
+          {
+            "label": "Preparation Focus",
+            "text": "Diligently follow a structured study plan, including hands-on building, and recognize common exam traps to prepare confidently."
           }
         ]
       }

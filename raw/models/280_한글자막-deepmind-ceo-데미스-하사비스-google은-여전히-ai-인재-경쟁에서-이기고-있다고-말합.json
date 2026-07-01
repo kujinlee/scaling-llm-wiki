@@ -1,0 +1,150 @@
+{
+  "sourceMd": "280_한글자막-deepmind-ceo-데미스-하사비스-google은-여전히-ai-인재-경쟁에서-이기고-있다고-말합.md",
+  "generatedAt": "2026-07-01T01:15:59.440Z",
+  "sourceSections": [
+    "Navigating AI's Risks and the Path to AGI",
+    "Google DeepMind's Multimodal AGI Strategy",
+    "The Evolving Creative Landscape and Talent Race",
+    "Combating Misinformation and Ensuring AI Provenance",
+    "Creativity, Simulation, and the Future of Science",
+    "Conclusion"
+  ],
+  "model": {
+    "sections": [
+      {
+        "lead": "Demis Hassabis sees AGI approaching and emphasizes a systematic approach to manage both opportunities and significant risks.",
+        "bullets": [
+          {
+            "label": "AI Concern",
+            "text": "Demis Hassabis highlights widespread concern about AI, noting the rapid approach to AGI as being in the \"foothills of the singularity.\""
+          },
+          {
+            "label": "Systematic Approach",
+            "text": "He stresses the critical need for a more systematic approach to managing immense opportunities like solving disease and new energy, alongside significant risks like bio and nuclear threats."
+          },
+          {
+            "label": "International Standards",
+            "text": "Hassabis advocates for an international standards body to test frontier AI systems, ensuring robustness and sufficient guardrails."
+          }
+        ]
+      },
+      {
+        "lead": "DeepMind pursues AGI through a broad research strategy, focusing on multimodal foundation models and understanding the physical world.",
+        "bullets": [
+          {
+            "label": "Research Approach",
+            "text": "DeepMind's long-standing AGI approach involves a broad and deep research bench, betting on multiple innovative avenues."
+          },
+          {
+            "label": "Key Models",
+            "text": "This includes multimodal foundation models like Gemini, intensive work on coding, and generative media models such as Omni and Veo."
+          },
+          {
+            "label": "Physical World",
+            "text": "Hassabis emphasizes that a complete AGI system must comprehend the physical world to enable applications like robotics and smart glasses, moving beyond purely text-based understanding."
+          }
+        ]
+      },
+      {
+        "lead": "The AI industry faces fierce talent competition, with DeepMind leading in research, while generative tools improve \"live editing\" and democratize creativity.",
+        "bullets": [
+          {
+            "label": "Talent Competition",
+            "text": "The AI industry is fiercely competitive, especially concerning top talent."
+          },
+          {
+            "label": "DeepMind Leadership",
+            "text": "DeepMind maintains a leading position with the largest and broadest research capabilities, continuously producing frontier work that feeds into foundation models."
+          },
+          {
+            "label": "Live Editing",
+            "text": "Generative AI tools are rapidly improving, with significant advancements in \"live editing\" capabilities that allow creators fine-grained, natural language control over outputs."
+          },
+          {
+            "label": "Creative Process",
+            "text": "These improvements streamline the iterative creative process and enable 10x more output."
+          },
+          {
+            "label": "Democratization",
+            "text": "This democratizes creative tools, lowering the bar for entry, but also poses challenges for professional artists."
+          }
+        ]
+      },
+      {
+        "lead": "Google combats AI misinformation with SynthID, an imperceptible digital watermark now open-sourced and adopted by other industry players.",
+        "bullets": [
+          {
+            "label": "Misinformation Challenge",
+            "text": "Addressing misinformation and deepfakes is crucial for generative AI, a challenge Google anticipated years ago."
+          },
+          {
+            "label": "SynthID Development",
+            "text": "Google developed SynthID, a robust and imperceptible digital watermarking system, embedded in all its generative media including music, images, and videos."
+          },
+          {
+            "label": "Detection Aid",
+            "text": "This technology allows anyone to detect AI-generated content, aiding journalists, citizens, and governments."
+          },
+          {
+            "label": "Industry Adoption",
+            "text": "SynthID has been open-sourced and adopted by other major industry players like OpenAI and Nvidia."
+          },
+          {
+            "label": "Regulatory Standard",
+            "text": "Hassabis suggests SynthID should become a regulatory standard for generative media."
+          }
+        ]
+      },
+      {
+        "lead": "Hassabis links early research to AGI development, proposing an \"Einstein test\" for creativity and highlighting simulation's role in scientific discovery.",
+        "bullets": [
+          {
+            "label": "Research Connection",
+            "text": "Hassabis draws a throughline from his early game design and neuroscience research on the hippocampus's role in memory and imagination to the development of AGI."
+          },
+          {
+            "label": "Einstein Test",
+            "text": "He proposes the \"Einstein test\" for true AI creativity: generating genuinely novel scientific hypotheses."
+          },
+          {
+            "label": "World of Atoms",
+            "text": "A fully general AI system needs to understand the \"world of atoms,\" not just \"bits\" or \"logic,\" requiring multimodal capabilities."
+          },
+          {
+            "label": "Simulation Fundamental",
+            "text": "Simulations are deemed fundamental to AGI and imagination, allowing AI to \"rerun\" complex problems countless times."
+          },
+          {
+            "label": "Optimal Solutions",
+            "text": "This learned simulation capability can find optimal solutions in areas like robotics, science, or economics, much like AlphaGo."
+          },
+          {
+            "label": "Transformative Impact",
+            "text": "This capability could transform fields unable to conduct controlled experiments."
+          }
+        ]
+      },
+      {
+        "lead": "DeepMind's AGI vision integrates scientific discovery and creativity, aiming for AI that interacts with the physical world through advanced simulations.",
+        "bullets": [
+          {
+            "label": "AGI Vision",
+            "text": "The vision for AGI intertwines scientific discovery, artistic creativity, and practical problem-solving through general-purpose learning systems."
+          },
+          {
+            "label": "Physical Interaction",
+            "text": "Hassabis's work at DeepMind aims to build AI that can understand and interact with the physical world."
+          },
+          {
+            "label": "Simulation Leverage",
+            "text": "DeepMind leverages advanced simulation capabilities to drive breakthroughs across diverse domains."
+          },
+          {
+            "label": "Domain Impact",
+            "text": "This includes areas from drug discovery to economic policy, ultimately pushing the boundaries of what is scientifically and creatively possible."
+          }
+        ]
+      }
+    ]
+  }
+}
